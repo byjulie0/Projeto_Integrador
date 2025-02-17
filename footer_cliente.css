@@ -1,0 +1,29 @@
+.footer_cliente{
+    width: 100%;
+    height: 265px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: #40513B;
+    padding: 10px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    color: #E7F0DC;
+}
+p {
+    color: #E7F0DC;
+    font-family: "Poppins", serif;
+    font-size: 20px;
+}
+h3{
+    color: #E7F0DC;
+    font-family: "Poppins", serif;
+}
+.poppins-regular {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
