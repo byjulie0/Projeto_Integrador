@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.esqueci_senha-card_email{
+    background-color: #DFEBE0;
+    padding: 200px;
+    border-radius: 2px;
+}
+
+.esqueci_senha-card_email-content h1{
+    position: absolute;
+    top: 22%;
+    left: 40%;
+}
+
