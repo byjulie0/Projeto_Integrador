@@ -16,11 +16,12 @@ body{
     background-color: #DFEBE0;
     padding: 200px;
     border-radius: 2px;
+    position: relative;
 }
 
 .esqueci_senha-card_email-content h1{
     position: absolute;
-    top: 22%;
-    left: 40%;
+    top: 15%;
+    left: 35%;
 }
 
