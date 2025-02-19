@@ -172,3 +172,7 @@ input[type="checkbox"] {
     align-items: center;
     background-color: yellow;
 }
+
+.product-price, .change-quantity, .total-price{
+    margin-right: 220px;
+}
