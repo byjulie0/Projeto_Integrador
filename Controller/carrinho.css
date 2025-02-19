@@ -27,7 +27,7 @@ body {
 .cart-header{
     display: flex;
     flex-direction: row;
-    padding: 100px 80px;
+    padding: 100px;
     width: 100%;
     align-items: center;
     justify-content: space-between;
@@ -91,7 +91,7 @@ input[type="checkbox"] {
 .product-cards{
     display: flex;
     flex-direction: row;
-    padding: 50px 80px;
+    padding: 50px 100px;
     width: 100%;
     align-items: center;
     justify-content: space-between;
