@@ -30,7 +30,6 @@
     width: 100%;
     height: 105px;
     background-color: var(--color-primary-1);
-    padding: 40px 5%;
     align-items: center;
 }
 .logofabrica-cadastro{
@@ -39,12 +38,13 @@
 }
 .title-header-cadastro{
     padding: 20px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #FFFFFF;
 }
 .area-form-cadastro{
     justify-content: center;
-    height: 450px;
+    width: 63.063rem;
+    height: 33.746rem;
     flex-direction: column;
     margin: 100px 250px;
     align-items: center;
@@ -74,6 +74,8 @@
     flex-direction: column;
 }
 .input-form-cadastro{
+    width: 22.563rem;
+    height: 2.938rem;
     padding: 7px;
     border: 1px solid var(--color-primary-1);
     border-radius: 2px;
@@ -81,8 +83,6 @@
 .input-form-cadastro::placeholder{
     color: var(--color-primary-1);
     font-weight: 600;
+    font-size: 1rem;
 }
-.title-form-cadastro{
-    color: #20261E;
-    font-size: 1.5rem;
-}
+
