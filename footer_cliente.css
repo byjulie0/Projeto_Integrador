@@ -4,9 +4,9 @@
 }
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 30% 20% 20% 30%;
     background-color: #40513B;
-    padding: 10px;
+    padding: 166px;
 }
 a {
     text-decoration: none;
@@ -26,4 +26,27 @@ h3{
     font-family: "Poppins", serif;
     font-weight: 400;
     font-style: normal;
+}
+.footer_cli_item{
+    /* background-color: green; */
+    border: 1px;
+    border-color: #121810;
+    border-style: solid;
+    padding-left: 20px;
+    padding-right: 30px;
+    text-align: left;
+}
+#tab1{
+    grid-area: 1/ 1/ 3/ 2;
+    justify-content: center;
+    align-items: center;
+}
+#tab2{
+    column-gap: 10px;
+}
+#tab3{
+    column-gap: 10px;
+}
+#tab6{
+    grid-area: 1/ 4/ 3/ 5;
 }
