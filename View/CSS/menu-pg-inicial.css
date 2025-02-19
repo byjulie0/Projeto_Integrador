@@ -24,7 +24,7 @@
 
 body {
     background-color: #fff;
-    font-family: 'Lato';
+    font-family: 'Poppins';
 }
 
 .menu{
@@ -93,7 +93,7 @@ body {
     width: 100%;
     padding-left: 5px;
     color: #7C0428; 
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .search-container input::placeholder {
