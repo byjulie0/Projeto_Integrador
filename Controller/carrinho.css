@@ -27,7 +27,7 @@ body {
 .cart-header{
     display: flex;
     flex-direction: row;
-    padding: 100px;
+    padding: 25px 100px;
     width: 100%;
     align-items: center;
     justify-content: space-between;
@@ -39,7 +39,7 @@ body {
     background-color: var(--color-primary-3);
     width: 100%;
     padding: 20px 30px;
-    gap: 10px;
+    /* gap: 10px; */
     align-items: center;
     justify-content: space-between;
 }
@@ -79,6 +79,7 @@ input[type="checkbox"] {
     justify-content: space-between;
     display: flex;
     width: 60%;
+    background-color: red;
 }
 
 .labels-themselves{
@@ -91,9 +92,83 @@ input[type="checkbox"] {
 .product-cards{
     display: flex;
     flex-direction: row;
-    padding: 50px 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: red;
+}
+
+.product-card{
+    display: flex;
+    flex-direction: column;
+    background-color: #D9D9D9;
+    border-radius: 6px;
+    margin: 0px 100px;
+    padding: 30px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.product-title-area{
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    display: flex;
+    flex-direction: row;
 }
 
+.delete-item-btn-area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.separation-line{
+    width: 100%;
+    background-color: #20261E;
+    margin: 15px 0px;
+    height: 1px;
+}
+
+.product{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.non-labeled-content{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: flex-start;
+    gap: 25px;
+    align-items: center;
+}
+
+.product-img{
+    width: 150px;
+}
+
+.title-and-description{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name, .product-description{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.labels-respective-content{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: flex-start;
+    gap: 25px;
+    align-items: center;
+    background-color: yellow;
+}

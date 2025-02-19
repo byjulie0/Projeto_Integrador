@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
     <link rel="stylesheet" href="carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body>
@@ -34,29 +35,50 @@
                 <div class="check-btn">
                     <input type="checkbox" id="check-square">
                     <div class="check-square"></div>
+                    <span class="product-title">
+                        Bovino - Nelore
+                    </span>
                 </div>
-                <span class="product-title">
-                    Bovino - Nelore
-                </span>
+                <div class="delete-item-btn-area">
+                    <button class="delete-item">
+                        Excluir
+                    </button>
+                </div>
             </div>
             <div class="separation-line">
             </div>
             <div class="product">
-                <img src="blank image.png" alt="" class="product-img">
-                <span class="product-name">
-                    Bovino da raça nelore
-                </span>
-                <span class="product-description">
-                    descrição (...)
-                </span>
-                <span class="product-price">
-                    R$: 0,00
-                </span>
+                <div class="non-labeled-content">
+                    <img src="blank image.png" alt="" class="product-img">
+                    <div class="title-and-description">
+                        <span class="product-name">
+                            Bovino da raça nelore
+                        </span>
+                        <span class="product-description">
+                            descrição (...)
+                        </span>
+                    </div>
+                </div>
 
-                <button class="change-quantity">
-                    
-                </button>
-
+                <div class="labels-respective-content">
+                    <span class="product-price">
+                        R$: 0,00
+                    </span>
+                    <div class="change-quantity">
+                        <button class="plus">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <span class="quantity">
+                            0
+                        </span>
+                        <button class="plus">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                    </div>
+                    <span class="total-price">
+                        R$: 0,00
+                    </span>
+                </div>
             </div>
         </div>
     </section>
