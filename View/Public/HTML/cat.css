@@ -1,8 +1,8 @@
 /* style.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
+    font-family: Arial, sans-serif; /*escolhe a fonte das letras */
+    background-color: #f0f0f0; /* tela de fundo */
+    margin: 0; 
     padding: 20px;
 }
 h1 {

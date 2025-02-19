@@ -21,6 +21,7 @@
         <div class="arrow" onclick="nextSlide()">&#10095;</div>
     </div>
 
+    
     <script>
         let currentIndex = 0;
         const cards = document.getElementById('carousel-cards');
@@ -37,6 +38,7 @@
             currentIndex = (currentIndex < cardCount - 1) ? currentIndex + 1 : 0;
             showSlide(currentIndex);
         }
+        
     </script>
 </body>
 </html>
