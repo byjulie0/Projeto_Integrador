@@ -27,7 +27,7 @@ body {
 .cart-header{
     display: flex;
     flex-direction: row;
-    padding: 25px 100px;
+    padding: 45px 100px;
     width: 100%;
     align-items: center;
     justify-content: space-between;
@@ -79,7 +79,7 @@ input[type="checkbox"] {
     justify-content: space-between;
     display: flex;
     width: 60%;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .labels-themselves{
@@ -95,7 +95,7 @@ input[type="checkbox"] {
     width: 100%;
     align-items: center;
     justify-content: flex-start;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .product-card{
@@ -170,9 +170,9 @@ input[type="checkbox"] {
     justify-content: flex-start;
     gap: 25px;
     align-items: center;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 .product-price, .change-quantity, .total-price{
-    margin-right: 220px;
+    margin-right: 200px;
 }
