@@ -85,4 +85,11 @@
     font-weight: 600;
     font-size: 1rem;
 }
+.input-form-cadastro[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    position: relative;
 
+}
