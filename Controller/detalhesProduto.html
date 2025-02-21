@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galo Índio de León - John Rooster</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav a, input {
+            text-decoration: none;
+            color: black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .produto {
+            display: flex;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        .imagens {
+            margin-right: 20p;
+        }
+
+        .imagem-grande {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .miniaturas {
+            display: flex;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .miniaturas img {
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .info-produto {
+            max-width: 400px;
+        }
+
+        .estrelas {
+            font-size: 18px;
+            color: gold;
+            margin: 5px 0;
+        }
+
+        .preco {
+            font-size: 24px;
+            font-weight: bold;
+            color: #008000;
+            margin: 10px 0;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .botao-carrinho {
+            background-color: #32CD32;
+            color: white;
+        }
+
+        .botao-comprar {
+            background-color: #228B22;
+            color: white;
+        }
+
+        .descricao {
+            margin-top: 20px;
+        }
+
+        .descricao h3 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>John Rooster</h1>
+        <nav>
+            <a href="#">Categorias</a>
+            <a href="#">Campeões do mês</a>
+            <a href="#">Mais vendidos</a>
+            <input type="text" placeholder="O que deseja buscar?">
+            <a href="#">Perfil</a>
+            <a href="#">Notificações</a>
+            <a href="#">Carrinho</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="produto">
+            <div class="imagens">
+                <img src="galo-principal.jpg" alt="Galo Índio de León" class="imagem-grande">
+                <div class="miniaturas">
+                    <img src="galo1.jpg" alt="Galo lateral">
+                    <img src="galo2.jpg" alt="Galo de perfil">
+                    <img src="galo3.jpg" alt="Galo em pé">
+                </div>KO
+            </div>
+
+            <div class="info-produto">
+                <h2>Galo Índio de León</h2>
+                <div class="estrelas">
+                    ★★★★★ <span>4.9 (204)</span>
+                </div>
+                <p class="preco">R$ 5.000,00</p>
+                <button class="botao-carrinho">Adicionar ao carrinho</button>
+                <button class="botao-comprar">Comprar</button>
+
+                <div class="descricao">
+                    <h3>Informações</h3>
+                    <p><strong>Peso:</strong> 5kg</p>
+                    <p><strong>Idade:</strong> 1 ano</p>
+                    <p><strong>Raça:</strong> Criado a partir dos melhores exemplares, o Galo Índio de León possui uma linhagem seletiva que garante não apenas beleza, mas também vigor e adaptabilidade.</p>
+                    <p><strong>Criação:</strong> Os galos devem ter um ambiente amplo, limpo e bem ventilado, com áreas cobertas para proteção contra intempéries e exercícios.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
