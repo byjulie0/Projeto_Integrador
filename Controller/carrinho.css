@@ -26,15 +26,7 @@ body {
 .cart-header{
     display: flex;
     flex-direction: row;
-<<<<<<< Updated upstream
-    padding: 45px 100px;
-=======
-<<<<<<< HEAD
     padding: 25px 150px 0px 150px;
-=======
-    padding: 45px 100px;
->>>>>>> a5df12e75f98c3ddcaa36c55c3471dd01fafeabc
->>>>>>> Stashed changes
     width: 100%;
     align-items: center;
     justify-content: space-between;
@@ -84,16 +76,8 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: center;
     display: flex;
-<<<<<<< HEAD
     width: 20%;
     margin: 5px;
-=======
-    width: 60%;
-    /* background-color: red; */
-<<<<<<< Updated upstream
-=======
->>>>>>> a5df12e75f98c3ddcaa36c55c3471dd01fafeabc
->>>>>>> Stashed changes
 }
 
 .labels-themselves{
@@ -109,14 +93,6 @@ input[type="checkbox"] {
     padding: 25px 150px;
     align-items: center;
     justify-content: flex-start;
-<<<<<<< Updated upstream
-    /* background-color: red; */
-=======
-<<<<<<< HEAD
-=======
-    /* background-color: red; */
->>>>>>> a5df12e75f98c3ddcaa36c55c3471dd01fafeabc
->>>>>>> Stashed changes
 }
 
 .product-card{
@@ -206,15 +182,8 @@ input[type="checkbox"] {
     justify-content: center;
     margin: 5px;
     align-items: center;
-<<<<<<< Updated upstream
-    /* background-color: yellow; */
 }
 
-.product-price, .change-quantity, .total-price{
-    margin-right: 200px;
-=======
-<<<<<<< HEAD
-}
 
 .change-quantity{
     display: flex;
@@ -239,13 +208,4 @@ input[type="checkbox"] {
     border-right: 1px solid #9a9a9a;
 }
 
-.product-price, .change-quantity, .total-price{
-=======
-    /* background-color: yellow; */
-}
 
-.product-price, .change-quantity, .total-price{
-    margin-right: 200px;
->>>>>>> a5df12e75f98c3ddcaa36c55c3471dd01fafeabc
->>>>>>> Stashed changes
-}
