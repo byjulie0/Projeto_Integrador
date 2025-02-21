@@ -1,0 +1,33 @@
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    
+    background-color: blue;
+    padding: 10px;
+}
+
+.grid-item{
+    background-color: aliceblue;
+    border: 1px;
+    border-color: red;
+    border-style: solid;
+    color: black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.grid-container{
+    column-gap: 10px;
+    row-gap: 100px;
+}
+
+.item1 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.item8 {
+grid-area: 2 / 2 / 4 / 4;
+}
