@@ -3,9 +3,12 @@
     height: 265px;
 }
 .grid-container {
+    /* width: 100%; */
+    /* height: 100%; */
     display: grid;
     grid-template-columns: 30% 20% 20% 30%;
     background-color: #40513B;
+    column-gap: 40px;
     padding-left: 166px;
     padding-right: 166px;
     padding-top: 48px ;
@@ -19,7 +22,7 @@ a {
 p {
     color: #E7F0DC;
     font-family: "Poppins", serif;
-    font-size: 20px;
+    font-size: 14px;
 }
 h3{
     color: #E7F0DC;
@@ -39,16 +42,34 @@ h3{
     text-align: left;
 }
 #tab1{
+    height: 170px;
+    width: 220px;
     grid-area: 1/ 1/ 3/ 2;
     justify-content: center;
     align-items: center;
 }
 #tab2{
-    column-gap: 10px;
+    height: 80px;
+    width: 200px;
+    /* column-gap: 10px; */
 }
 #tab3{
-    column-gap: 10px;
+    height: 80px;
+    width: 260px;
+    /* column-gap: 10px; */
+}
+#tab4{
+    height: 80px;
+    width: 200px;
+}
+#tab5{
+    height: 80px;
+    width: 260px;
+    gap: 20px;
 }
 #tab6{
+
+    height: 170px;
+    width: 220px;
     grid-area: 1/ 4/ 3/ 5;
 }
