@@ -6,7 +6,10 @@
     display: grid;
     grid-template-columns: 30% 20% 20% 30%;
     background-color: #40513B;
-    padding: 166px;
+    padding-left: 166px;
+    padding-right: 166px;
+    padding-top: 48px ;
+    padding-bottom: 47px;
 }
 a {
     text-decoration: none;
@@ -28,7 +31,6 @@ h3{
     font-style: normal;
 }
 .footer_cli_item{
-    /* background-color: green; */
     border: 1px;
     border-color: #121810;
     border-style: solid;
