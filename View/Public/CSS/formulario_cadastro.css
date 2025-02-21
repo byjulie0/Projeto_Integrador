@@ -89,7 +89,9 @@
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-color: white;
+    background-color: #FFFFFF;
     position: relative;
-
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-primary-1);
 }
