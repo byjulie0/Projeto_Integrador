@@ -26,7 +26,15 @@ body {
 .cart-header{
     display: flex;
     flex-direction: row;
+<<<<<<< Updated upstream
     padding: 45px 100px;
+=======
+<<<<<<< HEAD
+    padding: 25px 150px 0px 150px;
+=======
+    padding: 45px 100px;
+>>>>>>> a5df12e75f98c3ddcaa36c55c3471dd01fafeabc
+>>>>>>> Stashed changes
     width: 100%;
     align-items: center;
     justify-content: space-between;
@@ -38,7 +46,6 @@ body {
     background-color: var(--color-primary-3);
     width: 100%;
     padding: 20px 30px;
-    /* gap: 10px; */
     align-items: center;
     justify-content: space-between;
 }
@@ -75,26 +82,41 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     display: flex;
+<<<<<<< HEAD
+    width: 20%;
+    margin: 5px;
+=======
     width: 60%;
     /* background-color: red; */
+<<<<<<< Updated upstream
+=======
+>>>>>>> a5df12e75f98c3ddcaa36c55c3471dd01fafeabc
+>>>>>>> Stashed changes
 }
 
 .labels-themselves{
-    justify-content: space-between;
-    margin-right: 125px;
+    justify-content: center;
     font-weight: 600;
     color: #20261E;
 }
 
 .product-cards{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
+    padding: 25px 150px;
     align-items: center;
     justify-content: flex-start;
+<<<<<<< Updated upstream
     /* background-color: red; */
+=======
+<<<<<<< HEAD
+=======
+    /* background-color: red; */
+>>>>>>> a5df12e75f98c3ddcaa36c55c3471dd01fafeabc
+>>>>>>> Stashed changes
 }
 
 .product-card{
@@ -102,7 +124,7 @@ input[type="checkbox"] {
     flex-direction: column;
     background-color: #D9D9D9;
     border-radius: 6px;
-    margin: 0px 100px;
+    margin: 25px 150px;
     padding: 30px;
     align-items: center;
     justify-content: flex-start;
@@ -117,11 +139,26 @@ input[type="checkbox"] {
     flex-direction: row;
 }
 
+.product-title{
+    font-weight: 600;
+    font-size: 18px;
+}
+
 .delete-item-btn-area{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+}
+
+.delete-item{
+    background: none;
+    border: none;
+    font: inherit;
+    font-size: 12px;
+    color: darkred;
+    font-weight: 600;
+    text-decoration: underline;
 }
 
 .separation-line{
@@ -165,13 +202,50 @@ input[type="checkbox"] {
 .labels-respective-content{
     display: flex;
     flex-direction: row;
-    width: 60%;
-    justify-content: flex-start;
-    gap: 25px;
+    width: 20%;
+    justify-content: center;
+    margin: 5px;
     align-items: center;
+<<<<<<< Updated upstream
     /* background-color: yellow; */
 }
 
 .product-price, .change-quantity, .total-price{
     margin-right: 200px;
+=======
+<<<<<<< HEAD
+}
+
+.change-quantity{
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    border-style: solid;
+    border-color: #9a9a9a;
+    border-width: 1px;
+    align-items: center;
+    justify-content: center;
+}
+.change-quantity-btn{
+    padding: 5px 10px;
+    background: none;
+    border: none;
+}
+
+.quantity{
+    padding: 5px 35px;
+    color: var(--color-primary-1);
+    border-left: 1px solid #9a9a9a;
+    border-right: 1px solid #9a9a9a;
+}
+
+.product-price, .change-quantity, .total-price{
+=======
+    /* background-color: yellow; */
+}
+
+.product-price, .change-quantity, .total-price{
+    margin-right: 200px;
+>>>>>>> a5df12e75f98c3ddcaa36c55c3471dd01fafeabc
+>>>>>>> Stashed changes
 }
