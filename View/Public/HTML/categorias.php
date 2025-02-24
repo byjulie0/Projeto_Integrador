@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Percheron Carrossel</title>
     <link rel="stylesheet" href="cat.css">
+    
 </head>
 <body>
+    <?php
+     include './controller/menu-pg-inicial.html';
+    ?>
     <h1>Percheron</h1>
     <div class="carousel">
         <div class="arrow" onclick="prevSlide()">&#10094;</div>
