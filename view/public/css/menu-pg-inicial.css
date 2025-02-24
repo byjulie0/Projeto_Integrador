@@ -48,10 +48,10 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-.logo-menu img{
+.logo-menu-img{
     width: 100px;
 }
-.logo-menu title{
+.logo-menu-title{
     font-size: 24px;
     color: var(--color-primary-1);
     font-weight: 750;
@@ -75,7 +75,7 @@ body {
     transition: ease-in 0.1s;
 }
 
-.search-container-pg-inicial{
+.search-container-pg-inicial {
     display: flex;
     align-items: center;
     background-color: #E0E2E7; 
@@ -111,7 +111,7 @@ body {
     align-items: center;
 }
 
-.search-container-pg-inicial button .fa-solid {
+.search-containerpg-inicial button .fa-solid {
     align-items: center;
     color: var(--color-primary-1);
     font-size: 16px;
@@ -134,3 +134,4 @@ body {
     justify-content: center;
     align-items: center;
 }
+
