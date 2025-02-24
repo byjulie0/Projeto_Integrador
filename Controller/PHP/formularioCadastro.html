@@ -7,23 +7,35 @@
     <link rel="stylesheet" href="../../View/Public/CSS/formulario_cadastro.css">
 </head>
 <body class="body-cadastro">
-    <div class="area-form-cadastro">
-        <h2 class="title-form-cadastro">Cadastro</h2>
-        <form action="#" class="form-cadastro">
-            <div class="parte1-form-cadastro">
-                <input type="text" required placeholder="Nome Completo*" class="input-form-cadastro">
-                <input type="date" required class="input-form-cadastro">
-                <input type="email" required placeholder="Email*" class="input-form-cadastro">
-                <input type="text"  placeholder="Telefone" class="input-form-cadastro">
+    <main class="main-cadastro">
+        <div class="area-form-cadastro">
+            <h2 class="titulo-form-cadastro">Cadastrar</h2>
+            <div class="area-geral-form-cadastro">
+                <form action="#" class="form-cadastro">
+                    <div class="parte1-form-cadastro">
+                        <input type="text" required placeholder="Nome Completo*"    class="input-form-cadastro">
+                        <input type="date" required class="input-form-cadastro"     placeholder="Data de Nascimento*">
+                        <input type="email" required placeholder="Email*"   class="input-form-cadastro">
+                        <input type="text" placeholder="Telefone"   class="input-form-cadastro">
+                        <input type="text" required placeholder="Bairro*"   class="input-form-cadastro">
+                    </div>
+                    <div class="parte2-form-cadastro">
+                        <input type="text" required placeholder="Rua*"  class="input-form-cadastro">
+                        <input type="text" required placeholder="Número*"   class="input-form-cadastro">
+                        <input type="text" required placeholder="CEP*"  class="input-form-cadastro">
+                        <input type="text" required placeholder="País*"     class="input-form-cadastro">
+                        <input type="submit" value="Cadastrar"  class="input-submit-form-cadastro">
+                    </div>
+                </form>
+                <div class="line-cadastro"></div>
             </div>
-            <div class="parte2-form-cadastro">
-                <input type="text" required placeholder="Bairro*" class="input-form-cadastro">
-                <input type="text" required placeholder="Rua*" class="input-form-cadastro">
-                <input type="text" required placeholder="Número*" class="input-form-cadastro">
-                <input type="text" required placeholder="CEP*" class="input-form-cadastro">
-                <input type="text" required placeholder="País*" class="input-form-cadastro">
-            </div>
-        </form>
-    </div>
+            <p class="area-termos-privacidade-cadastro">
+                Ao se inscrever, você concorda com as políticas do John Rooster <a href="#" class="termos-privacidade-cadastro">Termos de serviço</a> & <a href="#" class="termos-privacidade-cadastro">Políticas de privacidade</a>
+            </p>
+            <p class="area-login-cadastro">
+                Já tem uma conta? <a href="#" class="login-cadastro">Entre</a>
+            </p>
+        </div>
+    </main>
 </body>
 </html>

@@ -17,40 +17,27 @@
     --color-primary-7: #EDF1D6;
     --color-primary-8: #E7F0DC;
 }
-
 .body-cadastro{
     background-color: #F7F7F7;
     height: 100vh;
     align-items: center;
     justify-content: center;
 }
-.header-cadastro{
-    flex-direction: row;
-    display: flex;
-    width: 100%;
-    height: 105px;
-    background-color: var(--color-primary-1);
-    align-items: center;
-}
-.logofabrica-cadastro{
-    height: 100px;
-    margin-top: 10px;
-}
-.title-header-cadastro{
-    padding: 20px;
-    font-size: 2rem;
-    color: #FFFFFF;
-}
 .area-form-cadastro{
     justify-content: center;
     width: 63.063rem;
-    height: 33.746rem;
+    height: auto;
     flex-direction: column;
     margin: 100px 250px;
     align-items: center;
     padding: 60px;
     display: flex;
     background-color: #DFEBE0;
+}
+.titulo-form-cadastro{
+    font-size: 2rem;
+    color: var(--color-primary-1);
+    font-weight: 600;
 }
 .form-cadastro{
     width: 100%;
@@ -59,7 +46,11 @@
     align-items: center;
     justify-content: center;
 }
+.area-geral-form-cadastro{
+    flex-direction: row; 
+}
 .parte1-form-cadastro{
+    align-items: center;
     padding: 40px;
     width: 100%;
     gap: 20px;
@@ -67,6 +58,7 @@
     flex-direction: column;
 }
 .parte2-form-cadastro{
+    align-items: center;
     padding: 40px;
     width: 100%;
     gap: 20px;
@@ -94,4 +86,44 @@
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-primary-1);
+}
+.line-cadastro{
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-primary-1);
+}
+.input-submit-form-cadastro{
+    margin-top: 10px;
+    justify-content: center;
+    width: 50%;
+    padding: 5px;
+    border: 1px solid var(--color-primary-1);
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    color: var(--color-primary-1);
+    font-weight: 600;
+}
+.area-termos-privacidade-cadastro{
+    margin-top: 30px;
+    font-size: 0.625rem;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+}
+.termos-privacidade-cadastro{
+    text-decoration: none;
+    color: var(--color-primary-5);
+}
+.area-login-cadastro{
+    margin-top: 20px;
+    font-size: 0.625rem;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+}
+.login-cadastro{
+    text-decoration: none;
+    color: var(--color-primary-5);
 }
