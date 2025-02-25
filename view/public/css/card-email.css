@@ -72,3 +72,14 @@ body{
     background-color: #557153;
     color: #ffffff;
 }
+
+.esqueci_senha-card_email-seta_voltar{
+    position: relative;
+    left: 10%;
+    display: grid;
+}
+
+.esqueci_senha-card_email-seta_voltar i{
+    font-size: 2rem;
+    color: #2D8C37;
+}
