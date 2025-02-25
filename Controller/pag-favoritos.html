@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Página Inicial</title>
+    <title>Página Favoritos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../View/CSS/menu-pg-inicial.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/View/CSS/pag-favoritos.css">
+    <link rel="stylesheet" href="menu-pg-inicial.html">
 
 </head>
 <body>
@@ -52,27 +54,36 @@
 
     </section>
 
-    <section class="cards-favoritos">
+    <section class = area-favoritos>
         <h1>Itens Favoritados</h1>
-        <div class="cards">
-            <img src="imagem.jpg" alt="">
-            <h1 class = especie>Equino</h1>
-            <h2 class = valor>R$000,00</h2>
-        </div>
-        
-        <div class="cards">
-            <img src="imagem.jpg" alt="">
-            <h1 class = especie>Galinaceo</h1>
-            <h2 class = valor>R$000,00</h2>
-        </div>
-        
-        <div class="cards">
-            <img src="imagem.jpg" alt="">
-            <h1 class = especie>Bovino</h1>
-            <h2 class = valor>R$000,00</h2>
-        </div>
-    </section>
+        <section class="cards-favoritos">
+            
+            <div class="cards-container">
+                <div class="card">
+                    <img src="/View/Public/Imagens/img-menu-pg-inicial/image.png" alt="Equino">
+                    <h1>Equino da raça Percheron</h1>
+                    <h2>R$00,00</h2>
+                    <div class="stars">★</div>
+                    <button class="btn">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="/View/Public/Imagens/img-menu-pg-inicial/image.png" alt="Galináceo">
+                    <h1>Galináceo da raça Índio</h1>
+                    <h2>R$00,00</h2>
+                    <div class="stars">★</div>
+                    <button class="btn">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="/View/Public/Imagens/img-menu-pg-inicial/image.png" alt="Bovino">
+                    <h1>Bovino da raça Angus</h1>
+                    <h2>R$00,00</h2>
+                    <div class="stars">★</div>
+                    <button class="btn">Comprar</button>
+                </div>
+            </div>
+        </section>
 
+    </section>
 
 
 
