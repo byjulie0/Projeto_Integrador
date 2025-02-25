@@ -1,3 +1,6 @@
+<?php
+include "menu-pg-inicial.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
