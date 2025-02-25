@@ -33,7 +33,7 @@
                 <div class="line-cadastro"></div>
             </div>
             <p class="area-termos-privacidade-cadastro">
-                Ao se inscrever, você concorda com as políticas do John Rooster <a href="#" class="termos-privacidade-cadastro">Termos de serviço</a> & <a href="#" class="termos-privacidade-cadastro">Políticas de privacidade</a>
+                Ao se inscrever, você concorda com as políticas do John Rooster <a href="#" class="termos-privacidade-cadastro">Termos de serviço & Políticas de privacidade</a>
             </p>
             <p class="area-login-cadastro">
                 Já tem uma conta? <a href="#" class="login-cadastro">Entre</a>
