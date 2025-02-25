@@ -83,7 +83,7 @@
     -moz-appearance: none;
     background-color: #FFFFFF;
     position: relative;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     color: var(--color-primary-1);
 }
@@ -126,4 +126,21 @@
 .login-cadastro{
     text-decoration: none;
     color: var(--color-primary-5);
+}
+.main-cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon-voltar-cadastro{
+    font-size: 2rem;
+    color: var(--color-primary-1);
+    text-decoration: none;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    margin-top: 90px;
+    margin-left: 100px;
 }
