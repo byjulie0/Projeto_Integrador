@@ -4,8 +4,9 @@
     height: auto;
     width: 100%;
     padding: 5rem;
-    margin: center;
-    margin-top: center;
+    margin: justify;
+    margin-top: justify;
     font-size: 1rem;
+    text-align: justify;
     
 }
