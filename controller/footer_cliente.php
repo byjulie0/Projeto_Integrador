@@ -29,7 +29,10 @@ include "menu-pg-inicial.php";
                 <a href="#">johnrooster@gmail.com</a>
             </address>
             <address>
-                <a href="#">R.do Parque,75 - Centro, Campo Grande - MS,79002-052</a>
+                <a href="#">R. do Parque, 75 - Centro</a>
+            </address>
+            <address>
+                <a href="#">Campo Grande - MS, 79002-052</a>
             </address>
         </div>
         
