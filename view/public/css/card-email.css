@@ -75,11 +75,11 @@ body{
 
 .esqueci_senha-card_email-seta_voltar{
     position: relative;
-    left: 10%;
-    display: grid;
+    right: 10%;
+    transform: translateY(35px);
 }
 
-.esqueci_senha-card_email-seta_voltar i{
+.esqueci_senha-card_email-enchaminhar i{
     font-size: 2rem;
     color: #2D8C37;
 }
