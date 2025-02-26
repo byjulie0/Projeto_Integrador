@@ -17,27 +17,27 @@ include 'menu-pg-inicial.html';
         <div class="categoria_area_cards_pg_inicial">
 
             <div class="categoria_cards_pg_inicial ">
-                <a href="https://chromewebstore.google.com/" class="card_categoria_pg_inicial card-galinha-pg_inicial_categorias">
+                <a href="https://chromewebstore.google.com/" class="card_categoria_pg_inicial card_galinha_pg_inicial_categorias">
                 </a>
             </div>
 
             <div class="categoria_cards_pg_inicial ">
-                <a href="" class="card_categoria_pg_inicial card-boi-pg_inicial_categorias">
+                <a href="" class="card_categoria_pg_inicial card_boi_pg_inicial_categorias">
                 </a>
             </div>
 
             <div class="categoria_cards_pg_inicial">
-                <a href="" class="card_categoria_pg_inicial card-cavalo-pg_inicial_categorias">
+                <a href="" class="card_categoria_pg_inicial card_cavalo_pg_inicial_categorias">
                 </a>
             </div>
 
             <div class="categoria_cards_pg_inicial">
-                <a href="" class="card_categoria_pg_inicial card-produtos-pg_inicial_categoriasl">
+                <a href="" class="card_categoria_pg_inicial card_produtos_pg_inicial_categorias">
                 </a>
             </div>
 
             <div class="categoria_cards_pg_inicial">
-                <a href="" class="card_categoria_pg_inicial card-campeao-pg_inicial_categorias">
+                <a href="" class="card_categoria_pg_inicial card_campeao_pg_inicial_categorias">
                 </a>
             </div>
         </div>
