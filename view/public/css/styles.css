@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /* Fonte */
 
 
 /* Paleta de cores das páginas */
@@ -11,15 +11,14 @@
     --color-primary-6: #729762;
     --color-primary-7: #EDF1D6;
     --color-primary-8: #E7F0DC;
-}
 
-:root{ 
     --color-detalhes-9: #2278F4;
-    --color-detalhes-10: #DB2828;
-    --color-detalhes-11: #4B914B;
-    --color-detalhes-12: #798645;
-    --color-detalhes-13: #609966;
-    --color-detalhes-14: #729762;
-    --color-detalhes-15: #EDF1D6;
+    --color-botao-op-Cancelar: #DB2828; /*Op = Operação*/
+    --color-botao-op-Pendente: #DBA928; /*Op = Operação*/
+    --color-botao-op-Concluido: #2D8C37; /*Op = Operação*/
+    --color-fonte: #40513B;
+    --color-icones: #EDF3EB;
+    --color-detalhes-15: #F7F9FF;
     --color-detalhes-16: #E7F0DC;
 }
+
