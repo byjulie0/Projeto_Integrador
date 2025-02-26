@@ -1,7 +1,8 @@
+@import url(style.css);
 .footer_cliente{
     width: 100%;
     height: 100%;
-    background-color: #40513B;
+    background-color: var(--color-primary-1);
 }
 .grid-container {
     display: grid;
@@ -19,10 +20,10 @@
 a {
     text-decoration: none;
     color: inherit;
-    color: #E7F0DC;
+    color: var(--color-detalhes-16);
 }
 p {
-    color: #E7F0DC;
+    color: var(--color-detalhes-16);
     font-family: "Poppins", serif;
     font-size: 14px;
     margin: 1px;
@@ -31,7 +32,7 @@ address{
     font-size: 14px;
 }
 h3{
-    color: #E7F0DC;
+    color: var(--color-detalhes-16);
     font-family: "Poppins", serif;
     font-size: 14px;
     margin: 8px 12px;
@@ -47,9 +48,9 @@ hr{
     font-style: normal;
 }
 .footer_cli_item{
-    border: 1px;
+    /* border: 1px;
     border-color: #121810;
-    border-style: solid;
+    border-style: solid; */
     padding-left: 20px;
     padding-right: 30px;
     text-align: left;

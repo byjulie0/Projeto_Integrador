@@ -14,9 +14,8 @@ include "menu-pg-inicial.php";
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<!-- Início do rodape -->
 <footer class="footer_cliente">
-
     <div class="grid-container">
 
         <div id="tab1" class="footer_cli_item">
@@ -57,7 +56,6 @@ include "menu-pg-inicial.php";
             <a href="#">Nossa História</a>
         </div>
         
-        
         <div id="tab5" class="footer_cli_item">
             <h3>Pagamento</h3>
             <hr>
@@ -73,8 +71,8 @@ include "menu-pg-inicial.php";
             <a href="#">Minhas Compras</a>
             <a href="#">Produtos Favoritados</a>
         </div>
-        
     </div>
 </footer>
+  <!-- Fim do rodape -->
 </body>
 </html>
