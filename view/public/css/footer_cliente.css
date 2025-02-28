@@ -3,6 +3,7 @@
     width: 100%;
     height: 300px;
     background-color: var(--color-primary-1);
+    font-family: "Poppins", serif;
 }
 .grid-container {
     display: grid;
@@ -22,18 +23,15 @@ a {
 }
 p {
     color: var(--color-detalhes-16);
-    font-family: "Poppins", serif;
     font-size: 14px;
     margin: 1px;
 }
 address{
-    font-family: "Poppins", serif;
     font-size: 14px;
     line-height:10px;
 }
 h3{
     color: var(--color-detalhes-16);
-    font-family: "Poppins", serif;
     font-size: 14px;
     margin: 8px 12px;
     width: 150px;
@@ -43,7 +41,6 @@ hr{
     margin: 8px;
 }
 .poppins-regular {
-    font-family: "Poppins", serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -100,7 +97,6 @@ hr{
 }
 #tab5 p{
     font-size: 14px;
-    font-family: "Poppins", serif;
     display: block;
     width: 220px;
     margin: 0px 12px;
