@@ -47,3 +47,6 @@ include 'menu-pg-inicial.php';
 </body>
 </html>
 
+<?php
+include 'footer_cliente.php';
+?>
