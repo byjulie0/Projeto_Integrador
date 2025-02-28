@@ -4,8 +4,9 @@
 .texto-termos-e-condicoes{
     max-width: 100%;
     margin: 20px auto;
-    padding: 20px;
+    padding: 10%;
     font-family: 'poppins', sans-serif;
+    text-align: justify;
 }
 section{
     color: var(--color-fonte);
@@ -14,6 +15,8 @@ section{
 }
 .titulo-termos-e-condicoes{
     color: var(--color-fonte);
+    text-align: center;
+    margin: 50px;
     
 }
 .sub-titulo2-termos-e-condicoes{
