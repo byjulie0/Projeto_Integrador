@@ -1,3 +1,4 @@
+/* Estilo do container principal */
 .container {
     width: 80%;
     margin: auto;
@@ -11,6 +12,7 @@
     font-size: 24px;
 }
 
+/* Estilo dos cards de lotes */
 .lotes-container {
     display: flex;
     flex-wrap: wrap;
@@ -55,6 +57,7 @@
     background-color: var(--color-primary-5);
 }
 
+/* Estilo do rodapé */
 footer {
     background-color: var(--color-primary-1);
     color: white;
@@ -95,41 +98,4 @@ footer {
 .social-icons a {
     color: white;
     font-size: 20px;
-}
-.nav-page-btns {
-    display: flex;
-    flex-direction: row;
-    gap: 20px; /* Espaçamento entre os botões */
-    align-items: center;
-    justify-content: center;
-}
-
-.nav-btns {
-    text-decoration: none;
-    color: var(--color-primary-1);
-    display: flex;
-    flex-direction: row; /* Ícone e texto na mesma linha */
-    align-items: center;
-    font-weight: 700;
-    font-size: 16px;
-    gap: 8px; /* Espaço entre ícone e texto */
-}
-
-.nav-btns i {
-    font-size: 20px; /* Ajustei o tamanho do ícone */
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .nav-page-btns {
-        gap: 15px;
-    }
-
-    .nav-btns {
-        font-size: 14px;
-    }
-
-    .nav-btns i {
-        font-size: 18px;
-    }
 }
