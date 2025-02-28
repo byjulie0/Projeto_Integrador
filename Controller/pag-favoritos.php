@@ -1,4 +1,6 @@
-
+<?php
+ include 'menu-pg-inicial.html';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,47 +17,6 @@
 
 </head>
 <body>
-
-    <!-- Início do menu -->
-
-    <section class="menu-favoritos">
-        <div class="menu-content">
-            <div class="logo">
-                <img src="../View/Public/Imagens/img-menu-pg-inicial/2 Sem Título_20250212224411.png" alt="" class="logo-img">
-                <h3 class="logo-title">John Rooster</h3>
-            </div>
-            <div class="nav-link">
-                <a href="" class="nav-item">Categorias</a>
-                <a href="" class="nav-item">Campeões do mês</a>
-                <a href="" class="nav-item">Mais vendidos</a>
-            </div>
-            <div class="search-container">
-                <input type="text" placeholder="O que deseja buscar?" />
-                <button type="submit">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </div>
-            <div class="nav-page-btns">
-                <a href="" class="nav-btns">
-                    <i class="bi bi-person"></i>
-                    
-                    <span class="nav-text">Perfil</span>
-                </a>
-                <a href="" class="nav-btns">
-                    <i class="bi bi-bell"></i>
-                    
-                    <span class="nav-text">Notificações</span>
-                </a>
-                <a href="" class="nav-btns">
-                    <i class="bi bi-cart"></i>
-                    
-                    <span class="nav-text">Carrinho</span>
-                </a>
-            </div>
-        </div>
-
-    </section>
-
     <section class = area-favoritos>
         <h1 class="favoritos-title"><i class="bi bi-chevron-left"></i> Itens Favoritados</h1>
         <section class="cards-favoritos">
