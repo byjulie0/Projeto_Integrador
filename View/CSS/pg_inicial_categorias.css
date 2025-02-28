@@ -9,7 +9,7 @@
 .categoria_title_pg_inicial {
   text-align: left;
   margin-left: 90px;
-  color: var(--color-primary-3);
+  color: var(--color-primary-1);
   font-size: 28px;
 }
 .categoria_area_cards_pg_inicial {
@@ -41,7 +41,7 @@
   background-position: center;
   border-radius: 20px;
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3);
-  transition: ease;
+  transition: ease 100ms;
 }
 
 /* Cards dos animais */
@@ -68,7 +68,6 @@
 /* Hover dos cards */
 .card_galinha_pg_inicial_categorias:hover {
   background-image: url(../Public/Imagens/img_pg_inicial_categorias/galinha_hover_categorias_pg_inicial.png);
-  opacity: 50%;
 }
 
 .card_boi_pg_inicial_categorias:hover {
@@ -76,7 +75,7 @@
 }
 
 .card_cavalo_pg_inicial_categorias:hover {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/cavalo_hover_categorias_pg_inicial.png.png);
+  background-image: url(../Public/Imagens/img_pg_inicial_categorias/cavalo_hover_categorias_pg_inicial.png);
 }
 
 .card_produtos_pg_inicial_categorias:hover {
@@ -84,5 +83,5 @@
 }
 
 .card_campeao_pg_inicial_categorias:hover {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/campeoes_hover_categorias_pg_inicial.png.png);
+  background-image: url(../Public/Imagens/img_pg_inicial_categorias/campeoes_hover_categorias_pg_inicial.png);
 }
