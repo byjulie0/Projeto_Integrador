@@ -8,7 +8,7 @@ include 'menu-pg-inicial.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termos e Condições</title> 
-    <link rel="stylesheet" href=".././view/public/css/termos-e-condicoes.css">
+    <link rel="stylesheet" href="../view/public/css/termos-e-condicoes.css">
 </head>
 <body>
     <header>
