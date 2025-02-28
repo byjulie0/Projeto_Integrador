@@ -1,16 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url(styles.css);
 
-.titulo-termo-e-condicoes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:var(--color-fonte);
+.texto-termos-e-condicoes{
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'poppins', sans-serif;
 }
-span{
+section{
     color: var(--color-fonte);
-}
-.texto-termos-e-econdicoes{
     text-align: justify;
-    font-family: ;
+
+}
+.titulo-termos-e-condicoes{
+    color: var(--color-fonte);
+    
+}
+.sub-titulo2-termos-e-condicoes{
+    padding: 6px;
+
+}
+.sub-titulo-termos-e-condicoes{
+    padding: 8px;
+}
+li{
+    margin: 20px;
 }
