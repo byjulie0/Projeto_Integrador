@@ -1,5 +1,5 @@
 <?php
- include 'menu-pg-inicial.html';
+ include 'menu-pg-inicial.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,7 +9,7 @@
     <title>Página Favoritos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../View/CSS/menu-pg-inicial.css">
+    <link rel="stylesheet" href="../View/Public/css/pag-favoritos.css">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="/View/CSS/pag-favoritos.css">
@@ -23,7 +23,7 @@
             
             <div class="cards-container-pag-fav">
                 <div class="card-pag-fav">
-                    <img class="card-img-pag-fav" src="/View/Public/Imagens/img-menu-pg-inicial/image.png" alt="Equino">
+                    <img class="card-img-pag-fav" src="../View/Public/imagens/image.png" alt="Equino">
                 <div class="card-header-pag-fav">
                     <h1>Equino da raça Percheron</h1>
                     <div class="stars-pag-fav">★</div>
@@ -35,7 +35,7 @@
             </div>
 
             <div class="card-pag-fav">
-                <img class="card-img-pag-fav" src="/View/Public/Imagens/img-menu-pg-inicial/image.png" alt="Galináceo">
+                <img class="card-img-pag-fav" src="../View/Public/imagens/image.png" alt="Galináceo">
                 <div class="card-header-pag-fav">
                     <h1>Galináceo da raça Índio</h1>
                     <div class="stars-pag-fav">★</div>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="card-pag-fav">
-                <img class="card-img-pag-fav" src="/View/Public/Imagens/img-menu-pg-inicial/image.png" alt="Bovino">
+                <img class="card-img-pag-fav" src="../View/Public/imagens/image.png" alt="Bovino">
                 <div class="card-header-pag-fav">
                     <h1>Bovino da raça Angus</h1>
                     <div class="stars-pag-fav">★</div>
@@ -71,3 +71,8 @@
     
 </body>
 </html>
+
+<?php
+
+include 'footer_cliente.php';
+?>
