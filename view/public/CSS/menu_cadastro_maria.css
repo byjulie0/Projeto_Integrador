@@ -23,8 +23,10 @@
     height: 7.884rem;
 }
 .nome-menu-cadastro{
+    font-weight: 600;
     margin-left: 20px;
     margin-top: 50px;
     color: #FFFFFF;
     font-size: 2rem;
+    align-items: center;
 }

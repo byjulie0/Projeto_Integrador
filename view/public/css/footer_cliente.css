@@ -22,7 +22,7 @@ a {
     color: var(--color-detalhes-16);
 }
 p {
-    color: var(--color-detalhes-16);
+    /* color: var(--color-detalhes-16); */
     font-size: 14px;
     margin: 1px;
 }
