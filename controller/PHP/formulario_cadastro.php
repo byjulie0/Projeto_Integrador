@@ -1,3 +1,7 @@
+<?php
+    include 'menu_cadastro_maria.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
