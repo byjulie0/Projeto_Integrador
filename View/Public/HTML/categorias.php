@@ -1,3 +1,6 @@
+<?php
+//nclude '/Projeto_Integrador/controller/menu-pg-inicial.php';
+?>
 
 <!-- index.html -->
 <!DOCTYPE html>
@@ -11,16 +14,17 @@
 </head>
 <body>
     <?php
-     include './controller/menu-pg-inicial.html';
-    ?>
+     include "../../../controller/menu-pg-inicial.php"
+
+   ?>
     <h1>Percheron</h1>
     <div class="carousel">
         <div class="arrow" onclick="prevSlide()">&#10094;</div>
         <div class="cards" id="carousel-cards">
-            <div class="card"><img src="horse1.jpg" alt="Horse 1"><p>Peso: </p><p>Raça: </p><p>Genealogia: </p><p>Idade: </p><p class="price">R$00,00</p><a href="#" class="btn">Comprar</a></div>
-            <div class="card"><img src="horse2.jpg" alt="Horse 2"><p>Peso: </p><p>Raça: </p><p>Genealogia: </p><p>Idade: </p><p class="price">R$00,00</p><a href="#" class="btn">Comprar</a></div>
-            <div class="card"><img src="horse3.jpg" alt="Horse 3"><p>Peso: </p><p>Raça: </p><p>Genealogia: </p><p>Idade: </p><p class="price">R$00,00</p><a href="#" class="btn">Comprar</a></div>
-            <div class="card"><img src="horse4.jpg" alt="Horse 4"><p>Peso: </p><p>Raça: </p><p>Genealogia: </p><p>Idade: </p><p class="price">R$00,00</p><a href="#" class="btn">Comprar</a></div>
+            <div class="card"><img src="../Imagens/cavalo.jpg" alt="Horse 1"><p>Peso: </p><p>Raça: </p><p>Genealogia: </p><p>Idade: </p><p class="price">R$00,00</p><a href="#" class="btn">Comprar</a></div>
+            <div class="card"><img src="../Imagens/cavalo.jpg" alt="Horse 2"><p>Peso: </p><p>Raça: </p><p>Genealogia: </p><p>Idade: </p><p class="price">R$00,00</p><a href="#" class="btn">Comprar</a></div>
+            <div class="card"><img src="../Imagens/cavalo.jpg" alt="Horse 3"><p>Peso: </p><p>Raça: </p><p>Genealogia: </p><p>Idade: </p><p class="price">R$00,00</p><a href="#" class="btn">Comprar</a></div>
+            <div class="card"><img src="../Imagens/cavalo.jpg" alt="Horse 4"><p>Peso: </p><p>Raça: </p><p>Genealogia: </p><p>Idade: </p><p class="price">R$00,00</p><a href="#" class="btn">Comprar</a></div>
         </div>
         <div class="arrow" onclick="nextSlide()">&#10095;</div>
     </div>
