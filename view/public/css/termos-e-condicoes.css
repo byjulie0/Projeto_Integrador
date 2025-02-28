@@ -7,14 +7,15 @@
     padding: 10%;
     font-family: 'poppins', sans-serif;
     text-align: justify;
+    color: var(--color-fonte);
 }
 section{
-    color: var(--color-fonte);
+    /* color: var(--color-fonte); */
     text-align: justify;
 
 }
 .titulo-termos-e-condicoes{
-    color: var(--color-fonte);
+    /* color: var(--color-fonte); */
     text-align: center;
     margin: 50px;
     

@@ -9,7 +9,6 @@ include 'menu-pg-inicial.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termos e Condições</title> 
     <link rel="stylesheet" href=".././view/public/css/termos-e-condicoes.css">
-    <link rel="stylesheet" href="../view/public/css/styles.css">
 </head>
 <body>
     <header>
@@ -73,11 +72,18 @@ include 'menu-pg-inicial.php';
 
         <section>
             <h2 class ="sub-titulo-termos-e-condicoes">6. Contato</h2>
-            <p>Para dúvidas, reclamações ou sugestões, entre em contato conosco através do WhatsApp: [inserir número de telefone] ou e-mail: [inserir e-mail].</p>
+            <p>Para dúvidas, reclamações ou sugestões, entre em contato conosco através do WhatsApp: [inserir número de telefone] ou e-mail: johnrooster@gmail.com.</p>
             <p>Agradecemos por escolher a John Rooster! Estamos à disposição para oferecer os melhores produtos e serviços para o seu negócio agropecuário.</p>
             <p>John Rooster<br>Sua parceira em soluções agropecuárias.</p>
         </section>
     </main>
+    <footer>
+        <?php
+            include 'footer_cliente.php';
+        ?>
+
+        
+    </footer>
 
 </body>
 </html>
