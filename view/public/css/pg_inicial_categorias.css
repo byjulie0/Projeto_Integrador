@@ -5,7 +5,9 @@
   padding: 20px;
   font-family: "Poppins", sans-serif;
 }
-
+.cor{
+  color: red;
+}
 .categoria_title_pg_inicial {
   text-align: left;
   margin-left: 90px;
@@ -46,42 +48,42 @@
 
 /* Cards dos animais */
 .card_galinha_pg_inicial_categorias {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/galinha_categorias_pg_inicial.png);
+  background-image: url(../imagens/img_pg_inicial_categorias/galinha_categorias_pg_inicial.png);
 }
 
 .card_boi_pg_inicial_categorias {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/boi_categoria_pg_inicial.jpg);
+  background-image: url(../imagens/img_pg_inicial_categorias/boi_categoria_pg_inicial.jpg);
 }
 
 .card_cavalo_pg_inicial_categorias {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/cavalo_categorias_pg_inicial.png);
+  background-image: url(../imagens/img_pg_inicial_categorias/cavalo_categorias_pg_inicial.png);
 }
 
 .card_produtos_pg_inicial_categorias {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/produtos_categorias_pg_inicial.jpg);
+  background-image: url(../imagens/img_pg_inicial_categorias/produtos_categorias_pg_inicial.jpg);
 }
 
 .card_campeao_pg_inicial_categorias {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/campeoes_categorias_pg_inicial.jpg);
+  background-image: url(../imagens/img_pg_inicial_categorias/campeoes_categorias_pg_inicial.jpg);
 }
 
 /* Hover dos cards */
 .card_galinha_pg_inicial_categorias:hover {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/galinha_hover_categorias_pg_inicial.png);
+  background-image: url(../imagens/img_pg_inicial_categorias/galinha_hover_categorias_pg_inicial.png);
 }
 
 .card_boi_pg_inicial_categorias:hover {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/boi_hover_categoria_pg_inicial.png);
+  background-image: url(../imagens/img_pg_inicial_categorias/boi_hover_categoria_pg_inicial.png);
 }
 
 .card_cavalo_pg_inicial_categorias:hover {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/cavalo_hover_categorias_pg_inicial.png);
+  background-image: url(../imagens/img_pg_inicial_categorias/cavalo_hover_categorias_pg_inicial.png);
 }
 
 .card_produtos_pg_inicial_categorias:hover {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/produtos_hover_categorias_pg_inicial.png);
+  background-image: url(../imagens/img_pg_inicial_categorias/produtos_hover_categorias_pg_inicial.png);
 }
 
 .card_campeao_pg_inicial_categorias:hover {
-  background-image: url(../Public/Imagens/img_pg_inicial_categorias/campeoes_hover_categorias_pg_inicial.png);
+  background-image: url(../imagens/img_pg_inicial_categorias/campeoes_hover_categorias_pg_inicial.png);
 }
