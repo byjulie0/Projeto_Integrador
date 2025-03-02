@@ -9,8 +9,10 @@ body{
     display: grid;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 }
+
+/* CARD */
 
 .esqueci_senha-card_email{
     position: relative;
@@ -24,9 +26,11 @@ body{
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* CONTEÚDO DO CARD */
+
 .esqueci_senha-card_email-content h1{
     position: relative;
-    top: -100px;
+    top: -90px;
     left: 190px;
     color: #20261E;
     font-size: 1.4rem;
@@ -34,7 +38,7 @@ body{
 
 .esqueci_senha-card_email-content h3{
     position: relative;
-    top: -70px;
+    top: -60px;
     left: 15px;
     color: #40513B;
     font-size: 1rem;
@@ -64,7 +68,7 @@ body{
 
 .esqueci_senha-card_email-formulario button{
     position: relative;
-    top: 60px;
+    top: 70px;
     left: 225px;
     width: 125px;
     height: 25px;
@@ -78,6 +82,8 @@ body{
     background-color: #557153;
     color: #ffffff;
 }
+
+/* ICON (SETA PARA VOLTAR) */
 
 .esqueci_senha-card_email-seta_voltar{
     width: 2%;
