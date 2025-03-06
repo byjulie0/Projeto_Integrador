@@ -23,39 +23,45 @@
             
             <div class="cards-container-pag-fav">
                 <div class="card-pag-fav">
-                    <img class="card-img-pag-fav" src="../View/Public/imagens/image.png" alt="Equino">
-                <div class="card-header-pag-fav">
-                    <h1>Equino da raça Percheron</h1>
-                    <div class="stars-pag-fav">★</div>
-                </div>
-                <h2>R$00,00</h2>
-                    <div class="botao-pag-fav">
-                    <button class="btn-pag-fav">Comprar</button>
-                    </div>
-            </div>
-
-            <div class="card-pag-fav">
-                <img class="card-img-pag-fav" src="../View/Public/imagens/image.png" alt="Galináceo">
-                <div class="card-header-pag-fav">
-                    <h1>Galináceo da raça Índio</h1>
-                    <div class="stars-pag-fav">★</div>
-                </div>
-                <h2>R$00,00</h2>
-                    <div class="botao-pag-fav">
-                    <button class="btn-pag-fav">Comprar</button>
-                    </div>
-            </div>
-
-            <div class="card-pag-fav">
-                <img class="card-img-pag-fav" src="../View/Public/imagens/image.png" alt="Bovino">
+                    <img class="card-img-pag-fav" src="../View/Public/imagens/post-image-35635.jpg" alt="Equino">
                 <div class="card-header-pag-fav">
                     <h1>Bovino da raça Angus</h1>
                     <div class="stars-pag-fav">★</div>
                 </div>
                 <h2>R$00,00</h2>
                     <div class="botao-pag-fav">
+                        <button class="excluir-pag-fav">Excluir</button>
+                        <button class="btn-pag-fav">Comprar</button>
+                    </div>
+                <h3>3,7mil Vendidos</h3>
+            </div>
+
+            <div class="card-pag-fav">
+                <img class="card-img-pag-fav" src="../View/Public/imagens/d18f431605dda131f2eb4ffd65f0d492.jpg" alt="Galináceo">
+                <div class="card-header-pag-fav">
+                    <h1>Galináceo da raça Índio</h1>
+                    <div class="stars-pag-fav">★</div>
+                </div>
+                <h2>R$00,00</h2>
+                    <div class="botao-pag-fav">
+                        <button class="excluir-pag-fav">Excluir</button>
+                        <button class="btn-pag-fav">Comprar</button>
+                    </div>
+                <h3>3,7mil Vendidos</h3>
+            </div>
+
+            <div class="card-pag-fav">
+                <img class="card-img-pag-fav" src="../View/Public/imagens/8e00710f9a371a83a46a8b64167b9f98.png" alt="Bovino">
+                <div class="card-header-pag-fav">
+                    <h1>Equino da raça Percheron</h1>
+                    <div class="stars-pag-fav">★</div>
+                </div>
+                <h2>R$00,00</h2>
+                    <div class="botao-pag-fav">
+                    <button class="excluir-pag-fav">Excluir</button>
                     <button class="btn-pag-fav">Comprar</button>
                     </div>
+                <h3>3,7mil Vendidos</h3>
                 </div>
             </div>
         </section>

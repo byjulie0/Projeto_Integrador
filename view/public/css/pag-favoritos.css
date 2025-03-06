@@ -66,6 +66,7 @@ body {
     flex-wrap: wrap;
     justify-content: left;
     gap: 30px;
+    margin-bottom: 100px;
 }
 .cards-container-pag-fav {
     display: flex;
@@ -87,7 +88,7 @@ body {
     position: relative;
 }
 .card-pag-fav img {
-    width: 70%;
+    width: 300px;
     display: block;
     margin: 0 auto;
     max-width: 100%;
@@ -111,10 +112,19 @@ body {
     color: #333;
     text-align: left;
 }
+
 .stars-pag-fav {
     color: gold;
     margin: 5px 0;
 }
+
+.botao-pag-fav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .btn-pag-fav {
     background-color: rgb(85, 140, 75);
     color: white;
@@ -123,7 +133,24 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9em;
-    position: absolute;
     bottom: 10px;
     right: 10px;
 }
+
+.excluir-pag-fav {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    text-decoration: underline;
+
+}
+
+.card-pag-fav h3 {
+    font-size: 0.6em;
+    color: #333;
+    text-align: left;
+}
+
