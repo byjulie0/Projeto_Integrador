@@ -12,7 +12,7 @@
 <body>
 <!-- Início do rodape -->
 <footer class="footer_cliente">
-    <div class="grid-container">
+    <div class="grid_container_footer">
 
         <div id="tab1" class="footer_cli_item">
             <h3>Contato e Suporte</h3>
