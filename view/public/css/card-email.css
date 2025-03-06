@@ -19,7 +19,7 @@ body{
     left: 20%;
     top: -15px;
     width: 800px;
-    height: 400px;
+    height: 450px;
     background-color: #DFEBE0;
     padding: 110px;
     border-radius: 2px;
@@ -30,7 +30,7 @@ body{
 
 .esqueci_senha-card_email-content h1{
     position: relative;
-    top: -90px;
+    top: -85px;
     left: 190px;
     color: #20261E;
     font-size: 1.4rem;
@@ -38,7 +38,7 @@ body{
 
 .esqueci_senha-card_email-content h3{
     position: relative;
-    top: -60px;
+    top: -40px;
     left: 15px;
     color: #40513B;
     font-size: 1rem;
@@ -51,6 +51,8 @@ body{
     outline: none;
     border-radius: 2px;
     padding: 10px 15px;
+    position: relative;
+    top: 40px;
 }
 
 .esqueci_senha-card_email-formulario input::placeholder{
@@ -62,13 +64,14 @@ body{
     height: 0.5px;
     position: relative;
     left: 2px;
+    top: 50px;
     transform: translateY(20px);
     background-color: #40513B;
 }
 
 .esqueci_senha-card_email-formulario button{
     position: relative;
-    top: 70px;
+    top: 120px;
     left: 225px;
     width: 125px;
     height: 25px;
