@@ -9,6 +9,7 @@ include 'menu-pg-inicial.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termos e Condições</title> 
     <link rel="stylesheet" href="../view/public/css/termos-e-condicoes.css">
+    <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid">
 </head>
 <body>
     <header>
@@ -16,6 +17,7 @@ include 'menu-pg-inicial.php';
     </header>
 
     <main class = "texto-termos-e-condicoes">
+    <i class="fa-solid fa-chevron-left"></i>
         <section>
             <h2 class ="sub-titulo-termos-e-condicoes">Bem-vindo(a) à John Rooster!</h2>
             <p>Ao utilizar nossos serviços e realizar compras em nossa plataforma online, você concorda com os seguintes Termos e Condições. Por favor, leia atentamente antes de prosseguir com qualquer transação.</p>
@@ -77,6 +79,7 @@ include 'menu-pg-inicial.php';
             <p>John Rooster<br>Sua parceira em soluções agropecuárias.</p>
         </section>
     </main>
+
     <footer>
         <?php
             include 'footer_cliente.php';
