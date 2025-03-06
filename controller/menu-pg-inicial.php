@@ -1,4 +1,3 @@
-@ -1,55 +0,0 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +6,7 @@
     <title>Menu Página Inicial</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/Projeto_Integrador/view/public/css/menu-pg-inicial.css">
+    <link rel="stylesheet" href="../view/public/css/cliente.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
@@ -18,7 +17,7 @@
     <section class="menu-pg-inicial">
         <div class="menu-content-pg-inicial">
             <div class="logo-menu">
-                <img src="/Projeto_Integrador/view/public/imagens/2 Sem Título_20250212224411.png" alt="" class="logo-menu-img">
+                <img src="../view/public/imagens/2 Sem Título_20250212224411.png" alt="" class="logo-menu-img">
                 <h3 class="logo-menu-title">John Rooster</h3>
             </div>
             <div class="nav-link-pg-inicial">

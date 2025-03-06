@@ -12,12 +12,13 @@
 }
 .titulo-nossa-historia{
     text-align: center;
-    color: rgba(55, 139, 55, 0.433);
+    color:var();
     margin: 50px;
+    font-size: 60px;
     /* background-color: aqua; */
 }
 .nossa_historia i {
-font-size: 2.5rem;
+font-size: 3.5rem;
 position: absolute;
 left: 50px;
 top: 50px;

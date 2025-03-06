@@ -1,3 +1,6 @@
+<?php
+    include 'menu-pg-inicial.php';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -5,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa História</title>
-    <link rel="stylesheet" href="nossa-hitoria.css">
+    <link rel="stylesheet" href="../view/public/css/cliente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -18,5 +21,11 @@
                 </div>
         </section>
     </header>
+    <footer>
+        <?php
+            include 'footer_cliente.php';
+        ?>
+    
+    </footer>
 </body>
 </html>
