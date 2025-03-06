@@ -1,4 +1,24 @@
-@import url(\style.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{ 
+    --color-primary-1: #40513B;
+    --color-primary-2: #557153;
+    --color-primary-3: #4B914B;
+    --color-primary-4: #798645;
+    --color-primary-5: #609966;
+    --color-primary-6: #729762;
+    --color-primary-7: #EDF1D6;
+    --color-primary-8: #E7F0DC;
+
+    --color-detalhes-9: #2278F4;
+    --color-botao-op-Cancelar: #DB2828; /*Op = Operação*/
+    --color-botao-op-Pendente: #DBA928; /*Op = Operação*/
+    --color-botao-op-Concluido: #2D8C37; /*Op = Operação*/
+    --color-fonte: #20261E;
+    --color-icones: #EDF3EB;
+    --color-detalhes-15: #F7F9FF;
+    --color-detalhes-16: #E7F0DC;
+}
 .footer_cliente{
     width: 100%;
     height: 300px;
@@ -13,30 +33,33 @@
     height: 265px;
     position: relative;
     grid-template-columns: 220px 200px 260px 220px;
-    column-gap: 50px;
+    column-gap: 60px;
     padding-top: 48px ; 
 }
-a {
+.footer_cli_item a {
     text-decoration: none;
     color: inherit;
     color: var(--color-detalhes-16);
 }
-p {
+.footer_cli_item a:hover{
+    text-decoration: underline;
+}
+#tab5 p {
     color: var(--color-detalhes-16);
     font-size: 14px;
     margin: 1px;
 }
-address{
+.footer_cli_item address{
     font-size: 14px;
     line-height:10px;
 }
-h3{
+.footer_cli_item h3{
     color: var(--color-detalhes-16);
     font-size: 14px;
     margin: 8px 12px;
     width: 150px;
 }
-hr{
+.footer_cli_item hr{
     display: block;
     margin: 8px;
 }

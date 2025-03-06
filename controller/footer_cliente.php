@@ -34,9 +34,9 @@
         <div id="tab2" class="footer_cli_item">
             <h3>Siga nossas Redes</h3>
             <hr>
-            <a class="icones_redes" href="#"><i class="fa-brands fa-facebook" ></i></a>
-            <a class="icones_redes" href="#"><i class="fa-brands fa-instagram" ></i></a>
-            <a class="icones_redes" href="#"><i class="fa-brands fa-whatsapp" ></i></a>
+            <a href="#"><i class="fa-brands fa-facebook" ></i></a>
+            <a href="#"><i class="fa-brands fa-instagram" ></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp" ></i></a>
         </div>
         
         <div id="tab3" class="footer_cli_item">
@@ -55,7 +55,7 @@
         <div id="tab5" class="footer_cli_item">
             <h3>Pagamento</h3>
             <hr>
-            <p>Entre em contato com nossa equipe atráves do <u><a href="#">whatsapp</a></u></p>
+            <p>Entre em contato com nossa equipe atráves do <a href="#">whatsapp</a></p>
 
         </div>
 
