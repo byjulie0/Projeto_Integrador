@@ -1,34 +1,17 @@
-
-body {
-    background-color: var(--bg-color-01);
-    color: var(--text-color)
-}
-
-header {
-    position: fixed;
-    top:0;
-    left: 0;
-    width: 100%;
-    padding: 1.1rem;
-    background-color: var(--bg-color-01);
-    display: flex;
-    justify-content: space-between;
+.nossa_historia{
+    color: magenta;
+    text-align: justify;
     align-items: center;
-    z-index: 100;
-
-    /* border: solid 1px var(--color-02); TEST */
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
 }
-
-.logo {
-    font-size: 1.7rem;
-    color: var(--text-color);
-    font-weight: 600;
-    cursor: default;
+.texto-nossa-historia{
+    margin: 10px;
+    font-size: 40px;
 }
-
-.nav a {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    padding: 0.5rem 1rem;
-    transition: 0.4s;
+.titulo-nossa-historia{
+    text-align: center;
+    color: red;
+    margin: 50px;
 }
