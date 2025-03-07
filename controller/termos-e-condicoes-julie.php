@@ -19,7 +19,7 @@ include 'menu-pg-inicial.php';
         <a class = "setinha-termos-e-coondicoes"href="">
             <i class="fa-solid fa-chevron-left"></i>
         </a>
-            <section>
+            <section class="section-termos-e-condicoes">
                 <h2 class ="sub-titulo-termos-e-condicoes">Bem-vindo(a) à John Rooster!</h2>
                 <p class = "p-termos-e-condicoes">Ao utilizar nossos serviços e realizar compras em nossa plataforma online, você concorda com os seguintes Termos e Condições. Por favor, leia atentamente antes de prosseguir com qualquer transação.</p>
             </section>
