@@ -326,6 +326,141 @@ body {
 
 /* Final da categoria da pg inicial */
 
+/* Começo da pg favoritos */
+
+.area-favoritos{
+  background-color: white;
+  font-family: 'Poppins';
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 30px;
+  margin-top: 32px;
+  text-align: left;
+}
+
+.favoritos-title {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-left: 46px;
+  font-size: 1.1em;
+  color: #333;
+
+}
+
+.favoritos-title i {
+  margin-right: 50px;
+  text-align: left;
+  
+}
+
+.cards-favoritos {
+  text-align: left;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+.cards-container-pag-fav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  color: aliceblue;
+}
+
+.card-pag-fav {
+  width:300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex;
+  background-color: white;
+  border-radius: 5px;
+  gap: 18px;
+  padding: 20px;
+  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.card-pag-fav img {
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.card-header-pag-fav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-header-pag-fav h1 {
+  font-size: 1.1em;
+  margin: 10px 0;
+  color: #333;
+  text-align: left;
+}
+
+.card-pag-fav h2 {
+  font-size: 1.1em;
+  color: #333;
+  text-align: left;
+}
+
+.stars-pag-fav {
+  color: gold;
+  margin: 5px 0;
+}
+
+.botao-pag-fav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-pag-fav {
+  background-color: rgb(85, 140, 75);
+  color: white;
+  padding: 5px 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  bottom: 10px;
+  right: 10px;
+}
+
+.excluir-pag-fav {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  text-decoration: underline;
+
+}
+
+.card-pag-fav h3 {
+  font-size: 0.6em;
+  color: #333;
+  text-align: left;
+}
+
+/*Final da Pg Favoritos */
+
 /* CSS Termos e Condições */
 .texto-termos-e-condicoes{
   max-width: 100%;
@@ -341,18 +476,15 @@ body {
 section{
   color: var(--color-fonte);
   text-align: justify;
-
 }
 .titulo-termos-e-condicoes{
   color: var(--color-primary-1);
   text-align: center;
   margin: 20px 0;
-  
 }
 .sub-titulo2-termos-e-condicoes{
   padding: 6px;
   color: var(--color-primary-1);
-
 }
 .sub-titulo-termos-e-condicoes{
   padding: 8px;
@@ -370,6 +502,7 @@ section{
   font-size: 24px;
 }
 /* Fim do CSS de termos e condições*/
+
 
 
 /* Começo do CSS da página Cadastro*/
@@ -542,3 +675,31 @@ section{
   align-items: center;
 }
 /* Fim do CSS do Menu Cadastro*/
+
+/* Inicio-nossa-historia-valdir */
+.nossa_historia{
+  color: rgba(55, 139, 55, 0.433);
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+}
+.texto-nossa-historia{
+  margin: 10px;
+  font-size: 40px;
+}
+.titulo-nossa-historia{
+  text-align: center;
+  color:var();
+  margin: 50px;
+  font-size: 60px;
+  /* background-color: aqua; */
+}
+.nossa_historia i {
+font-size: 3.5rem;
+position: absolute;
+left: 50px;
+top: 50px;
+}
+/*Fim-nossa-historia-valdir */
