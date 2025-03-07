@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FOOTER</title>
-    <link rel="stylesheet" href="\Projeto_Integrador\view\public\css\footer_cliente.css">
+    <link rel="stylesheet" href="../view/public/css/cliente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 <body>
 <!-- Início do rodape -->
 <footer class="footer_cliente">
-    <div class="grid-container">
+    <div class="grid_container_footer">
 
         <div id="tab1" class="footer_cli_item">
             <h3>Contato e Suporte</h3>
@@ -34,9 +34,9 @@
         <div id="tab2" class="footer_cli_item">
             <h3>Siga nossas Redes</h3>
             <hr>
-            <a class="icones_redes" href="#"><i class="fa-brands fa-facebook" ></i></a>
-            <a class="icones_redes" href="#"><i class="fa-brands fa-instagram" ></i></a>
-            <a class="icones_redes" href="#"><i class="fa-brands fa-whatsapp" ></i></a>
+            <a href="#"><i class="fa-brands fa-facebook" ></i></a>
+            <a href="#"><i class="fa-brands fa-instagram" ></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp" ></i></a>
         </div>
         
         <div id="tab3" class="footer_cli_item">
@@ -55,7 +55,7 @@
         <div id="tab5" class="footer_cli_item">
             <h3>Pagamento</h3>
             <hr>
-            <p>Entre em contato com nossa equipe atráves do <u><a href="#">whatsapp</a></u></p>
+            <p>Entre em contato com nossa equipe atráves do <a href="#">whatsapp</a></p>
 
         </div>
 
