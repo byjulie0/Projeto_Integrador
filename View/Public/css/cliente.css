@@ -476,18 +476,15 @@ body {
 section{
   color: var(--color-fonte);
   text-align: justify;
-
 }
 .titulo-termos-e-condicoes{
   color: var(--color-primary-1);
   text-align: center;
   margin: 20px 0;
-  
 }
 .sub-titulo2-termos-e-condicoes{
   padding: 6px;
   color: var(--color-primary-1);
-
 }
 .sub-titulo-termos-e-condicoes{
   padding: 8px;
@@ -506,4 +503,30 @@ section{
 }
 /* Fim do CSS de termos e condições*/
 
-
+/* Inicio-nossa-historia-valdir */
+.nossa_historia{
+  color: rgba(55, 139, 55, 0.433);
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+}
+.texto-nossa-historia{
+  margin: 10px;
+  font-size: 40px;
+}
+.titulo-nossa-historia{
+  text-align: center;
+  color:var();
+  margin: 50px;
+  font-size: 60px;
+  /* background-color: aqua; */
+}
+.nossa_historia i {
+font-size: 3.5rem;
+position: absolute;
+left: 50px;
+top: 50px;
+}
+/*Fim-nossa-historia-valdir */
