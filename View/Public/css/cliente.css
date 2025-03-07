@@ -378,33 +378,35 @@ section{
   display: grid;
   align-items: center;
   height: 90vh;
+  font-family: 'Poppins', sans-serif;
 }
 
 .esqueci_senha-card_email{
   position: relative;
   left: 20%;
   top: -15px;
-  width: 800px;
+  width: 810px;
   height: 450px;
   background-color: #DFEBE0;
   padding: 110px;
   border-radius: 2px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .esqueci_senha-card_email-content h1{
   position: relative;
   top: -85px;
   left: 190px;
-  color: #20261E;
+  color: var(--color-fonte);
   font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .esqueci_senha-card_email-content h3{
   position: relative;
   top: -40px;
   left: 15px;
-  color: #40513B;
+  color: var(--color-primary-1);
   font-size: 1rem;
 }
 
@@ -417,6 +419,8 @@ section{
   padding: 10px 15px;
   position: relative;
   top: 40px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  color: #7c0428;
 }
 
 .esqueci_senha-card_email-formulario input::placeholder{
@@ -430,7 +434,7 @@ section{
   left: 2px;
   top: 50px;
   transform: translateY(20px);
-  background-color: #40513B;
+  background-color: var(--color-primary-1);
 }
 
 .esqueci_senha-card_email-formulario button{
@@ -442,11 +446,12 @@ section{
   background-color: #ffffff;
   border-radius: 2px;
   border: none;
-  color: #40513B;
+  color: var(--color-primary-1);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .esqueci_senha-card_email-formulario button:hover{
-  background-color: #557153;
+  background-color: var(--color-primary-2);
   color: #ffffff;
 }
 
@@ -458,7 +463,7 @@ section{
 }
 
 .esqueci_senha-card_email-enchaminhar i{
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   color: #2D8C37;
 }
 
