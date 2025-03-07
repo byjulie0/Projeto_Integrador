@@ -677,7 +677,6 @@ body {
 
 /* Inicio-nossa-historia- Valdir */
 .nossa_historia{
-  color: rgba(55, 139, 55, 0.433);
   text-align: justify;
   align-items: center;
   justify-content: center;
@@ -685,20 +684,25 @@ body {
   padding: 10px;
 }
 .texto-nossa-historia{
+  padding: 4%;
+  padding-top: 0%;
   margin: 10px;
-  font-size: 40px;
+  font-size: 1.5rem;
+  color: var(--color-fonte);
+  font-weight: 500;
+
 }
 .titulo-nossa-historia{
   text-align: center;
   color:var();
   margin: 50px;
-  font-size: 60px;
-  /* background-color: aqua; */
+  font-size: 2rem;
 }
-.nossa_historia i {
-font-size: 3.5rem;
-position: absolute;
-left: 50px;
-top: 50px;
+.nossa_historia a {
+  color: var(--color-primary-3);
+  font-size: 2rem;
+  position: absolute;
+  left: 6%;
+  top: 23%;
 }
 /*Fim-nossa-historia-valdir */
