@@ -2,19 +2,18 @@
 include '../controller/menu-pg-inicial.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../view/public/css/cliente.css">
 </head>
 <body>
     <div class="container">
         <div class="info">
-            <img src="logo_john_rooster.png" alt="John Rooster Logo">
+            <img src="../view/public/imagens/logo_john_rooster.png" alt="John Rooster Logo">
             <p>Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo com qualidade e confiança para o seu negócio.</p>
         </div>
         <div class="login-form">
@@ -29,5 +28,10 @@ include '../controller/menu-pg-inicial.php';
             </form>
         </div>
     </div>
+    <footer>
+    <?php
+        include '../controller/footer_cliente.php';
+    ?>
+    </footer>
 </body>
 </html>
