@@ -46,6 +46,11 @@
         </div>
     </main>
 </body>
+
+
+
 </html>
 
-<?php include 'footer_cliente.php'; ?>
+<?php
+    include '../footer_cliente.php';
+?>
