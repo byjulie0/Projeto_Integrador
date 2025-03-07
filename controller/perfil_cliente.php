@@ -10,7 +10,7 @@
     <title> Página Cliente</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/Projeto_Integrador/view/public/css/meu-perfil-arthur.css">
+    <link rel="stylesheet" href="/Projeto_Integrador/view/public/css/cliente.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
