@@ -6,10 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galo Índio de León - John Rooster</title>
-    <link rel="stylesheet" href="../view/public/css/detalhesdoproduto.css">
+    <link rel="stylesheet" href="../view/public/css/cliente.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body class="body-detalhes-produto">
+    <h2 class="titulo-produto-detalhes-produto"><i class="bi bi-chevron-left"></i>Galo Índio de León</h2>
     <main class="main-detalhes-produto">
        
         <!-- <section class="produto-detalhes-produto"> -->
@@ -25,8 +26,7 @@
 
             <!-- </div> -->
             <div class="info-produto-detalhes-produto"> 
-            <h2 class="titulo-produto-detalhes-produto">Galo Índio de León</h2>
-                <div class="estrelas-detalhes-produto">★★★★★       <span>4.9 (204)</span>
+                <div class="estrelas-detalhes-produto">★★★★★<span>4.9 (204)</span>
                     <i class="bi bi-share"></i>
                     <i class="bi bi-heart"></i>
                 </div>
