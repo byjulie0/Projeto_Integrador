@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Gabriel -->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +34,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="/View/imagens/image.png" alt="" class="descricao-card-img">
+                        <img src="../view/imagens/image.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
@@ -48,7 +49,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="/View/imagens/image.png" alt="" class="descricao-card-img">
+                        <img src="../view/imagens/image.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
@@ -63,7 +64,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="/View/imagens/image.png" alt="" class="descricao-card-img">
+                        <img src="../view/imagens/image.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
@@ -78,7 +79,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="/View/imagens/image.png" alt="" class="descricao-card-img">
+                        <img src="../view/imagens/image.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
