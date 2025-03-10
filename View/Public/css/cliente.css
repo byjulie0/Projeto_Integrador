@@ -341,6 +341,7 @@ body {
 /* Final da categoria da pg inicial */
 
 /* Começo da pg de login */
+/* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
@@ -350,62 +351,80 @@ body {
   height: 100vh;
   margin: 0;
 }
-.container 
-  /* display: flex;
-  display:grid;
+
+/* Container principal */
+.container-login {
+  display: grid;
   grid-template-columns: 50% 50%;
-  background-color: #e6f0e0;
+  background-color: #f0e0e0;
   padding: 20px;
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
   width: 950px;
 }
-.info {
-  background-color: blueviolet;
-  font-size: 12px;
+
+/* Área de informações */
+.info-login {
   padding: 20px;
+  font-size: 14px;
+  text-align: center;
 }
-.info img {
+
+.info-login img {
   max-width: 100%;
   height: auto;
-
 }
+
+/* Área do formulário */
 .login-form {
-  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .login-form h2 {
-  margin-bottom: 90px;
+  margin-bottom: 20px;
 }
-.input-small{
-  width: 130%;
+
+/* Campos de entrada */
+.input-login {
+  width: 100%;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #000;
-  border-radius: 2px;
-  display: block;
-  font-size: 10px;
+  border-radius: 4px;
+  font-size: 14px;
   box-shadow: 0 0 10px rgba(17, 105, 57, 0.1);
+}
 
-}
-.button-small {
+/* Botão de login */
+.button-login {
   background-color: #fff;
-  border: 1px solid black;
+  border: 1px solid red;
   cursor: pointer;
-  border-radius: 2px;
-  width: 73%;
-  padding: 7px;
-  margin: 25px 0;
-  border: 1px solid #000;
-  border-radius: 2px;
-  display: block;
-  font-size: 10px;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  font-size: 14px;
+  transition: 0.3s;
 }
+
+.button-login:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Links */
 .login-form a {
-  color: #e20000;
+  color: #1700e2;
   font-size: 12px;
+  text-decoration: none;
 }
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
 /* Final da pg de login */
