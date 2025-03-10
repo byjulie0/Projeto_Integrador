@@ -995,7 +995,6 @@ html, body {
 
 /* Fim do CSS esqueci a senha card e-mail */
 
-=======
 .footer_cli_item h3 {
   font-size: 16px;
   margin-bottom: 8px;
@@ -1033,4 +1032,99 @@ html, body {
   }
 }
 
+/* inicio pg notificação sem login */
+
+.body_not_sem_log{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color:#FFFFFF;
+}
+.notificacao-usuario-main{
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: aqua; */
+}
+.notificacao-usuario-cabesalio{
+  height: 140px;
+  width: 92%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.notificacao-usuario-notficacao{
+  /* background-color: violet; */
+  display: flex;
+  flex-direction: row;
+  width: 210px;
+  height: 43px;
+  font-size: 10px;
+  color: #40513B;
+  font-weight: bold;
+}
+.notificacao-usuario-notficacao h1{
+  padding-left: 30px;
+}
+.fa-chevron-left{
+  padding-top: 8px;
+  font-size: 30px;
+}
+.notificacao-usuario-filtro{
+  width: 250px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-color: #40513B;
+}
+.notificacao-filtro-name{
+  padding-left: 10px;
+  color: #40513B;
+  font-weight: normal;
+}
+.notificacao-filtro-arrow{
+  color: #40513B;
+  padding-right: 10px;
+}
+.notificacao-linha-pad{
+  width: 92%;
+  height: 2px;
+  padding-bottom: 30px;
+}
+.notificacao-usuario-linha{
+  width: 100%;
+  height: 1px;
+  background-color: #40513B;
+}
+.notificacao-center-text{
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.notificacao-center-text h1{
+  color: #40513B;
+}
+.notificacao-login{
+  color: red;
+  text-decoration: underline;
+}
+@media screen and (max-width:1170px){
+  .notificacao-usuario-notficacao h1{
+      padding-right: 30px;
+  }
+  .texto-pg-not{
+      font-size: 15px;
+  }
+}
+/* final pg notificação sem login Gabriel*/
 

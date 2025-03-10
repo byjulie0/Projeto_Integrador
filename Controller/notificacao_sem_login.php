@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+<!-- Gabriel -->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/notificacao.css">
+    <link rel="stylesheet" href="../view/public/css/cliente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Notificações</title>
 </head>
-<body>
+<body class="body_not_sem_log">
     <main class="notificacao-usuario-main">
         <div class="notificacao-usuario-cabesalio">
             <title class="notificacao-usuario-title"></title>
@@ -26,7 +27,7 @@
         </div>
         <div class="notificacao-center-text">
                                                                             <!--exemplo-->
-            <h1 class="texto">Para receber e visualizar as notificações, faça o <a href="pagiadelogin.html" class ="notificacao-login texto">login</a></h1>
+            <h1 class="texto-pg-not">Para receber e visualizar as notificações, faça o <a href="pagiadelogin.html" class ="notificacao-login texto">login</a></h1>
         </div>
     </main>
 </body>
