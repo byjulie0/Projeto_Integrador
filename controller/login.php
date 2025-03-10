@@ -15,7 +15,7 @@ include '../controller/menu-pg-inicial.php';
     <div class="container">
         
         <div class="info">
-            <img src="../view/public/imagens/logo_john_rooster.png" alt="John Rooster Logo">
+            <img src="../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
             <p>
                 Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo com qualidade e confiança para o seu negócio.
             </p>
@@ -32,5 +32,10 @@ include '../controller/menu-pg-inicial.php';
             </form>
         </div>
     </div>
+    <footer>
+        <?php
+        include 'footer_cliente.php';
+        ?>
+    </footer>
 </body>
 </html>

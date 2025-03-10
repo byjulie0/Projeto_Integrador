@@ -341,28 +341,38 @@ body {
 /* Final da categoria da pg inicial */
 
 /* Começo da pg de login */ 
+body {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh; /* Faz o body ocupar toda a altura da tela */
+  margin: 0;
+}
 
 .container {
-  max-width: 950px;
-  width: 90%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: #ff0000;
+  grid-template-columns: 50% 50%;
+  background-color: #DFEBE0;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+  width: 950px;
+}
+.container{
+  display: flex;
 }
 
 
 .info {
-  padding: 20px;
+  
+  padding: 40px;
   font-size: 14px;
-  text-align: center;
+  
 }
 
 .info img {
-  max-width: 100%;
-  height: auto;
+  max-width: 55%;
+
 }
 
 .login-form {
@@ -388,7 +398,7 @@ body {
 
 .button {
   background-color: #fff;
-  border: 1px solid red;
+  border: 1px solid black;
   cursor: pointer;
   border-radius: 4px;
   width: 100%;
@@ -398,14 +408,8 @@ body {
   transition: 0.3s;
 }
 
-.button:hover {
-  background-color: red;
-  color: white;
-}
-
-
 .login-form a {
-  color: #1900ff;
+  color: #40513B;
   font-size: 12px;
   text-decoration: none;
 }
