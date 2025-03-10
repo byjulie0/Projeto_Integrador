@@ -897,6 +897,105 @@ html, body {
   min-width: 180px;
 }
 
+/* Começo do CSS esqueci a senha card e-mail */
+
+.esqueci_senha-card_email-body{
+  background-color: #F7F7F7;
+  display: grid;
+  align-items: center;
+  height: 90vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.esqueci_senha-card_email{
+  position: relative;
+  left: 22%;
+  top: -15px;
+  width: 810px;
+  height: 450px;
+  background-color: #DFEBE0;
+  padding: 110px;
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.esqueci_senha-card_email-content h1{
+  position: relative;
+  top: -85px;
+  left: 190px;
+  color: var(--color-fonte);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.esqueci_senha-card_email-content h3{
+  position: relative;
+  top: -40px;
+  left: 15px;
+  color: var(--color-primary-1);
+  font-size: 1rem;
+}
+
+.esqueci_senha-card_email-formulario input{
+  width: 590px;
+  height: 25px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 10px 15px;
+  position: relative;
+  top: 40px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  color: #7c0428;
+}
+
+.esqueci_senha-card_email-formulario input::placeholder{
+  text-indent: 1px;
+}
+
+.esqueci_senha-card_email-linha_divisao{
+  width: 585px;
+  height: 0.5px;
+  position: relative;
+  left: 2px;
+  top: 50px;
+  transform: translateY(20px);
+  background-color: var(--color-primary-1);
+}
+
+.esqueci_senha-card_email-formulario button{
+  position: relative;
+  top: 120px;
+  left: 225px;
+  width: 125px;
+  height: 25px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: none;
+  color: var(--color-primary-1);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.esqueci_senha-card_email-formulario button:hover{
+  background-color: var(--color-primary-2);
+  color: #ffffff;
+}
+
+.esqueci_senha-card_email-seta_voltar{
+  width: 2%;
+  position: relative;
+  left: 15%;
+  transform: translateY(20px);
+}
+
+.esqueci_senha-card_email-enchaminhar i{
+  font-size: 1.7rem;
+  color: #2D8C37;
+}
+
+/* Fim do CSS esqueci a senha card e-mail */
+
+=======
 .footer_cli_item h3 {
   font-size: 16px;
   margin-bottom: 8px;
@@ -933,4 +1032,5 @@ html, body {
       font-size: 12px;
   }
 }
+
 
