@@ -159,6 +159,8 @@ body {
 .footer_cliente{
   width: 100%;
   height: 300px;
+  padding-bottom: 20%;
+  display: flex;
   background-color: var(--color-primary-1);
   font-family: "Poppins", serif;
 }
@@ -338,7 +340,7 @@ body {
 
 /* Final da categoria da pg inicial */
 
-/* Começo de menu pg inicial */
+/* Começo da pg de login */
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
@@ -348,8 +350,10 @@ body {
   height: 100vh;
   margin: 0;
 }
-.container {
-  display: flex;
+.container 
+  /* display: flex;
+  display:grid;
+  grid-template-columns: 50% 50%;
   background-color: #e6f0e0;
   padding: 20px;
   border-radius: 2px;
@@ -357,7 +361,7 @@ body {
   width: 950px;
 }
 .info {
-  flex: 1;
+  background-color: blueviolet;
   font-size: 12px;
   padding: 20px;
 }
@@ -401,7 +405,7 @@ body {
   font-size: 10px;
 }
 .login-form a {
-  color: #35e200;
+  color: #e20000;
   font-size: 12px;
 }
-/* Final da categoria da pg inicial */
+/* Final da pg de login */
