@@ -21,7 +21,7 @@
   --color-detalhes-16: #e7f0dc;
 }
 
-/* Começo de menu pg inicial */
+/* Começo de menu pg inicial Ana Julia*/
 * {
   margin: 0;
   padding: 0;
@@ -143,7 +143,8 @@ body {
 }
 /* Final de menu pg inicial */
 
-/* Começo do footer */
+
+/* Começo do footer Lara */
 .footer_cliente{
   width: 100%;
   height: 300px;
@@ -235,7 +236,8 @@ body {
 }
 /* Final do footer */
 
-/* Começo da categoria da pg inicial */
+
+/* Começo da categoria da pg inicial Isabella */
 #pg_inicial_categorias {
   flex-direction: column;
   justify-content: center;
@@ -281,7 +283,6 @@ body {
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3);
   transition: ease 100ms;
 }
-
 /* Cards dos animais */
 .card_galinha_pg_inicial_categorias {
   background-image: url(../imagens/img_pg_inicial_categorias/galinha_categorias_pg_inicial.png);
@@ -323,9 +324,9 @@ body {
 .card_campeao_pg_inicial_categorias:hover {
   background-image: url(../imagens/img_pg_inicial_categorias/campeoes_hover_categorias_pg_inicial.png);
 }
-
 /* Final da categoria da pg inicial */
 
+<<<<<<< HEAD
 /* Começo de detalhes do produto */
 .body-detalhes-produto {
   font-family: Arial, sans-serif;
@@ -448,3 +449,385 @@ body {
   color: var(--color-primary-3);
 }
 /* Fim de detalhes do produto */
+=======
+
+/* Começo da pg favoritos Mariana*/
+.area-favoritos{
+  background-color: white;
+  font-family: 'Poppins';
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 30px;
+  margin-top: 32px;
+  text-align: left;
+}
+
+.favoritos-title {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-left: 46px;
+  font-size: 1.1em;
+  color: #333;
+
+}
+
+.favoritos-title i {
+  margin-right: 50px;
+  text-align: left;
+  
+}
+
+.cards-favoritos {
+  text-align: left;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+.cards-container-pag-fav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  color: aliceblue;
+}
+
+.card-pag-fav {
+  width:300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex;
+  background-color: white;
+  border-radius: 5px;
+  gap: 18px;
+  padding: 20px;
+  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.card-pag-fav img {
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.card-header-pag-fav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-header-pag-fav h1 {
+  font-size: 1.1em;
+  margin: 10px 0;
+  color: #333;
+  text-align: left;
+}
+
+.card-pag-fav h2 {
+  font-size: 1.1em;
+  color: #333;
+  text-align: left;
+}
+
+.stars-pag-fav {
+  color: gold;
+  margin: 5px 0;
+}
+
+.botao-pag-fav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-pag-fav {
+  background-color: rgb(85, 140, 75);
+  color: white;
+  padding: 5px 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  bottom: 10px;
+  right: 10px;
+}
+
+.excluir-pag-fav {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  text-decoration: underline;
+
+}
+
+.card-pag-fav h3 {
+  font-size: 0.6em;
+  color: #333;
+  text-align: left;
+}
+/*Final da Pg Favoritos */
+
+
+/* CSS Termos e Condições Julie*/
+.texto-termos-e-condicoes{
+  max-width: 100%;
+  margin-top: 0px;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 0%;
+  padding-bottom: 8%;
+  font-family: 'poppins', sans-serif;
+  text-align: justify;
+  color: var(--color-primary-1);
+}
+.section-termos-e-condicoes{
+  color: var(--color-fonte);
+  text-align: justify;
+}
+.titulo-termos-e-condicoes{
+  color: var(--color-primary-1);
+  text-align: center;
+  margin: 20px 0;
+}
+.sub-titulo2-termos-e-condicoes{
+  padding: 6px;
+  color: var(--color-primary-1);
+}
+.sub-titulo-termos-e-condicoes{
+  padding: 8px;
+  color: var(--color-primary-1);
+}
+.li-termos-e-condicoes{
+  margin: 20px;
+}
+.p-termos-e-condicoes{
+  color: var(--color-fonte);
+}
+.setinha-termos-e-coondicoes i{
+  align-items: center;
+  color: var(--color-primary-1);
+  font-size: 24px;
+}
+/* Fim do CSS de termos e condições*/
+
+
+
+/* Começo do CSS da página Cadastro Maria*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.body-cadastro{
+  background-color: #F7F7F7;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.area-form-cadastro{
+  justify-content: center;
+  width: 63.063rem;
+  height: auto;
+  flex-direction: column;
+  margin: 100px 250px;
+  align-items: center;
+  padding: 60px;
+  display: flex;
+  background-color: #DFEBE0;
+}
+.titulo-form-cadastro{
+  font-size: 2rem;
+  color: var(--color-primary-1);
+  font-weight: 600;
+}
+.form-cadastro{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.area-geral-form-cadastro{
+  flex-direction: row; 
+}
+.parte1-form-cadastro{
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.parte2-form-cadastro{
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.input-form-cadastro{
+  width: 22.563rem;
+  height: 2.938rem;
+  padding: 7px;
+  border: 1px solid var(--color-primary-1);
+  border-radius: 2px;
+}
+.input-form-cadastro::placeholder{
+  color: var(--color-primary-1);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.input-form-cadastro[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #FFFFFF;
+  position: relative;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-primary-1);
+}
+.line-cadastro{
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-primary-1);
+}
+.input-submit-form-cadastro{
+  margin-top: 10px;
+  justify-content: center;
+  width: 50%;
+  padding: 5px;
+  border: 1px solid var(--color-primary-1);
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  color: var(--color-primary-1);
+  font-weight: 600;
+}
+.area-termos-privacidade-cadastro{
+  margin-top: 30px;
+  font-size: 0.625rem;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+}
+.termos-privacidade-cadastro{
+  text-decoration: none;
+  color: var(--color-primary-5);
+}
+.area-login-cadastro{
+  margin-top: 20px;
+  font-size: 0.625rem;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+}
+.login-cadastro{
+  text-decoration: none;
+  color: var(--color-primary-5);
+}
+.main-cadastro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.icon-voltar-cadastro{
+  font-size: 2rem;
+  color: var(--color-primary-3);
+  text-decoration: none;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  margin-top: 250px;
+  margin-left: 100px;
+}
+/* Começo do CSS do menu Cadastro Maria*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.menu-cadastro{
+  align-items: center;
+  width: 100%;
+  height: 9.2rem;
+  display: flex;
+  background-color: #40513B;
+}
+.info-menu-cadastro{
+  width: 100%;
+  max-height: 9.2rem;
+  display: flex;
+  flex-direction: row;
+}
+.logo-menu-cadastro img{
+  margin-left: 20px;
+  margin-top: 10px;
+  height: 7.884rem;
+}
+.nome-menu-cadastro{
+  font-weight: 600;
+  margin-left: 20px;
+  margin-top: 50px;
+  color: #FFFFFF;
+  font-size: 2rem;
+  align-items: center;
+}
+/* Fim do CSS do menu Cadastro*/
+/* Fim do CSS da página Cadastro*/
+
+
+/* Inicio-nossa-historia- Valdir */
+.nossa_historia{
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+}
+.texto-nossa-historia{
+  padding: 4%;
+  padding-top: 0%;
+  margin: 10px;
+  font-size: 1.5rem;
+  color: var(--color-fonte);
+  font-weight: 500;
+
+}
+.titulo-nossa-historia{
+  text-align: center;
+  color:var();
+  margin: 50px;
+  font-size: 2rem;
+}
+.nossa_historia a {
+  color: var(--color-primary-3);
+  font-size: 2rem;
+  position: absolute;
+  left: 6%;
+  top: 23%;
+}
+/*Fim-nossa-historia-valdir */
+>>>>>>> 86a31ee9c0643b5c9ed300dc6911cb04ded833aa
