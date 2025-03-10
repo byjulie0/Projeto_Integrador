@@ -26,7 +26,7 @@
   --input-bg: #F9FAFB;
 }
 
-/* Começo de menu pg inicial */
+/* Começo de menu pg inicial Ana Julia*/
 * {
   margin: 0;
   padding: 0;
@@ -148,7 +148,8 @@ body {
 }
 /* Final de menu pg inicial */
 
-/* Começo do footer */
+
+/* Começo do footer Lara */
 .footer_cliente{
   width: 100%;
   height: 300px;
@@ -240,7 +241,8 @@ body {
 }
 /* Final do footer */
 
-/* Começo da categoria da pg inicial */
+
+/* Começo da categoria da pg inicial Isabella */
 #pg_inicial_categorias {
   flex-direction: column;
   justify-content: center;
@@ -286,7 +288,6 @@ body {
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3);
   transition: ease 100ms;
 }
-
 /* Cards dos animais */
 .card_galinha_pg_inicial_categorias {
   background-image: url(../imagens/img_pg_inicial_categorias/galinha_categorias_pg_inicial.png);
@@ -328,11 +329,10 @@ body {
 .card_campeao_pg_inicial_categorias:hover {
   background-image: url(../imagens/img_pg_inicial_categorias/campeoes_hover_categorias_pg_inicial.png);
 }
-
 /* Final da categoria da pg inicial */
 
-/* Começo da pg favoritos */
 
+/* Começo da pg favoritos Mariana*/
 .area-favoritos{
   background-color: white;
   font-family: 'Poppins';
@@ -463,10 +463,10 @@ body {
   color: #333;
   text-align: left;
 }
-
 /*Final da Pg Favoritos */
 
-/* CSS Termos e Condições */
+
+/* CSS Termos e Condições Julie*/
 .texto-termos-e-condicoes{
   max-width: 100%;
   margin-top: 0px;
@@ -478,7 +478,7 @@ body {
   text-align: justify;
   color: var(--color-primary-1);
 }
-section{
+.section-termos-e-condicoes{
   color: var(--color-fonte);
   text-align: justify;
 }
@@ -508,9 +508,180 @@ section{
 }
 /* Fim do CSS de termos e condições*/
 
-/* Inicio-nossa-historia-valdir */
+
+
+/* Começo do CSS da página Cadastro Maria*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.body-cadastro{
+  background-color: #F7F7F7;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.area-form-cadastro{
+  justify-content: center;
+  width: 63.063rem;
+  height: auto;
+  flex-direction: column;
+  margin: 100px 250px;
+  align-items: center;
+  padding: 60px;
+  display: flex;
+  background-color: #DFEBE0;
+}
+.titulo-form-cadastro{
+  font-size: 2rem;
+  color: var(--color-primary-1);
+  font-weight: 600;
+}
+.form-cadastro{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.area-geral-form-cadastro{
+  flex-direction: row; 
+}
+.parte1-form-cadastro{
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.parte2-form-cadastro{
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.input-form-cadastro{
+  width: 22.563rem;
+  height: 2.938rem;
+  padding: 7px;
+  border: 1px solid var(--color-primary-1);
+  border-radius: 2px;
+}
+.input-form-cadastro::placeholder{
+  color: var(--color-primary-1);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.input-form-cadastro[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #FFFFFF;
+  position: relative;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-primary-1);
+}
+.line-cadastro{
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-primary-1);
+}
+.input-submit-form-cadastro{
+  margin-top: 10px;
+  justify-content: center;
+  width: 50%;
+  padding: 5px;
+  border: 1px solid var(--color-primary-1);
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  color: var(--color-primary-1);
+  font-weight: 600;
+}
+.area-termos-privacidade-cadastro{
+  margin-top: 30px;
+  font-size: 0.625rem;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+}
+.termos-privacidade-cadastro{
+  text-decoration: none;
+  color: var(--color-primary-5);
+}
+.area-login-cadastro{
+  margin-top: 20px;
+  font-size: 0.625rem;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+}
+.login-cadastro{
+  text-decoration: none;
+  color: var(--color-primary-5);
+}
+.main-cadastro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.icon-voltar-cadastro{
+  font-size: 2rem;
+  color: var(--color-primary-3);
+  text-decoration: none;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  margin-top: 250px;
+  margin-left: 100px;
+}
+/* Começo do CSS do menu Cadastro Maria*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.menu-cadastro{
+  align-items: center;
+  width: 100%;
+  height: 9.2rem;
+  display: flex;
+  background-color: #40513B;
+}
+.info-menu-cadastro{
+  width: 100%;
+  max-height: 9.2rem;
+  display: flex;
+  flex-direction: row;
+}
+.logo-menu-cadastro img{
+  margin-left: 20px;
+  margin-top: 10px;
+  height: 7.884rem;
+}
+.nome-menu-cadastro{
+  font-weight: 600;
+  margin-left: 20px;
+  margin-top: 50px;
+  color: #FFFFFF;
+  font-size: 2rem;
+  align-items: center;
+}
+/* Fim do CSS do menu Cadastro*/
+/* Fim do CSS da página Cadastro*/
+
+
+/* Inicio-nossa-historia- Valdir */
 .nossa_historia{
-  color: rgba(55, 139, 55, 0.433);
   text-align: justify;
   align-items: center;
   justify-content: center;
@@ -518,21 +689,26 @@ section{
   padding: 10px;
 }
 .texto-nossa-historia{
+  padding: 4%;
+  padding-top: 0%;
   margin: 10px;
-  font-size: 40px;
+  font-size: 1.5rem;
+  color: var(--color-fonte);
+  font-weight: 500;
+
 }
 .titulo-nossa-historia{
   text-align: center;
   color:var();
   margin: 50px;
-  font-size: 60px;
-  /* background-color: aqua; */
+  font-size: 2rem;
 }
-.nossa_historia i {
-font-size: 3.5rem;
-position: absolute;
-left: 50px;
-top: 50px;
+.nossa_historia a {
+  color: var(--color-primary-3);
+  font-size: 2rem;
+  position: absolute;
+  left: 6%;
+  top: 23%;
 }
 /*Fim-nossa-historia-valdir */
 
