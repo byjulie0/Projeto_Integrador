@@ -305,7 +305,6 @@ body {
 }
 /* Final da categoria da pg inicial Isabella */
 
-
 /* Começo de detalhes do produto Anna Laura*/
 .body-detalhes-produto {
   font-family: Arial, sans-serif;
@@ -423,7 +422,6 @@ body {
   color: var(--color-primary-3);
 }
 /* Final de detalhes do produto Anna Laura*/
-
 
 /*Começo editar pefil - Arthur */
 .main-arthur {
@@ -782,3 +780,45 @@ body {
   align-items: center;
 }
 /* Fim do CSS do Menu Cadastro - Maria*/
+
+/* CSS Termos e Condições Julie*/
+.texto-termos-e-condicoes{
+  max-width: 100%;
+  margin-top: 0px;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 0%;
+  padding-bottom: 8%;
+  font-family: 'poppins', sans-serif;
+  text-align: justify;
+  color: var(--color-primary-1);
+}
+.section-termos-e-condicoes{
+  color: var(--color-fonte);
+  text-align: justify;
+}
+.titulo-termos-e-condicoes{
+  color: var(--color-primary-1);
+  text-align: center;
+  margin: 20px 0;
+}
+.sub-titulo2-termos-e-condicoes{
+  padding: 6px;
+  color: var(--color-primary-1);
+}
+.sub-titulo-termos-e-condicoes{
+  padding: 8px;
+  color: var(--color-primary-1);
+}
+.li-termos-e-condicoes{
+  margin: 20px;
+}
+.p-termos-e-condicoes{
+  color: var(--color-fonte);
+}
+.setinha-termos-e-coondicoes i{
+  align-items: center;
+  color: var(--color-primary-1);
+  font-size: 24px;
+}
+/* Fim do CSS de termos e condições Julie*/
