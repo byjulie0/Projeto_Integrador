@@ -1,9 +1,41 @@
-.carrossel {
-    padding-left: 10px;
-    background-color: greenyellow;
-    font-size: 50px;
-    width: 4rem;
-}
+body { 
+    background-color: #f0f0f0; /* Cor de fundo */ 
+    font-family: Arial, sans-serif; /* Fonte */ 
+    margin: 0; 
+    padding: 0; 
+} 
+ 
+.container { 
+    display: flex; /* Flexbox */ 
+    flex-direction: column; /* Direção de coluna */ 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; /* Ocupa toda a altura da tela */ 
+} 
+ 
+h1 { 
+    color: #333; /* Cor do título */ 
+    font-size: 36px; 
+} 
+ 
+p { 
+    color: #666; /* Cor do parágrafo */ 
+    font-size: 18px; 
+    margin-top: 10px; 
+} 
+ 
+.btn { 
+    background-color: #4CAF50; /* Cor de fundo do botão */ 
+    color: white; 
+    padding: 15px 32px; 
+    border: none; 
+    cursor: pointer; 
+    margin-top: 20px; 
+} 
+ 
+.btn:hover { 
+    background-color: #45a049; /* Cor do botão ao passar o mouse */ 
+} 
 
 
 
