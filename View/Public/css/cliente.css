@@ -340,42 +340,31 @@ body {
 
 /* Final da categoria da pg inicial */
 
-/* Começo da pg de login */
-/* Estilos gerais */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
+/* Começo da pg de login */ 
 
-/* Container principal */
-.container-login {
+.container {
+  max-width: 950px;
+  width: 90%;
   display: grid;
-  grid-template-columns: 50% 50%;
-  background-color: #f0e0e0;
+  grid-template-columns: 1fr 1fr;
+  background-color: #ff0000;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
-  width: 950px;
 }
 
-/* Área de informações */
-.info-login {
+
+.info {
   padding: 20px;
   font-size: 14px;
   text-align: center;
 }
 
-.info-login img {
+.info img {
   max-width: 100%;
   height: auto;
 }
 
-/* Área do formulário */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -387,7 +376,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Campos de entrada */
 .input-login {
   width: 100%;
   padding: 10px;
@@ -398,8 +386,7 @@ body {
   box-shadow: 0 0 10px rgba(17, 105, 57, 0.1);
 }
 
-/* Botão de login */
-.button-login {
+.button {
   background-color: #fff;
   border: 1px solid red;
   cursor: pointer;
@@ -411,14 +398,14 @@ body {
   transition: 0.3s;
 }
 
-.button-login:hover {
+.button:hover {
   background-color: red;
   color: white;
 }
 
-/* Links */
+
 .login-form a {
-  color: #1700e2;
+  color: #1900ff;
   font-size: 12px;
   text-decoration: none;
 }

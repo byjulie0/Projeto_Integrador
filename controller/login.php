@@ -12,9 +12,9 @@ include '../controller/menu-pg-inicial.php';
 </head>
 
 <body>
-    <div class="container-login">
+    <div class="container">
         
-        <div class="info-login">
+        <div class="info">
             <img src="../view/public/imagens/logo_john_rooster.png" alt="John Rooster Logo">
             <p>
                 Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo com qualidade e confiança para o seu negócio.
@@ -26,7 +26,7 @@ include '../controller/menu-pg-inicial.php';
             <form action="login.php" method="POST">
                 <input type="text" name="username" placeholder="Nome do usuário/Email" class="input-login" required>
                 <input type="password" name="password" placeholder="Senha" class="input-login" required>
-                <button type="submit" class="button-login">LOGIN</button>
+                <button type="submit" class="button">LOGIN</button>
                 <a href="#">Esqueci minha senha</a><br>
                 <a href="#">Não tem conta? Cadastre-se</a>
             </form>
