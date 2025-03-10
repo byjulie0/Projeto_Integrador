@@ -19,9 +19,14 @@
   --color-icones: #edf3eb;
   --color-detalhes-15: #f7f9ff;
   --color-detalhes-16: #e7f0dc;
+
+  --text-color: #20261e;
+  --border-color: #E5E7EB;
+  --warning-color: #ff4444;
+  --input-bg: #F9FAFB;
 }
 
-/* Começo de menu pg inicial */
+/* Começo de menu pg inicial Ana Julia*/
 * {
   margin: 0;
   padding: 0;
@@ -143,7 +148,8 @@ body {
 }
 /* Final de menu pg inicial */
 
-/* Começo do footer */
+
+/* Começo do footer Lara */
 .footer_cliente{
   width: 100%;
   height: 300px;
@@ -235,7 +241,8 @@ body {
 }
 /* Final do footer */
 
-/* Começo da categoria da pg inicial */
+
+/* Começo da categoria da pg inicial Isabella */
 #pg_inicial_categorias {
   flex-direction: column;
   justify-content: center;
@@ -281,7 +288,6 @@ body {
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3);
   transition: ease 100ms;
 }
-
 /* Cards dos animais */
 .card_galinha_pg_inicial_categorias {
   background-image: url(../imagens/img_pg_inicial_categorias/galinha_categorias_pg_inicial.png);
@@ -323,349 +329,244 @@ body {
 .card_campeao_pg_inicial_categorias:hover {
   background-image: url(../imagens/img_pg_inicial_categorias/campeoes_hover_categorias_pg_inicial.png);
 }
-
 /* Final da categoria da pg inicial */
 
-/* Começo da pg favoritos */
-
-.area-favoritos{
-  background-color: white;
-  font-family: 'Poppins';
-  width: 100%;
-  height: 600px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  gap: 30px;
-  margin-top: 32px;
-  text-align: left;
-}
-
-.favoritos-title {
-  display: flex;
-  align-items: center;
-  text-align: left;
-  margin-left: 46px;
-  font-size: 1.1em;
-  color: #333;
-
-}
-
-.favoritos-title i {
-  margin-right: 50px;
-  text-align: left;
-  
-}
-
-.cards-favoritos {
-  text-align: left;
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: left;
-  gap: 30px;
-  margin-bottom: 100px;
-}
-
-.cards-container-pag-fav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: nowrap;
-  color: aliceblue;
-}
-
-.card-pag-fav {
-  width:300px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex;
-  background-color: white;
-  border-radius: 5px;
-  gap: 18px;
-  padding: 20px;
-  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-
-.card-pag-fav img {
-  width: 300px;
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-}
-
-.card-header-pag-fav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.card-header-pag-fav h1 {
-  font-size: 1.1em;
-  margin: 10px 0;
-  color: #333;
-  text-align: left;
-}
-
-.card-pag-fav h2 {
-  font-size: 1.1em;
-  color: #333;
-  text-align: left;
-}
-
-.stars-pag-fav {
-  color: gold;
-  margin: 5px 0;
-}
-
-.botao-pag-fav{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.btn-pag-fav {
-  background-color: rgb(85, 140, 75);
-  color: white;
-  padding: 5px 6px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9em;
-  bottom: 10px;
-  right: 10px;
-}
-
-.excluir-pag-fav {
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  text-decoration: underline;
-
-}
-
-.card-pag-fav h3 {
-  font-size: 0.6em;
-  color: #333;
-  text-align: left;
-}
-
-/*Final da Pg Favoritos */
-
-/* CSS Termos e Condições */
-.texto-termos-e-condicoes{
-  max-width: 100%;
-  margin-top: 0px;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 0%;
-  padding-bottom: 8%;
-  font-family: 'poppins', sans-serif;
-  text-align: justify;
-  color: var(--color-primary-1);
-}
-section{
-  color: var(--color-fonte);
-  text-align: justify;
-}
-.titulo-termos-e-condicoes{
-  color: var(--color-primary-1);
-  text-align: center;
-  margin: 20px 0;
-}
-.sub-titulo2-termos-e-condicoes{
-  padding: 6px;
-  color: var(--color-primary-1);
-}
-.sub-titulo-termos-e-condicoes{
-  padding: 8px;
-  color: var(--color-primary-1);
-}
-.li-termos-e-condicoes{
-  margin: 20px;
-}
-.p-termos-e-condicoes{
-  color: var(--color-fonte);
-}
-.setinha-termos-e-coondicoes i{
-  align-items: center;
-  color: var(--color-primary-1);
-  font-size: 24px;
-}
-/* Fim do CSS de termos e condições*/
-
-
-
-/* Começo do CSS da página Cadastro*/
-*{
+/* Começo de detalhes do produto */
+.body-detalhes-produto {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
 }
-.body-cadastro{
-  background-color: #F7F7F7;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
-.area-form-cadastro{
-  justify-content: center;
-  width: 63.063rem;
-  height: auto;
-  flex-direction: column;
-  margin: 100px 250px;
-  align-items: center;
-  padding: 60px;
-  display: flex;
-  background-color: #DFEBE0;
-}
-.titulo-form-cadastro{
-  font-size: 2rem;
-  color: var(--color-primary-1);
-  font-weight: 600;
-}
-.form-cadastro{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.area-geral-form-cadastro{
-  flex-direction: row; 
-}
-.parte1-form-cadastro{
-  align-items: center;
-  padding: 40px;
-  width: 100%;
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
-}
-.parte2-form-cadastro{
-  align-items: center;
-  padding: 40px;
-  width: 100%;
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
-}
-.input-form-cadastro{
-  width: 22.563rem;
-  height: 2.938rem;
-  padding: 7px;
-  border: 1px solid var(--color-primary-1);
-  border-radius: 2px;
-}
-.input-form-cadastro::placeholder{
-  color: var(--color-primary-1);
-  font-weight: 600;
-  font-size: 1rem;
-}
-.input-form-cadastro[type="date"] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #FFFFFF;
-  position: relative;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--color-primary-1);
-}
-.line-cadastro{
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-primary-1);
-}
-.input-submit-form-cadastro{
-  margin-top: 10px;
-  justify-content: center;
-  width: 50%;
-  padding: 5px;
-  border: 1px solid var(--color-primary-1);
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  color: var(--color-primary-1);
-  font-weight: 600;
-}
-.area-termos-privacidade-cadastro{
+.main-detalhes-produto {
   margin-top: 30px;
-  font-size: 0.625rem;
-  width: 50%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 15% 35% 29%;
   align-items: center;
-  text-align: center;
-  font-weight: 600;
+  justify-content: center;
+  padding: 20px;
 }
-.termos-privacidade-cadastro{
-  text-decoration: none;
-  color: var(--color-primary-5);
+.produto-detalhes-produto {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
 }
-.area-login-cadastro{
+/* .imgs-detalhes-produto{
+  width: 50%;
+  margin-right: 20px;
+} */
+.imagens-detalhes-produto {
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+}
+.imagem-grande-detalhes-produto{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.miniaturas-detalhes-produto {
+  width:80% ;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  gap: 15px;
+  margin-top: 35%;
+  padding-left: 23%;
+}
+.miniaturas-detalhes-produto img {
+  width: 100%;
+  height: 25%;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.info-produto-detalhes-produto {
+  max-width: 400px;
+  padding-left: 5%;
+}
+.estrelas-detalhes-produto {
+  font-size: 18px;
+  color: gold;
+  margin: 5px 0;
+  flex-direction: row;
+}
+.estrelas-detalhes-produto span {
+  margin-right: 150px;
+}
+.estrelas-detalhes-produto i{
+  color: #999999;
+}
+.preco-detalhes-produto {
+  font-size: 24px;
+  font-weight: bold;
+  color: #008000;
+  margin: 10px 0;
+}
+.botao-carrinho-detalhes-produto,
+.botao-comprar-detalhes-produto {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+.botao-carrinho-detalhes-produto {
+  background-color: #32CD32;
+}
+.botao-comprar-detalhes-produto {
+  background-color: #228B22;
+}
+.descricao-detalhes-produto {
+  padding-left: 5%;
+  padding-bottom: 5%;
+  text-align: justify;
   margin-top: 20px;
-  font-size: 0.625rem;
-  width: 50%;
-  align-items: center;
-  text-align: center;
+  flex-direction: column;
+}
+.descricao-detalhes-produto h3 {
+  margin-bottom: 10px;
+}
+.informacoes-detalhes-produto{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
   font-weight: 600;
 }
-.login-cadastro{
-  text-decoration: none;
-  color: var(--color-primary-5);
+.informacoes-detalhes-produto span{
+  font-size: 1rem;
+  text-decoration: underline;
 }
-.main-cadastro{
+.titulo-produto-detalhes-produto{
+  font-size: 1.5rem;
+  padding: 20px 10%;
+}
+.titulo-produto-detalhes-produto i{
+  margin-right: 20px;
+  color: var(--color-primary-3);
+}
+
+.main-arthur {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.back-link-arthur {
+  margin-bottom: 2.5rem;
+}
+
+.back-link-arthur a {
+  text-decoration: none;
+  color: var(--text-color);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
-.icon-voltar-cadastro{
-  font-size: 2rem;
-  color: var(--color-primary-3);
-  text-decoration: none;
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  margin-top: 250px;
-  margin-left: 100px;
+.arrow-arthur {
+  color: var(--primary-color);
+  font-size: 1.25rem;
 }
-/* Fim do CSS da página Cadastro*/
 
-/* Inicio-nossa-historia-valdir */
-.nossa_historia{
-  color: rgba(55, 139, 55, 0.433);
-  text-align: justify;
+.edit-form-arthur {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+}
+
+.form-row-arthur {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .form-row-arthur {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+  }
+}
+
+.form-group-arthur {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label-arthur {
+  font-weight: 400;
+  color: var(--text-color);
+  font-size: 0.9375rem;
+}
+
+.input-arthur {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-arthur::placeholder {
+  color: #9CA3AF;
+}
+
+.warning-arthur {
+  color: var(--warning-color);
+  font-size: 0.8125rem;
+  margin-top: 0.375rem;
+  line-height: 1.4;
+}
+
+.form-actions-arthur {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  margin: 10px;
-  padding: 10px;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-.texto-nossa-historia{
-  margin: 10px;
-  font-size: 40px;
+
+.change-password-arthur {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9375rem;
 }
-.titulo-nossa-historia{
-  text-align: center;
-  color:var();
-  margin: 50px;
-  font-size: 60px;
-  /* background-color: aqua; */
+
+.save-button-arthur {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 2.5rem;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
 }
-.nossa_historia i {
-font-size: 3.5rem;
-position: absolute;
-left: 50px;
-top: 50px;
+
+.save-button-arthur:hover {
+  background-color: #3A6441;
 }
 /*Fim-nossa-historia-valdir */
 /*pagina de busca*/
@@ -1032,4 +933,4 @@ html, body {
       font-size: 12px;
   }
 }
-/*fim da pagina de busca*/
+
