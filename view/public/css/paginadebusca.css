@@ -1,5 +1,5 @@
 /* Estilo do container principal */
-.container {
+.container_pagina_de_busca {
     width: 80%;
     margin: auto;
     text-align: center;
@@ -13,7 +13,7 @@
 }
 
 /* Estilo dos cards de lotes */
-.lotes-container {
+.lotes_container_pagina_de_busca {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -215,7 +215,7 @@ footer {
     width: 220px;
 }
 /* Estilo responsivo */
-.container {
+.container_pagina_de_busca {
     width: 100%;
     max-width: 1200px;
     margin: auto;
@@ -243,11 +243,11 @@ html, body {
 }
 
 @media (max-width: 1024px) {
-    .container {
+    .container_pagina_de_busca {
         width: 95%;
     }
     
-    .lotes-container {
+    .lotes_container_pagina_de_busca {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
@@ -273,7 +273,7 @@ html, body {
         justify-content: center;
     }
     
-    .lotes-container {
+    .lotes_container_pagina_de_busca {
         grid-template-columns: 1fr;
     }
 }
