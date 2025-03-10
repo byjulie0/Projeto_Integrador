@@ -1,3 +1,4 @@
+<!-- Anna Laura -->
 <?php include 'menu-pg-inicial.php'; ?>
 
 <!DOCTYPE html>
