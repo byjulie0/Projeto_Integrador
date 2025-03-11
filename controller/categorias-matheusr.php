@@ -10,7 +10,7 @@ include 'menu-pg-inicial.php';
     <title>Percheron Carrossel</title>
     <link rel="stylesheet" href="../view/public/css/cliente.css">
 </head>
-<body>
+<body class ='body-math'>
     <h1 id="pg-categorias-math">Percheron</h1>
     <div class="carrossel-cat-math">
         <div class="arrow-cat-math" onclick="prevSlide()">&#10094;</div>
