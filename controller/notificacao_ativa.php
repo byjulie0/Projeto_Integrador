@@ -34,7 +34,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="../view/imagens/image.png" alt="" class="descricao-card-img">
+                        <img src="../view/imagens/image_sela.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
@@ -49,7 +49,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="../view/imagens/image.png" alt="" class="descricao-card-img">
+                        <img src="../view/imagens/image_sela.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
@@ -64,7 +64,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="../view/imagens/image.png" alt="" class="descricao-card-img">
+                        <img src="../view/imagens/image_sela.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
@@ -79,7 +79,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="../view/imagens/image.png" alt="" class="descricao-card-img">
+                        <img src="../view/imagens/image_sela.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
