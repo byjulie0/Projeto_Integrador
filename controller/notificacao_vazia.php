@@ -10,6 +10,11 @@
 </head>
 <body>
     <main class="notificacao-usuario-main">
+    <header class="header_not_vazio">
+            <?php
+            include 'menu-pg-inicial.php';
+            ?>
+        </header>
         <div class="notificacao-usuario-cabesalio">
             <title class="notificacao-usuario-title"></title>
             <div class="notificacao-usuario-notficacao">
@@ -28,6 +33,12 @@
         <div class="notificacao_center_text">
             <h1>Você ainda não recebeu nenhuma notificação.</h1>
         </div>
+        <footer class="footer_not_vazio">
+        <?php
+            include 'footer_cliente.php';
+        ?>
+    
+    </footer>
     </main>
 </body>
 </html>
