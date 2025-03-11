@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <!-- Gabriel -->
+<?php
+    include "menu-pg-inicial.php";
+    ?>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -32,3 +35,6 @@
     </main>
 </body>
 </html>
+<?php
+    include "menu-pg-inicial.php";
+    ?>
