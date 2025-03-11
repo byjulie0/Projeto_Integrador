@@ -26,8 +26,8 @@
             <div class="notificacao-usuario-linha"></div>
         </div>
         <div class="notificacao-center-text">
-                                                                            <!--exemplo-->
-            <h1 class="texto-pg-not">Para receber e visualizar as notificações, faça o <a href="pagiadelogin.html" class ="notificacao-login texto">login</a></h1>
+                                                                            <!--falta conectar a pagina de login-->
+            <h1 class="texto-pg-not">Para receber e visualizar as notificações, faça o <a href="" class ="notificacao-login texto">login</a></h1>
         </div>
     </main>
 </body>
