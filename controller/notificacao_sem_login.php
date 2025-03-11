@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <!-- Gabriel -->
-<?php
-    include "menu-pg-inicial.php";
-    ?>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -13,6 +10,11 @@
 </head>
 <body class="body_not_sem_log">
     <main class="notificacao-usuario-main">
+        <header class="header_not_sem_log">
+            <?php
+            include 'menu-pg-inicial.php';
+            ?>
+        </header>
         <div class="notificacao-usuario-cabesalio">
             <title class="notificacao-usuario-title"></title>
             <div class="notificacao-usuario-notficacao">
@@ -32,9 +34,12 @@
                                                                             <!--falta conectar a pagina de login-->
             <h1 class="texto-pg-not">Para receber e visualizar as notificações, faça o <a href="" class ="notificacao-login texto">login</a></h1>
         </div>
+        <footer class="footer_not_sem_log">
+        <?php
+            include 'footer_cliente.php';
+        ?>
+    
+    </footer>
     </main>
 </body>
 </html>
-<?php
-    include "menu-pg-inicial.php";
-    ?>

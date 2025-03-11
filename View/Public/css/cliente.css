@@ -1219,6 +1219,14 @@ body {
   color: red;
   text-decoration: underline;
 }
+.header_not_sem_log{
+  /* background-color: paleturquoise; */
+  width: 100%;
+}
+.footer_not_sem_log{
+  /* background-color: red; */
+  width: 100%;
+}
 @media screen and (max-width:1170px){
   .notificacao-usuario-notficacao h1{
       padding-right: 30px;
@@ -1227,4 +1235,5 @@ body {
       font-size: 15px;
   }
 }
+
 /* final pg notificação sem login Gabriel */
