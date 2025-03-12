@@ -10,6 +10,11 @@
 </head>
 <body>
     <main class="notificacao-usuario-main">
+    <header class="header_not_ativa">
+            <?php
+            include 'menu-pg-inicial.php';
+            ?>
+        </header>
         <div class="notificacao-usuario-cabesalio">
             <title class="notificacao-usuario-title"></title>
             <div class="notificacao-usuario-notficacao">
@@ -25,16 +30,11 @@
         <div class="notificacao-linha-pad">
             <div class="notificacao-usuario-linha"></div>
         </div>
-
-
-
-
-
         <div class="notificacao-usuario-container">
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="../view/imagens/image_sela.png" alt="" class="descricao-card-img">
+                        <img src="../view/public/imagens/img_sela.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
@@ -49,7 +49,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="../view/imagens/image_sela.png" alt="" class="descricao-card-img">
+                        <img src="../view/public/imagens/img_sela.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
@@ -64,7 +64,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="../view/imagens/image_sela.png" alt="" class="descricao-card-img">
+                        <img src="../view/public/imagens/img_sela.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
@@ -79,7 +79,7 @@
             <div class="notificacao-usuario-card">
                 <div class="notificacao-area-bolota">
                     <div class="notificacao-card-bolota">
-                        <img src="../view/imagens/image_sela.png" alt="" class="descricao-card-img">
+                        <img src="../view/public/imagens/img_sela.png" alt="" class="descricao-card-img">
                     </div>
                 </div>
                 <div class="notificacao-usuario-card-text">
@@ -92,6 +92,12 @@
                 </div>
             </div>
         </div>
+        <footer class="footer_not_ativa">
+        <?php
+            include 'footer_cliente.php';
+        ?>
+    
+    </footer>
     </main>
 </body>
 </html>

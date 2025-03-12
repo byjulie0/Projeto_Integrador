@@ -1246,9 +1246,10 @@ body{
   justify-content: space-between;
   gap: 30px;
   align-items: center;
+  margin-bottom: 30px;
 }
 .notificacao-usuario-card{
-  width: 660px;
+  width: 610px;
   height: 140px;
   background-color: rgb(157, 192, 139,0.10);
   display: flex;
@@ -1263,6 +1264,7 @@ body{
 }
 .notificacao-usuario-card-text{
   padding-left: 30px;
+  padding-top: 15px;
 }
 .notificacao-card-data{
   color: #40513B;
@@ -1284,13 +1286,21 @@ body{
   width: 130px;
   height: 130px;
   border-radius: 100%;
-  margin: auto 10px auto 20px;
+  margin: auto 10px auto 10px;
 }
 .descricao-card-img{
   width: 130px;
   height: 130px;
   border-radius: 100%;
   object-fit: cover;
+}
+.header_not_ativa{
+  /* background-color: paleturquoise; */
+  width: 100%;
+}
+.footer_not_ativa{
+  /* background-color: red; */
+  width: 100%;
 }
 @media screen and (max-width:1170px){
   .notificacao-card-descricao{
@@ -1302,3 +1312,4 @@ body{
   }
 }
 /* final pg notificações ativa Gabriel*/
+
