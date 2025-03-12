@@ -1,4 +1,5 @@
-@import url(\cliente.css);
+/* CSS Atualizado */
+@import url('cliente.css');
 
 :root {
     --color-primary-1: #40513b;
@@ -32,10 +33,12 @@ body {
 }
 
 .container_pagina_de_busca {
-    width: 80%;
+    width: 100%;
+    max-width: 1200px;
     margin: auto;
     text-align: center;
     margin-top: 20px;
+    padding: 0 20px;
 }
 
 .container_pagina_de_busca h2 {
@@ -57,9 +60,12 @@ body {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    width: 280px;
+    width: calc(25% - 20px);
     text-align: center;
     border: 2px solid var(--color-primary-1);
+    min-width: 250px;
+    max-width: 300px;
+    flex-grow: 1;
 }
 
 .lote-card img {
@@ -99,6 +105,7 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+    width: 100%;
 }
 
 .footer-content {
@@ -141,9 +148,14 @@ footer {
     }
     
     .lotes_container_pagina_de_busca {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 20px;
+    }
+    
+    .lote-card {
+        width: calc(33.33% - 20px);
     }
 }
 
@@ -155,7 +167,12 @@ footer {
     }
     
     .lotes_container_pagina_de_busca {
-        grid-template-columns: 1fr;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .lote-card {
+        width: calc(50% - 20px);
     }
 }
 
