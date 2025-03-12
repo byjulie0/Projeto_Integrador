@@ -16,7 +16,7 @@ include 'menu-pg-inicial.php';
 
     <!-- Importação dos estilos -->
     
-    <link rel="stylesheet" href="../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../view/public/css/s/cliente.css">
 </head>
 <body>
 

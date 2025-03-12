@@ -18,7 +18,7 @@
     <section class="menu-pg-inicial">
         <div class="menu-content-pg-inicial">
             <div class="logo-menu">
-                <img src="../view/public/imagens/2 Sem Título_20250212224411.png" alt="" class="logo-menu-img">
+                <img src="../view/public/imagens/Logo John Rooster (1).png" alt="" class="logo-menu-img">
                 <h3 class="logo-menu-title">John Rooster</h3>
             </div>
             <div class="nav-link-pg-inicial">
