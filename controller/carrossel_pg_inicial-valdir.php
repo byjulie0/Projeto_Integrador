@@ -14,7 +14,7 @@ include 'menu-pg-inicial.php';
     <div class="container">
         <div class="texto-carrosel-pg-inicial">
             <div class="texto2-img-carrossel-pg-inicial">
-                <img src="../" alt="">
+                <img src="../view/public/Imagens/fotocarrossel" alt="">
                 <h1 class="texto2-carrossel-pg-inicial"><span class="span-carrossel-pg-ini"> Seja Bem-vindo ao nosso site! </span></h1> 
                 <h2 class="h2-carrossel-pg-inicial">Somos um negócio familiar, com anos de experiência no ramo de vendas de animais pecuários, acumulando clientes ao redor de todo o mundo. Temos certeza de que aqui você achará exatamento o(s) animal(is) que procura!</h2>
             </div>
