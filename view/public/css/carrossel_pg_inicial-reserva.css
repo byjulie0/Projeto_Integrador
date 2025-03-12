@@ -55,10 +55,30 @@ body {
 }
 
 #carousel_text{
-    color: #000000;
+    color: yellowgreen;
     text-align: left;
+    z-index: 1;
+    /* box-sizing: border-box; */
+    font-family: 'Roboto', sans-serif;
+    height: 200px;
+    padding: 0;
+    position: absolute;
+    top:20px;
+    width: 800px;
+    margin: 0;
 }
 
+.carrossel {
+    background-color: magenta;
+    text-align: left;
+
+}
+.carousel-caption {
+    display: flex;
+    padding-left: 0;
+    padding-right: 8%;
+    flex-direction: column-reverse;
+}
 
 .h2-carrossel-pg-inicial{
     font-size: 16px;
@@ -72,6 +92,7 @@ body {
     border: none; 
     cursor: pointer; 
     margin-top: 20px; 
+    text-align: left;
 } 
  
 .btn:hover { 

@@ -18,12 +18,7 @@ include 'menu-pg-inicial.php';
     <div class="carousel-item active">
       <img class="d-block w-100" src="../view/public/Imagens/pecuaria.jpg" alt="First slide">
     
-      <div class="carousel-caption d-none d-md-block">
-        
-        <h5 id="carousel_text">Somos um negócio familiar, com anos de experiência no ramo de vendas de animais pecuários, acumulando clientes ao redor de todo o mundo. Temos certeza de que aqui você achará exatamento o(s) animal(is) que procura!">
-        </h5>
-        <button class="btn">Saiba mais</button>
-    </div>
+     
     
     <div class="carousel-item">
       <img class="d-block w-100" src="../view/public/Imagens/pecuaria2.jpg" alt="Second slide">
@@ -42,6 +37,18 @@ include 'menu-pg-inicial.php';
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<div class="#">
+        <h3 class="carrossel">
+            <span>
+                Seja bem-vindo ao nosso site!
+            </span>
+        </h3>
+        
+        <h5 id="carousel_text">Somos um negócio familiar, com anos de experiência no ramo de vendas de animais pecuários, acumulando clientes ao redor de todo o mundo. Temos certeza de que aqui você achará exatamento o(s) animal(is) que procura!">
+        </h5>
+        <button class="btn">Saiba mais</button>
+    </div>
 
 <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
