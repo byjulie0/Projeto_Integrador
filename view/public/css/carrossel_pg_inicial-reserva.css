@@ -53,6 +53,13 @@ body {
     color: var(--color-botao-op-Concluido);
 
 }
+
+#carousel_text{
+    color: #000000;
+    text-align: left;
+}
+
+
 .h2-carrossel-pg-inicial{
     font-size: 16px;
     text-align: justify;
