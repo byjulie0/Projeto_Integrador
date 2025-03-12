@@ -800,7 +800,7 @@ body {
 .titulo-termos-e-condicoes{
   color: var(--color-primary-1);
   text-align: center;
-  margin: 20px 0;
+  padding-top: 50px;
 }
 .sub-titulo2-termos-e-condicoes{
   padding: 6px;
