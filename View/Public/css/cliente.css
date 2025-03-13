@@ -525,7 +525,7 @@ body {
   background-color: #3A6441;
 }
 /*Final editar perfil - Arthur */
-
+ 
 /* Começo do CSS esqueci a senha card e-mail - Denyel */
 .esqueci_senha-card_email-body{
   background-color: #F7F7F7;
@@ -1030,3 +1030,164 @@ body {
 }
 /*final categoria animais */
 /*----------------------------------------------------------------------------*/
+/* Começo De Meu Perfil - Visualizar Dados*/
+.body-visualizar-dados{
+  padding: 40px 10%;
+  align-items: center;
+  justify-content: center;
+}
+.visualizar-dados-title{
+  font-size: 2.25rem;
+  color: var(--color-primary-1);
+  font-weight: bold;
+}
+.visualizar-dados-title i{
+  color: var(--color-botao-op-Concluido);
+  margin-right: 30px;
+}
+.visualizar-dados-nome-email-img{
+  border: 2px solid var(--color-primary-1);
+  border-radius: 0.625rem;
+  max-height: 10.125rem;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  align-items: center;
+  padding: 15px 15px;
+}
+.visualizar-dados-img-perfil-div i{
+  font-size: 70px;
+  margin: 30px 50px;
+  color: var(--color-primary-1);
+  
+}
+.visualizar-dados-nome-email{
+  display: flex;
+  flex-direction: column;
+}
+.visualizar-dados-nome{
+  font-size: 1.5rem;
+  color: var(--color-primary-1);
+}
+.visualizarados-email{
+  font-size: 0.9rem;
+  color: var(--color-primary-1);
+}
+.visualizar-dados-geral{
+  border: 2px solid var(--color-primary-1);
+  border-radius: 0.625rem;
+  max-height: 18.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: center;
+  padding: 30px 30px;
+}
+.visualizar-dados-geral-title{
+  font-size: 1.8rem;
+  color: var(--color-primary-1);
+  margin-bottom: 30px;
+  width: 100%;
+}
+.visualizar-dados-geral0{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+.visualizar-dados-geral1{
+  width: 100%;
+  flex-direction: column;
+}
+.visualizar-dados-geral2{
+  width: 100%;
+  flex-direction: column;
+}
+.vizualizar-dados-geral-nome label{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-nome{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-telefone label{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-telefone{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-email label{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-email{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-endereco label{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-endereco{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-datanasc label{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-datanasc{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+}
+.visualizar-dados-area-botoes{
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.visualizar-dados-editar{
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 10px 5%;
+  color: var(--color-primary-7);
+  background-color: var(--color-botao-op-Concluido);
+  border: none;
+  border-radius: 0.625rem;
+  font-size: 1rem;
+}
+.visualizar-dados-logout{
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 10px 5%;
+  color: #fab7b7;
+  background-color: var(--color-botao-op-Cancelar);
+  border: none;
+  border-radius: 0.625rem;
+  font-size: 1rem;
+}
+.visualizar-dados-editar:hover{
+  color: var(--color-botao-op-Concluido);
+  background-color: var(--color-primary-7);
+  border: none;
+}
+.visualizar-dados-logout:hover{
+  color: var(--color-botao-op-Cancelar);
+  background-color: #fab7b7;;
+  border: none;
+}
+
+/* Fim De Meu Perfil - Visualizar Dados*/
