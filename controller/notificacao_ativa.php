@@ -17,9 +17,9 @@
         </header>
         <div class="notificacao-usuario-cabesalio">
             <title class="notificacao-usuario-title"></title>
-            <div class="notificacao-usuario-notficacao">
+            <div class="notificacao-usuario-notificacao">
                 <i class="fa-solid fa-chevron-left" style="color: #2d8c37;"></i>
-                <h1>NOTIFICAÇÃO</h1>
+                <h1 class="notificacao-usuario-h1">NOTIFICAÇÃO</h1>
             </div>
             <button class="notificacao-usuario-filtro">
                 <h2 class="notificacao-filtro-name">filtro</h2>

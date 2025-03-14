@@ -1191,7 +1191,7 @@ body{
   justify-content: space-between;
   align-items: center;
 }
-.notificacao-usuario-notficacao{
+.notificacao-usuario-notificacao{
   /* background-color: violet; */
   display: flex;
   flex-direction: row;
@@ -1201,7 +1201,7 @@ body{
   color: #40513B;
   font-weight: bold;
 }
-.notificacao-usuario-notficacao h1{
+.notificacao-usuario-h1{
   padding-left: 30px;
 }
 .fa-chevron-left{
