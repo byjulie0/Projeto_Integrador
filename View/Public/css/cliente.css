@@ -973,7 +973,7 @@ body {
   font-family: "Poppins", serif; /*escolhe a fonte das letras */
   background-color: #f0f0f0; /* tela de fundo */
   margin: 0; 
-  padding: 20px;
+  padding: 0px;
 }
 #pg-categorias-math {
   color: var(--color-primary-1);
