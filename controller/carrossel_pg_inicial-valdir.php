@@ -16,7 +16,7 @@ include 'menu-pg-inicial.php';
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active brilho">
-      <img class="d-block w-100" src="../view/public/Imagens/pecuaria.jpg" alt="First slide">
+      <img class="d-block w-100" src="../view/public/Imagens/pecuaria.png" alt="First slide">
     
      
     
@@ -37,9 +37,9 @@ include 'menu-pg-inicial.php';
     <span class="sr-only">Next</span>
   </a>
 </div>
-
+<!-- id="carousel_text" -->
 <div class="#">
-        <h3 id="carousel_text" class="text-g">
+        <h3  id="carousel_text" class="text-g">
             <span>
                 Seja bem-vindo ao nosso site!
             </span>

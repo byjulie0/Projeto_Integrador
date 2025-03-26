@@ -56,6 +56,13 @@ body {
 
 }
 
+.text-g{
+    padding: 6% 8% 5% 11%;
+}
+
+.text{
+    padding: 10% 8% 5% 11%;
+}
 #carousel_text{
 
     text-align: left;
@@ -64,7 +71,6 @@ body {
     font-family: 'Roboto', sans-serif;
     color: white;
     height: 200px;
-    padding: 10% 8% 5% 5%;
     position: absolute;
     top:20px;
     width: 800px;
