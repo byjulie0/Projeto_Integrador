@@ -968,17 +968,18 @@ body {
 }
 /*Final da Pg Favoritos - Mariana */
 
-/* inicio categoria animais - matheus */ 
+/* inicio slider da página inicial  */ 
 .body-math {
   font-family: "Poppins", serif; /*escolhe a fonte das letras */
   background-color: #f0f0f0; /* tela de fundo */
   margin: 0; 
-  padding: 20px;
+  padding: 0px;
 }
 #pg-categorias-math {
   color: var(--color-primary-1);
   padding-left:  8%;
-  padding-top: 4%}
+  padding-top: 3%
+}
 
 .carrossel-cat-math {
   display: flex;
@@ -986,7 +987,7 @@ body {
   justify-content: center;
   overflow: hidden;
   position: relative;
-  padding-top: 8%;
+  padding-top: 2%;
   padding-bottom: 8%;
 }
 .arrow-cat-math {
@@ -1005,12 +1006,17 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   padding: 15px;
-  width: 200px;
+  width: 230px;
   text-align: center;
 }
-.card img {
+.card-cat-math img {
   width: 100%;
   border-radius: 8px;
+  object-fit: cover;
+}
+.img_slider_math{
+    width: 140px;
+    height: 160px;
 }
 .card p {
   margin: 8px 0;
@@ -1020,7 +1026,7 @@ body {
   color: #000;
 }
 .btn-cat-math {
-  background-color: #16a085;
+  background-color: var(--color-botao-op-Concluido);
   color: white;
   padding: 10px 20px;
   text-decoration: none;
