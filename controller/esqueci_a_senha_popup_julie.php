@@ -1,6 +1,6 @@
 <!-- Julie -->
 <?php
-include 'menu-pg-inicial.php';
+include 'menu_recuperar_senha_julie.php';
 ?>
 
 
@@ -17,19 +17,15 @@ include 'menu-pg-inicial.php';
 
     <main>
         <div class="esqueci_a_senha_popup_setinha">
-            <a href="" class="esqueci_senha-card_email-enchaminhar">
+            <a href="" class="esqueci_senha-card_popup_setinha_voltar">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
-        <div class="esqueci_senha-card_email">
-            <div class="esqueci_senha-card_email-content">
-                <h1>Esqueceu a Senha</h1>
-                <h3>Digite seu e-mail para enviarmos o código e gerar uma nova senha</h3>
-                <form action="" class="esqueci_senha-card_email-formulario">
-                    <input type="email" name="esqueci_senha-card_email-digitar" type="submit" placeholder="E-mail">
-                    <div class="esqueci_senha-card_email-linha_divisao"></div>
-                    <button type="submit">Enviar</button>
-                </form>
+        <div class="esqueci_senha_card_popup">
+            <div class="esqueci_senha_popup_content">
+                <h3 class="esqueci_senha_popup_texto">Senha redefinida com sucesso!</h3>
+                    <div class="esqueci_senha_popup_linha"></div>
+                    <button type="submit" class="esqueci_senha_popup_botao">Enviar</button>
             </div>
         </div>
     </main>
