@@ -1032,17 +1032,21 @@ body {
 /*----------------------------------------------------------------------------*/
 
 /* Começo do CSS esqueci a senha pop up - Julie */
-.esqueci_a_senha_popup{
+.esqueci_a_senha_popup_body{
   background-color: #F7F7F7;
   display: grid;
   align-items: center;
-  height: 90vh;
+  min-height: 90vh;
   font-family: 'Poppins', sans-serif;
+  padding-left: 8%;
+  padding-right: 8%;
+  margin-bottom: 8%;
 }
-.esqueci_senha-card_email{
+.esqueci_senha_card_popup{
   position: relative;
   left: 22%;
-  top: -15px;
+  margin-top: 3%;
+  margin-bottom: 5%;
   width: 810px;
   height: 450px;
   background-color: #DFEBE0;
@@ -1050,37 +1054,17 @@ body {
   border-radius: 2px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 }
-.esqueci_senha-card_email-content h1{
-  position: relative;
-  top: -85px;
-  left: 190px;
-  color: var(--color-fonte);
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-.esqueci_senha-card_email-content h3{
-  position: relative;
-  top: -40px;
-  left: 15px;
+.esqueci_senha_popup_texto {
+  justify-content: center;
+  align-items: center;
   color: var(--color-primary-1);
-  font-size: 1rem;
+  font-size: 1.5rem;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  margin-top: -50px; 
 }
-.esqueci_senha-card_email-formulario input{
-  width: 590px;
-  height: 25px;
-  border: none;
-  outline: none;
-  border-radius: 2px;
-  padding: 10px 15px;
-  position: relative;
-  top: 40px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  color: #7c0428;
-}
-.esqueci_senha-card_email-formulario input::placeholder{
-  text-indent: 1px;
-}
-.esqueci_senha-card_email-linha_divisao{
+.esqueci_senha_popup_linha{
   width: 585px;
   height: 0.5px;
   position: relative;
@@ -1089,29 +1073,67 @@ body {
   transform: translateY(20px);
   background-color: var(--color-primary-1);
 }
-.esqueci_senha-card_email-formulario button{
+.esqueci_senha_popup_botao{
   position: relative;
   top: 120px;
   left: 225px;
-  width: 125px;
-  height: 25px;
+  width: 130px;
+  height: 40px;
   background-color: #ffffff;
   border-radius: 2px;
   border: none;
   color: var(--color-primary-1);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
-.esqueci_senha-card_email-formulario button:hover{
+.esqueci_senha_popup_botao:hover{
   background-color: var(--color-primary-2);
   color: #ffffff;
 }
-.esqueci_a_senha_popup_setinha{
-  width: 2%;
-  position: relative;
-  left: 15%;
-  transform: translateY(20px);
+.esqueci_senha-card_popup_setinha_voltar {
+  position: absolute;  
+  top: 40px;         
+  left: 40px;        
+  z-index: 10;
+  cursor: pointer;
 }
-.esqueci_a_senha_popup_setinha{
+
+.esqueci_senha-card_popup_setinha_voltar i {
   font-size: 1.7rem;
-  color: var(--color-primary-1);
+  color: var(--color-primary-2);
 }
+/* Fim do CSS esqueci a senha pop up - Julie */
+
+
+/* Começo do CSS do menu de Recuperar Senha - Julie*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.menu_recuper_senha{
+  align-items: center;
+  width: 100%;
+  height: 9.2rem;
+  display: flex;
+  background-color: #40513B;
+}
+.info_menu-recuperar_senha{
+  width: 100%;
+  max-height: 9.2rem;
+  display: flex;
+  flex-direction: row;
+}
+.logo_menu_recuperar_senha img{
+  margin-left: 20px;
+  margin-top: 10px;
+  height: 7.884rem;
+}
+.nome_menu_recuperar_senha{
+  font-weight: 600;
+  margin-left: 20px;
+  margin-top: 50px;
+  color: #FFFFFF;
+  font-size: 2rem;
+  align-items: center;
+}
+/* Fim do CSS do Menu Cadastro - Maria*/
