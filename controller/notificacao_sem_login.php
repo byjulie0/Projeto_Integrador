@@ -19,7 +19,7 @@
             <title class="notificacao-usuario-title"></title>
             <div class="notificacao-usuario-notficacao">
                 <i class="fa-solid fa-chevron-left" style="color: #2d8c37;"></i>
-                <h1>NOTIFICAÇÃO</h1>
+                <h1 class="notificacao-usuario-notficacao-h1">NOTIFICAÇÃO</h1>
             </div>
             <button class="notificacao-usuario-filtro">
                 <h2 class="notificacao-filtro-name">filtro</h2>

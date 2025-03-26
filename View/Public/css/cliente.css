@@ -1168,7 +1168,7 @@ body {
   color: #40513B;
   font-weight: bold;
 }
-.notificacao-usuario-notficacao h1{
+.notificacao-usuario-notficacao-h1{
   padding-left: 30px;
 }
 .fa-chevron-left{
@@ -1212,7 +1212,7 @@ body {
   align-items: center;
   
 }
-.notificacao-center-text h1{
+.texto-pg-not1{
   color: #40513B;
 }
 .notificacao-login{
@@ -1228,7 +1228,7 @@ body {
   width: 100%;
 }
 @media screen and (max-width:1170px){
-  .notificacao-usuario-notficacao h1{
+  .notificacao-usuario-notficacao-h1{
       padding-right: 30px;
   }
   .texto-pg-not{
