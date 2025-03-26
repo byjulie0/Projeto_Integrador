@@ -31,7 +31,7 @@
             <div class="notificacao-usuario-linha"></div>
         </div>
         <div class="notificacao_center_text">
-            <h1>Você ainda não recebeu nenhuma notificação.</h1>
+            <h1 class="notificacao_center_text_h1">Você ainda não recebeu nenhuma notificação.</h1>
         </div>
         <footer class="footer_not_vazio">
         <?php
