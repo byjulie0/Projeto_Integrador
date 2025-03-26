@@ -15,7 +15,7 @@ include 'menu-pg-inicial.php';
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active brilho">
       <img class="d-block w-100" src="../view/public/Imagens/pecuaria.jpg" alt="First slide">
     
      
@@ -39,13 +39,13 @@ include 'menu-pg-inicial.php';
 </div>
 
 <div class="#">
-        <h3 class="carrossel">
+        <h3 id="carousel_text" class="text-g">
             <span>
                 Seja bem-vindo ao nosso site!
             </span>
         </h3>
         
-        <h5 id="carousel_text">Somos um negócio familiar, com anos de experiência no ramo de vendas de animais pecuários, acumulando clientes ao redor de todo o mundo. Temos certeza de que aqui você achará exatamento o(s) animal(is) que procura!">
+        <h5 id="carousel_text" class="text">Somos um negócio familiar, com anos de experiência no ramo de vendas de animais pecuários, acumulando clientes ao redor de todo o mundo. Temos certeza de que aqui você achará exatamento o(s) animal(is) que procura!
         </h5>
         <button class="btn">Saiba mais</button>
     </div>

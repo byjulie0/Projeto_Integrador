@@ -43,7 +43,9 @@ body {
 .texto2-carrossel-pg-inicial{
     text-align: justify;
 }
- 
+ .brilho{
+    opacity:100%;
+ }
 .texto2-carrossel-pg-inicial { 
     color: var(--color-primary-1); /* Cor do parágrafo */ 
     font-size: 20px; 
@@ -55,13 +57,14 @@ body {
 }
 
 #carousel_text{
-    color: yellowgreen;
+
     text-align: left;
     z-index: 1;
     /* box-sizing: border-box; */
     font-family: 'Roboto', sans-serif;
+    color: white;
     height: 200px;
-    padding: 0;
+    padding: 10% 8% 5% 5%;
     position: absolute;
     top:20px;
     width: 800px;
