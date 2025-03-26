@@ -907,6 +907,11 @@ html, body {
   font-family: 'Poppins', sans-serif;
 }
 
+.esqueci_senha-card_email-main{
+  margin-bottom: 5%;
+  margin-top: 50px;
+}
+
 .esqueci_senha-card_email{
   position: relative;
   left: 22%;
@@ -946,7 +951,7 @@ html, body {
   position: relative;
   top: 40px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  color: #7c0428;
+  color: #000000;
 }
 
 /* .esqueci_senha-card_email-formulario input::placeholder{
