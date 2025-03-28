@@ -23,19 +23,16 @@
                     <div class="parte1-form-cadastro">
                         <input type="text" required placeholder="Nome Completo*" class="input-form-cadastro">
                         <input type="date" required class="input-form-cadastro" placeholder="Data de Nascimento*">
+                        <input type="text" required class="input-form-cadastro" placeholder="CPF/CNPJ*">
                         <input type="email" required placeholder="Email*" class="input-form-cadastro">
                         <input type="text" placeholder="Telefone" class="input-form-cadastro">
-                        <input type="text" required placeholder="Bairro*" class="input-form-cadastro">
-                    </div>
-                    <div class="parte2-form-cadastro">
-                        <input type="text" required placeholder="Rua*" class="input-form-cadastro">
-                        <input type="text" required placeholder="Número*" class="input-form-cadastro">
-                        <input type="text" required placeholder="CEP*" class="input-form-cadastro">
-                        <input type="text" required placeholder="País*" class="input-form-cadastro">
-                        <input type="submit" value="Cadastrar" class="input-submit-form-cadastro">
+                        <input type="password" required placeholder="Senha*" class="input-form-cadastro">
                     </div>
                 </form>
                 <div class="line-cadastro"></div>
+                <div class="btn-submit-cadastro">
+                    <input type="submit" value="Cadastrar" class="input-submit-form-cadastro">
+                </div>
             </div>
             <p class="area-termos-privacidade-cadastro">
                 Ao se inscrever, você concorda com as políticas do John Rooster <a href="#" class="termos-privacidade-cadastro">Termos de serviço & Políticas de privacidade</a>

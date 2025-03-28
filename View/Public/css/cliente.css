@@ -513,6 +513,7 @@ section{
   font-family: 'Poppins', sans-serif;
 }
 .body-cadastro{
+  display: flex;
   background-color: #F7F7F7;
   height: 100vh;
   align-items: center;
@@ -520,7 +521,7 @@ section{
 }
 .area-form-cadastro{
   justify-content: center;
-  width: 63.063rem;
+  width: 100%;
   height: auto;
   flex-direction: column;
   margin: 100px 250px;
@@ -542,17 +543,12 @@ section{
   justify-content: center;
 }
 .area-geral-form-cadastro{
+  width: 100%;
   flex-direction: row; 
+  align-items: center;
+  justify-content: center;
 }
 .parte1-form-cadastro{
-  align-items: center;
-  padding: 40px;
-  width: 100%;
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
-}
-.parte2-form-cadastro{
   align-items: center;
   padding: 40px;
   width: 100%;
@@ -587,9 +583,15 @@ section{
   height: 1px;
   background-color: var(--color-primary-1);
 }
+.btn-submit-cadastro{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
 .input-submit-form-cadastro{
   margin-top: 10px;
   justify-content: center;
+  align-items: center;
   width: 50%;
   padding: 5px;
   border: 1px solid var(--color-primary-1);
