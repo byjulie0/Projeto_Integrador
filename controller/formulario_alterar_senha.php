@@ -13,7 +13,7 @@ include 'menu-pg-inicial.php'
     <section id="section_formulario_senha">
         <div class="espaco_forms_senha">
             <div class="title_div">
-                <a href="#">
+                <a href="#" class="setinha_forms_mudar_senha">
                     <i class="fa-solid fa-chevron-left">
                     </i>
                 </a>
