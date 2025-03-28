@@ -1243,7 +1243,7 @@ body {
   border: none;
   outline: none;
   border-radius: 2px;
-  padding: 10px 15px;
+  padding: 15px 15px;
   position: relative;
   top: 40px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
@@ -1285,7 +1285,7 @@ body {
 }
 .recuperar_senha_codigo-enchaminhar i{
   font-size: 1.7rem;
-  color: #2D8C37;
+  color: var(--color-primary-1);
 }
 
 /* Fim de Recuperar Senha Código - Denyel */
