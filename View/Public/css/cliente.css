@@ -1045,7 +1045,6 @@ body {
 .esqueci_senha_card_popup{
   position: relative;
   left: 22%;
-  margin-top: 3%;
   margin-bottom: 5%;
   width: 810px;
   height: 450px;
@@ -1089,18 +1088,18 @@ body {
   background-color: var(--color-primary-2);
   color: #ffffff;
 }
-.esqueci_senha-card_popup_setinha_voltar {
-  position: absolute;  
-  top: 40px;         
-  left: 40px;        
-  z-index: 10;
-  cursor: pointer;
+.esqueci_senha-card_popup_setinha_voltar  {
+  color: var(--color-primary-1); 
+  font-size: 30px;
+}
+.esqueci_a_senha_popup_setinha{
+  width: 18px;
+  position: relative;
+  left: 15%;
+  margin-top: 90px;
 }
 
-.esqueci_senha-card_popup_setinha_voltar i {
-  font-size: 1.7rem;
-  color: var(--color-primary-2);
-}
+
 /* Fim do CSS esqueci a senha pop up - Julie */
 
 
