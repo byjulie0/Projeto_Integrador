@@ -321,12 +321,16 @@ body {
 
 /* Final da categoria da pg inicial */
 
-/* Começo da pg de login */ 
-body {
+/* Começo da pg de login - Vinycius*/ 
+html, body {
+  height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto; /* O conteúdo ocupa 1 parte, e o footer fica abaixo */
   display: flex;
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */
-  height: 100vh; /* Faz o body ocupar toda a altura da tela */
+  height: 100%;
   margin: 0;
 }
 
@@ -334,32 +338,70 @@ body {
   display: grid;
   grid-template-columns: 50% 50%;
   background-color: #DFEBE0;
-  padding: 20px;
+  padding: 150px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
   width: 950px;
 }
-.container{
+
+
+.container-login {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: #DFEBE0;
+  padding: 0px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+  width: 1250px;
+  height: 650px;
+}
+/* .container{
   display: flex;
+} */
+
+.info-login {
+  position: relative;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 150px;
+  padding-left: 40px;
+  margin-left: 9%;
+
+  
 }
 
-
-.info {
+.login-form {
   
-  padding: 40px;
+  padding: 150px;
   font-size: 14px;
   
 }
 
-.info img {
-  max-width: 55%;
+.img-login {
+  max-width: 90%;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 15px;
+  padding-left: 40px;
+  margin-left: 9%;
+}
+.text-login{
+  position: relative;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 15px;
+  padding-left: 40px;
+  margin-left: 9%;
 
 }
 
-.login-form {
+
+/* .login-form {
   display: flex;
   flex-direction: column;
-}
+} */
+/* Final da pg de login - Vinycius*/
 /* Começo de detalhes do produto Anna Laura*/
 .body-detalhes-produto {
   font-family: Arial, sans-serif;

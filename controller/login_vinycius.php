@@ -12,11 +12,10 @@ include '../controller/menu-pg-inicial.php';
 </head>
 
 <body>
-    <div class="container">
-        
-        <div class="info">
-            <img src="../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
-            <p>
+    <div class="container-login"> 
+        <div class="info-login">
+        <img class="img-login" src="../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
+            <p class="text-login">
                 Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo com qualidade e confiança para o seu negócio.
             </p>
         </div>
@@ -31,10 +30,11 @@ include '../controller/menu-pg-inicial.php';
                 <a href="#">Não tem conta? Cadastre-se</a>
             </form>
         </div>
+
     </div>
     <footer>
         <?php
-        include 'footer_cliente.php';
+        // include 'footer_cliente.php';
         ?>
     </footer>
 </body>
