@@ -525,7 +525,7 @@ body {
   background-color: #3A6441;
 }
 /*Final editar perfil - Arthur */
-
+ 
 /* Começo do CSS esqueci a senha card e-mail - Denyel */
 .esqueci_senha-card_email-body{
   background-color: #F7F7F7;
@@ -800,7 +800,7 @@ body {
 .titulo-termos-e-condicoes{
   color: var(--color-primary-1);
   text-align: center;
-  margin: 20px 0;
+  padding-top: 50px;
 }
 .sub-titulo2-termos-e-condicoes{
   padding: 6px;
@@ -968,17 +968,18 @@ body {
 }
 /*Final da Pg Favoritos - Mariana */
 
-/* inicio categoria animais - matheus */ 
+/* inicio slider da página inicial  */ 
 .body-math {
   font-family: "Poppins", serif; /*escolhe a fonte das letras */
   background-color: #f0f0f0; /* tela de fundo */
   margin: 0; 
-  padding: 20px;
+  padding: 0px;
 }
 #pg-categorias-math {
   color: var(--color-primary-1);
   padding-left:  8%;
-  padding-top: 4%}
+  padding-top: 3%
+}
 
 .carrossel-cat-math {
   display: flex;
@@ -986,7 +987,7 @@ body {
   justify-content: center;
   overflow: hidden;
   position: relative;
-  padding-top: 8%;
+  padding-top: 2%;
   padding-bottom: 8%;
 }
 .arrow-cat-math {
@@ -1005,12 +1006,17 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   padding: 15px;
-  width: 200px;
+  width: 230px;
   text-align: center;
 }
-.card img {
+.card-cat-math img {
   width: 100%;
   border-radius: 8px;
+  object-fit: cover;
+}
+.img_slider_math{
+    width: 140px;
+    height: 160px;
 }
 .card p {
   margin: 8px 0;
@@ -1020,7 +1026,7 @@ body {
   color: #000;
 }
 .btn-cat-math {
-  background-color: #16a085;
+  background-color: var(--color-botao-op-Concluido);
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -1136,3 +1142,533 @@ body {
   align-items: center;
 }
 /* Fim do CSS do Menu Cadastro - Maria*/
+
+/* Começo De Meu Perfil - Visualizar Dados*/
+.body-visualizar-dados{
+  padding: 40px 10%;
+  align-items: center;
+  justify-content: center;
+}
+.visualizar-dados-title{
+  font-size: 2.25rem;
+  color: var(--color-primary-1);
+  font-weight: bold;
+}
+.visualizar-dados-title i{
+  color: var(--color-botao-op-Concluido);
+  margin-right: 30px;
+}
+.visualizar-dados-nome-email-img{
+  border: 2px solid var(--color-primary-1);
+  border-radius: 0.625rem;
+  max-height: 10.125rem;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  align-items: center;
+  padding: 15px 15px;
+}
+.visualizar-dados-img-perfil-div i{
+  font-size: 70px;
+  margin: 30px 50px;
+  color: var(--color-primary-1);
+  
+}
+.visualizar-dados-nome-email{
+  display: flex;
+  flex-direction: column;
+}
+.visualizar-dados-nome{
+  font-size: 1.5rem;
+  color: var(--color-primary-1);
+}
+.visualizarados-email{
+  font-size: 0.9rem;
+  color: var(--color-primary-1);
+}
+.visualizar-dados-geral{
+  border: 2px solid var(--color-primary-1);
+  border-radius: 0.625rem;
+  max-height: 18.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: center;
+  padding: 30px 30px;
+}
+.visualizar-dados-geral-title{
+  font-size: 1.8rem;
+  color: var(--color-primary-1);
+  margin-bottom: 30px;
+  width: 100%;
+}
+.visualizar-dados-geral0{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+.visualizar-dados-geral1{
+  width: 100%;
+  flex-direction: column;
+}
+.visualizar-dados-geral2{
+  width: 100%;
+  flex-direction: column;
+}
+.vizualizar-dados-geral-nome label{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-nome{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-telefone label{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-telefone{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-email label{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-email{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-endereco label{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-endereco{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-datanasc label{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.vizualizar-dados-geral-datanasc{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+}
+.visualizar-dados-area-botoes{
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.visualizar-dados-editar{
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 10px 5%;
+  color: var(--color-primary-7);
+  background-color: var(--color-botao-op-Concluido);
+  border: none;
+  border-radius: 0.625rem;
+  font-size: 1rem;
+}
+.visualizar-dados-logout{
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 10px 5%;
+  color: #fab7b7;
+  background-color: var(--color-botao-op-Cancelar);
+  border: none;
+  border-radius: 0.625rem;
+  font-size: 1rem;
+}
+.visualizar-dados-editar:hover{
+  color: var(--color-botao-op-Concluido);
+  background-color: var(--color-primary-7);
+  border: none;
+}
+.visualizar-dados-logout:hover{
+  color: var(--color-botao-op-Cancelar);
+  background-color: #fab7b7;;
+  border: none;
+}
+
+/* Fim De Meu Perfil - Visualizar Dados*/
+
+
+/* Início carrinho - Ana Julia */
+
+.cart-header-carrinho{
+  display: flex;
+  flex-direction: row;
+  padding: 50px 150px 0px 150px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-header-labels-carrinho{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-primary-3);
+  width: 100%;
+  padding: 20px 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.check-btn-carrinho{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 40%;
+
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.check-square-carrinho{
+  width: 24px;
+  height: 24px;
+  border: 1px solid #9a9a9a;
+  background-color: #f6f6f6;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.check-box-label-carrinho{
+  font-weight: 600;
+  color: #20261E;
+}
+
+.labels-carrinho{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 20%;
+  margin: 5px;
+}
+
+.labels-themselves-carrinho{
+  justify-content: center;
+  font-weight: 600;
+  color: #20261E;
+}
+
+.product-cards-carrinho{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 25px 150px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.product-card-carrinho{
+  display: flex;
+  flex-direction: column;
+  background-color: #D9D9D9;
+  border-radius: 6px;
+  margin: 25px 150px;
+  padding: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.product-title-area-carrinho{
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+
+.product-title-carrinho{
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.delete-item-btn-area-carrinho{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.delete-item-carrinho{
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 12px;
+  color: darkred;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.separation-line-carrinho{
+  width: 100%;
+  background-color: #20261E;
+  margin: 15px 0px;
+  height: 1px;
+}
+
+.product-carrinho{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.non-labeled-content-carrinho{
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: flex-start;
+  gap: 25px;
+  align-items: center;
+}
+
+.product-img-carrinho{
+  width: 150px;
+}
+
+.title-and-description-carrinho{
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name-carrinho, .product-description-carrinho{
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.labels-respective-content-carrinho{
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  justify-content: center;
+  margin: 5px;
+  align-items: center;
+}
+
+.change-quantity-carrinho{
+  display: flex;
+  flex-direction: row;
+  background-color: #f0f0f0;
+  border-style: solid;
+  border-color: #9a9a9a;
+  border-width: 1px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.change-quantity-btn-carrinho{
+  padding: 5px 10px;
+  background: none;
+  border: none;
+  color: #20261E;
+  cursor: pointer;
+}
+
+.quantity-carrinho{
+  padding: 5px 35px;
+  color: var(--color-primary-1);
+  border-left: 1px solid #9a9a9a;
+  border-right: 1px solid #9a9a9a;
+}
+
+.checkout-btns-carrinho{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  /* width: 100%; */
+  /* padding: 25px 150px; */
+  margin: 0px 150px 50px 150px;
+  background-color: #D9D9D9;
+}
+
+.checkout-btns-space-carrinho{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 50px;
+}
+
+.move-items-to-favorites-area-carrinho{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+
+.move-items-to-favorites-carrinho{
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+.move-items-to-favorites-carrinho span{
+  font-size: 16px;
+  font-weight: 600;
+  color: darkred;
+  text-decoration: underline;
+}
+
+.move-items-to-favorites-carrinho .fa-solid{
+  color: darkgoldenrod;
+  padding: 0px 1px;
+}
+
+.total-price-checkout-carrinho{
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+}
+
+.total-label-carrinho{
+  font-weight: 600;
+  color: #20261E;
+}
+.price-itself-carrinho{
+  font-size: 24px;
+  color: #20261E;
+  padding: 0px 5px;
+}
+
+.checkout-btn-carrinho{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-carrinho{
+  cursor: pointer;
+  background: #4B914B;
+  padding: 5px 75px;
+  border: none;
+  border-radius: 5px;
+  font: inherit;
+}
+
+.checkout-carrinho:hover{
+  background: darkgoldenrod;
+}
+
+.checkout-carrinho span{
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-primary-8);
+}
+
+/* Fim - Carrinho */
+
+/* Início PES - Ana Julia */
+
+.whole-page-content-pes{
+  width: 100%;
+  height: 100vh;
+  /* background-color: red; */
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.page-title-pes{
+  display: flex;
+  width: 100%;
+  /* background-color: pink; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.go-back-pes{
+  width: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-back-pes button{
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.go-back-pes .fa-solid{
+  color: var(--color-primary-1);
+}
+
+.title-area-pes{
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-pes{
+  display: flex;
+  justify-content: center;
+  color: var(--color-primary-1);
+  font-size: 24px;
+}
+
+.terms-pes{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.term-pes{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.term-title-pes{
+  color: var(--color-primary-1);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.term-text-pes{
+  color: var(--color-primary-1);
+  font-size: 16px;
+}
+
+/* Fim - PES */
+
