@@ -1481,3 +1481,86 @@ input[type="checkbox"] {
 }
 
 /* Fim - Carrinho */
+
+/* Início PES - Ana Julia */
+
+.whole-page-content-pes{
+  width: 100%;
+  height: 100vh;
+  /* background-color: red; */
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.page-title-pes{
+  display: flex;
+  width: 100%;
+  /* background-color: pink; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.go-back-pes{
+  width: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-back-pes button{
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.go-back-pes .fa-solid{
+  color: var(--color-primary-1);
+}
+
+.title-area-pes{
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-pes{
+  display: flex;
+  justify-content: center;
+  color: var(--color-primary-1);
+  font-size: 24px;
+}
+
+.terms-pes{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.term-pes{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.term-title-pes{
+  color: var(--color-primary-1);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.term-text-pes{
+  color: var(--color-primary-1);
+  font-size: 16px;
+}
+
+/* Fim - PES */
