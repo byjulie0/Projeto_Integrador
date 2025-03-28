@@ -21,6 +21,7 @@ include 'menu_recuperar_senha_julie.php';
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
+
         <div class="esqueci_senha_card_popup">
             <div class="esqueci_senha_popup_content">
                 <h3 class="esqueci_senha_popup_texto">Senha redefinida com sucesso!</h3>
