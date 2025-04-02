@@ -515,9 +515,9 @@ section{
 .body-cadastro{
   display: flex;
   background-color: #F7F7F7;
-  height: 100vh;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .area-form-cadastro{
   justify-content: center;
@@ -584,9 +584,12 @@ section{
   background-color: var(--color-primary-1);
 }
 .btn-submit-cadastro{
+  display: flex;
+  margin-top: 20px;
   width: 100%;
   align-items: center;
   justify-content: center;
+
 }
 .input-submit-form-cadastro{
   margin-top: 10px;
@@ -639,7 +642,7 @@ section{
   left: 20px;
   top: 20px;
   margin-top: 250px;
-  margin-left: 100px;
+  margin-left: 200px;
 }
 /* Fim do CSS da página Cadastro*/
 
@@ -676,6 +679,7 @@ section{
   font-size: 2rem;
   align-items: center;
 }
+
 /* Fim do CSS do Menu Cadastro*/
 
 /* Inicio-nossa-historia-valdir */
