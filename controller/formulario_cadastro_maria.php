@@ -21,12 +21,12 @@
             <div class="area-geral-form-cadastro">
                 <form action="#" class="form-cadastro">
                     <div class="parte1-form-cadastro">
-                        <input type="text" required placeholder="Nome Completo*" class="input-form-cadastro">
-                        <input type="date" required class="input-form-cadastro" placeholder="Data de Nascimento*">
-                        <input type="text" required class="input-form-cadastro" placeholder="CPF/CNPJ*">
-                        <input type="email" required placeholder="Email*" class="input-form-cadastro">
+                        <input type="text" name = "nome" required placeholder="Nome Completo*" class="input-form-cadastro">
+                        <input type="date" name = "data_nascimento" required class="input-form-cadastro" placeholder="Data de Nascimento*">
+                        <input type="text" name = "cpf_cnpj" required class="input-form-cadastro" placeholder="CPF/CNPJ*">
+                        <input type="email" name = "telefone" required placeholder="Email*" class="input-form-cadastro">
                         <input type="text" placeholder="Telefone" class="input-form-cadastro">
-                        <input type="password" required placeholder="Senha*" class="input-form-cadastro">
+                        <input type="password" name = "senha" required placeholder="Senha*" class="input-form-cadastro">
                     </div>
                 </form>
                 <div class="line-cadastro"></div>
@@ -42,7 +42,59 @@
             </p>
         </div>
     </main>
+    <script>
+    function validarFormulario(event) {
+        let nome = document.querySelector('input[type="text"]:nth-of-type(1)');
+        let dataNascimento = document.querySelector('input[type="date"]');
+        let cpfCnpj = document.querySelector('input[type="text"]:nth-of-type(3)');
+        let email = document.querySelector('input[type="email"]');
+        let senha = document.querySelector('input[type="password"]');
+        
+        if (nome.value.trim() === '') {
+            alert('Por favor, preencha o campo "Nome Completo".');
+            nome.focus();
+            event.preventDefault();
+            return false;
+        }
+
+        if (dataNascimento.value === '') {
+            alert('Por favor, preencha a data de nascimento.');
+            dataNascimento.focus();
+            event.preventDefault();
+            return false;
+        }
+
+        if (cpfCnpj.value.trim() === '') {
+            alert('Por favor, preencha o campo "CPF/CNPJ".');
+            cpfCnpj.focus();
+            event.preventDefault();
+            return false;
+        }
+
+        // Validar o email
+        if (email.value.trim() === '') {
+            alert('Por favor, preencha o campo "Email".');
+            email.focus();
+            event.preventDefault();
+            return false;
+        }
+
+        // Validar a senha
+        if (senha.value.trim() === '') {
+            alert('Por favor, preencha o campo "Senha".');
+            senha.focus();
+            event.preventDefault();
+            return false;
+        }
+
+        return true;
+    }
+
+    // Adicionando o evento de validação no envio do formulário
+    document.querySelector('.form-cadastro').addEventListener('submit', validarFormulario);
+    </script>
 </body>
+
 </html>
 
 <?php
