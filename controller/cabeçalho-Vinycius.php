@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="..\view\public\css\cliente.css">
 </head>
 <body>
-    <nav class="menu_recuper_senha">
-        <div class="info_menu-recuperar_senha">
-            <div class="logo_menu_recuperar_senha">
-                <img src="../view/public/imagens/img_logofabrica.png" alt="" class="logo_menu_recuper_senha">
+    <nav class="menu_login">
+        <div class="info_menu-login">
+            <div class="logo_menu_login">
+                <img src="../view/public/imagens/img_logofabrica.png" alt="" class="logo_menu_login">
             </div>
-            <p class="nome_menu_recuperar_senha">John Rooster - Recuperar Senha</p>
+            <p class="nome_menu_login">John Rooster - Login</p>
         </div>
     </nav>
 </body>
