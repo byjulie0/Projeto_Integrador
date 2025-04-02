@@ -1,6 +1,6 @@
 <!-- Denyel -->
 <?php
-include 'menu-pg-inicial.php';
+include 'menu_recuperar_senha_julie.php';
 ?>
 
 
@@ -15,7 +15,7 @@ include 'menu-pg-inicial.php';
 </head>
 <body class="esqueci_senha-card_email-body">
 
-    <main>
+    <main class="esqueci_senha-card_email-main">
         <div class="esqueci_senha-card_email-seta_voltar">
             <a href="" class="esqueci_senha-card_email-enchaminhar">
                 <i class="fa-solid fa-chevron-left"></i>

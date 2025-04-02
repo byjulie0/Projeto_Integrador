@@ -534,6 +534,10 @@ body {
   height: 90vh;
   font-family: 'Poppins', sans-serif;
 }
+.esqueci_senha-card_email-main{
+  margin-bottom: 5%;
+  margin-top: 50px;
+}
 .esqueci_senha-card_email{
   position: relative;
   left: 22%;
@@ -566,11 +570,11 @@ body {
   border: none;
   outline: none;
   border-radius: 2px;
-  padding: 10px 15px;
+  padding: 15px 15px;
   position: relative;
   top: 40px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  color: #7c0428;
+  color: #000000;
 }
 .esqueci_senha-card_email-formulario input::placeholder{
   text-indent: 1px;
@@ -608,7 +612,7 @@ body {
 }
 .esqueci_senha-card_email-enchaminhar i{
   font-size: 1.7rem;
-  color: #2D8C37;
+  color: var(--color-primary-1);
 }
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
@@ -1314,6 +1318,98 @@ body {
 }
 
 /* Fim De Meu Perfil - Visualizar Dados*/
+
+/* Começo de Recuperar Senha Código - Denyel */
+
+.recuperar_senha_codigo-body{
+  background-color: #F7F7F7;
+  display: grid;
+  align-items: center;
+  height: 90vh;
+  font-family: 'Poppins', sans-serif;
+}
+.recuperar_senha_codigo-main{
+  margin-bottom: 5%;
+  margin-top: 50px;
+}
+.recuperar_senha_codigo{
+  position: relative;
+  left: 22%;
+  top: -15px;
+  width: 810px;
+  height: 450px;
+  background-color: #DFEBE0;
+  padding: 110px;
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.recuperar_senha_codigo-content h1{
+  position: relative;
+  top: -85px;
+  left: 250px;
+  color: var(--color-fonte);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.recuperar_senha_codigo-content h3{
+  position: relative;
+  top: -40px;
+  left: 100px;
+  color: var(--color-primary-1);
+  font-size: 1rem;
+}
+.recuperar_senha_codigo-formulario input{
+  width: 590px;
+  height: 25px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 15px 15px;
+  position: relative;
+  top: 40px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  color: #000000;
+}
+.recuperar_senha_codigo-formulario input::placeholder{
+  text-indent: 1px;
+}
+.recuperar_senha_codigo-linha_divisao{
+  width: 585px;
+  height: 0.5px;
+  position: relative;
+  left: 2px;
+  top: 50px;
+  transform: translateY(20px);
+  background-color: var(--color-primary-1);
+}
+.recuperar_senha_codigo-formulario button{
+  position: relative;
+  top: 120px;
+  left: 225px;
+  width: 125px;
+  height: 25px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: none;
+  color: var(--color-primary-1);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.recuperar_senha_codigo-formulario button:hover{
+  background-color: var(--color-primary-2);
+  color: #ffffff;
+}
+.recuperar_senha_codigo-seta_voltar{
+  width: 2%;
+  position: relative;
+  left: 15%;
+  transform: translateY(20px);
+}
+.recuperar_senha_codigo-enchaminhar i{
+  font-size: 1.7rem;
+  color: var(--color-primary-1);
+}
+
+/* Fim de Recuperar Senha Código - Denyel */
 
 
 /* Começo do formulário de alteração de senha */
