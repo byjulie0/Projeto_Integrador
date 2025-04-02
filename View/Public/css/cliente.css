@@ -534,6 +534,10 @@ body {
   height: 90vh;
   font-family: 'Poppins', sans-serif;
 }
+.esqueci_senha-card_email-main{
+  margin-bottom: 5%;
+  margin-top: 50px;
+}
 .esqueci_senha-card_email{
   position: relative;
   left: 22%;
@@ -566,11 +570,11 @@ body {
   border: none;
   outline: none;
   border-radius: 2px;
-  padding: 10px 15px;
+  padding: 15px 15px;
   position: relative;
   top: 40px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  color: #7c0428;
+  color: #000000;
 }
 .esqueci_senha-card_email-formulario input::placeholder{
   text-indent: 1px;
@@ -608,7 +612,7 @@ body {
 }
 .esqueci_senha-card_email-enchaminhar i{
   font-size: 1.7rem;
-  color: #2D8C37;
+  color: var(--color-primary-1);
 }
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
