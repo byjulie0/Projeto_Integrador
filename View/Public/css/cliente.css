@@ -1145,9 +1145,11 @@ body {
 
 /* Começo De Meu Perfil - Visualizar Dados*/
 .body-visualizar-dados{
-  padding: 40px 10%;
   align-items: center;
   justify-content: center;
+}
+.main-visualizar-dados{
+  padding: 40px 10%;
 }
 .visualizar-dados-title{
   font-size: 2.25rem;
