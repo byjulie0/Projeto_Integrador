@@ -620,14 +620,15 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 .body-cadastro{
+  display: flex;
   background-color: #F7F7F7;
-  height: 100vh;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .area-form-cadastro{
   justify-content: center;
-  width: 63.063rem;
+  width: 100%;
   height: auto;
   flex-direction: column;
   margin: 100px 250px;
@@ -649,17 +650,12 @@ body {
   justify-content: center;
 }
 .area-geral-form-cadastro{
+  width: 100%;
   flex-direction: row; 
+  align-items: center;
+  justify-content: center;
 }
 .parte1-form-cadastro{
-  align-items: center;
-  padding: 40px;
-  width: 100%;
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
-}
-.parte2-form-cadastro{
   align-items: center;
   padding: 40px;
   width: 100%;
@@ -694,9 +690,18 @@ body {
   height: 1px;
   background-color: var(--color-primary-1);
 }
+.btn-submit-cadastro{
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
 .input-submit-form-cadastro{
   margin-top: 10px;
   justify-content: center;
+  align-items: center;
   width: 50%;
   padding: 5px;
   border: 1px solid var(--color-primary-1);
@@ -743,11 +748,9 @@ body {
   left: 20px;
   top: 20px;
   margin-top: 250px;
-  margin-left: 100px;
+  margin-left: 200px;
 }
 /* Fim do CSS da página Cadastro - Maria*/
-
-/* Começo do CSS do menu Cadastro - Maria*/
 *{
   padding: 0;
   margin: 0;
@@ -779,6 +782,11 @@ body {
   font-size: 2rem;
   align-items: center;
 }
+
+/* Fim do CSS do Menu Cadastro*/
+
+/* Inicio-nossa-historia-valdir */
+
 /* Fim do CSS do Menu Cadastro - Maria*/
 
 /* CSS Termos e Condições Julie*/
