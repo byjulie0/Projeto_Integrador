@@ -1,6 +1,3 @@
-<?php
-include 'menu-pg-inicial.php';
-?>
 <!-- Matheus -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,7 +10,7 @@ include 'menu-pg-inicial.php';
     
 </head>
 <body class ="body-math">
-    <h1 id="pg-categorias-math">Talvez você goste</h1>
+    <h1 class="pg-categorias-math">Talvez você goste</h1>
     <div class="carrossel-cat-math">
         <div class="arrow-cat-math" onclick="prevSlide()">&#10094;</div>
         <div class="cards-cat-math" id="carrossel-cards">
@@ -67,7 +64,3 @@ include 'menu-pg-inicial.php';
     </div>
 </body>
 </html>
-
-<?php
-include 'footer_cliente.php';
-?>
