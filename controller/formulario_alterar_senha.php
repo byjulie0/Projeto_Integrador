@@ -1,3 +1,4 @@
+<!-- Isabella -->
 <?php
 include 'menu-pg-inicial.php'
 ?>
@@ -7,7 +8,7 @@ include 'menu-pg-inicial.php'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário para alterção de senha</title>
+    <title>Formulário para alteração de senha</title>
 </head>
 <body>
     <section id="section_formulario_senha">
