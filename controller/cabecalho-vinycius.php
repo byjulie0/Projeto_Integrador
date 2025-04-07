@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,13 +8,13 @@
     <link rel="stylesheet" href="..\view\public\css\cliente.css">
 </head>
 <body>
-    <nav class="menu_login">
-        <div class="info_menu-login">
-            <div class="logo_menu_login">
-                <img src="../view/public/imagens/img_logofabrica.png" alt="" class="logo_menu_login">
-            </div>
-            <p class="nome_menu_login">John Rooster - Login</p>
+<nav class="menu-login">
+    <div class="info-menu-login">
+        <div class="logo-menu-login">
+            <img src="../view/public/imagens/img_logofabrica.png" alt="Logo John Rooster">
         </div>
-    </nav>
+        <p class="nome-menu-login">John Rooster - Login</p>
+    </div>
+</nav>
 </body>
 </html>
