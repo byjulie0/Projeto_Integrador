@@ -1,5 +1,3 @@
-<!-- Matheus -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,7 +9,7 @@
     
 </head>
 <body class ="body-math">
-    <h1 class="pg-categorias-math">Talvez você goste</h1>
+    <h1 class="pg-categorias-math">Mais Vendidos</h1>
     <div class="carrossel-cat-math">
         <div class="arrow-cat-math" onclick="prevSlide()">&#10094;</div>
         <div class="cards-cat-math" id="carrossel-cards">
