@@ -534,6 +534,10 @@ body {
   height: 90vh;
   font-family: 'Poppins', sans-serif;
 }
+.esqueci_senha-card_email-main{
+  margin-bottom: 5%;
+  margin-top: 50px;
+}
 .esqueci_senha-card_email{
   position: relative;
   left: 22%;
@@ -566,11 +570,11 @@ body {
   border: none;
   outline: none;
   border-radius: 2px;
-  padding: 10px 15px;
+  padding: 15px 15px;
   position: relative;
   top: 40px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  color: #7c0428;
+  color: #000000;
 }
 .esqueci_senha-card_email-formulario input::placeholder{
   text-indent: 1px;
@@ -608,7 +612,7 @@ body {
 }
 .esqueci_senha-card_email-enchaminhar i{
   font-size: 1.7rem;
-  color: #2D8C37;
+  color: var(--color-primary-1);
 }
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
@@ -620,14 +624,15 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 .body-cadastro{
+  display: flex;
   background-color: #F7F7F7;
-  height: 100vh;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .area-form-cadastro{
   justify-content: center;
-  width: 63.063rem;
+  width: 100%;
   height: auto;
   flex-direction: column;
   margin: 100px 250px;
@@ -649,17 +654,12 @@ body {
   justify-content: center;
 }
 .area-geral-form-cadastro{
+  width: 100%;
   flex-direction: row; 
+  align-items: center;
+  justify-content: center;
 }
 .parte1-form-cadastro{
-  align-items: center;
-  padding: 40px;
-  width: 100%;
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
-}
-.parte2-form-cadastro{
   align-items: center;
   padding: 40px;
   width: 100%;
@@ -694,9 +694,18 @@ body {
   height: 1px;
   background-color: var(--color-primary-1);
 }
+.btn-submit-cadastro{
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
 .input-submit-form-cadastro{
   margin-top: 10px;
   justify-content: center;
+  align-items: center;
   width: 50%;
   padding: 5px;
   border: 1px solid var(--color-primary-1);
@@ -743,11 +752,9 @@ body {
   left: 20px;
   top: 20px;
   margin-top: 250px;
-  margin-left: 100px;
+  margin-left: 200px;
 }
 /* Fim do CSS da página Cadastro - Maria*/
-
-/* Começo do CSS do menu Cadastro - Maria*/
 *{
   padding: 0;
   margin: 0;
@@ -779,6 +786,11 @@ body {
   font-size: 2rem;
   align-items: center;
 }
+
+/* Fim do CSS do Menu Cadastro*/
+
+/* Inicio-nossa-historia-valdir */
+
 /* Fim do CSS do Menu Cadastro - Maria*/
 
 /* CSS Termos e Condições Julie*/
@@ -1145,9 +1157,11 @@ body {
 
 /* Começo De Meu Perfil - Visualizar Dados*/
 .body-visualizar-dados{
-  padding: 40px 10%;
   align-items: center;
   justify-content: center;
+}
+.main-visualizar-dados{
+  padding: 40px 10%;
 }
 .visualizar-dados-title{
   font-size: 2.25rem;
@@ -1304,6 +1318,98 @@ body {
 }
 
 /* Fim De Meu Perfil - Visualizar Dados*/
+
+/* Começo de Recuperar Senha Código - Denyel */
+
+.recuperar_senha_codigo-body{
+  background-color: #F7F7F7;
+  display: grid;
+  align-items: center;
+  height: 90vh;
+  font-family: 'Poppins', sans-serif;
+}
+.recuperar_senha_codigo-main{
+  margin-bottom: 5%;
+  margin-top: 50px;
+}
+.recuperar_senha_codigo{
+  position: relative;
+  left: 22%;
+  top: -15px;
+  width: 810px;
+  height: 450px;
+  background-color: #DFEBE0;
+  padding: 110px;
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.recuperar_senha_codigo-content h1{
+  position: relative;
+  top: -85px;
+  left: 250px;
+  color: var(--color-fonte);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.recuperar_senha_codigo-content h3{
+  position: relative;
+  top: -40px;
+  left: 100px;
+  color: var(--color-primary-1);
+  font-size: 1rem;
+}
+.recuperar_senha_codigo-formulario input{
+  width: 590px;
+  height: 25px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 15px 15px;
+  position: relative;
+  top: 40px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  color: #000000;
+}
+.recuperar_senha_codigo-formulario input::placeholder{
+  text-indent: 1px;
+}
+.recuperar_senha_codigo-linha_divisao{
+  width: 585px;
+  height: 0.5px;
+  position: relative;
+  left: 2px;
+  top: 50px;
+  transform: translateY(20px);
+  background-color: var(--color-primary-1);
+}
+.recuperar_senha_codigo-formulario button{
+  position: relative;
+  top: 120px;
+  left: 225px;
+  width: 125px;
+  height: 25px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: none;
+  color: var(--color-primary-1);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.recuperar_senha_codigo-formulario button:hover{
+  background-color: var(--color-primary-2);
+  color: #ffffff;
+}
+.recuperar_senha_codigo-seta_voltar{
+  width: 2%;
+  position: relative;
+  left: 15%;
+  transform: translateY(20px);
+}
+.recuperar_senha_codigo-enchaminhar i{
+  font-size: 1.7rem;
+  color: var(--color-primary-1);
+}
+
+/* Fim de Recuperar Senha Código - Denyel */
 
 
 /* Começo do formulário de alteração de senha */
