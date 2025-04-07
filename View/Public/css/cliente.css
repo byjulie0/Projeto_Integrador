@@ -987,10 +987,11 @@ body {
   margin: 0; 
   padding: 0px;
 }
-#pg-categorias-math {
+.pg-categorias-math {
   color: var(--color-primary-1);
   padding-left:  8%;
-  padding-top: 3%
+  padding-top: 3%;
+  font-size: 28px;
 }
 
 .carrossel-cat-math {
