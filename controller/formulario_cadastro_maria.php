@@ -1,4 +1,3 @@
-<!-- MARIA HELENA -->
 <?php
     include 'menu_cadastro_maria.php';
 ?>
@@ -12,6 +11,12 @@
     <link rel="stylesheet" href="../view/public/css/cliente.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <style>
+        .span-required {
+            display: none;
+            color: red;
+        }
+    </style>
 </head>
 <body class="body-cadastro">
     <main class="main-cadastro">
@@ -19,19 +24,21 @@
         <div class="area-form-cadastro">
             <h2 class="titulo-form-cadastro">Cadastrar</h2>
             <div class="area-geral-form-cadastro">
-                <form action="#" class="form-cadastro">
+                <form action="#" class="form-cadastro" id="formCadastro">
                     <div class="parte1-form-cadastro">
-                        <input type="text" name = "nome" required placeholder="Nome Completo*" class="input-form-cadastro">
-                        <input type="date" name = "data_nascimento" required class="input-form-cadastro" placeholder="Data de Nascimento*">
-                        <input type="text" name = "cpf_cnpj" required class="input-form-cadastro" placeholder="CPF/CNPJ*">
-                        <input type="email" name = "telefone" required placeholder="Email*" class="input-form-cadastro">
-                        <input type="text" placeholder="Telefone" class="input-form-cadastro">
-                        <input type="password" name = "senha" required placeholder="Senha*" class="input-form-cadastro">
+                        <input type="text" name="nome" required placeholder="Nome Completo*" class="input-form-cadastro">
+                        <input type="date" name="data_nascimento" required class="input-form-cadastro" placeholder="Data de Nascimento*">
+                        <input type="text" name="cpf_cnpj" required class="input-form-cadastro" placeholder="CPF/CNPJ*">
+                        <input type="email" name="email" required class="input-form-cadastro required" placeholder="Email*">
+                        <span class="span-required" id="emailError">O email deve ter o padrão email@empresa.com.br</span>
+                        <input type="text" name="telefone" class="input-form-cadastro" placeholder="Telefone">
+                        <input type="password" name="senha" required class="input-form-cadastro" placeholder="Senha*">
+                        <span class="span-required" id="senhaError">A senha deve ter pelo menos 6 caracteres</span>
                     </div>
                 </form>
                 <div class="line-cadastro"></div>
                 <div class="btn-submit-cadastro">
-                    <input type="submit" value="Cadastrar" class="input-submit-form-cadastro">
+                    <input type="submit" value="Cadastrar" class="input-submit-form-cadastro" id="submitButton">
                 </div>
             </div>
             <p class="area-termos-privacidade-cadastro">
@@ -42,61 +49,57 @@
             </p>
         </div>
     </main>
-    <script>
-    function validarFormulario(event) {
-        let nome = document.querySelector('input[type="text"]:nth-of-type(1)');
-        let dataNascimento = document.querySelector('input[type="date"]');
-        let cpfCnpj = document.querySelector('input[type="text"]:nth-of-type(3)');
-        let email = document.querySelector('input[type="email"]');
-        let senha = document.querySelector('input[type="password"]');
-        
-        if (nome.value.trim() === '') {
-            alert('Por favor, preencha o campo "Nome Completo".');
-            nome.focus();
-            event.preventDefault();
-            return false;
-        }
-
-        if (dataNascimento.value === '') {
-            alert('Por favor, preencha a data de nascimento.');
-            dataNascimento.focus();
-            event.preventDefault();
-            return false;
-        }
-
-        if (cpfCnpj.value.trim() === '') {
-            alert('Por favor, preencha o campo "CPF/CNPJ".');
-            cpfCnpj.focus();
-            event.preventDefault();
-            return false;
-        }
-
-        // Validar o email
-        if (email.value.trim() === '') {
-            alert('Por favor, preencha o campo "Email".');
-            email.focus();
-            event.preventDefault();
-            return false;
-        }
-
-        // Validar a senha
-        if (senha.value.trim() === '') {
-            alert('Por favor, preencha o campo "Senha".');
-            senha.focus();
-            event.preventDefault();
-            return false;
-        }
-
-        return true;
-    }
-
-    // Adicionando o evento de validação no envio do formulário
-    document.querySelector('.form-cadastro').addEventListener('submit', validarFormulario);
-    </script>
 </body>
 
-</html>
+<script>
+    const email = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const senha = 6;
+    
+    const form = document.getElementById('formCadastro');
+    const submitButton = document.getElementById('submitButton');
+    const emailInput = document.querySelector('input[name="email"]');
+    const senhaInput = document.querySelector('input[name="senha"]');
+    const cpfcnpjInput = document.querySelector('input[name="cpf_cnpj"]');
+    
+    function emailValidate() {
+        const emailValue = emailInput.value;
+        if (email.test(emailValue)) {
+            document.getElementById('emailError').style.display = 'none';
+            return true;
+        } else {
+            document.getElementById('emailError').style.display = 'block';
+            return false;
+        }
+    }
+    
+    function senhaValidate() {
+        const senhaValue = senhaInput.value;
+        if (senhaValue.length >= senha) {
+            document.getElementById('senhaError').style.display = 'none';
+            return true;
+        } else {
+            document.getElementById('senhaError').style.display = 'block';
+            return false;
+        }
+    }
+    
+    function validateForm(event) {
+        const isEmailValid = emailValidate();
+        const isSenhaValid = senhaValidate();
+
+        if (!isEmailValid || !isSenhaValid) {
+            event.preventDefault();
+        }
+    }
+    
+    form.addEventListener('submit', validateForm);
+
+    emailInput.addEventListener('input', emailValidate);
+
+    senhaInput.addEventListener('input', senhaValidate);
+</script>
 
 <?php
     include 'footer_cliente.php';
 ?>
+</html>
