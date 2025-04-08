@@ -27,7 +27,7 @@ include '../controller/cabecalho-vinycius.php';
                     <input type="text" name="username" placeholder="Nome do usuário/Email" class="input-login-vinycius" required>
                     <input type="password" name="password" placeholder="Senha" class="input-login-vinycius" required>
                     <button type="submit" class="button-vinycius">LOGIN</button>
-                    <a href="#">Esqueci minha senha</a><br>
+                    <a href="#">Esqueci minha senha</a>
                     <a href="#">Não tem conta? Cadastre-se</a>
                 </form>
             </div>

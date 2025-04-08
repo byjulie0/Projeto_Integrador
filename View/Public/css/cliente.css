@@ -1642,7 +1642,6 @@ body, html {
   max-width: 1700px;
   width: 80%;
   height: 550px;
-  
   overflow: hidden;
   padding: 40px;
 }
@@ -1650,7 +1649,6 @@ body, html {
 
 .info-login-vinycius {
   width: 50%;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   
@@ -1658,76 +1656,89 @@ body, html {
 
 .img-login {
   max-width: 330px;
-  padding: 3%;
-  margin-top: 1px;
+  padding: 2%;
+  margin: 1px 1;
+
 }
 
 .text-login-vinycius {
-  margin-top: 1px;
-  font-size: 17px;
+  margin: 10px;
+  font-size: 18px;
   color: #111;
-  font-weight: 500;
-  padding: 0 10px;
+  font-weight: 400;
+  padding: 10 10px;
 }
 
+form{
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
 
 .login-form-vinycius {
   width: 45%;
-  padding: 20px 40px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   background-color: transparent;
+
 }
 
 .login-form-vinycius h2 {
   text-align: center;
+  flex-direction: column;
+  justify-content: center;
   margin-bottom: 80px;
+  padding-top: 1px;
   color: #111;
 }
 
 .input-login-vinycius {
-  width: 80%;
+  width: 70%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #888;
-  border-radius: 3px;
+  border: 1px solid #000;
+  border-radius: 2px;
   font-size: 13px;
+  color: #000;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
 
 .button-vinycius {
-  background-color: #ffffff;
+  background-color: #fff;
   color: #111;
   border: 1px solid #888;
   cursor: pointer;
-  border-radius: 3px;
-  width: 60%;
-  padding: 10px;
-  margin: 20px 0;
+  border-radius: 2px;
+  width: 35%;
+  padding: 5px;
+  margin: 30px 0;
   font-size: 14px;
-  font-weight: bold;
   transition: background-color 0.3s;
 }
 
 .button-vinycius:hover {
-  background-color: #3aff3a;
+ background-color: #f7f9ff; 
 }
 
 .login-form-vinycius a {
   color: #40513B;
   font-size: 13px;
   text-decoration: none;
-  display: inline-block;
+  flex-direction: column;
+  display: flex;
   text-align: center;
-  margin: 5px 0;
+  margin: 7px 0;
 }
 
 .login-form-vinycius a:hover {
   text-decoration: underline;
 }
 
-/* Responsivo para celular */
 @media (max-width: 768px) {
   .login-box-vinycius {
     flex-direction: column;
