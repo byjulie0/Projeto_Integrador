@@ -1,6 +1,6 @@
 <!-- Denyel -->
 <?php
-include 'menu-pg-inicial.php';
+include 'menu_recuperar_senha.php';
 ?>
 
 
@@ -10,12 +10,12 @@ include 'menu-pg-inicial.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esqueci a senha</title>
-    <link rel="stylesheet" href="..\view\public\css\card-email.css">
+    <link rel="stylesheet" href="..\view\public\css\cliente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="esqueci_senha-card_email-body">
 
-    <main>
+    <main class="esqueci_senha-card_email-main">
         <div class="esqueci_senha-card_email-seta_voltar">
             <a href="" class="esqueci_senha-card_email-enchaminhar">
                 <i class="fa-solid fa-chevron-left"></i>
