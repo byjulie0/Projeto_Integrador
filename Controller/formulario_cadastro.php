@@ -1,5 +1,5 @@
 <?php
-    include 'menu_cadastro_maria.php';
+    include 'menu_cadastro.php';
 ?>
 
 <!DOCTYPE html>
