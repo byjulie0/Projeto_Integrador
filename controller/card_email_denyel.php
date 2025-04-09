@@ -16,11 +16,9 @@ include 'menu_recuperar_senha_julie.php';
 <body class="esqueci_senha-card_email-body">
 
     <main class="esqueci_senha-card_email-main">
-        <div class="esqueci_senha-card_email-seta_voltar">
-            <a href="" class="esqueci_senha-card_email-enchaminhar">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-        </div>
+        <a href="" class="esqueci_senha-card_email-seta_voltar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
         <div class="esqueci_senha-card_email">
             <div class="esqueci_senha-card_email-content">
                 <h1>Esqueceu a Senha</h1>
