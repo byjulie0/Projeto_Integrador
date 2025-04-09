@@ -21,94 +21,183 @@
   }
 
 
-body { 
+/* Base Styles (Mobile First) */
+body {
     margin: 0;
     padding: 0;
-    font-family: poppins, sans-serif; /* Fonte */ 
-} 
- 
-.container { 
-    display: flex; /* Flexbox */ 
-    flex-direction: column; /* Direção de coluna */ 
-    justify-content: center; 
-    align-items: center; 
- 
-}
-.texto-carrosel-pg-inicial { 
-    color: var(--color-primary-1); /* Cor do título */ 
-    text-align: left;
-    padding-left: 8%;
-    padding-right: 8%;
-} 
-.texto2-carrossel-pg-inicial{
-    text-align: justify;
-}
- .brilho{
-    opacity:100%;
- }
-.texto2-carrossel-pg-inicial { 
-    color: var(--color-primary-1); /* Cor do parágrafo */ 
-    font-size: 20px; 
-} 
-.span-carrossel-pg-inicial{
-    font-size: 25px;
-    color: var(--color-botao-op-Concluido);
-
+    font-family: 'Poppins', sans-serif;
 }
 
-.text-g{
-    padding: 6% 8% 5% 11%;
-}
-
-.text{
-    padding: 10% 8% 5% 11%;
-}
-#carousel_text{
-
-    text-align: left;
-    z-index: 1;
-    /* box-sizing: border-box; */
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    height: 200px;
-    position: absolute;
-    top:20px;
-    width: 800px;
-    margin: 0;
-}
-
-.carrossel {
-    background-color: yellow;
-    text-align: right;
+.container {
     display: flex;
-    position: top;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Carousel Text Styles */
+.texto-carrosel-pg-inicial {
+    color: var(--color-primary-1);
+    text-align: left;
+    padding: 0 8%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.texto2-carrossel-pg-inicial {
+    color: var(--color-primary-1);
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 8%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.span-carrossel-pg-inicial {
+    font-size: 1.3rem;
+    color: var(--color-botao-op-Concluido);
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+/* Carousel Overlay Text */
+
+.texto_carrossel {
+    margin-top: 15%;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 2;
+    padding: 15px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: white;
+    text-align: left;
+    margin: 0 auto;
+    top: 40%;
+}
+
+.text-g {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
 
 }
+
+/* Button Styles */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Carousel Container */
+.carrossel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
 .carousel-caption {
     display: flex;
-    padding-left: 0;
-    padding-right: 8%;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    padding: 1rem;
 }
 
-.h2-carrossel-pg-inicial{
-    font-size: 16px;
+.h2-carrossel-pg-inicial {
+    font-size: 1rem;
     text-align: justify;
 }
- 
-.btn { 
-    background-color: #4CAF50; /* Cor de fundo do botão */ 
-    color: white; 
-    padding: 15px 32px; 
-    border: none; 
-    cursor: pointer; 
-    margin-top: 20px; 
-    text-align: left;
-} 
- 
-.btn:hover { 
-    background-color: #45a049; /* Cor do botão ao passar o mouse */ 
-} 
 
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+    #carousel_text {
+        width: 80%;
+        left: 10%;
+        top: 40px;
+        padding-top: 0.5rem;
+    }
+
+    .text-g {
+        font-size: 1.8rem;
+    }
+
+    .text {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .texto2-carrossel-pg-inicial {
+        font-size: 1.1rem;
+    }
+
+    .span-carrossel-pg-inicial {
+        font-size: 1.5rem;
+    }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+    #carousel_text {
+        width: 800px;
+        left: calc(50% - 400px);
+        top: 60px;
+        padding-top: 1.5rem;
+    }
+
+    .text-g {
+        font-size: 2.2rem;
+        padding: 2% 8% 1% 11%;
+    }
+
+    .text {
+        font-size: 1.3rem;
+        padding: 1% 8% 2% 11%;
+    }
+
+    .btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    .texto2-carrossel-pg-inicial {
+        font-size: 1.2rem;
+    }
+
+    .span-carrossel-pg-inicial {
+        font-size: 1.8rem;
+    }
+}
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+    #carousel_text {
+        top: 80px;
+    }
+}
 
 

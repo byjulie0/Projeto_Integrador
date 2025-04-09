@@ -16,6 +16,12 @@
     <!-- Início do menu -->
 
     <section class="menu-pg-inicial">
+        <button class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+        </button>
+        <button class="search-toggle">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
         <div class="menu-content-pg-inicial">
             <div class="logo-menu">
                 <img src="../view/public/imagens/2 Sem Título_20250212224411.png" alt="" class="logo-menu-img">

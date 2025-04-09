@@ -28,15 +28,15 @@
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    <span class="sr-only"></span>
   </a>
   <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+    <span class="sr-only"></span>
   </a>
 </div>
 <!-- id="carousel_text" -->
-<div class="#">
+<div class="texto_carrossel">
         <h3  id="carousel_text" class="text-g">
             <span>
                 Seja bem-vindo ao nosso site!

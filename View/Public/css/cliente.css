@@ -25,87 +25,121 @@
 }
 
 /* Começo de menu pg inicial Ana Julia*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lato," sans-serif;
+  font-family: "Lato", sans-serif;
 }
+
 body {
   background-color: #fff;
   font-family: "Poppins";
 }
+
 .menu-pg-inicial {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  background-color: #fff;
 }
+
+
 .menu-content-pg-inicial {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 80px;
+  flex-direction: column;
+  padding: 15px 20px;
+  gap: 15px;
 }
+
 .logo-menu {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
+
 .logo-menu-img {
-  width: 100px;
+  width: 80px;
+  transition: all 0.3s ease;
 }
+
 .logo-menu-title {
-  font-size: 24px;
+  font-size: 20px; 
   color: var(--color-primary-1);
   font-weight: 750;
 }
-.nav-link-pg-inicial {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-between;
+
+
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--color-primary-1);
+  font-size: 24px;
+  cursor: pointer;
 }
+
+.nav-link-pg-inicial {
+  display: none; 
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.nav-link-pg-inicial.active {
+  display: flex;
+}
+
 .nav-item-pg-inicial {
   text-decoration: none;
   color: var(--color-primary-1);
   font-size: 16px;
   font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(124, 4, 40, 0.1);
 }
+
 .nav-item-pg-inicial:hover {
   color: #7c0428;
   transition: ease-in 0.1s;
 }
+
 .search-container-pg-inicial {
-  display: flex;
+  /* display: none; */
   align-items: center;
   background-color: #e0e2e7;
   border-radius: 50px;
-  padding: 15px 15px;
-  gap: 15px;
-  width: 25%;
+  padding: 12px 15px;
+  gap: 10px;
+  width: 100%;
 }
+
+.search-container-pg-inicial.active {
+  display: flex; 
+}
+
 .search-container-pg-inicial input {
   border: none;
   outline: none;
   background: transparent;
-  font-size: 16px;
+  font-size: 14px;
   width: 100%;
   padding-left: 5px;
   color: #7c0428;
   font-family: "Poppins", sans-serif;
 }
+
 .search-container-pg-inicial input::placeholder {
   color: var(--color-primary-1);
   font-weight: 600;
 }
+
 .search-container-pg-inicial button {
-  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
@@ -113,26 +147,212 @@ body {
   display: flex;
   align-items: center;
 }
-.search-containerpg-inicial button .fa-solid {
-  align-items: center;
+
+.search-container-pg-inicial button .fa-solid {
   color: var(--color-primary-1);
   font-size: 16px;
 }
+
+.search-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--color-primary-1);
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .nav-page-btns-pg-inicial {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 10px;
 }
+
 .nav-btns-pg-inicial {
   text-decoration: none;
   color: var(--color-primary-1);
-  align-items: center;
   font-weight: 700;
-  gap: 10px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  font-size: 12px;
+  gap: 5px;
+}
+
+.nav-btns-pg-inicial i {
+  font-size: 20px;
+}
+/* Mobile Optimization (360x800 and 390x844) */
+@media (max-width: 767px) {
+  .menu-content-pg-inicial {
+    padding: 12px 15px;
+    gap: 10px;
+  }
+
+  .logo-menu {
+    justify-content: space-between;
+  }
+
+  .logo-menu-img {
+    width: 70px;
+  }
+
+  .logo-menu-title {
+    font-size: 18px;
+    margin-left: 8px;
+  }
+
+  /* Improved mobile navigation buttons */
+  .nav-page-btns-pg-inicial {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding: 10px 0 0;
+  }
+
+  .nav-btns-pg-inicial {
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+    gap: 3px;
+    padding: 5px;
+  }
+
+  .nav-btns-pg-inicial i {
+    font-size: 18px;
+  }
+
+  /* Better mobile menu toggle */
+  .menu-toggle {
+    order: 1;
+    margin-left: auto;
+    padding: 5px 10px;
+  }
+
+  /* Improved mobile search */
+  .search-toggle {
+    order: 2;
+    padding: 5px 10px;
+  }
+
+  /* Ensure proper spacing */
+  .nav-link-pg-inicial {
+    padding: 10px 0;
+  }
+
+  .nav-item-pg-inicial {
+    padding: 8px 15px;
+  }
+}
+
+/* ===== TABLET (768px+) ===== */
+@media (min-width: 768px) {
+  .menu-content-pg-inicial {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px 30px;
+    justify-content: space-between;
+  }
+  
+  .logo-menu {
+    width: auto;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  
+  .menu-toggle, .search-toggle {
+    display: none;
+  }
+  
+  .nav-link-pg-inicial {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    padding: 15px 0;
+    order: 2;
+    gap: 20px;
+  }
+  
+  .nav-item-pg-inicial {
+    border-bottom: none;
+    padding: 0;
+  }
+  
+  .search-container-pg-inicial {
+    display: flex;
+    order: 3;
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .nav-page-btns-pg-inicial {
+    order: 1;
+    width: auto;
+    padding: 0;
+    gap: 20px;
+  }
+  
+  .nav-btns-pg-inicial {
+    flex-direction: row;
+    font-size: 14px;
+    gap: 8px;
+  }
+}
+
+/* ===== MEDIUM DESKTOP (1440x900) ===== */
+@media (min-width: 1024px) {
+  .menu-content-pg-inicial {
+    flex-wrap: nowrap;
+    padding: 20px 60px;
+    gap: 20px;
+  }
+  
+  .logo-menu-img {
+    width: 100px;
+  }
+  
+  .logo-menu-title {
+    font-size: 24px;
+  }
+  
+  .nav-link-pg-inicial {
+    order: 2;
+    width: auto;
+    padding-top: 2%;
+    margin: 0 auto;
+  }
+  
+  .search-container-pg-inicial {
+    height: 15%;
+    order: 3;
+    width: 25%;
+    margin-top: 2%;
+    padding: 15px 15px;
+  }
+  
+  .nav-page-btns-pg-inicial {
+    order: 4;
+    gap: 25px;
+  }
+  
+  .nav-btns-pg-inicial {
+    font-size: 16px;
+  }
+}
+
+/* ===== LARGE DESKTOP (1920x1080) ===== */
+@media (min-width: 1440px) {
+  .menu-content-pg-inicial {
+    padding: 20px 80px;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  
+  .search-container-pg-inicial {
+    width: 30%;
+  }
 }
 /* Final de menu pg inicial Ana Julia*/
 
