@@ -1,6 +1,6 @@
 <!-- Julie -->
 <?php
-include 'menu_recuperar_senha_julie.php';
+include 'menu_recuperar_senha.php';
 ?>
 
 
