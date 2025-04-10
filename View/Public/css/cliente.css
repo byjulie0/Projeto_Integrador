@@ -750,6 +750,15 @@ body {
   margin-top: 250px;
   margin-left: 200px;
 }
+
+/*RESPONSIVIDADE*/
+@media screen and (max-widht: 1024px){
+  
+}
+
+
+
+
 /* Fim do CSS da página Cadastro - Maria*/
 *{
   padding: 0;
