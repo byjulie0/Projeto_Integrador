@@ -1302,13 +1302,44 @@ body{
   /* background-color: red; */
   width: 100%;
 }
-@media screen and (max-width:1170px){
+@media screen and (max-width:391px){
   .notificacao-card-descricao{
-      font-size: 12;
+      font-size: 12px;
   }
   .notificacao-card-bolota, .descricao-card-img{
       width: 110px;
       height: 110px;
+  }
+  .notificacao-usuario-notficacao h1{
+      padding-right: 30px;
+  }
+  .notificacao-usuario-filtro{
+      width: 200px;
+  }
+}
+
+@media screen and (max-width:1468px) and (min-width:1400px) {
+
+  .notificacao-usuario-card{
+      width: 640px;
+  }
+}
+@media screen and (max-width:1921px) and (min-width:1470px) {
+
+  .notificacao-usuario-card{
+      width: 800px;
+      height: 160px;
+  }
+  .notificacao-card-bolota{
+      width: 150px;
+      height: 150px;
+      padding-right: 30px;
+  }
+  .notificacao-card-descricao{
+      font-size: 20px;
+  }
+  .notificacao-card-data{
+      font-size: 20px;
   }
 }
 /* final pg notificações ativa Gabriel*/
