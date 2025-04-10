@@ -110,5 +110,16 @@ body {
     background-color: #45a049; /* Cor do botão ao passar o mouse */ 
 } 
 
+/* responsividade_carrossel_valdir */
+@media (max-width: 1440px){
+    .carousel {
+        width: 90%;
+    }
+
+
+
+
+
+
 
 
