@@ -16,7 +16,7 @@ include 'menu_recuperar_senha.php';
 <body class="esqueci_senha-card_email-body">
 
     <main class="esqueci_senha-card_email-main">
-        <a href="" class="esqueci_senha-card_email-seta_voltar">
+        <a href="login_vinycius.php" class="esqueci_senha-card_email-seta_voltar">
             <i class="fa-solid fa-chevron-left"></i>
         </a>
         <div class="esqueci_senha-card_email">

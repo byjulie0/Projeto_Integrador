@@ -570,6 +570,7 @@ body {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
   width: 100%;
+  transform: translateY(-30px);
 }
 
 .esqueci_senha-card_email-content h1 {
@@ -595,6 +596,8 @@ body {
 }
 
 .esqueci_senha-card_email-formulario input {
+  position: relative;
+  left: 30px;
   width: 100%;
   max-width: 600px;
   height: 35px;
@@ -613,6 +616,8 @@ body {
 }
 
 .esqueci_senha-card_email-linha_divisao {
+  position: relative;
+  left: 30px;
   width: 100%;
   max-width: 600px;
   height: 0.5px;
@@ -621,6 +626,8 @@ body {
 }
 
 .esqueci_senha-card_email-formulario button {
+  position: relative;
+  left: 30px;
   width: 130px;
   height: 40px;
   background-color: #ffffff;
@@ -639,16 +646,15 @@ body {
 }
 
 .esqueci_senha-card_email-seta_voltar {
-  position: absolute;
+  position: relative;
   top: 5px;
   left: calc(50% - 500px);
   font-size: 1.7rem;
   color: var(--color-primary-1);
   cursor: pointer;
-  transition: color 0.3s;
 }
 
-@media (max-width: 860px){
+/* @media (max-width: 860px){
   .esqueci_senha-card_email-seta_voltar{
     left: 20px;
   }
@@ -668,7 +674,7 @@ body {
     width: 100%;
     max-width: 200px;
   }
-}
+} */
 
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
