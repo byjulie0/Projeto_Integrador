@@ -41,6 +41,18 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  background-color: #fff; 
+  z-index: 1000; 
+  padding: 10px 20px; 
 }
 .menu-content-pg-inicial {
   width: 100%;
@@ -140,6 +152,8 @@ body {
 .footer_cliente{
   width: 100%;
   height: 300px;
+  padding-bottom: 20%;
+  display: flex;
   background-color: var(--color-primary-1);
   font-family: "Poppins", serif;
 }
@@ -304,6 +318,9 @@ body {
   background-image: url(../imagens/img_pg_inicial_categorias/campeoes_hover_categorias_pg_inicial.png);
 }
 /* Final da categoria da pg inicial Isabella */
+
+/* Final da categoria da pg inicial */
+
 
 /* Começo de detalhes do produto Anna Laura*/
 .body-detalhes-produto {
@@ -1032,10 +1049,11 @@ body {
   margin: 0; 
   padding: 0px;
 }
-#pg-categorias-math {
+.pg-categorias-math {
   color: var(--color-primary-1);
   padding-left:  8%;
-  padding-top: 3%
+  padding-top: 3%;
+  font-size: 28px;
 }
 
 .carrossel-cat-math {
@@ -1724,8 +1742,6 @@ input[type="checkbox"] {
   justify-content: space-between;
   align-items: center;
   border-radius: 6px;
-  /* width: 100%; */
-  /* padding: 25px 150px; */
   margin: 0px 150px 50px 150px;
   background-color: #D9D9D9;
 }
@@ -1894,4 +1910,176 @@ input[type="checkbox"] {
 }
 
 /* Fim - PES */
+/*Começo do cabeçalho do login-Vinycius*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.menu-login {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 7.2rem;
+  background-color: #40513B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.info-menu-login {
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+
+.logo-menu-login img {
+  height: 7rem;
+  margin-right: 20px;
+}
+
+.nome-menu-login {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+/*Final do cabeçalho do login-Vinycius*/
+
+/*Começo do login-vinycius*/
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+.container-geral-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 6.2rem;
+}
+
+.login-box-vinycius {
+  display: flex;
+  flex-direction: row;
+  background-color: #DFEBE0; 
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 1700px;
+  width: 80%;
+  height: 550px;
+  overflow: hidden;
+  padding: 40px;
+}
+
+
+.info-login-vinycius {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.img-login {
+  max-width: 330px;
+  padding: 2%;
+  margin: 1px 1;
+
+}
+
+.text-login-vinycius {
+  margin: 10px;
+  font-size: 18px;
+  color: #111;
+  font-weight: 400;
+  padding: 10 10px;
+}
+
+form{
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.login-form-vinycius {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+
+}
+
+.login-form-vinycius h2 {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 80px;
+  padding-top: 1px;
+  color: #111;
+}
+
+.input-login-vinycius {
+  width: 70%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 13px;
+  color: #000;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+
+.button-vinycius {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #888;
+  cursor: pointer;
+  border-radius: 2px;
+  width: 35%;
+  padding: 5px;
+  margin: 30px 0;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.button-vinycius:hover {
+ background-color: #f7f9ff; 
+}
+
+.login-form-vinycius a {
+  color: #40513B;
+  font-size: 13px;
+  text-decoration: none;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  margin: 7px 0;
+}
+
+.login-form-vinycius a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-box-vinycius {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .info-login-vinycius, .login-form-vinycius {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Final da pg de login */

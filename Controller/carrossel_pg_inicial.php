@@ -1,6 +1,4 @@
-<?php
-include 'menu-pg-inicial.php';
-?>
+<!-- Valdir -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,7 +14,7 @@ include 'menu-pg-inicial.php';
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active brilho">
-      <img class="d-block w-100" src="../view/public/Imagens/pecuaria.png" alt="First slide">
+      <img class="d-block w-100" src="../view/public/imagens/img_carrossel_pg_inicial/img_carrossel_pecuaria.svg" alt="First slide">
     
      
     
@@ -49,41 +47,5 @@ include 'menu-pg-inicial.php';
         </h5>
         <button class="btn">Saiba mais</button>
     </div>
-
-<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="../view/public/Imagens/pecuaria.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="../view/public/Imagens/pecuaria2.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
-    </div>
-  </div>
-</div> -->
-
-
-
-    <!-- <div class="container">
-        <div class="texto-carrosel-pg-inicial">
-            <div class="texto2-img-carrossel-pg-inicial">
-                <img src="../view/public/Imagens/pecuaria.jpg" alt="">
-                <h1 class="texto2-carrossel-pg-inicial"><span class="span-carrossel-pg-ini"> Seja Bem-vindo ao nosso site! </span></h1> 
-                <h2 class="h2-carrossel-pg-inicial">Somos um negócio familiar, com anos de experiência no ramo de vendas de animais pecuários, acumulando clientes ao redor de todo o mundo. Temos certeza de que aqui você achará exatamento o(s) animal(is) que procura!</h2>
-            </div>
-        </div>
-        <button class="btn">Saiba mais</button>
-        
-    </div> -->
-
-   
-
-    <footer>
-        <?php
-        include 'footer_cliente.php';
-        ?>
-    </footer>
 </body>
 </html>
