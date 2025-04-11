@@ -13,21 +13,19 @@ include 'menu_recuperar_senha.php';
     <link rel="stylesheet" href="..\view\public\css\cliente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="recuperar_senha_codigo-body">
+<body class="recuperar_senha_codigo_body">
 
     <main class="recuperar_senha_codigo-main">
-        <div class="recuperar_senha_codigo-seta_voltar">
-            <a href="card_email_denyel.php" class="recuperar_senha_codigo-enchaminhar">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-        </div>
+        <a href="card_email_denyel.php" class="recuperar_senha_codigo_seta_voltar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
         <div class="recuperar_senha_codigo">
-            <div class="recuperar_senha_codigo-content">
+            <div class="recuperar_senha_codigo_content">
                 <h1>Código</h1>
                 <h3>Insira o código de 6 digitos que lhe enviamos</h3>
-                <form action="" class="recuperar_senha_codigo-formulario">
+                <form action="" class="recuperar_senha_codigo_formulario">
                     <input type="email" inputmode="numeric" pattern="[A-aZ-z0-9]+" maxlength="8" required>
-                    <div class="recuperar_senha_codigo-linha_divisao"></div>
+                    <div class="recuperar_senha_codigo_linha_divisao"></div>
                     <button type="submit">Enviar</button>
                 </form>
             </div>
