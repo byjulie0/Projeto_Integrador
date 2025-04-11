@@ -25,80 +25,79 @@
 }
 
 /* Começo de menu pg inicial Ana Julia*/
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lato," sans-serif;
+  font-family: "poppins", sans-serif;
 }
+
 body {
-  background-color: #fff;
+  align-items: center;
+  justify-content: center;
   font-family: "Poppins";
 }
+
 .menu-pg-inicial {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 1px 100px;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%; 
-  background-color: #fff; 
-  z-index: 1000; 
-  padding: 10px 20px; 
+  background-color: #F7F9FF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
+
 .menu-content-pg-inicial {
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 80px;
+  gap: 25px;
 }
+
 .logo-menu {
+  width: 20%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
+
 .logo-menu-img {
-  width: 100px;
+  width: 50%;
 }
+
 .logo-menu-title {
-  font-size: 24px;
-  color: var(--color-primary-1);
-  font-weight: 750;
+  font-size: 1.125rem;
+  color: #40513b;
 }
+
 .nav-link-pg-inicial {
+  width: 30%;
   display: flex;
   flex-direction: row;
-  gap: 20px;
   align-items: center;
   justify-content: space-between;
+  gap: 15px;
 }
+
 .nav-item-pg-inicial {
-  text-decoration: none;
-  color: var(--color-primary-1);
-  font-size: 16px;
+  color: #40513b;
+  font-size: 0.925rem;
   font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
 }
-.nav-item-pg-inicial:hover {
-  color: #7c0428;
-  transition: ease-in 0.1s;
-}
+
 .search-container-pg-inicial {
   display: flex;
   align-items: center;
   background-color: #e0e2e7;
   border-radius: 50px;
-  padding: 15px 15px;
+  padding: 10px 20px;
   gap: 15px;
   width: 25%;
 }
@@ -106,15 +105,14 @@ body {
   border: none;
   outline: none;
   background: transparent;
-  font-size: 16px;
+  font-size: 0.925rem;
   width: 100%;
-  padding-left: 5px;
-  color: #7c0428;
+  color: darkblue;
   font-family: "Poppins", sans-serif;
 }
 .search-container-pg-inicial input::placeholder {
-  color: var(--color-primary-1);
-  font-weight: 600;
+  color: #630421;
+  font-weight: 500;
 }
 .search-container-pg-inicial button {
   align-items: center;
@@ -123,28 +121,30 @@ body {
   cursor: pointer;
   padding: 0;
   display: flex;
-  align-items: center;
 }
-.search-containerpg-inicial button .fa-solid {
+.search-container-pg-inicial button .fa-solid {
   align-items: center;
-  color: var(--color-primary-1);
+  color: var(--color-primary-3);
   font-size: 16px;
 }
+
 .nav-page-btns-pg-inicial {
+  width: 25%;
   display: flex;
   flex-direction: row;
-  gap: 20px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
+
 .nav-btns-pg-inicial {
   text-decoration: none;
-  color: var(--color-primary-1);
-  align-items: center;
-  font-weight: 700;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
+  color: #40513b;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.nav-btns-pg-inicial .bi {
+  font-size: 0.825rem;
 }
 /* Final de menu pg inicial Ana Julia*/
 
@@ -544,94 +544,148 @@ body {
 /*Final editar perfil - Arthur */
  
 /* Começo do CSS esqueci a senha card e-mail - Denyel */
-.esqueci_senha-card_email-body{
+
+.esqueci_senha_card_email_body {
   background-color: #F7F7F7;
-  display: grid;
-  align-items: center;
-  height: 90vh;
+  /* display: grid; */
+  place-items: center;
   font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
-.esqueci_senha-card_email-main{
-  margin-bottom: 5%;
-  margin-top: 50px;
-}
-.esqueci_senha-card_email{
+
+.esqueci_senha_card_email_main {
   position: relative;
-  left: 22%;
-  top: -15px;
-  width: 810px;
-  height: 450px;
+  margin-top: 50px;
+  margin-bottom: 5%;
+  width: 100%;
+  max-width: 800px;
+}
+
+.esqueci_senha_card_email {
+  position: relative;
   background-color: #DFEBE0;
-  padding: 110px;
+  padding: 100px 80px;
   border-radius: 2px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  width: 100%;
+  transform: translateY(-30px);
 }
-.esqueci_senha-card_email-content h1{
-  position: relative;
-  top: -85px;
-  left: 190px;
+
+.esqueci_senha_card_email_content h1 {
+  text-align: center;
   color: var(--color-fonte);
   font-size: 1.4rem;
   font-weight: 600;
+  margin-bottom: 20px;
 }
-.esqueci_senha-card_email-content h3{
-  position: relative;
-  top: -40px;
-  left: 15px;
+
+.esqueci_senha_card_email_content h3 {
+  text-align: center;
   color: var(--color-primary-1);
   font-size: 1rem;
+  margin-bottom: 40px;
 }
-.esqueci_senha-card_email-formulario input{
-  width: 590px;
-  height: 25px;
+
+.esqueci_senha_card_email_formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.esqueci_senha_card_email_formulario input {
+  position: relative;
+  left: 30px;
+  width: 100%;
+  max-width: 600px;
+  height: 35px;
   border: none;
   outline: none;
   border-radius: 2px;
-  padding: 15px 15px;
-  position: relative;
-  top: 40px;
+  padding: 0 15px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
   color: #000000;
+  box-sizing: border-box;
 }
-.esqueci_senha-card_email-formulario input::placeholder{
+
+.esqueci_senha_card_email_formulario input::placeholder {
   text-indent: 1px;
 }
-.esqueci_senha-card_email-linha_divisao{
-  width: 585px;
+
+.esqueci_senha_card_email_linha_divisao {
+  position: relative;
+  left: 30px;
+  width: 100%;
+  max-width: 600px;
   height: 0.5px;
-  position: relative;
-  left: 2px;
-  top: 50px;
-  transform: translateY(20px);
   background-color: var(--color-primary-1);
+  margin: 20px auto 0 auto;
 }
-.esqueci_senha-card_email-formulario button{
+
+.esqueci_senha_card_email_formulario button {
   position: relative;
-  top: 120px;
-  left: 225px;
-  width: 125px;
-  height: 25px;
+  left: 30px;
+  width: 130px;
+  height: 40px;
   background-color: #ffffff;
   border-radius: 2px;
   border: none;
   color: var(--color-primary-1);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-.esqueci_senha-card_email-formulario button:hover{
+
+.esqueci_senha_card_email_formulario button:hover {
   background-color: var(--color-primary-2);
   color: #ffffff;
 }
-.esqueci_senha-card_email-seta_voltar{
-  width: 2%;
+
+.esqueci_senha_card_email_seta_voltar {
   position: relative;
-  left: 15%;
-  transform: translateY(20px);
-}
-.esqueci_senha-card_email-enchaminhar i{
+  top: 5px;
+  left: calc(50% - 500px);
   font-size: 1.7rem;
   color: var(--color-primary-1);
+  cursor: pointer;
 }
+
+@media (max-width: 988px){
+  .esqueci_senha_card_email {
+    width: 90%;
+  }
+}
+@media (max-width: 880px){
+  .esqueci_senha_card_email {
+    width: 70%;
+  }
+}
+@media (max-width: 750px){
+  .esqueci_senha_card_email {
+    width: 60%;
+  }
+}
+@media (max-width: 650px){
+  .esqueci_senha_card_email_seta_voltar{
+    display: none;
+  }
+  .esqueci_senha_card_email {
+    position: relative;
+    left: -6%;
+  }
+}
+
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
+
+/* ======= */
+.footer_cli_item h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
 
 /* Começo do CSS da página Cadastro Maria*/
 *{
