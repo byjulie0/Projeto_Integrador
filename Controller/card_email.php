@@ -13,7 +13,7 @@ include 'menu_recuperar_senha.php';
     <link rel="stylesheet" href="..\view\public\css\cliente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="esqueci_senha-card_email_body">
+<body class="esqueci_senha_card_email_body">
 
     <main class="esqueci_senha_card_email_main">
         <a href="login_vinycius.php" class="esqueci_senha_card_email_seta_voltar">
