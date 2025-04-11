@@ -23,7 +23,7 @@ include '../controller/menu_login.php';
 
             <div class="login_form_vinycius">
                 <h2>Login</h2>
-                <form action="login.php" method="POST">
+                <form class="form_login" action="login.php" method="POST">
                     <input type="text" name="username" placeholder="Nome de usuário" class="input_login_vinycius1" required>
                     
                     <div class="senha_container">
@@ -34,8 +34,8 @@ include '../controller/menu_login.php';
                     </div>
 
                     <button type="submit" class="button_vinycius">LOGIN</button>
-                    <a href="#">Esqueci minha senha</a>
-                    <span class="texto1">Não tem conta? <a href="../controller/menu_cadastro.php" class="texto1">Cadastre-se</a></span>
+                    <a href="../controller/card_email.php">Esqueci minha senha</a>
+                    <span class="texto1">Não tem conta? <a href="../controller/formulario_cadastro.php" class="texto1">Cadastre-se</a></span>
                 </form>
             </div>
         </div>
@@ -43,7 +43,6 @@ include '../controller/menu_login.php';
    
     <?php include '../controller/footer_cliente.php'; ?>
 
-    <!-- Script para alternar visualização da senha -->
     <script>
     function toggleSenha() {
         const senhaInput = document.getElementById("senha");

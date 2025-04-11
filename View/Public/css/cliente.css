@@ -1966,7 +1966,7 @@ input[type="checkbox"] {
 }
 
 /* Fim - PES */
-/*Começo do cabeçalho do login-Vinycius*/
+/*Começo do menu login-Vinycius*/
 * {
   margin: 0;
   padding: 0;
@@ -2056,13 +2056,12 @@ input[type="checkbox"] {
   padding: 10 10px;
 }
 
-form{
+.form_login{
   width: 90%;
   height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .login_form_vinycius {
@@ -2175,3 +2174,4 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   padding-right: 40px;
 }
 /* Final da pg de login */
+
