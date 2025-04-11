@@ -1973,7 +1973,7 @@ input[type="checkbox"] {
   box-sizing: border-box;
 }
 
-.menu-login {
+.menu_login {
   position: fixed;
   top: 0;
   width: 100%;
@@ -1985,34 +1985,34 @@ input[type="checkbox"] {
   z-index: 1000;
 }
 
-.info-menu-login {
+.info_menu_login {
   display: flex;
   align-items: center;
   width: 90%;
 }
 
-.logo-menu-login img {
+.logo_menu_login img {
   height: 7rem;
   margin-right: 20px;
 }
 
-.nome-menu-login {
+.nome_menu_login {
   font-size: 2rem;
   font-weight: 600;
   color: #FFFFFF;
 }
 
-/*Final do cabeçalho do login-Vinycius*/
+/*Final do menu do login-Vinycius*/
 
 /*Começo do login-vinycius*/
-body, html {
+.body_login .login_html {
   height: 100%;
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
   margin: 0;
 }
 
-.container-geral-login {
+.container_geral_login {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2020,7 +2020,7 @@ body, html {
   padding-top: 6.2rem;
 }
 
-.login-box-vinycius {
+.login_box_vinycius {
   display: flex;
   flex-direction: row;
   background-color: #DFEBE0; 
@@ -2034,21 +2034,21 @@ body, html {
 }
 
 
-.info-login-vinycius {
+.info_login_vinycius {
   width: 50%;
   display: flex;
   flex-direction: column;
   
 }
 
-.img-login {
+.img_login {
   max-width: 330px;
   padding: 2%;
   margin: 1px 1;
 
 }
 
-.text-login-vinycius {
+.text_login_vinycius {
   margin: 10px;
   font-size: 18px;
   color: #111;
@@ -2065,7 +2065,7 @@ form{
 
 }
 
-.login-form-vinycius {
+.login_form_vinycius {
   width: 45%;
   display: flex;
   flex-direction: column;
@@ -2075,27 +2075,17 @@ form{
 
 }
 
-.login-form-vinycius h2 {
+.login_form_vinycius h2 {
   text-align: center;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 80px;
   padding-top: 1px;
   color: #111;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.input-login-vinycius {
-  width: 70%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #000;
-  border-radius: 2px;
-  font-size: 13px;
-  color: #000;
-  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
-}
-
-.button-vinycius {
+.button_vinycius {
   background-color: #fff;
   color: #111;
   border: 1px solid #888;
@@ -2108,34 +2098,80 @@ form{
   transition: background-color 0.3s;
 }
 
-.button-vinycius:hover {
+.button_vinycius:hover {
  background-color: #f7f9ff; 
 }
 
-.login-form-vinycius a {
-  color: #40513B;
+.login_form_vinycius a {
+  color: #609966;
   font-size: 13px;
   text-decoration: none;
-  flex-direction: column;
   display: flex;
-  text-align: center;
   margin: 7px 0;
 }
 
-.login-form-vinycius a:hover {
+.login_form_vinycius a:hover {
   text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-  .login-box-vinycius {
+  .login_box_vinycius {
     flex-direction: column;
     padding: 20px;
   }
 
-  .info-login-vinycius, .login-form-vinycius {
+  .info_login_vinycius, .login_form_vinycius {
     width: 100%;
     padding: 20px;
   }
 }
 
+.texto1{
+  color: #40513B;
+  font-size: 13px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 7px 0;
+}
+
+.senha_container {
+  position: relative;
+  display: flex;
+  width: 70%;
+  align-items: center;
+}
+
+.toggle_senha {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  color: #333;
+  font-size: 18px;
+}
+.input_login_vinycius1 {
+  width: 70%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 13px;
+  color: #000;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+.input_login_vinycius2 {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+border: 1px solid #000;
+border-radius: 2px;
+font-size: 13px;
+color: #000;
+box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+
+.input_login_vinycius {
+  width: 100%;
+  padding-right: 40px;
+}
 /* Final da pg de login */
