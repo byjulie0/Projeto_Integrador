@@ -16,7 +16,7 @@ include 'menu_recuperar_senha.php';
 <body class="recuperar_senha_codigo_body">
 
     <main class="recuperar_senha_codigo_main">
-        <a href="card_email_denyel.php" class="recuperar_senha_codigo_seta_voltar">
+        <a href="card_email.php" class="recuperar_senha_codigo_seta_voltar">
             <i class="fa-solid fa-chevron-left"></i>
         </a>
         <div class="recuperar_senha_codigo">
