@@ -1402,92 +1402,138 @@ body {
 
 /* Começo de Recuperar Senha Código - Denyel */
 
-.recuperar_senha_codigo-body{
+.recuperar_senha_codigo_body {
   background-color: #F7F7F7;
-  display: grid;
-  align-items: center;
-  height: 90vh;
+  /* display: grid; */
+  place-items: center;
   font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
-.recuperar_senha_codigo-main{
-  margin-bottom: 5%;
-  margin-top: 50px;
-}
-.recuperar_senha_codigo{
+
+.recuperar_senha_codigo_main {
   position: relative;
-  left: 22%;
-  top: -15px;
-  width: 810px;
-  height: 450px;
+  margin-top: 50px;
+  margin-bottom: 5%;
+  width: 100%;
+  max-width: 800px;
+}
+
+.recuperar_senha_codigo {
+  position: relative;
   background-color: #DFEBE0;
-  padding: 110px;
+  padding: 100px 80px;
   border-radius: 2px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  width: 100%;
+  transform: translateY(-30px);
 }
-.recuperar_senha_codigo-content h1{
-  position: relative;
-  top: -85px;
-  left: 250px;
+
+.recuperar_senha_codigo_content h1 {
+  text-align: center;
   color: var(--color-fonte);
   font-size: 1.4rem;
   font-weight: 600;
+  margin-bottom: 20px;
 }
-.recuperar_senha_codigo-content h3{
-  position: relative;
-  top: -40px;
-  left: 100px;
+
+.recuperar_senha_codigo_content h3 {
+  text-align: center;
   color: var(--color-primary-1);
   font-size: 1rem;
+  margin-bottom: 40px;
 }
-.recuperar_senha_codigo-formulario input{
-  width: 590px;
-  height: 25px;
+
+.recuperar_senha_codigo_formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.recuperar_senha_codigo_formulario input {
+  position: relative;
+  left: 30px;
+  width: 100%;
+  max-width: 600px;
+  height: 35px;
   border: none;
   outline: none;
   border-radius: 2px;
-  padding: 15px 15px;
-  position: relative;
-  top: 40px;
+  padding: 0 15px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
   color: #000000;
+  box-sizing: border-box;
 }
-.recuperar_senha_codigo-formulario input::placeholder{
+
+.recuperar_senha_codigo_formulario input::placeholder {
   text-indent: 1px;
 }
-.recuperar_senha_codigo-linha_divisao{
-  width: 585px;
+
+.recuperar_senha_codigo_linha_divisao {
+  position: relative;
+  left: 30px;
+  width: 100%;
+  max-width: 600px;
   height: 0.5px;
-  position: relative;
-  left: 2px;
-  top: 50px;
-  transform: translateY(20px);
   background-color: var(--color-primary-1);
+  margin: 20px auto 0 auto;
 }
-.recuperar_senha_codigo-formulario button{
+
+.recuperar_senha_codigo_formulario button {
   position: relative;
-  top: 120px;
-  left: 225px;
-  width: 125px;
-  height: 25px;
+  left: 30px;
+  width: 130px;
+  height: 40px;
   background-color: #ffffff;
   border-radius: 2px;
   border: none;
   color: var(--color-primary-1);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-.recuperar_senha_codigo-formulario button:hover{
+
+.recuperar_senha_codigo_formulario button:hover {
   background-color: var(--color-primary-2);
   color: #ffffff;
 }
-.recuperar_senha_codigo-seta_voltar{
-  width: 2%;
+
+.recuperar_senha_codigo_seta_voltar {
   position: relative;
-  left: 15%;
-  transform: translateY(20px);
-}
-.recuperar_senha_codigo-enchaminhar i{
+  top: 5px;
+  left: calc(50% - 500px);
   font-size: 1.7rem;
   color: var(--color-primary-1);
+  cursor: pointer;
+}
+
+@media (max-width: 988px){
+  .recuperar_senha_codigo {
+    width: 90%;
+  }
+}
+@media (max-width: 880px){
+  .recuperar_senha_codigo {
+    width: 90%;
+  }
+}
+@media (max-width: 750px){
+  .recuperar_senha_codigo {
+    width: 90%;
+  }
+}
+@media (max-width: 650px){
+  .recuperar_senha_codigo_seta_voltar{
+    display: none;
+  }
+  .recuperar_senha_codigo {
+    position: relative;
+    left: -6%;
+  }
 }
 
 /* Fim de Recuperar Senha Código - Denyel */
