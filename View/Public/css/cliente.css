@@ -547,7 +547,7 @@ body {
 
 .esqueci_senha_card_email_body {
   background-color: #F7F7F7;
-  display: grid;
+  /* display: grid; */
   place-items: center;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
