@@ -1,4 +1,7 @@
-
+<!-- Maria Helena -->
+<?php
+include 'menu_pg_inicial.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -41,6 +44,11 @@
             <button class="visualizar-dados-logout">Logout</button>
         </div>
     </main>
+    <footer>
+        <?php
+            include 'footer_cliente.php';
+        ?>
+    </footer>
 </body>
 </html>
 
