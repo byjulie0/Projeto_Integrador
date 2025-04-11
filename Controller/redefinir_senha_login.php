@@ -1,8 +1,8 @@
 <!-- Lara -->
+
 <?php
 include 'menu_recuperar_senha.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,7 +10,7 @@ include 'menu_recuperar_senha.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redefinir senha</title>
-    <link rel="stylesheet" href="..\view\public\css\cliente.css">
+    <link rel="stylesheet" href="..\view\public\css\lara.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="rede_senha_body">
@@ -27,18 +27,19 @@ include 'menu_recuperar_senha.php';
 
         <nav class="rede_senha_nav">
 
-            <div class="recuperar_senha_codigo-content">
+            <div class="rede_senha_container">
 
-                <h1 class="h1_redefinir_senha">Redefinir senha</h1>
+                <h1 class="h1_rede_senha">Redefinir senha</h1>
 
-                <h3 class="h3_redefinir_senha">Digite sua nova senha </h3>
+                <h3 class="h3_rede_senha">Digite sua nova senha </h3>
 
                 <form action="" class="form_rede_senha">
                     <input type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Nova senha">
 
-                    <div class="recuperar_senha_codigo-linha_divisao"></div>
-
+                    
                     <input type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Confirmar nova senha">
+                    
+                    <div class="rede_senha_linha"></div>
 
                     <button type="submit">Redefinir</button>
                 </form>

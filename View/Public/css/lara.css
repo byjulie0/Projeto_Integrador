@@ -1,0 +1,25 @@
+.rede_senha_body{
+    display: grid;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    font-family: 'Poppins', sans-serif;
+}
+.rede_senha_section{
+    position: relative;
+}
+.rede_senha_nav{
+    top: 100px;
+    margin-bottom: 100px;    
+    position: relative;
+    left: 0;
+}
+.rede_senha_linha{
+    width: 585px;
+    height: 0.5px;
+    position: relative;
+    left: 2px;
+    top: 50px;
+    transform: translateY(20px);
+    background-color: #40513b;
+}
