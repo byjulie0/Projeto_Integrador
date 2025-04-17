@@ -904,6 +904,50 @@ body {
   color: var(--color-primary-1);
   font-size: 24px;
 }
+@media (max-width: 600px) {
+  .texto-termos-e-condicoes {
+    padding: 0% 5% 8% 5%;
+    font-size: 0.95rem;
+  }
+
+  .titulo-termos-e-condicoes {
+    font-size: 1.5rem;
+    padding-top: 30px;
+  }
+
+  .sub-titulo2-termos-e-condicoes,
+  .sub-titulo-termos-e-condicoes {
+    font-size: 1rem;
+  }
+
+  .li-termos-e-condicoes,
+  .p-termos-e-condicoes {
+    font-size: 0.95rem;
+  }
+
+  .setinha-termos-e-coondicoes i {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .texto-termos-e-condicoes {
+    padding: 0% 6% 6% 6%;
+    font-size: 1rem;
+  }
+
+  .titulo-termos-e-condicoes {
+    font-size: 1.8rem;
+  }
+
+  .sub-titulo2-termos-e-condicoes,
+  .sub-titulo-termos-e-condicoes {
+    font-size: 1.1rem;
+  }
+}
+
+
+
 /* Fim do CSS de termos e condições Julie*/
 
 /* Inicio-nossa-historia- Valdir */
