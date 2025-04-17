@@ -695,6 +695,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 .body-cadastro{
+  width: 100%;
   display: flex;
   background-color: #F7F7F7;
   align-items: center;
@@ -827,12 +828,19 @@ body {
 }
 
 /*RESPONSIVIDADE*/
-
-
-
-
+@media (max-width: 360px){
+  .area-form-cadastro{
+    width: 270px;
+    height: 380px;
+  }
+  .titulo-form-cadastro{
+    font-size: 1rem;
+  }
+}
 
 /* Fim do CSS da página Cadastro - Maria*/
+
+/* Início do CSS do Menu Cadastro*/
 *{
   padding: 0;
   margin: 0;
@@ -865,11 +873,11 @@ body {
   align-items: center;
 }
 
+/*RESPONSIVIDADE*/
+
 /* Fim do CSS do Menu Cadastro*/
 
 /* Inicio-nossa-historia-valdir */
-
-/* Fim do CSS do Menu Cadastro - Maria*/
 
 /* CSS Termos e Condições Julie*/
 .texto-termos-e-condicoes{
