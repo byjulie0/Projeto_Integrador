@@ -13,3 +13,10 @@ function nextSlide() {
     currentIndex = (currentIndex < cardCount - 1) ? currentIndex + 1 : 0;
     showSlide(currentIndex);
 }
+document.querySelectorAll('.arrow-cat-math').forEach(arrow => {
+    arrow.addEventListener('click', () => {
+      const container = arrow.parentElement.querySelector('.cards-cat-math');
+      const scrollAmount = arrow.classList.contains('left') ? -230 : 230;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  });
