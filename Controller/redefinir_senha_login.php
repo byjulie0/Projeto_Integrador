@@ -1,8 +1,8 @@
 <!-- Lara -->
 
-<!-- <?php
+<?php
 // include 'menu_recuperar_senha.php';
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,10 +30,8 @@
                 <h3 class="h3_rede_senha">Escolha sua nova senha </h3>
                 <form action="" class="form_rede_senha">
 
-                    <label class="rede_senha_label" for="">Nova senha:</label>
                     <input type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Nova senha">
 
-                    <label class="rede_senha_label" for="">Confirmar senha:</label>
                     <input type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Confirmar nova senha">
                     
                     <div class="rede_senha_linha"></div>
@@ -48,6 +46,6 @@
 </body>
 </html>
 
-<!-- <?php
+<?php
 // include 'footer_cliente.php';
-?> -->
+?>
