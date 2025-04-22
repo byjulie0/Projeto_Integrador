@@ -26,7 +26,7 @@ include 'menu_recuperar_senha.php';
             <div class="esqueci_senha_popup_content">
                 <h3 class="esqueci_senha_popup_texto">Senha redefinida com sucesso!</h3>
                     <div class="esqueci_senha_popup_linha"></div>
-                    <button type="submit" class="esqueci_senha_popup_botao">Enviar</button>
+                    <button type="submit" class="esqueci_senha_popup_botao" href = "login.php">Login</button>
             </div>
         </div>
     </main>
