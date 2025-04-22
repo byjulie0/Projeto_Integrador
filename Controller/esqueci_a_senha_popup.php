@@ -17,7 +17,7 @@ include 'menu_recuperar_senha.php';
 
     <main>
         <div class="esqueci_a_senha_popup_setinha">
-            <a href="" class="esqueci_senha-card_popup_setinha_voltar">
+            <a href="#" class="esqueci_senha-card_popup_setinha_voltar">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
