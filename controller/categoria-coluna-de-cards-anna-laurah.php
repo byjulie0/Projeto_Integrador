@@ -19,7 +19,7 @@ include 'menu_pg_inicial.php';
     <h2 class="titulo-categoria-coluna-de-cards">Percheron</h2>
     <div class="cards-coluna-de-cards">
       <div class="card-coluna-de-cards">
-        <img class="" src="../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg"
+        <img class="imagem-coluna-de-cards" src="../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg"
           alt="Percheron 1">
         <p>Peso: </p>
         <p>Raça: </p>
@@ -29,7 +29,7 @@ include 'menu_pg_inicial.php';
         <button class="btn-coluna-card">Comprar</button>
       </div>
       <div class="card-coluna-de-cards">
-        <img class="" src="../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg"
+        <img class="imagem-coluna-de-cards" src="../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg"
           alt="Percheron 1">
         <p>Peso: </p>
         <p>Raça: </p>
@@ -39,7 +39,7 @@ include 'menu_pg_inicial.php';
         <button class="btn-coluna-card">Comprar</button>
       </div>
       <div class="card-coluna-de-cards">
-        <img class="" src="../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg"
+        <img class="imagem-coluna-de-cards" src="../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg"
           alt="Percheron 1">
         <p>Peso: </p>
         <p>Raça: </p>
@@ -49,7 +49,7 @@ include 'menu_pg_inicial.php';
         <button class="btn-coluna-card">Comprar</button>
       </div>
       <div class="card-coluna-de-cards">
-        <img class="" src="../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg"
+        <img class="imagem-coluna-de-cards" src="../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg"
           alt="Percheron 1">
         <p>Peso: </p>
         <p>Raça: </p>
