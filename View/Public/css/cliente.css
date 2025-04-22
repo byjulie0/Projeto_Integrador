@@ -1214,10 +1214,6 @@ body {
   align-items: center;
 }
 
-/* Fim do CSS do Menu Cadastro*/
-
-/* Inicio-nossa-historia-valdir */
-
 /* Fim do CSS do Menu Cadastro - Maria*/
 
 /* CSS Termos e Condições Julie*/
@@ -1408,7 +1404,7 @@ body {
 }
 /*Final da Pg Favoritos - Mariana */
 
-/* inicio slider da página inicial  */ 
+/* inicio slider da página inicial - Matheus*/ 
 /* Base styles */
 .body-math {
   font-family: "Poppins", sans-serif;
@@ -1620,7 +1616,7 @@ body {
     height: 50px;
   }
 }
-/*final categoria animais */
+/* Fim do slider da página inicial - Matheus*
 /*----------------------------------------------------------------------------*/
 
 /* Começo do CSS esqueci a senha pop up - Julie */
@@ -1701,25 +1697,28 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
-.menu_recuper_senha{
+.menu_recuper_senha {
   align-items: center;
   width: 100%;
   height: 9.2rem;
   display: flex;
   background-color: #40513B;
 }
-.info_menu-recuperar_senha{
+
+.info_menu-recuperar_senha {
   width: 100%;
   max-height: 9.2rem;
   display: flex;
   flex-direction: row;
 }
-.logo_menu_recuperar_senha img{
+
+.logo_menu_recuperar_senha img {
   margin-left: 20px;
   margin-top: 10px;
   height: 7.884rem;
 }
-.nome_menu_recuperar_senha{
+
+.nome_menu_recuperar_senha {
   font-weight: 600;
   margin-left: 20px;
   margin-top: 50px;
@@ -1727,7 +1726,90 @@ body {
   font-size: 2rem;
   align-items: center;
 }
-/* Fim do CSS do Menu Cadastro - Maria*/
+
+/* Media Queries para Mobile - Tela média (360 x 800) */
+@media (max-width: 767px) {
+  .menu_recuper_senha {
+      height: 7rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 5.5rem;
+      margin-left: 15px;
+      margin-top: 8px;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 1.5rem;
+      margin-top: 35px;
+      margin-left: 15px;
+  }
+}
+
+/* Media Queries para Mobile - Tela grande (390 x 844) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu_recuper_senha {
+      height: 8rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 6.5rem;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 1.7rem;
+      margin-top: 45px;
+  }
+}
+
+/* Media Queries para Tablet - Tela média (768-1199px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .menu_recuper_senha {
+      height: 8.5rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 7rem;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 1.8rem;
+  }
+}
+
+/* Media Queries para Desktop - Tela média (1440x900) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .menu_recuper_senha {
+      height: 9.2rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 7.884rem;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 2rem;
+  }
+}
+
+/* Desktop - Tela grande (1920x1080) */
+@media (min-width: 1920px) {
+  .menu_recuper_senha {
+      height: 10rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 8.5rem;
+      margin-left: 30px;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 2.2rem;
+      margin-top: 55px;
+      margin-left: 30px;
+  }
+}
+/* Fim do CSS do Menu Recuperar senha - JUlie*/
 
 /* Começo De Meu Perfil - Visualizar Dados*/
 .body-visualizar-dados{
