@@ -26,7 +26,9 @@ include 'menu_recuperar_senha.php';
                 <form action="" class="recuperar_senha_codigo_formulario">
                     <input type="email" inputmode="numeric" pattern="[A-aZ-z0-9]+" maxlength="8" required>
                     <div class="recuperar_senha_codigo_linha_divisao"></div>
-                    <button type="submit">Enviar</button>
+                    <a href="">
+                        <button type="submit">Enviar</button>
+                    </a>
                 </form>
             </div>
         </div>
