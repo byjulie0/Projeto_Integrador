@@ -836,6 +836,10 @@ body {
   .titulo-form-cadastro{
     font-size: 1rem;
   }
+  .parte1-form-cadastro{
+    width: 270px;
+    height: 380px;
+  }
 }
 
 /* Fim do CSS da página Cadastro - Maria*/
