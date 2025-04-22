@@ -903,7 +903,7 @@ body {
 
 .esqueci_senha_card_email_body {
   background-color: #F7F7F7;
-  /* display: grid; */
+  display: grid;
   place-items: center;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
@@ -953,7 +953,7 @@ body {
 
 .esqueci_senha_card_email_formulario input {
   position: relative;
-  left: 30px;
+  left: 5px;
   width: 100%;
   max-width: 600px;
   height: 35px;
@@ -973,7 +973,7 @@ body {
 
 .esqueci_senha_card_email_linha_divisao {
   position: relative;
-  left: 30px;
+  left: 7px;
   width: 100%;
   max-width: 600px;
   height: 0.5px;
@@ -983,7 +983,7 @@ body {
 
 .esqueci_senha_card_email_formulario button {
   position: relative;
-  left: 30px;
+  left: 3px;
   width: 130px;
   height: 40px;
   background-color: #ffffff;

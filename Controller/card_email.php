@@ -16,7 +16,7 @@ include 'menu_recuperar_senha.php';
 <body class="esqueci_senha_card_email_body">
 
     <main class="esqueci_senha_card_email_main">
-        <a href="login_vinycius.php" class="esqueci_senha_card_email_seta_voltar">
+        <a href="login.php" class="esqueci_senha_card_email_seta_voltar">
             <i class="fa-solid fa-chevron-left"></i>
         </a>
         <div class="esqueci_senha_card_email">
@@ -26,7 +26,9 @@ include 'menu_recuperar_senha.php';
                 <form action="" class="esqueci_senha_card_email_formulario">
                     <input type="email" name="esqueci_senha_card_email_digitar" type="submit" placeholder="E-mail" required>
                     <div class="esqueci_senha_card_email_linha_divisao"></div>
-                    <button type="submit">Enviar</button>
+                    <a href="recuperar_senha_codigo.php">
+                        <button type="submit">Enviar</button>
+                    </a>
                 </form>
             </div>
         </div>
