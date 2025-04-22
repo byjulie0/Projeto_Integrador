@@ -1,49 +1,45 @@
 <!-- Lara -->
 
-<?php
-include 'menu_recuperar_senha.php';
-?>
+<!-- <?php
+// include 'menu_recuperar_senha.php';
+?> -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redefinir senha</title>
-    <link rel="stylesheet" href="..\view\public\css\lara.css">
+    <title>Redefinir senha login</title>
+    <link rel="stylesheet" href="..\view\public\css\cliente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="rede_senha_body">
+<body >
 
-    <section class="rede_senha_section">
+    <section class="rede_senha_section ">
 
         <nav class="rede_senha_nav_voltar">
-
             <a href="recuperar_senha_redefinir.php" class="rede_senha_voltar">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
-
         </nav>
 
         <nav class="rede_senha_nav">
-
             <div class="rede_senha_container">
-
                 <h1 class="h1_rede_senha">Redefinir senha</h1>
 
-                <h3 class="h3_rede_senha">Digite sua nova senha </h3>
-
+                <h3 class="h3_rede_senha">Escolha sua nova senha </h3>
                 <form action="" class="form_rede_senha">
+
+                    <label class="rede_senha_label" for="">Nova senha:</label>
                     <input type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Nova senha">
 
-                    
+                    <label class="rede_senha_label" for="">Confirmar senha:</label>
                     <input type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Confirmar nova senha">
                     
                     <div class="rede_senha_linha"></div>
 
                     <button type="submit">Redefinir</button>
                 </form>
-
             </div>
         </nav>
 
@@ -52,6 +48,6 @@ include 'menu_recuperar_senha.php';
 </body>
 </html>
 
-<?php
-include 'footer_cliente.php';
-?>
+<!-- <?php
+// include 'footer_cliente.php';
+?> -->

@@ -18,10 +18,12 @@
   --color-icones: #edf3eb;
   --color-detalhes-15: #f7f9ff;
   --color-detalhes-16: #e7f0dc;
+  --color-card-login:#dfebe0;
   --text-color: #20261e;
   --border-color: #E5E7EB;
   --warning-color: #ff4444;
   --input-bg: #F9FAFB;
+  
 }
 
 /* Começo de menu pg inicial Ana Julia*/
@@ -1094,10 +1096,10 @@ body {
   align-items: center;
   color: var(--color-primary-1);
   font-size: 1.5rem;
-  text-align: center; 
+  text-align: center;
   display: flex;
   flex-direction: column;
-  margin-top: -50px; 
+  margin-top: -50px;
 }
 .esqueci_senha_popup_linha{
   width: 585px;
@@ -2040,3 +2042,74 @@ form{
 /* Final da pg de login */
 
 /* Inicio pg redefinir senha login */
+.rede_senha_section{
+  display: grid;
+  align-items: center;
+  min-height: 90vh;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 8%;
+  padding-right: 8%;
+  margin-bottom: 8%;
+}
+.rede_senha_nav {
+  position: relative;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  left: 22%;
+  width: 810px;
+  height: 450px;
+  padding: 110px;
+  margin-bottom: 5%;
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-card-login);
+}
+.h1_rede_senha{
+  display: flex;
+  text-align: flex-start;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.h3_rede_senha{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary-1);
+  font-size: 1rem;
+}
+.rede_senha_linha{
+  width: 585px;
+  height: 0.5px;
+  position: relative;
+  left: 2px;
+  top: 50px;
+  transform: translateY(20px);
+  background-color: var(--color-primary-1);
+}
+.form_rede_senha input{
+  position: relative;
+  width: 590px;
+  height: 25px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 15px 15px;
+  top: 40px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  color: #000000;
+}
+.form_rede_senha button{
+  position: relative;
+  align-self: center;
+  justify-content: center;
+  width: 125px;
+  height: 25px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: none;
+  color: var(--color-primary-1);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
