@@ -1,11 +1,68 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    top:0px;
-    right: 0px;
-    left: 0px;
+/* Carousel text container */
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 20%;
+  left: 15%;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  width: auto; /* Remove fixed width */
+  max-width: 70%; /* Prevent too wide on large screens */
+  margin: 0 auto; /* Center the caption */
 }
 
-.texto_carrossel {
-    color: #000000;
+/* Carousel heading */
+.carousel-caption h5 {
+  color: #ffffff;
+  font-size: clamp(1.2rem, 3vw, 2rem); /* Responsive font size */
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 15px;
+  white-space: normal; /* Allow text wrapping */
+}
+
+/* Carousel paragraph */
+.carousel-caption p {
+  font-size: clamp(0.8rem, 2vw, 1.2rem); /* Responsive font size */
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  line-height: 1.4; /* Better readability */
+  white-space: normal; /* Allow text wrapping */
+}
+
+/* Button styling */
+.carousel-caption .btn {
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
+  padding: 8px 16px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .carousel-caption {
+    bottom: 10%;
+    padding: 15px;
+    left: 10%;
+    right: 10%;
+  }
+  
+  .carousel-caption h5 {
+    margin-bottom: 10px;
+  }
+  
+  .carousel-caption p {
+    margin-bottom: 10px;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .carousel-caption {
+    padding: 10px;
+  }
+  
+  .carousel-caption p {
+    display: none; /* Hide paragraph on very small screens */
+  }
 }

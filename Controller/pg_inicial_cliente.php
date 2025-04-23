@@ -6,4 +6,3 @@ include 'talvez_voce_goste.php';
 include 'mais_vendidos_pg_inicial.php';
 include 'footer_cliente.php';
 
-?>
