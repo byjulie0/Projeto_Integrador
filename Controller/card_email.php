@@ -26,9 +26,7 @@ include 'menu_recuperar_senha.php';
                 <form action="" class="esqueci_senha_card_email_formulario">
                     <input type="email" name="esqueci_senha_card_email_digitar" type="submit" placeholder="E-mail" required>
                     <div class="esqueci_senha_card_email_linha_divisao"></div>
-                    <a href="recuperar_senha_codigo.php">
-                        <button type="submit">Enviar</button>
-                    </a>
+                    <button type="submit">Enviar</button>
                 </form>
             </div>
         </div>

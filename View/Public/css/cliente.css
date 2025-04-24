@@ -916,6 +916,7 @@ body {
   margin-bottom: 5%;
   width: 100%;
   max-width: 800px;
+  padding: 0 20px;
 }
 
 .esqueci_senha_card_email {
@@ -1010,30 +1011,29 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 988px){
+@media (max-width: 768px) {
+  .esqueci_senha_card_email_main {
+    padding: 0 15px;
+  }
+
   .esqueci_senha_card_email {
-    width: 90%;
+    padding: 40px 20px;
+  }
+
+  .esqueci_senha_card_email_content h1 {
+    font-size: 1.2rem;
+  }
+
+  .esqueci_senha_card_email_content h3 {
+    font-size: 0.9rem;
+  }
+
+  .esqueci_senha_card_email_formulario input,
+  .esqueci_senha_card_email_formulario button {
+    max-width: 100%;
   }
 }
-@media (max-width: 880px){
-  .esqueci_senha_card_email {
-    width: 70%;
-  }
-}
-@media (max-width: 750px){
-  .esqueci_senha_card_email {
-    width: 60%;
-  }
-}
-@media (max-width: 650px){
-  .esqueci_senha_card_email_seta_voltar{
-    display: none;
-  }
-  .esqueci_senha_card_email {
-    position: relative;
-    left: -6%;
-  }
-}
+
 
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
