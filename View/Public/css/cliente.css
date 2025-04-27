@@ -984,7 +984,7 @@ body {
 
 .esqueci_senha_card_email_formulario button {
   position: relative;
-  left: 3px;
+  left: 0;
   width: 130px;
   height: 40px;
   background-color: #ffffff;
@@ -1005,10 +1005,17 @@ body {
 .esqueci_senha_card_email_seta_voltar {
   position: relative;
   top: 5px;
-  left: calc(50% - 500px);
+  left: calc(50% - 45vw);
   font-size: 1.7rem;
   color: var(--color-primary-1);
   cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .esqueci_senha_card_email_seta_voltar{
+    top: -35px;
+    left: 10px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1032,6 +1039,7 @@ body {
   .esqueci_senha_card_email_formulario button {
     max-width: 100%;
   }
+
 }
 
 
