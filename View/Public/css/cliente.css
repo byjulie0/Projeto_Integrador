@@ -2677,7 +2677,7 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 /* Final da pg de login */
 
 /*css coluna de cards - anna laurah*/
-.body-coluna-de-cards {
+.body-coluna-de-cards{
   width: 100%;
 }
 
@@ -2685,19 +2685,18 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: center; /* centraliza os cards */
+  justify-content: center;
 }
 
 .cards-coluna-de-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* responsivo */
+  display: flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
   gap: 20px;
   width: 100%;
-  max-width: 1000px; /* limite opcional para não esticar demais */
 }
 
 .card-coluna-de-cards {
-  background-color: #f0f0f0; /* cor de fundo pra visualização */
+  background-color: #f0f0f0;
   height: 200px;
   width: 100%;
   display: flex;
@@ -2711,5 +2710,5 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 .imagem-coluna-card {
   height: 100px;
   width: auto;
-  object-fit: cover; /* ajusta imagem sem distorcer */
+  object-fit: cover;
 }
