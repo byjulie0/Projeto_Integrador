@@ -1687,7 +1687,9 @@ body {
   margin-top: 90px;
 }
 
+
 /* Fim do CSS esqueci a senha pop up - Julie */
+
 
 
 /* Começo do CSS do menu de Recuperar Senha - Julie*/
@@ -1726,7 +1728,7 @@ body {
   align-items: center;
 }
 
-/* Media Queries para Mobile - Tela média (360 x 800) */
+/* Mobile - Tela média (360 x 800) */
 @media (max-width: 767px) {
   .menu_recuper_senha {
       height: 7rem;
@@ -1745,7 +1747,7 @@ body {
   }
 }
 
-/* Media Queries para Mobile - Tela grande (390 x 844) */
+/* Mobile - Tela grande (390 x 844) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .menu_recuper_senha {
       height: 8rem;
@@ -1761,7 +1763,7 @@ body {
   }
 }
 
-/* Media Queries para Tablet - Tela média (768-1199px) */
+/* Tablet - Tela média (768-1199px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
   .menu_recuper_senha {
       height: 8.5rem;
@@ -1776,7 +1778,7 @@ body {
   }
 }
 
-/* Media Queries para Desktop - Tela média (1440x900) */
+/* Desktop - Tela média (1440x900) */
 @media (min-width: 1440px) and (max-width: 1919px) {
   .menu_recuper_senha {
       height: 9.2rem;
