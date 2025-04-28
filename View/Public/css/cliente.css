@@ -2678,30 +2678,96 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
 /* Final da pg de login */
 
-/* Inicio pg redefinir senha login */
+/* Inicio pg redefinir senha login Lara*/
 .rede_senha_section{
-  display: grid;
-  align-items: center;
+
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 5%;
+  width: 100%;
+  max-width: 800px;
+
+  /* display: flex;
+  position: relative;
+  top: 30%; */
+
+  /* align-items: center; */
+
+  /* text-align: center;
+  justify-content: center;
+  justify-items: center;
   min-height: 90vh;
   font-family: 'Poppins', sans-serif;
+  width: 100%; */
+
+  /* padding-left: 8%;
+  padding-right: 8%;
+  margin-bottom: 8%; */
+}
+
+/* .divcentral{
+
+  display: flex;
+  position: relative;
+  top: 200px;;
+  min-height: 90vh;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  
   padding-left: 8%;
   padding-right: 8%;
   margin-bottom: 8%;
-}
+} */
+
 .rede_senha_nav {
   position: relative;
-  /* display: flex;
+  background-color: #DFEBE0;
+  padding: 100px 80px;
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  width: 100%;
+  transform: translateY(-30px);
+
+  /* display: block;
+  position: relative;
   justify-content: center;
-  align-items: center; */
-  left: 22%;
+  align-items: center;
   width: 810px;
   height: 450px;
   padding: 110px;
   margin-bottom: 5%;
   border-radius: 2px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-  background-color: var(--color-card-login);
+  background-color: var(--color-card-login); */
 }
+.rede_senha_container{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* .div_rede_senha{
+  display: flex;
+  position: relative;
+  top: 50px;
+  padding: 10px;
+  left: 18%;
+  justify-content: center;
+  align-items: center;
+}
+.rede_senha_nav_voltar{
+  position: relative;
+  display: flex;
+  
+} */
+
+
 .h1_rede_senha{
   display: flex;
   text-align: flex-start;
@@ -2733,7 +2799,7 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   border: none;
   outline: none;
   border-radius: 2px;
-  padding: 15px 15px;
+  padding: 30px;
   top: 40px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   color: #000000;
@@ -2749,4 +2815,5 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   border: none;
   color: var(--color-primary-1);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  top: 50px;
 }
