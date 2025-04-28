@@ -1,6 +1,6 @@
 <!-- VALDIR -->
 <?php
-    include 'menu-pg-inicial.php';
+    include 'menu_pg_inicial.php';
 ?>
 
 <!DOCTYPE html>
