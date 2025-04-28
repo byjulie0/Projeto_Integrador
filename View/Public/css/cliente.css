@@ -1005,13 +1005,13 @@ body {
 .esqueci_senha_card_email_seta_voltar {
   position: relative;
   top: 5px;
-  left: calc(50% - 45vw);
+  left: calc(50% - 33vw);
   font-size: 1.7rem;
   color: var(--color-primary-1);
   cursor: pointer;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1250px) {
   .esqueci_senha_card_email_seta_voltar{
     top: -35px;
     left: 10px;
