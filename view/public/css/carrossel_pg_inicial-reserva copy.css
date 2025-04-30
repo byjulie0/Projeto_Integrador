@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    --color-primary-1: #40513b;
+    --color-primary-2: #557153;
+    --color-primary-3: #4b914b;
+    --color-primary-4: #798645;
+    --color-primary-5: #609966;
+    --color-primary-6: #729762;
+    --color-primary-7: #edf1d6;
+    --color-primary-8: #e7f0dc;
+  
+    --color-detalhes-9: #2278f4;
+    --color-botao-op-Cancelar: #db2828; /*Op = Operação*/
+    --color-botao-op-Pendente: #dba928; /*Op = Operação*/
+    --color-botao-op-Concluido: #2d8c37; /*Op = Operação*/
+    --color-fonte: #20261e;
+    --color-icones: #edf3eb;
+    --color-detalhes-15: #f7f9ff;
+    --color-detalhes-16: #e7f0dc;
+  }
+
+
+body { 
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif; /* Fonte */ 
+} 
+ 
+.container { 
+    display: flex; /* Flexbox */ 
+    flex-direction: column; /* Direção de coluna */ 
+    justify-content: center; 
+    align-items: center; 
+ 
+}
+.texto-carrosel-pg-inicial { 
+    color: var(--color-primary-1); /* Cor do título */ 
+    text-align: left;
+    padding-left: 8%;
+    padding-right: 8%;
+} 
+.texto2-carrossel-pg-inicial{
+    text-align: justify;
+}
+ .brilho{
+    opacity:100%;
+ }
+.texto2-carrossel-pg-inicial { 
+    color: var(--color-primary-1); /* Cor do parágrafo */ 
+    font-size: 20px; 
+} 
+.span-carrossel-pg-inicial{
+    font-size: 25px;
+    color: var(--color-botao-op-Concluido);
+
+}
+
+.text-g{
+    padding: 6% 8% 5% 11%;
+}
+
+.text{
+    padding: 10% 8% 5% 11%;
+}
+#carousel_text{
+
+    text-align: left;
+    z-index: 1;
+    /* box-sizing: border-box; */
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    height: 200px;
+    position: absolute;
+    top:20px;
+    width: 800px;
+    margin: 0;
+}
+
+.carrossel {
+    background-color: yellow;
+    text-align: right;
+    display: flex;
+    position: top;
+
+}
+.carousel-caption {
+    display: flex;
+    padding-left: 0;
+    padding-right: 8%;
+    flex-direction: column-reverse;
+}
+
+.h2-carrossel-pg-inicial{
+    font-size: 16px;
+    text-align: justify;
+}
+ 
+.btn { 
+    background-color: #4CAF50; /* Cor de fundo do botão */ 
+    color: white; 
+    padding: 15px 32px; 
+    border: none; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    text-align: left;
+} 
+ 
+.btn:hover { 
+    background-color: #45a049; /* Cor do botão ao passar o mouse */ 
+} 
+
+
+
+
+
+
+
+
+
+

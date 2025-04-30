@@ -1,3 +1,4 @@
+<!-- LARA -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,38 +35,38 @@
         <div id="tab2" class="footer_cli_item">
             <h3>Siga nossas Redes</h3>
             <hr>
-            <a href="#"><i class="fa-brands fa-facebook" ></i></a>
-            <a href="#"><i class="fa-brands fa-instagram" ></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp" ></i></a>
+            <a href="https://www.facebook.com/senacmsoficial/?locale=pt_BR"><i class="fa-brands fa-facebook" ></i></a>
+            <a href="https://www.instagram.com/senac_ms/"><i class="fa-brands fa-instagram" ></i></a>
+            <a href="https://api.whatsapp.com/send?phone=556799492638"><i class="fa-brands fa-whatsapp" ></i></a>
         </div>
         
         <div id="tab3" class="footer_cli_item">
             <h3>Termos</h3>
             <hr>
-            <a href="#">Termos e Condições</a>
-            <a href="#">Privacidade e Segurança</a>
+            <a href="termos_e_condicoes.php">Termos e Condições</a>
+            <a href="privacidade_e_seguranca.php">Privacidade e Segurança</a>
         </div>
         
         <div id="tab4" class="footer_cli_item">
             <h3>Sobre a Empresa</h3>
             <hr>
-            <a href="#">Nossa História</a>
+            <a href="nossa_historia.php">Nossa História</a>
         </div>
         
         <div id="tab5" class="footer_cli_item">
             <h3>Pagamento</h3>
             <hr>
-            <p>Entre em contato com nossa equipe atráves do <a href="#">whatsapp</a></p>
+            <p>Entre em contato com nossa equipe atráves do <a href="https://api.whatsapp.com/send?phone=556799492638">whatsapp</a></p>
 
         </div>
 
         <div id="tab6" class="footer_cli_item">
             <h3>Meu perfil</h3>
             <hr>
-            <a href="#">Carrinho de compras</a>
+            <a href="carrinho.php">Carrinho de compras</a>
             <a href="#">Histórico de Busca</a>
             <a href="#">Minhas Compras</a>
-            <a href="#">Produtos Favoritados</a>
+            <a href="pg_favoritos.php">Produtos Favoritados</a>
         </div>
     </div>
 </footer>
