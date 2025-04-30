@@ -23,7 +23,7 @@
         <div class="menu-content-pg-inicial">
             <div class="logo-menu">
                 <img src="../view/public/imagens/2 Sem Título_20250212224411.png" alt="" class="logo-menu-img">
-                <h3 class="logo-menu-title">John Rooster</h3>
+                <a href="pg_inicial_cliente.php" class="logo-menu-title">John Rooster</a>
             </div>
             <div class="nav-link-pg-inicial">
                 <a href="" class="nav-item-pg-inicial">Categorias</a>
@@ -38,7 +38,7 @@
             </div>
             <div class="nav-page-btns-pg-inicial">
 
-                <a href="" class="nav-btns-pg-inicial">
+                <a href="perfil_cliente.php" class="nav-btns-pg-inicial">
                     <i class="bi bi-person"></i>
                     <span class="nav-text-pg-inicial">Perfil</span>
                 </a>
@@ -46,7 +46,7 @@
                     <i class="bi bi-bell"></i>
                     <span class="nav-text-pg-inicial">Notificações</span>
                 </a>
-                <a href="" class="nav-btns-pg-inicial">
+                <a href="carrinho.php" class="nav-btns-pg-inicial">
                     <i class="bi bi-cart"></i>
                     <span class="nav-text-pg-inicial">Carrinho</span>
                 </a>

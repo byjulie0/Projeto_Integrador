@@ -16,20 +16,22 @@ include 'menu_recuperar_senha.php';
 <body class="recuperar_senha_codigo_body">
 
     <main class="recuperar_senha_codigo_main">
-        <a href="card_email.php" class="recuperar_senha_codigo_seta_voltar">
-            <i class="fa-solid fa-chevron-left"></i>
-        </a>
-        <div class="recuperar_senha_codigo">
-            <div class="recuperar_senha_codigo_content">
-                <h1>Código</h1>
-                <h3>Insira o código de 6 digitos que lhe enviamos</h3>
-                <form action="" class="recuperar_senha_codigo_formulario">
-                    <input type="email" inputmode="numeric" pattern="[A-aZ-z0-9]+" maxlength="8" required>
-                    <div class="recuperar_senha_codigo_linha_divisao"></div>
-                    <button type="submit">Enviar</button>
-                </form>
+        <section class="recuperar_senha_codigo_section">
+            <a href="card_email.php" class="recuperar_senha_codigo_seta_voltar">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <div class="recuperar_senha_codigo">
+                <div class="recuperar_senha_codigo_content">
+                    <h1>Código</h1>
+                    <h3>Insira o código de 6 digitos que lhe enviamos</h3>
+                    <form action="" class="recuperar_senha_codigo_formulario">
+                        <input type="email" inputmode="numeric" pattern="[A-aZ-z0-9]+" maxlength="8" required>
+                        <div class="recuperar_senha_codigo_linha_divisao"></div>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
 </body>
