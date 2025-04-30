@@ -74,6 +74,8 @@ body {
 }
 
 .logo-menu-title {
+  text-decoration: none;
+  font-weight: 700;
   font-size: 1.125rem;
   color: #40513B;
   white-space: nowrap;
@@ -173,10 +175,10 @@ body {
 }
 
 /* ==================== */
-/* MOBILE BREAKPOINTS */
+/* Responsividade de celular */
 /* ==================== */
 
-/* Mobile Medium: 360 x 800 */
+/* Mobile Médio: 360 x 800 */
 @media (max-width: 390px) {
   .menu-pg-inicial {
     padding: 8px 10px;
@@ -213,7 +215,7 @@ body {
   }
 }
 
-/* Mobile Large: 390 x 844 */
+/* Mobile Grande: 390 x 844 */
 @media (min-width: 391px) and (max-width: 767px) {
   .menu-pg-inicial {
     padding: 10px 15px;
@@ -238,10 +240,10 @@ body {
 }
 
 /* ==================== */
-/* TABLET BREAKPOINTS */
+/* Responsividade Tablets */
 /* ==================== */
 
-/* Tablet Medium: 768-1023 */
+/* Tablet Médio: 768-1023 */
 @media (min-width: 768px) and (max-width: 1023px) {
   .menu-pg-inicial {
     padding: 10px 25px;
@@ -264,7 +266,7 @@ body {
   }
 }
 
-/* Tablet Large: 768-1199 */
+/* Tablet Grande: 768-1199 */
 @media (min-width: 768px) and (max-width: 1199px) {
   .nav-link-pg-inicial {
     gap: 10px;
@@ -284,10 +286,10 @@ body {
 }
 
 /* ==================== */
-/* DESKTOP BREAKPOINTS */
+/* Responsividade do Desktop */
 /* ==================== */
 
-/* Desktop Medium: 1440 x 900 */
+/* Desktop Médio: 1440 x 900 */
 @media (min-width: 1200px) and (max-width: 1919px) {
   .menu-pg-inicial {
     padding: 12px 60px;
@@ -320,7 +322,7 @@ body {
   }
 }
 
-/* Desktop Large: 1920 x 1080 */
+/* Desktop Grande: 1920 x 1080 */
 @media (min-width: 1920px) {
   .menu-pg-inicial {
     padding: 15px 100px;
@@ -363,7 +365,7 @@ body {
 }
 
 /* ==================== */
-/* COMMON MOBILE/TABLET STYLES */
+/* Estilos comuns entre mobile e tablet */
 /* ==================== */
 
 @media (max-width: 1199px) {
@@ -413,10 +415,8 @@ body {
   
   .nav-page-btns-pg-inicial {
     order: 1;
-    margin-left: 15%;
   }
   
-  /* Show mobile menu when toggled */
   .nav-link-pg-inicial.mobile-visible,
   .search-container-pg-inicial.mobile-visible {
     display: flex;
@@ -435,7 +435,6 @@ body {
 /* Final de menu pg inicial Ana Julia*/
 
 /* Começo do footer Lara */
-/* Footer Base Styles */
 .footer_cliente {
   width: 100%;
   background-color: var(--color-primary-1);
@@ -561,7 +560,6 @@ body {
 /* Final do footer Lara */
 
 /* Começo da categoria da pg inicial Isabella */
-/* Base Styles */
 #pg_inicial_categorias {
   flex-direction: column;
   justify-content: center;
@@ -593,14 +591,13 @@ body {
   box-sizing: border-box;
 }
 
-/* Image Card Styles - Updated to ensure images display */
 .categoria_cards_pg_inicial {
   width: 100%;
-  height: 153px; /* Fixed height */
+  height: 153px;
   position: relative;
-  display: block; /* Changed from flex to block */
+  display: block;
   border-radius: 20px;
-  overflow: hidden; /* Ensures rounded corners clip the image */
+  overflow: hidden; 
 }
 
 .card_categoria_pg_inicial {
@@ -615,7 +612,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Specific Image Backgrounds - Make sure paths are correct */
+
 .card_galinha_pg_inicial_categorias {
   background-image: url('../imagens/img_pg_inicial_categorias/galinha_categorias_pg_inicial.png');
 }
@@ -646,7 +643,6 @@ body {
   z-index: 2;
 }
 
-/* Hover States */
 .card_galinha_pg_inicial_categorias:hover {
   background-image: url('../imagens/img_pg_inicial_categorias/galinha_hover_categorias_pg_inicial.png');
 }
@@ -663,7 +659,7 @@ body {
   background-image: url('../imagens/img_pg_inicial_categorias/campeoes_hover_categorias_pg_inicial.png');
 }
 
-/* Responsive Breakpoints */
+
 @media (max-width: 390px) {
   .categoria_cards_pg_inicial {
     height: 120px;
@@ -675,7 +671,6 @@ body {
     height: 180px;
   }
 }
-/* Final da categoria da pg inicial Isabella */
 
 /* Final da categoria da pg inicial */
 
@@ -905,7 +900,7 @@ body {
 
 .esqueci_senha_card_email_body {
   background-color: #F7F7F7;
-  /* display: grid; */
+  display: grid;
   place-items: center;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
@@ -918,6 +913,7 @@ body {
   margin-bottom: 5%;
   width: 100%;
   max-width: 800px;
+  padding: 0 20px;
 }
 
 .esqueci_senha_card_email {
@@ -955,7 +951,7 @@ body {
 
 .esqueci_senha_card_email_formulario input {
   position: relative;
-  left: 30px;
+  left: 5px;
   width: 100%;
   max-width: 600px;
   height: 35px;
@@ -975,7 +971,7 @@ body {
 
 .esqueci_senha_card_email_linha_divisao {
   position: relative;
-  left: 30px;
+  left: 7px;
   width: 100%;
   max-width: 600px;
   height: 0.5px;
@@ -985,7 +981,7 @@ body {
 
 .esqueci_senha_card_email_formulario button {
   position: relative;
-  left: 30px;
+  left: 0;
   width: 130px;
   height: 40px;
   background-color: #ffffff;
@@ -1006,36 +1002,43 @@ body {
 .esqueci_senha_card_email_seta_voltar {
   position: relative;
   top: 5px;
-  left: calc(50% - 500px);
+  left: calc(50% - 33vw);
   font-size: 1.7rem;
   color: var(--color-primary-1);
   cursor: pointer;
 }
 
-@media (max-width: 988px){
-  .esqueci_senha_card_email {
-    width: 90%;
-  }
-}
-@media (max-width: 880px){
-  .esqueci_senha_card_email {
-    width: 70%;
-  }
-}
-@media (max-width: 750px){
-  .esqueci_senha_card_email {
-    width: 60%;
-  }
-}
-@media (max-width: 650px){
+@media (max-width: 1250px) {
   .esqueci_senha_card_email_seta_voltar{
-    display: none;
-  }
-  .esqueci_senha_card_email {
-    position: relative;
-    left: -6%;
+    top: -35px;
+    left: 10px;
   }
 }
+
+@media (max-width: 768px) {
+  .esqueci_senha_card_email_main {
+    padding: 0 15px;
+  }
+
+  .esqueci_senha_card_email {
+    padding: 40px 20px;
+  }
+
+  .esqueci_senha_card_email_content h1 {
+    font-size: 1.2rem;
+  }
+
+  .esqueci_senha_card_email_content h3 {
+    font-size: 0.9rem;
+  }
+
+  .esqueci_senha_card_email_formulario input,
+  .esqueci_senha_card_email_formulario button {
+    max-width: 100%;
+  }
+
+}
+
 
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
@@ -1410,7 +1413,218 @@ body {
 /*Final da Pg Favoritos - Mariana */
 
 /* inicio slider da página inicial  */ 
-/* Base styles */
+.body-mais-vendidos {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.pg-mais-vendidos {
+  color: var(--color-primary-1);
+  padding-left: 8%;
+  padding-top: 3%;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.carrossel-mais-vendidos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2% 0 8%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.arrow-mais-vendidos {
+  font-size: 30px;
+  cursor: pointer;
+  margin: 0 10px;
+  user-select: none;
+  color: #40513B;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.arrow-mais-vendidos:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
+}
+
+.arrow-mais-vendidos:first-child {
+  left: 0;
+}
+
+.arrow-mais-vendidos:last-child {
+  right: 0;
+}
+
+.cards-mais-vendidos {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+  padding: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  width: calc(100% - 100px);
+  margin: 0 auto;
+}
+
+.cards-mais-vendidos::-webkit-scrollbar {
+  display: none; 
+}
+
+.card-mais-vendidos {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 230px; 
+  flex: 0 0 auto; 
+  text-align: center;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+.card-mais-vendidos:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.card-mais-vendidos img {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.card-mais-vendidos p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.price-mais-vendidos {
+  font-weight: bold;
+  color: #000;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.btn-mais-vendidos {
+  background-color: var(--color-botao-op-Concluido);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-mais-vendidos:hover {
+  background-color: var(--color-botao-op-Concluido-hover);
+}
+
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
+
+/* Mobile Médio: 360 x 800 */
+@media (max-width: 390px) {
+  .pg-mais-vendidos {
+    font-size: 20px;
+    padding-left: 5%;
+    padding-top: 5%;
+  }
+  
+  .carrossel-mais-vendidos {
+    padding: 5% 0 10%;
+  }
+  
+  .arrow-mais-vendidos {
+    font-size: 24px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .cards-mais-vendidos {
+    width: calc(100% - 80px);
+    padding: 10px;
+  }
+}
+
+/* Mobile Grande: 390 x 844 */
+@media (min-width: 391px) and (max-width: 767px) {
+  .pg-mais-vendidos {
+    font-size: 22px;
+  }
+}
+
+/* ==================== */
+/* Responsividade do tablet */
+/* ==================== */
+
+/* Tablet Médio: 768-1023 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .carrossel-mais-vendidos {
+    padding: 3% 0 8%;
+  }
+}
+
+/* Tablet Grande: 768-1199 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .pg-mais-vendidos {
+    font-size: 24px;
+  }
+}
+
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
+
+/* Desktop Medium: 1440 x 900 */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .carrossel-mais-vendidos {
+    padding: 2% 0 8%;
+  }
+}
+
+/* Desktop Large: 1920 x 1080 */
+@media (min-width: 1920px) {
+  .pg-mais-vendidos {
+    font-size: 32px;
+    padding-left: 10%;
+  }
+  
+  .carrossel-mais-vendidos {
+    max-width: 1400px;
+    padding: 2% 0 8%;
+  }
+  
+  .arrow-mais-vendidos {
+    font-size: 36px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Talvez você goste */
 .body-math {
   font-family: "Poppins", sans-serif;
   background-color: #f0f0f0;
@@ -1477,13 +1691,13 @@ body {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
   width: calc(100% - 100px);
   margin: 0 auto;
 }
 
 .cards-cat-math::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none;
 }
 
 .card-cat-math {
@@ -1491,8 +1705,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   padding: 15px;
-  width: 230px; /* Fixed width */
-  flex: 0 0 auto; /* Prevent flex items from growing/shrinking */
+  width: 230px;
+  flex: 0 0 auto;
   text-align: center;
   scroll-snap-align: start;
   transition: transform 0.3s ease;
@@ -1505,7 +1719,7 @@ body {
 
 .card-cat-math img {
   width: 100%;
-  height: 160px; /* Fixed height */
+  height: 160px; 
   border-radius: 8px;
   object-fit: cover;
 }
@@ -1540,10 +1754,10 @@ body {
 }
 
 /* ==================== */
-/* MOBILE BREAKPOINTS */
+/* Responsividade de celular */
 /* ==================== */
 
-/* Mobile Medium: 360 x 800 */
+/* Mobile Médio: 360 x 800 */
 @media (max-width: 390px) {
   .pg-categorias-math {
     font-size: 20px;
@@ -1567,7 +1781,7 @@ body {
   }
 }
 
-/* Mobile Large: 390 x 844 */
+/* Mobile Grande: 390 x 844 */
 @media (min-width: 391px) and (max-width: 767px) {
   .pg-categorias-math {
     font-size: 22px;
@@ -1575,17 +1789,17 @@ body {
 }
 
 /* ==================== */
-/* TABLET BREAKPOINTS */
+/* Responsividade de tablet */
 /* ==================== */
 
-/* Tablet Medium: 768-1023 */
+/* Tablet Médio: 768-1023 */
 @media (min-width: 768px) and (max-width: 1023px) {
   .carrossel-cat-math {
     padding: 3% 0 8%;
   }
 }
 
-/* Tablet Large: 768-1199 */
+/* Tablet Grande: 768-1199 */
 @media (min-width: 768px) and (max-width: 1199px) {
   .pg-categorias-math {
     font-size: 24px;
@@ -1593,17 +1807,17 @@ body {
 }
 
 /* ==================== */
-/* DESKTOP BREAKPOINTS */
+/* Responsividade de Desktop */
 /* ==================== */
 
-/* Desktop Medium: 1440 x 900 */
+/* Desktop Médio: 1440 x 900 */
 @media (min-width: 1200px) and (max-width: 1919px) {
   .carrossel-cat-math {
     padding: 2% 0 8%;
   }
 }
 
-/* Desktop Large: 1920 x 1080 */
+/* Desktop Grande: 1920 x 1080 */
 @media (min-width: 1920px) {
   .pg-categorias-math {
     font-size: 32px;
@@ -1898,7 +2112,7 @@ body {
 
 .recuperar_senha_codigo_body {
   background-color: #F7F7F7;
-  /* display: grid; */
+  display: grid;
   place-items: center;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
@@ -1911,6 +2125,7 @@ body {
   margin-bottom: 5%;
   width: 100%;
   max-width: 800px;
+  padding: 0 20px;
 }
 
 .recuperar_senha_codigo {
@@ -1948,7 +2163,7 @@ body {
 
 .recuperar_senha_codigo_formulario input {
   position: relative;
-  left: 30px;
+  left: 5px;
   width: 100%;
   max-width: 600px;
   height: 35px;
@@ -1968,7 +2183,7 @@ body {
 
 .recuperar_senha_codigo_linha_divisao {
   position: relative;
-  left: 30px;
+  left: 7px;
   width: 100%;
   max-width: 600px;
   height: 0.5px;
@@ -1978,7 +2193,7 @@ body {
 
 .recuperar_senha_codigo_formulario button {
   position: relative;
-  left: 30px;
+  left: 0;
   width: 130px;
   height: 40px;
   background-color: #ffffff;
@@ -1999,34 +2214,39 @@ body {
 .recuperar_senha_codigo_seta_voltar {
   position: relative;
   top: 5px;
-  left: calc(50% - 500px);
+  left: calc(50% - 33vw);
   font-size: 1.7rem;
   color: var(--color-primary-1);
   cursor: pointer;
 }
 
-@media (max-width: 988px){
-  .recuperar_senha_codigo {
-    width: 90%;
-  }
-}
-@media (max-width: 880px){
-  .recuperar_senha_codigo {
-    width: 90%;
-  }
-}
-@media (max-width: 750px){
-  .recuperar_senha_codigo {
-    width: 90%;
-  }
-}
-@media (max-width: 650px){
+@media (max-width: 1250px){
   .recuperar_senha_codigo_seta_voltar{
-    display: none;
+    top: -35px;
+    left: 5px;
   }
+}
+
+@media (max-width: 768px){
+  .recuperar_senha_codigo_main {
+    padding: 0 15px;
+  }
+
   .recuperar_senha_codigo {
-    position: relative;
-    left: -6%;
+    padding: 40px 20px;
+  }
+
+  .recuperar_senha_codigo_content h1 {
+    font-size: 1.2rem;
+  }
+
+  .recuperar_senha_codigo_content h3 {
+    font-size: 0.9rem;
+  }
+
+  .recuperar_senha_codigo_formulario input,
+  .recuperar_senha_codigo_formulario button {
+    max-width: 100%;
   }
 }
 
