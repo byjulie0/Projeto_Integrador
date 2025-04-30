@@ -1,6 +1,6 @@
 let currentIndex = 0;
 const cardsContainer = document.getElementById('carrossel-cards');
-const cards = document.querySelectorAll('.card-cat-math');
+const cards = document.querySelectorAll('.card-mais-vendidos');
 const cardCount = cards.length;
 const cardWidth = 230; // Fixed card width
 const gapWidth = 20; // Gap between cards
@@ -57,7 +57,7 @@ document.addEventListener('keydown', (e) => {
 
 // Show appropriate arrows based on scroll position
 cardsContainer.addEventListener('scroll', () => {
-    const arrows = document.querySelectorAll('.arrow-cat-math');
+    const arrows = document.querySelectorAll('.arrow-mais-vendidos');
     const scrollLeft = cardsContainer.scrollLeft;
     const maxScroll = cardsContainer.scrollWidth - cardsContainer.clientWidth;
     
@@ -66,4 +66,4 @@ cardsContainer.addEventListener('scroll', () => {
 });
 
 // Initialize arrow visibility
-document.querySelector('.arrow-cat-math:first-child').style.display = 'none';
+document.querySelector('.arrow-mais-vendidos:first-child').style.display = 'none';
