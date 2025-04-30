@@ -1,5 +1,4 @@
 <!-- Lara -->
-
 <?php
 include 'menu_recuperar_senha.php';
 ?>
@@ -20,17 +19,16 @@ include 'menu_recuperar_senha.php';
             <i class="fa-solid fa-chevron-left"></i>
         </a>
         <nav class="rede_senha_nav">
-            <div class="rede_senha_container">
+            <div class="recuperar_senha_rede_formulario">
                 <h1>Redefinir senha</h1>
                 <h3>Escolha sua nova senha </h3>
                 <form action="" class="form_rede_senha">
-                    <input class="inputsenha1" type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Nova senha">
-                    <input class="inputsenha2" type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Confirmar nova senha">
+                    <input type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Nova senha">
+                    <input type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Confirmar nova senha">
                     <hr class="linha_login">
-                    <button type="submit">Redefinir</button>
+                    <button type="submit">Enviar</button>
                 </form>
             </div>
-            
         </nav>
     </section>
 

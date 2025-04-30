@@ -2899,3 +2899,86 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 /* Final da pg de login */
 
 
+/* Inicio pg redefinir senha login Lara*/
+
+.rede_senha_section{
+  position: relative;
+  margin-top: 15%;
+  margin-bottom: 1%;
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+}
+.rede_senha_nav {
+  position: relative;
+  background-color: #DFEBE0;
+  padding: 100px 80px;
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  width: 100%;
+  transform: translateY(-30px);
+}
+.recuperar_senha_rede_formulario h1 {
+  text-align: center;
+  color: var(--color-fonte);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.recuperar_senha_rede_formulario h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+  color: var(--color-primary-1);
+  font-size: 1rem;
+}
+.linha_login{
+  width: 100%;
+  height: 0.05rem;
+  position: relative;
+  left: 2px;
+  top: 30px;
+  background-color: var(--color-primary-1);
+}
+.recuperar_senha_rede_formulario{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.recuperar_senha_rede_formulario input{
+  position: relative;
+  left: 5px;
+  width: 100%;
+  max-width: 600px;
+  height: 35px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 0 15px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  color: #000000;
+  box-sizing: border-box;
+  top: 30px;
+  margin-bottom: 20px;
+}
+.recuperar_senha_rede_formulario button{
+  position: relative;
+  margin-top: 50px;
+  left: 0;
+  width: 130px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: none;
+  color: var(--color-primary-1);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
