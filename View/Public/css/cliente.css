@@ -1054,6 +1054,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 .body-cadastro{
+  width: 100%;
   display: flex;
   background-color: #F7F7F7;
   align-items: center;
@@ -1184,7 +1185,46 @@ body {
   margin-top: 250px;
   margin-left: 200px;
 }
+
+/*RESPONSIVIDADE*/
+@media (max-width: 360px){
+  .area-form-cadastro{
+    width: 300px;
+    margin: 50px 125px;
+    padding: 40px;
+  }
+  .titulo-form-cadastro{
+    font-size: 1.4rem;
+  }
+  .input-form-cadastro{
+    width: 11.563rem;
+    height: 1.938rem;
+    padding: 4px;
+    font-size: 0.6rem;
+  }
+  .input-form-cadastro::placeholder{
+    font-weight: 600;
+    font-size: 0.6rem;
+  }
+  .input-submit-form-cadastro{
+    padding: 3px;
+    font-size: 0.7rem;
+  }
+  .area-termos-privacidade-cadastro{
+    text-align: justify;
+    width: 100%;
+  }
+  .icon-voltar-cadastro{
+    font-size: 1rem;
+    position: absolute;
+    margin-top: 172px;
+    margin-left: 50px;
+  }
+}
+
 /* Fim do CSS da página Cadastro - Maria*/
+
+/* Início do CSS do Menu Cadastro*/
 *{
   padding: 0;
   margin: 0;
@@ -1216,7 +1256,6 @@ body {
   font-size: 2rem;
   align-items: center;
 }
-
 
 /* === 320px (pequenos celulares) === */
 @media (max-width: 320px) {
@@ -1339,11 +1378,27 @@ body {
 
 /*Final da Pg Favoritos */
 
+/*RESPONSIVIDADE*/
+@media (max-width: 360px){
+  .menu-cadastro{
+    height: 6.2rem;
+  }
+  .info-menu-cadastro{
+    max-height: 6.2rem;
+  }
+  .logo-menu-cadastro img{
+    height: 5.884rem;
+  }
+  .nome-menu-cadastro{
+    font-size: 1.1rem;
+    margin-left: 10px;
+    margin-top: 40px;
+  }
+}
+
 /* Fim do CSS do Menu Cadastro*/
 
 /* Inicio-nossa-historia-valdir */
-
-/* Fim do CSS do Menu Cadastro - Maria*/
 
 /* CSS Termos e Condições Julie*/
 .texto-termos-e-condicoes{
