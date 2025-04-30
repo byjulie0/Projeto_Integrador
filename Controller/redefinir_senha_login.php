@@ -21,22 +21,17 @@ include 'menu_recuperar_senha.php';
         </a>
         <nav class="rede_senha_nav">
             <div class="rede_senha_container">
-                <h1 class="h1_rede_senha">Redefinir senha</h1>
-
-                <h3 class="h3_rede_senha">Escolha sua nova senha </h3>
+                <h1>Redefinir senha</h1>
+                <h3>Escolha sua nova senha </h3>
                 <form action="" class="form_rede_senha">
-
                     <input class="inputsenha1" type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Nova senha">
-
                     <input class="inputsenha2" type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Confirmar nova senha">
-                    
-                    <div class="rede_senha_linha"></div>
-
+                    <hr class="linha_login">
                     <button type="submit">Redefinir</button>
                 </form>
             </div>
+            
         </nav>
-
     </section>
 
 </body>
