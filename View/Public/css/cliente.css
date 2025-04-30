@@ -1036,8 +1036,6 @@ body {
   }
 
 }
-
-
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
 /* ======= */
@@ -1185,6 +1183,8 @@ body {
   margin-left: 200px;
 }
 /* Fim do CSS da página Cadastro - Maria*/
+
+/* Inicio do CSS do Menu Cadastro - Maria*/
 *{
   padding: 0;
   margin: 0;
@@ -1216,12 +1216,8 @@ body {
   font-size: 2rem;
   align-items: center;
 }
-
-/* Fim do CSS do Menu Cadastro*/
-
-/* Inicio-nossa-historia-valdir */
-
 /* Fim do CSS do Menu Cadastro - Maria*/
+
 
 /* CSS Termos e Condições Julie*/
 .texto-termos-e-condicoes{
@@ -1232,7 +1228,6 @@ body {
   padding-top: 0%;
   padding-bottom: 8%;
   font-family: 'poppins', sans-serif;
-  text-align: justify;
   color: var(--color-primary-1);
 }
 .section-termos-e-condicoes{
@@ -1262,6 +1257,19 @@ body {
   align-items: center;
   color: var(--color-primary-1);
   font-size: 24px;
+}
+
+@media (min-width: 360px) and (max-width: 389px) {
+  .sub-titulo-termos-e-condicoes{
+    padding-top: 20px;
+  }
+  .sub-titulo2-termos-e-condicoes{
+    padding-top: 20px;
+  }
+  .texto-termos-e-condicoes {
+    padding: 20px 6%;
+  }
+  
 }
 /* Fim do CSS de termos e condições Julie*/
 
@@ -1904,6 +1912,29 @@ body {
   margin-top: 90px;
 }
 
+@media (min-width: 360px) and (max-width: 389px){
+  .esqueci_senha_card_popup{
+    width: 20px;
+    height: 130px;
+    align-items: center;
+
+  }
+  .esqueci_a_senha_popup_setinha{
+    width: 8px;
+    height: 8px;
+    margin-top: 40px;
+    left: 20px;
+
+  }
+  .esqueci_senha_popup_texto{
+    font-size: 1rem;
+
+  }
+  
+
+
+
+}
 
 /* Fim do CSS esqueci a senha pop up - Julie */
 
@@ -1914,25 +1945,28 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
-.menu_recuper_senha{
+.menu_recuper_senha {
   align-items: center;
   width: 100%;
   height: 9.2rem;
   display: flex;
   background-color: #40513B;
 }
-.info_menu-recuperar_senha{
+
+.info_menu-recuperar_senha {
   width: 100%;
   max-height: 9.2rem;
   display: flex;
   flex-direction: row;
 }
-.logo_menu_recuperar_senha img{
+
+.logo_menu_recuperar_senha img {
   margin-left: 20px;
   margin-top: 10px;
   height: 7.884rem;
 }
-.nome_menu_recuperar_senha{
+
+.nome_menu_recuperar_senha {
   font-weight: 600;
   margin-left: 20px;
   margin-top: 50px;
@@ -1940,7 +1974,90 @@ body {
   font-size: 2rem;
   align-items: center;
 }
-/* Fim do CSS do Menu Cadastro - Maria*/
+
+/* Mobile - Tela média (360 x 800) */
+@media (max-width: 767px) {
+  .menu_recuper_senha {
+      height: 7rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 5.5rem;
+      margin-left: 15px;
+      margin-top: 8px;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 1.5rem;
+      margin-top: 35px;
+      margin-left: 15px;
+  }
+}
+
+/* Mobile - Tela grande (390 x 844) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu_recuper_senha {
+      height: 8rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 6.5rem;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 1.7rem;
+      margin-top: 45px;
+  }
+}
+
+/* Tablet - Tela média (768-1199px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .menu_recuper_senha {
+      height: 8.5rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 7rem;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 1.8rem;
+  }
+}
+
+/* Desktop - Tela média (1440x900) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .menu_recuper_senha {
+      height: 9.2rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 7.884rem;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 2rem;
+  }
+}
+
+/* Desktop - Tela grande (1920x1080) */
+@media (min-width: 1920px) {
+  .menu_recuper_senha {
+      height: 10rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 8.5rem;
+      margin-left: 30px;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 2.2rem;
+      margin-top: 55px;
+      margin-left: 30px;
+  }
+}
+/* Fim do CSS do Menu Cadastro - Julie*/
 
 /* Começo De Meu Perfil - Visualizar Dados*/
 .body-visualizar-dados{
