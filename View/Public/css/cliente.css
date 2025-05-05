@@ -2969,7 +2969,7 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 .rede_senha_nav {
   position: relative;
   background-color: #DFEBE0;
-  padding: 100px 80px;
+  padding: 10% 8%;
   border-radius: 2px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
@@ -3037,4 +3037,25 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+/* Responsividade de celular */
+/* ==================== */
 
+/* Mobile Médio: 360 x 800 */
+@media screen and (min-width: 360px) and (max-width: 400px) and (min-height: 640px) and (max-height: 800px) {
+  .recuperar_senha_rede_formulario{
+    width: 500px;
+    flex-direction: column;
+  }
+  .rede_senha_nav{
+    padding: 15px 10px;
+  }
+  .rede_senha_section{
+    height: 300px;
+  }
+}
+
+/* Mobile Grande: 390 x 844 */
+@media (min-width: 391px) and (max-width: 767px) {
+
+}
+/* Fim pg redefinir senha Lara */
