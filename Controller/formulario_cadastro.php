@@ -43,7 +43,7 @@
                 </div>
             </div>
             <p class="area-termos-privacidade-cadastro">
-                Ao se inscrever, você concorda com as políticas do John Rooster <a href="#" class="termos-privacidade-cadastro">Termos de serviço & Políticas de privacidade</a>
+                Ao se inscrever, você concorda com as políticas do John Rooster <a href="termos_e_condicoes.php" class="termos-privacidade-cadastro">Termos de serviço & <a href="privacidade_e_seguranca.php" class="termos-privacidade-cadastro">Políticas de privacidade</a></a>
             </p>
             <p class="area-login-cadastro">
                 Já tem uma conta? <a href="#" class="login-cadastro">Entre</a>
