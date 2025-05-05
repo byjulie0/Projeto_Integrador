@@ -1,10 +1,5 @@
-<?php
-session_start();
-
-$userData = [
-    'name' => 'Fulano da Silva Pinto Soares',
-    'email' => 'sample123@gmail.com'
-];
+<?php 
+    include('menu-pg-inicial.php'); 
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -12,53 +7,42 @@ $userData = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../view/public/CSS/cliente.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div class="back-link">
-                <span class="arrow">‹</span>
-                <span class="text">Meu perfil</span>
-            </div>
-        </header>
-
-        <main>
-            <div class="profile-section">
-                <div class="profile-image">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="#4F6F52"/>
-                        <path d="M12.0002 14.5C6.99016 14.5 2.91016 17.86 2.91016 22C2.91016 22.28 3.13016 22.5 3.41016 22.5H20.5902C20.8702 22.5 21.0902 22.28 21.0902 22C21.0902 17.86 17.0102 14.5 12.0002 14.5Z" fill="#4F6F52"/>
+<body class="body-arthura">
+    <div class="header-arthura">
+        <a href="#" class="back-arrow-arthura">&#10094;</a>
+        <div class="title-arthura">Meu perfil</div>
+    </div>
+    <div class="wrapper-arthura">
+        <div class="card-arthura">
+            <div class="profile-arthura">
+                <div class="avatar-arthura">
+                    <svg class="avatar-icon-arthura" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                     </svg>
                 </div>
-                <div class="profile-info">
-                    <h1><?php echo htmlspecialchars($userData['name']); ?></h1>
-                    <a href="mailto:<?php echo htmlspecialchars($userData['email']); ?>" class="email">
-                        <?php echo htmlspecialchars($userData['email']); ?>
-                    </a>
+                <div class="user-info-arthura">
+                    <div class="user-name-arthura">Fulano da Silva Pinto Soares</div>
+                    <div class="user-email-arthura">sample123@gmail.com</div>
                 </div>
             </div>
+        </div>
 
-            <div class="data-section">
-                <h2>Meus dados</h2>
-                <p class="security-message">Cliente, para sua segurança, para visualizar seus dados por favor insira sua senha:</p>
-                
-                <form action="visualizar-dados.php" method="POST">
-                    <div class="form-group">
-                        <input type="password" name="password" placeholder="Digite sua senha:" required>
-                    </div>
-                    <button type="submit" class="btn-primary">Visualizar meus dados</button>
-                </form>
-            </div>
+        <div class="card-arthura">
+            <div class="section-title-arthura">Meus dados</div>
+            <div class="section-text-arthura">Cliente, para sua segurança, para visualizar seus dados por favor insira sua senha:</div>
+            
+            <form>
+                <input type="password" class="password-input-arthura" placeholder="Digite sua senha:">
+                <button type="button" class="view-button-arthura">Visualizar meus dados</button>
+            </form>
+        </div>
 
-            <div class="logout-section">
-                <button class="btn-logout">Logout</button>
-            </div>
-        </main>
+        <button type="button" class="logout-button-arthura">Logout</button>
     </div>
 </body>
 </html>
-
-<?php 
-     include('footer_cliente.php'); 
+<?php
+include 'footer_cliente.php';
 ?>
