@@ -1844,101 +1844,6 @@ body {
 /*final categoria animais */
 /*----------------------------------------------------------------------------*/
 
-/* Começo do CSS esqueci a senha pop up - Julie */
-.esqueci_a_senha_popup_body{
-  background-color: #F7F7F7;
-  display: grid;
-  align-items: center;
-  min-height: 90vh;
-  font-family: 'Poppins', sans-serif;
-  padding-left: 8%;
-  padding-right: 8%;
-  margin-bottom: 8%;
-}
-.esqueci_senha_card_popup{
-  position: relative;
-  left: 22%;
-  margin-bottom: 5%;
-  width: 810px;
-  height: 450px;
-  background-color: #DFEBE0;
-  padding: 110px;
-  border-radius: 2px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-}
-.esqueci_senha_popup_texto {
-  justify-content: center;
-  align-items: center;
-  color: var(--color-primary-1);
-  font-size: 1.5rem;
-  text-align: center; 
-  display: flex;
-  flex-direction: column;
-  margin-top: -50px; 
-}
-.esqueci_senha_popup_linha{
-  width: 585px;
-  height: 0.5px;
-  position: relative;
-  left: 2px;
-  top: 50px;
-  transform: translateY(20px);
-  background-color: var(--color-primary-1);
-}
-.esqueci_senha_popup_botao{
-  position: relative;
-  top: 120px;
-  left: 225px;
-  width: 130px;
-  height: 40px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  border: none;
-  color: var(--color-primary-1);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-}
-.esqueci_senha_popup_botao:hover{
-  background-color: var(--color-primary-2);
-  color: #ffffff;
-}
-.esqueci_senha-card_popup_setinha_voltar  {
-  color: var(--color-primary-1); 
-  font-size: 30px;
-}
-.esqueci_a_senha_popup_setinha{
-  width: 18px;
-  position: relative;
-  left: 15%;
-  margin-top: 90px;
-}
-
-@media (min-width: 360px) and (max-width: 389px){
-  .esqueci_senha_card_popup{
-    width: 20px;
-    height: 130px;
-    align-items: center;
-
-  }
-  .esqueci_a_senha_popup_setinha{
-    width: 8px;
-    height: 8px;
-    margin-top: 40px;
-    left: 20px;
-
-  }
-  .esqueci_senha_popup_texto{
-    font-size: 1rem;
-
-  }
-  
-
-
-
-}
-
-/* Fim do CSS esqueci a senha pop up - Julie */
-
-
 /* Começo do CSS do menu de Recuperar Senha - Julie*/
 *{
   padding: 0;
@@ -2248,7 +2153,7 @@ body {
   background-color: #DFEBE0;
   padding: 100px 80px;
   border-radius: 2px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.302);
   box-sizing: border-box;
   width: 100%;
   transform: translateY(-30px);
