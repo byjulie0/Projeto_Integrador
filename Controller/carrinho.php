@@ -236,8 +236,10 @@
 
     <?php
 
-    include 'footer_cliente.php'
+    include 'footer_cliente.php';
 
     ?>
+
+
 </body>
 </html>

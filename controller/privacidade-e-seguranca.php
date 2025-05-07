@@ -1,3 +1,9 @@
+<?php
+
+    include 'menu_pg_inicial.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,16 +12,16 @@
     <title>Privacidade e Segurança</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/View/public/css/privacidade-e-seguranca.css">
+    <link rel="stylesheet" href="..\view\public\css\cliente.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
     <section class="whole-page-content-pes">
         <div class="page-title-pes">
             <div class="go-back-pes">
-                <button>
-                    <i class="fa-solid fa-arrow-left"></i>
-                </button>
+                <a class="setinha-termos-e-condicoes">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
             </div>
             <div class="title-area-pes">
                 <h3 class="title-pes">Política de Privacidade e Segurança</h3>
@@ -52,5 +58,12 @@
             </div>
         </div>
     </section>
+
+    <?php
+
+    include 'footer_cliente.php';
+
+    ?>
+
 </body>
 </html>
