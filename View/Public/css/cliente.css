@@ -18,12 +18,10 @@
   --color-icones: #edf3eb;
   --color-detalhes-15: #f7f9ff;
   --color-detalhes-16: #e7f0dc;
-  --color-card-login:#dfebe0;
   --text-color: #20261e;
   --border-color: #E5E7EB;
   --warning-color: #ff4444;
   --input-bg: #F9FAFB;
-  
 }
 
 /* Começo de menu pg inicial Ana Julia*/
@@ -540,21 +538,21 @@ body {
 
 @media (min-width: 1440px) {
   .grid_container_footer {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 40px;
   }
   
   .footer_cli_item h3 {
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .footer_cli_item a, 
   .footer_cli_item address {
-    font-size: 15px;
+    font-size: 14px;
   }
   
   #tab2 a {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 /* Final do footer Lara */
@@ -1038,8 +1036,6 @@ body {
   }
 
 }
-
-
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
 /* ======= */
@@ -1226,7 +1222,8 @@ body {
 
 /* Fim do CSS da página Cadastro - Maria*/
 
-/* Início do CSS do Menu Cadastro*/
+/* Inicio do CSS do Menu Cadastro - Maria*/
+
 *{
   padding: 0;
   margin: 0;
@@ -1258,7 +1255,6 @@ body {
   font-size: 2rem;
   align-items: center;
 }
-
 /*RESPONSIVIDADE*/
 @media (max-width: 360px){
   .menu-cadastro{
@@ -1277,9 +1273,10 @@ body {
   }
 }
 
-/* Fim do CSS do Menu Cadastro*/
+/* Fim do CSS do Menu Cadastro - Maria*/
 
-/* Inicio-nossa-historia-valdir */
+
+
 
 /* CSS Termos e Condições Julie*/
 .texto-termos-e-condicoes{
@@ -1290,7 +1287,6 @@ body {
   padding-top: 0%;
   padding-bottom: 8%;
   font-family: 'poppins', sans-serif;
-  text-align: justify;
   color: var(--color-primary-1);
 }
 .section-termos-e-condicoes{
@@ -1321,6 +1317,20 @@ body {
   color: var(--color-primary-1);
   font-size: 24px;
 }
+
+@media (min-width: 360px) and (max-width: 389px) {
+  .sub-titulo-termos-e-condicoes{
+    padding-top: 20px;
+  }
+  .sub-titulo2-termos-e-condicoes{
+    padding-top: 20px;
+  }
+  .texto-termos-e-condicoes {
+    padding: 20px 6%;
+  }
+  
+}
+
 /* Fim do CSS de termos e condições Julie*/
 
 /* Inicio-nossa-historia- Valdir */
@@ -1467,6 +1477,9 @@ body {
   text-align: left;
 }
 /*Final da Pg Favoritos - Mariana */
+
+/* inicio slider da página inicial - Matheus*/ 
+/* Base styles */
 
 /* inicio slider da página inicial  */ 
 .body-mais-vendidos {
@@ -1681,6 +1694,7 @@ body {
 }
 
 /* Talvez você goste */
+
 .body-math {
   font-family: "Poppins", sans-serif;
   background-color: #f0f0f0;
@@ -1891,79 +1905,8 @@ body {
     height: 50px;
   }
 }
-/*final categoria animais */
+/* Fim do slider da página inicial - Matheus*
 /*----------------------------------------------------------------------------*/
-
-/* Começo do CSS esqueci a senha pop up - Julie */
-.esqueci_a_senha_popup_body{
-  background-color: #F7F7F7;
-  display: grid;
-  align-items: center;
-  min-height: 90vh;
-  font-family: 'Poppins', sans-serif;
-  padding-left: 8%;
-  padding-right: 8%;
-  margin-bottom: 8%;
-}
-.esqueci_senha_card_popup{
-  position: relative;
-  left: 22%;
-  margin-bottom: 5%;
-  width: 810px;
-  height: 450px;
-  background-color: #DFEBE0;
-  padding: 110px;
-  border-radius: 2px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-}
-.esqueci_senha_popup_texto {
-  justify-content: center;
-  align-items: center;
-  color: var(--color-primary-1);
-  font-size: 1.5rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  margin-top: -50px;
-}
-.esqueci_senha_popup_linha{
-  width: 585px;
-  height: 0.5px;
-  position: relative;
-  left: 2px;
-  top: 50px;
-  transform: translateY(20px);
-  background-color: var(--color-primary-1);
-}
-.esqueci_senha_popup_botao{
-  position: relative;
-  top: 120px;
-  left: 225px;
-  width: 130px;
-  height: 40px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  border: none;
-  color: var(--color-primary-1);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-}
-.esqueci_senha_popup_botao:hover{
-  background-color: var(--color-primary-2);
-  color: #ffffff;
-}
-.esqueci_senha-card_popup_setinha_voltar  {
-  color: var(--color-primary-1); 
-  font-size: 30px;
-}
-.esqueci_a_senha_popup_setinha{
-  width: 18px;
-  position: relative;
-  left: 15%;
-  margin-top: 90px;
-}
-
-
-/* Fim do CSS esqueci a senha pop up - Julie */
 
 
 /* Começo do CSS do menu de Recuperar Senha - Julie*/
@@ -1972,25 +1915,28 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
-.menu_recuper_senha{
+.menu_recuper_senha {
   align-items: center;
   width: 100%;
   height: 9.2rem;
   display: flex;
   background-color: #40513B;
 }
-.info_menu-recuperar_senha{
+
+.info_menu-recuperar_senha {
   width: 100%;
   max-height: 9.2rem;
   display: flex;
   flex-direction: row;
 }
-.logo_menu_recuperar_senha img{
+
+.logo_menu_recuperar_senha img {
   margin-left: 20px;
   margin-top: 10px;
   height: 7.884rem;
 }
-.nome_menu_recuperar_senha{
+
+.nome_menu_recuperar_senha {
   font-weight: 600;
   margin-left: 20px;
   margin-top: 50px;
@@ -1998,7 +1944,91 @@ body {
   font-size: 2rem;
   align-items: center;
 }
-/* Fim do CSS do Menu Cadastro - Maria*/
+
+/* Mobile - Tela média (360 x 800) */
+@media (max-width: 767px) {
+  .menu_recuper_senha {
+      height: 7rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 5.5rem;
+      margin-left: 15px;
+      margin-top: 8px;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 1.5rem;
+      margin-top: 35px;
+      margin-left: 15px;
+  }
+}
+
+/* Mobile - Tela grande (390 x 844) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu_recuper_senha {
+      height: 8rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 6.5rem;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 1.7rem;
+      margin-top: 45px;
+  }
+}
+
+/* Tablet - Tela média (768-1199px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .menu_recuper_senha {
+      height: 8.5rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 7rem;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 1.8rem;
+  }
+}
+
+/* Desktop - Tela média (1440x900) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .menu_recuper_senha {
+      height: 9.2rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 7.884rem;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 2rem;
+  }
+}
+
+/* Desktop - Tela grande (1920x1080) */
+@media (min-width: 1920px) {
+  .menu_recuper_senha {
+      height: 10rem;
+  }
+  
+  .logo_menu_recuperar_senha img {
+      height: 8.5rem;
+      margin-left: 30px;
+  }
+  
+  .nome_menu_recuperar_senha {
+      font-size: 2.2rem;
+      margin-top: 55px;
+      margin-left: 30px;
+  }
+}
+
+/* Fim do CSS do Menu Recuperar senha - JUlie*/
 
 /* Começo De Meu Perfil - Visualizar Dados*/
 .body-visualizar-dados{
@@ -2189,7 +2219,7 @@ body {
   background-color: #DFEBE0;
   padding: 100px 80px;
   border-radius: 2px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.302);
   box-sizing: border-box;
   width: 100%;
   transform: translateY(-30px);
@@ -2954,3 +2984,126 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
 /* Final da pg de login */
 
+/* Começo footer ADM */
+.footer_adm {
+  width: 100%;
+  background-color: var(--color-primary-1);
+  font-family: "Poppins", sans-serif;
+  padding: 40px 0;
+  color: var(--color-detalhes-16);
+}
+
+.grid_container_footer_adm {
+  display: grid;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.footer_adm_item {
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.footer_adm_item h3 {
+  color: var(--color-detalhes-16);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.footer_adm_item hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 10px 0 15px;
+}
+
+.footer_adm_item a {
+  text-decoration: none;
+  color: var(--color-detalhes-16);
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+  font-size: 14px;
+}
+
+.footer_adm_item a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+#tab1_adm_footer address {
+  font-style: normal;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+#tab2_adm_footer a {
+  display: inline-block;
+  font-size: 22px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+/* Mobile: 360x800 and 390x844 */
+@media (max-width: 767px) {
+  .grid_container_footer_adm {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+  
+  .footer_adm_item {
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  
+  #tab2_adm_footer a {
+    font-size: 20px;
+    margin-right: 12px;
+  }
+}
+
+/* Tablet: 768-1023 and 768-1199 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid_container_footer_adm {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Desktop: 1440x900 and 1920x1080 */
+@media (min-width: 1024px) {
+  .grid_container_footer_adm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid_container_footer_adm {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid_container_footer_adm {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  
+  .footer_adm_item h3 {
+    font-size: 16px;
+  }
+  
+  .footer_adm_item a, 
+  .footer_adm_item address {
+    font-size: 14px;
+  }
+  
+  #tab2_adm_footer a {
+    font-size: 26px;
+  }
+}
