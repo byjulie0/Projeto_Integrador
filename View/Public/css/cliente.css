@@ -1490,7 +1490,7 @@ body {
   background-color: white;
   font-family: 'Poppins';
   width: 100%;
-  height: 600px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
@@ -1530,6 +1530,7 @@ body {
   color: aliceblue;
 }
 .card-pag-fav {
+  height: 400px;
   width:300px;
   display: flex;
   flex-direction: column;
@@ -1541,9 +1542,8 @@ body {
   position: relative;
 }
 .card-pag-fav img {
+  height: 150px;
   width: 300px;
-  display: block;
-  margin: 0 auto;
   max-width: 100%;
 }
 .card-header-pag-fav {
@@ -1552,17 +1552,29 @@ body {
   justify-content: space-between;
   width: 100%;
 }
-.card-header-pag-fav h1 {
+/* Título do produto dentro do card */
+.produto-nome-pag-fav {
   font-size: 1.1em;
   margin: 10px 0;
   color: #333;
   text-align: left;
 }
-.card-pag-fav h2 {
+
+/* Preço do produto */
+.produto-preco-pag-fav {
   font-size: 1.1em;
   color: #333;
   text-align: left;
 }
+
+/* Texto de quantidade vendida */
+.produto-vendas-pag-fav {
+  font-size: 0.6em;
+  color: #333;
+  text-align: left;
+}
+
+
 .stars-pag-fav {
   color: gold;
   margin: 5px 0;
@@ -1593,11 +1605,7 @@ body {
   display: flex;
   text-decoration: underline;
 }
-.card-pag-fav h3 {
-  font-size: 0.6em;
-  color: #333;
-  text-align: left;
-}
+
 
 /* === 320px (pequenos celulares) === */
 @media (max-width: 320px) {
