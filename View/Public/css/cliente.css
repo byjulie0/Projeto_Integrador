@@ -3107,3 +3107,15 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
     font-size: 26px;
   }
 }
+
+/* Começo do CSS do Verificar e Administrar Pedidos - Denyel */
+.verificar_administrar_pedidos_body {
+  background-color: #F7F7F7;
+  display: grid;
+  place-items: center;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Fim do CSS do Verificar e Administrar Pedidos - Denyel */
