@@ -17,7 +17,7 @@ include 'menu_pg_inicial.php';
 
         <main class = "texto-termos-e-condicoes">
         <h1 class = "titulo-termos-e-condicoes">Termos e Condições</h1>
-        <a class = "setinha-termos-e-coondicoes"href="">
+        <a class = "setinha-termos-e-coondicoes"href="./pg_inicial_cliente.php">
             <i class="fa-solid fa-chevron-left"></i>
         </a>
             <section class="section-termos-e-condicoes">

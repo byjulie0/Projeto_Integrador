@@ -1,4 +1,3 @@
-<!-- LARA -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,10 +15,10 @@
 
 <body>
     <!-- Início do rodape -->
-    <footer class="footer_cliente">
-        <div class="grid_container_footer">
+    <footer class="footer_adm">
+        <div class="grid_container_footer_adm">
 
-            <div id="tab1" class="footer_cli_item">
+            <div id="tab1_adm_footer" class="footer_adm_item">
                 <h3>Contato e Suporte</h3>
                 <hr>
                 <address>
@@ -35,10 +34,9 @@
                     <a href="#">Campo Grande - MS</a>
                 </address>
             </div>
-
             <div>
 
-                <div id="tab2" class="footer_cli_item">
+                <div id="tab2_adm_footer" class="footer_adm_item">
                     <h3>Siga nossas Redes</h3>
                     <hr>
                     <a href="https://www.facebook.com/senacmsoficial/?locale=pt_BR"><i
@@ -46,36 +44,27 @@
                     <a href="https://www.instagram.com/senac_ms/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://api.whatsapp.com/send?phone=556799492638"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
-                <div id="tab4" class="footer_cli_item">
+                <div id="tab4" class="footer_adm_item">
                     <h3>Sobre a Empresa</h3>
                     <hr>
                     <a href="nossa_historia.php">Nossa História</a>
                 </div>
             </div>
 
-            <div id="tab3" class="footer_cli_item">
+            <div id="tab3_adm_footer" class="footer_adm_item">
                 <h3>Termos</h3>
                 <hr>
                 <a href="termos_e_condicoes.php">Termos e Condições</a>
                 <a href="privacidade_e_seguranca.php">Privacidade e Segurança</a>
             </div>
 
-
-            <div id="tab5" class="footer_cli_item">
-                <h3>Pagamento</h3>
+            <div id="tab6_adm_footer" class="footer_adm_item">
+                <h3>Funções Administrativas</h3>
                 <hr>
-                <p>Entre em contato com nossa equipe atráves do <a
-                        href="https://api.whatsapp.com/send?phone=556799492638">whatsapp</a></p>
-
-            </div>
-
-            <div id="tab6" class="footer_cli_item">
-                <h3>Meu perfil</h3>
-                <hr>
-                <a href="carrinho.php">Carrinho de compras</a>
-                <a href="#">Histórico de Busca</a>
-                <a href="#">Minhas Compras</a>
-                <a href="pg_favoritos.php">Produtos Favoritados</a>
+                <a href="#">Gerenciamento de Produtos</a>
+                <a href="#">Gerenciamento de Clientes</a>
+                <a href="#">Gerenciamento de vendas</a>
+                <a href="#">geral</a>
             </div>
         </div>
     </footer>
