@@ -24,7 +24,7 @@
             
             <div class="cards-container-pag-fav">
                 <div class="card-pag-fav">
-                    <img class="card-img-pag-fav" src="../View/Public/imagens/post-image-35635.jpg" alt="Equino">
+                    <img class="card-img-pag-fav" src="../View/Public/imagens/pecuaria2.jpg" alt="Equino">
                 <div class="card-header-pag-fav">
                     <h1>Bovino da raça Angus</h1>
                     <div class="stars-pag-fav">★</div>
@@ -38,7 +38,7 @@
             </div>
 
             <div class="card-pag-fav">
-                <img class="card-img-pag-fav" src="../View/Public/imagens/d18f431605dda131f2eb4ffd65f0d492.jpg" alt="Galináceo">
+                <img class="card-img-pag-fav" src="../View/Public/imagens/rhode-island-red-rooster.jpg" alt="Galináceo">
                 <div class="card-header-pag-fav">
                     <h1>Galináceo da raça Índio</h1>
                     <div class="stars-pag-fav">★</div>
@@ -52,7 +52,7 @@
             </div>
 
             <div class="card-pag-fav">
-                <img class="card-img-pag-fav" src="../View/Public/imagens/8e00710f9a371a83a46a8b64167b9f98.png" alt="Bovino">
+                <img class="card-img-pag-fav" src="../View/Public/imagens/images.jpg" alt="Bovino">
                 <div class="card-header-pag-fav">
                     <h1>Equino da raça Percheron</h1>
                     <div class="stars-pag-fav">★</div>
