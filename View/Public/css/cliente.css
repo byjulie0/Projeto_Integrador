@@ -3110,12 +3110,37 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 
 /* Começo do CSS do Verificar e Administrar Pedidos - Denyel */
 .verificar_administrar_pedidos_body {
-  background-color: #F7F7F7;
   display: grid;
   place-items: center;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   box-sizing: border-box;
+}
+
+.verificar_administrar_pedidos_content{
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 5%;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.verificar_administrar_pedidos_sessao_seta_voltar i{
+  color: var(--color-primary-1);
+  font-size: 1.7rem;
+  position: relative;
+  top: 5px;
+  left: calc(50% - 44vw);
+  cursor: pointer;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_info h1{
+  color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_bloco_info h3{
+  color: var(--color-primary-1);
 }
 
 /* Fim do CSS do Verificar e Administrar Pedidos - Denyel */
