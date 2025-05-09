@@ -11,7 +11,7 @@
 </head>
 <body class="body-arthura">
     <div class="header-arthura">
-        <a href="perfil_cliente.php" class="back-arrow-arthura">&#10094;</a>
+        <a href="perfil_cliente.php" class="back-arrow-arthura">←z</a>
         <div class="title-arthura">Meu perfil</div>
     </div>
     <div class="wrapper-arthura">
