@@ -183,7 +183,7 @@
 
 .add_product_area{
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 25% 75%;
 }
 
 .product_title_info{
@@ -195,7 +195,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   width: 300px;
   height: 300px;
 }
@@ -206,4 +206,84 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
+}
+
+.add_product_details{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.input_product_info{
+  height: 25px;
+  padding-left: 10px;
+  border: solid 1px;
+  width: 60%;
+  border-radius: 5px;
+}
+
+.product_info_select{
+  width: 60%;
+  height: 25px;
+  padding-left: 10px;
+  border: solid 1px;
+  border-radius: 5px;
+}
+
+.product_details_collumn{
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+}
+
+.product_details{
+  height: 75px;
+}
+.add_product_submit_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add_product_button{
+  gap: 10px;
+  display: flex;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-botao-op-Concluido);
+  color: var(--color-icones);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+.subcategory-select {
+  display: none;
+}
+
+.add_product_button:hover {
+  background-color: #3d6a3f; /* Tom mais escuro para o hover */
+}
+
+input[type="image"] {
+  display: none; /* Esconde o input padrão */
+}
+
+/* Estilos consolidados (remover duplicações) */
+.error-message {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+.invalid-field,
+.input_product_info:invalid,
+.product_info_select:invalid {
+  border-color: #ff4444 !important;
+  box-shadow: 0 0 5px rgba(255, 68, 68, 0.5) !important;
+}
+
+.invalid-field + .error-message,
+.input_product_info:invalid + .error-message,
+.product_info_select:invalid + .error-message {
+  display: block;
 }
