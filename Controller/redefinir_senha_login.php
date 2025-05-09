@@ -26,7 +26,7 @@ include 'menu_recuperar_senha.php';
                     <input type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Nova senha">
                     <input type="password" inputmode="numeric" pattern="[0-9]" maxlength="8" required placeholder="Confirmar nova senha">
                     <hr class="linha_login">
-                    <button type="submit">Enviar</button>
+                    <a href="recuperar_senha_codigo.php"><button type="submit">Enviar</button></a>
                 </form>
             </div>
         </nav>
