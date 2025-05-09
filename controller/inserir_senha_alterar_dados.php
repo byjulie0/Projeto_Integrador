@@ -1,5 +1,5 @@
-<?php 
-    include('menu-pg-inicial.php'); 
+<?php
+ include 'menu_pg_inicial.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -11,7 +11,7 @@
 </head>
 <body class="body-arthura">
     <div class="header-arthura">
-        <a href="#" class="back-arrow-arthura">&#10094;</a>
+        <a href="perfil_cliente.php" class="back-arrow-arthura">&#10094;</a>
         <div class="title-arthura">Meu perfil</div>
     </div>
     <div class="wrapper-arthura">
@@ -44,5 +44,5 @@
 </body>
 </html>
 <?php
-include 'footer_cliente.php';
-?>
+    include 'footer_cliente.php';
+    ?>
