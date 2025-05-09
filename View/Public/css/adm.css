@@ -42,7 +42,7 @@ body {
     align-items: flex-start;
     justify-content: center;
     width: 100%;
-    padding: 20px 100px;
+    padding: 50px 100px;
 }
 
 #page-title-atualizar-produtos {
@@ -138,14 +138,11 @@ body {
 #break-line{
     width: 100%;
     display: flex;
-    height: 1px;
+    height: 0.5px;
     background-color: var(--color-primary-1);
     margin: 25px 0px;
 }
 
-/* ------------------------ */
-
-/* configurando a div */
 #table-space-atualizar-produtos { 
     width: 100%;
     display: flex;
@@ -154,37 +151,30 @@ body {
     justify-content: space-between;
 }
 
-/* configurando a tabela por completo */
 #table-space-atualizar-produtos table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
 }
 
-/* configurando algumas coisas da header da tabela */
 #table-space-atualizar-produtos table th {
     width: 100%;
     background-color: #E5E7E5;
-    /* border: 1px solid #000; */
 }
 
-/* configurando width e borda de uma célula específica */
-#table-space-atualizar-produtos table .select-all-atualizar-produtos {
+#table-space-atualizar-produtos table .select-all-label-atualizar-produtos {
     width: 10%;
     border-radius: 10px 0px 0px 10px;
 }
 
-/* configurando a borda do outro lado */
 .header-exclude-atualizar-produtos { 
     border-radius: 0px 10px 10px 0px;
 }
 
-/* dando o mesmo width ao row referente á celula de width 10% */
 #table-space-atualizar-produtos table .select-all-label-atualizar-produtos {
     width: 10%;
 }
 
-/* configurando o width das outras células */
 #table-space-atualizar-produtos table td {
     width: 14.2857142857%;
     text-align: center;
@@ -196,14 +186,15 @@ body {
 #table-space-atualizar-produtos table td .fa-pen-to-square {
     color: var(--color-primary-3);
     cursor: pointer;
+    font-size: 16px;
 }
 
 #table-space-atualizar-produtos table td .fa-trash {
     color: var(--warning-color);
     cursor: pointer;
+    font-size: 16px;
 }
 
-/* configurando o width das outras células da header para coincidirem com o width das células */
 #table-space-atualizar-produtos table th {
     width: 14.2857142857%;
     text-align: center;
@@ -239,7 +230,6 @@ body {
 .product-atualizar-produtos img {
     width: 50%;
     border-radius: 5px;
-    /* padding: 10px 0px 10px 10px; */
 }
 
 .select-all-atualizar-produtos button {
