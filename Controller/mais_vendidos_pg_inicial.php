@@ -9,7 +9,7 @@
     
 </head>
 <body class ="body-mais-vendidos">
-    <h1 class="pg-mais-vendidos">Mais Vendidos</h1>
+    <h1 class="pg-mais-vendidos" id="mais_vendidos">Mais Vendidos</h1>
     <div class="carrossel-mais-vendidos">
         <div class="arrow-mais-vendidos" onclick="prevSlide()">&#10094;</div>
         <div class="cards-mais-vendidos" id="carrossel-cards">
