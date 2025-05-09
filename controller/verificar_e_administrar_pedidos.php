@@ -18,18 +18,22 @@ include 'menu_pg_inicial.php';
             <a href="" class="verificar_administrar_pedidos_sessao_seta_voltar">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
-            <div class="verificar_administrar_pedidos_sessao_bloco_info">
-                <h1>Verificar e administrar pedidos</h1>
-                <h3>Pesquise o número do pedido ou CPF/CNPJ do cliente para gerenciar o pedido em específico</h3>
-                <input type="text" id="" placeholder="Pesquisar">
-                <button type="submit"></button>
+            <div class="verificar_administrar_pedidos_sessao_bloco">
+                <div class="verificar_administrar_pedidos_sessao_bloco_info">
+                    <h1>Verificar e administrar pedidos</h1>
+                    <h3>Pesquise o número do pedido ou CPF/CNPJ do cliente para gerenciar o pedido em específico</h3>
+                    <form action="">
+                        <input type="text" id="" placeholder="Pesquisar">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+                <div class="verificar_administrar_pedidos_sessao_mini_bloco_info">
+                    <h6>Filtre por pedido em andamento/finalizado/cancelado etc.</h6>
+                    <input type="text" id="" placeholder="Filtrar">
+                    <button type="submit"></button>
+                </div>
             </div>
-            <div class="verificar_administrar_pedidos_sessao_mini_bloco_info">
-                <h6>Filtre por pedido em andamento/finalizado/cancelado etc.</h6>
-                <input type="text" id="" placeholder="Filtrar">
-                <button type="submit"></button>
-            </div>
-            <hr>
+            <hr class="verificar_administrar_pedidos_sessao_divisao">
         </section>
         <section class="verificar_administrar_pedidos_sessao_visualizar"></section>
     </main>
