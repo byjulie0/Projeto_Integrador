@@ -1006,6 +1006,7 @@ body {
   cursor: pointer;
 }
 
+/* Telas grandes */
 @media (max-width: 1250px) {
   .esqueci_senha_card_email_seta_voltar{
     top: -35px;
@@ -1013,6 +1014,7 @@ body {
   }
 }
 
+/* Telas Médias */
 @media (max-width: 768px) {
   .esqueci_senha_card_email_main {
     padding: 0 15px;
@@ -1032,10 +1034,24 @@ body {
 
   .esqueci_senha_card_email_formulario input,
   .esqueci_senha_card_email_formulario button {
-    max-width: 100%;
+    max-width: 90%;
   }
 
+  .esqueci_senha_card_email_linha_divisao{
+    max-width: 90%;
+  }
 }
+
+/* Telas Pequenas */
+@media (max-width: 500px){
+  .esqueci_senha_card_email_linha_divisao{
+    display: none;
+  }
+  .esqueci_senha_card_email_formulario button{
+    height: 30px;
+  }
+}
+
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
 /* ======= */
