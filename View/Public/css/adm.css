@@ -480,7 +480,6 @@ input[type="image"] {
   border-color: var(--warning-color) !important;
 }
 
-}
 
 body {
     font-family: "Poppins";
@@ -803,5 +802,55 @@ body {
     color: var(--color-primary-3);
 }
 
-* Fim atualizar produtos */
+/* Fim atualizar produtos */
 
+/* Início Gerar relatório */
+.body_generate_report{
+    padding: 15px 15px 15px 75px;
+    color: var(--color-fonte);
+}
+
+.title_page_generate_report{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.arrow_generate_report{
+    color: var(--color-primary-1);
+    font-size: 1.5rem;
+}
+
+.generate_report_area{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.report_category_select , .generate_report_date{
+    height: 35px;
+    padding-left: 10px;
+    border: solid 1px;
+    width: 60%;
+    border-radius: 5px;
+}
+
+.generate_report_submit_button{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.generate_report_product_button{
+    gap: 10px;
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-botao-op-Concluido);
+    color: var(--color-icones);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
