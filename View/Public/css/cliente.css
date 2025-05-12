@@ -1006,6 +1006,7 @@ body {
   cursor: pointer;
 }
 
+/* Telas grandes */
 @media (max-width: 1250px) {
   .esqueci_senha_card_email_seta_voltar{
     top: -35px;
@@ -1013,6 +1014,7 @@ body {
   }
 }
 
+/* Telas Médias */
 @media (max-width: 768px) {
   .esqueci_senha_card_email_main {
     padding: 0 15px;
@@ -1032,10 +1034,24 @@ body {
 
   .esqueci_senha_card_email_formulario input,
   .esqueci_senha_card_email_formulario button {
-    max-width: 100%;
+    max-width: 90%;
   }
 
+  .esqueci_senha_card_email_linha_divisao{
+    max-width: 90%;
+  }
 }
+
+/* Telas Pequenas */
+@media (max-width: 500px){
+  .esqueci_senha_card_email_linha_divisao{
+    display: none;
+  }
+  .esqueci_senha_card_email_formulario button{
+    height: 30px;
+  }
+}
+
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
 /* ======= */
@@ -2306,6 +2322,7 @@ body {
   cursor: pointer;
 }
 
+/* Telas grandes */
 @media (max-width: 1250px){
   .recuperar_senha_codigo_seta_voltar{
     top: -35px;
@@ -2313,6 +2330,7 @@ body {
   }
 }
 
+/* Telas médias */
 @media (max-width: 768px){
   .recuperar_senha_codigo_main {
     padding: 0 15px;
@@ -2332,7 +2350,21 @@ body {
 
   .recuperar_senha_codigo_formulario input,
   .recuperar_senha_codigo_formulario button {
-    max-width: 100%;
+    max-width: 90%;
+  }
+
+  .recuperar_senha_codigo_linha_divisao{
+    max-width: 90%;
+  }
+}
+
+/* Telas menores */
+@media (max-width: 500px){
+  .recuperar_senha_codigo_linha_divisao{
+    display: none;
+  }
+  .recuperar_senha_codigo_formulario button{
+    height: 30px;
   }
 }
 
