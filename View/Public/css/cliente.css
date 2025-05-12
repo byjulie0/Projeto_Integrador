@@ -1271,6 +1271,129 @@ body {
   font-size: 2rem;
   align-items: center;
 }
+
+
+/* === 320px (pequenos celulares) === */
+@media (max-width: 320px) {
+  .favoritos-title {
+    font-size: 1em;
+    padding-left: 10px;
+  }
+
+  .card-pag-fav {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .botao-pag-fav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-pag-fav,
+  .excluir-pag-fav {
+    width: 100%;
+  }
+}
+
+/* === 375px (iPhones e smartphones médios) === */
+@media (max-width: 375px) {
+  .favoritos-title {
+    font-size: 1.1em;
+  }
+
+  .card-pag-fav {
+    width: 95%;
+  }
+}
+
+/* === 425px (smartphones grandes) === */
+@media (max-width: 425px) {
+  .card-pag-fav {
+    width: 95%;
+  }
+
+  .card-header-pag-fav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .botao-pag-fav {
+    flex-direction: column;
+  }
+}
+
+/* === 768px (tablets) === */
+@media (max-width: 768px) {
+  .cards-container-pag-fav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 85%;
+    max-width: 350px;
+  }
+
+  .favoritos-title {
+    justify-content: center;
+    font-size: 1.3em;
+  }
+
+  .botao-pag-fav {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .btn-pag-fav,
+  .excluir-pag-fav {
+    width: auto;
+  }
+}
+
+/* === 1024px (telas pequenas de notebook) === */
+@media (max-width: 1024px) {
+  .cards-container-pag-fav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 300px;
+  }
+}
+
+/* === 1440px (telas grandes e desktops) === */
+@media (max-width: 1440px) {
+  .card-pag-fav {
+    width: 300px;
+  }
+
+  .cards-container-pag-fav {
+    gap: 24px;
+    justify-content: center;
+  }
+}
+
+/* === 2560px (telas ultra-wide) === */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .cards-container-pag-fav {
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 320px;
+  }
+
+  .favoritos-title {
+    font-size: 1.8em;
+    margin-left: 60px;
+  }
+}
+
+/*Final da Pg Favoritos */
+
 /*RESPONSIVIDADE*/
 @media (max-width: 360px){
   .menu-cadastro{
@@ -1383,7 +1506,7 @@ body {
   background-color: white;
   font-family: 'Poppins';
   width: 100%;
-  height: 600px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
@@ -1423,10 +1546,10 @@ body {
   color: aliceblue;
 }
 .card-pag-fav {
+  height: 400px;
   width:300px;
   display: flex;
   flex-direction: column;
-  align-items: flex;
   background-color: white;
   border-radius: 5px;
   gap: 18px;
@@ -1435,9 +1558,8 @@ body {
   position: relative;
 }
 .card-pag-fav img {
+  height: 150px;
   width: 300px;
-  display: block;
-  margin: 0 auto;
   max-width: 100%;
 }
 .card-header-pag-fav {
@@ -1446,17 +1568,29 @@ body {
   justify-content: space-between;
   width: 100%;
 }
-.card-header-pag-fav h1 {
+/* Título do produto dentro do card */
+.produto-nome-pag-fav {
   font-size: 1.1em;
   margin: 10px 0;
   color: #333;
   text-align: left;
 }
-.card-pag-fav h2 {
+
+/* Preço do produto */
+.produto-preco-pag-fav {
   font-size: 1.1em;
   color: #333;
   text-align: left;
 }
+
+/* Texto de quantidade vendida */
+.produto-vendas-pag-fav {
+  font-size: 0.6em;
+  color: #333;
+  text-align: left;
+}
+
+
 .stars-pag-fav {
   color: gold;
   margin: 5px 0;
@@ -1487,11 +1621,130 @@ body {
   display: flex;
   text-decoration: underline;
 }
-.card-pag-fav h3 {
-  font-size: 0.6em;
-  color: #333;
-  text-align: left;
+
+
+/* === 320px (pequenos celulares) === */
+@media (max-width: 320px) {
+  .favoritos-title {
+    font-size: 1em;
+    padding-left: 10px;
+  }
+  .area-favoritos{
+    gap: 20px;
+    width: 50%;
+    flex-direction: row;
+  }
+  .card-pag-fav {
+    padding: 15px;
+  }
+
+  .botao-pag-fav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-pag-fav,
+  .excluir-pag-fav {
+    width: 100%;
+  }
 }
+
+/* === 375px (iPhones e smartphones médios) === */
+@media (max-width: 375px) {
+  .favoritos-title {
+    font-size: 1.1em;
+  }
+
+  .card-pag-fav {
+    width: 95%;
+  }
+}
+
+/* === 425px (smartphones grandes) === */
+@media (max-width: 425px) {
+  .card-pag-fav {
+    width: 95%;
+  }
+
+  .card-header-pag-fav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .botao-pag-fav {
+    flex-direction: column;
+  }
+}
+
+/* === 768px (tablets) === */
+@media (max-width: 768px) {
+  .cards-container-pag-fav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 85%;
+    max-width: 350px;
+  }
+
+  .favoritos-title {
+    justify-content: center;
+    font-size: 1.3em;
+  }
+
+  .botao-pag-fav {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .btn-pag-fav,
+  .excluir-pag-fav {
+    width: auto;
+  }
+}
+
+/* === 1024px (telas pequenas de notebook) === */
+@media (max-width: 1024px) {
+  .cards-container-pag-fav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 300px;
+  }
+}
+
+/* === 1440px (telas grandes e desktops) === */
+@media (max-width: 1440px) {
+  .card-pag-fav {
+    width: 300px;
+  }
+
+  .cards-container-pag-fav {
+    gap: 24px;
+    justify-content: center;
+  }
+}
+
+/* === 2560px (telas ultra-wide) === */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .cards-container-pag-fav {
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 320px;
+  }
+
+  .favoritos-title {
+    font-size: 1.8em;
+    margin-left: 60px;
+  }
+}
+
 /*Final da Pg Favoritos - Mariana */
 
 /* inicio slider da página inicial - Matheus*/ 
