@@ -480,13 +480,11 @@ input[type="image"] {
   border-color: var(--warning-color) !important;
 }
 
-}
-
 body {
     font-family: "Poppins";
 }
 
-/* Começo atualizar produtos */
+/* Começo - Atualizar produtos */
 
 #atualizar-produtos {
     background-color: #fff;
@@ -495,7 +493,6 @@ body {
     align-items: flex-start;
     justify-content: center;
     width: 100%;
-    padding: 20px 100px;
     padding: 50px 100px;
 }
 
@@ -520,14 +517,12 @@ body {
 }
 
 #title-atualizar-produtos h3{
-    color: var(--color-fonte);
     color: var(--color-primary-1);
     font-size: 20px;
     font-weight: 700;
 }
 
 #subtitle-atualizar-produtos span {
-    color: var(--color-fonte);
     color: var(--color-primary-1);
     font-size: 16px;
     font-weight: 500;
@@ -544,7 +539,6 @@ body {
     align-items: center;
     background-color: none;
     border-radius: 50px;
-    border: 0.5px solid #20261e;
     border: 0.5px solid var(--color-primary-1);
     padding: 5px 15px;
     gap: 10px;
@@ -572,10 +566,6 @@ body {
     background: transparent;
     font-size: 14px;
     width: 100%;
-    color: var(--color-fonte);
-}
-#search-bar-atualizar-produtos input::placeholder {
-    color: #20261e;
     color: var(--color-primary-1);
 }
 #search-bar-atualizar-produtos input::placeholder {
@@ -592,7 +582,6 @@ body {
 }
 
 #search-bar-atualizar-produtos button .fa-solid {
-    color: var(--color-fonte);
     color: var(--color-primary-1);
     font-size: 16px;
 }
@@ -601,97 +590,10 @@ body {
     width: 100%;
     display: flex;
     height: 0.5px;
-    background-color: #20261e;
+    background-color: var(--color-primary-1);
     margin: 25px 0px;
 }
 
-#table-atualizar-produtos {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Estilização da tabela */
-#table-atualizar-produtos table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-#table-atualizar-produtos th, #table-atualizar-produtos td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-#table-atualizar-produtos th {
-    background-color: #f2f2f2;
-    color: #333;
-    font-weight: bold;
-}
-
-#table-atualizar-produtos tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-#table-atualizar-produtos tr:hover {
-    background-color: #ddd;
-}
-
-#table-atualizar-produtos td button[type="checkbox"] {
-    cursor: pointer;
-    width: 16px;
-    height: 16px;
-    border: 0.5px solid #20261e;
-    background-color: none;
-    border-radius: 1px;
-}
-
-#table-atualizar-produtos td .fa-trash {
-    cursor: pointer;
-    color: var(--warning-color);
-}
-
-#table-atualizar-produtos td .fa-pen-to-square {
-    cursor: pointer;
-    color: var(--color-primary-3);
-}
-
-#table-atualizar-produtos td i:hover {
-    color: #007bff;
-}
-
-#header-atualizar-produtos {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    background-color: #E5E7E5;
-    margin: 25px 0px;
-    padding: 10px;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.button-area-atualizar-produtos {
-    width: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.button-area-atualizar-produtos button {
-    background: none;
-    border: none;
-    color: var(--color-fonte);
-    font-size: 12px;
-    text-decoration: underline;
-}
-
-.labels-atualizar-produtos {
-    width: 14.2857142857%;
-}
 
 #table-space-atualizar-produtos { 
     width: 100%;
@@ -701,29 +603,36 @@ body {
     justify-content: space-between;
 }
 
+
 #table-space-atualizar-produtos table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
 }
 
+
 #table-space-atualizar-produtos table th {
     width: 100%;
     background-color: #E5E7E5;
+
 }
 
 #table-space-atualizar-produtos table .select-all-label-atualizar-produtos {
+
     width: 10%;
     border-radius: 10px 0px 0px 10px;
 }
+
 
 .header-exclude-atualizar-produtos { 
     border-radius: 0px 10px 10px 0px;
 }
 
+
 #table-space-atualizar-produtos table .select-all-label-atualizar-produtos {
     width: 10%;
 }
+
 
 #table-space-atualizar-produtos table td {
     width: 14.2857142857%;
@@ -744,6 +653,7 @@ body {
     cursor: pointer;
     font-size: 16px;
 }
+
 
 #table-space-atualizar-produtos table th {
     width: 14.2857142857%;
@@ -780,6 +690,7 @@ body {
 .product-atualizar-produtos img {
     width: 50%;
     border-radius: 5px;
+
 }
 
 .select-all-atualizar-produtos button {
@@ -803,5 +714,115 @@ body {
     color: var(--color-primary-3);
 }
 
-* Fim atualizar produtos */
+/* Fim atualizar produtos */
 
+/* Começo Verificar e administrar produtos - Informações */
+
+#informacoes-pedidos {
+  gap: 25px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 100px;
+}
+
+#title-informacoes-pedidos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 25px;
+}
+
+#title-informacoes-pedidos a {
+  color: var(--color-primary-3);
+}
+
+#title-informacoes-pedidos h3 {
+  color: var(--color-primary-1);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#subtitle-informacoes-pedidos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#id-pedido-informacoes-pedidos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+#id-pedido-informacoes-pedidos span {
+  font-size: 24px;
+  color: var(--color-fonte);
+}
+
+#labels-pedido-informacoes-pedidos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.label-pedido-informacoes-pedidos {
+  align-items: center;
+  justify-content: center;
+  background-color: #fb666677;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.label-pedido-informacoes-pedidos span {
+  color: var(--warning-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#page-content-informacoes-pedidos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+#first-container-informacoes-pedidos {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.product-card-informacoes-pedidos {
+  border: 1px solid #20261e;
+  padding: 15px 25px;
+  border-radius: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  width: 100%;
+}
+
+.product-title span {
+  color: var(--color-fonte);
+  font-size: 18px;
+  font-weight: 600;
+}
