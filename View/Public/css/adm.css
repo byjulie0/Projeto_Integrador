@@ -35,6 +35,8 @@ body {
     font-family: "Poppins";
 }
 
+/* Começo atualizar produtos */
+
 #atualizar-produtos {
     background-color: #fff;
     display: flex;
@@ -240,75 +242,6 @@ body {
     width: 14.2857142857%;
 }
 
-
-/* .header-atualizar-produtos{
-    display: flex;
-    flex-direction: row;
-    padding: 50px 150px 0px 150px;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .header-labels-atualizar-produtos{
-    display: flex;
-    flex-direction: row;
-    background-color: var(--color-primary-3);
-    width: 100%;
-    padding: 20px 30px;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .check-btn-atualizar-produtos{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    width: 40%;
-  
-  }
-  
-  input[type="checkbox"] {
-    display: none;
-  }
-  
-  .check-square-atualizar-produtos{
-    width: 24px;
-    height: 24px;
-    border: 1px solid #9a9a9a;
-    background-color: #f6f6f6;
-    cursor: pointer;
-    display: inline-block;
-    transition: background-color 0.3s;
-  }
-  
-  .check-box-label-atualizar-produtos{
-    font-weight: 600;
-    color: #20261E;
-  }
-  
-  .labels-atualizar-produtos{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    width: 20%;
-    margin: 5px;
-  }
-  
-  .labels-themselves-atualizar-produtos{
-    justify-content: center;
-    font-weight: 600;
-    color: #20261E;
-  } */
-
-    /* height: 0.5px;
-    background-color: var(--color-primary-1);
-    margin: 25px 0px;
-} */
-
 #table-space-atualizar-produtos { 
     width: 100%;
     display: flex;
@@ -418,3 +351,5 @@ body {
     font-weight: 600;
     color: var(--color-primary-3);
 }
+
+/* Fim atualizar produtos */
