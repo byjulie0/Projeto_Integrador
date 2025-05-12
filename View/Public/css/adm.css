@@ -811,8 +811,8 @@ body {
   padding: 15px 25px;
   border-radius: 10px;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 10px;
+  justify-content: center;
+  gap: 25px;
   display: flex;
   flex-direction: column;
 }
@@ -825,4 +825,119 @@ body {
   color: var(--color-fonte);
   font-size: 18px;
   font-weight: 600;
+}
+
+.minor-label-informacoes-pedidos {
+  align-items: center;
+  justify-content: center;
+  background-color: #fb666677;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.minor-label-informacoes-pedidos span {
+  color: var(--warning-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product-informations-informacoes-pedidos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img-and-label-informacoes-pedidos {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 25px;
+}
+
+.img-and-label-informacoes-pedidos img {
+  width: 50%;
+}
+
+.informations-informacoes-pedidos {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.type-informacoes-pedidos {
+  color: #20261eab;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.name-informacoes-pedidos {
+  color: var(--color-fonte);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.lote-informacoes-pedidos {
+  color: #20261eab;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.purchase-date-informacoes-pedidos {
+  color: var(--color-fonte);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.preco-lote-informacoes-pedidos {
+  color: var(--color-fonte);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.final-price-informacoes-pedidos {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.final-price-informacoes-pedidos span {
+  color: #20261eab;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.price-informacoes-pedidos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.parcelas-informacoes-pedidos {
+  display: flex;
+  padding: 5px 15px;
+  border: 1px solid #20261e;
+  border-radius: 5px;
+}
+
+.parcelas-informacoes-pedidos span {
+  color: var(--color-fonte);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.valor-final-informacoes-pedidos span {
+  color: var(--color-fonte);
+  font-weight: 600;
+  font-size: 18px;
 }

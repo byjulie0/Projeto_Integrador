@@ -39,34 +39,34 @@
                         </span>
                     </div>
                     <div class="product-informations-informacoes-pedidos">
-                        <div class="product-img-informacoes-pedidos">
+                        <div class="img-and-label-informacoes-pedidos">
                             <img src="../View/Public/Imagens/Rectangle 195.png" alt="">
-                        </div>
-                        <div class="informations-informacoes-pedidos">
-                            <span class="type-informacoes-pedidos">
-                                Galináceo
-                            </span>
-                            <span class="name-informacoes-pedidos">
-                                Galo Rhode Island
-                            </span>
-                            <span class="lote-informacoes-pedidos">
-                                Macho | Lote
-                            </span>
-                            <span class="purchase-date-informacoes-pedidos">
-                                Data do pedido:
-                            </span>
-                            <span class="preco-lote-informacoes-pedidos">
-                                Valor do lote:
-                            </span>
+                            <div class="informations-informacoes-pedidos">
+                                <span class="type-informacoes-pedidos">
+                                    Galináceo
+                                </span>
+                                <span class="name-informacoes-pedidos">
+                                    Galo Rhode Island
+                                </span>
+                                <span class="lote-informacoes-pedidos">
+                                    Macho | Lote
+                                </span>
+                                <span class="purchase-date-informacoes-pedidos">
+                                    Data do pedido:
+                                </span>
+                                <span class="preco-lote-informacoes-pedidos">
+                                    Valor do lote:
+                                </span>
+                            </div>
                         </div>
                         <div class="final-price-informacoes-pedidos">
                             <span>Valor a ser pago:</span>
                             <div class="price-informacoes-pedidos">
                                 <div class="parcelas-informacoes-pedidos">
-                                    3x R$950,00
+                                    <span>3x R$950,00</span>
                                 </div>
                                 <div class="valor-final-informacoes-pedidos">
-                                    R$2.850,00
+                                    <span>R$2.850,00</span>
                                 </div>
                             </div>
                         </div>
