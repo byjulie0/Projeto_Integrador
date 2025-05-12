@@ -3149,25 +3149,104 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 
 .verificar_administrar_pedidos_content{
   margin: 50px;
+  margin-bottom: 24%;
 }
 
 .verificar_administrar_pedidos_sessao_bloco{
+  position: relative;
+  left: 2%;
   display: flex;
   margin-bottom: 30px;
 }
 
+.verificar_administrar_pedidos_sessao_mini_bloco_info{
+  position: relative;
+  top: 10vh;
+  left: 10%;
+  max-width: 100%;
+}
+
+.verificar_administrar_pedidos_sessao_mini_bloco_info h6{
+  font-size: 0.8rem;
+  color: var(--color-primary-1);
+  max-width: 100%;
+  width: 70%;
+  margin-bottom: 5%;
+  margin-left: 2%;
+}
+
+.verificar_administrar_pedidos_sessao_formulario_filtrar input{
+  max-width: 100%;
+  width: 65%;
+  border-radius: 20px;
+  height: 5vh;
+  padding: 20px;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.verificar_administrar_pedidos_sessao_formulario_filtrar input::placeholder{
+  color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_formulario_pesquisa input{
+  max-width: 100%;
+  width: 70%;
+  height: 5vh;
+  border-radius: 20px;
+  outline: none;
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.verificar_administrar_pedidos_sessao_formulario_pesquisa input::placeholder{
+  color: var(--color-primary-1);
+}
+
 .verificar_administrar_pedidos_sessao_seta_voltar {
   color: var(--color-primary-1);
+  font-size: 1.7rem;
+  cursor: pointer;
 }
 
 .verificar_administrar_pedidos_sessao_bloco_info h1, h3{
   color: var(--color-primary-1);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: 87%;
 }
 
 .verificar_administrar_pedidos_sessao_divisao{
   margin-left: 20px;
+  max-width: 100%;
   width: 95%;
+  margin-bottom: 1.5%;
+}
+
+.verificar_administrar_pedidos_sessao_visualizar{
+  margin-left: 2%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos{
+  display: flex;
+  gap: 2%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_img h5{
+  color: var(--color-primary-1);
+  font-size: 1rem;
+  margin-bottom: 5%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_img img{
+  max-width: 100%;
+  width: 100%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_info{
+  color: var(--color-primary-1);
 }
 
 
