@@ -45,7 +45,8 @@ body {
   width: 100%;
   background-color: #F7F9FF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  position: relative;
+  position: fixed;
+  z-index: 1;
 }
 
 .menu-content-pg-inicial {
@@ -498,7 +499,9 @@ body {
   margin-bottom: 15px;
 }
 
-/* Mobile: 360x800 and 390x844 */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (max-width: 767px) {
   .grid_container_footer {
     grid-template-columns: 1fr;
@@ -516,12 +519,19 @@ body {
   }
 }
 
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 /* Tablet: 768-1023 and 768-1199 */
 @media (min-width: 768px) and (max-width: 1023px) {
   .grid_container_footer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 
 /* Desktop: 1440x900 and 1920x1080 */
 @media (min-width: 1024px) {
@@ -1271,6 +1281,132 @@ body {
   font-size: 2rem;
   align-items: center;
 }
+
+
+/* === 320px (pequenos celulares) === */
+@media (max-width: 320px) {
+  .favoritos-title {
+    font-size: 1em;
+    padding-left: 10px;
+  }
+
+  .card-pag-fav {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .botao-pag-fav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-pag-fav,
+  .excluir-pag-fav {
+    width: 100%;
+  }
+}
+
+/* === 375px (iPhones e smartphones médios) === */
+@media (max-width: 375px) {
+  .favoritos-title {
+    font-size: 1.1em;
+  }
+
+  .card-pag-fav {
+    width: 95%;
+  }
+}
+
+/* === 425px (smartphones grandes) === */
+@media (max-width: 425px) {
+  .card-pag-fav {
+    width: 95%;
+  }
+
+  .card-header-pag-fav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .botao-pag-fav {
+    flex-direction: column;
+  }
+}
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
+@media (max-width: 768px) {
+  .cards-container-pag-fav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 85%;
+    max-width: 350px;
+  }
+
+  .favoritos-title {
+    justify-content: center;
+    font-size: 1.3em;
+  }
+
+  .botao-pag-fav {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .btn-pag-fav,
+  .excluir-pag-fav {
+    width: auto;
+  }
+}
+
+/* === 1024px (telas pequenas de notebook) === */
+@media (max-width: 1024px) {
+  .cards-container-pag-fav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 300px;
+  }
+}
+
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
+@media (max-width: 1440px) {
+  .card-pag-fav {
+    width: 300px;
+  }
+
+  .cards-container-pag-fav {
+    gap: 24px;
+    justify-content: center;
+  }
+}
+
+/* === 2560px (telas ultra-wide) === */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .cards-container-pag-fav {
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 320px;
+  }
+
+  .favoritos-title {
+    font-size: 1.8em;
+    margin-left: 60px;
+  }
+}
+
+/*Final da Pg Favoritos */
+
 /*RESPONSIVIDADE*/
 @media (max-width: 360px){
   .menu-cadastro{
@@ -1383,7 +1519,7 @@ body {
   background-color: white;
   font-family: 'Poppins';
   width: 100%;
-  height: 600px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
@@ -1423,10 +1559,10 @@ body {
   color: aliceblue;
 }
 .card-pag-fav {
+  height: 400px;
   width:300px;
   display: flex;
   flex-direction: column;
-  align-items: flex;
   background-color: white;
   border-radius: 5px;
   gap: 18px;
@@ -1435,9 +1571,8 @@ body {
   position: relative;
 }
 .card-pag-fav img {
+  height: 150px;
   width: 300px;
-  display: block;
-  margin: 0 auto;
   max-width: 100%;
 }
 .card-header-pag-fav {
@@ -1446,17 +1581,29 @@ body {
   justify-content: space-between;
   width: 100%;
 }
-.card-header-pag-fav h1 {
+/* Título do produto dentro do card */
+.produto-nome-pag-fav {
   font-size: 1.1em;
   margin: 10px 0;
   color: #333;
   text-align: left;
 }
-.card-pag-fav h2 {
+
+/* Preço do produto */
+.produto-preco-pag-fav {
   font-size: 1.1em;
   color: #333;
   text-align: left;
 }
+
+/* Texto de quantidade vendida */
+.produto-vendas-pag-fav {
+  font-size: 0.6em;
+  color: #333;
+  text-align: left;
+}
+
+
 .stars-pag-fav {
   color: gold;
   margin: 5px 0;
@@ -1487,11 +1634,134 @@ body {
   display: flex;
   text-decoration: underline;
 }
-.card-pag-fav h3 {
-  font-size: 0.6em;
-  color: #333;
-  text-align: left;
+
+
+/* === 320px (pequenos celulares) === */
+@media (max-width: 320px) {
+  .favoritos-title {
+    font-size: 1em;
+    padding-left: 10px;
+  }
+  .area-favoritos{
+    gap: 20px;
+    width: 50%;
+    flex-direction: row;
+  }
+  .card-pag-fav {
+    padding: 15px;
+  }
+
+  .botao-pag-fav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-pag-fav,
+  .excluir-pag-fav {
+    width: 100%;
+  }
 }
+
+/* === 375px (iPhones e smartphones médios) === */
+@media (max-width: 375px) {
+  .favoritos-title {
+    font-size: 1.1em;
+  }
+
+  .card-pag-fav {
+    width: 95%;
+  }
+}
+
+/* === 425px (smartphones grandes) === */
+@media (max-width: 425px) {
+  .card-pag-fav {
+    width: 95%;
+  }
+
+  .card-header-pag-fav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .botao-pag-fav {
+    flex-direction: column;
+  }
+}
+
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
+@media (max-width: 768px) {
+  .cards-container-pag-fav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 85%;
+    max-width: 350px;
+  }
+
+  .favoritos-title {
+    justify-content: center;
+    font-size: 1.3em;
+  }
+
+  .botao-pag-fav {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .btn-pag-fav,
+  .excluir-pag-fav {
+    width: auto;
+  }
+}
+
+/* === 1024px (telas pequenas de notebook) === */
+@media (max-width: 1024px) {
+  .cards-container-pag-fav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 300px;
+  }
+}
+
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
+@media (max-width: 1440px) {
+  .card-pag-fav {
+    width: 300px;
+  }
+
+  .cards-container-pag-fav {
+    gap: 24px;
+    justify-content: center;
+  }
+}
+
+/* === 2560px (telas ultra-wide) === */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .cards-container-pag-fav {
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 320px;
+  }
+
+  .favoritos-title {
+    font-size: 1.8em;
+    margin-left: 60px;
+  }
+}
+
 /*Final da Pg Favoritos - Mariana */
 
 /* inicio slider da página inicial - Matheus*/ 
@@ -1654,7 +1924,9 @@ body {
   }
 }
 
-/* Mobile Grande: 390 x 844 */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (min-width: 391px) and (max-width: 767px) {
   .pg-mais-vendidos {
     font-size: 22px;
@@ -1961,7 +2233,9 @@ body {
   align-items: center;
 }
 
-/* Mobile - Tela média (360 x 800) */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (max-width: 767px) {
   .menu_recuper_senha {
       height: 7rem;
@@ -1980,7 +2254,9 @@ body {
   }
 }
 
-/* Mobile - Tela grande (390 x 844) */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (min-width: 768px) and (max-width: 1023px) {
   .menu_recuper_senha {
       height: 8rem;
@@ -1995,7 +2271,9 @@ body {
       margin-top: 45px;
   }
 }
-
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 /* Tablet - Tela média (768-1199px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
   .menu_recuper_senha {
@@ -2010,7 +2288,9 @@ body {
       font-size: 1.8rem;
   }
 }
-
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 /* Desktop - Tela média (1440x900) */
 @media (min-width: 1440px) and (max-width: 1919px) {
   .menu_recuper_senha {
@@ -2707,7 +2987,7 @@ input[type="checkbox"] {
 .checkout-carrinho{
   cursor: pointer;
   background: #4B914B;
-  padding: 5px 75px;
+  padding: 5px 15px;
   border: none;
   border-radius: 5px;
   font: inherit;
@@ -2721,6 +3001,221 @@ input[type="checkbox"] {
   font-size: 20px;
   font-weight: 600;
   color: var(--color-primary-8);
+}
+
+@media only screen and (max-width: 360px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .product-card-carrinho,
+  .checkout-btns-carrinho {
+    padding: 15px !important;
+    margin: 10px 0 !important;
+  }
+
+  .cart-header-labels-carrinho {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  .check-btn-carrinho,
+  .labels-carrinho {
+    width: 100% !important;
+    justify-content: flex-start;
+    margin: 5px 0;
+  }
+
+  .product-carrinho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .non-labeled-content-carrinho,
+  .labels-respective-content-carrinho {
+    width: 100% !important;
+    margin: 10px 0;
+    justify-content: flex-start !important;
+  }
+
+  .product-img-carrinho {
+    width: 80px;
+  }
+
+  .checkout-btns-space-carrinho {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .move-items-to-favorites-area-carrinho,
+  .total-price-checkout-carrinho,
+  .checkout-btn-carrinho {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  .checkout-carrinho {
+    padding: 5px 40px !important;
+  }
+}
+
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
+@media only screen and (min-width: 361px) and (max-width: 390px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .product-card-carrinho,
+  .checkout-btns-carrinho {
+    padding: 20px !important;
+    margin: 15px 0 !important;
+  }
+
+  .cart-header-labels-carrinho {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .check-btn-carrinho {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+
+  .labels-carrinho {
+    width: 33% !important;
+    justify-content: center;
+  }
+
+  .product-carrinho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .non-labeled-content-carrinho {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .labels-respective-content-carrinho {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    margin: 8px 0;
+  }
+
+  .product-img-carrinho {
+    width: 100px;
+  }
+
+  .checkout-btns-space-carrinho {
+    flex-direction: column;
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .move-items-to-favorites-area-carrinho,
+  .total-price-checkout-carrinho,
+  .checkout-btn-carrinho {
+    width: 100% !important;
+    justify-content: center;
+  }
+}
+
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .checkout-btns-carrinho {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+
+  .product-card-carrinho {
+    margin: 20px 50px !important;
+    padding: 20px !important;
+  }
+
+  .non-labeled-content-carrinho {
+    width: 50% !important;
+  }
+
+  .labels-respective-content-carrinho {
+    width: 16.66% !important;
+  }
+
+  .product-img-carrinho {
+    width: 120px;
+  }
+
+  .checkout-btns-space-carrinho {
+    padding: 30px;
+  }
+}
+
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .checkout-btns-carrinho {
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+  }
+
+  .product-card-carrinho {
+    margin: 20px 100px !important;
+  }
+
+  .product-img-carrinho {
+    width: 130px;
+  }
+}
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
+
+/* Desktop Styles - Medium (1366x768) */
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .checkout-btns-carrinho {
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+  }
+
+  .product-card-carrinho {
+    margin: 25px 120px !important;
+  }
+}
+
+/* Desktop Styles - Large (1600px and above) */
+@media only screen and (min-width: 1600px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .checkout-btns-carrinho {
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+.delete-item-carrinho:hover,
+.move-items-to-favorites-carrinho:hover {
+  opacity: 0.8;
+}
+
+.change-quantity-btn-carrinho:hover {
+  background-color: #e0e0e0;
+}
+
+.product-card-carrinho {
+  transition: transform 0.2s ease;
+}
+
+.product-card-carrinho:hover {
+  transform: translateY(-2px);
 }
 
 /* Fim - Carrinho */
@@ -3016,129 +3511,154 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
 /* Final da pg de login */
 
-/* Começo footer ADM */
-.footer_adm {
-  width: 100%;
-  background-color: var(--color-primary-1);
-  font-family: "Poppins", sans-serif;
-  padding: 40px 0;
-  color: var(--color-detalhes-16);
-}
 
-.grid_container_footer_adm {
-  display: grid;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  padding: 0 20px;
+/* Inicio de CSS de privacidade e segurança*/
+*{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: 'Lato,' sans-serif;
+} 
+
+body {
+  background-color: #fff;
+  font-family: 'Poppins';
 }
 
-.footer_adm_item {
-  padding: 0 15px;
-  margin-bottom: 20px;
+.whole-page-content-pes {
+  width: 100%;
+  height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.footer_adm_item h3 {
-  color: var(--color-detalhes-16);
-  font-size: 14px;
-  margin-bottom: 15px;
+.page-title-pes {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-.footer_adm_item hr {
-  border: none;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 10px 0 15px;
+.go-back-pes {
+  width: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.footer_adm_item a {
-  text-decoration: none;
-  color: var(--color-detalhes-16);
-  display: block;
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
-  font-size: 14px;
+.go-back-pes .fa-solid {
+  color: var(--color-primary-1);
+  font-size: 24px;
+
 }
 
-.footer_adm_item a:hover {
-  text-decoration: underline;
-  color: white;
+.title-area-pes {
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8%;
 }
 
-#tab1_adm_footer address {
-  font-style: normal;
-  margin-bottom: 12px;
-  line-height: 1.5;
-  font-size: 12px;
+.title-pes {
+  display: flex;
+  justify-content: center;
+  color: var(--color-primary-1);
+  font-size: 24px;
+  text-align: justify;
 }
 
-#tab2_adm_footer a {
-  display: inline-block;
-  font-size: 22px;
-  margin-right: 15px;
-  margin-bottom: 15px;
+.terms-pes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-/* Mobile: 360x800 and 390x844 */
-@media (max-width: 767px) {
-  .grid_container_footer_adm {
-    grid-template-columns: 1fr;
-    padding: 0 15px;
+.term-pes {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.term-title-pes {
+  color: var(--color-primary-1);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.term-text-pes {
+  color: var(--color-primary-1);
+  font-size: 16px;
+}
+
+@media (min-width: 360px) and (max-width: 389px) {
+  .whole-page-content-pes {
+    padding: 25px 20px;
+    height: auto;
+    min-height: 100vh;
   }
   
-  .footer_adm_item {
+  .page-title-pes {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+  
+  .go-back-pes {
+    width: auto;
     padding: 0;
-    margin-bottom: 25px;
   }
   
-  #tab2_adm_footer a {
+  .go-back-pes .fa-solid {
     font-size: 20px;
-    margin-right: 12px;
-  }
-}
-
-/* Tablet: 768-1023 and 768-1199 */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .grid_container_footer_adm {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-/* Desktop: 1440x900 and 1920x1080 */
-@media (min-width: 1024px) {
-  .grid_container_footer_adm {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .grid_container_footer_adm {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1440px) {
-  .grid_container_footer_adm {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
   }
   
-  .footer_adm_item h3 {
+  .title-area-pes {
+    width: calc(100% - 40px);
+    margin-top: 0;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  
+  .title-pes {
+    font-size: 18px;
+    margin-bottom: 0;
+    text-align: left;
+    justify-content: flex-start;
+  }
+  .terms-pes {
+    margin-top: 10px;
+    gap: 15px;
+  }
+  
+  .term-pes {
+    padding: 0;
+    gap: 5px;
+  }
+  
+  .term-title-pes {
     font-size: 16px;
+    line-height: 1.4;
   }
   
-  .footer_adm_item a, 
-  .footer_adm_item address {
+  .term-text-pes {
     font-size: 14px;
-  }
-  
-  #tab2_adm_footer a {
-    font-size: 26px;
+    line-height: 1.5;
+    text-align: left;
+    word-break: break-word;
   }
 }
+/* Fim do CSS e privacidade e segurança*/
 
 /* Começo do CSS do Verificar e Administrar Pedidos - Denyel */
 .verificar_administrar_pedidos_body {
@@ -3253,7 +3773,8 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 
 /* Fim do CSS do Verificar e Administrar Pedidos - Denyel */
 
-/*Começo inserir senha alterar dados */
+/*Começo inserir senha alterar dados Arthur*/
+
 .body-arthura {
   background-color: #f5f5f5;
   font-family: sans-serif;
@@ -3384,7 +3905,6 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   transform: scale(1.02);
 }
 
-
 .logout-button-arthura {
   background-color: #f8d7da;
   color: #c0392b;
@@ -3404,7 +3924,6 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   background-color: #f5b5b5;
   transform: scale(1.02);
 }
-
 
 @media (max-width: 480px) {
   .title-arthura {
@@ -3429,6 +3948,9 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   .card-arthura {
     padding: 8%;
   }
+}
+/*Fim inserir senha alterar dados Arthur*/
+
 /* Inicio pg redefinir senha login Lara*/
 .rede_senha_section{
   position: relative;
@@ -3447,6 +3969,7 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   box-sizing: border-box;
   width: 100%;
   transform: translateY(-30px);
+  color:#32CD32;
 }
 .recuperar_senha_rede_formulario h1 {
   text-align: center;
@@ -3509,7 +4032,9 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Mobile: 360x800 and 390x844 */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (max-width: 767px) {
   .recuperar_senha_rede_formulario{
     width: 300px;
@@ -3546,4 +4071,3 @@ box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   }
 }
 /* Fim pg redefinir senha Lara */
-}
