@@ -1110,16 +1110,16 @@ body {
   align-items: center;
 }
 
-.seta-voltar {
+.seta-voltar-math-adm {
   position: absolute;
   top: 20px;
   left: 20px;
-  font-size: 54px;
+  font-size: 64px;
   text-decoration: none;
   color: black;
 }
 
-.seta-voltar:hover {
+.seta-voltar-math-adm:hover {
   color: blue;
 }
 
@@ -1160,7 +1160,8 @@ main {
 }
 
 .dados-math-adm h3 {
-  margin-bottom: 15px;
+  
+  margin-bottom: 25px;
 }
 
 .botoes-math-adm {
@@ -1171,7 +1172,9 @@ main {
   top:550px
 }
 .meus_dados-math-adm{
+  display:flex;
   position:absolute;
+  margin-top: -25px;
   top:145px;
   left:800px;
   color: black;
@@ -1196,5 +1199,93 @@ main {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+/* RESPONSIvidade da pg perfiladm */
+
+@media (max-width: 768px) {
+  /* Tablet */
+  
+  .perfil-math-adm {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .avatar-math-adm img {
+    width: 150px;
+  }
+
+  .dados-math-adm {
+    grid-template-columns: 1fr; /* Uma coluna em vez de duas */
+    min-width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+
+  .botoes-math-adm {
+    position: static;
+    margin-top: 40px;
+    width: 100%;
+    height: auto;
+    top: auto;
+  }
+
+  .meus_dados-math-adm {
+    position: static;
+    margin-top: 10px;
+    top: auto;
+    left: auto;
+    text-align: center;
+  }
+
+  .editar-math-adm, .logout-math-adm {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Celular */
+  
+  body {
+    padding: 10px;
+  }
+
+  .perfil-math-adm {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .avatar-math-adm img {
+    width: 120px;
+  }
+
+  .dados-math-adm {
+    grid-template-columns: 1fr; /* Uma coluna */
+    min-width: 100%;
+    padding: 15px;
+    height: auto;
+  }
+
+  .botoes-math-adm {
+    position: static;
+    width: 100%;
+    height: auto;
+    top: auto;
+    margin-top: 20px;
+  }
+
+  .meus_dados-math-adm {
+    position: static;
+    margin-top: 5px;
+    top: auto;
+    left: auto;
+    text-align: center;
+  }
+
+  .editar-math-adm, .logout-math-adm {
+    width: 100%;
+    margin: 8px 0;
+  }
 }
 /* FINAL PG ADM - MATHEUS*/

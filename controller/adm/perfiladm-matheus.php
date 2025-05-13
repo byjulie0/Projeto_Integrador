@@ -1,4 +1,4 @@
- <?php include "../cliente/menu_pg_inicial.php";?> 
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +11,12 @@
 </head>
 <body>
      <!-- Seta de retorno -->
-  <a href="javascript:history.back()" class="seta-voltar-math-adm">←</a>
+  <a href="javascript:history.back()" class="seta-voltar-math-adm">   ←   </a>
 <main>
         <h1>Meu perfil</h1>
         <section class="perfil-math-adm">
             <div class="avatar-math-adm">
-                <img src="transferir.png" alt="Avatar">
+                <img src="/Projeto_Integrador/View/public/Imagens/visualizar-dados-icon-default.png" alt="Avatar">
                 <h2>John Rooster</h2>
                 <p>ID do vendedor: 0000</p>
             </div>
@@ -39,7 +39,5 @@
         </section>
     </main>
 </body>
- <?php
-    include "footer_adm.php"
-    ?>
+ 
 </html>
