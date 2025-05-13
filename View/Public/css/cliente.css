@@ -499,7 +499,9 @@ body {
   margin-bottom: 15px;
 }
 
-/* Mobile: 360x800 and 390x844 */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (max-width: 767px) {
   .grid_container_footer {
     grid-template-columns: 1fr;
@@ -517,12 +519,19 @@ body {
   }
 }
 
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 /* Tablet: 768-1023 and 768-1199 */
 @media (min-width: 768px) and (max-width: 1023px) {
   .grid_container_footer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 
 /* Desktop: 1440x900 and 1920x1080 */
 @media (min-width: 1024px) {
@@ -1323,8 +1332,9 @@ body {
     flex-direction: column;
   }
 }
-
-/* === 768px (tablets) === */
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 @media (max-width: 768px) {
   .cards-container-pag-fav {
     flex-wrap: wrap;
@@ -1364,7 +1374,9 @@ body {
   }
 }
 
-/* === 1440px (telas grandes e desktops) === */
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 @media (max-width: 1440px) {
   .card-pag-fav {
     width: 300px;
@@ -1677,7 +1689,9 @@ body {
   }
 }
 
-/* === 768px (tablets) === */
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 @media (max-width: 768px) {
   .cards-container-pag-fav {
     flex-wrap: wrap;
@@ -1717,7 +1731,9 @@ body {
   }
 }
 
-/* === 1440px (telas grandes e desktops) === */
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 @media (max-width: 1440px) {
   .card-pag-fav {
     width: 300px;
@@ -1908,7 +1924,9 @@ body {
   }
 }
 
-/* Mobile Grande: 390 x 844 */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (min-width: 391px) and (max-width: 767px) {
   .pg-mais-vendidos {
     font-size: 22px;
@@ -2215,7 +2233,9 @@ body {
   align-items: center;
 }
 
-/* Mobile - Tela média (360 x 800) */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (max-width: 767px) {
   .menu_recuper_senha {
       height: 7rem;
@@ -2234,7 +2254,9 @@ body {
   }
 }
 
-/* Mobile - Tela grande (390 x 844) */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (min-width: 768px) and (max-width: 1023px) {
   .menu_recuper_senha {
       height: 8rem;
@@ -2249,7 +2271,9 @@ body {
       margin-top: 45px;
   }
 }
-
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 /* Tablet - Tela média (768-1199px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
   .menu_recuper_senha {
@@ -2264,7 +2288,9 @@ body {
       font-size: 1.8rem;
   }
 }
-
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 /* Desktop - Tela média (1440x900) */
 @media (min-width: 1440px) and (max-width: 1919px) {
   .menu_recuper_senha {
@@ -3032,7 +3058,9 @@ input[type="checkbox"] {
   }
 }
 
-/* Mobile Styles - Large (390x844) */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media only screen and (min-width: 361px) and (max-width: 390px) {
   .cart-header-carrinho,
   .product-cards-carrinho,
@@ -3091,7 +3119,9 @@ input[type="checkbox"] {
   }
 }
 
-/* Tablet Styles - Medium (768px - 1023px) */
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .cart-header-carrinho,
   .product-cards-carrinho,
@@ -3122,7 +3152,9 @@ input[type="checkbox"] {
   }
 }
 
-/* Tablet Styles - Large (768px - 1199px) */
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 @media only screen and (min-width: 1024px) and (max-width: 1199px) {
   .cart-header-carrinho,
   .product-cards-carrinho,
@@ -3139,6 +3171,9 @@ input[type="checkbox"] {
     width: 130px;
   }
 }
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 
 /* Desktop Styles - Medium (1366x768) */
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
@@ -3883,7 +3918,9 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Mobile: 360x800 and 390x844 */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (max-width: 767px) {
   .recuperar_senha_rede_formulario{
     width: 300px;
