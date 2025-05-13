@@ -13,7 +13,7 @@
     <!--<link rel="stylesheet" href="../View/Public/css/pag-favoritos.css">-->
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../View/CSS/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente.css">
     <!--<link rel="stylesheet" href="menu-pg-inicial.html"> -->
 
 </head>
@@ -25,7 +25,7 @@
             
             <div class="cards-container-pag-fav">
                 <div class="card-pag-fav">
-                    <img class="card-img-pag-fav" src="../View/Public/imagens/images.jpg" alt="Equino da raça Percheron">
+                    <img class="card-img-pag-fav" src="../../view/public/imagens/images.jpg" alt="Equino da raça Percheron">
                 <div class="card-header-pag-fav">
                     <h2 class="produto-nome-pag-fav">Equino da raça Percheron</h2>
                     <div class="stars-pag-fav">★</div>

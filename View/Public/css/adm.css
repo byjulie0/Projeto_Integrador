@@ -717,55 +717,162 @@ body {
 /* Fim atualizar produtos */
 
 /* Início Gerar relatório */
-.body_generate_report{
-    padding: 15px 15px 15px 75px;
-    color: var(--color-fonte);
+.body_generate_report {
+  padding: 15px 15px 15px 75px;
+  color: var(--color-fonte);
 }
 
-.title_page_generate_report{
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.title_page_generate_report {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.arrow_generate_report{
-    color: var(--color-primary-1);
-    font-size: 1.5rem;
+.arrow_generate_report {
+  color: var(--color-primary-1);
+  font-size: 1.5rem;
 }
 
-.generate_report_area{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.generate_report_area {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.report_category_select , .generate_report_date{
-    height: 35px;
-    padding-left: 10px;
-    border: solid 1px;
-    width: 60%;
-    border-radius: 5px;
+.report_category_select, .generate_report_date {
+  height: 35px;
+  padding-left: 10px;
+  border: solid 1px;
+  width: 60%;
+  border-radius: 5px;
+  box-sizing: border-box; /* Added recommendation */
 }
 
-.generate_report_submit_button{
-    margin-top: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.generate_report_submit_button {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.generate_report_product_button{
-    gap: 10px;
-    display: flex;
-    width: 200px;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-botao-op-Concluido);
-    color: var(--color-icones);
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: none;
+.generate_report_product_button {
+  gap: 10px;
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-botao-op-Concluido);
+  color: var(--color-icones);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer; /* Added recommendation */
+  transition: all 0.2s ease; /* Added recommendation */
 }
+
+/* Mobile Styles (up to 767px) */
+@media only screen and (max-width: 767px) {
+  .body_generate_report {
+      padding: 15px;
+  }
+  
+  .generate_report_area {
+      grid-template-columns: 1fr;
+      gap: 15px;
+  }
+  
+  .report_category_select, .generate_report_date {
+      width: 100%;
+      min-height: 40px; /* Better touch target */
+      font-size: 1rem; /* Readable text size */
+  }
+  
+  .generate_report_start_date, 
+  .generate_report_end_date {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .generate_report_submit_button {
+      margin-top: 25px;
+  }
+}
+
+/* Tablet Styles (768px - 1023px) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .body_generate_report {
+      padding: 20px 20px 20px 80px;
+  }
+  
+  .generate_report_area {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+  }
+  
+  .input_report_category {
+      grid-column: span 2;
+  }
+  
+  .report_category_select, .generate_report_date {
+      width: 80%;
+      min-height: 40px; /* Better touch target */
+  }
+  
+  .generate_report_submit_button {
+      margin-top: 35px;
+      grid-column: span 2;
+  }
+}
+
+/* Large Tablet/Small Desktop (1024px - 1199px) */
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  .body_generate_report {
+      padding: 25px 25px 25px 85px;
+  }
+  
+  .generate_report_area {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+  }
+  
+  .report_category_select, .generate_report_date {
+      width: 80%;
+  }
+  
+  .generate_report_submit_button {
+      margin-top: 40px;
+      grid-column: span 3;
+  }
+}
+
+/* Desktop Styles (1200px and above) */
+@media only screen and (min-width: 1200px) {
+  .body_generate_report {
+      padding: 30px 30px 30px 100px;
+      max-width: 1800px;
+      margin: 0 auto;
+  }
+  
+  /* Button hover effects - only affects interaction, not color */
+  .generate_report_product_button:hover {
+      transform: scale(1.02);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .arrow_generate_report:hover {
+      opacity: 0.8; /* Subtle hover effect */
+  }
+}
+
+/* Very Large Desktop (1600px and above) */
+@media only screen and (min-width: 1600px) {
+  .generate_report_product_button {
+      padding: 10px 15px; /* Slightly larger padding */
+      font-size: 1.05rem; /* Slightly larger text */
+  }
+}
+
+
 /* Começo Verificar e administrar produtos - Informações */
 
 #informacoes-pedidos {
