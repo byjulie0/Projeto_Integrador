@@ -20,6 +20,7 @@
     <p class="info_generate_report">Administrador, selecione o tipo de relatório que deseja obter:</p>
     <section class="generate_report_area">
         <article class="input_report_category">
+            <span>Escolha a categoria do relatório</span>
             <select name="categories" id="categories" class="report_category_select" required>
                 <option value="" selected disabled>Categoria</option>
                 <option value="bovinos" class="report_categories">Todos</option>
@@ -32,7 +33,7 @@
         </article>
         <article class="generate_report_start_date">
             <span>Data de início</span>
-            <input type="date" class="generate_report_date" >
+            <input type="date" class="generate_report_date">
         </article>
         <article class="generate_report_end_date">
             <span>Data final</span>

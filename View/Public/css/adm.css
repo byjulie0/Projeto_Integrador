@@ -745,7 +745,7 @@ body {
   border: solid 1px;
   width: 60%;
   border-radius: 5px;
-  box-sizing: border-box; /* Added recommendation */
+  box-sizing: border-box; 
 }
 
 .generate_report_submit_button {
@@ -766,8 +766,8 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
-  cursor: pointer; /* Added recommendation */
-  transition: all 0.2s ease; /* Added recommendation */
+  cursor: pointer; 
+  transition: all 0.2s ease; 
 }
 
 /* Mobile Styles (up to 767px) */
@@ -783,8 +783,8 @@ body {
   
   .report_category_select, .generate_report_date {
       width: 100%;
-      min-height: 40px; /* Better touch target */
-      font-size: 1rem; /* Readable text size */
+      min-height: 40px; 
+      font-size: 1rem; 
   }
   
   .generate_report_start_date, 
@@ -815,7 +815,7 @@ body {
   
   .report_category_select, .generate_report_date {
       width: 80%;
-      min-height: 40px; /* Better touch target */
+      min-height: 40px; 
   }
   
   .generate_report_submit_button {
@@ -827,12 +827,13 @@ body {
 /* Large Tablet/Small Desktop (1024px - 1199px) */
 @media only screen and (min-width: 1024px) and (max-width: 1199px) {
   .body_generate_report {
-      padding: 25px 25px 25px 85px;
+    padding: 25px 25px 25px 85px;
   }
   
   .generate_report_area {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+    margin-top: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
   }
   
   .report_category_select, .generate_report_date {
@@ -860,15 +861,15 @@ body {
   }
   
   .arrow_generate_report:hover {
-      opacity: 0.8; /* Subtle hover effect */
+      opacity: 0.8;
   }
 }
 
 /* Very Large Desktop (1600px and above) */
 @media only screen and (min-width: 1600px) {
   .generate_report_product_button {
-      padding: 10px 15px; /* Slightly larger padding */
-      font-size: 1.05rem; /* Slightly larger text */
+      padding: 10px 15px; 
+      font-size: 1.05rem; 
   }
 }
 
