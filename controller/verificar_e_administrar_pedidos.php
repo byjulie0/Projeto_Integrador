@@ -27,13 +27,6 @@ include 'menu_pg_inicial.php';
                         <button type="submit"></button>
                     </form>
                 </div>
-                <div class="verificar_administrar_pedidos_sessao_mini_bloco_info">
-                    <h6>Filtre por pedido em andamento/finalizado/cancelado etc.</h6>
-                    <form action="" class="verificar_administrar_pedidos_sessao_formulario_filtrar">
-                        <input type="text" id="" placeholder="Filtrar">
-                        <button type="submit"></button>
-                    </form>
-                </div>
             </div>
             <hr class="verificar_administrar_pedidos_sessao_divisao">
         </section>
@@ -45,16 +38,15 @@ include 'menu_pg_inicial.php';
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_pedidos_info">
                     <h5>Boi Tal</h5>
-                    <h6>Numero do pedido: XXXXXXXXXX</h6>
-                    <h6>Comprador: XXXXXXXXXX</h6>
-                    <h6>Data da compra: XXXXXXXXXX</h6>
-                    <h6>Hora da compra: XXXXXXXXXX</h6>
-                    <h6>Forma de pagamento: XXXXXXXXXX</h6>
+                    <h6>Número do pedido: <span class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
+                    <h6>Comprador: <span class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
+                    <h6>Data da compra: <span class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
+                    <h6>Hora da compra: <span class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
+                    <h6>Forma de pagamento: <span class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
                     <form action="" class="verificar_administrar_pedidos_sessao_pedidos_form">
                         <button type="submit">Verificar</button>
                     </form>
                 </div>
-                <i class="fa-solid fa-chevron-left"></i>
             </div>
         </section>
     </main>
