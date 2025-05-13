@@ -1,4 +1,4 @@
-/*?php include "menu-pg-inicial.php";?>*/
+ <?php include "../cliente/menu_pg_inicial.php";?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,21 +6,21 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="perfiladm2.css">
+    <link rel="stylesheet" href="/Projeto_Integrador/View/public/css/adm.css">
     <title>Document</title>
 </head>
 <body>
      <!-- Seta de retorno -->
-  <a href="javascript:history.back()" class="seta-voltar">←</a>
+  <a href="javascript:history.back()" class="seta-voltar-math-adm">←</a>
 <main>
         <h1>Meu perfil</h1>
-        <section class="perfil">
-            <div class="avatar">
+        <section class="perfil-math-adm">
+            <div class="avatar-math-adm">
                 <img src="transferir.png" alt="Avatar">
                 <h2>John Rooster</h2>
                 <p>ID do vendedor: 0000</p>
             </div>
-            <div class="dados">
+            <div class="dados-math-adm">
                 
                 <p><strong>Nome:</strong> Fulano da Silva Soares</p>
                 <p><strong>E-mail:</strong> sample123@gmail.com</p>
@@ -29,17 +29,17 @@
                 <p><strong>Data de criação da conta:</strong> xx/xx/xxxx</p>
                 
             </div>
-            <div class ="meus_dados">
+            <div class ="meus_dados-math-adm">
                 <strong>Meus dados</strong>
             </div>
-            <div class="botoes">
-                    <button class="editar">Editar meus dados</button>
-                    <button class="logout">Logout</button>
+            <div class="botoes-math-adm">
+                    <button class="editar-math-adm">Editar meus dados</button>
+                    <button class="logout-math-adm">Logout</button>
                 </div>
         </section>
     </main>
 </body>
-<!-- <?php
+ <?php
     include "footer_adm.php"
-    ?> -->
+    ?>
 </html>
