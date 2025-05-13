@@ -3715,8 +3715,6 @@ body {
 /* Fim pg redefinir senha Lara */
 
 /* Inicio do CSS da página de busca*/
-
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -3726,7 +3724,10 @@ body {
 
 body {
   background-color: #f8f8f8;
-  padding: 20px;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Container principal da busca */
@@ -3735,31 +3736,28 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 95%; /* Ajustado para ocupar mais espaço */
+  margin: 20px auto;
+  max-width: 95%;
+  flex: 1;
+  position: relative;
+  margin-top: 35px;
+  margin-bottom: 40px;
+}
+.h2-pag-busca {
+  margin: 0;
+  display: inline-block;
+  padding-bottom: 13px;
 }
 
-h2 {
-  margin-bottom: 10px;
-}
-
-/* Estilização da seção de filtros e paginação */
-.filtros-paginacao-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 15px;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-}
-
+/* Estilização da seção de filtros */
 .filtros-container {
+  margin-top: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background: white;
 }
 
 .filtros-titulo {
@@ -3778,42 +3776,53 @@ h2 {
   background: #f0f0f0;
 }
 
-.paginacao-container {
+/* Container dos lotes com navegação por setas */
+.lotes-wrapper {
+  position: relative;
+  margin-top: 20px;
+}
+
+.lotes_container_pagina_de_busca {
+  display: flex;
+  overflow-x: hidden; /* Esconde a barra de scroll */
+  gap: 20px;
+  padding: 15px 0;
+  scroll-behavior: smooth;
+}
+
+/* Botões de navegação */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: #F7F9FF;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 10;
   display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  font-size: 20px;
+  color: #333;
 }
 
-.pagina-texto {
-  font-weight: bold;
-}
-
-.paginacao-btn {
-  background: none;
-  border: 1px solid #ccc;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.paginacao-btn:hover {
+.nav-button:hover {
   background: #f0f0f0;
 }
 
-.pagina-atual {
-  font-weight: bold;
+.nav-button.prev {
+  left: -20px;
 }
 
-/* Grid de lotes */
-.lotes_container_pagina_de_busca {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px; /* Ajustado o espaçamento entre os cards */
-  margin-top: 20px;
-  padding-left: 10px; /* Reduzida a margem para expandir cards */
-  padding-right: 10px; /* Reduzida a margem para expandir cards */
+.nav-button.next {
+  right: -20px;
 }
 
+/* Card de lote */
 .lote-card {
   background: white;
   padding: 15px;
@@ -3823,11 +3832,20 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 250px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.lote-card:hover {
+  transform: translateY(-5px);
 }
 
 .lote-card img {
   width: 100%;
   border-radius: 5px;
+  height: 180px;
+  object-fit: cover;
 }
 
 .lote-card p {
@@ -3841,19 +3859,65 @@ h2 {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+  transition:  0.3s;
 }
 
 .lote-card button:hover {
   background: #218838;
 }
 
-/* Rodapé */
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 20px;
+/* Paginação na parte inferior */
+.paginacao-wrapper {
   background: white;
-  border-radius: 10px;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 95%;
+  border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
+.paginacao-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pagina-texto {
+  font-weight: bold;
+}
+
+.paginacao-btn {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.paginacao-btn:hover {
+  background: #f0f0f0;
+}
+
+.pagina-atual {
+  font-weight: bold;
+  font-size: 18px;
+}
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  vertical-align: middle;
+  text-decoration: none;
+
+}
+
+.btn-voltar i {
+  color: var(--color-primary-1);
+  font-size: 1.5rem;
 }
 /* Fim do CSS da página de busca */
