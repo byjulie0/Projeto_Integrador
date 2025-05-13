@@ -14,7 +14,7 @@ include 'menu-pg-inicial.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Importação dos estilos -->
-    <link rel="stylesheet" href="../view/public/css/paginadebusca.css">
+    <link rel="stylesheet" href="../view/public/css/cliente.css">
 </head>
 <body>
     <!-- Seção de filtros e paginação -->
