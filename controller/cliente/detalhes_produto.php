@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galo Índio de León - John Rooster</title>
-    <link rel="stylesheet" href="../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body class="body-detalhes-produto">
@@ -18,12 +18,12 @@
             <!-- <div class="imgs-detalhes-produto"> -->
                 <div class="miniaturas-detalhes-produto">
                 
-                    <img src="../view/public/imagens/default-thumbnail.jpg" alt="Galo lateral">
-                    <img src="../view/public/imagens/default-thumbnail.jpg" alt="Galo de perfil">
-                    <img src="../view/public/imagens/default-thumbnail.jpg" alt="Galo em pé">
+                    <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Galo lateral">
+                    <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Galo de perfil">
+                    <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Galo em pé">
                 </div>
                 
-                    <img src="../view/public/imagens/default-thumbnail.jpg" alt="Galo Índio de León" class="imagem-grande-detalhes-produto">
+                    <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Galo Índio de León" class="imagem-grande-detalhes-produto">
 
             <!-- </div> -->
             <div class="info-produto-detalhes-produto"> 

@@ -9,7 +9,7 @@ include 'menu_pg_inicial.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Peril - Visualizar Dados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente.css">
   </head>
 </head>
 <body class="body-visualizar-dados">
