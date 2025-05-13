@@ -1,9 +1,5 @@
 <!-- Ana Julia -->
-<?php
 
-    include 'menu_pg_inicial.php';
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -233,13 +229,5 @@
             </div>
         </div>
     </section>
-
-    <?php
-
-    include 'footer_cliente.php';
-
-    ?>
-
-
 </body>
 </html>
