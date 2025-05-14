@@ -26,9 +26,7 @@ include 'menu_recuperar_senha.php';
                 <form action="" class="form_rede_senha" id="formRedefinirSenha">
                 <!-- pattern="[A-Za-z0-9@#$%&*]" -->
                     <input type="password" minlength="8" required placeholder="Nova senha" id="novaSenha">
-                    <!-- <i class="fa-solid fa-eye toggle-password" id="toggleSenha"></i> -->
                     <input type="password" minlength="8" required placeholder="Confirmar nova senha" id="confirmarSenha" >
-                    <!-- <i class="fa-solid fa-eye toggle-password" id="toggleSenha"></i> -->
                     <hr class="linha_login">
                     <button type="submit" id="btnEnviar">Enviar</button>
                 </form>

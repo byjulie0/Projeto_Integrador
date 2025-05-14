@@ -3858,7 +3858,7 @@ body {
   background-color: #DFEBE0;
   padding: 10% 8%;
   border-radius: 2px;
-  /* box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3); */
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
   width: 100%;
   transform: translateY(-30px);
@@ -3954,8 +3954,6 @@ body {
   .recuperar_senha_rede_formulario h3 {
     font-size: 0.7rem;
   }
-  .form_rede_senha{
-  }
   .recuperar_senha_rede_formulario input{
     height: 25px;
     font-size: 0.7rem;
@@ -4038,13 +4036,13 @@ body {
 
 @media (max-width: 768px) {
   .popup-content {
-      width: 85vw;
-      min-height: 40vh;
-      padding: 1.5rem;
+    width: 85vw;
+    min-height: 40vh;
+    padding: 1.5rem;
   }
   
   .popup-text {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 /* Fim pop_up_redefinir_senha */
