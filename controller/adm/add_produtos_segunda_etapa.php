@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Produto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../view/public/css/adm.css">
+    <link rel="stylesheet" href="../../view/public/css/adm.css">
 </head>
 <body class="body-add-produtos-2-etapa">
     <div class="area-titulo-add-produtos-2-etapa">
@@ -17,7 +17,7 @@
     <p class="info-add-produtos-2-etapa">Preencha as informações necessárias e adicione produtos ao catálogo do site</p>
     <section class="area-add-produto-2-etapa">
         <div class="area-add-imagem-add-produtos-2-etapa">
-            
+            <p class="title-add-foto-add-produto-segunda-etapa">Carregar mais imagens do produtos<span>(opcional)</span></p>
         </div>
     </section>
 </body>
