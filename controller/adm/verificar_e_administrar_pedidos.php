@@ -1,5 +1,5 @@
 <?php
-include '/PROJETO_INTEGRADOR/controller/cliente/menu_pg_inicial.php';
+include '../cliente/menu_pg_inicial.php';
 ?>
 
 
@@ -55,5 +55,5 @@ include '/PROJETO_INTEGRADOR/controller/cliente/menu_pg_inicial.php';
 </html>
 
 <?php
-include '/PROJETO_INTEGRADOR/controller/adm/footer_adm.php';
+include 'footer_adm.php';
 ?>
