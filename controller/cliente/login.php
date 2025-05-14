@@ -8,14 +8,14 @@ include '../controller/menu_login.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - John Rooster</title>
-    <link rel="stylesheet" href="cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <main class="container_geral_login">
         <div class="login_box_vinycius">
             <div class="info_login_vinycius">
-                <img class="img_login" src="../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
+                <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
                 <p class="text_login_vinycius">
                     Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo com qualidade e confiança para o seu negócio.
                 </p>
