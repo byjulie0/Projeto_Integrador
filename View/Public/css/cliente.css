@@ -45,7 +45,8 @@ body {
   width: 100%;
   background-color: #F7F9FF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  position: relative;
+  position: fixed;
+  z-index: 1;
 }
 
 .menu-content-pg-inicial {
@@ -498,7 +499,9 @@ body {
   margin-bottom: 15px;
 }
 
-/* Mobile: 360x800 and 390x844 */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (max-width: 767px) {
   .grid_container_footer {
     grid-template-columns: 1fr;
@@ -516,12 +519,19 @@ body {
   }
 }
 
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 /* Tablet: 768-1023 and 768-1199 */
 @media (min-width: 768px) and (max-width: 1023px) {
   .grid_container_footer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 
 /* Desktop: 1440x900 and 1920x1080 */
 @media (min-width: 1024px) {
@@ -1322,8 +1332,9 @@ body {
     flex-direction: column;
   }
 }
-
-/* === 768px (tablets) === */
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 @media (max-width: 768px) {
   .cards-container-pag-fav {
     flex-wrap: wrap;
@@ -1363,7 +1374,9 @@ body {
   }
 }
 
-/* === 1440px (telas grandes e desktops) === */
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 @media (max-width: 1440px) {
   .card-pag-fav {
     width: 300px;
@@ -1676,7 +1689,9 @@ body {
   }
 }
 
-/* === 768px (tablets) === */
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 @media (max-width: 768px) {
   .cards-container-pag-fav {
     flex-wrap: wrap;
@@ -1716,7 +1731,9 @@ body {
   }
 }
 
-/* === 1440px (telas grandes e desktops) === */
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 @media (max-width: 1440px) {
   .card-pag-fav {
     width: 300px;
@@ -1907,7 +1924,9 @@ body {
   }
 }
 
-/* Mobile Grande: 390 x 844 */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (min-width: 391px) and (max-width: 767px) {
   .pg-mais-vendidos {
     font-size: 22px;
@@ -2214,7 +2233,9 @@ body {
   align-items: center;
 }
 
-/* Mobile - Tela média (360 x 800) */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (max-width: 767px) {
   .menu_recuper_senha {
       height: 7rem;
@@ -2233,7 +2254,9 @@ body {
   }
 }
 
-/* Mobile - Tela grande (390 x 844) */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (min-width: 768px) and (max-width: 1023px) {
   .menu_recuper_senha {
       height: 8rem;
@@ -2248,7 +2271,9 @@ body {
       margin-top: 45px;
   }
 }
-
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
 /* Tablet - Tela média (768-1199px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
   .menu_recuper_senha {
@@ -2263,7 +2288,9 @@ body {
       font-size: 1.8rem;
   }
 }
-
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
 /* Desktop - Tela média (1440x900) */
 @media (min-width: 1440px) and (max-width: 1919px) {
   .menu_recuper_senha {
@@ -2960,7 +2987,7 @@ input[type="checkbox"] {
 .checkout-carrinho{
   cursor: pointer;
   background: #4B914B;
-  padding: 5px 75px;
+  padding: 5px 15px;
   border: none;
   border-radius: 5px;
   font: inherit;
@@ -2974,6 +3001,221 @@ input[type="checkbox"] {
   font-size: 20px;
   font-weight: 600;
   color: var(--color-primary-8);
+}
+
+@media only screen and (max-width: 360px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .product-card-carrinho,
+  .checkout-btns-carrinho {
+    padding: 15px !important;
+    margin: 10px 0 !important;
+  }
+
+  .cart-header-labels-carrinho {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  .check-btn-carrinho,
+  .labels-carrinho {
+    width: 100% !important;
+    justify-content: flex-start;
+    margin: 5px 0;
+  }
+
+  .product-carrinho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .non-labeled-content-carrinho,
+  .labels-respective-content-carrinho {
+    width: 100% !important;
+    margin: 10px 0;
+    justify-content: flex-start !important;
+  }
+
+  .product-img-carrinho {
+    width: 80px;
+  }
+
+  .checkout-btns-space-carrinho {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .move-items-to-favorites-area-carrinho,
+  .total-price-checkout-carrinho,
+  .checkout-btn-carrinho {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  .checkout-carrinho {
+    padding: 5px 40px !important;
+  }
+}
+
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
+@media only screen and (min-width: 361px) and (max-width: 390px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .product-card-carrinho,
+  .checkout-btns-carrinho {
+    padding: 20px !important;
+    margin: 15px 0 !important;
+  }
+
+  .cart-header-labels-carrinho {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .check-btn-carrinho {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+
+  .labels-carrinho {
+    width: 33% !important;
+    justify-content: center;
+  }
+
+  .product-carrinho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .non-labeled-content-carrinho {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .labels-respective-content-carrinho {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    margin: 8px 0;
+  }
+
+  .product-img-carrinho {
+    width: 100px;
+  }
+
+  .checkout-btns-space-carrinho {
+    flex-direction: column;
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .move-items-to-favorites-area-carrinho,
+  .total-price-checkout-carrinho,
+  .checkout-btn-carrinho {
+    width: 100% !important;
+    justify-content: center;
+  }
+}
+
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .checkout-btns-carrinho {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+
+  .product-card-carrinho {
+    margin: 20px 50px !important;
+    padding: 20px !important;
+  }
+
+  .non-labeled-content-carrinho {
+    width: 50% !important;
+  }
+
+  .labels-respective-content-carrinho {
+    width: 16.66% !important;
+  }
+
+  .product-img-carrinho {
+    width: 120px;
+  }
+
+  .checkout-btns-space-carrinho {
+    padding: 30px;
+  }
+}
+
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .checkout-btns-carrinho {
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+  }
+
+  .product-card-carrinho {
+    margin: 20px 100px !important;
+  }
+
+  .product-img-carrinho {
+    width: 130px;
+  }
+}
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
+
+/* Desktop Styles - Medium (1366x768) */
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .checkout-btns-carrinho {
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+  }
+
+  .product-card-carrinho {
+    margin: 25px 120px !important;
+  }
+}
+
+/* Desktop Styles - Large (1600px and above) */
+@media only screen and (min-width: 1600px) {
+  .cart-header-carrinho,
+  .product-cards-carrinho,
+  .checkout-btns-carrinho {
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+.delete-item-carrinho:hover,
+.move-items-to-favorites-carrinho:hover {
+  opacity: 0.8;
+}
+
+.change-quantity-btn-carrinho:hover {
+  background-color: #e0e0e0;
+}
+
+.product-card-carrinho {
+  transition: transform 0.2s ease;
+}
+
+.product-card-carrinho:hover {
+  transform: translateY(-2px);
 }
 
 /* Fim - Carrinho */
@@ -3676,7 +3918,9 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Mobile: 360x800 and 390x844 */
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
 @media (max-width: 767px) {
   .recuperar_senha_rede_formulario{
     width: 300px;
@@ -3714,6 +3958,7 @@ body {
 }
 /* Fim pg redefinir senha Lara */
 
+
 /* Inicio do CSS da página de busca*/
 * {
   margin: 0;
@@ -3721,7 +3966,6 @@ body {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
 body {
   background-color: #f8f8f8;
   padding-top: 0;
@@ -3730,7 +3974,6 @@ body {
   min-height: 100vh;
 }
 
-/* Container principal da busca */
 .container_pagina_de_busca {
   background: white;
   padding: 20px;
@@ -3828,10 +4071,6 @@ body {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   min-width: 250px;
   flex-shrink: 0;
   transition: transform 0.3s;
@@ -3846,26 +4085,32 @@ body {
   border-radius: 5px;
   height: 180px;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
-.lote-card p {
-  margin: 5px 0;
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas */
+  gap: 5px 10px;
+  text-align: right;
 }
 
-.lote-card button {
-  padding: 10px;
-  background: #28a745;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 100%;
-  margin-top: 10px;
-  transition:  0.3s;
+.info-grid p {
+  margin: 0;
+  font-size: 0.9em;
 }
 
-.lote-card button:hover {
-  background: #218838;
+.info-grid p:nth-child(odd) {
+  font-weight: bold;
+  text-align: left;
+}
+
+.preco {
+  display: flex;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 /* Paginação na parte inferior */
