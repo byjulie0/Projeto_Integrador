@@ -1198,3 +1198,116 @@ main {
   cursor: pointer;
 }
 /* FINAL PG ADM - MATHEUS*/
+
+/* Começo do CSS do Verificar e Administrar Pedidos - Denyel */
+.verificar_administrar_pedidos_body {
+  display: grid;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.verificar_administrar_pedidos_content{
+  margin: 50px;
+  margin-bottom: 10%;
+}
+
+.verificar_administrar_pedidos_sessao_bloco{
+  position: relative;
+  left: 2%;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.verificar_administrar_pedidos_sessao_formulario_pesquisa input{
+  max-width: 100%;
+  width: 70%;
+  height: 5vh;
+  border-radius: 20px;
+  outline: none;
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.verificar_administrar_pedidos_sessao_formulario_pesquisa input::placeholder{
+  color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_seta_voltar {
+  color: var(--color-primary-1);
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_info h1, h3{
+  color: var(--color-primary-1);
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: 87%;
+}
+
+.verificar_administrar_pedidos_sessao_divisao{
+  margin-left: 20px;
+  max-width: 100%;
+  width: 95%;
+  margin-bottom: 1.5%;
+}
+
+.verificar_administrar_pedidos_sessao_visualizar{
+  margin-left: 2%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos{
+  display: flex;
+  gap: 2%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_img h5{
+  color: var(--color-primary-1);
+  font-size: 1rem;
+  margin-bottom: 5%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_img img{
+  max-width: 100%;
+  width: 100%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_info{
+  color: var(--color-primary-1);
+  position: relative;
+  top: 4vh;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_info_item{
+  font-size: 1rem;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_info h5{
+  font-size: 1rem;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_info h6{
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_form button{
+  margin-top: 5%;
+  max-width: 100%;
+  width: 70%;
+  height: 5vh;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--color-primary-3);
+  color: #FFFFFF;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_form button:hover{
+  background-color: #FFFFFF;
+  color: var(--color-primary-3);
+  border: 2px solid var(--color-primary-3);
+}
+
+
+/* Fim do CSS do Verificar e Administrar Pedidos - Denyel */

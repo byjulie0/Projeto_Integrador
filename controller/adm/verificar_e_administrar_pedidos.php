@@ -1,5 +1,5 @@
 <?php
-include 'menu_pg_inicial.php';
+include '/PROJETO_INTEGRADOR/controller/cliente/menu_pg_inicial.php';
 ?>
 
 
@@ -9,7 +9,8 @@ include 'menu_pg_inicial.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
-    <link rel="stylesheet" href="../view/public/css/cliente.css">
+    <link rel="stylesheet" href="/PROJETO_INTEGRADOR/view/public/css/adm.css">
+    <link rel="stylesheet" href="/PROJETO_INTEGRADOR/view/public/css/cliente.css">
     <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid">
 </head>
 <body class="verificar_administrar_pedidos_body">
@@ -34,7 +35,7 @@ include 'menu_pg_inicial.php';
             <div class="verificar_administrar_pedidos_sessao_pedidos">
                 <div class="verificar_administrar_pedidos_sessao_pedidos_img">
                     <h5>Pedido XXXXXXXXXX</h5>
-                    <img src="../view/public/Imagens/Rectangle 195.png" alt="">
+                    <img src="/PROJETO_INTEGRADOR/view/public/imagens/Rectangle 195.png" alt="">
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_pedidos_info">
                     <h5>Boi Tal</h5>
@@ -54,5 +55,5 @@ include 'menu_pg_inicial.php';
 </html>
 
 <?php
-include 'footer_cliente.php';
+include '/PROJETO_INTEGRADOR/controller/adm/footer_adm.php';
 ?>
