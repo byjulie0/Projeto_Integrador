@@ -1,5 +1,7 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +42,7 @@
                     </div>
                     <div class="product-informations-informacoes-pedidos">
                         <div class="img-and-label-informacoes-pedidos">
-                            <img src="../View/Public/Imagens/Rectangle 195.png" alt="">
+                            <img src="../..//View/Public/Imagens/Rectangle 195.png" alt="">
                             <div class="informations-informacoes-pedidos">
                                 <span class="type-informacoes-pedidos">
                                     Galináceo
@@ -76,20 +78,20 @@
                             <button>Cancelar pedido</button>
                         </div>
                         <div class="right-buttons-informacoes-pedidos">
-                            <button>Registrar pagamento</button>
-                            <button>Marcar como enviado</button>
+                            <button class="register-payment-btn-informacoes-pedidos">Registrar pagamento</button>
+                            <button class="mark-as-sent-btn-informacoes-pedidos">Marcar como enviado</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="second-container-informacoes-pedidos">
                 <div class="client-data-card-informacoes-pedidos">
-                    <span>
+                    <span id="client-data-title-span-informacoes-pedidos">
                         Dados do cliente
                     </span>
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-user"></i>
-                        <span class="data-type">
+                        <span class="client-data-type-informacoes-pedidos">
                             Nome:
                         </span>
                         <span class="client-data-informacoes-pedidos">
@@ -99,7 +101,7 @@
                     
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-lock"></i>
-                        <span class="data-type">
+                        <span class="client-data-type-informacoes-pedidos">
                             CPF/CNPJ:
                         </span>
                         <span class="client-data-informacoes-pedidos">
@@ -109,7 +111,7 @@
 
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-envelope"></i>
-                        <span class="data-type">
+                        <span class="client-data-type-informacoes-pedidos">
                             E-mail:
                         </span>
                         <span class="client-data-informacoes-pedidos">
@@ -119,7 +121,7 @@
 
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-phone"></i>
-                        <span class="data-type">
+                        <span class="client-data-type-informacoes-pedidos">
                             Telefone:
                         </span>
                         <span class="client-data-informacoes-pedidos">
@@ -129,7 +131,7 @@
 
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-shopping-cart"></i>
-                        <span class="data-type">
+                        <span class="client-data-type-informacoes-pedidos">
                             Compras efetuadas pelo usuário:
                         </span>
                         <span class="client-data-informacoes-pedidos">
@@ -138,12 +140,12 @@
                     </div>
                 </div>
                 <div class="delivery-adress-informacoes-pedidos">
-                    <span>
+                    <span id="client-data-title-span-informacoes-pedidos">
                         Endereço de entrega
                     </span>
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-user"></i>
-                        <span class="data-type">
+                        <span class="client-data-type-informacoes-pedidos">
                             Destinatário:
                         </span>
                         <span class="client-data-informacoes-pedidos">
