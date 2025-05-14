@@ -1099,3 +1099,193 @@ body {
   font-weight: 600;
   font-size: 18px;
 }
+
+/* INICIO PG PERFIL ADM - MATHEUS */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  align-items: center;
+}
+
+.seta-voltar-math-adm {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 64px;
+  text-decoration: none;
+  color: black;
+}
+
+.seta-voltar-math-adm:hover {
+  color: blue;
+}
+
+main {
+  padding: 30px;
+  text-align: center;
+}
+
+.perfil-math-adm {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /*distancia entre a foto e o formulario */
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.avatar-math-adm img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.avatar-math-adm {
+  text-align: center;
+}
+
+.dados-math-adm {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Cria 2 colunas */
+  gap: 5px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: left;
+  min-width: 700px;
+  height:350px;
+  align-items: center;
+}
+
+.dados-math-adm h3 {
+  
+  margin-bottom: 25px;
+}
+
+.botoes-math-adm {
+  position:absolute;
+  margin-top: 30px;
+  width: 300px;
+  height: 700px;
+  top:550px
+}
+.meus_dados-math-adm{
+  display:flex;
+  position:absolute;
+  margin-top: -25px;
+  top:145px;
+  left:800px;
+  color: black;
+}
+
+.editar-math-adm {
+  background-color: #3aaf4f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.logout-math-adm {
+ 
+  
+  background-color: #f7a8a8;
+  color: rgb(198, 42, 42);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* RESPONSIvidade da pg perfiladm */
+
+@media (max-width: 768px) {
+  /* Tablet */
+  
+  .perfil-math-adm {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .avatar-math-adm img {
+    width: 150px;
+  }
+
+  .dados-math-adm {
+    grid-template-columns: 1fr; /* Uma coluna em vez de duas */
+    min-width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+
+  .botoes-math-adm {
+    position: static;
+    margin-top: 40px;
+    width: 100%;
+    height: auto;
+    top: auto;
+  }
+
+  .meus_dados-math-adm {
+    position: static;
+    margin-top: 10px;
+    top: auto;
+    left: auto;
+    text-align: center;
+  }
+
+  .editar-math-adm, .logout-math-adm {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Celular */
+  
+  body {
+    padding: 10px;
+  }
+
+  .perfil-math-adm {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .avatar-math-adm img {
+    width: 120px;
+  }
+
+  .dados-math-adm {
+    grid-template-columns: 1fr; /* Uma coluna */
+    min-width: 100%;
+    padding: 15px;
+    height: auto;
+  }
+
+  .botoes-math-adm {
+    position: static;
+    width: 100%;
+    height: auto;
+    top: auto;
+    margin-top: 20px;
+  }
+
+  .meus_dados-math-adm {
+    position: static;
+    margin-top: 5px;
+    top: auto;
+    left: auto;
+    text-align: center;
+  }
+
+  .editar-math-adm, .logout-math-adm {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+/* FINAL PG ADM - MATHEUS*/
