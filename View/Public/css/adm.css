@@ -1231,6 +1231,7 @@ main {
   padding: 20px;
   font-size: 1rem;
   font-weight: 500;
+  margin-left: -28%;
 }
 
 .verificar_administrar_pedidos_sessao_formulario_pesquisa input::placeholder{
@@ -1241,6 +1242,9 @@ main {
   color: var(--color-primary-1);
   font-size: 1.7rem;
   cursor: pointer;
+  position: relative;
+  top: -2vh;
+  margin-left: -100%;
 }
 
 .verificar_administrar_pedidos_sessao_bloco_info h1, h3{
@@ -1248,6 +1252,8 @@ main {
   margin-bottom: 20px;
   max-width: 100%;
   width: 87%;
+  font-weight: 500;
+  text-align: left;
 }
 
 .verificar_administrar_pedidos_sessao_divisao{
@@ -1281,6 +1287,7 @@ main {
   color: var(--color-primary-1);
   position: relative;
   top: 4vh;
+  text-align: left;
 }
 
 .verificar_administrar_pedidos_sessao_pedidos_info_item{
