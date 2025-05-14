@@ -11,10 +11,11 @@
 <nav class="menu_login">
     <div class="info_menu_login">
         <div class="logo_menu_login">
-            <img src="..../view/public/imagens/img_logofabrica.png" alt="Logo John Rooster">
+            <img src="../../View/Public/Imagens/img_logofabrica.png" alt="Logo John Rooster">
         </div>
         <p class="nome_menu_login">John Rooster - Login</p>
     </div>
 </nav>
 </body>
 </html>
+View\Public\Imagens\img_logofabrica.png

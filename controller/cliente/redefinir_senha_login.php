@@ -10,11 +10,10 @@ include 'menu_recuperar_senha.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redefinir senha login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="..\View\public\css\cliente.css">
-    <link rel="stylesheet" href="View\js\pop_up_redefinir_senha.js">
+    <script defer src="../../View/js/pop_up_redefinir_senha.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
-<body class="recuperar_senha_codigo_body">
+<body class="body_redefinir_senha_login">
 
     <section class="rede_senha_section">
         <a href="recuperar_senha_codigo.php" class="recuperar_senha_codigo_seta_voltar">
@@ -25,8 +24,11 @@ include 'menu_recuperar_senha.php';
                 <h1>Redefinir senha</h1>
                 <h3>Escolha sua nova senha </h3>
                 <form action="" class="form_rede_senha" id="formRedefinirSenha">
-                    <input type="password" pattern="[A-Za-z0-9@#$%&*]" minlength="8" required placeholder="Nova senha" id="novaSenha">
-                    <input type="password" pattern="[A-Za-z0-9@#$%&*]" minlength="8" required placeholder="Confirmar nova senha" id="confirmarSenha">
+                <!-- pattern="[A-Za-z0-9@#$%&*]" -->
+                    <input type="password" minlength="8" required placeholder="Nova senha" id="novaSenha">
+                    <!-- <i class="fa-solid fa-eye toggle-password" id="toggleSenha"></i> -->
+                    <input type="password" minlength="8" required placeholder="Confirmar nova senha" id="confirmarSenha" >
+                    <!-- <i class="fa-solid fa-eye toggle-password" id="toggleSenha"></i> -->
                     <hr class="linha_login">
                     <button type="submit" id="btnEnviar">Enviar</button>
                 </form>

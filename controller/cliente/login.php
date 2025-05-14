@@ -1,5 +1,5 @@
 <?php 
-include '../controller/menu_login.php';
+include 'menu_login.php';
 ?>
 
 <!DOCTYPE html>
@@ -34,14 +34,14 @@ include '../controller/menu_login.php';
                     </div>
 
                     <button type="submit" class="button_vinycius">LOGIN</button>
-                    <a href="../controller/card_email.php">Esqueci minha senha</a>
+                    <a href="card_email.php">Esqueci minha senha</a>
                     <span class="texto1">Não tem conta? <a href="../controller/formulario_cadastro.php" class="texto1">Cadastre-se</a></span>
                 </form>
             </div>
         </div>
     </main>
    
-    <?php include '../controller/footer_cliente.php'; ?>
+    <?php include 'footer_cliente.php'; ?>
 
     <script>
     function toggleSenha() {
