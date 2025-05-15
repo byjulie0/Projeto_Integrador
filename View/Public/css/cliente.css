@@ -3994,11 +3994,11 @@ body {
 
 .container_pagina_de_busca {
   background: white;
-  padding: 20px;
+  padding: 25px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
-  max-width: 95%;
+  width: 95%;
   flex: 1;
   position: relative;
   margin-top: 35px;
@@ -4183,6 +4183,7 @@ body {
   color: var(--color-primary-1);
   font-size: 1.5rem;
 }
+
 /* Fim do CSS da página de busca */
 
 /* Inicio pop_up_redefinir_senha */
