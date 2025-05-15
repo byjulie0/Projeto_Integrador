@@ -1447,15 +1447,39 @@ main {
   border: 2px solid var(--color-primary-3);
 }
 
+/* Tablet */
+
+@media (max-width: 1080px){
+  .verificar_administrar_pedidos_sessao_pedidos_img h5{
+    text-align: left;
+  }
+  .verificar_administrar_pedidos_sessao_divisao{
+    margin-bottom: 5%;
+  }
+}
+
 /* Mobile */
 
-@media (max-width: 768px){
+@media (max-width: 480px){
+  .verificar_administrar_pedidos_sessao_pedidos{
+    display: flex;
+    flex-direction: column;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos_img img{
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .verificar_administrar_pedidos_sessao_bloco_info h1, h3{
+    font-size: 1rem;
+    font-weight: 600;
+  }
   .verificar_administrar_pedidos_sessao_pedidos_info_item{
     font-size: 0.8rem;
     font-weight: 600;
   }
   .verificar_administrar_pedidos_sessao_pedidos_img h5{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     text-align: left;
   }
   .verificar_administrar_pedidos_sessao_divisao{
@@ -1463,6 +1487,9 @@ main {
   }
   .verificar_administrar_pedidos_sessao_formulario_pesquisa input{
     font-size: 0.8rem;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos_info h5{
+    font-size: 0.9rem;
   }
 }
 
