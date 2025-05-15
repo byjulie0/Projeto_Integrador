@@ -884,6 +884,8 @@ body {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
+  background-size: cover;
+  /* height: 100vh; */
   padding: 50px 100px;
 }
 
@@ -953,6 +955,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100%;
   align-items: center;
   justify-content: space-between;
   gap: 25px;
@@ -966,7 +969,6 @@ body {
 
 .product-card-informacoes-pedidos {
   border: 1px solid #20261e;
-  padding: 15px 25px;
   border-radius: 10px;
   align-items: flex-start;
   justify-content: center;
@@ -976,7 +978,9 @@ body {
 }
 
 .product-title {
+  margin: 25px 0px 0px 25px;
   width: 100%;
+
 }
 
 .product-title span {
@@ -991,6 +995,7 @@ body {
   background-color: #fb666677;
   padding: 5px 15px;
   border-radius: 5px;
+  margin-left: 25px;
 }
 
 .minor-label-informacoes-pedidos span {
@@ -1014,6 +1019,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 25px;
+  margin-left: 25px;
 }
 
 .img-and-label-informacoes-pedidos img {
@@ -1079,6 +1085,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-right: 25px;
 }
 
 .parcelas-informacoes-pedidos {
@@ -1098,6 +1105,126 @@ body {
   color: var(--color-fonte);
   font-weight: 600;
   font-size: 18px;
+}
+
+.buttons-area-informacoes-pedidos {
+  background-color: #ebf4eb;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  border-top: 1px solid #20261e;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.left-buttons-informacoes-pedidos {
+  width: 35%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.left-buttons-informacoes-pedidos button {
+  background: none;
+  border: none;
+  color: var(--warning-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.right-buttons-informacoes-pedidos {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.register-payment-btn-informacoes-pedidos {
+  background: none;
+  border: none;
+  color: #20261e;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mark-as-sent-btn-informacoes-pedidos {
+  background: none;
+  background-color: #2d8c37;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+#second-container-informacoes-pedidos {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 25px;
+}
+
+.client-data-card-informacoes-pedidos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #20261e;
+  padding: 25px;
+  border-radius: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: #20261e;
+}
+
+#client-data-title-span-informacoes-pedidos {
+  color: var(--color-fonte);
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.client-data-spans-informacoes-pedidos {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 5px;
+}
+
+.client-data-spans-informacoes-pedidos i {
+  color: #841313;
+}
+
+.client-data-type-informacoes-pedidos {
+  font-weight: 500;
+}
+
+.delivery-adress-informacoes-pedidos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #20261e;
+  padding: 25px;
+  border-radius: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.adress-informacoes-pedidos {
+  font-weight: 500;
 }
 
 /* INICIO PG PERFIL ADM - MATHEUS */

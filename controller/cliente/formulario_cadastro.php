@@ -46,7 +46,7 @@
                 Ao se inscrever, você concorda com as políticas do John Rooster <a href="#" class="termos-privacidade-cadastro">Termos de serviço & Políticas de privacidade</a>
             </p>
             <p class="area-login-cadastro">
-                Já tem uma conta? <a href="#" class="login-cadastro">Entre</a>
+                Já tem uma conta? <a href="login.php" class="login-cadastro">Entre</a>
             </p>
         </div>
     </main>
