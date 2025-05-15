@@ -4062,13 +4062,20 @@ body {
   text-align: left;
 }
 
+.area-atualizar-infos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
 .form-container-atualizar-infos {
   max-width: 900px;
-  margin: 50px auto;
+  width: 100%;
   background: #ffffff;
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
@@ -4085,6 +4092,10 @@ body {
   text-align: center;
   color: #2e4d2e;
   margin-bottom: 30px;
+}
+
+.form-atualizar-infos {
+  width: 100%;
 }
 
 .form-grid-atualizar-infos {
@@ -4107,7 +4118,7 @@ label {
   font-weight: bold;
 }
 
-.input-atualizar-infos{
+.input-atualizar-infos {
   padding: 10px;
   font-size: 16px;
   border: 2px solid #628b5d;
