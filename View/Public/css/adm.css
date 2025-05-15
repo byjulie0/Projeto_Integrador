@@ -1320,6 +1320,25 @@ main {
   border: 2px solid var(--color-primary-3);
 }
 
+/* Mobile */
+
+@media (max-width: 768px){
+  .verificar_administrar_pedidos_sessao_pedidos_info_item{
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos_img h5{
+    font-size: 0.8rem;
+    text-align: left;
+  }
+  .verificar_administrar_pedidos_sessao_divisao{
+    margin-bottom: 10%;
+  }
+  .verificar_administrar_pedidos_sessao_formulario_pesquisa input{
+    font-size: 0.8rem;
+  }
+}
+
 
 /* Fim do CSS do Verificar e Administrar Pedidos - Denyel */
 
