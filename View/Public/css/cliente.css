@@ -4046,3 +4046,107 @@ body {
   }
 }
 /* Fim pop_up_redefinir_senha */
+
+/*inicio atualizar infos - Mariana */
+
+.area-atualizar-infos{
+  background-color: white;
+  font-family: 'Poppins';
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 30px;
+  margin-top: 32px;
+  text-align: left;
+}
+
+.form-container-atualizar-infos {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.back-arrow-atualizar-infos {
+  text-decoration: none;
+  font-size: 24px;
+  color: green;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.h2-atualizar-infos {
+  text-align: center;
+  color: #2e4d2e;
+  margin-bottom: 30px;
+}
+
+.form-grid-atualizar-infos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.form-group-atualizar-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-atualizar-infos.full-width {
+  grid-column: span 2;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-atualizar-infos{
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #628b5d;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.warning-atualizar-infos {
+  font-size: 12px;
+  color: #aa0000;
+  margin-top: 20px;
+}
+
+.buttons-atualizar-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.link-btn-atualizar-infos {
+  color: #2e8b57;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.submit-btn-atualizar-infos {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn-atualizar-infos:hover {
+  background-color: #276c46;
+}
+
+
+/*inicio atualizar infos - Mariana */
