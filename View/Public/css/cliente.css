@@ -3837,11 +3837,21 @@ body {
 /*Fim inserir senha alterar dados Arthur*/
 
 /* Inicio pg redefinir senha login Lara*/
+.body_redefinir_senha_login{
+  background-color: #F7F7F7;
+  display: block;
+  place-items: center;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  box-sizing: border-box;
+}
 .rede_senha_section{
   position: relative;
-  margin-top: 10%;
   width: 100%;
   max-width: 800px;
+  margin-top: 50px;
+  margin-bottom: 5%;
+  padding: 0 20px;
 }
 .rede_senha_nav {
   position: relative;
