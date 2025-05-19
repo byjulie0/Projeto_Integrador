@@ -35,12 +35,12 @@ include 'menu_login.php';
 
                     <button type="submit" class="button_vinycius">LOGIN</button>
                     <a href="card_email.php">Esqueci minha senha</a>
+                    <span class="texto1">Não tem conta? <a href="../controller/formulario_cadastro.php" class="texto1">Cadastre-se</a></span>
                     <span class="texto1">Não tem conta? <a href="formulario_cadastro.php" class="texto1">Cadastre-se</a></span>
                 </form>
             </div>
         </div>
     </main>
-   
     <?php include 'footer_cliente.php'; ?>
 
     <script>
