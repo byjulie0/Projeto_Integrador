@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../../view/public/css/adm.css">
 </head>
-<body class="body-add-produtos-2-etapa">
-    <div class="area-titulo-add-produtos-2-etapa">
-        <a href="adicionar_produto.php" class="icon-voltar-add-produtos-2-etapa">
-            <i class="fa-solid fa-chevron-left"></i>
+<body class="body_add_product">
+    <div class="title_page_add_product">
+        <a href="#" class="arrow_add_product">
+            <i class="fa-solid fa-chevron-left">
+            </i>
         </a>
-        <h1 class="titulo-add-produtos-2-etapa">Adicionar Produto</h1>
+        <h1 class="tile_add_product">Adicionar Produto</h1>
     </div>
-    <p class="info-add-produtos-2-etapa">Preencha as informações necessárias e adicione produtos ao catálogo do site</p>
-    <section class="area-add-produto-2-etapa">
-        <div class="area-add-imagem-add-produtos-2-etapa">
-            <label class="title-add-foto-add-produtos-2-etapa">Carregar mais imagens do produtos<span>(opcional)</span></label>
-            <input type="file" accept="image/*">
-        </div>
-        <div class="area-detalhes-add-produtos-2-etapa">
-            <h3 class="titulo-detalhe-produto-add-produtos-2-etapa">Especifique o produto<span>*</span></h3>
-            <div class="coluna-detalhes-add-produtos-2-etapa">
-                <div class="input-add-produtos-2-etapa">
-                    <label class="label-input-add-produtos-2-etapa">Raça<span>*</span></label>
-                    <select name="racas" id="racas" class="selecao-input-add-produtos-2-etapa" required>
-                        <option value="" selected disabled>Selecione uma raça</option>
+    <p class="info_add_product">Preencha as informações necessárias e adicione produtos ao catálogo do site</p>
+    <section class="add_product_area">
+        <article class="add_product_image">
+            <p class="product_title_info">Carregar mais imagens do produto<span class="mandatory_space"> (opcional)</span></p>
+            <div class="img_holder">
+                <label class="img_holder_button">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    <span>Selecionar e fazer upload</span>
+                    <input type="file" accept="image/*" style="display: none;">
+                </label>
+            </div>
+        </article>
+        <aside class="add_product_details">
+            <div class="product_details_collumn">
+                <article class="input_product_name">
+                    <p class="product_title_info">Insira o nome do produto<span class="mandatory_space">*</span></p>
+                    <input type="text" class="input_product_info" placeholder="Titulo" required>
+                    <span class="error-message">Por favor, preencha este campo</span>
+                </article>
+                <article class="input_product_category">
+                    <p class="product_title_info">Selecione a categoria a qual o produto pertence<span
+                            class="mandatory_space">*</span></p>
+                    <select name="categories" id="categories" class="product_info_select" required>
+                        <option value="" selected disabled>Selecione uma categoria</option>
                         <option value="bovinos" class="product_categories">Bovinos</option>
                         <option value="equinos" class="product_categories">Equinos</option>
                         <option value="galinaceos" class="product_categories">Galináceos</option>
                         <option value="premiados" class="product_categories">Premiados</option>
                         <option value="produtos_gerais" class="product_categories">Produtos Gerais</option>
                     </select>
-                    <span class="error-message">Por favor, selecione uma raça</span>
-                </div>
+                    <span class="error-message">Por favor, selecione uma categoria</span>
+                </article>
                 <article class="input_product_subcategory">
                     <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span
                             class="mandatory_space">*</span></p>
@@ -100,7 +113,14 @@
                     <input type="text" placeholder="Digite aqui" class="input_product_info product_details" required>
                 </article>
             </div>
-        </div>
+        </aside>
     </section>
+    <div class="add_product_submit_button">
+        <button type="submit" class="add_product_button">
+            Avançar
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
 </body>
+
 </html>
