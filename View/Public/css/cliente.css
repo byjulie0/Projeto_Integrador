@@ -3659,6 +3659,7 @@ body {
 /* Fim do CSS e privacidade e segurança*/
 
 /*Começo inserir senha alterar dados Arthur*/
+
 .body-arthura {
   background-color: #f5f5f5;
   font-family: sans-serif;
@@ -3836,21 +3837,11 @@ body {
 /*Fim inserir senha alterar dados Arthur*/
 
 /* Inicio pg redefinir senha login Lara*/
-.body_redefinir_senha_login{
-  background-color: #F7F7F7;
-  display: block;
-  place-items: center;
-  font-family: 'Poppins', sans-serif;
-  height: 100%;
-  box-sizing: border-box;
-}
 .rede_senha_section{
   position: relative;
-  margin-top: 50px;
-  margin-bottom: 5%;
+  margin-top: 10%;
   width: 100%;
   max-width: 800px;
-  padding: 0 20px;
 }
 .rede_senha_nav {
   position: relative;

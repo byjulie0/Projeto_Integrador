@@ -884,6 +884,8 @@ body {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
+  background-size: cover;
+  /* height: 100vh; */
   padding: 50px 100px;
 }
 
@@ -953,6 +955,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100%;
   align-items: center;
   justify-content: space-between;
   gap: 25px;
@@ -966,7 +969,6 @@ body {
 
 .product-card-informacoes-pedidos {
   border: 1px solid #20261e;
-  padding: 15px 25px;
   border-radius: 10px;
   align-items: flex-start;
   justify-content: center;
@@ -976,7 +978,9 @@ body {
 }
 
 .product-title {
+  margin: 25px 0px 0px 25px;
   width: 100%;
+
 }
 
 .product-title span {
@@ -991,6 +995,7 @@ body {
   background-color: #fb666677;
   padding: 5px 15px;
   border-radius: 5px;
+  margin-left: 25px;
 }
 
 .minor-label-informacoes-pedidos span {
@@ -1014,6 +1019,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 25px;
+  margin-left: 25px;
 }
 
 .img-and-label-informacoes-pedidos img {
@@ -1079,6 +1085,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-right: 25px;
 }
 
 .parcelas-informacoes-pedidos {
@@ -1098,6 +1105,126 @@ body {
   color: var(--color-fonte);
   font-weight: 600;
   font-size: 18px;
+}
+
+.buttons-area-informacoes-pedidos {
+  background-color: #ebf4eb;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  border-top: 1px solid #20261e;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.left-buttons-informacoes-pedidos {
+  width: 35%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.left-buttons-informacoes-pedidos button {
+  background: none;
+  border: none;
+  color: var(--warning-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.right-buttons-informacoes-pedidos {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.register-payment-btn-informacoes-pedidos {
+  background: none;
+  border: none;
+  color: #20261e;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mark-as-sent-btn-informacoes-pedidos {
+  background: none;
+  background-color: #2d8c37;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+#second-container-informacoes-pedidos {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 25px;
+}
+
+.client-data-card-informacoes-pedidos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #20261e;
+  padding: 25px;
+  border-radius: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: #20261e;
+}
+
+#client-data-title-span-informacoes-pedidos {
+  color: var(--color-fonte);
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.client-data-spans-informacoes-pedidos {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 5px;
+}
+
+.client-data-spans-informacoes-pedidos i {
+  color: #841313;
+}
+
+.client-data-type-informacoes-pedidos {
+  font-weight: 500;
+}
+
+.delivery-adress-informacoes-pedidos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #20261e;
+  padding: 25px;
+  border-radius: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.adress-informacoes-pedidos {
+  font-weight: 500;
 }
 
 /* INICIO PG PERFIL ADM - MATHEUS */
@@ -1201,6 +1328,181 @@ main {
   cursor: pointer;
 }
 
+/* FINAL PG ADM - MATHEUS*/
+
+/* Começo do CSS do Verificar e Administrar Pedidos - Denyel */
+.verificar_administrar_pedidos_body {
+  display: grid;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.verificar_administrar_pedidos_content{
+  margin: 50px;
+  margin-bottom: 10%;
+}
+
+.verificar_administrar_pedidos_sessao_bloco{
+  position: relative;
+  left: 2%;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.verificar_administrar_pedidos_sessao_formulario_pesquisa input{
+  max-width: 100%;
+  width: 70%;
+  height: 5vh;
+  border-radius: 20px;
+  outline: none;
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: -28%;
+}
+
+.verificar_administrar_pedidos_sessao_formulario_pesquisa input::placeholder{
+  color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_seta_voltar {
+  color: var(--color-primary-1);
+  font-size: 1.7rem;
+  cursor: pointer;
+  position: relative;
+  top: -2vh;
+  margin-left: -100%;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_info h1, h3{
+  color: var(--color-primary-1);
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: 87%;
+  font-weight: 500;
+  text-align: left;
+}
+
+.verificar_administrar_pedidos_sessao_divisao{
+  margin-left: 20px;
+  max-width: 100%;
+  width: 95%;
+  margin-bottom: 1.5%;
+}
+
+.verificar_administrar_pedidos_sessao_visualizar{
+  margin-left: 2%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos{
+  display: flex;
+  gap: 2%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_img h5{
+  color: var(--color-primary-1);
+  font-size: 1rem;
+  margin-bottom: 5%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_img img{
+  max-width: 100%;
+  width: 100%;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_info{
+  color: var(--color-primary-1);
+  position: relative;
+  top: 4vh;
+  text-align: left;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_info_item{
+  font-size: 1rem;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_info h5{
+  font-size: 1rem;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_info h6{
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_form button{
+  margin-top: 5%;
+  max-width: 100%;
+  width: 70%;
+  height: 5vh;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--color-primary-3);
+  color: #FFFFFF;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos_form button:hover{
+  background-color: #FFFFFF;
+  color: var(--color-primary-3);
+  border: 2px solid var(--color-primary-3);
+}
+
+/* Tablet */
+
+@media (max-width: 1080px){
+  .verificar_administrar_pedidos_sessao_pedidos_img h5{
+    text-align: left;
+  }
+  .verificar_administrar_pedidos_sessao_divisao{
+    margin-bottom: 5%;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px){
+  .verificar_administrar_pedidos_sessao_pedidos{
+    display: flex;
+    flex-direction: column;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos_img img{
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos_img h5{
+    font-size: 0.8rem;
+    text-align: left;
+  }
+  .verificar_administrar_pedidos_sessao_bloco_info h1, h3{
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos_info_item{
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .verificar_administrar_pedidos_sessao_divisao{
+    margin-bottom: 10%;
+  }
+  .verificar_administrar_pedidos_sessao_formulario_pesquisa input{
+    font-size: 0.8rem;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos_info{
+    font-size: 0.8rem;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos_info h5{
+    font-size: 0.9rem;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos_form  button{
+    font-size: 0.8rem;
+    width: 50%;
+  }
+}
+
+
+/* Fim do CSS do Verificar e Administrar Pedidos - Denyel */
+
 /* RESPONSIvidade da pg perfiladm */
 
 @media (max-width: 768px) {
@@ -1288,4 +1590,5 @@ main {
     margin: 8px 0;
   }
 }
-/* FINAL PG ADM - MATHEUS*/
+
+
