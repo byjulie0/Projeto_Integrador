@@ -45,8 +45,6 @@ body {
   width: 100%;
   background-color: #F7F9FF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  z-index: 1;
 }
 
 .menu-content-pg-inicial {
@@ -3978,7 +3976,7 @@ body {
 
 
 /* Inicio do CSS da página de busca*/
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -3990,7 +3988,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
+} */
 
 .container_pagina_de_busca {
   background: white;
@@ -4004,37 +4002,59 @@ body {
   margin-top: 35px;
   margin-bottom: 40px;
 }
+
 .h2-pag-busca {
   margin: 0;
   display: inline-block;
   padding-bottom: 13px;
 }
 
-/* Estilização da seção de filtros */
+/* Seção de filtros ajustada */
 .filtros-container {
   margin-top: 15px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  padding: 10px;
+  padding: 12px 15px;
   margin-bottom: 15px;
   background: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .filtros-titulo {
   font-weight: bold;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  margin-right: 5px;
 }
 
 .filtro-btn, .filtro-select {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border: 1px solid #e0e0e0;
   background: white;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .filtro-btn:hover, .filtro-select:hover {
-  background: #f0f0f0;
+  background: #f7f7f7;
+  border-color: #ccc;
+}
+
+.filtro-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  padding-right: 28px;
 }
 
 /* Container dos lotes com navegação por setas */
@@ -4045,7 +4065,7 @@ body {
 
 .lotes_container_pagina_de_busca {
   display: flex;
-  overflow-x: hidden; /* Esconde a barra de scroll */
+  overflow-x: hidden;
   gap: 20px;
   padding: 15px 0;
   scroll-behavior: smooth;
@@ -4108,7 +4128,7 @@ body {
 
 .info-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Duas colunas */
+  grid-template-columns: 1fr 1fr;
   gap: 5px 10px;
   text-align: right;
 }
@@ -4124,64 +4144,166 @@ body {
 }
 
 .preco {
-  display: flex;
+  grid-column: 1 / -1;
   text-align: center;
   margin-top: 8px;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #2a7f40;
 }
 
-/* Paginação na parte inferior */
-.paginacao-wrapper {
-  background: white;
-  padding: 15px;
-  margin: 20px auto;
-  max-width: 95%;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-}
-
-.paginacao-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.pagina-texto {
-  font-weight: bold;
-}
-
-.paginacao-btn {
-  background: none;
-  border: 1px solid #ccc;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.paginacao-btn:hover {
-  background: #f0f0f0;
-}
-
-.pagina-atual {
-  font-weight: bold;
-  font-size: 18px;
-}
 .btn-voltar {
   display: inline-flex;
   align-items: center;
   margin-right: 10px;
   vertical-align: middle;
   text-decoration: none;
-
 }
 
 .btn-voltar i {
   color: var(--color-primary-1);
   font-size: 1.5rem;
+}
+.lotes-wrapper {
+  position: relative;
+  margin-top: 20px;
+  overflow-x: auto; /* Adicionado para rolagem horizontal */
+  -webkit-overflow-scrolling: touch; /* Melhora rolagem no iOS */
+  scrollbar-width: none; /* Esconde barra de rolagem no Firefox */
+  padding-bottom: 10px; /* Espaço extra na parte inferior */
+}
+
+/* Esconde a barra de rolagem no Chrome/Safari */
+.lotes-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.lotes_container_pagina_de_busca {
+  display: flex;
+  gap: 20px;
+  padding: 15px 0;
+  width: max-content; /* Importante para rolagem horizontal */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 767px) {
+  .container_pagina_de_busca {
+    padding: 15px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+  
+  .filtros-container {
+    gap: 8px;
+    padding: 10px;
+  }
+  
+  .filtro-btn, .filtro-select {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .lotes_container_pagina_de_busca {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .lote-card {
+    min-width: 220px;
+  }
+  
+  .lote-card img {
+    height: 150px;
+  }
+  .lotes-wrapper {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .lotes_container_pagina_de_busca {
+    gap: 15px;
+    padding-bottom: 20px; /* Espaço para shadow dos cards */
+  }
+  
+  /* Esconde as setas de navegação no mobile */
+  .nav-button {
+    display: none;
+  }
+  
+  .lote-card {
+    min-width: 280px; /* Largura mínima dos cards no mobile */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lotes_container_pagina_de_busca {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: visible;
+    gap: 25px;
+  }
+  
+  .lote-card {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .nav-button {
+    display: none;
+  }
+  .lotes-wrapper {
+    overflow-x: visible; /* Remove rolagem horizontal no desktop */
+  }
+  
+  .lotes_container_pagina_de_busca {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%; /* Restaura largura normal */
+  }
+  
+  .lote-card {
+    width: 100%; /* Cards ocupam toda a largura do grid */
+  }
+}
+
+@media (min-width: 1440px) {
+  .lotes_container_pagina_de_busca {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .container_pagina_de_busca {
+    max-width: 1300px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .lotes_container_pagina_de_busca {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .container_pagina_de_busca {
+    max-width: 1600px;
+  }
+  
+  .lote-card img {
+    height: 220px;
+  }
+}
+
+/* Ajuste para telas muito pequenas (menos de 360px) */
+@media (max-width: 359px) {
+  .filtros-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filtro-btn, .filtro-select {
+    width: 100%;
+    border-radius: 5px;
+  }
 }
 
 /* Fim do CSS da página de busca */
