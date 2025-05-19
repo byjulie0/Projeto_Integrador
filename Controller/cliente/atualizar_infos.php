@@ -18,7 +18,7 @@
 <body >
     <section class= "area-atualizar-infos">
         <div class="form-container-atualizar-infos">
-        <a href="#" class="back-arrow-atualizar-infos">←</a>
+        <a href="#" class="back-arrow-atualizar-infos"><i class="bi bi-chevron-left"></i></a>
             <h2 class= "h2-atualizar-infos">Editar meus dados</h2>
 
             <form class= "form-atualizar-infos">
