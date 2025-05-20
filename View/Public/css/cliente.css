@@ -2325,167 +2325,301 @@ body {
 /* Fim do CSS do Menu Recuperar senha - JUlie*/
 
 /* Começo De Meu Perfil - Visualizar Dados*/
-.body-visualizar-dados{
+/* ===== BASE STYLES ===== */
+.body-visualizar-dados {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-.main-visualizar-dados{
-  padding: 40px 10%;
-}
-.visualizar-dados-title{
-  font-size: 2.25rem;
-  color: var(--color-primary-1);
-  font-weight: bold;
-}
-.visualizar-dados-title i{
-  color: var(--color-botao-op-Concluido);
-  margin-right: 30px;
-}
-.visualizar-dados-nome-email-img{
-  border: 2px solid var(--color-primary-1);
-  border-radius: 0.625rem;
-  max-height: 10.125rem;
-  display: flex;
-  flex-direction: row;
-  margin-top: 30px;
-  align-items: center;
-  padding: 15px 15px;
-}
-.visualizar-dados-img-perfil-div i{
-  font-size: 70px;
-  margin: 30px 50px;
-  color: var(--color-primary-1);
-  
-}
-.visualizar-dados-nome-email{
-  display: flex;
-  flex-direction: column;
-}
-.visualizar-dados-nome{
-  font-size: 1.5rem;
-  color: var(--color-primary-1);
-}
-.visualizarados-email{
-  font-size: 0.9rem;
-  color: var(--color-primary-1);
-}
-.visualizar-dados-geral{
-  border: 2px solid var(--color-primary-1);
-  border-radius: 0.625rem;
-  max-height: 18.5rem;
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-  align-items: center;
-  padding: 30px 30px;
-}
-.visualizar-dados-geral-title{
-  font-size: 1.8rem;
-  color: var(--color-primary-1);
-  margin-bottom: 30px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   width: 100%;
-}
-.visualizar-dados-geral0{
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-}
-.visualizar-dados-geral1{
-  width: 100%;
-  flex-direction: column;
-}
-.visualizar-dados-geral2{
-  width: 100%;
-  flex-direction: column;
-}
-.vizualizar-dados-geral-nome label{
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-primary-1);
-}
-.vizualizar-dados-geral-nome{
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: var(--color-primary-1);
-}
-.vizualizar-dados-geral-telefone label{
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-primary-1);
-}
-.vizualizar-dados-geral-telefone{
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: var(--color-primary-1);
-}
-.vizualizar-dados-geral-email label{
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-primary-1);
-}
-.vizualizar-dados-geral-email{
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: var(--color-primary-1);
-}
-.vizualizar-dados-geral-endereco label{
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-primary-1);
-}
-.vizualizar-dados-geral-endereco{
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: var(--color-primary-1);
-}
-.vizualizar-dados-geral-datanasc label{
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-primary-1);
-}
-.vizualizar-dados-geral-datanasc{
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: var(--color-primary-1);
-}
-.visualizar-dados-area-botoes{
-  margin-top: 20px;
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  gap: 20px;
-}
-.visualizar-dados-editar{
-  transition: all 0.3s;
-  cursor: pointer;
-  padding: 10px 5%;
-  color: var(--color-primary-7);
-  background-color: var(--color-botao-op-Concluido);
-  border: none;
-  border-radius: 0.625rem;
-  font-size: 1rem;
-}
-.visualizar-dados-logout{
-  transition: all 0.3s;
-  cursor: pointer;
-  padding: 10px 5%;
-  color: #fab7b7;
-  background-color: var(--color-botao-op-Cancelar);
-  border: none;
-  border-radius: 0.625rem;
-  font-size: 1rem;
-}
-.visualizar-dados-editar:hover{
-  color: var(--color-botao-op-Concluido);
-  background-color: var(--color-primary-7);
-  border: none;
-}
-.visualizar-dados-logout:hover{
-  color: var(--color-botao-op-Cancelar);
-  background-color: #fab7b7;;
-  border: none;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
 
+.main-visualizar-dados {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 20px 5%;
+  margin: 0 auto;
+}
+
+.visualizar-dados-title {
+  font-size: 1.5rem;
+  color: var(--color-primary-1);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.visualizar-dados-title i {
+  color: var(--color-botao-op-Concluido);
+  margin-right: 10px;
+}
+
+.visualizar-dados-nome-email-img {
+  border: 2px solid var(--color-primary-1);
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.visualizar-dados-img-perfil-div {
+  margin-bottom: 15px;
+}
+
+.visualizar-dados-img-perfil-div i {
+  font-size: 60px;
+  color: var(--color-primary-1);
+}
+
+.visualizar-dados-nome-email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.visualizar-dados-nome {
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+  margin-bottom: 5px;
+  word-break: break-word;
+}
+
+.visualizarados-email {
+  font-size: 0.9rem;
+  color: var(--color-primary-1);
+  word-break: break-word;
+}
+
+.visualizar-dados-geral {
+  border: 2px solid var(--color-primary-1);
+  border-radius: 0.625rem;
+  margin-top: 20px;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.visualizar-dados-geral-title {
+  font-size: 1.3rem;
+  color: var(--color-primary-1);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.visualizar-dados-geral0 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.vizualizar-dados-geral-nome,
+.vizualizar-dados-geral-telefone,
+.vizualizar-dados-geral-email,
+.vizualizar-dados-geral-endereco,
+.vizualizar-dados-geral-datanasc {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: var(--color-primary-1);
+  word-break: break-word;
+}
+
+.vizualizar-dados-geral-nome label,
+.vizualizar-dados-geral-telefone label,
+.vizualizar-dados-geral-email label,
+.vizualizar-dados-geral-endereco label,
+.vizualizar-dados-geral-datanasc label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+
+.visualizar-dados-area-botoes {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.visualizar-dados-editar,
+.visualizar-dados-logout {
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0.625rem;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 250px;
+  box-sizing: border-box;
+}
+
+.visualizar-dados-editar {
+  color: var(--color-primary-7);
+  background-color: var(--color-botao-op-Concluido);
+}
+
+.visualizar-dados-editar:hover {
+  color: var(--color-botao-op-Concluido);
+  background-color: var(--color-primary-7);
+}
+
+.visualizar-dados-logout {
+  color: #fab7b7;
+  background-color: var(--color-botao-op-Cancelar);
+}
+
+.visualizar-dados-logout:hover {
+  color: var(--color-botao-op-Cancelar);
+  background-color: #fab7b7;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Medium Mobile (360 x 800) */
+@media (min-width: 360px) {
+  .main-visualizar-dados {
+    padding: 20px 7%;
+    max-width: 360px;
+  }
+  
+  .visualizar-dados-nome-email-img {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .visualizar-dados-img-perfil-div {
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+  
+  .visualizar-dados-nome-email {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Large Mobile (390 x 844) */
+@media (min-width: 390px) {
+  .main-visualizar-dados {
+    max-width: 390px;
+  }
+  
+  .visualizar-dados-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Medium Tablet (768px - 1023px) */
+@media (min-width: 768px) {
+  .main-visualizar-dados {
+    max-width: 700px;
+    padding: 30px 40px;
+  }
+  
+  .visualizar-dados-title {
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  .visualizar-dados-img-perfil-div i {
+    font-size: 70px;
+  }
+  
+  .visualizar-dados-nome {
+    font-size: 1.5rem;
+  }
+  
+  .visualizarados-email {
+    font-size: 1rem;
+  }
+  
+  .visualizar-dados-geral-title {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+  
+  .visualizar-dados-geral0 {
+    flex-direction: row;
+    gap: 30px;
+  }
+  
+  .visualizar-dados-geral1,
+  .visualizar-dados-geral2 {
+    width: 50%;
+  }
+  
+  .visualizar-dados-area-botoes {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  .visualizar-dados-editar,
+  .visualizar-dados-logout {
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* Large Tablet (1024px - 1199px) */
+@media (min-width: 1024px) {
+  .main-visualizar-dados {
+    max-width: 900px;
+  }
+  
+  .visualizar-dados-img-perfil-div i {
+    font-size: 80px;
+  }
+}
+
+/* Medium Desktop (1440 x 900) */
+@media (min-width: 1440px) {
+  .main-visualizar-dados {
+    max-width: 1000px;
+    padding: 40px 50px;
+  }
+  
+  .visualizar-dados-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Large Desktop (1920 x 1080) */
+@media (min-width: 1920px) {
+  .main-visualizar-dados {
+    max-width: 1200px;
+    padding: 50px 60px;
+  }
+  
+  .visualizar-dados-title {
+    font-size: 2.5rem;
+  }
+  
+  .visualizar-dados-img-perfil-div i {
+    font-size: 90px;
+  }
+  
+  .visualizar-dados-nome {
+    font-size: 2rem;
+  }
+}
 /* Fim De Meu Perfil - Visualizar Dados*/
 
 /* Começo de Recuperar Senha Código - Denyel */
