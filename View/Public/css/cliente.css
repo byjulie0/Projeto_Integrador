@@ -934,8 +934,9 @@ body {
 }
 
 .esqueci_senha_card_email_content h1 {
+  max-width: 100%;
   position: relative;
-  top: -5px;
+  top: -10px;
   text-align: center;
   color: var(--color-fonte);
   font-size: 1.4rem;
@@ -944,6 +945,7 @@ body {
 }
 
 .esqueci_senha_card_email_content h3 {
+  max-width: 100%;
   text-align: center;
   color: var(--color-primary-1);
   font-size: 1rem;
@@ -1021,21 +1023,24 @@ body {
 }
 
 /* Telas Médias */
-@media (max-width: 768px) {
+@media (max-width: 768px){
   .esqueci_senha_card_email_main {
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   .esqueci_senha_card_email {
-    padding: 40px 20px;
+    padding-bottom: 100px;
   }
 
   .esqueci_senha_card_email_content h1 {
+    top: -30px;
     font-size: 1.2rem;
+    margin-bottom: -10px;
   }
 
   .esqueci_senha_card_email_content h3 {
     font-size: 0.9rem;
+    margin-bottom: 30px;
   }
 
   .esqueci_senha_card_email_formulario input,
@@ -1043,17 +1048,46 @@ body {
     max-width: 90%;
   }
 
-  .esqueci_senha_card_email_linha_divisao{
+  .esqueci_senha_card_email_divisao{
     max-width: 90%;
-  }
+    margin-bottom: 2%;
+  }  
 }
 
 /* Telas Pequenas */
 @media (max-width: 500px){
-  .esqueci_senha_card_email_linha_divisao{
+  .esqueci_senha_card_email_seta_voltar{
     display: none;
   }
+  .esqueci_senha_card_email_main{
+    margin-top: 25%;
+    margin-bottom: 15%;
+  }
+  .esqueci_senha_card_email{
+    padding-bottom: 20px;
+  }
+  .esqueci_senha_card_email_content h1{
+    top: -70px;
+    font-size: 1rem;
+    margin-bottom: -60px;
+  }
+  .esqueci_senha_card_email_content h3{
+    font-size: 0.7rem;
+  }
+  .esqueci_senha_card_email_divisao{
+    display: none;
+  }
+  .esqueci_senha_card_email_formulario input{
+    max-width: 230px;
+    width: 120%;
+    height: 25px;
+    font-size: 0.7rem;
+    margin-top: -5%;
+    margin-bottom: 2%;
+  }
   .esqueci_senha_card_email_formulario button{
+    font-size: 0.8rem;
+    width: 60%;
     height: 30px;
   }
 }
