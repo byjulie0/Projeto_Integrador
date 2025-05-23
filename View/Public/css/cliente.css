@@ -23,7 +23,6 @@
   --warning-color: #ff4444;
   --input-bg: #F9FAFB;
 }
-
 /* Começo de menu pg inicial Ana Julia*/
 * {
   margin: 0;
@@ -3832,6 +3831,66 @@ body {
   .card-arthura {
     padding: 8%;
   }
+}
+@media screen and (max-width:1468px) and (min-width:1400px) {
+  .wrapper-arthura { 
+    max-width: 60%;
+}
+.logout-button-arthura {
+    font-size: clamp(1rem, 2.5vw, 0.5rem);
+  }
+  .view-button-arthura {
+    font-size: clamp(1rem, 2.5vw, 0.5rem);
+  }
+  .user-name-arthura {
+    font-size: 1.4rem;
+  }
+  
+  .user-email-arthura {
+    font-size: 1.3rem;
+  }
+  
+  .section-title-arthura {
+    font-size: 1.5rem;
+  }
+  
+  .section-text-arthura {
+    font-size: 1.4rem;
+  }
+  
+  .password-input-arthura {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width:1921px) and (min-width:1470px) {
+  .wrapper-arthura { 
+      max-width: 70%;
+  }
+  .logout-button-arthura {
+      font-size: clamp(1.5rem, 2.5vw, 1rem);
+    }
+    .view-button-arthura {
+      font-size: clamp(1.5rem, 2.5vw, 1rem);
+    }
+    .user-name-arthura {
+      font-size: 2rem;
+    }
+    
+    .user-email-arthura {
+      font-size: 1.9rem;
+    }
+    
+    .section-title-arthura {
+      font-size: 2rem;
+    }
+    
+    .section-text-arthura {
+      font-size: 1.9rem;
+    }
+    
+    .password-input-arthura {
+      font-size: 1.95rem;
+    }
 }
 /*Fim inserir senha alterar dados Arthur*/
 
