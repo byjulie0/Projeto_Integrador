@@ -2775,6 +2775,9 @@ body {
 }
 
 .recuperar_senha_codigo_content h1 {
+  max-width: 100%;
+  position: relative;
+  top: -10px;
   text-align: center;
   color: var(--color-fonte);
   font-size: 1.4rem;
@@ -2783,6 +2786,7 @@ body {
 }
 
 .recuperar_senha_codigo_content h3 {
+  max-width: 100%;
   text-align: center;
   color: var(--color-primary-1);
   font-size: 1rem;
@@ -2798,7 +2802,7 @@ body {
 
 .recuperar_senha_codigo_formulario input {
   position: relative;
-  left: 5px;
+  /* left: 0; */
   width: 100%;
   max-width: 600px;
   height: 35px;
@@ -2816,19 +2820,15 @@ body {
   text-indent: 1px;
 }
 
-.recuperar_senha_codigo_linha_divisao {
-  position: relative;
-  left: 7px;
+.recuperar_senha_codigo_divisao{
+  max-width: 100%;
   width: 100%;
-  max-width: 600px;
-  height: 0.5px;
   background-color: var(--color-primary-1);
-  margin: 20px auto 0 auto;
 }
 
 .recuperar_senha_codigo_formulario button {
   position: relative;
-  left: 0;
+  /* left: 0; */
   width: 130px;
   height: 40px;
   background-color: #ffffff;
@@ -2866,19 +2866,22 @@ body {
 /* Telas médias */
 @media (max-width: 768px){
   .recuperar_senha_codigo_main {
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   .recuperar_senha_codigo {
-    padding: 40px 20px;
+    padding: 100px;
   }
 
   .recuperar_senha_codigo_content h1 {
+    top: -30px;
     font-size: 1.2rem;
+    margin-bottom: -10px;
   }
 
   .recuperar_senha_codigo_content h3 {
     font-size: 0.9rem;
+    margin-bottom: 30px;
   }
 
   .recuperar_senha_codigo_formulario input,
@@ -2886,8 +2889,9 @@ body {
     max-width: 90%;
   }
 
-  .recuperar_senha_codigo_linha_divisao{
+  .recuperar_senha_codigo_divisao{
     max-width: 90%;
+    margin-bottom: 2%;
   }
 }
 
