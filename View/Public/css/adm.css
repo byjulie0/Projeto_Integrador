@@ -617,11 +617,13 @@ ul{
 
 /* Começo de adicionar produtos */
 .body_add_product {
-  padding: 15px;
   color: var(--color-fonte);
+  overflow-x: hidden;
 }
 
 .title_page_add_product {
+  padding-top: 3rem;
+  padding-left: 5rem;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -633,7 +635,7 @@ ul{
 }
 
 .info_add_product {
-  padding: 25px 0 20px;
+  padding: 25px 5rem 20px;
 }
 
 .mandatory_space {
@@ -641,6 +643,7 @@ ul{
 }
 
 .add_product_area {
+  padding-left: 5rem;
   display: grid;
   grid-template-columns: 25% 75%;
   gap: 20px;
@@ -698,16 +701,13 @@ ul{
   justify-content: space-around;
 }
 
-.input_product_info,
-.product_info_select {
-  width: 100%;
-}
 
 .product_details {
   height: 75px;
 }
 
 .add_product_submit_button {
+  margin-bottom: 4rem;
   margin-top: 5%;
   display: flex;
   justify-content: center;
@@ -761,9 +761,7 @@ input[type="image"] {
 
 /* Mobile - Tela Média (360x800) */
 @media (min-width: 360px) and (max-width: 389px) {
-  .body_add_product {
-    padding: 15px;
-  }
+
   
   .add_product_area {
     grid-template-columns: 1fr;
@@ -792,9 +790,6 @@ input[type="image"] {
 
 /* Mobile - Tela Grande (390x844) */
 @media (min-width: 390px) and (max-width: 767px) {
-  .body_add_product {
-    padding: 20px;
-  }
   
   .add_product_area {
     grid-template-columns: 1fr;
@@ -818,11 +813,6 @@ input[type="image"] {
 
 /* Tablet - Tela Média (768-1023) */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .body_add_product {
-    padding: 25px;
-    max-width: 750px;
-    margin: 0 auto;
-  }
   
   .add_product_area {
     grid-template-columns: 35% 65%;
@@ -839,11 +829,6 @@ input[type="image"] {
 
 /* Tablet - Tela Grande (768-1199) */
 @media (min-width: 1024px) and (max-width: 1199px) {
-  .body_add_product {
-    padding: 30px;
-    max-width: 950px;
-    margin: 0 auto;
-  }
   
   .add_product_area {
     grid-template-columns: 30% 70%;
@@ -860,11 +845,6 @@ input[type="image"] {
 
 /* Desktop - Tela Média (1366x768) */
 @media (min-width: 1200px) and (max-width: 2559px) {
-  .body_add_product {
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
   
   .add_product_area {
     grid-template-columns: 25% 75%;
@@ -884,9 +864,6 @@ input[type="image"] {
 /* Desktop - Tela Grande (2560x1440) */
 @media (min-width: 2560px) {
   .body_add_product {
-    padding: 50px;
-    max-width: 1600px;
-    margin: 0 auto;
     font-size: 1.2rem;
   }
   
