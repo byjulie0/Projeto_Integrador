@@ -23,7 +23,6 @@
   --warning-color: #ff4444;
   --input-bg: #F9FAFB;
 }
-
 /* Começo de menu pg inicial Ana Julia*/
 * {
   margin: 0;
@@ -1023,6 +1022,9 @@ body {
 }
 
 .esqueci_senha_card_email_content h1 {
+  max-width: 100%;
+  position: relative;
+  top: -10px;
   text-align: center;
   color: var(--color-fonte);
   font-size: 1.4rem;
@@ -1031,6 +1033,7 @@ body {
 }
 
 .esqueci_senha_card_email_content h3 {
+  max-width: 100%;
   text-align: center;
   color: var(--color-primary-1);
   font-size: 1rem;
@@ -1046,7 +1049,7 @@ body {
 
 .esqueci_senha_card_email_formulario input {
   position: relative;
-  left: 5px;
+  left: 0;
   width: 100%;
   max-width: 600px;
   height: 35px;
@@ -1064,14 +1067,10 @@ body {
   text-indent: 1px;
 }
 
-.esqueci_senha_card_email_linha_divisao {
-  position: relative;
-  left: 7px;
+.esqueci_senha_card_email_divisao{
+  max-width: 100%;
   width: 100%;
-  max-width: 600px;
-  height: 0.5px;
   background-color: var(--color-primary-1);
-  margin: 20px auto 0 auto;
 }
 
 .esqueci_senha_card_email_formulario button {
@@ -1112,21 +1111,24 @@ body {
 }
 
 /* Telas Médias */
-@media (max-width: 768px) {
+@media (max-width: 768px){
   .esqueci_senha_card_email_main {
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   .esqueci_senha_card_email {
-    padding: 40px 20px;
+    padding-bottom: 100px;
   }
 
   .esqueci_senha_card_email_content h1 {
+    top: -30px;
     font-size: 1.2rem;
+    margin-bottom: -10px;
   }
 
   .esqueci_senha_card_email_content h3 {
     font-size: 0.9rem;
+    margin-bottom: 30px;
   }
 
   .esqueci_senha_card_email_formulario input,
@@ -1134,17 +1136,46 @@ body {
     max-width: 90%;
   }
 
-  .esqueci_senha_card_email_linha_divisao{
+  .esqueci_senha_card_email_divisao{
     max-width: 90%;
-  }
+    margin-bottom: 2%;
+  }  
 }
 
 /* Telas Pequenas */
 @media (max-width: 500px){
-  .esqueci_senha_card_email_linha_divisao{
+  .esqueci_senha_card_email_seta_voltar{
     display: none;
   }
+  .esqueci_senha_card_email_main{
+    margin-top: 25%;
+    margin-bottom: 15%;
+  }
+  .esqueci_senha_card_email{
+    padding-bottom: 20px;
+  }
+  .esqueci_senha_card_email_content h1{
+    top: -70px;
+    font-size: 1rem;
+    margin-bottom: -60px;
+  }
+  .esqueci_senha_card_email_content h3{
+    font-size: 0.7rem;
+  }
+  .esqueci_senha_card_email_divisao{
+    display: none;
+  }
+  .esqueci_senha_card_email_formulario input{
+    max-width: 230px;
+    width: 120%;
+    height: 25px;
+    font-size: 0.7rem;
+    margin-top: -5%;
+    margin-bottom: 2%;
+  }
   .esqueci_senha_card_email_formulario button{
+    font-size: 0.8rem;
+    width: 60%;
     height: 30px;
   }
 }
@@ -2743,6 +2774,9 @@ body {
 }
 
 .recuperar_senha_codigo_content h1 {
+  max-width: 100%;
+  position: relative;
+  top: -10px;
   text-align: center;
   color: var(--color-fonte);
   font-size: 1.4rem;
@@ -2751,6 +2785,7 @@ body {
 }
 
 .recuperar_senha_codigo_content h3 {
+  max-width: 100%;
   text-align: center;
   color: var(--color-primary-1);
   font-size: 1rem;
@@ -2766,7 +2801,7 @@ body {
 
 .recuperar_senha_codigo_formulario input {
   position: relative;
-  left: 5px;
+  /* left: 0; */
   width: 100%;
   max-width: 600px;
   height: 35px;
@@ -2784,19 +2819,15 @@ body {
   text-indent: 1px;
 }
 
-.recuperar_senha_codigo_linha_divisao {
-  position: relative;
-  left: 7px;
+.recuperar_senha_codigo_divisao{
+  max-width: 100%;
   width: 100%;
-  max-width: 600px;
-  height: 0.5px;
   background-color: var(--color-primary-1);
-  margin: 20px auto 0 auto;
 }
 
 .recuperar_senha_codigo_formulario button {
   position: relative;
-  left: 0;
+  /* left: 0; */
   width: 130px;
   height: 40px;
   background-color: #ffffff;
@@ -2834,19 +2865,22 @@ body {
 /* Telas médias */
 @media (max-width: 768px){
   .recuperar_senha_codigo_main {
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   .recuperar_senha_codigo {
-    padding: 40px 20px;
+    padding: 100px;
   }
 
   .recuperar_senha_codigo_content h1 {
+    top: -30px;
     font-size: 1.2rem;
+    margin-bottom: -10px;
   }
 
   .recuperar_senha_codigo_content h3 {
     font-size: 0.9rem;
+    margin-bottom: 30px;
   }
 
   .recuperar_senha_codigo_formulario input,
@@ -2854,17 +2888,46 @@ body {
     max-width: 90%;
   }
 
-  .recuperar_senha_codigo_linha_divisao{
+  .recuperar_senha_codigo_divisao{
     max-width: 90%;
+    margin-bottom: 2%;
   }
 }
 
 /* Telas menores */
 @media (max-width: 500px){
-  .recuperar_senha_codigo_linha_divisao{
+  .recuperar_senha_codigo_seta_voltar{
     display: none;
   }
+  .recuperar_senha_codigo_main{
+    margin-top: 25%;
+    margin-bottom: 15%;
+  }
+  .recuperar_senha_codigo{
+    padding-bottom: 20px;
+  }
+  .recuperar_senha_codigo_content h1{
+    top: -70px;
+    font-size: 1rem;
+    margin-bottom: -60px;
+  }
+  .recuperar_senha_codigo_content h3{
+    font-size: 0.7rem;
+  }
+  .recuperar_senha_codigo_divisao{
+    display: none;
+  }
+  .recuperar_senha_codigo_formulario input{
+    max-width: 230px;
+    width: 120%;
+    height: 25px;
+    font-size: 0.7rem;
+    margin-top: -5%;
+    margin-bottom: 2%;
+  }
   .recuperar_senha_codigo_formulario button{
+    font-size: 0.8rem;
+    width: 60%;
     height: 30px;
   }
 }
@@ -4057,6 +4120,66 @@ body {
     padding: 8%;
   }
 }
+@media screen and (max-width:1468px) and (min-width:1400px) {
+  .wrapper-arthura { 
+    max-width: 60%;
+}
+.logout-button-arthura {
+    font-size: clamp(1rem, 2.5vw, 0.5rem);
+  }
+  .view-button-arthura {
+    font-size: clamp(1rem, 2.5vw, 0.5rem);
+  }
+  .user-name-arthura {
+    font-size: 1.4rem;
+  }
+  
+  .user-email-arthura {
+    font-size: 1.3rem;
+  }
+  
+  .section-title-arthura {
+    font-size: 1.5rem;
+  }
+  
+  .section-text-arthura {
+    font-size: 1.4rem;
+  }
+  
+  .password-input-arthura {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width:1921px) and (min-width:1470px) {
+  .wrapper-arthura { 
+      max-width: 70%;
+  }
+  .logout-button-arthura {
+      font-size: clamp(1.5rem, 2.5vw, 1rem);
+    }
+    .view-button-arthura {
+      font-size: clamp(1.5rem, 2.5vw, 1rem);
+    }
+    .user-name-arthura {
+      font-size: 2rem;
+    }
+    
+    .user-email-arthura {
+      font-size: 1.9rem;
+    }
+    
+    .section-title-arthura {
+      font-size: 2rem;
+    }
+    
+    .section-text-arthura {
+      font-size: 1.9rem;
+    }
+    
+    .password-input-arthura {
+      font-size: 1.95rem;
+    }
+}
 /*Fim inserir senha alterar dados Arthur*/
 
 /* Inicio pg redefinir senha login Lara*/
@@ -4278,6 +4401,240 @@ body {
   }
 }
 /* Fim pop_up_redefinir_senha */
+
+/*inicio atualizar infos - Mariana */
+
+.area-atualizar-infos{
+  background-color: white;
+  font-family: 'Poppins';
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 30px;
+  margin-top: 32px;
+  text-align: left;
+}
+
+.area-atualizar-infos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.form-container-atualizar-infos {
+  max-width: 900px;
+  width: 100%;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.back-arrow-atualizar-infos {
+  text-decoration: none;
+  font-size: 24px;
+  color: green;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.h2-atualizar-infos {
+  text-align: center;
+  color: #2e4d2e;
+  margin-bottom: 30px;
+}
+
+.form-atualizar-infos {
+  width: 100%;
+}
+
+.form-grid-atualizar-infos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.form-group-atualizar-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-atualizar-infos.full-width {
+  grid-column: span 2;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-atualizar-infos {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #628b5d;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.warning-atualizar-infos {
+  font-size: 12px;
+  color: #aa0000;
+  margin-top: 20px;
+}
+
+.buttons-atualizar-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.link-btn-atualizar-infos {
+  color: #2e8b57;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.submit-btn-atualizar-infos {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn-atualizar-infos:hover {
+  background-color: #276c46;
+}
+
+/* === 320px (pequenos celulares) === */
+@media (max-width: 320px) {
+  .favoritos-title {
+    font-size: 1em;
+    padding-left: 10px;
+  }
+
+  .card-pag-fav {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .botao-pag-fav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-pag-fav,
+  .excluir-pag-fav {
+    width: 100%;
+  }
+}
+
+/* === 375px (iPhones e smartphones médios) === */
+@media (max-width: 375px) {
+  .favoritos-title {
+    font-size: 1.1em;
+  }
+
+  .card-pag-fav {
+    width: 95%;
+  }
+}
+
+/* === 425px (smartphones grandes) === */
+@media (max-width: 425px) {
+  .card-pag-fav {
+    width: 95%;
+  }
+
+  .card-header-pag-fav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .botao-pag-fav {
+    flex-direction: column;
+  }
+}
+
+/* === 768px (tablets) === */
+@media (max-width: 768px) {
+  .cards-container-pag-fav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 85%;
+    max-width: 350px;
+  }
+
+  .favoritos-title {
+    justify-content: center;
+    font-size: 1.3em;
+  }
+
+  .botao-pag-fav {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .btn-pag-fav,
+  .excluir-pag-fav {
+    width: auto;
+  }
+}
+
+/* === 1024px (telas pequenas de notebook) === */
+@media (max-width: 1024px) {
+  .cards-container-pag-fav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 300px;
+  }
+}
+
+/* === 1440px (telas grandes e desktops) === */
+@media (max-width: 1440px) {
+  .card-pag-fav {
+    width: 300px;
+  }
+
+  .cards-container-pag-fav {
+    gap: 24px;
+    justify-content: center;
+  }
+}
+
+/* === 2560px (telas ultra-wide) === */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .cards-container-pag-fav {
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .card-pag-fav {
+    width: 320px;
+  }
+
+  .favoritos-title {
+    font-size: 1.8em;
+    margin-left: 60px;
+  }
+}
+
+/*inicio atualizar infos - Mariana */
+
 
 
 
