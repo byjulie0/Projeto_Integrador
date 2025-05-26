@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../../View/public/css/adm.css">
-    <script defer src="../view/js/menu-pg-inicial.js"></script>
+    <script defer src="../../View/JS/menu_adm.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
@@ -69,7 +69,7 @@
                     <span class="nav_text_menu_adm">Notificações</span>
                 </a>
                 <a href="#" class="nav_btns_menu_adm">
-                    <i class="fa-regular fa-file"></i>
+                    <i class="bi bi-file-bar-graph"></i>
                     <span class="nav_text_menu_adm">Geral</span>
                 </a>
             </div>

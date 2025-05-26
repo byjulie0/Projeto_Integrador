@@ -225,6 +225,269 @@ ul{
   cursor: pointer;
   margin-right: 15px;
 }
+/* ==================== */
+/* Responsividade de celular */
+/* ==================== */
+
+/* Mobile Médio: 360 x 800 */
+@media (max-width: 390px) {
+  .menu_adm {
+    padding: 8px 10px;
+  }
+  
+  .logo_menu_adm {
+    min-width: auto;
+    gap: 5px;
+  }
+  
+  .logo_menu_adm_img {
+    width: 35px;
+  }
+  
+  .logo_menu_adm_title {
+    font-size: 0.9rem;
+  }
+  
+  .nav_text_menu_adm {
+    display: none;
+  }
+  
+  .nav_btns_menu_adm {
+    min-width: auto;
+    gap: 10px;
+  }
+  
+  .nav_btns_menu_adm .bi {
+    font-size: 1.2rem;
+  }
+  
+  .search_container_menu_adm {
+    padding: 5px 10px;
+  }
+}
+
+/* Mobile Grande: 390 x 844 */
+@media (min-width: 391px) and (max-width: 767px) {
+  .menu_adm {
+    padding: 10px 15px;
+  }
+  
+  .nav_text_menu_adm {
+    font-size: 0.65rem;
+  }
+  
+  .nav_btns_menu_adm .bi {
+    font-size: 1.1rem;
+  }
+  
+  .search_container_menu_adm {
+    max-width: 280px;
+    padding: 6px 12px;
+  }
+  
+  .logo_menu_adm_title {
+    font-size: 1rem;
+  }
+}
+
+/* ==================== */
+/* Responsividade Tablets */
+/* ==================== */
+
+/* Tablet Médio: 768-1023 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu_adm {
+    padding: 10px 25px;
+  }
+  
+  .nav_item_pg_inicial_adm {
+    font-size: 0.8rem;
+  }
+  
+  .nav_page_btns_menu_adm {
+    min-width: 150px;
+  }
+  
+  .search_container_menu_adm {
+    max-width: 300px;
+  }
+  
+  .logo_menu_adm_title {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet Grande: 768-1199 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .dropdown_menu_adm .submenu_adm {
+    position: static;
+    border: none;
+    display: none;
+  }
+  .nav_link_menu_adm {
+    gap: 10px;
+  }
+  
+  .nav_page_btns_menu_adm {
+    gap: 12px;
+  }
+  
+  .nav_btns_menu_adm .bi {
+    font-size: 1rem;
+  }
+  
+  .nav_text_menu_adm {
+    font-size: 0.7rem;
+  }
+}
+
+/* ==================== */
+/* Responsividade do Desktop */
+/* ==================== */
+
+/* Desktop Médio: 1440 x 900 */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .menu_adm {
+    padding: 12px 60px;
+  }
+  
+  .nav_item_pg_inicial_adm {
+    font-size: 1rem;
+    gap: 20px;
+  }
+  
+  .search_container_menu_adm {
+    max-width: 450px;
+    padding: 10px 20px;
+  }
+  
+  .logo_menu_adm_img {
+    width: 55px;
+  }
+  
+  .logo_menu_adm_title {
+    font-size: 1.2rem;
+  }
+  
+  .nav_btns_menu_adm .bi {
+    font-size: 1.2rem;
+  }
+  
+  .nav_text_menu_adm {
+    font-size: 0.85rem;
+  }
+}
+
+/* Desktop Grande: 1920 x 1080 */
+@media (min-width: 1920px) {
+  .menu_adm {
+    padding: 15px 100px;
+  }
+  
+  .logo_menu_adm_img {
+    width: 65px;
+  }
+  
+  .logo_menu_adm_title {
+    font-size: 1.5rem;
+  }
+  
+  .nav_item_pg_inicial_adm {
+    font-size: 1.2rem;
+    gap: 25px;
+  }
+  
+  .search_container_menu_adm {
+    max-width: 600px;
+    padding: 12px 25px;
+  }
+  
+  .search_container_menu_adm input {
+    font-size: 1.1rem;
+  }
+  
+  .nav_page_btns_menu_adm {
+    min-width: 250px;
+    gap: 20px;
+  }
+  
+  .nav_btns_menu_adm .bi {
+    font-size: 1.5rem;
+  }
+  
+  .nav_text_menu_adm {
+    font-size: 1rem;
+  }
+}
+
+/* ==================== */
+/* Estilos comuns entre mobile e tablet */
+/* ==================== */
+
+@media (max-width: 1199px) {
+  .nav_link_menu_adm {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #F7F9FF;
+    padding: 15px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  .nav_link_menu_adm.mobile-active {
+    display: flex;
+  }
+  
+  .search_container_menu_adm {
+    display: none;
+    width: 90%;
+    margin: 15px auto;
+  }
+  
+  .search_container_menu_adm.mobile-active {
+    display: flex;
+  }
+  
+  .menu_adm_toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .menu_content_adm {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .logo_menu_adm {
+    order: -1;
+  }
+  
+  .nav_page_btns_menu_adm {
+    order: 1;
+  }
+  
+  .nav_link_menu_adm.mobile-visible,
+  .search_container_menu_adm.mobile-visible {
+    display: flex;
+    width: 100%;
+    order: 2;
+    margin-top: 10px;
+  }
+  
+  .nav_link_menu_adm.mobile-visible {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+  }
+}
 /* Fim menu Adm */
 
 
@@ -1738,10 +2001,6 @@ main {
 
 @media (max-width: 480px) {
   /* Celular */
-  
-  body {
-    padding: 10px;
-  }
 
   .perfil-math-adm {
     flex-direction: column;
