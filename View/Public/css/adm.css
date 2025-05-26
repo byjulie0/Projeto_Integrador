@@ -1148,14 +1148,18 @@ body {
 
 /* Início Gerar relatório */
 .body_generate_report {
-  padding: 15px 15px 15px 75px;
   color: var(--color-fonte);
 }
 
 .title_page_generate_report {
+  padding-top: 4rem;
+  padding-left: 5rem;
   display: flex;
   align-items: center;
   gap: 15px;
+}
+.info_generate_report{
+  padding-left: 5rem;
 }
 
 .arrow_generate_report {
@@ -1164,6 +1168,7 @@ body {
 }
 
 .generate_report_area {
+  padding-left: 5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -1180,6 +1185,7 @@ body {
 
 .generate_report_submit_button {
   margin-top: 5%;
+  margin-bottom: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1202,9 +1208,6 @@ body {
 
 /* Mobile Styles (up to 767px) */
 @media only screen and (max-width: 767px) {
-  .body_generate_report {
-      padding: 15px;
-  }
   
   .generate_report_area {
       grid-template-columns: 1fr;
@@ -1230,9 +1233,6 @@ body {
 
 /* Tablet Styles (768px - 1023px) */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .body_generate_report {
-      padding: 20px 20px 20px 80px;
-  }
   
   .generate_report_area {
       grid-template-columns: 1fr 1fr;
@@ -1256,9 +1256,6 @@ body {
 
 /* Large Tablet/Small Desktop (1024px - 1199px) */
 @media only screen and (min-width: 1024px) and (max-width: 1199px) {
-  .body_generate_report {
-    padding: 25px 25px 25px 85px;
-  }
   
   .generate_report_area {
     margin-top: 2rem;
@@ -1279,7 +1276,6 @@ body {
 /* Desktop Styles (1200px and above) */
 @media only screen and (min-width: 1200px) {
   .body_generate_report {
-      padding: 30px 30px 30px 100px;
       max-width: 1800px;
       margin: 0 auto;
   }
