@@ -51,8 +51,7 @@
                     <span class="error-message">Por favor, selecione uma categoria</span>
                 </article>
                 <article class="input_product_subcategory">
-                    <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span
-                            class="mandatory_space">*</span></p>
+                    <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span class="mandatory_space">*</span></p>
                     <select name="subcategories" id="bovinos_breed" class="product_info_select subcategory-select"
                         required>
                         <option value="" selected disabled>Selecione uma subcategoria</option>
