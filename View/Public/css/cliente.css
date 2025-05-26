@@ -4391,122 +4391,71 @@ label {
   background-color: #276c46;
 }
 
-/* === 320px (pequenos celulares) === */
-@media (max-width: 320px) {
-  .favoritos-title {
-    font-size: 1em;
-    padding-left: 10px;
+/* === Responsividade === */
+
+/* Smartphones pequenos (até 480px) */
+@media (max-width: 480px) {
+  .form-grid-atualizar-infos {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .card-pag-fav {
+  .form-group-atualizar-infos.full-width {
+    grid-column: span 1;
+  }
+
+  .form-container-atualizar-infos {
+    padding: 20px;
+  }
+
+  .back-arrow-atualizar-infos {
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+  }
+
+  .buttons-atualizar-infos {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .submit-btn-atualizar-infos,
+  .link-btn-atualizar-infos {
     width: 100%;
-    padding: 15px;
-  }
-
-  .botao-pag-fav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .btn-pag-fav,
-  .excluir-pag-fav {
-    width: 100%;
+    text-align: center;
   }
 }
 
-/* === 375px (iPhones e smartphones médios) === */
-@media (max-width: 375px) {
-  .favoritos-title {
-    font-size: 1.1em;
-  }
-
-  .card-pag-fav {
-    width: 95%;
-  }
-}
-
-/* === 425px (smartphones grandes) === */
-@media (max-width: 425px) {
-  .card-pag-fav {
-    width: 95%;
-  }
-
-  .card-header-pag-fav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .botao-pag-fav {
-    flex-direction: column;
-  }
-}
-
-/* === 768px (tablets) === */
+/* Tablets (481px até 768px) */
 @media (max-width: 768px) {
-  .cards-container-pag-fav {
-    flex-wrap: wrap;
-    justify-content: center;
+  .form-grid-atualizar-infos {
+    grid-template-columns: 1fr;
   }
 
-  .card-pag-fav {
-    width: 85%;
-    max-width: 350px;
+  .form-group-atualizar-infos.full-width {
+    grid-column: span 1;
   }
 
-  .favoritos-title {
-    justify-content: center;
-    font-size: 1.3em;
+  .form-container-atualizar-infos {
+    padding: 30px;
   }
 
-  .botao-pag-fav {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .btn-pag-fav,
-  .excluir-pag-fav {
-    width: auto;
+  .submit-btn-atualizar-infos {
+    width: 100%;
   }
 }
 
-/* === 1024px (telas pequenas de notebook) === */
+/* Laptops pequenos (até 1024px) */
 @media (max-width: 1024px) {
-  .cards-container-pag-fav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 300px;
+  .form-container-atualizar-infos {
+    padding: 35px;
   }
 }
 
-/* === 1440px (telas grandes e desktops) === */
-@media (max-width: 1440px) {
-  .card-pag-fav {
-    width: 300px;
-  }
-
-  .cards-container-pag-fav {
-    gap: 24px;
-    justify-content: center;
-  }
-}
-
-/* === 2560px (telas ultra-wide) === */
-@media (min-width: 1441px) and (max-width: 2560px) {
-  .cards-container-pag-fav {
-    gap: 40px;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 320px;
-  }
-
-  .favoritos-title {
-    font-size: 1.8em;
-    margin-left: 60px;
+/* Telas grandes (acima de 1440px) */
+@media (min-width: 1440px) {
+  .form-container-atualizar-infos {
+    max-width: 1000px;
   }
 }
 
