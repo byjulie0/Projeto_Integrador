@@ -3990,11 +3990,9 @@ body {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
-  width: 95%;
-  flex: 1;
+  width: 100%;
   position: relative;
   margin-top: 35px;
-  margin-bottom: 40px;
 }
 
 .h2-pag-busca {
@@ -4050,51 +4048,9 @@ body {
   background-size: 12px;
   padding-right: 28px;
 }
-
-/* Container dos lotes com navegação por setas */
-.lotes-wrapper {
-  position: relative;
-  margin-top: 20px;
-}
-
-.lotes_container_pagina_de_busca {
+.lotes_container_pagina_de_busca #lotesContainer{
   display: flex;
-  overflow-x: hidden;
-  gap: 20px;
-  padding: 15px 0;
-  scroll-behavior: smooth;
-}
-
-/* Botões de navegação */
-.nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background: #F7F9FF;
-  border: none;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: #333;
-}
-
-.nav-button:hover {
-  background: #f0f0f0;
-}
-
-.nav-button.prev {
-  left: -20px;
-}
-
-.nav-button.next {
-  right: -20px;
+  width: 100%;
 }
 
 /* Card de lote */
@@ -4103,7 +4059,6 @@ body {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  min-width: 250px;
   flex-shrink: 0;
   transition: transform 0.3s;
 }
@@ -4159,26 +4114,18 @@ body {
   font-size: 1.5rem;
 }
 .lotes-wrapper {
-  position: relative;
-  margin-top: 20px;
-  overflow-x: auto; /* Adicionado para rolagem horizontal */
-  -webkit-overflow-scrolling: touch; /* Melhora rolagem no iOS */
-  scrollbar-width: none; /* Esconde barra de rolagem no Firefox */
-  padding-bottom: 10px; /* Espaço extra na parte inferior */
-}
-
-/* Esconde a barra de rolagem no Chrome/Safari */
-.lotes-wrapper::-webkit-scrollbar {
-  display: none;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .lotes_container_pagina_de_busca {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   padding: 15px 0;
-  width: max-content; /* Importante para rolagem horizontal */
 }
-
 /* Media Queries para responsividade */
 @media (max-width: 767px) {
   .container_pagina_de_busca {
@@ -4200,6 +4147,9 @@ body {
   .lotes_container_pagina_de_busca {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px; /* Espaço para shadow dos cards */
   }
   
   .lote-card {
@@ -4208,17 +4158,6 @@ body {
   
   .lote-card img {
     height: 150px;
-  }
-  .lotes-wrapper {
-    margin-left: -15px;
-    margin-right: -15px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  .lotes_container_pagina_de_busca {
-    gap: 15px;
-    padding-bottom: 20px; /* Espaço para shadow dos cards */
   }
   
   /* Esconde as setas de navegação no mobile */
