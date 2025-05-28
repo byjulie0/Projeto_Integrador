@@ -4460,24 +4460,24 @@ body {
 
 /*inicio atualizar infos - Mariana */
 
-.area-atualizar-infos{
-  background-color: white;
-  font-family: 'Poppins';
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  gap: 30px;
-  margin-top: 32px;
-  text-align: left;
+
+/* Estilo base global */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .area-atualizar-infos {
+  background-color: white;
   width: 100%;
+  padding: 40px 20px;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  margin-top: 32px;
 }
 
 .form-container-atualizar-infos {
@@ -4503,6 +4503,7 @@ body {
   text-align: center;
   color: #2e4d2e;
   margin-bottom: 30px;
+  font-size: 1.8rem;
 }
 
 .form-atualizar-infos {
@@ -4527,6 +4528,8 @@ body {
 label {
   margin-bottom: 5px;
   font-weight: bold;
+  color: #333;
+  font-size: 0.95rem;
 }
 
 .input-atualizar-infos {
@@ -4538,9 +4541,10 @@ label {
 }
 
 .warning-atualizar-infos {
-  font-size: 12px;
+  font-size: 0.85rem;
   color: #aa0000;
   margin-top: 20px;
+  line-height: 1.5;
 }
 
 .buttons-atualizar-infos {
@@ -4548,12 +4552,15 @@ label {
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .link-btn-atualizar-infos {
   color: #2e8b57;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.95rem;
 }
 
 .submit-btn-atualizar-infos {
@@ -4564,132 +4571,94 @@ label {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .submit-btn-atualizar-infos:hover {
   background-color: #276c46;
 }
 
-/* === 320px (pequenos celulares) === */
-@media (max-width: 320px) {
-  .favoritos-title {
-    font-size: 1em;
-    padding-left: 10px;
-  }
+/* Responsividade */
 
-  .card-pag-fav {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .botao-pag-fav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .btn-pag-fav,
-  .excluir-pag-fav {
-    width: 100%;
-  }
-}
-
-/* === 375px (iPhones e smartphones médios) === */
-@media (max-width: 375px) {
-  .favoritos-title {
-    font-size: 1.1em;
-  }
-
-  .card-pag-fav {
-    width: 95%;
-  }
-}
-
-/* === 425px (smartphones grandes) === */
-@media (max-width: 425px) {
-  .card-pag-fav {
-    width: 95%;
-  }
-
-  .card-header-pag-fav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .botao-pag-fav {
-    flex-direction: column;
-  }
-}
-
-/* === 768px (tablets) === */
-@media (max-width: 768px) {
-  .cards-container-pag-fav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 85%;
-    max-width: 350px;
-  }
-
-  .favoritos-title {
-    justify-content: center;
-    font-size: 1.3em;
-  }
-
-  .botao-pag-fav {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .btn-pag-fav,
-  .excluir-pag-fav {
-    width: auto;
-  }
-}
-
-/* === 1024px (telas pequenas de notebook) === */
-@media (max-width: 1024px) {
-  .cards-container-pag-fav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 300px;
-  }
-}
-
-/* === 1440px (telas grandes e desktops) === */
-@media (max-width: 1440px) {
-  .card-pag-fav {
-    width: 300px;
-  }
-
-  .cards-container-pag-fav {
+/* 1600px ou menos */
+@media (max-width: 1600px) {
+  .form-grid-atualizar-infos {
     gap: 24px;
-    justify-content: center;
   }
 }
 
-/* === 2560px (telas ultra-wide) === */
-@media (min-width: 1441px) and (max-width: 2560px) {
-  .cards-container-pag-fav {
-    gap: 40px;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 320px;
-  }
-
-  .favoritos-title {
-    font-size: 1.8em;
-    margin-left: 60px;
+/* 1200px ou menos */
+@media (max-width: 1200px) {
+  .form-grid-atualizar-infos {
+    gap: 22px;
   }
 }
 
-/*inicio atualizar infos - Mariana */
+/* 960px ou menos */
+@media (max-width: 960px) {
+  .form-grid-atualizar-infos {
+    gap: 20px;
+  }
+}
+
+/* 840px ou menos — FORÇA 1 COLUNA */
+@media (max-width: 840px) {
+  .form-grid-atualizar-infos {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .form-group-atualizar-infos.full-width {
+    grid-column: auto;
+  }
+}
+
+/* 480px ou menos */
+@media (max-width: 480px) {
+  .form-grid-atualizar-infos {
+    gap: 14px;
+  }
+
+  .form-group-atualizar-infos {
+    font-size: 14px;
+  }
+}
+
+/* 425px ou menos */
+@media (max-width: 425px) {
+  .form-grid-atualizar-infos {
+    gap: 12px;
+  }
+
+  .form-group-atualizar-infos {
+    font-size: 13.5px;
+  }
+}
+
+/* 375px ou menos */
+@media (max-width: 375px) {
+  .form-grid-atualizar-infos {
+    gap: 11px;
+  }
+
+  .form-group-atualizar-infos {
+    font-size: 13px;
+  }
+}
+
+/* 320px ou menos */
+@media (max-width: 320px) {
+  .form-grid-atualizar-infos {
+    gap: 10px;
+  }
+
+  .form-group-atualizar-infos {
+    font-size: 12.5px;
+  }
+}
+
+
+/*fim atualizar infos - Mariana */
 
 
 
