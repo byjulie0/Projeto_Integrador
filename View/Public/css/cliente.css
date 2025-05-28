@@ -3624,7 +3624,7 @@ input[type="checkbox"] {
 
 /*Final do menu do login-Vinycius*/
 
-/*Começo do login-vinycius*/
+/* Começo do login-vinycius */
 .body_login .login_html {
   height: 100%;
   font-family: Arial, sans-serif;
@@ -3643,7 +3643,7 @@ input[type="checkbox"] {
 .login_box_vinycius {
   display: flex;
   flex-direction: row;
-  background-color: #DFEBE0; 
+  background-color: #DFEBE0;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   max-width: 1700px;
@@ -3653,19 +3653,18 @@ input[type="checkbox"] {
   padding: 40px;
 }
 
-
 .info_login_vinycius {
   width: 50%;
   display: flex;
   flex-direction: column;
-  
+  justify-content: center;
 }
 
 .img_login {
   max-width: 330px;
+  width: 100%;
   padding: 2%;
-  margin: 1px 1;
-
+  margin: 0 auto;
 }
 
 .text_login_vinycius {
@@ -3673,10 +3672,10 @@ input[type="checkbox"] {
   font-size: 18px;
   color: #111;
   font-weight: 400;
-  padding: 10 10px;
+  padding: 10px;
 }
 
-.form_login{
+.form_login {
   width: 90%;
   height: 80%;
   display: flex;
@@ -3691,15 +3690,11 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-
 }
 
 .login_form_vinycius h2 {
   text-align: center;
-  flex-direction: column;
-  justify-content: center;
   margin-bottom: 80px;
-  padding-top: 1px;
   color: #111;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -3718,7 +3713,7 @@ input[type="checkbox"] {
 }
 
 .button_vinycius:hover {
- background-color: #f7f9ff; 
+  background-color: #f7f9ff;
 }
 
 .login_form_vinycius a {
@@ -3733,19 +3728,7 @@ input[type="checkbox"] {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-  .login_box_vinycius {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .info_login_vinycius, .login_form_vinycius {
-    width: 100%;
-    padding: 20px;
-  }
-}
-
-.texto1{
+.texto1 {
   color: #40513B;
   font-size: 13px;
   text-decoration: none;
@@ -3768,6 +3751,7 @@ input[type="checkbox"] {
   color: #333;
   font-size: 18px;
 }
+
 .input_login_vinycius1 {
   width: 70%;
   padding: 10px;
@@ -3778,22 +3762,94 @@ input[type="checkbox"] {
   color: #000;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
+
 .input_login_vinycius2 {
-width: 100%;
-padding: 10px;
-margin: 10px 0;
-border: 1px solid #000;
-border-radius: 2px;
-font-size: 13px;
-color: #000;
-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 13px;
+  color: #000;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
 
 .input_login_vinycius {
   width: 100%;
   padding-right: 40px;
 }
+
+/* Responsividade para tablets e celulares */
+@media (max-width: 768px) {
+  .login_box_vinycius {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .info_login_vinycius, .login_form_vinycius {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form_login {
+    width: 100%;
+    height: auto;
+  }
+
+  .img_login {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .input_login_vinycius1,
+  .input_login_vinycius2,
+  .senha_container {
+    width: 100%;
+  }
+
+  .button_vinycius {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .text_login_vinycius {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+/* Ajustes para celulares pequenos */
+@media (max-width: 480px) {
+  .login_form_vinycius h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .text_login_vinycius {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .button_vinycius {
+    font-size: 14px;
+  }
+
+  /* A imagem agora aparece normalmente em todas as telas */
+}
+
+/* Ajuste da imagem para desktop: mais encostada à esquerda */
+@media (min-width: 1024px) {
+  .img_login {
+    align-self: flex-start;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
 /* Final da pg de login */
+
+
 
 
 /* Inicio de CSS de privacidade e segurança*/
