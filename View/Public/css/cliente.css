@@ -2774,6 +2774,9 @@ body {
 }
 
 .recuperar_senha_codigo_content h1 {
+  max-width: 100%;
+  position: relative;
+  top: -10px;
   text-align: center;
   color: var(--color-fonte);
   font-size: 1.4rem;
@@ -2782,6 +2785,7 @@ body {
 }
 
 .recuperar_senha_codigo_content h3 {
+  max-width: 100%;
   text-align: center;
   color: var(--color-primary-1);
   font-size: 1rem;
@@ -2797,7 +2801,7 @@ body {
 
 .recuperar_senha_codigo_formulario input {
   position: relative;
-  left: 5px;
+  /* left: 0; */
   width: 100%;
   max-width: 600px;
   height: 35px;
@@ -2815,19 +2819,15 @@ body {
   text-indent: 1px;
 }
 
-.recuperar_senha_codigo_linha_divisao {
-  position: relative;
-  left: 7px;
+.recuperar_senha_codigo_divisao{
+  max-width: 100%;
   width: 100%;
-  max-width: 600px;
-  height: 0.5px;
   background-color: var(--color-primary-1);
-  margin: 20px auto 0 auto;
 }
 
 .recuperar_senha_codigo_formulario button {
   position: relative;
-  left: 0;
+  /* left: 0; */
   width: 130px;
   height: 40px;
   background-color: #ffffff;
@@ -2865,19 +2865,22 @@ body {
 /* Telas médias */
 @media (max-width: 768px){
   .recuperar_senha_codigo_main {
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   .recuperar_senha_codigo {
-    padding: 40px 20px;
+    padding: 100px;
   }
 
   .recuperar_senha_codigo_content h1 {
+    top: -30px;
     font-size: 1.2rem;
+    margin-bottom: -10px;
   }
 
   .recuperar_senha_codigo_content h3 {
     font-size: 0.9rem;
+    margin-bottom: 30px;
   }
 
   .recuperar_senha_codigo_formulario input,
@@ -2885,17 +2888,46 @@ body {
     max-width: 90%;
   }
 
-  .recuperar_senha_codigo_linha_divisao{
+  .recuperar_senha_codigo_divisao{
     max-width: 90%;
+    margin-bottom: 2%;
   }
 }
 
 /* Telas menores */
 @media (max-width: 500px){
-  .recuperar_senha_codigo_linha_divisao{
+  .recuperar_senha_codigo_seta_voltar{
     display: none;
   }
+  .recuperar_senha_codigo_main{
+    margin-top: 25%;
+    margin-bottom: 15%;
+  }
+  .recuperar_senha_codigo{
+    padding-bottom: 20px;
+  }
+  .recuperar_senha_codigo_content h1{
+    top: -70px;
+    font-size: 1rem;
+    margin-bottom: -60px;
+  }
+  .recuperar_senha_codigo_content h3{
+    font-size: 0.7rem;
+  }
+  .recuperar_senha_codigo_divisao{
+    display: none;
+  }
+  .recuperar_senha_codigo_formulario input{
+    max-width: 230px;
+    width: 120%;
+    height: 25px;
+    font-size: 0.7rem;
+    margin-top: -5%;
+    margin-bottom: 2%;
+  }
   .recuperar_senha_codigo_formulario button{
+    font-size: 0.8rem;
+    width: 60%;
     height: 30px;
   }
 }
@@ -3592,7 +3624,7 @@ input[type="checkbox"] {
 
 /*Final do menu do login-Vinycius*/
 
-/*Começo do login-vinycius*/
+/* Começo do login-vinycius */
 .body_login .login_html {
   height: 100%;
   font-family: Arial, sans-serif;
@@ -3611,7 +3643,7 @@ input[type="checkbox"] {
 .login_box_vinycius {
   display: flex;
   flex-direction: row;
-  background-color: #DFEBE0; 
+  background-color: #DFEBE0;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   max-width: 1700px;
@@ -3621,19 +3653,18 @@ input[type="checkbox"] {
   padding: 40px;
 }
 
-
 .info_login_vinycius {
   width: 50%;
   display: flex;
   flex-direction: column;
-  
+  justify-content: center;
 }
 
 .img_login {
   max-width: 330px;
+  width: 100%;
   padding: 2%;
-  margin: 1px 1;
-
+  margin: 0 auto;
 }
 
 .text_login_vinycius {
@@ -3641,10 +3672,10 @@ input[type="checkbox"] {
   font-size: 18px;
   color: #111;
   font-weight: 400;
-  padding: 10 10px;
+  padding: 10px;
 }
 
-.form_login{
+.form_login {
   width: 90%;
   height: 80%;
   display: flex;
@@ -3659,15 +3690,11 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-
 }
 
 .login_form_vinycius h2 {
   text-align: center;
-  flex-direction: column;
-  justify-content: center;
   margin-bottom: 80px;
-  padding-top: 1px;
   color: #111;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -3686,7 +3713,7 @@ input[type="checkbox"] {
 }
 
 .button_vinycius:hover {
- background-color: #f7f9ff; 
+  background-color: #f7f9ff;
 }
 
 .login_form_vinycius a {
@@ -3701,19 +3728,7 @@ input[type="checkbox"] {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-  .login_box_vinycius {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .info_login_vinycius, .login_form_vinycius {
-    width: 100%;
-    padding: 20px;
-  }
-}
-
-.texto1{
+.texto1 {
   color: #40513B;
   font-size: 13px;
   text-decoration: none;
@@ -3736,6 +3751,7 @@ input[type="checkbox"] {
   color: #333;
   font-size: 18px;
 }
+
 .input_login_vinycius1 {
   width: 70%;
   padding: 10px;
@@ -3746,22 +3762,94 @@ input[type="checkbox"] {
   color: #000;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
+
 .input_login_vinycius2 {
-width: 100%;
-padding: 10px;
-margin: 10px 0;
-border: 1px solid #000;
-border-radius: 2px;
-font-size: 13px;
-color: #000;
-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 13px;
+  color: #000;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
 
 .input_login_vinycius {
   width: 100%;
   padding-right: 40px;
 }
+
+/* Responsividade para tablets e celulares */
+@media (max-width: 768px) {
+  .login_box_vinycius {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .info_login_vinycius, .login_form_vinycius {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form_login {
+    width: 100%;
+    height: auto;
+  }
+
+  .img_login {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .input_login_vinycius1,
+  .input_login_vinycius2,
+  .senha_container {
+    width: 100%;
+  }
+
+  .button_vinycius {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .text_login_vinycius {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+/* Ajustes para celulares pequenos */
+@media (max-width: 480px) {
+  .login_form_vinycius h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .text_login_vinycius {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .button_vinycius {
+    font-size: 14px;
+  }
+
+  /* A imagem agora aparece normalmente em todas as telas */
+}
+
+/* Ajuste da imagem para desktop: mais encostada à esquerda */
+@media (min-width: 1024px) {
+  .img_login {
+    align-self: flex-start;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
 /* Final da pg de login */
+
+
 
 
 /* Inicio de CSS de privacidade e segurança*/
