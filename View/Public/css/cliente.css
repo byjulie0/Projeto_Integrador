@@ -4206,36 +4206,6 @@ body {
     font-size: 1.5rem;
   }
 }
-@media screen and (max-width:1921px) and (min-width:1470px) {
-  .wrapper-arthura { 
-      max-width: 70%;
-  }
-  .logout-button-arthura {
-      font-size: clamp(1.5rem, 2.5vw, 1rem);
-    }
-    .view-button-arthura {
-      font-size: clamp(1.5rem, 2.5vw, 1rem);
-    }
-    .user-name-arthura {
-      font-size: 2rem;
-    }
-    
-    .user-email-arthura {
-      font-size: 1.9rem;
-    }
-    
-    .section-title-arthura {
-      font-size: 2rem;
-    }
-    
-    .section-text-arthura {
-      font-size: 1.9rem;
-    }
-    
-    .password-input-arthura {
-      font-size: 1.95rem;
-    }
-}
 /*Fim inserir senha alterar dados Arthur*/
 
 /* Inicio pg redefinir senha login Lara*/
