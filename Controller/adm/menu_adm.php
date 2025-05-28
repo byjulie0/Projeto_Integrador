@@ -30,8 +30,8 @@
                 <li class="dropdown_menu_adm">
                     <a href="#" class="nav_item_pg_inicial_adm">Gerenciar produtos</a>
                     <ul class="submenu_adm">
-                        <li><a href="#">Adicionar produtos</a></li>
-                        <li><a href="#">Remover produtos</a></li>
+                        <li><a href="adicionar_produto.php">Adicionar produtos</a></li>
+                        <li><a href="#">Reativar produtos</a></li>
                         <li><a href="#">Editar cadastro de produtos</a></li>
                         <li><a href="#">Alterar estoque</a></li>
                         <li><a href="#">Visualizar catálogo de produtos</a></li>
