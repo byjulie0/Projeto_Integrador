@@ -1,8 +1,9 @@
 <?php
-include 'menu_pg_inicial.php';
+include 'menu_adm.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@ include 'menu_pg_inicial.php';
     <script defer src="../../view/js/menu-pg-inicial.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
 <body>
     <section id="atualizar-produtos">
         <div id="page-title-atualizar-produtos">
@@ -41,7 +43,8 @@ include 'menu_pg_inicial.php';
                     <table>
                         <tr>
                             <th class="select-all-label-atualizar-produtos"><button>Selecionar tudo</button></th>
-                            <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>
+                            <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto
+                            </th>
                             <th class="header-cell-atualizar-produto">Categoria</th>
                             <th class="header-cell-atualizar-produto">Estoque</th>
                             <th class="header-cell-atualizar-produto">Preço</th>
@@ -65,8 +68,10 @@ include 'menu_pg_inicial.php';
                             </td>
                             <td class="qt-atualizar-produtos cell-atualizar-produto">Quantidade em estoque</td>
                             <td class="price-atualizar-produtos cell-atualizar-produto">Preço do produto</td>
-                            <td class="update-atualizar-produtos cell-atualizar-produto"><i class="fa-solid fa-pen-to-square"></i></td>
-                            <td class="exclude-atualizar-produtos cell-atualizar-produto"><i class="fa-solid fa-trash"></i></td>
+                            <td class="update-atualizar-produtos cell-atualizar-produto"><i
+                                    class="fa-solid fa-pen-to-square"></i></td>
+                            <td class="exclude-atualizar-produtos cell-atualizar-produto"><i
+                                    class="fa-solid fa-trash"></i></td>
                         </tr>
                     </table>
                 </div>
@@ -75,4 +80,9 @@ include 'menu_pg_inicial.php';
         </div>
     </section>
 </body>
+
 </html>
+
+<?php
+include 'footer_adm.php';
+?>
