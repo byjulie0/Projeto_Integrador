@@ -714,6 +714,66 @@ body {
     color: var(--color-primary-3);
 }
 
+
+.pop_inativar {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.pop_conteudo {
+    position: relative;
+    background: #fff;
+    padding: 65px 65px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    width: 450px;
+    max-width: 95%;
+}
+
+
+.pop_conteudo p {
+    font-size: 16px;
+    color: var(--color-primary-1);
+    margin-bottom: 40px;
+}
+
+.pop_conteudo a {
+    font-size: 14px;
+    color: var(--color-primary-3);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#btnInativarConfirmado {
+    background-color: var(--success-color, #2D8C37);
+    color: white;
+    border: none;
+    padding: 6px 60px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pop_fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-primary-1);
+    cursor: pointer;
+}
+
 /* Fim atualizar produtos */
 
 /* Início Gerar relatório */
