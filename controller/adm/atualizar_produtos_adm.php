@@ -129,6 +129,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
+<?php include 'footer_adm.php'; ?>
+
 </body>
 </div>
 </html>
