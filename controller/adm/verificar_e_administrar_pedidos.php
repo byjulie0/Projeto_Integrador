@@ -1,5 +1,5 @@
 <?php
-include '../cliente/menu_pg_inicial.php';
+include 'menu_adm.php';
 ?>
 
 

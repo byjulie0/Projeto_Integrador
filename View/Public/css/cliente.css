@@ -3624,7 +3624,7 @@ input[type="checkbox"] {
 
 /*Final do menu do login-Vinycius*/
 
-/*Começo do login-vinycius*/
+/* Começo do login-vinycius */
 .body_login .login_html {
   height: 100%;
   font-family: Arial, sans-serif;
@@ -3643,7 +3643,7 @@ input[type="checkbox"] {
 .login_box_vinycius {
   display: flex;
   flex-direction: row;
-  background-color: #DFEBE0; 
+  background-color: #DFEBE0;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   max-width: 1700px;
@@ -3653,19 +3653,18 @@ input[type="checkbox"] {
   padding: 40px;
 }
 
-
 .info_login_vinycius {
   width: 50%;
   display: flex;
   flex-direction: column;
-  
+  justify-content: center;
 }
 
 .img_login {
   max-width: 330px;
+  width: 100%;
   padding: 2%;
-  margin: 1px 1;
-
+  margin: 0 auto;
 }
 
 .text_login_vinycius {
@@ -3673,10 +3672,10 @@ input[type="checkbox"] {
   font-size: 18px;
   color: #111;
   font-weight: 400;
-  padding: 10 10px;
+  padding: 10px;
 }
 
-.form_login{
+.form_login {
   width: 90%;
   height: 80%;
   display: flex;
@@ -3691,15 +3690,11 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-
 }
 
 .login_form_vinycius h2 {
   text-align: center;
-  flex-direction: column;
-  justify-content: center;
   margin-bottom: 80px;
-  padding-top: 1px;
   color: #111;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -3718,7 +3713,7 @@ input[type="checkbox"] {
 }
 
 .button_vinycius:hover {
- background-color: #f7f9ff; 
+  background-color: #f7f9ff;
 }
 
 .login_form_vinycius a {
@@ -3733,19 +3728,7 @@ input[type="checkbox"] {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-  .login_box_vinycius {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .info_login_vinycius, .login_form_vinycius {
-    width: 100%;
-    padding: 20px;
-  }
-}
-
-.texto1{
+.texto1 {
   color: #40513B;
   font-size: 13px;
   text-decoration: none;
@@ -3768,6 +3751,7 @@ input[type="checkbox"] {
   color: #333;
   font-size: 18px;
 }
+
 .input_login_vinycius1 {
   width: 70%;
   padding: 10px;
@@ -3778,22 +3762,94 @@ input[type="checkbox"] {
   color: #000;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
+
 .input_login_vinycius2 {
-width: 100%;
-padding: 10px;
-margin: 10px 0;
-border: 1px solid #000;
-border-radius: 2px;
-font-size: 13px;
-color: #000;
-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 13px;
+  color: #000;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
 
 .input_login_vinycius {
   width: 100%;
   padding-right: 40px;
 }
+
+/* Responsividade para tablets e celulares */
+@media (max-width: 768px) {
+  .login_box_vinycius {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .info_login_vinycius, .login_form_vinycius {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form_login {
+    width: 100%;
+    height: auto;
+  }
+
+  .img_login {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .input_login_vinycius1,
+  .input_login_vinycius2,
+  .senha_container {
+    width: 100%;
+  }
+
+  .button_vinycius {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .text_login_vinycius {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+/* Ajustes para celulares pequenos */
+@media (max-width: 480px) {
+  .login_form_vinycius h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .text_login_vinycius {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .button_vinycius {
+    font-size: 14px;
+  }
+
+  /* A imagem agora aparece normalmente em todas as telas */
+}
+
+/* Ajuste da imagem para desktop: mais encostada à esquerda */
+@media (min-width: 1024px) {
+  .img_login {
+    align-self: flex-start;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
 /* Final da pg de login */
+
+
 
 
 /* Inicio de CSS de privacidade e segurança*/
@@ -4150,36 +4206,6 @@ body {
     font-size: 1.5rem;
   }
 }
-@media screen and (max-width:1921px) and (min-width:1470px) {
-  .wrapper-arthura { 
-      max-width: 70%;
-  }
-  .logout-button-arthura {
-      font-size: clamp(1.5rem, 2.5vw, 1rem);
-    }
-    .view-button-arthura {
-      font-size: clamp(1.5rem, 2.5vw, 1rem);
-    }
-    .user-name-arthura {
-      font-size: 2rem;
-    }
-    
-    .user-email-arthura {
-      font-size: 1.9rem;
-    }
-    
-    .section-title-arthura {
-      font-size: 2rem;
-    }
-    
-    .section-text-arthura {
-      font-size: 1.9rem;
-    }
-    
-    .password-input-arthura {
-      font-size: 1.95rem;
-    }
-}
 /*Fim inserir senha alterar dados Arthur*/
 
 /* Inicio pg redefinir senha login Lara*/
@@ -4404,24 +4430,24 @@ body {
 
 /*inicio atualizar infos - Mariana */
 
-.area-atualizar-infos{
-  background-color: white;
-  font-family: 'Poppins';
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  gap: 30px;
-  margin-top: 32px;
-  text-align: left;
+
+/* Estilo base global */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .area-atualizar-infos {
+  background-color: white;
   width: 100%;
+  padding: 40px 20px;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  margin-top: 32px;
 }
 
 .form-container-atualizar-infos {
@@ -4447,6 +4473,7 @@ body {
   text-align: center;
   color: #2e4d2e;
   margin-bottom: 30px;
+  font-size: 1.8rem;
 }
 
 .form-atualizar-infos {
@@ -4471,6 +4498,8 @@ body {
 label {
   margin-bottom: 5px;
   font-weight: bold;
+  color: #333;
+  font-size: 0.95rem;
 }
 
 .input-atualizar-infos {
@@ -4482,9 +4511,10 @@ label {
 }
 
 .warning-atualizar-infos {
-  font-size: 12px;
+  font-size: 0.85rem;
   color: #aa0000;
   margin-top: 20px;
+  line-height: 1.5;
 }
 
 .buttons-atualizar-infos {
@@ -4492,12 +4522,15 @@ label {
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .link-btn-atualizar-infos {
   color: #2e8b57;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.95rem;
 }
 
 .submit-btn-atualizar-infos {
@@ -4508,132 +4541,94 @@ label {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .submit-btn-atualizar-infos:hover {
   background-color: #276c46;
 }
 
-/* === 320px (pequenos celulares) === */
-@media (max-width: 320px) {
-  .favoritos-title {
-    font-size: 1em;
-    padding-left: 10px;
-  }
+/* Responsividade */
 
-  .card-pag-fav {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .botao-pag-fav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .btn-pag-fav,
-  .excluir-pag-fav {
-    width: 100%;
-  }
-}
-
-/* === 375px (iPhones e smartphones médios) === */
-@media (max-width: 375px) {
-  .favoritos-title {
-    font-size: 1.1em;
-  }
-
-  .card-pag-fav {
-    width: 95%;
-  }
-}
-
-/* === 425px (smartphones grandes) === */
-@media (max-width: 425px) {
-  .card-pag-fav {
-    width: 95%;
-  }
-
-  .card-header-pag-fav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .botao-pag-fav {
-    flex-direction: column;
-  }
-}
-
-/* === 768px (tablets) === */
-@media (max-width: 768px) {
-  .cards-container-pag-fav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 85%;
-    max-width: 350px;
-  }
-
-  .favoritos-title {
-    justify-content: center;
-    font-size: 1.3em;
-  }
-
-  .botao-pag-fav {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .btn-pag-fav,
-  .excluir-pag-fav {
-    width: auto;
-  }
-}
-
-/* === 1024px (telas pequenas de notebook) === */
-@media (max-width: 1024px) {
-  .cards-container-pag-fav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 300px;
-  }
-}
-
-/* === 1440px (telas grandes e desktops) === */
-@media (max-width: 1440px) {
-  .card-pag-fav {
-    width: 300px;
-  }
-
-  .cards-container-pag-fav {
+/* 1600px ou menos */
+@media (max-width: 1600px) {
+  .form-grid-atualizar-infos {
     gap: 24px;
-    justify-content: center;
   }
 }
 
-/* === 2560px (telas ultra-wide) === */
-@media (min-width: 1441px) and (max-width: 2560px) {
-  .cards-container-pag-fav {
-    gap: 40px;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 320px;
-  }
-
-  .favoritos-title {
-    font-size: 1.8em;
-    margin-left: 60px;
+/* 1200px ou menos */
+@media (max-width: 1200px) {
+  .form-grid-atualizar-infos {
+    gap: 22px;
   }
 }
 
-/*inicio atualizar infos - Mariana */
+/* 960px ou menos */
+@media (max-width: 960px) {
+  .form-grid-atualizar-infos {
+    gap: 20px;
+  }
+}
+
+/* 840px ou menos — FORÇA 1 COLUNA */
+@media (max-width: 840px) {
+  .form-grid-atualizar-infos {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .form-group-atualizar-infos.full-width {
+    grid-column: auto;
+  }
+}
+
+/* 480px ou menos */
+@media (max-width: 480px) {
+  .form-grid-atualizar-infos {
+    gap: 14px;
+  }
+
+  .form-group-atualizar-infos {
+    font-size: 14px;
+  }
+}
+
+/* 425px ou menos */
+@media (max-width: 425px) {
+  .form-grid-atualizar-infos {
+    gap: 12px;
+  }
+
+  .form-group-atualizar-infos {
+    font-size: 13.5px;
+  }
+}
+
+/* 375px ou menos */
+@media (max-width: 375px) {
+  .form-grid-atualizar-infos {
+    gap: 11px;
+  }
+
+  .form-group-atualizar-infos {
+    font-size: 13px;
+  }
+}
+
+/* 320px ou menos */
+@media (max-width: 320px) {
+  .form-grid-atualizar-infos {
+    gap: 10px;
+  }
+
+  .form-group-atualizar-infos {
+    font-size: 12.5px;
+  }
+}
+
+
+/*fim atualizar infos - Mariana */
 
 
 

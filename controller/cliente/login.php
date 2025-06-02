@@ -33,10 +33,10 @@ include 'menu_login.php';
                         </span>
                     </div>
 
-                    <button type="submit" class="button_vinycius">LOGIN</button>
+                    <button type="button" class="button_vinycius" onclick="window.location.href='pg_inicial_cliente.php'">LOGIN</button>
                     <a href="card_email.php">Esqueci minha senha</a>
-                    <span class="texto1">Não tem conta? <a href="../controller/formulario_cadastro.php" class="texto1">Cadastre-se</a></span>
-                    <span class="texto1">Não tem conta? <a href="formulario_cadastro.php" class="texto1">Cadastre-se</a></span>
+                    <span class="texto1">Não tem conta? <a href="formulario_cadastro.php" class="texto1">Cadastre-se</a>
+                </span>
                 </form>
             </div>
         </div>

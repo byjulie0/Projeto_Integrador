@@ -1,3 +1,6 @@
+<?php
+include 'menu_adm.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,7 +18,7 @@
             <i class="fa-solid fa-chevron-left">
             </i>
         </a>
-        <h1 class="tile_generate_report">Gerar Relatório</h1>
+        <h1 class="title_generate_report">Gerar Relatório</h1>
     </div>
     <p class="info_generate_report">Administrador, selecione o tipo de relatório que deseja obter:</p>
     <section class="generate_report_area">
@@ -46,5 +49,7 @@
         </button>
     </div>
 </body>
-
 </html>
+<?php
+include 'footer_adm.php';
+?>
