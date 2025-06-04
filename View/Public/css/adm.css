@@ -2077,6 +2077,97 @@ main {
 
 /* Início do CSS Relatórios visualizar ADM - Denyel */
 
+.dn_section{
+  width: 100%;
+  height: 707px;
+
+}
+
+.dn_views{
+  width: 334px;
+  height: 104px;
+  background-color: rgba(96, 153, 102, 0.15);
+  border-radius: 15px;
+  margin-top: 40px;
+  margin-left: 20px;
+  display: flex;
+}
+
+.dn_views .coisa{
+    
+}
+
+.dn_views .coisa2{
+ 
+}
+
+.dn_box-img{
+  width: 78px;
+  height: 78px;
+  border-radius: 25px;
+  background-color: rgba(157, 192, 139, 0.3);
+  margin-top: 10px;
+  margin-left: 20px;
+
+}
+
+.dn_sales{
+  width: 334px;
+  height: 104px;
+  background-color: rgba(96, 153, 102, 0.15);
+  border-radius: 15px;
+  display: flex;
+  margin-left: 397px;
+  margin-top: -103px;
+}
+
+.dn_box-img2{
+  width: 78px;
+  height: 78px;
+  border-radius: 25px;
+  background-color: rgba(157, 192, 139, 0.3);
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.dn_total-products{
+  width: 334px;
+  height: 104px;
+  background-color: rgba(96, 153, 102, 0.15);
+  border-radius: 15px;
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.dn_box-img3{
+  width: 78px;
+  height: 78px;
+  border-radius: 25px;
+  background-color: rgba(157, 192, 139, 0.3);
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.dn_total-users{
+  width: 334px;
+  height: 104px;
+  background-color: rgba(96, 153, 102, 0.15);
+  border-radius: 15px;
+  margin-left: 397px;
+  display: flex;
+  margin-top: -104px;
+}
+
+.dn_box-img4{
+  width: 78px;
+  height: 78px;
+  border-radius: 25px;
+  background-color: rgba(157, 192, 139, 0.3);
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
 /* Fim do CSS Relatórios visualizar ADM - Denyel */
 
 /* Inicio de reativar produto */
