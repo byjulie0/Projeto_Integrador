@@ -78,11 +78,18 @@ body {
 }
 
 .nav-link-pg-inicial {
+  list-style: none;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+  gap: 20px;
+}
+
+.nav-link-pg-inicial li {
+  position: relative;
+}
+
+.nav-link-pg-inicial a:hover {
+  background-color: var(--color-detalhes-16);
+  color: var(--color-fonte);
 }
 
 .nav-item-pg-inicial {
@@ -169,7 +176,74 @@ body {
   cursor: pointer;
   margin-right: 15px;
 }
+.dropdown_menu_cliente {
+  position: relative;
+  list-style: none;
+}
+.dropdown_menu_cliente > a {
+  text-decoration: none;
+  display: block;
+  color: var(--color-fonte);
+}
 
+.dropdown_menu_cliente > a:hover {
+  background-color: var(--color-detalhes-16);
+  color: var(--color-fonte);
+}
+.dropdown_menu_cliente a{
+  text-decoration: none;
+}
+.submenu_cliente {
+  padding: 0;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-width: 100%;
+  width: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.submenu_cliente li {
+  width: 100%;
+}
+
+.submenu_cliente li a {
+  width: 100%;
+  font-size: 13px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: block;
+  color: var(--color-fonte);
+}
+
+.submenu_cliente li a:hover {
+  background-color: var(--color-detalhes-16);
+}
+
+.dropdown_menu_cliente:hover .submenu_cliente {
+  display: block;
+}
+
+
+.nav-page-btns-pg-inicial .dropdown_menu_cliente .submenu_cliente {
+  right: 0;
+  left: auto;
+  min-width: 180px;
+}
+.nav-page-btns-pg-inicial .dropdown_menu_cliente {
+  position: relative;
+}
+
+.nav-page-btns-pg-inicial .submenu_cliente {
+  right: 0;
+  left: auto;
+  min-width: 180px;
+}
 /* ==================== */
 /* Responsividade de celular */
 /* ==================== */
@@ -365,6 +439,25 @@ body {
 /* ==================== */
 
 @media (max-width: 1199px) {
+  .submenu_cliente {
+    position: static;
+    border: none;
+    display: none;
+  }
+  .dropdown_menu_cliente:hover .submenu_cliente {
+    display: none;
+  }
+  
+  .nav-link-pg-inicial.mobile-visible .submenu_cliente,
+  .nav-page-btns-pg-inicial.mobile-visible .submenu_cliente {
+    display: block;
+    padding-left: 20px;
+  }
+  
+  /* Mobile hover fix */
+  .dropdown_menu_cliente > a:hover {
+    background-color: transparent;
+  }
   .nav-link-pg-inicial {
     display: none;
     flex-direction: column;
@@ -2937,24 +3030,24 @@ body {
 
 /* Começo do formulário de alteração de senha */
 #section_formulario_senha{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 500px;
-  padding-left: 5%;
-  background-color: #DFEBE0;
-  width: 75%;
-  margin-left: 12%;
-  margin-top: 5%;
+  width: 50%;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 75px;
 }
 
 .espaco_forms_senha{
   display: grid;
   grid-template-rows: 15% 75%;
-  padding-top: 4rem;
-  padding-left: 2rem;
-
 }
 .title_div{
+  margin-bottom: 25px;
   font-size: 1.5rem;
   display: flex;
   gap: 15px;
@@ -2975,6 +3068,10 @@ body {
 
 .area_forms input{
   width: 30rem;
+  padding: 0.5rem;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
 }
 
 .p_form_senha{
@@ -2989,8 +3086,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: end;
-  margin-top: 290px;
-  margin-left: 80px;
 }
 
 .esqueceu_senha{
