@@ -56,7 +56,7 @@
             </div>
             <div class="product-carrinho">
                 <div class="non-labeled-content-carrinho">
-                    <img src="blank image.png" alt="" class="product-img-carrinho">
+                    <img src="blank_image.png" alt="" class="product-img-carrinho">
                     <div class="title-and-description-carrinho">
                         <span class="product-name-carrinho">
                             Bovino da raça nelore
@@ -111,7 +111,7 @@
             </div>
             <div class="product-carrinho">
                 <div class="non-labeled-content-carrinho">
-                    <img src="blank image.png" alt="" class="product-img-carrinho">
+                    <img src="blank_image.png" alt="" class="product-img-carrinho">
                     <div class="title-and-description-carrinho">
                         <span class="product-name-carrinho">
                             Bovino da raça nelore
@@ -166,7 +166,7 @@
             </div>
             <div class="product-carrinho">
                 <div class="non-labeled-content-carrinho">
-                    <img src="blank image.png" alt="" class="product-img-carrinho">
+                    <img src="blank_image.png" alt="" class="product-img-carrinho">
                     <div class="title-and-description-carrinho">
                         <span class="product-name-carrinho">
                             Bovino da raça nelore

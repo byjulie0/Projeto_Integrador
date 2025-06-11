@@ -26,7 +26,7 @@ include 'menu_recuperar_senha.php';
                     <h3>Insira o código de 6 digitos que lhe enviamos</h3>
                     <form action="redefinir_senha_login.php" class="recuperar_senha_codigo_formulario">
                         <input type="text" inputmode="numeric" pattern="[A-aZ-z0-9]+" maxlength="8" required>
-                        <div class="recuperar_senha_codigo_linha_divisao"></div>
+                        <hr class="recuperar_senha_codigo_divisao">
                         <button type="submit">Enviar</button>
                     </form>
                 </div>

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/Projeto_Integrador/view/public/css/cliente.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body>
+<body class="body-arthur">
 <main class ="main-arthur">
       <div class="back-link-arthur">
         <a href="#"><span class="arrow-arthur">←</span> Editar meus dados</a>

@@ -1,8 +1,9 @@
 <?php
-include 'menu_pg_inicial.php';
+include 'menu_adm.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@ include 'menu_pg_inicial.php';
     <script defer src="../../view/js/menu-pg-inicial.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
 <body>
     <section id="atualizar-produtos">
         <div id="page-title-atualizar-produtos">
@@ -41,7 +43,8 @@ include 'menu_pg_inicial.php';
                     <table>
                         <tr>
                             <th class="select-all-label-atualizar-produtos"><button>Selecionar tudo</button></th>
-                            <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>
+                            <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto
+                            </th>
                             <th class="header-cell-atualizar-produto">Categoria</th>
                             <th class="header-cell-atualizar-produto">Estoque</th>
                             <th class="header-cell-atualizar-produto">Preço</th>
@@ -65,8 +68,10 @@ include 'menu_pg_inicial.php';
                             </td>
                             <td class="qt-atualizar-produtos cell-atualizar-produto">Quantidade em estoque</td>
                             <td class="price-atualizar-produtos cell-atualizar-produto">Preço do produto</td>
-                            <td class="update-atualizar-produtos cell-atualizar-produto"><i class="fa-solid fa-pen-to-square"></i></td>
-                            <td class="exclude-atualizar-produtos cell-atualizar-produto"><i class="fa-solid fa-trash"></i></td>
+                            <td class="update-atualizar-produtos cell-atualizar-produto"><i
+                                    class="fa-solid fa-pen-to-square"></i></td>
+                            <td class="exclude-atualizar-produtos cell-atualizar-produto"><i
+                                    class="fa-solid fa-trash"></i></td>
                         </tr>
                     </table>
                 </div>
@@ -74,5 +79,60 @@ include 'menu_pg_inicial.php';
 
         </div>
     </section>
+<div id="popConfirmacao" class="pop_inativar">
+  <div class="pop_conteudo">
+    <button class="pop_fechar" id="fecharConfirmacao">&times;</button>
+    <p>Deseja inativar o(s) produto(s)?</p>
+    <button id="btnInativarConfirmado">Inativar</button>
+  </div>
+</div>
+<div id="popSucesso" class="pop_inativar">
+  <div class="pop_conteudo">
+    <button class="pop_fechar" id="fecharSucesso">&times;</button>
+    <p>Produto inativado com sucesso!</p>
+    <a href="#" id="linkVerInativos">Ver seção de inativos</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const botoesInativar = document.querySelectorAll('.fa-trash');
+    const popConfirmacao = document.getElementById('popConfirmacao');
+    const popSucesso = document.getElementById('popSucesso');
+    const btnInativar = document.getElementById('btnInativarConfirmado');
+    const fecharConfirmacao = document.getElementById('fecharConfirmacao');
+    const fecharSucesso = document.getElementById('fecharSucesso');
+
+    botoesInativar.forEach(botao => {
+        botao.addEventListener('click', function (e) {
+            e.preventDefault();
+            popConfirmacao.style.display = 'flex';
+        });
+    });
+
+    btnInativar.addEventListener('click', function () {
+        popConfirmacao.style.display = 'none';
+        popSucesso.style.display = 'flex';
+    });
+
+    fecharConfirmacao.addEventListener('click', () => popConfirmacao.style.display = 'none');
+    fecharSucesso.addEventListener('click', () => popSucesso.style.display = 'none');
+
+    window.addEventListener('click', function (e) {
+        if (e.target === popConfirmacao) popConfirmacao.style.display = 'none';
+        if (e.target === popSucesso) popSucesso.style.display = 'none';
+    });
+
+    document.getElementById('linkVerInativos').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.href = '#';
+    });
+});
+</script>
+
+<?php include 'footer_adm.php'; ?>
+
 </body>
+</div>
 </html>
+
