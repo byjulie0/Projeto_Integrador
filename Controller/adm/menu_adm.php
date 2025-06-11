@@ -23,7 +23,7 @@
         </button>
         <div class="menu_content_adm">
             <div class="logo_menu_adm">
-                <img src="../../view/public/imagens/2 Sem Título_20250212224411.png" alt="" class="logo_menu_adm_img">
+                <img src="../../view/public/imagens/logo.png" alt="" class="logo_menu_adm_img">
                 <a href="pg_inicial_cliente.php" class="logo_menu_adm_title">John Rooster</a>
             </div>
             <div class="nav_link_menu_adm">
