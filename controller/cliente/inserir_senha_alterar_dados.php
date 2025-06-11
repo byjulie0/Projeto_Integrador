@@ -1,47 +1,101 @@
 <?php
- include 'menu_pg_inicial.php';
+include 'menu_pg_inicial.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Perfil</title>
+    <title>Editar Meus Dados</title>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
-<body class="body-arthura">
-    <div class="header-arthura">
-    <h2 class="visualizar-dados-title"><i class="bi bi-chevron-left"></i>Meu Perfil</h2>
-    </div>
-    <div class="wrapper-arthura">
-        <div class="card-arthura">
-            <div class="profile-arthura">
-                <div class="avatar-arthura">
-                    <svg class="avatar-icon-arthura" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-                <div class="user-info-arthura">
-                    <div class="user-name-arthura">Fulano da Silva Pinto Soares</div>
-                    <div class="user-email-arthura">sample123@gmail.com</div>
-                </div>
-            </div>
-        </div>
+<body>
+    <div class="container-principal">
+        <header class="cabecalho-formulario">
+        <a href="#" class="setinha_forms_mudar_senha">
+                    <i class="fa-solid fa-chevron-left">
+                    </i>
+                </a>
+            <h1 class="titulo-pagina">Editar meus dados</h1>
+        </header>
 
-        <div class="card-arthura">
-            <div class="section-title-arthura">Meus dados</div>
-            <div class="section-text-arthura">Cliente, para sua segurança, para visualizar seus dados por favor insira sua senha:</div>
-            
-            <form>
-                <input type="password" class="password-input-arthura" placeholder="Digite sua senha:">
-                <button type="button" class="view-button-arthura">Visualizar meus dados</button>
+        <main class="conteudo-formulario">
+            <form class="formulario-dados">
+                <div class="container-campos">
+                    <div class="grupo-campo">
+                        <label class="rotulo-campo" for="campo-nome">Nome:</label>
+                        <input 
+                            type="text" 
+                            id="campo-nome" 
+                            class="campo-entrada" 
+                            placeholder="Fulano da Silva Pinto Soares"
+                            required
+                        >
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label class="rotulo-campo" for="campo-endereco">Endereço:</label>
+                        <input 
+                            type="text" 
+                            id="campo-endereco" 
+                            class="campo-entrada" 
+                            placeholder="Rua General Exemplo do Exemplo, 24..."
+                            required
+                        >
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label class="rotulo-campo" for="campo-telefone">Telefone:</label>
+                        <input 
+                            type="tel" 
+                            id="campo-telefone" 
+                            class="campo-entrada" 
+                            placeholder="+55 67 XXXXX-XXXX"
+                            required
+                        >
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label class="rotulo-campo" for="campo-nascimento">Data de nascimento:</label>
+                        <input 
+                            type="text" 
+                            id="campo-nascimento" 
+                            class="campo-entrada" 
+                            placeholder="XX/XX/XXXX"
+                            required
+                        >
+                    </div>
+
+                    <div class="grupo-campo campo-completo">
+                        <label class="rotulo-campo" for="campo-email">E-mail:</label>
+                        <input 
+                            type="email" 
+                            id="campo-email" 
+                            class="campo-entrada" 
+                            placeholder="sample123@gmail.com"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="aviso-dados">
+                    Atenção: Seus dados só poderão ser alterados 1 vezes por mês após serem atualizados, por questões de segurança. Certifique-se de que todas as informações estão corretas antes de salvar. Ao alterar os dados, você aceita os termos de uso e política de privacidade da nossa plataforma.
+                </div>
+
+                <div class="container-botoes">
+                    <button type="button" class="botao-alterar-senha">
+                        Alterar senha
+                    </button>
+                    <button type="submit" class="botao-salvar">
+                        Salvar
+                    </button>
+                </div>
             </form>
-        </div>
-
-        <button type="button" class="logout-button-arthura">Logout</button>
+        </main>
     </div>
 </body>
 </html>
 <?php
-    include 'footer_cliente.php';
-    ?>
+        include 'footer_cliente.php';
+        ?>
