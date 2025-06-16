@@ -2077,95 +2077,42 @@ main {
 
 /* Início do CSS Relatórios visualizar ADM - Denyel */
 
-.dn_section{
-  width: 100%;
-  height: 707px;
-
+.verificar_administrar_pedidos_sessao_body{
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.dn_views{
-  width: 334px;
-  height: 104px;
-  background-color: rgba(96, 153, 102, 0.15);
-  border-radius: 15px;
-  margin-top: 40px;
-  margin-left: 20px;
+.verificar_administrar_pedidos_sessao_info{
+  margin: 40px;
+  color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_info h1{
+  position: relative;
+  top: -8vh;
+  left: -36%;
+  font-weight: 400;
+}
+
+.verificar_administrar_pedidos_sessao_seta_voltar{
+  font-size: 1.7rem;
+}
+
+.verificar_administrar_pedidos_sessao_mini_titulos{
+  position: relative;
+  top: -7vh;
+  left: -10px;
+  color: var(--color-primary-1);
   display: flex;
+  gap: 80%;
+  background-color: magenta;
+  flex-direction: row;
 }
 
-.dn_views .coisa{
-    
-}
-
-.dn_views .coisa2{
- 
-}
-
-.dn_box-img{
-  width: 78px;
-  height: 78px;
-  border-radius: 25px;
-  background-color: rgba(157, 192, 139, 0.3);
-  margin-top: 10px;
-  margin-left: 20px;
-
-}
-
-.dn_sales{
-  width: 334px;
-  height: 104px;
-  background-color: rgba(96, 153, 102, 0.15);
-  border-radius: 15px;
-  display: flex;
-  margin-left: 397px;
-  margin-top: -103px;
-}
-
-.dn_box-img2{
-  width: 78px;
-  height: 78px;
-  border-radius: 25px;
-  background-color: rgba(157, 192, 139, 0.3);
-  margin-top: 10px;
-  margin-left: 20px;
-}
-
-.dn_total-products{
-  width: 334px;
-  height: 104px;
-  background-color: rgba(96, 153, 102, 0.15);
-  border-radius: 15px;
-  display: flex;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
-.dn_box-img3{
-  width: 78px;
-  height: 78px;
-  border-radius: 25px;
-  background-color: rgba(157, 192, 139, 0.3);
-  margin-top: 10px;
-  margin-left: 20px;
-}
-
-.dn_total-users{
-  width: 334px;
-  height: 104px;
-  background-color: rgba(96, 153, 102, 0.15);
-  border-radius: 15px;
-  margin-left: 397px;
-  display: flex;
-  margin-top: -104px;
-}
-
-.dn_box-img4{
-  width: 78px;
-  height: 78px;
-  border-radius: 25px;
-  background-color: rgba(157, 192, 139, 0.3);
-  margin-top: 10px;
-  margin-left: 20px;
+.verificar_administrar_pedidos_sessao_titulo_destaque{
+  font-weight: 600;
 }
 
 /* Fim do CSS Relatórios visualizar ADM - Denyel */
