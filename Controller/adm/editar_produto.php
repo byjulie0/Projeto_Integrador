@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- cod php para o btn avançar -->
 
 <?php
@@ -11,6 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
 
 <!-- cod php para o btn avançar -->
 
+=======
+<?php
+include 'menu_adm.php';
+?>
+>>>>>>> 75c9d4ba5b9436716fe59bc968bcce58ecf9ab69
 <!DOCTYPE html>
 <html lang="en">
 
@@ -242,3 +248,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </body>
 
 </html>
+<?php
+include 'footer_adm.php';
+?>
