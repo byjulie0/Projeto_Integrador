@@ -78,11 +78,18 @@ body {
 }
 
 .nav-link-pg-inicial {
+  list-style: none;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+  gap: 20px;
+}
+
+.nav-link-pg-inicial li {
+  position: relative;
+}
+
+.nav-link-pg-inicial a:hover {
+  background-color: var(--color-detalhes-16);
+  color: var(--color-fonte);
 }
 
 .nav-item-pg-inicial {
@@ -169,7 +176,74 @@ body {
   cursor: pointer;
   margin-right: 15px;
 }
+.dropdown_menu_cliente {
+  position: relative;
+  list-style: none;
+}
+.dropdown_menu_cliente > a {
+  text-decoration: none;
+  display: block;
+  color: var(--color-fonte);
+}
 
+.dropdown_menu_cliente > a:hover {
+  background-color: var(--color-detalhes-16);
+  color: var(--color-fonte);
+}
+.dropdown_menu_cliente a{
+  text-decoration: none;
+}
+.submenu_cliente {
+  padding: 0;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-width: 100%;
+  width: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.submenu_cliente li {
+  width: 100%;
+}
+
+.submenu_cliente li a {
+  width: 100%;
+  font-size: 13px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: block;
+  color: var(--color-fonte);
+}
+
+.submenu_cliente li a:hover {
+  background-color: var(--color-detalhes-16);
+}
+
+.dropdown_menu_cliente:hover .submenu_cliente {
+  display: block;
+}
+
+
+.nav-page-btns-pg-inicial .dropdown_menu_cliente .submenu_cliente {
+  right: 0;
+  left: auto;
+  min-width: 180px;
+}
+.nav-page-btns-pg-inicial .dropdown_menu_cliente {
+  position: relative;
+}
+
+.nav-page-btns-pg-inicial .submenu_cliente {
+  right: 0;
+  left: auto;
+  min-width: 180px;
+}
 /* ==================== */
 /* Responsividade de celular */
 /* ==================== */
@@ -365,6 +439,25 @@ body {
 /* ==================== */
 
 @media (max-width: 1199px) {
+  .submenu_cliente {
+    position: static;
+    border: none;
+    display: none;
+  }
+  .dropdown_menu_cliente:hover .submenu_cliente {
+    display: none;
+  }
+  
+  .nav-link-pg-inicial.mobile-visible .submenu_cliente,
+  .nav-page-btns-pg-inicial.mobile-visible .submenu_cliente {
+    display: block;
+    padding-left: 20px;
+  }
+  
+  /* Mobile hover fix */
+  .dropdown_menu_cliente > a:hover {
+    background-color: transparent;
+  }
   .nav-link-pg-inicial {
     display: none;
     flex-direction: column;
@@ -2937,24 +3030,24 @@ body {
 
 /* Começo do formulário de alteração de senha */
 #section_formulario_senha{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 500px;
-  padding-left: 5%;
-  background-color: #DFEBE0;
-  width: 75%;
-  margin-left: 12%;
-  margin-top: 5%;
+  width: 50%;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 75px;
 }
 
 .espaco_forms_senha{
   display: grid;
   grid-template-rows: 15% 75%;
-  padding-top: 4rem;
-  padding-left: 2rem;
-
 }
 .title_div{
+  margin-bottom: 25px;
   font-size: 1.5rem;
   display: flex;
   gap: 15px;
@@ -2975,6 +3068,10 @@ body {
 
 .area_forms input{
   width: 30rem;
+  padding: 0.5rem;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
 }
 
 .p_form_senha{
@@ -2989,8 +3086,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: end;
-  margin-top: 290px;
-  margin-left: 80px;
 }
 
 .esqueceu_senha{
@@ -4355,6 +4450,273 @@ body {
 }
 /* Fim pg redefinir senha Lara */
 
+
+/* Inicio do CSS da página de busca*/
+.body_pg_busca {
+  background-color: #f8f8f8;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} 
+
+.container_pagina_de_busca {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  width: 100%;
+  position: relative;
+  margin-top: 35px;
+}
+
+.h2-pag-busca {
+  margin: 0;
+  display: inline-block;
+  padding-bottom: 13px;
+}
+
+/* Seção de filtros ajustada */
+.filtros-container {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filtros-titulo {
+  font-weight: bold;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  margin-right: 5px;
+}
+
+.filtro-btn, .filtro-select {
+  padding: 6px 12px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filtro-btn:hover, .filtro-select:hover {
+  background: #f7f7f7;
+  border-color: #ccc;
+}
+
+.filtro-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  padding-right: 28px;
+}
+.lotes_container_pagina_de_busca #lotesContainer{
+  display: flex;
+  width: 100%;
+}
+
+/* Card de lote */
+.lote-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.lote-card:hover {
+  transform: translateY(-5px);
+}
+
+.lote-card img {
+  width: 100%;
+  border-radius: 5px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 10px;
+  text-align: right;
+}
+
+.info-grid p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.info-grid p:nth-child(odd) {
+  font-weight: bold;
+  text-align: left;
+}
+
+.preco {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2a7f40;
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.btn-voltar i {
+  color: var(--color-primary-1);
+  font-size: 1.5rem;
+}
+.lotes-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lotes_container_pagina_de_busca {
+  display: flex;
+  gap: 10px;
+  padding: 15px 0;
+}
+/* Media Queries para responsividade */
+@media (max-width: 767px) {
+  .container_pagina_de_busca {
+    padding: 15px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+  
+  .filtros-container {
+    gap: 8px;
+    padding: 10px;
+  }
+  
+  .filtro-btn, .filtro-select {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .lotes_container_pagina_de_busca {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px; /* Espaço para shadow dos cards */
+  }
+  
+  .lote-card {
+    min-width: 220px;
+  }
+  
+  .lote-card img {
+    height: 150px;
+  }
+  
+  /* Esconde as setas de navegação no mobile */
+  .nav-button {
+    display: none;
+  }
+  
+  .lote-card {
+    min-width: 280px; /* Largura mínima dos cards no mobile */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lotes_container_pagina_de_busca {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: visible;
+    gap: 25px;
+  }
+  
+  .lote-card {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .nav-button {
+    display: none;
+  }
+  .lotes-wrapper {
+    overflow-x: visible; /* Remove rolagem horizontal no desktop */
+  }
+  
+  .lotes_container_pagina_de_busca {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%; /* Restaura largura normal */
+  }
+  
+  .lote-card {
+    width: 100%; /* Cards ocupam toda a largura do grid */
+  }
+}
+
+@media (min-width: 1440px) {
+  .lotes_container_pagina_de_busca {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .container_pagina_de_busca {
+    max-width: 1300px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .lotes_container_pagina_de_busca {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .container_pagina_de_busca {
+    max-width: 1600px;
+  }
+  
+  .lote-card img {
+    height: 220px;
+  }
+}
+
+/* Ajuste para telas muito pequenas (menos de 360px) */
+@media (max-width: 359px) {
+  .filtros-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filtro-btn, .filtro-select {
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
+/* Fim do CSS da página de busca */
+
 /* Inicio pop_up_redefinir_senha */
 .popup-overlay {
   display: none;
@@ -4629,6 +4991,7 @@ label {
 
 
 /*fim atualizar infos - Mariana */
+
 
 
 
