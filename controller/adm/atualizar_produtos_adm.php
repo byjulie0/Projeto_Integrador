@@ -13,8 +13,8 @@ include 'menu_adm.php';
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../../view/public/css/adm.css">
-    <script defer src="../../view/js/menu-pg-inicial.js"></script>
     <script defer src="../../view/js/toogle.js"></script>
+    <script defer src="../../view/js/menu-pg-inicial.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
@@ -77,7 +77,10 @@ include 'menu_adm.php';
                             </td>
 
                             <td class="exclude-atualizar-produtos cell-atualizar-produto">
-                                <button type="button" class="toggle-btn" aria-pressed="false"><span class="toggle-handle"></span></button>
+                                <button type="button" class="icon-toggle-btn" aria-pressed="false">
+                                    <i class="fa-solid fa-toggle-off"></i>
+                                    <i class="fa-solid fa-toggle-on"></i>
+                                </button>
                             </td>
                             <!-- botao toogle não esta aparecendo -->
                             

@@ -2047,37 +2047,30 @@ main {
 
 /* Botao toogle pag atualizar_produtos - Lara */
 
-.toggle-btn {
-  position: relative;
-  width: 40px !important;
-  height: 20px !important;
-  border: none !important;
-  border-radius: 20px !important;
-  background-color: #e0e0e0 !important;
-  cursor: pointer !important;
-  padding: 0 !important;
-  transition: background-color 0.3s !important;
-  display: inline-block !important;
+.icon-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 24px;
+  color: #ccc;
+  transition: all 0.3s ease;
 }
 
-.toggle-btn[aria-pressed="true"] {
-  background-color: #29b5a8 !important;
+.icon-toggle-btn[aria-pressed="true"] {
+  color: #29b5a8;
 }
 
-.toggle-handle {
-  position: absolute !important;
-  top: 2px !important;
-  left: 2px !important;
-  width: 16px !important;
-  height: 16px !important;
-  background-color: white !important;
-  border-radius: 50% !important;
-  transition: transform 0.3s !important;
-  display: block !important;
+.icon-toggle-btn[aria-pressed="true"] .fa-toggle-off {
+  display: none;
 }
 
-.toggle-btn[aria-pressed="true"] .toggle-handle {
-  transform: translateX(20px) !important;
+.icon-toggle-btn[aria-pressed="false"] .fa-toggle-on {
+  display: none;
 }
 
+.icon-toggle-btn .fa-toggle-on,
+.icon-toggle-btn .fa-toggle-off {
+  vertical-align: middle;
+}
 /* Fim botao toogle pag atualizar_produtos - Lara */
