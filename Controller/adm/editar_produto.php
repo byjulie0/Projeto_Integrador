@@ -1,6 +1,6 @@
-<<<<<<< HEAD
-<!-- cod php para o btn avançar -->
+<!-- LARA -->
 
+<!-- cod php para o btn avançar -->
 <?php
 $mostrar_popup_sucesso = false;
 
@@ -9,14 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
 }
 ?>
 
-
 <!-- cod php para o btn avançar -->
 
-=======
 <?php
 include 'menu_adm.php';
 ?>
->>>>>>> 75c9d4ba5b9436716fe59bc968bcce58ecf9ab69
 <!DOCTYPE html>
 <html lang="en">
 
