@@ -1,4 +1,6 @@
-
+<?php
+include 'menu_adm.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -127,3 +129,6 @@
 </body>
 
 </html>
+<?php
+include 'footer_adm.php';
+?>
