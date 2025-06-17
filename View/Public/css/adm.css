@@ -2182,9 +2182,6 @@ main {
 .body_add_product_second{
   color: var(--color-fonte);
 }
-.main_add_product_second{
-
-}
 .title_page_add_product_second{
   display: flex;
   align-items: center;
