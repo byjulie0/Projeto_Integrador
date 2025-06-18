@@ -39,7 +39,7 @@
                     Entregue por <span>John Rooster</span>
                 </p>
                 <p class="informacoes-detalhes-produto">
-                    A empresa John Rooster garante os animais da melhor qualidade
+                    A John Rooster se compromete a oferecer apenas os melhores animais do mercado.
                 </p>
                 <p class="preco-detalhes-produto">R$ 5.000,00</p>  
                 <button class="botao-carrinho-detalhes-produto">Adicionar ao carrinho</button>

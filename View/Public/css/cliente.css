@@ -2417,14 +2417,13 @@ body {
 .menu_recuper_senha {
   align-items: center;
   width: 100%;
-  height: 9.2rem;
   display: flex;
   background-color: #40513B;
+  max-height: 120px;
 }
 
 .info_menu-recuperar_senha {
   width: 100%;
-  max-height: 9.2rem;
   display: flex;
   flex-direction: row;
 }
@@ -2437,8 +2436,7 @@ body {
 
 .nome_menu_recuperar_senha {
   font-weight: 600;
-  margin-left: 20px;
-  margin-top: 50px;
+  padding: 40px 20px;
   color: #FFFFFF;
   font-size: 2rem;
   align-items: center;
@@ -2449,19 +2447,24 @@ body {
 /* ==================== */
 @media (max-width: 767px) {
   .menu_recuper_senha {
-      height: 7rem;
+    max-height: 110px;
   }
   
   .logo_menu_recuperar_senha img {
       height: 5.5rem;
       margin-left: 15px;
-      margin-top: 8px;
+  }
+
+  .info_menu-recuperar_senha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .nome_menu_recuperar_senha {
-      font-size: 1.5rem;
-      margin-top: 35px;
-      margin-left: 15px;
+      font-size: 0.9rem;
+      height: 100%;
+      width: 100%;
   }
 }
 
@@ -3770,7 +3773,7 @@ input[type="checkbox"] {
 .text_login_vinycius {
   margin: 10px;
   font-size: 20px;
-  --color-primary-1: #40513b;;
+  color: #40513B;
   font-weight: bold;
   font-family: 'Lato';
   padding: 10px;
@@ -3787,18 +3790,17 @@ input[type="checkbox"] {
 
 .login_form_vinycius {
   width: 45%;
-  height: 100%;
+  height: 110%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: 'Lato';
-
 }
 
 .login_form_vinycius h2 {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   color: #111;
   font-family: 'Lato';
 }
@@ -3897,8 +3899,9 @@ input[type="checkbox"] {
 @media (max-width: 768px) {
   .login_box_vinycius {
     flex-direction: column;
-    height: auto;
-    padding: 20px;
+    height: 45%;
+    display: flex;
+    padding: 25px;
   }
 
   .info_login_vinycius, .login_form_vinycius {
@@ -3908,14 +3911,14 @@ input[type="checkbox"] {
 
   .form_login {
     width: 100%;
-    height: auto;
+    height: 10%;
     font-family: 'Lato';
   }
 
   .img_login {
     max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    height: 100%;
+    margin-bottom:2px;
   }
 
   .input_login_vinycius1,
