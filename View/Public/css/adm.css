@@ -2077,13 +2077,6 @@ main {
 
 /* Início do CSS Relatórios visualizar ADM - Denyel */
 
-.verificar_administrar_pedidos_sessao_body{
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .verificar_administrar_pedidos_sessao_info{
   margin: 40px;
   color: var(--color-primary-1);
@@ -2091,8 +2084,8 @@ main {
 
 .verificar_administrar_pedidos_sessao_info h1{
   position: relative;
-  top: -9.5vh;
-  left: -35%;
+  top: -8vh;
+  left: -37%;
   font-weight: 400;
 }
 
@@ -2118,22 +2111,65 @@ main {
   font-weight: 600;
 }
 
-.verificar_administrar_pedidos_sessao_mini_section{
-
+.verificar_administrar_pedidos_sessao_section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 2%;
+  margin-top: -7%;
 }
+
+.verificar_administrar_pedidos_sessao_coluna_direita{
+  display: grid;
+  gap: 20px;
+}
+
+/* Coluna da esquerda */
 
 .verificar_administrar_pedidos_sessao_coluna{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-left: 1%;
 }
 
 .verificar_administrar_pedidos_sessao_bloco{
   display: grid;
   grid-template-rows: auto auto;
-  width: 47%;
+  width: 80%;
   background-color: #6099664b;
   padding-bottom: 80px;
+  border-radius: 8px;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_segundo{
+  display: grid;
+  grid-template-rows: auto auto;
+  width: 80%;
+  background-color: #6099664b;
+  padding-bottom: 80px;
+  border-radius: 8px;
+  margin-left: -10%;
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas{
+  width: 70%;
+  background-color: #6099664b;
+  padding-bottom: 400px;
+  border-radius: 8px;
+  margin-left: 1%;
+}
+
+/* Coluna da direita */
+
+.verificar_administrar_pedidos_sessao_bloco_vendas{
+  width: 90%;
+  background-color: #6099664b;
+  padding-bottom: 300px;
+  border-radius: 8px;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_atividades{
+  width: 90%;
+  background-color: #6099664b;
+  padding-bottom: 300px;
   border-radius: 8px;
 }
 

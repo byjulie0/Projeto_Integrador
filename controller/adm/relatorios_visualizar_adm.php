@@ -12,7 +12,7 @@ include "../adm/menu_adm.php";
     <link rel="stylesheet" href="/PROJETO_INTEGRADOR/view/public/css/cliente.css">
     <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid">
 </head>
-<body class="verificar_administrar_pedidos_sessao_body">
+<body>
     <main>
         <div class="verificar_administrar_pedidos_sessao_info">
             <a href="" class="verificar_administrar_pedidos_sessao_seta_voltar">
@@ -24,19 +24,23 @@ include "../adm/menu_adm.php";
         </div>
         
         <section class="verificar_administrar_pedidos_sessao_section">
-            <div class="verificar_administrar_pedidos_sessao_mini_section">
-                <div class="verificar_administrar_pedidos_sessao_coluna">
-                    <div class="verificar_administrar_pedidos_sessao_bloco"></div>
-                    <div class="verificar_administrar_pedidos_sessao_bloco"></div>
+            <div>
+                <div class="verificar_administrar_pedidos_sessao_coluna_esquerda">
+                    <div class="verificar_administrar_pedidos_sessao_coluna">
+                        <div class="verificar_administrar_pedidos_sessao_bloco"></div>
+                        <div class="verificar_administrar_pedidos_sessao_bloco_segundo"></div>
+                    </div>
+                    <div class="verificar_administrar_pedidos_sessao_coluna">
+                        <div class="verificar_administrar_pedidos_sessao_bloco"></div>
+                        <div class="verificar_administrar_pedidos_sessao_bloco_segundo"></div>
+                    </div>
                 </div>
-                <div class="verificar_administrar_pedidos_sessao_coluna">
-                    <div class="verificar_administrar_pedidos_sessao_bloco"></div>
-                    <div class="verificar_administrar_pedidos_sessao_bloco"></div>
-                </div>
+                <div class="verificar_administrar_pedidos_sessao_estatisticas"></div>
             </div>
-            <!-- <div class="verificar_administrar_pedidos_sessao_bloco_5"></div>
-            <div class="verificar_administrar_pedidos_sessao_bloco_6"></div>
-            <div class="verificar_administrar_pedidos_sessao_bloco_7"></div> -->
+            <div class="verificar_administrar_pedidos_sessao_coluna_direita">
+                <div class="verificar_administrar_pedidos_sessao_bloco_vendas"></div>
+                <div class="verificar_administrar_pedidos_sessao_bloco_atividades"></div>
+            </div>
         </section>
 
     </main>
