@@ -21,7 +21,7 @@
         <p class="info_add_product_second">Preencha as informações necessárias e adicione produtos ao catálogo do site</p>
         <section class="add_product_area_second">
             <div class="add_product_image_second">
-                <p class="product_title_info_second">Carregar imagem de capa<span class="mandatory_space_second">*</span></p>
+                <p class="product_title_info_second">Carregar mais imagens do produto<span>(opcional)</span></p>
                 <div class="img_holder_second">
                     <label class="img_holder_button_second">
                         <i class="fa-solid fa-arrow-up-from-bracket"></i>
@@ -30,7 +30,7 @@
                     </label>
                 </div>
             </div>
-            <aside class="add_product_details_second">
+            <div class="add_product_details_second">
                 <div class="product_details_collumn_second">
                     <div class="input_product_price_second">
                         <p class="product_title_info_second">Preço<span class="mandatory_space_second">*</span></p>
@@ -41,19 +41,18 @@
                         <p class="product_title_info_second">Sexo<span
                                 class="mandatory_space_second">*</span></p>
                         <select name="categories" id="categories" class="product_info_select_second" required>
-                            <option value="" selected disabled>Selecione um sexo</option>
+                            <option value="" selected disabled>Selecione um gênero</option>
                             <option value="bovinos" class="product_categories">Masculino</option>
                             <option value="equinos" class="product_categories">Feminino</option>
                         </select>
-                        <span class="error-message">Por favor, selecione uma categoria</span>
+                        <span class="error-message">Por favor, selecione um gênero</span>
                     </div>
                 </div>
-            </aside>
+            </div>
         </section>
         <div class="add_product_submit_button_second">
             <button type="submit" class="add_product_button_second">
-                Avançar
-                <i class="fa-solid fa-arrow-right"></i>
+                Adicionar Produto +
             </button>
         </div>
     </main>

@@ -2182,6 +2182,10 @@ main {
 .body_add_product_second{
   color: var(--color-fonte);
 }
+.main_add_product_second{
+  padding: 40px 5%;
+}
+
 .title_page_add_product_second{
   display: flex;
   align-items: center;
@@ -2194,6 +2198,7 @@ main {
 }
 
 .info_add_product_second {
+  display: flex;
   padding: 25px 0 20px;
 }
 
@@ -2208,7 +2213,9 @@ main {
 }
 
 .product_title_info_second {
-  font-size: 20px;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .img_holder_second {
@@ -2232,11 +2239,11 @@ main {
 }
 
 .add_product_details_second {
-  gap: 20px;
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
+}
 
 .product_info_select_second {
   width: 60%;
@@ -2247,18 +2254,27 @@ main {
 }
 
 .product_details_collumn_second {
-  gap: 20px;
-  flex-direction: column;
+  width: 90%;
+  gap: 50px;
+  flex-direction: row;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 
 
 
 .input_product_info_second,
-.product_info_select_second {
+.product_info_select_second{
   width: 297px;
   height: 25px;
+  border-color: #ff4444 !important; 
+  box-shadow: 0 0 5px rgba(255, 68, 68, 0.5) !important;
+}
+
+.input_product_info_second{
+  padding: 10px 10px;
+  border-radius: 6px;
 }
 
 .add_product_submit_button_second {
@@ -2271,7 +2287,7 @@ main {
 .add_product_button_second {
   gap: 10px;
   display: flex;
-  width: 300px;
+  width: 20%;
   justify-content: center;
   align-items: center;
   background-color: var(--color-botao-op-Concluido);
@@ -2283,6 +2299,10 @@ main {
 
 .add_product_button_second:hover {
   background-color: #3d6a3f;
+}
+
+.add_product_submit_button_second{
+  margin-bottom: 20px;
 }
 
 input[type="image"] {
@@ -2297,19 +2317,19 @@ input[type="image"] {
 }
 
 .invalid-field,
-.input_product_info:invalid,
-.product_info_select:invalid {
+.input_product_info_second:invalid,
+.product_info_select_second:invalid {
   border-color: #ff4444 !important;
   box-shadow: 0 0 5px rgba(255, 68, 68, 0.5) !important;
 }
 
 .invalid-field+.error-message,
-.input_product_info:invalid+.error-message,
-.product_info_select:invalid+.error-message {
+.input_product_info_second:invalid+.error-message_second,
+.product_info_select_second:invalid+.error-message {
   display: block;
 }
 
-.error-message_second {
+.error-message_second{
   display: none;
 }
 
