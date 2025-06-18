@@ -11,7 +11,7 @@
   --color-primary-7: #edf1d6;
   --color-primary-8: #e7f0dc;
   --color-detalhes-9: #2278f4;
-  --color-botao-op-Cancelar: #db2828; /*Op = Operação*/
+  --color-botao-op-Cancelar: #f13b3b; /*Op = Operação*/
   --color-botao-op-Pendente: #dba928; /*Op = Operação*/
   --color-botao-op-Concluido: #2d8c37; /*Op = Operação*/
   --color-fonte: #20261e;
@@ -5030,6 +5030,7 @@ label {
   align-items: center;
 }
 
+
 /* Botão de fechar */
 .fechar_login_popup {
   position: absolute;
@@ -5050,7 +5051,7 @@ label {
 /* Título e texto */
 .area_login_popup h2 {
   margin-top: 0;
-  color: #333;
+  color: var(--color-primary-1);
   font-size: 1.5rem;
   margin-bottom: 15px;
 }
@@ -5092,13 +5093,13 @@ label {
 }
 
 .botao_popup_cancelar {
-  background-color: #f1f1f1;
-  color: #333;
+  background-color: var(--color-botao-op-Cancelar);
+  color: white;
   border: 1px solid #ddd;
 }
 
 .botao_popup_cancelar:hover {
-  background-color: #e7e7e7;
+  background-color: #c61f1f;
 }
 
 /* Fim popup login */
