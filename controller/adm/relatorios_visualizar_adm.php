@@ -19,20 +19,24 @@ include "../adm/menu_adm.php";
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <h1>Visualizar relatórios</h1>
-            <div class="verificar_administrar_pedidos_sessao_mini_titulos">
-                <h3>Mostrando relatórios referentes ao período: <span class="verificar_administrar_pedidos_sessao_titulo_destaque">XX/XX/XXXX - YY/YY/YYYY</span></h3>
-                <h3>Mudar período</h3>
-            </div>
+            <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período: <span class="verificar_administrar_pedidos_sessao_titulo_destaque">XX/XX/XXXX - YY/YY/YYYY</span></h3>
+            <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_2">Mudar período</h3>
         </div>
         
-        <section>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <section class="verificar_administrar_pedidos_sessao_section">
+            <div class="verificar_administrar_pedidos_sessao_mini_section">
+                <div class="verificar_administrar_pedidos_sessao_coluna">
+                    <div class="verificar_administrar_pedidos_sessao_bloco"></div>
+                    <div class="verificar_administrar_pedidos_sessao_bloco"></div>
+                </div>
+                <div class="verificar_administrar_pedidos_sessao_coluna">
+                    <div class="verificar_administrar_pedidos_sessao_bloco"></div>
+                    <div class="verificar_administrar_pedidos_sessao_bloco"></div>
+                </div>
+            </div>
+            <!-- <div class="verificar_administrar_pedidos_sessao_bloco_5"></div>
+            <div class="verificar_administrar_pedidos_sessao_bloco_6"></div>
+            <div class="verificar_administrar_pedidos_sessao_bloco_7"></div> -->
         </section>
 
     </main>

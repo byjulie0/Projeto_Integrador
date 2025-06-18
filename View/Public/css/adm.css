@@ -2091,28 +2091,50 @@ main {
 
 .verificar_administrar_pedidos_sessao_info h1{
   position: relative;
-  top: -8vh;
-  left: -36%;
+  top: -9.5vh;
+  left: -35%;
   font-weight: 400;
+}
+
+.verificar_administrar_pedidos_sessao_mini_titulos_1{
+  width: 700px;
+  position: relative;
+  top: -7vh;
+  left: -10px;
+}
+
+.verificar_administrar_pedidos_sessao_mini_titulos_2{
+  width: 140px;
+  position: relative;
+  top: -14.5vh;
+  left: 90%;
 }
 
 .verificar_administrar_pedidos_sessao_seta_voltar{
   font-size: 1.7rem;
 }
 
-.verificar_administrar_pedidos_sessao_mini_titulos{
-  position: relative;
-  top: -7vh;
-  left: -10px;
-  color: var(--color-primary-1);
-  display: flex;
-  gap: 80%;
-  background-color: magenta;
-  flex-direction: row;
-}
-
 .verificar_administrar_pedidos_sessao_titulo_destaque{
   font-weight: 600;
+}
+
+.verificar_administrar_pedidos_sessao_mini_section{
+
+}
+
+.verificar_administrar_pedidos_sessao_coluna{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 1%;
+}
+
+.verificar_administrar_pedidos_sessao_bloco{
+  display: grid;
+  grid-template-rows: auto auto;
+  width: 47%;
+  background-color: #6099664b;
+  padding-bottom: 80px;
+  border-radius: 8px;
 }
 
 /* Fim do CSS Relatórios visualizar ADM - Denyel */
