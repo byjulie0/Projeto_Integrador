@@ -4755,7 +4755,7 @@ body {
   background-color: #fff;
   width: 90%;
   max-width: 400px;
-  min-height: 40vh;
+  min-height: 30vh;
   border-radius: 8px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -4767,9 +4767,8 @@ body {
 }
 
 .popup-text {
-  margin-top: 0;
   color: #40513b;
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin-bottom: 1.5rem;
 }
 
