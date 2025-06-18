@@ -25,7 +25,6 @@
                 <div class="img_holder_second">
                     <label class="img_holder_button_second">
                         <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                        <span>Selecione uma imagem</span>
                         <input type="file" accept="image/*" style="display: none;">
                     </label>
                 </div>
