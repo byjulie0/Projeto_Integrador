@@ -3698,12 +3698,14 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  font-family: 'Lato';
 }
 
 .info_menu_login {
   display: flex;
   align-items: center;
   width: 90%;
+  font-family: 'Lato';
 }
 
 .logo_menu_login img {
@@ -3713,6 +3715,7 @@ input[type="checkbox"] {
 
 .nome_menu_login {
   font-size: 2rem;
+  font-family: 'Lato';
   font-weight: 600;
   color: #FFFFFF;
 }
@@ -3722,7 +3725,7 @@ input[type="checkbox"] {
 /* Começo do login-vinycius */
 .body_login .login_html {
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'Lato';
   background-color: #f5f5f5;
   margin: 0;
 }
@@ -3737,6 +3740,7 @@ input[type="checkbox"] {
 
 .login_box_vinycius {
   display: flex;
+  font-family: 'Lato';
   flex-direction: row;
   background-color: #DFEBE0;
   border-radius: 3px;
@@ -3752,6 +3756,7 @@ input[type="checkbox"] {
   width: 50%;
   display: flex;
   flex-direction: column;
+  font-family: 'Lato';
   justify-content: center;
 }
 
@@ -3764,9 +3769,10 @@ input[type="checkbox"] {
 
 .text_login_vinycius {
   margin: 10px;
-  font-size: 18px;
-  color: #111;
-  font-weight: 400;
+  font-size: 20px;
+  --color-primary-1: #40513b;;
+  font-weight: bold;
+  font-family: 'Lato';
   padding: 10px;
 }
 
@@ -3775,23 +3781,26 @@ input[type="checkbox"] {
   height: 80%;
   display: flex;
   flex-direction: column;
+  font-family: 'Lato';
   align-items: center;
 }
 
 .login_form_vinycius {
   width: 45%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  font-family: 'Lato';
+
 }
 
 .login_form_vinycius h2 {
   text-align: center;
   margin-bottom: 80px;
   color: #111;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Lato';
 }
 
 .button_vinycius {
@@ -3813,30 +3822,39 @@ input[type="checkbox"] {
 
 .login_form_vinycius a {
   color: #609966;
-  font-size: 13px;
+  font-size: 15px;
   text-decoration: none;
   display: flex;
   margin: 7px 0;
+  font-family: 'Lato';
 }
 
 .login_form_vinycius a:hover {
   text-decoration: underline;
+
 }
 
 .texto1 {
   color: #40513B;
-  font-size: 13px;
+  font-size: 15px;
   text-decoration: none;
   display: flex;
   align-items: center;
-  margin: 7px 0;
+  margin: 8px 0;
+  font-family: 'Lato';
 }
+.texto1 a {
+  margin-left: 5px;
+  font-family: 'Lato';
+}
+
 
 .senha_container {
   position: relative;
   display: flex;
   width: 70%;
   align-items: center;
+  font-family: 'Lato';
 }
 
 .toggle_senha {
@@ -3856,6 +3874,7 @@ input[type="checkbox"] {
   font-size: 13px;
   color: #000;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  font-family: 'Lato';
 }
 
 .input_login_vinycius2 {
@@ -3867,6 +3886,7 @@ input[type="checkbox"] {
   font-size: 13px;
   color: #000;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  font-family: 'Lato';
 }
 
 .input_login_vinycius {
@@ -3874,7 +3894,6 @@ input[type="checkbox"] {
   padding-right: 40px;
 }
 
-/* Responsividade para tablets e celulares */
 @media (max-width: 768px) {
   .login_box_vinycius {
     flex-direction: column;
@@ -3890,6 +3909,7 @@ input[type="checkbox"] {
   .form_login {
     width: 100%;
     height: auto;
+    font-family: 'Lato';
   }
 
   .img_login {
@@ -3915,7 +3935,6 @@ input[type="checkbox"] {
   }
 }
 
-/* Ajustes para celulares pequenos */
 @media (max-width: 480px) {
   .login_form_vinycius h2 {
     font-size: 24px;
@@ -3931,10 +3950,8 @@ input[type="checkbox"] {
     font-size: 14px;
   }
 
-  /* A imagem agora aparece normalmente em todas as telas */
 }
 
-/* Ajuste da imagem para desktop: mais encostada à esquerda */
 @media (min-width: 1024px) {
   .img_login {
     align-self: flex-start;
