@@ -38,7 +38,6 @@ include 'menu_recuperar_senha.php';
     <div class="popup-overlay" id="popupSucesso">
         <div class="popup-content">
             <h3 class="popup-text">Senha redefinida com sucesso!</h3>
-            <hr class="popup-line">
             <button class="popup-button" id="btnLogin">Login</button>
         </div>
     </div>
