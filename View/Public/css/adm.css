@@ -2101,6 +2101,11 @@ main {
   position: relative;
   top: -14.5vh;
   left: 90%;
+  cursor: pointer;
+}
+
+.verificar_administrar_pedidos_sessao_mini_titulos_2:hover{
+  color: var(--color-primary-2);
 }
 
 .verificar_administrar_pedidos_sessao_seta_voltar{
@@ -2118,35 +2123,48 @@ main {
   margin-top: -7%;
 }
 
-.verificar_administrar_pedidos_sessao_coluna_direita{
-  display: grid;
-  gap: 20px;
-}
-
 /* Coluna da esquerda */
 
 .verificar_administrar_pedidos_sessao_coluna{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .verificar_administrar_pedidos_sessao_bloco{
   display: grid;
+  grid-template-columns: 2fr 2fr;
   grid-template-rows: auto auto;
-  width: 80%;
+  width: 100%;
+  height: 70%;
   background-color: #6099664b;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
   border-radius: 8px;
 }
 
-.verificar_administrar_pedidos_sessao_bloco_segundo{
-  display: grid;
-  grid-template-rows: auto auto;
-  width: 80%;
-  background-color: #6099664b;
-  padding-bottom: 80px;
-  border-radius: 8px;
-  margin-left: -10%;
+.verificar_administrar_pedidos_sessao_bloco h5{
+  width: 100%;
+  height: 50%;
+  /* background-color: magenta; */
+  position: relative;
+  top: 20%;
+  left: -40%;
+}
+
+.verificar_administrar_pedidos_sessao_bloco i{
+  margin-top: -30%;
+  margin-left: 180%;
+  font-size: 1.5rem;
+  transform: rotate(180deg);
+}
+
+.verificar_administrar_pedidos_sessao_bloco_mini{
+  width: 10%;
+  background-color: #9DC08B4D;
+  padding: 40px;
+  border-radius: 18px;
+  margin-top: 4%;
+  margin-left: 10%;
 }
 
 .verificar_administrar_pedidos_sessao_estatisticas{
@@ -2158,6 +2176,12 @@ main {
 }
 
 /* Coluna da direita */
+
+.verificar_administrar_pedidos_sessao_coluna_direita{
+  display: grid;
+  gap: 20px;
+  margin-left: 5%;
+}
 
 .verificar_administrar_pedidos_sessao_bloco_vendas{
   width: 90%;
