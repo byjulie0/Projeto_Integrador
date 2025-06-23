@@ -2137,42 +2137,69 @@ main {
   grid-template-rows: auto auto;
   width: 100%;
   height: 70%;
-  background-color: #6099664b;
+  background-color: #6099662e;
   padding-bottom: 20px;
-  border-radius: 8px;
+  border-radius: 15px;
 }
 
 .verificar_administrar_pedidos_sessao_bloco h5{
   width: 100%;
   height: 50%;
   /* background-color: magenta; */
+  color: var(--color-primary-1);
+  text-align: left;
   position: relative;
   top: 20%;
-  left: -40%;
+  left: -20%;
 }
 
 .verificar_administrar_pedidos_sessao_bloco i{
-  margin-top: -30%;
+  margin-top: -40%;
   margin-left: 180%;
   font-size: 1.5rem;
   transform: rotate(180deg);
+  cursor: pointer;
 }
 
 .verificar_administrar_pedidos_sessao_bloco_mini{
   width: 10%;
-  background-color: #9DC08B4D;
+  background-color: #9dc08b3a;
   padding: 40px;
   border-radius: 18px;
   margin-top: 4%;
   margin-left: 10%;
 }
 
+.verificar_administrar_pedidos_sessao_zero{
+  font-size: 1.2rem;
+}
+
 .verificar_administrar_pedidos_sessao_estatisticas{
   width: 70%;
-  background-color: #6099664b;
+  background-color: #6099662e;
   padding-bottom: 400px;
-  border-radius: 8px;
   margin-left: 1%;
+  border-radius: 18px;
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais,
+.verificar_administrar_pedidos_sessao_vendas_linhas_horizontais{
+  display: flex;
+  gap: 20px;
+  margin-left: 10%;
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais hr,
+.verificar_administrar_pedidos_sessao_vendas_linhas_horizontais hr{
+  width: 80%;
+  height: 1%;
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais,
+.verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
+  display: flex;
+  margin-left: 20%;
+  gap: 40px;
 }
 
 /* Coluna da direita */
@@ -2185,16 +2212,40 @@ main {
 
 .verificar_administrar_pedidos_sessao_bloco_vendas{
   width: 90%;
-  background-color: #6099664b;
+  height: 80%;
+  background-color: #6099662e;
   padding-bottom: 300px;
-  border-radius: 8px;
+  border-radius: 18px;
 }
 
 .verificar_administrar_pedidos_sessao_bloco_atividades{
   width: 90%;
-  background-color: #6099664b;
+  margin-top: -17%;
+  background-color: #6099662e;
   padding-bottom: 300px;
-  border-radius: 8px;
+  border-radius: 18px;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_atividades h4{
+  margin-top: 5%;
+  margin-left: 5%;
+  text-align: left;
+  color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_bloco_vendas h4{
+  color: var(--color-primary-1);
+  text-align: left;
+  margin-top: 5%;
+  margin-left: 5%;
+  font-weight: 600;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_vendas h3{
+  color: var(--color-primary-1);
+  font-size: 1.5rem;
+  text-align: left;
+  margin-left: 5%;
 }
 
 /* Fim do CSS Relatórios visualizar ADM - Denyel */
