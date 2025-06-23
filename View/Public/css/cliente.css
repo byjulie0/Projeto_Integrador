@@ -3725,7 +3725,7 @@ input[type="checkbox"] {
 /* Começo do login-vinycius */
 .body_login .login_html {
   height: 100%;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
   background-color: #f5f5f5;
   margin: 0;
 }
@@ -3740,7 +3740,7 @@ input[type="checkbox"] {
 
 .login_box_vinycius {
   display: flex;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
   flex-direction: row;
   background-color: #DFEBE0;
   border-radius: 3px;
@@ -3756,7 +3756,7 @@ input[type="checkbox"] {
   width: 50%;
   display: flex;
   flex-direction: column;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
   justify-content: center;
 }
 
@@ -3772,7 +3772,7 @@ input[type="checkbox"] {
   font-size: 20px;
   color: #40513B;
   font-weight: bold;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
   padding: 10px;
 }
 
@@ -3781,7 +3781,7 @@ input[type="checkbox"] {
   height: 80%;
   display: flex;
   flex-direction: column;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
   align-items: center;
 }
 
@@ -3792,14 +3792,14 @@ input[type="checkbox"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
 }
 
 .login_form_vinycius h2 {
   text-align: center;
   margin-bottom: 100px;
   color: #111;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
 }
 
 .button_vinycius {
@@ -3825,7 +3825,7 @@ input[type="checkbox"] {
   text-decoration: none;
   display: flex;
   margin: 7px 0;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
 }
 
 .login_form_vinycius a:hover {
@@ -3840,11 +3840,11 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   margin: 8px 0;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
 }
 .texto1 a {
   margin-left: 5px;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
 }
 
 
@@ -3853,7 +3853,7 @@ input[type="checkbox"] {
   display: flex;
   width: 70%;
   align-items: center;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
 }
 
 .toggle_senha {
@@ -3868,24 +3868,18 @@ input[type="checkbox"] {
   width: 70%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #000;
+  border: 1px solid #ffffff;
   border-radius: 2px;
-  font-size: 13px;
-  color: #000;
-  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
-  font-family: 'Lato';
+  font-size: 11px;
 }
 
 .input_login_vinycius2 {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #000;
+  border: 0px solid #ffffff;
   border-radius: 2px;
-  font-size: 13px;
-  color: #000;
-  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
-  font-family: 'Lato';
+  font-size: 11px;
 }
 
 .input_login_vinycius {
@@ -3899,6 +3893,9 @@ input[type="checkbox"] {
     height: 45%;
     display: flex;
     padding: 25px;
+  }
+  .texto1 a {
+    margin-left: 2px;
   }
 
   .info_login_vinycius, .login_form_vinycius {
