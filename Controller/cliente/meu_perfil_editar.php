@@ -1,63 +1,73 @@
-<!-- Arthur -->
-<?php 
-  include('menu_pg_inicial.php'); 
+<?php
+include 'menu_pg_inicial.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Página Cliente</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/Projeto_Integrador/view/public/css/cliente.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Editar Meus Dados</title>
+    <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
-<body class="body-arthur">
-<main class ="main-arthur">
-      <div class="back-link-arthur">
-        <a href="#"><span class="arrow-arthur">←</span> Editar meus dados</a>
-      </div>
+<body>
+<main class="main">
+        <div class="container">
+            <div class="page-header">
+                <button class="back-btn">
+                <a href="#" class="setinha_forms_mudar_senha">
+                    <i class="fa-solid fa-chevron-left">
+                    </i>
+                </a>
+                </button>
+                <h1 class="page-title">Editar meus dados</h1>
+            </div>
 
-      <form class="edit-form-arthur">
-        <div class="form-row-arthur">
-          <div class="form-group-arthur">
-            <label class ="label-arthur" for="name">Nome: </label>
-            <input class ="input-arthur" type="text" id="name" placeholder="Fulano da Silva Pinto Soares">
-          </div>
-          <div class="form-group-arthur">
-            <label class ="label-arthur" for="address">Endereço:</label>
-            <input class ="input-arthur" type="text" id="address" placeholder="Rua General Exemplo do Exemplo, 24...">
-          </div>
-        </div>
+            <form class="edit-form">
+                <div class="form-grid"> 
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nome:</label>
+                            <input type="text" id="name" class="form-input" value="Fulano da Silva Pinto Soares">
+                        </div>
 
-        <div class="form-row-arthur">
-          <div class="form-group">
-            <label class ="label-arthur" for="phone">Telefone:</label>
-            <input class ="input-arthur" type="tel" id="phone" placeholder="+55 67 XXXXX-XXXX">
-          </div>
-          <div class="form-group-arthur">
-            <label class ="label-arthur" for="birthdate">Data de nascimento:</label>
-            <input class ="input-arthur" type="text" id="birthdate" placeholder="XX/XX/XXXX">
-            <small class="warning-arthur">Sua idade só pode ser alterada 1 única vez, caso seja detectado que o usuário se registrou em nosso site antes da maioridade (18 anos, em território brasileiro) ou a idade disposta seja menor que 18, sua conta será suspensa!</small>
-          </div>
-        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Telefone:</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+55 67 XXXXX-XXXX">
+                        </div>
 
-        <div class="form-group-arthur">
-          <label class ="label-arthur" for="email">E-mail:</label>
-          <input class ="input-arthur" type="email" id="email" placeholder="sample123@email.com">
-        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="email" id="email" class="form-input" placeholder="sample123@gmail.com">
+                        </div>
+                    </div>
 
-        <div class="form-actions-arthur">
-          <a href="#" class="change-password-arthur">Alterar senha</a>
-          <button type="submit" class="save-button-arthur">Salvar</button>
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="address" class="form-label">Endereço:</label>
+                            <input type="text" id="address" class="form-input" placeholder="Rua General Exemplo do Exemplo, 24...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthdate" class="form-label">Data de nascimento:</label>
+                            <input type="text" id="birthdate" class="form-input" placeholder="XX/XX/XXXX">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-text">
+                    <strong>Atenção:</strong> Sua idade só pode ser alterada 1 única vez, caso seja detectado que o usuário se registrou em nosso site antes da maioridade (18 anos, em território brasileiro) ou a idade inserida seja menor que 18, sua conta será suspensa!
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="change-password-btn">Alterar senha</button>
+                    <button type="submit" class="save-btn">Salvar</button>
+                </div>
+            </form>
         </div>
-      </form>
     </main>
 </body>
 </html>
-
-<?php 
-     include('footer_cliente.php'); 
-?>
+<?php
+        include 'footer_cliente.php';
+        ?>
