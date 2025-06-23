@@ -13,7 +13,7 @@ include 'menu_login.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-</style>
+    </style> 
 </head>
 <body>
     <main class="container_geral_login">
@@ -37,9 +37,9 @@ include 'menu_login.php';
                         </span>
                     </div>
 
-                    <button type="button" class="button_vinycius" onclick="window.location.href='pg_inicial_cliente.php'">LOGIN</button>
-                    <a href="card_email.php">Esqueci minha senha</a>
-                    <span class="texto1">Não tem conta?<a href="pg_cadastro.php" class="texto1">Cadastre-se</a>
+                    <button type="button" class="button_vinycius" onclick="window.location.href='pg_inicial_cliente.php'">LOGIN<button>
+                    <a href="recuperar_senha_login1.php">Esqueci minha senha</a>
+                    <span class="texto1">Não tem conta? <a href="pg_cadastro.php" class="texto1">Cadastre-se</a>
                 </span>
                 </form>
             </div>

@@ -34,7 +34,7 @@
             
             <form>
                 <input type="password" class="password-input-arthura" placeholder="Digite sua senha:">
-                <a href="meu_perfil_editar.php"><button type="button" class="view-button-arthura">Visualizar meus dados</button></a>
+                <button type="button" class="view-button-arthura">Visualizar meus dados</button>
             </form>
         </div>
 
