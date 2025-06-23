@@ -28,7 +28,7 @@ include 'menu_pg_inicial.php';
                     <div class="form-column">
                         <div class="form-group">
                             <label for="name" class="form-label">Nome:</label>
-                            <input type="text" id="name" class="form-input" value="Fulano da Silva Pinto Soares">
+                            <input type="text" id="name" class="form-input" placeholder="Fulano da Silva Pinto Soares">
                         </div>
 
                         <div class="form-group">
