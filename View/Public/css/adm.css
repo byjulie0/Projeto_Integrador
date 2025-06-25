@@ -2077,7 +2077,14 @@ main {
 
 /* Início do CSS Relatórios visualizar ADM - Denyel */
 
+.verificar_administrar_pedidos_sessao_seta_voltar i{
+  z-index: 2;
+  cursor: pointer;
+}
+
 .verificar_administrar_pedidos_sessao_info{
+  max-width: 100%;
+  width: 50%;
   margin: 40px;
   color: var(--color-primary-1);
 }
@@ -2085,27 +2092,40 @@ main {
 .verificar_administrar_pedidos_sessao_info h1{
   position: relative;
   top: -8vh;
-  left: -37%;
+  left: -25%;
   font-weight: 400;
+  max-width: 100%;
 }
 
 .verificar_administrar_pedidos_sessao_mini_titulos_1{
+  max-width: 100%;
   width: 700px;
   position: relative;
   top: -7vh;
-  left: -10px;
+  left: 1%;
+}
+
+.verificar_administrar_pedidos_sessao_periodo_bloco{
+  max-width: 100%;
+  width: 20%;
+  margin-left: 167%;
+  position: relative;
+  top: -13vh;
 }
 
 .verificar_administrar_pedidos_sessao_mini_titulos_2{
   width: 140px;
-  position: relative;
-  top: -14.5vh;
-  left: 90%;
   cursor: pointer;
+  margin-bottom: 1%;
 }
 
 .verificar_administrar_pedidos_sessao_mini_titulos_2:hover{
   color: var(--color-primary-2);
+}
+
+.verificar_administrar_pedidos_sessao_periodo_linha{
+  max-width: 100%;
+  width: 95%;
 }
 
 .verificar_administrar_pedidos_sessao_seta_voltar{
@@ -2117,6 +2137,7 @@ main {
 }
 
 .verificar_administrar_pedidos_sessao_section{
+  max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-left: 2%;
@@ -2129,6 +2150,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  max-width: 100%;
 }
 
 .verificar_administrar_pedidos_sessao_bloco{
@@ -2170,16 +2192,25 @@ main {
   margin-left: 10%;
 }
 
-.verificar_administrar_pedidos_sessao_zero{
-  font-size: 1.2rem;
-}
-
 .verificar_administrar_pedidos_sessao_estatisticas{
-  width: 70%;
+  max-width: 100%;
+  width: 100%;
   background-color: #6099662e;
   padding-bottom: 400px;
   margin-left: 1%;
+  margin-top: -5%;
   border-radius: 18px;
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas_visualizacao{
+  margin-top: 10%;
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas h4{
+  color: var(--color-primary-1);
+  margin-top: 5%;
+  margin-left: 5%;
+  text-align: left;
 }
 
 .verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais,
@@ -2206,21 +2237,23 @@ main {
 
 .verificar_administrar_pedidos_sessao_coluna_direita{
   display: grid;
-  gap: 20px;
+  gap: 10px;
   margin-left: 5%;
 }
 
 .verificar_administrar_pedidos_sessao_bloco_vendas{
+  max-width: 100%;
   width: 90%;
-  height: 80%;
+  height: 70%;
   background-color: #6099662e;
   padding-bottom: 300px;
   border-radius: 18px;
 }
 
 .verificar_administrar_pedidos_sessao_bloco_atividades{
+  max-width: 100%;
   width: 90%;
-  margin-top: -17%;
+  margin-top: -25%;
   background-color: #6099662e;
   padding-bottom: 300px;
   border-radius: 18px;
