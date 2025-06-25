@@ -3819,7 +3819,8 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  font-family: 'Lato';
+  font-family: "Poppins", sans-serif;
+
 }
 
 .info_menu_login {
