@@ -14,7 +14,7 @@ include "../adm/menu_adm.php";
     <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid">
 </head>
 <body>
-    <main>
+    <main class="verificar_administrar_pedidos_sessao_main">
         <div class="verificar_administrar_pedidos_sessao_info">
             <a href="" class="verificar_administrar_pedidos_sessao_seta_voltar">
                 <i class="fa-solid fa-chevron-left"></i>
@@ -62,52 +62,53 @@ include "../adm/menu_adm.php";
                             <i class="fa-solid fa-chevron-left"></i>
                         </div>
                     </div>
-                </div>
-                <div class="verificar_administrar_pedidos_sessao_estatisticas">
-                    <h4>Estatísticas</h4>
-                    <div class="verificar_administrar_pedidos_sessao_estatisticas_visualizacao">
-                        <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
-                            <h6>20%</h6>
-                            <hr>
+                
+                    <div class="verificar_administrar_pedidos_sessao_estatisticas">
+                        <h4>Estatísticas</h4>
+                        <div class="verificar_administrar_pedidos_sessao_estatisticas_visualizacao">
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
+                                <h6>20%</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
+                                <h6>18%</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
+                                <h6>15%</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
+                                <h6>12%</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
+                                <h6>10%</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
+                                <h6>5%</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
+                                <h6>2%</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
+                                <h6>1%</h6>
+                                <hr>
+                            </div>
                         </div>
-                        <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
-                            <h6>18%</h6>
-                            <hr>
-                        </div>
-                        <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
-                            <h6>15%</h6>
-                            <hr>
-                        </div>
-                        <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
-                            <h6>12%</h6>
-                            <hr>
-                        </div>
-                        <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
-                            <h6>10%</h6>
-                            <hr>
-                        </div>
-                        <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
-                            <h6>5%</h6>
-                            <hr>
-                        </div>
-                        <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
-                            <h6>2%</h6>
-                            <hr>
-                        </div>
-                        <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
-                            <h6>1%</h6>
-                            <hr>
-                        </div>
-                    </div>
 
-                    <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais">
-                        <h6>D</h6>
-                        <h6>S</h6>
-                        <h6>T</h6>
-                        <h6>Q</h6>
-                        <h6>Q</h6>
-                        <h6>S</h6>
-                        <h6>S</h6>
+                        <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais">
+                            <h6>D</h6>
+                            <h6>S</h6>
+                            <h6>T</h6>
+                            <h6>Q</h6>
+                            <h6>Q</h6>
+                            <h6>S</h6>
+                            <h6>S</h6>
+                        </div>
                     </div>
                 </div>
             </div>

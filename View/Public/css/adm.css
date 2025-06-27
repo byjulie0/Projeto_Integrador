@@ -2077,22 +2077,28 @@ main {
 
 /* Início do CSS Relatórios visualizar ADM - Denyel */
 
+.verificar_administrar_pedidos_sessao_main{
+  margin: 40px;
+}
+
 .verificar_administrar_pedidos_sessao_seta_voltar i{
   z-index: 2;
   cursor: pointer;
+  position: relative;
+  left: 7%;
 }
 
 .verificar_administrar_pedidos_sessao_info{
   max-width: 100%;
   width: 50%;
-  margin: 40px;
+  margin-bottom: 2%;
   color: var(--color-primary-1);
 }
 
 .verificar_administrar_pedidos_sessao_info h1{
   position: relative;
   top: -8vh;
-  left: -25%;
+  left: -16%;
   font-weight: 400;
   max-width: 100%;
 }
@@ -2102,19 +2108,18 @@ main {
   width: 700px;
   position: relative;
   top: -7vh;
-  left: 1%;
+  left: 5%;
 }
 
 .verificar_administrar_pedidos_sessao_periodo_bloco{
   max-width: 100%;
-  width: 20%;
+  width: 25%;
   margin-left: 167%;
   position: relative;
   top: -13vh;
 }
 
 .verificar_administrar_pedidos_sessao_mini_titulos_2{
-  width: 140px;
   cursor: pointer;
   margin-bottom: 1%;
 }
@@ -2125,7 +2130,7 @@ main {
 
 .verificar_administrar_pedidos_sessao_periodo_linha{
   max-width: 100%;
-  width: 95%;
+  width: 85%;
 }
 
 .verificar_administrar_pedidos_sessao_seta_voltar{
@@ -2176,20 +2181,35 @@ main {
 }
 
 .verificar_administrar_pedidos_sessao_bloco i{
+  color: var(--color-primary-1);
   margin-top: -40%;
   margin-left: 180%;
-  font-size: 1.5rem;
-  transform: rotate(180deg);
+  /* position: relative;
+  top: -250%;
+  left: 120%; */
+  font-size: 1.6rem;
+  transform: scaleX(-1);
   cursor: pointer;
 }
 
 .verificar_administrar_pedidos_sessao_bloco_mini{
   width: 10%;
+  height: 10%;
   background-color: #9dc08b3a;
   padding: 40px;
   border-radius: 18px;
-  margin-top: 4%;
+  margin-top: 8%;
   margin-left: 10%;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_mini i{
+  color: var(--color-primary-1);
+  font-size: 2.5rem;
+  transform: none;
+  margin-top: -10vh;
+  margin-left: -3vh; 
+  align-items: center;
+  justify-content: center;
 }
 
 .verificar_administrar_pedidos_sessao_estatisticas{
@@ -2199,7 +2219,7 @@ main {
   padding-bottom: 400px;
   margin-left: 1%;
   margin-top: -5%;
-  border-radius: 18px;
+  border-radius: 18px 18px 2px 2px;
 }
 
 .verificar_administrar_pedidos_sessao_estatisticas_visualizacao{
@@ -2256,7 +2276,7 @@ main {
   margin-top: -25%;
   background-color: #6099662e;
   padding-bottom: 300px;
-  border-radius: 18px;
+  border-radius: 18px 18px 2px 2px;
 }
 
 .verificar_administrar_pedidos_sessao_bloco_atividades h4{
