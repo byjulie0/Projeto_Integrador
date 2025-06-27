@@ -22,10 +22,9 @@
                     <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Galo de perfil">
                     <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Galo em pé">
                 </div>
-                
-                    <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Galo Índio de León" class="imagem-grande-detalhes-produto">
-
-            <!-- </div> -->
+                <div class="imagem-grande-detalhes-produto">
+                    <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Galo Índio de León" >
+                </div> 
             <div class="info-produto-detalhes-produto"> 
                 <div class="estrelas-detalhes-produto">★★★★★<span>4.9 (204)</span>
                     <i class="bi bi-share"></i>
@@ -49,6 +48,9 @@
         </main>
         <div class="descricao-detalhes-produto">
             <h3>Informações</h3>
+            <p>Dê uma nova vida ao seu espaço com o Galo Indio de Leão, a raça que é a verdadeira definição de majestade e beleza. Conhecido por seu porte imponente e plumagem exuberante, este galo não é apenas um animal de estimação; é uma verdadeira obra de arte viva!</p>
+        </div>
+        <div class="sub-descricao-detalhes-produto">
             <p><strong>Peso:</strong> 5kg</p>
             <p><strong>Idade:</strong> 1 ano</p>
             <p><strong>Raça:</strong> Criado a partir dos melhores exemplares, o Galo Índio de León possui uma linhagem seletiva que garante não apenas beleza, mas também vigor e adaptabilidade.</p>

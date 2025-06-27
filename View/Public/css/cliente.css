@@ -700,7 +700,7 @@ body {
   padding: 20px 5%;
 }
 
-.imagem-grande-detalhes-produto {
+.imagem-grande-detalhes-produto img{
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
@@ -779,6 +779,20 @@ body {
 }
 
 .descricao-detalhes-produto {
+  
+    padding: 20px 10%;
+    display: grid;
+    text-align: justify;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente */
+  }
+  
+  .texto {
+    font-size: 20px;
+  }
+  
+
+.sub-descricao-detalhes-produto {
   width: 50%;
   padding: 20px 10%;
   text-align: justify;
