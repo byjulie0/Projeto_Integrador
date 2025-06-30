@@ -1820,8 +1820,8 @@ body {
   padding-top: 0%;
   margin: 10px;
   font-size: 1.5rem;
-  color: var(--color-fonte);
-  font-weight: 500;
+  color:#40513B;
+  font-weight: 400;
 }
 .titulo-nossa-historia{
   text-align: center;
@@ -1833,7 +1833,7 @@ body {
   font-size: 2rem;
   position: absolute;
   left: 6%;
-  top: 23%;
+  top: 18.5%;
 }
 /*Fim-nossa-historia - Valdir */
 
