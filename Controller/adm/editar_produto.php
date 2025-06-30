@@ -1,4 +1,15 @@
-<!-- ISABELLA -->
+<!-- LARA -->
+
+<!-- cod php para o btn avançar -->
+<?php
+$mostrar_popup_sucesso = false;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
+    $mostrar_popup_sucesso = true;
+}
+?>
+
+<!-- cod php para o btn avançar -->
 
 <?php
 include 'menu_adm.php';
@@ -9,7 +20,7 @@ include 'menu_adm.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Produto</title>
+    <title>Editar Produto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../../view/public/css/adm.css">
     <script defer src="../../view/js/adicionar_produto_adm.js"></script>
@@ -17,13 +28,13 @@ include 'menu_adm.php';
 
 <body class="body_add_product">
     <div class="title_page_add_product">
-        <a href="#" class="arrow_add_product">
+        <a href="atualizar_produtos_adm.php" class="arrow_add_product">
             <i class="fa-solid fa-chevron-left">
             </i>
         </a>
-        <h1 class="tile_add_product">Adicionar Produto</h1>
+        <h1 class="tile_add_product">Editar Produto</h1>
     </div>
-    <p class="info_add_product">Preencha as informações necessárias e adicione produtos ao catálogo do site</p>
+    <p class="info_add_product">Edite as informações cadastrais do produto:</p>
     <section class="add_product_area">
         <article class="add_product_image">
             <p class="product_title_info">Carregar imagem de capa<span class="mandatory_space">*</span></p>
@@ -38,12 +49,12 @@ include 'menu_adm.php';
         <aside class="add_product_details">
             <div class="product_details_collumn">
                 <article class="input_product_name">
-                    <p class="product_title_info">Insira o nome do produto<span class="mandatory_space">*</span></p>
+                    <p class="product_title_info">Edite o nome do produto<span class="mandatory_space">*</span></p>
                     <input type="text" class="input_product_info" placeholder="Titulo" required>
                     <span class="error-message">Por favor, preencha este campo</span>
                 </article>
                 <article class="input_product_category">
-                    <p class="product_title_info">Selecione a categoria a qual o produto pertence<span
+                    <p class="product_title_info">Edite a categoria a qual o produto pertence<span
                             class="mandatory_space">*</span></p>
                     <select name="categories" id="categories" class="product_info_select" required>
                         <option value="" selected disabled>Selecione uma categoria</option>
@@ -56,7 +67,8 @@ include 'menu_adm.php';
                     <span class="error-message">Por favor, selecione uma categoria</span>
                 </article>
                 <article class="input_product_subcategory">
-                    <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span class="mandatory_space">*</span></p>
+                    <p class="product_title_info">Edite a subcategoria a qual o produto pertence<span
+                            class="mandatory_space">*</span></p>
                     <select name="subcategories" id="bovinos_breed" class="product_info_select subcategory-select"
                         required>
                         <option value="" selected disabled>Selecione uma subcategoria</option>
@@ -106,7 +118,7 @@ include 'menu_adm.php';
             </div>
             <div class="product_details_collumn">
                 <article class="input_product_price">
-                    <p class="product_title_info">Defina o valor do produto<span class="mandatory_space">*</span></p>
+                    <p class="product_title_info">Altere o valor do produto<span class="mandatory_space">*</span></p>
                     <input type="number" placeholder="Valor" class="input_product_info" required min="0.01" step="0.01">
                     <span class="error-message">Informe um valor válido (maior que zero)</span>
                 </article>
@@ -121,13 +133,117 @@ include 'menu_adm.php';
             </div>
         </aside>
     </section>
+    <form method="POST" action="">
     <div class="add_product_submit_button">
-        <button type="submit" class="add_product_button">
+        <button type="submit" name="btn_avançar" class="add_product_button">
             Avançar
             <i class="fa-solid fa-arrow-right"></i>
         </button>
     </div>
+</form>
+
+    <!-- cod em php para o btn_avancar, quando o user clicar nele o pop up vai abrir e exibir a informação  - matheus 11/6/25 -->
+    <!-- cod php para o btn avançar -->
+    <?php if ($mostrar_popup_sucesso): ?>
+    <div id="popupSucesso" class="popup-overlay" style="display: flex;">
+        <div class="popup-box">
+            <button class="popup-close" id="fecharPopup">&times;</button>
+            <p>Informações atualizadas com sucesso</p>
+        </div>
+    </div>
+<?php endif; ?>
+<!-- cod php para o btn avançar -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('popupSucesso');
+    const fechar = document.getElementById('fecharPopup');
+
+    if (fechar && popup) {
+        fechar.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+        window.addEventListener('click', function (e) {
+            if (e.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    }
+});
+</script>
+<!-- cod php para o btn avançar -->
+
+<style>
+
+  /* Estilo do overlay do popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  display: none; /* Inicialmente escondido */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Caixa do popup com largura e altura mínimas ajustadas */
+.popup-box {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  width: 500px;       /* mais largo */
+  min-height: 200px;  /* altura mínima */
+  position: relative;
+  text-align: center;
+  padding: 100px
+}
+
+/* Botão de fechar (X) */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.popup-close:hover {
+  color: #ff0000;
+}
+
+/* Estilo do botão avançar com cor #2d8c37 */
+.add_product_button {
+  background-color: #2d8c37; /* verde solicitado */
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.add_product_button:hover {
+  background-color: #246a2b; /* tom mais escuro para hover */
+}
+
+
+</style>
+
 </body>
+
 </html>
 <?php
 include 'footer_adm.php';

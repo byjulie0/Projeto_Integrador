@@ -1,7 +1,8 @@
-<?php
-include '../cliente/menu_pg_inicial.php';
-?>
+<!-- DENYEL -->
 
+<?php
+include 'menu_adm.php';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

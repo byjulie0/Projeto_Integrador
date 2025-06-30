@@ -11,8 +11,7 @@
 </head>
 <body class="body-arthura">
     <div class="header-arthura">
-        <a href="perfil_cliente.php" class="back-arrow-arthura">←</a>
-        <div class="title-arthura">Meu perfil</div>
+    <h2 class="visualizar-dados-title"><i class="bi bi-chevron-left"></i>Meu Perfil</h2>
     </div>
     <div class="wrapper-arthura">
         <div class="card-arthura">

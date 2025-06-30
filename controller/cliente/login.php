@@ -9,6 +9,7 @@ include 'menu_login.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - John Rooster</title>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <script src="../../view/JS/login_olho_ocultar_senha.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -33,32 +34,15 @@ include 'menu_login.php';
                         </span>
                     </div>
 
-                    <button type="submit" class="button_vinycius">LOGIN</button>
-                    <a href="card_email.php">Esqueci minha senha</a>
-                    <span class="texto1">Não tem conta? <a href="../controller/formulario_cadastro.php" class="texto1">Cadastre-se</a></span>
-                    <span class="texto1">Não tem conta? <a href="formulario_cadastro.php" class="texto1">Cadastre-se</a></span>
+                    <button type="button" class="button_vinycius" onclick="window.location.href='pg_inicial_cliente.php'">LOGIN</button>
+                    <a href="recuperar_senha_login1.php">Esqueci minha senha</a>
+                    <span class="texto1">Não tem conta? <a href="pg_cadastro.php" class="texto1">Cadastre-se</a>
+                </span>
                 </form>
             </div>
         </div>
     </main>
     <?php include 'footer_cliente.php'; ?>
-
-    <script>
-    function toggleSenha() {
-        const senhaInput = document.getElementById("senha");
-        const icone = document.getElementById("icone_senha");
-
-        if (senhaInput.type === "password") {
-            senhaInput.type = "text";
-            icone.classList.remove("fa-eye");
-            icone.classList.add("fa-eye-slash");
-        } else {
-            senhaInput.type = "password";
-            icone.classList.remove("fa-eye-slash");
-            icone.classList.add("fa-eye");
-        }
-    }
-    </script>
 
 </body>
 </html>

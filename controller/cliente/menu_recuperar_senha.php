@@ -11,7 +11,7 @@
     <nav class="menu_recuper_senha">
         <div class="info_menu-recuperar_senha">
             <div class="logo_menu_recuperar_senha">
-                <img src="../view/public/imagens/img_logofabrica.png" alt="" class="logo_menu_recuper_senha">
+                <img src="../../view/public/Imagens/Logo John Rooster (1).png" alt="" class="logo_menu_recuper_senha">
             </div>
             <p class="nome_menu_recuperar_senha">John Rooster - Recuperar Senha</p>
         </div>
