@@ -1,3 +1,4 @@
+
 <?php
 include 'menu_pg_inicial.php';
 ?>
@@ -15,8 +16,8 @@ include 'menu_pg_inicial.php';
         <div class="container">
             <div class="page-header">
                 <button class="back-btn">
-                <a href="#" class="setinha_forms_mudar_senha">
-                    <i class="fa-solid fa-chevron-left">
+                <a href="meu_perfil.php" class="setinha_forms_mudar_senha">
+                    <i class="bi bi-chevron-left">
                     </i>
                 </a>
                 </button>

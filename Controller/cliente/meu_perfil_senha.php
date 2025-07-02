@@ -1,3 +1,4 @@
+
 <?php
  include 'menu_pg_inicial.php';
 ?>
@@ -11,7 +12,7 @@
 </head>
 <body class="body-arthura">
     <div class="header-arthura">
-    <h2 class="visualizar-dados-title"><i class="bi bi-chevron-left"></i>Meu Perfil</h2>
+    <h2 class="visualizar-dados-title" href="meu_perfil.php"><i class="bi bi-chevron-left"></i>Meu Perfil</h2>
     </div>
     <div class="wrapper-arthura">
         <div class="card-arthura">
