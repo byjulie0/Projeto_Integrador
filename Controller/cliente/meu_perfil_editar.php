@@ -16,16 +16,13 @@ include 'menu_pg_inicial.php';
         <div class="container">
             <div class="page-header">
                 <button class="back-btn">
-                <a href="meu_perfil.php" class="setinha_forms_mudar_senha">
-                    <i class="bi bi-chevron-left">
-                    </i>
-                </a>
+                    <a href="meu_perfil_senha.php" class="setinha_forms_mudar_senha"><i class="bi bi-chevron-left"></i></a>
                 </button>
                 <h1 class="page-title">Editar meus dados</h1>
             </div>
 
             <form class="edit-form">
-                <div class="form-grid"> 
+                <div class="form-grid">
                     <div class="form-column">
                         <div class="form-group">
                             <label for="name" class="form-label">Nome:</label>
