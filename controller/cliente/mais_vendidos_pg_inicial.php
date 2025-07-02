@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Percheron Carrossel</title>
-    <script defer src="../view/js/mais_vendidos.js"></script>
+    <title>Mais Vendidos</title>
+    <script defer src="../../view/js/mais_vendidos.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
+
 <body class="body-mais-vendidos">
+
     <h1 class="pg-mais-vendidos" id="mais_vendidos">Mais Vendidos</h1>
 
     <div class="carrossel-mais-vendidos">
-        <div class="arrow-mais-vendidos" onclick="prevSlide()">&#10094;</div>
+        <div class="arrow-mais-vendidos" id="arrow-esquerda">&#10094;</div>
 
         <div class="cards-mais-vendidos" id="carrossel-cards">
             <?php
@@ -65,14 +68,15 @@
                 $genealogia = $item['genealogia'];
                 $idade = $item['idade'];
                 $preco = $item['preco'];
-                echo '<div style="display: flex; flex-direction: column; align-items: center;">';
+
                 include 'card_cliente.php';
-                echo '</div>';
             }
             ?>
         </div>
 
-        <div class="arrow-mais-vendidos" onclick="nextSlide()">&#10095;</div>
+        <div class="arrow-mais-vendidos" id="arrow-direita">&#10095;</div>
     </div>
+
 </body>
+
 </html>

@@ -1607,6 +1607,7 @@ body {
 }
 
 
+
 /* === 320px (pequenos celulares) === */
 @media (max-width: 320px) {
   .favoritos-title {
@@ -1839,17 +1840,15 @@ body {
 /*Fim-nossa-historia - Valdir */
 
 /* Começo da pg favoritos Mariana*/
-.area-favoritos{
-  background-color: white;
-  font-family: 'Poppins';
+.container_pagina_favoritos{
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  
+  margin: 20px auto;
   width: 100%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  gap: 30px;
-  margin-top: 32px;
-  text-align: left;
+  position: relative;
+  margin-top: 35px;
 }
 .favoritos-title {
   display: flex;
@@ -1894,6 +1893,31 @@ body {
   display: flex;
   text-decoration: underline;
 }
+.btn-favorito{
+  background-color: var(--color-botao-op-Concluido);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+  width: 50%;
+  box-sizing: border-box;
+}
+.btn-favorito:hover{
+  background-color: rgb(65, 110, 55);
+}
+.botao-pag-fav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 /* === 320px (pequenos celulares) === */
 @media (max-width: 320px) {
   .favoritos-title {
@@ -1937,8 +1961,6 @@ body {
 /*Final da Pg Favoritos - Mariana */
 
 /* inicio slider da página inicial - Matheus*/ 
-
-/* inicio slider da página inicial  */ 
 .body-mais-vendidos {
   font-family: "Poppins", sans-serif;
   background-color: #f0f0f0;
@@ -1996,18 +2018,15 @@ body {
   right: 0;
 }
 
-/* Mantenha todo o CSS existente e adicione/modifique: */
 
 .cards-mais-vendidos {
   display: flex;
   gap: 15px;
-  padding: 15px 0;
-  width: calc(100% - 100px);
-  margin: 0 auto;
   overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  transition: transform 0.5s ease-in-out;
 }
 
 .cards-mais-vendidos::-webkit-scrollbar {
@@ -4744,7 +4763,7 @@ body {
     display: none;
   }
   .lotes-wrapper {
-    overflow-x: visible; /* Remove rolagem horizontal no desktop */
+    overflow-x: visible; 
   }
   
   .lotes_container_pagina_de_busca {
@@ -4753,9 +4772,6 @@ body {
     width: 100%; /* Restaura largura normal */
   }
   
-  .lote-card {
-    width: 100%; /* Cards ocupam toda a largura do grid */
-  }
 }
 
 @media (min-width: 1440px) {
@@ -5171,12 +5187,15 @@ label {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  width: 250px;
+  flex-shrink: 0;
   transition: transform 0.3s;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0;
+  width: 100%; /* ou remova isso e deixe o container definir */
+  max-width: 250px; /* igual ao .lote-card, se estiver usando */
+  flex: 0 0 auto;
+  scroll-snap-align: start;
 }
 
 .card_cliente:hover {
@@ -5217,5 +5236,6 @@ label {
   font-weight: bold;
   color: #2a7f40;
 }
+
 
 /* Fim do componente de card */

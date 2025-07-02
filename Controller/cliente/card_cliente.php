@@ -1,7 +1,7 @@
-<div class="card-mais-vendidos">
-  <img src="<?= $imagem ?>" alt="Imagem do produto" class="img_mais-vendidos" />
-  
-  <div class="info-grid-mais-vendidos">
+<div class="card_cliente card-mais-vendidos card-cat-math">
+  <img src="<?= $imagem ?>" alt="Imagem do produto" />
+
+  <div class="card_info_grid">
     <p>Peso:</p>
     <p><?= $peso ?></p>
 
@@ -15,7 +15,7 @@
     <p><?= $idade ?></p>
   </div>
 
-  <div class="price-mais-vendidos">R$ <?= $preco ?></div>
-  
+  <div class="card_preco">R$ <?= $preco ?></div>
+
   <a href="#" class="btn-mais-vendidos">Comprar</a>
 </div>
