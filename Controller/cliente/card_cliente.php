@@ -17,5 +17,4 @@
 
   <div class="card_preco">R$ <?= $preco ?></div>
 
-  <a href="#" class="btn-mais-vendidos">Comprar</a>
 </div>

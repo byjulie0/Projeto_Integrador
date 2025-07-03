@@ -12,8 +12,6 @@
         <p class="preco">R$ <?php echo $preco; ?></p>
     </div>
     <div class="botao-pag-fav" style="margin-top: 10px; display: flex; justify-content: space-between;">
-        <button class="excluir-pag-fav">Excluir</button>
-        <button class="btn-favorito">Comprar</button>
     </div>
-    <div class="stars-pag-fav" style="text-align: center; margin-top: 8px;">★ Favorito</div>
+    <div class="stars-pag-fav" style="text-align: center; margin-top: 8px; margin-bottom: 15px;">★ Favorito</div>
 </div>
