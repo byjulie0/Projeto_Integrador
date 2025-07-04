@@ -2164,10 +2164,10 @@ body {
   padding: 10px;
 }
 .texto-nossa-historia{
-  padding: 4%;
+  padding: 10%;
   padding-top: 0%;
   margin: 10px;
-  font-size: 1.5rem;
+  font-size: 20px;
   color:#40513B;
   font-weight: 400;
 }
@@ -2175,6 +2175,7 @@ body {
   text-align: center;
   margin: 50px;
   font-size: 2rem;
+  color:#40513B;
 }
 .nossa_historia a {
   color: var(--color-primary-3);
