@@ -12,7 +12,7 @@
     <main class="notificacao-usuario-main">
         <header class="header_not_sem_log">
             <?php
-            include 'menu-pg-inicial.php';
+            include 'menu_pg_inicial.php';
             ?>
         </header>
         <div class="notificacao-usuario-cabesalio">
