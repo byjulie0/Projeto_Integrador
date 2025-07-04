@@ -244,78 +244,126 @@ body {
   left: auto;
   min-width: 180px;
 }
-/* ========================================== */
-/* === RESPONSIVO: Menor que 1200px ======== */
-/* ========================================== */
-
-@media (max-width: 1199px) {
+/* === Ajuste para 360px, 375px, 425px === */
+@media (max-width: 425px) {
   .menu-pg-inicial {
-    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
   }
 
   .menu-content-pg-inicial {
-    flex-wrap: nowrap;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
-  .nav-item-pg-inicial,
+  .menu-toggle {
+    display: flex;
+    order: 0;
+  }
+
+  .logo-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    order: 1;
+  }
+
+  .logo-menu-img {
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  .logo-menu-title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .nav-page-btns-pg-inicial {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    min-width: auto;
+    order: 2;
+  }
+
   .nav-link-pg-inicial,
   .nav-text-pg-inicial,
   .search-container-pg-inicial {
     display: none !important;
   }
 
-  .nav-btns-pg-inicial {
+  /* === 768px (Tablet) === */
+@media (min-width: 426px) and (max-width: 1023px) {
+  .menu-pg-inicial {
+    padding: 10px 20px;
     display: flex;
-    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .logo-menu-img {
-    width: 35px;
+    width: 40px;
   }
 
   .logo-menu-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
-  .nav-btns-pg-inicial .bi {
-    font-size: 1.2rem;
+  .nav-page-btns-pg-inicial {
+    display: flex;
+    gap: 15px;
+  }
+
+  .nav-text-pg-inicial {
+    display: none;
+  }
+
+  .search-container-pg-inicial {
+    display: none;
+  }
+}
+
+/* Estilos de alinhamento para resoluções até 1024px */
+@media (max-width: 1024px) {
+  .menu-pg-inicial {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 15px;
+  }
+
+  .menu-content-pg-inicial {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .menu-toggle {
     display: flex;
+    order: 0;
+    margin-right: 10px;
+  }
+
+  .logo-menu {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-  }
-}
-
-/* ============================== */
-/* === 320px a 360px (Mobile P) */
-/* ============================== */
-@media (max-width: 360px) {
-  .menu-pg-inicial {
-    padding: 8px 12px;
+    gap: 5px;
+    order: 1;
   }
 
-  .logo-menu-img {
-    width: 30px;
-  }
-
-  .logo-menu-title {
-    font-size: 0.9rem;
-  }
-
-  .nav-btns-pg-inicial .bi {
-    font-size: 1rem;
-  }
-}
-
-/* ============================== */
-/* === 361px a 390px (Mobile M) */
-/* ============================== */
-@media (min-width: 361px) and (max-width: 390px) {
   .logo-menu-img {
     width: 35px;
   }
@@ -324,68 +372,25 @@ body {
     font-size: 1rem;
   }
 
-  .nav-btns-pg-inicial .bi {
-    font-size: 1.1rem;
+  .nav-page-btns-pg-inicial {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 2;
+  }
+
+  /* Ocultar nav-links e busca */
+  .nav-link-pg-inicial,
+  .search-container-pg-inicial {
+    display: none !important;
   }
 }
 
-/* ============================== */
-/* === 391px a 767px (Mobile G) */
-/* ============================== */
-@media (min-width: 391px) and (max-width: 767px) {
+
+/* === 1440px ou maior === */
+@media (min-width: 1440px) {
   .menu-pg-inicial {
-    padding: 10px 16px;
-  }
-
-  .logo-menu-title {
-    font-size: 1.05rem;
-  }
-
-  .nav-btns-pg-inicial .bi {
-    font-size: 1.15rem;
-  }
-}
-
-/* ============================== */
-/* === 768px a 1023px (Tablet) == */
-/* ============================== */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .menu-pg-inicial {
-    padding: 10px 25px;
-  }
-
-  .logo-menu-title {
-    font-size: 1rem;
-  }
-
-  .nav-btns-pg-inicial .bi {
-    font-size: 1.2rem;
-  }
-}
-
-/* ============================== */
-/* === 1024px a 1199px (Tablet+) */
-/* ============================== */
-@media (min-width: 1024px) and (max-width: 1199px) {
-  .logo-menu-img {
-    width: 40px;
-  }
-
-  .logo-menu-title {
-    font-size: 1.1rem;
-  }
-
-  .nav-btns-pg-inicial .bi {
-    font-size: 1.2rem;
-  }
-}
-
-/* ============================== */
-/* === 1200px a 1919px (Desktop) */
-/* ============================== */
-@media (min-width: 1200px) and (max-width: 1919px) {
-  .menu-pg-inicial {
-    padding: 12px 60px;
+    padding: 15px 60px;
   }
 
   .logo-menu-img {
@@ -393,72 +398,20 @@ body {
   }
 
   .logo-menu-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .nav-btns-pg-inicial .bi {
-    font-size: 1.3rem;
-  }
-
-  .nav-text-pg-inicial {
-    display: block;
-    font-size: 0.9rem;
-  }
-
-  .search-container-pg-inicial {
-    display: flex;
-    max-width: 450px;
-    padding: 10px 20px;
-  }
-
-  .nav-item-pg-inicial {
-    display: flex;
-    gap: 20px;
-  }
-
-  .nav-link-pg-inicial {
-    display: flex;
-  }
-}
-
-/* ============================== */
-/* === 1920px+ (Desktop Grande) */
-/* ============================== */
-@media (min-width: 1920px) {
-  .menu-pg-inicial {
-    padding: 15px 100px;
-  }
-
-  .logo-menu-img {
-    width: 65px;
-  }
-
-  .logo-menu-title {
-    font-size: 1.5rem;
-  }
-
-  .nav-btns-pg-inicial {
-    min-width: 250px;
-    gap: 20px;
-  }
-
-  .nav-btns-pg-inicial .bi {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .nav-text-pg-inicial {
     font-size: 1rem;
   }
-
-  .search-container-pg-inicial {
-    max-width: 600px;
-    padding: 12px 25px;
-  }
-
-  .search-container-pg-inicial input {
-    font-size: 1.1rem;
-  }
 }
+
+}
+
 /* Final de menu pg inicial Ana Julia*/
 
 /* Começo do footer Lara */
