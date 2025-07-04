@@ -1061,7 +1061,7 @@ body {
 }
 .area-form-cadastro{
   justify-content: center;
-  width: 100%;
+  width: 80%;
   height: auto;
   flex-direction: column;
   margin: 100px 250px;
@@ -1069,6 +1069,7 @@ body {
   padding: 60px;
   display: flex;
   background-color: #DFEBE0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 .titulo-form-cadastro{
   font-size: 2rem;
@@ -1130,30 +1131,31 @@ body {
   text-transform: uppercase;
   color: var(--color-primary-1);
 }
-.line-cadastro{
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-primary-1);
-}
+
 .btn-submit-cadastro{
   display: flex;
   margin-top: 20px;
   width: 100%;
   align-items: center;
   justify-content: center;
-
 }
 .input-submit-form-cadastro{
   margin-top: 10px;
+  font-weight: 600;
+  gap: 10px;
+  display: flex;
+  width: 200px;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  padding: 5px;
-  border: 1px solid var(--color-primary-1);
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  color: var(--color-primary-1);
-  font-weight: 600;
+  background-color: var(--color-botao-op-Concluido);
+  color: var(--color-icones);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+
 }
 .area-termos-privacidade-cadastro{
   margin-top: 30px;
@@ -1185,14 +1187,15 @@ body {
   gap: 20px;
 }
 .icon-voltar-cadastro{
-  font-size: 2rem;
-  color: var(--color-primary-3);
   text-decoration: none;
   position: absolute;
   left: 20px;
-  top: 20px;
-  margin-top: 250px;
-  margin-left: 200px;
+  margin-top: 237px;
+  margin-left: 250px;
+  top: 5px;
+  font-size: 1.7rem;
+  color: var(--color-primary-1);
+  cursor: pointer;
 }
 
 /*RESPONSIVIDADE*/

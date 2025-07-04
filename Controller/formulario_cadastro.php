@@ -21,7 +21,7 @@
 </head>
 <body class="body-cadastro">
     <main class="main-cadastro">
-        <a href="#" class="icon-voltar-cadastro"><i class="bi bi-chevron-left"></i></a>
+        <a href="#" class="icon-voltar-cadastro"><i class="fa-solid fa-chevron-left"></i></a>
         <div class="area-form-cadastro">
             <h2 class="titulo-form-cadastro">Cadastrar</h2>
             <div class="area-geral-form-cadastro">
