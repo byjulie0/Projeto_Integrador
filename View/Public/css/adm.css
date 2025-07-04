@@ -2322,6 +2322,146 @@ main {
   left: 5vh;
 }
 
+/* Responsivo para telas menores que 1200px */
+@media (max-width: 1200px) {
+  .verificar_administrar_pedidos_sessao_info h1 {
+    top: -5vh;
+    left: -8%;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    margin-left: 100%;
+    width: 40%;
+  }
+
+  .verificar_administrar_pedidos_sessao_section {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+
+  .verificar_administrar_pedidos_sessao_coluna {
+    grid-template-columns: 1fr;
+  }
+
+  .verificar_administrar_pedidos_sessao_coluna_direita {
+    margin-left: 0;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco,
+  .verificar_administrar_pedidos_sessao_bloco_vendas,
+  .verificar_administrar_pedidos_sessao_bloco_atividades {
+    width: 100%;
+    padding-bottom: 150px;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas {
+    margin-left: 0;
+    padding-bottom: 200px;
+  }
+}
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+  .verificar_administrar_pedidos_sessao_info {
+    width: 90%;
+  }
+
+  .verificar_administrar_pedidos_sessao_info h1 {
+    font-size: 1.5rem;
+    top: -3vh;
+    left: 0;
+    text-align: center;
+  }
+
+  .verificar_administrar_pedidos_sessao_mini_titulos_1 {
+    width: 90%;
+    top: -3vh;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    position: static;
+    margin: 20px auto;
+    width: 80%;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco h5 {
+    left: 0;
+    text-align: center;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco i {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_mini {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_visualizacao {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 20px;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais,
+  .verificar_administrar_pedidos_sessao_vendas_linhas_verticais {
+    flex-direction: column;
+    gap: 10px;
+    left: 0;
+    top: 0;
+    margin-left: 10%;
+  }
+}
+
+/* Responsivo para celulares */
+@media (max-width: 480px) {
+  .verificar_administrar_pedidos_sessao_main {
+    margin: 20px;
+  }
+
+  .verificar_administrar_pedidos_sessao_info h1 {
+    font-size: 1.2rem;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_mini {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_mini i {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco h5 {
+    font-size: 1rem;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco i {
+    font-size: 1.2rem;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_atividades h4,
+  .verificar_administrar_pedidos_sessao_bloco_vendas h4,
+  .verificar_administrar_pedidos_sessao_estatisticas h4 {
+    font-size: 1.1rem;
+    left: 2vh;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_vendas h3 {
+    font-size: 1.2rem;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_linha {
+    width: 100%;
+  }
+}
+
 /* Fim do CSS Relatórios visualizar ADM - Denyel */
 
 /* Inicio de reativar produto */
