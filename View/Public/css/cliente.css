@@ -774,7 +774,7 @@ body {
 
 
 /* Começo de detalhes do produto Anna Laura*/
-body,
+
 .body-detalhes-produto {
   font-family: 'Poppins', sans-serif;
   color: var(--text-color);
@@ -783,7 +783,6 @@ body,
   padding: 0;
 }
 
-/* Container geral com 2 colunas: galeria + info */
 .main-detalhes-produto {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -792,14 +791,14 @@ body,
   align-items: start;
 }
 
-/* Container que agrupa miniaturas e imagem grande */
+
 .galeria-detalhes-produto {
   display: flex;
   gap: 20px;
   align-items: flex-start;
 }
 
-/* Miniaturas (em coluna ao lado da imagem) */
+
 .miniaturas-detalhes-produto {
   display: flex;
   flex-direction: column;
