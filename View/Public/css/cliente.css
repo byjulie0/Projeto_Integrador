@@ -2104,13 +2104,17 @@ body {
 /* CSS Termos e Condições Julie*/
 .texto-termos-e-condicoes{
   max-width: 100%;
-  margin-top: 0px;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 0%;
-  padding-bottom: 8%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
   font-family: 'poppins', sans-serif;
   color: var(--color-primary-1);
+}
+.header-termos-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 10% 0;
 }
 .section-termos-e-condicoes{
   color: var(--color-fonte);
@@ -2119,7 +2123,7 @@ body {
 .titulo-termos-e-condicoes{
   color: var(--color-primary-1);
   text-align: center;
-  padding-top: 50px;
+  padding-top: 0;
 }
 .sub-titulo2-termos-e-condicoes{
   padding: 6px;
@@ -2135,10 +2139,11 @@ body {
 .p-termos-e-condicoes{
   color: var(--color-fonte);
 }
-.setinha-termos-e-coondicoes i{
-  align-items: center;
+.setinha-termos-e-condicoes {
   color: var(--color-primary-1);
   font-size: 24px;
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 360px) and (max-width: 389px) {
