@@ -19,9 +19,6 @@
     <!-- Início do menu -->
 
     <section class="menu-pg-inicial">
-        <button class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </button>
         <div class="menu-content-pg-inicial">
             <div class="logo-menu">
                 <img src="../../view/public/imagens/logo.png" alt="" class="logo-menu-img">
@@ -71,6 +68,9 @@
                 </a>
             </div>
         </div>
+        <button class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </section>
 
     <!-- Fim do menu -->
