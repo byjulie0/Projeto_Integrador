@@ -41,9 +41,9 @@
             </div>
 
             <div class="card-pag-fav">
-                <img class="card-img-pag-fav" src="../View/Public/imagens/galo-pag-fav.jpg" alt="Galináceo da raça Índio">
+                <img class="card-img-pag-fav" src="../../view/public/imagens/images.jpg" alt="Galináceo da raça Índio">
                 <div class="card-header-pag-fav">
-                <h2 class="produto-nome-pag-fav">Galináceo da raça Índio</h2>
+                <h2 class="produto-nome-pag-fav">Equino da raça Percheron</h2>
                     <div class="stars-pag-fav">★</div>
                 </div>
                 <p class="produto-preco-pag-fav">R$00,00</p>
@@ -55,9 +55,9 @@
             </div>
 
             <div class="card-pag-fav">
-            <img class="card-img-pag-fav" src="../View/Public/imagens/bovino-pag-fav.jpg" alt="Bovino da raça Angus">
+            <img class="card-img-pag-fav" src="../../view/public/imagens/images.jpg" alt="Bovino da raça Angus">
                 <div class="card-header-pag-fav">
-                <h2 class="produto-nome-pag-fav">Bovino da raça Angus</h2>
+                <h2 class="produto-nome-pag-fav">Equino da raça Percheron</h2>
                     <div class="stars-pag-fav">★</div>
                 </div>
                 <p class="produto-preco-pag-fav">R$00,00</p>
