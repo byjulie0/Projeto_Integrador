@@ -1,4 +1,5 @@
 <!-- ISABELLA -->
+
 <?php
 include 'menu_adm.php';
 ?>
@@ -15,7 +16,7 @@ include 'menu_adm.php';
 
 <body class="body_generate_report">
     <div class="title_page_generate_report">
-        <a href="#" class="arrow_generate_report" onclick="window.history.back(); return false;">
+        <a href="#" class="arrow_generate_report">
             <i class="fa-solid fa-chevron-left">
             </i>
         </a>
@@ -44,19 +45,11 @@ include 'menu_adm.php';
             <input type="date" class="generate_report_date">
         </article>
     </section>
-    <?php
-    $texto_button = [
-        [
-            "texto" => "Gerar"
-        ]
-    ];
-
-    foreach ($texto_button as $texto_button_item) {
-        $texto = $texto_button_item['texto'];
-
-        include 'botao_adm.php';
-    }
-    ?>
+    <div class="generate_report_submit_button">
+        <button type="submit" class="generate_report_product_button">
+            Gerar
+        </button>
+    </div>
 </body>
 </html>
 <?php
