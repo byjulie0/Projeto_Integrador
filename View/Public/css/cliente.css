@@ -2290,8 +2290,6 @@ body {
   }
 }
 
-
-
 /* ==================== */
 /* Responsividade Tablets */
 /* ==================== */
@@ -2312,7 +2310,7 @@ body {
 
 /*Final da Pg Favoritos - Mariana */
 
-/* inicio slider da página inicial - Matheus*/ 
+/* Inicio slider da página inicial - Matheus*/
 .body-mais-vendidos {
   font-family: "Poppins", sans-serif;
   background-color: #f0f0f0;
@@ -2320,7 +2318,7 @@ body {
   padding: 0;
 }
 
-.pg-mais-vendidos {
+.pg-mais-vendidos { /*titulo*/
   color: var(--color-primary-1);
   padding-left: 8%;
   padding-top: 3%;
@@ -2328,12 +2326,12 @@ body {
   margin-bottom: 15px;
 }
 
-.carrossel-mais-vendidos {
+.carrossel-mais-vendidos { /*card carrosel*/
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 2% 0 8%;
+  padding: 2% 0 5%;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -2369,7 +2367,6 @@ body {
 .arrow-mais-vendidos:last-child {
   right: 0;
 }
-
 
 .cards-mais-vendidos {
   display: flex;
@@ -2457,9 +2454,7 @@ body {
   background-color: rgb(65, 110, 55);
 }
 
-/* Mantenha os estilos existentes das setas e outros elementos */
 .arrow-mais-vendidos {
-  /* Estilos existentes */
   z-index: 2;
 }
 
@@ -2468,11 +2463,11 @@ body {
 /* ==================== */
 
 /* Mobile Médio: 360 x 800 */
-@media (max-width: 390px) {
+@media (max-width: 391px) {
   .pg-mais-vendidos {
-    font-size: 20px;
+    font-size: 1.375rem;
     padding-left: 5%;
-    padding-top: 5%;
+    padding-top: 3%;
   }
   
   .carrossel-mais-vendidos {
@@ -2496,7 +2491,10 @@ body {
 /* ==================== */
 @media (min-width: 391px) and (max-width: 767px) {
   .pg-mais-vendidos {
-    font-size: 22px;
+    font-size: 1.375rem;
+  }
+  .carrossel-mais-vendidos {
+    padding: 5% 2% 7%;
   }
 }
 
@@ -2505,16 +2503,12 @@ body {
 /* ==================== */
 
 /* Tablet Médio: 768-1023 */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .carrossel-mais-vendidos {
-    padding: 3% 0 8%;
+    padding: 3% 2% 5%;
   }
-}
-
-/* Tablet Grande: 768-1199 */
-@media (min-width: 768px) and (max-width: 1199px) {
   .pg-mais-vendidos {
-    font-size: 24px;
+    font-size: 2rem;
   }
 }
 
@@ -2523,22 +2517,22 @@ body {
 /* ==================== */
 
 /* Desktop Medium: 1440 x 900 */
-@media (min-width: 1200px) and (max-width: 1919px) {
+@media (min-width: 1024px) and (max-width: 1919px) {
   .carrossel-mais-vendidos {
-    padding: 2% 0 8%;
+    padding: 2% 2% 5%;
   }
 }
 
 /* Desktop Large: 1920 x 1080 */
 @media (min-width: 1920px) {
   .pg-mais-vendidos {
-    font-size: 32px;
-    padding-left: 10%;
+    font-size: 2rem;
+    padding-left: 8%;
   }
   
   .carrossel-mais-vendidos {
     max-width: 1400px;
-    padding: 2% 0 8%;
+    padding: 2% 2% 5%;
   }
   
   .arrow-mais-vendidos {
@@ -2547,328 +2541,8 @@ body {
     height: 50px;
   }
 }
+/*Fim mais-vendidos*/
 
-/* Talvez você goste */
-
-.body-math {
-  font-family: "Poppins", sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-}
-
-.pg-categorias-math {
-  color: var(--color-primary-1);
-  padding-left: 8%;
-  padding-top: 3%;
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.carrossel-cat-math {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 2% 0 8%;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.arrow-cat-math {
-  font-size: 30px;
-  cursor: pointer;
-  margin: 0 10px;
-  user-select: none;
-  color: #40513B;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  position: absolute;
-}
-
-.arrow-cat-math:hover {
-  background: rgba(255, 255, 255, 0.9);
-  transform: scale(1.1);
-}
-
-.arrow-cat-math:first-child {
-  left: 0;
-}
-
-.arrow-cat-math:last-child {
-  right: 0;
-}
-
-.cards-cat-math {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease-in-out;
-  padding: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  width: calc(100% - 100px);
-  margin: 0 auto;
-}
-
-.cards-cat-math::-webkit-scrollbar {
-  display: none;
-}
-
-.card-cat-math {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  padding: 15px;
-  width: 230px;
-  flex: 0 0 auto;
-  text-align: center;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
-}
-
-.card-cat-math:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.card-cat-math img {
-  width: 100%;
-  height: 160px; 
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.card-cat-math p {
-  margin: 8px 0;
-  font-size: 14px;
-  color: #333;
-}
-
-.price-cat-math {
-  font-weight: bold;
-  color: #000;
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-.btn-cat-math {
-  background-color: var(--color-botao-op-Concluido);
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-cat-math:hover {
-  background-color: var(--color-botao-op-Concluido-hover);
-}
-
-/* ==================== */
-/* Responsividade de celular */
-/* ==================== */
-
-/* Mobile Médio: 360 x 800 */
-@media (max-width: 390px) {
-  .pg-categorias-math {
-    font-size: 20px;
-    padding-left: 5%;
-    padding-top: 5%;
-  }
-  
-  .carrossel-cat-math {
-    padding: 5% 0 10%;
-  }
-  
-  .arrow-cat-math {
-    font-size: 24px;
-    width: 35px;
-    height: 35px;
-  }
-  
-  .cards-cat-math {
-    width: calc(100% - 80px);
-    padding: 10px;
-  }
-}
-
-/* Mobile Grande: 390 x 844 */
-@media (min-width: 391px) and (max-width: 767px) {
-  .pg-categorias-math {
-    font-size: 22px;
-  }
-}
-
-/* ==================== */
-/* Responsividade de tablet */
-/* ==================== */
-
-/* Tablet Médio: 768-1023 */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .carrossel-cat-math {
-    padding: 3% 0 8%;
-  }
-}
-
-/* Tablet Grande: 768-1199 */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .pg-categorias-math {
-    font-size: 24px;
-  }
-}
-
-/* ==================== */
-/* Responsividade de Desktop */
-/* ==================== */
-
-/* Desktop Médio: 1440 x 900 */
-@media (min-width: 1200px) and (max-width: 1919px) {
-  .carrossel-cat-math {
-    padding: 2% 0 8%;
-  }
-}
-
-/* Desktop Grande: 1920 x 1080 */
-@media (min-width: 1920px) {
-  .pg-categorias-math {
-    font-size: 32px;
-    padding-left: 10%;
-  }
-  
-  .carrossel-cat-math {
-    max-width: 1400px;
-    padding: 2% 0 8%;
-  }
-  
-  .arrow-cat-math {
-    font-size: 36px;
-    width: 50px;
-    height: 50px;
-  }
-}
-/* Fim do slider da página inicial - Matheus*
-/*----------------------------------------------------------------------------*/
-
- HEAD
-
-/* inicio pg notificação sem login */
-
-.body_not_sem_log{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background-color:#FFFFFF;
-}
-.notificacao-usuario-main{
-  width:100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  /* background-color: aqua; */
-}
-.notificacao-usuario-cabesalio{
-  height: 140px;
-  width: 92%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.notificacao-usuario-notficacao{
-  /* background-color: violet; */
-  display: flex;
-  flex-direction: row;
-  width: 210px;
-  height: 43px;
-  font-size: 10px;
-  color: #40513B;
-  font-weight: bold;
-}
-.notificacao-usuario-notficacao-h1{
-  padding-left: 30px;
-}
-.fa-chevron-left{
-  padding-top: 8px;
-  font-size: 30px;
-}
-.notificacao-usuario-filtro{
-  width: 250px;
-  height: 50px;
-  background-color: transparent;
-  border-radius: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-color: #40513B;
-}
-.notificacao-filtro-name{
-  padding-left: 10px;
-  color: #40513B;
-  font-weight: normal;
-}
-.notificacao-filtro-arrow{
-  color: #40513B;
-  padding-right: 10px;
-}
-.notificacao-linha-pad{
-  width: 92%;
-  height: 2px;
-  padding-bottom: 30px;
-}
-.notificacao-usuario-linha{
-  width: 100%;
-  height: 1px;
-  background-color: #40513B;
-}
-.notificacao-center-text{
-  width: 100%;
-  height: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-.texto-pg-not1{
-  color: #40513B;
-}
-.notificacao-login{
-  color: red;
-  text-decoration: underline;
-}
-.header_not_sem_log{
-  /* background-color: paleturquoise; */
-  width: 100%;
-}
-.footer_not_sem_log{
-  /* background-color: red; */
-  width: 100%;
-}
-@media screen and (max-width:1170px){
-  .notificacao-usuario-notficacao-h1{
-      padding-right: 30px;
-  }
-  .texto-pg-not{
-      font-size: 15px;
-  }
-}
-
-/* final pg notificação sem login Gabriel */
 /* Começo do CSS esqueci a senha pop up - Julie */
 .esqueci_a_senha_popup_body{
   background-color: #F7F7F7;

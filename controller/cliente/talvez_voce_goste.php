@@ -2,21 +2,23 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Percheron Carrossel</title>
-    <script defer src="../../view/js/slider_pg_inicial.js"></script>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talvez você Goste</title>
+    <script defer src="../../view/js/talvez_voce_goste.js"></script>
+    <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
 
-<body class="body-math">
-    <h1 class="pg-categorias-math">Talvez você goste</h1>
-    <div class="carrossel-cat-math">
-        <div class="arrow-cat-math" onclick="prevSlide()">&#10094;</div>
-        <div class="cards-cat-math" id="carrossel-cards">
+<body class="body-mais-vendidos">
 
+    <h1 class="pg-mais-vendidos" id="mais_vendidos">Talvez Você Goste</h1>
+
+    <div class="carrossel-mais-vendidos">
+        <div class="arrow-mais-vendidos" id="arrow-esquerda">&#10094;</div>
+
+        <div class="cards-mais-vendidos" id="carrossel-cards">
             <?php
-            $items = [
+            $talvez_voce_goste = [
                 [
                     "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
                     "peso" => "380 kg",
@@ -34,32 +36,32 @@
                     "preco" => "5.800,00"
                 ],
                 [
-                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/painthorse_slider_pg_inicial.jpg",
-                    "peso" => "400 kg",
-                    "raca" => "Paint Horse",
+                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
+                    "peso" => "420 kg",
+                    "raca" => "Mustang",
                     "genealogia" => "PO",
-                    "idade" => "26 meses",
-                    "preco" => "5.500,00"
+                    "idade" => "28 meses",
+                    "preco" => "5.800,00"
                 ],
                 [
-                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/puro_sangue_slider_pg_inicial.jpg",
-                    "peso" => "390 kg",
-                    "raca" => "Puro Sangue",
+                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
+                    "peso" => "420 kg",
+                    "raca" => "Mustang",
                     "genealogia" => "PO",
-                    "idade" => "25 meses",
-                    "preco" => "5.300,00"
+                    "idade" => "28 meses",
+                    "preco" => "5.800,00"
                 ],
                 [
-                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/quarto_de_milha_slider_pq_inicial.jpg",
-                    "peso" => "410 kg",
-                    "raca" => "Quarto de Milha",
+                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
+                    "peso" => "420 kg",
+                    "raca" => "Mustang",
                     "genealogia" => "PO",
-                    "idade" => "27 meses",
-                    "preco" => "5.600,00"
+                    "idade" => "28 meses",
+                    "preco" => "5.800,00"
                 ]
             ];
 
-            foreach ($items as $item) {
+            foreach ($talvez_voce_goste as $item) {
                 $imagem = $item['imagem'];
                 $peso = $item['peso'];
                 $raca = $item['raca'];
@@ -68,13 +70,13 @@
                 $preco = $item['preco'];
 
                 include 'card_cliente.php';
-                
             }
             ?>
-
         </div>
-        <div class="arrow-cat-math" onclick="nextSlide()">&#10095;</div>
+
+        <div class="arrow-mais-vendidos" id="arrow-direita">&#10095;</div>
     </div>
+
 </body>
 
 </html>
