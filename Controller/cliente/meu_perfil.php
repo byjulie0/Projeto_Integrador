@@ -47,7 +47,7 @@ include 'menu_pg_inicial.php';
             </div>
         </div>
         <div class="visualizar-dados-area-botoes">
-            <button class="visualizar-dados-editar">Editar meus dados</button>
+            <a href="meu_perfil_senha.php"><button class="visualizar-dados-editar">Editar meus dados</button></a>
             <button class="visualizar-dados-logout">Logout</button>
         </div>
     </main>
