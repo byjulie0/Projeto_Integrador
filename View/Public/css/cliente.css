@@ -244,8 +244,8 @@ body {
   left: auto;
   min-width: 180px;
 }
-/* === Ajuste para 360px, 375px, 425px === */
-@media (max-width: 425px) {
+/* === MOBILE PEQUENO: 360px, 375px, 390px === */
+@media (max-width: 390px) {
   .menu-pg-inicial {
     display: flex;
     justify-content: space-between;
@@ -297,20 +297,57 @@ body {
   .search-container-pg-inicial {
     display: none !important;
   }
+}
 
-  /* === 768px (Tablet) === */
-@media (min-width: 426px) and (max-width: 1023px) {
+/* === MOBILE MAIOR: 425px até 1023px === */
+@media (min-width: 425px) and (max-width: 1023px) {
   .menu-pg-inicial {
     padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 0px !important;
+  }
+
+  .section.menu-pg-inicial {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #F7F9FF;
+    border-radius: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    z-index: 10;
+  }
+
+  /*section.menu-pg-inicial {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #F7F9FF;
+    border-radius: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* leve blur */
+    /*border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* bordinha preta */
+    /*backdrop-filter: blur(2px); /* efeito de desfoque leve */
+    /*-webkit-backdrop-filter: blur(2px); /* compatibilidade Safari */
+    /*z-index: 10;*/
+  
+
+  .menu-content-pg-inicial {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: 100%;
   }
 
   .logo-menu {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    margin-right: 30px;
   }
 
   .logo-menu-img {
@@ -318,98 +355,142 @@ body {
   }
 
   .logo-menu-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 
-  .nav-page-btns-pg-inicial {
-    display: flex;
+  .nav-link-pg-inicial {
+    display: flex !important;
     gap: 15px;
-  }
-
-  .nav-text-pg-inicial {
-    display: none;
+    font-size: 0.8rem;
   }
 
   .search-container-pg-inicial {
-    display: none;
-  }
-}
-
-/* Estilos de alinhamento para resoluções até 1024px */
-@media (max-width: 1024px) {
-  .menu-pg-inicial {
-    display: flex;
+    display: flex !important;
+    background-color: #e4e4e4;
+    border-radius: 20px;
+    padding: 6px 12px;
+    gap: 8px;
+    width: 200px;
+    min-width: 150px;
     align-items: center;
-    justify-content: space-between;
-    padding: 8px 15px;
   }
 
-  .menu-content-pg-inicial {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .search-container-pg-inicial input {
+    border: none;
+    background: transparent;
+    outline: none;
     width: 100%;
+    font-size: 0.8rem;
   }
 
-  .menu-toggle {
-    display: flex;
-    order: 0;
-    margin-right: 10px;
-  }
-
-  .logo-menu {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    order: 1;
-  }
-
-  .logo-menu-img {
-    width: 35px;
-  }
-
-  .logo-menu-title {
-    font-size: 1rem;
+  .search-container-pg-inicial button {
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
   .nav-page-btns-pg-inicial {
     display: flex;
     align-items: center;
     gap: 10px;
-    order: 2;
+    justify-content: flex-end;
+    min-width: 130px;
+    font-size: 0.75rem;
   }
 
-  /* Ocultar nav-links e busca */
-  .nav-link-pg-inicial,
-  .search-container-pg-inicial {
+  .nav-page-btns-pg-inicial .nav-btns-pg-inicial .bi {
+    font-size: 1rem;
+  }
+
+  .nav-text-pg-inicial {
+    font-size: 0.7rem;
+  }
+
+  .menu-toggle {
     display: none !important;
   }
 }
 
-
-/* === 1440px ou maior === */
-@media (min-width: 1440px) {
+/* === DESKTOP: 1024px ou mais === */
+@media (min-width: 1024px) {
   .menu-pg-inicial {
     padding: 15px 60px;
+    background-color: #fff;
+    border-radius: 0px !important;
+  }
+
+  .menu-content-pg-inicial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px; /* Mantive um gap razoável para o flexbox gerenciar o espaço */
+    width: 100%;
+  }
+
+  .logo-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* Move o logo para a esquerda */
+    margin-right: 60px; /* Aumentado para empurrar mais para a esquerda */
   }
 
   .logo-menu-img {
-    width: 55px;
+    width: 50px;
   }
 
   .logo-menu-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 
-  .nav-btns-pg-inicial .bi {
-    font-size: 1.4rem;
+  .nav-link-pg-inicial {
+    display: flex;
+    gap: 30px;
+    font-size: 0.95rem;
+  }
+
+  .search-container-pg-inicial {
+    display: flex;
+    align-items: center;
+    background-color: #e6e6e6;
+    border-radius: 20px;
+    padding: 6px 12px;
+    gap: 10px;
+    flex-grow: 1; /* Permite que a barra de busca ocupe o espaço disponível */
+    max-width: 400px; /* Define uma largura máxima para a barra de busca */
+    /* === AQUI ESTÁ A MUDANÇA PARA A BARRA DE BUSCA === */
+    margin-left: auto; /* Empurra a barra de busca para a esquerda o máximo possível */
+    margin-right: 40px; /* Adiciona uma margem à direita para afastar dos botões */
+  }
+
+  .search-container-pg-inicial input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .search-container-pg-inicial button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-page-btns-pg-inicial {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 0.95rem;
+    /* Garante que os botões fiquem alinhados à direita */
+    justify-content: flex-end;
   }
 
   .nav-text-pg-inicial {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
-}
-
 }
 
 /* Final de menu pg inicial Ana Julia*/

@@ -22,6 +22,7 @@
         
     <button class="menu-toggle">
             <i class="fa-solid fa-bars"></i>
+            <script src="menu_hamburguer.js"></script>
         </button>
 
         <div class="menu-content-pg-inicial">
