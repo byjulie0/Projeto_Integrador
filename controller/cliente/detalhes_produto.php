@@ -30,9 +30,11 @@
             <div class="imagem-grande-detalhes-produto">
                 <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Imagem Principal">
 
+
+            <!-- </div> -->
+
             </div> 
         </div>
-        
             <div class="info-produto-detalhes-produto"> 
                 <div class="estrelas-detalhes-produto">★★★★★<span>4.9 (204)</span>
                     <i class="bi bi-share"></i>
