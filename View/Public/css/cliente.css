@@ -774,7 +774,7 @@ body {
 
 
 /* Começo de detalhes do produto Anna Laura*/
-body,
+
 .body-detalhes-produto {
   font-family: 'Poppins', sans-serif;
   color: var(--text-color);
@@ -783,7 +783,6 @@ body,
   padding: 0;
 }
 
-/* Container geral com 2 colunas: galeria + info */
 .main-detalhes-produto {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -792,14 +791,14 @@ body,
   align-items: start;
 }
 
-/* Container que agrupa miniaturas e imagem grande */
+
 .galeria-detalhes-produto {
   display: flex;
   gap: 20px;
   align-items: flex-start;
 }
 
-/* Miniaturas (em coluna ao lado da imagem) */
+
 .miniaturas-detalhes-produto {
   display: flex;
   flex-direction: column;
@@ -1632,7 +1631,11 @@ body {
 
 /* Fim do CSS esqueci a senha card e-mail - Denyel*/
 
+/* Fim do CSS esqueci a senha card e-mail */
+
+
 /* ======= */
+
 .footer_cli_item h3 {
   font-size: 16px;
   margin-bottom: 8px;
@@ -1816,7 +1819,107 @@ body {
 
 /* Fim do CSS da página Cadastro - Maria*/
 
+ HEAD
 /* Inicio do CSS do Menu Cadastro - Maria*/
+
+
+/* inicio pg notificação sem login */
+
+.body_not_sem_log{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color:#FFFFFF;
+}
+.notificacao-usuario-main{
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: aqua; */
+}
+.notificacao-usuario-cabesalio{
+  height: 140px;
+  width: 92%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.notificacao-usuario-notficacao{
+  /* background-color: violet; */
+  display: flex;
+  flex-direction: row;
+  width: 210px;
+  height: 43px;
+  font-size: 10px;
+  color: #40513B;
+  font-weight: bold;
+}
+.notificacao-usuario-notficacao h1{
+  padding-left: 30px;
+}
+.fa-chevron-left{
+  padding-top: 8px;
+  font-size: 30px;
+}
+.notificacao-usuario-filtro{
+  width: 250px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-color: #40513B;
+}
+.notificacao-filtro-name{
+  padding-left: 10px;
+  color: #40513B;
+  font-weight: normal;
+}
+.notificacao-filtro-arrow{
+  color: #40513B;
+  padding-right: 10px;
+}
+.notificacao-linha-pad{
+  width: 92%;
+  height: 2px;
+  padding-bottom: 30px;
+}
+.notificacao-usuario-linha{
+  width: 100%;
+  height: 1px;
+  background-color: #40513B;
+}
+.notificacao-center-text{
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.notificacao-center-text h1{
+  color: #40513B;
+}
+.notificacao-login{
+  color: red;
+  text-decoration: underline;
+}
+@media screen and (max-width:1170px){
+  .notificacao-usuario-notficacao h1{
+      padding-right: 30px;
+  }
+  .texto-pg-not{
+      font-size: 15px;
+  }
+}
+/* final pg notificação sem login Gabriel*/
+
+/* Começo do CSS do menu Cadastro - Maria*/
 
 *{
   padding: 0;
@@ -1849,6 +1952,7 @@ body {
   font-size: 2rem;
   align-items: center;
 }
+
 
 
 /* === 320px (pequenos celulares) === */
@@ -2000,13 +2104,17 @@ body {
 /* CSS Termos e Condições Julie*/
 .texto-termos-e-condicoes{
   max-width: 100%;
-  margin-top: 0px;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 0%;
-  padding-bottom: 8%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
   font-family: 'poppins', sans-serif;
   color: var(--color-primary-1);
+}
+.header-termos-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 10% 0;
 }
 .section-termos-e-condicoes{
   color: var(--color-fonte);
@@ -2015,7 +2123,7 @@ body {
 .titulo-termos-e-condicoes{
   color: var(--color-primary-1);
   text-align: center;
-  padding-top: 50px;
+  padding-top: 0;
 }
 .sub-titulo2-termos-e-condicoes{
   padding: 6px;
@@ -2031,10 +2139,11 @@ body {
 .p-termos-e-condicoes{
   color: var(--color-fonte);
 }
-.setinha-termos-e-coondicoes i{
-  align-items: center;
+.setinha-termos-e-condicoes {
   color: var(--color-primary-1);
   font-size: 24px;
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 360px) and (max-width: 389px) {
@@ -2060,10 +2169,10 @@ body {
   padding: 10px;
 }
 .texto-nossa-historia{
-  padding: 4%;
+  padding: 10%;
   padding-top: 0%;
   margin: 10px;
-  font-size: 1.5rem;
+  font-size: 20px;
   color:#40513B;
   font-weight: 400;
 }
@@ -2071,6 +2180,7 @@ body {
   text-align: center;
   margin: 50px;
   font-size: 2rem;
+  color:#40513B;
 }
 .nossa_historia a {
   color: var(--color-primary-3);
@@ -2082,17 +2192,15 @@ body {
 /*Fim-nossa-historia - Valdir */
 
 /* Começo da pg favoritos Mariana*/
-.area-favoritos{
-  background-color: white;
-  font-family: 'Poppins';
+.container_pagina_favoritos{
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  
+  margin: 20px auto;
   width: 100%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  gap: 30px;
-  margin-top: 32px;
-  text-align: left;
+  position: relative;
+  margin-top: 35px;
 }
 .favoritos-title {
   display: flex;
@@ -2123,74 +2231,10 @@ body {
   justify-content: center;
   gap: 20px;
   flex-wrap: nowrap;
-  color: aliceblue;
 }
-.card-pag-fav {
-  height: 400px;
-  width:300px;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 5px;
-  gap: 18px;
-  padding: 20px;
-  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-.card-pag-fav img {
-  height: 150px;
-  width: 300px;
-  max-width: 100%;
-}
-.card-header-pag-fav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-/* Título do produto dentro do card */
-.produto-nome-pag-fav {
-  font-size: 1.1em;
-  margin: 10px 0;
-  color: #333;
-  text-align: left;
-}
-
-/* Preço do produto */
-.produto-preco-pag-fav {
-  font-size: 1.1em;
-  color: #333;
-  text-align: left;
-}
-
-/* Texto de quantidade vendida */
-.produto-vendas-pag-fav {
-  font-size: 0.6em;
-  color: #333;
-  text-align: left;
-}
-
-
 .stars-pag-fav {
   color: gold;
   margin: 5px 0;
-}
-.botao-pag-fav{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.btn-pag-fav {
-  background-color: rgb(85, 140, 75);
-  color: white;
-  padding: 5px 6px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9em;
-  bottom: 10px;
-  right: 10px;
 }
 .excluir-pag-fav {
   background: none;
@@ -2201,8 +2245,31 @@ body {
   display: flex;
   text-decoration: underline;
 }
-
-
+.btn-favorito{
+  background-color: var(--color-botao-op-Concluido);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+  width: 50%;
+  box-sizing: border-box;
+}
+.btn-favorito:hover{
+  background-color: rgb(65, 110, 55);
+}
+.botao-pag-fav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 /* === 320px (pequenos celulares) === */
 @media (max-width: 320px) {
   .favoritos-title {
@@ -2214,19 +2281,6 @@ body {
     width: 50%;
     flex-direction: row;
   }
-  .card-pag-fav {
-    padding: 15px;
-  }
-
-  .botao-pag-fav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .btn-pag-fav,
-  .excluir-pag-fav {
-    width: 100%;
-  }
 }
 
 /* === 375px (iPhones e smartphones médios) === */
@@ -2234,95 +2288,22 @@ body {
   .favoritos-title {
     font-size: 1.1em;
   }
-
-  .card-pag-fav {
-    width: 95%;
-  }
 }
 
-/* === 425px (smartphones grandes) === */
-@media (max-width: 425px) {
-  .card-pag-fav {
-    width: 95%;
-  }
 
-  .card-header-pag-fav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .botao-pag-fav {
-    flex-direction: column;
-  }
-}
 
 /* ==================== */
 /* Responsividade Tablets */
 /* ==================== */
 @media (max-width: 768px) {
-  .cards-container-pag-fav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 85%;
-    max-width: 350px;
-  }
-
   .favoritos-title {
     justify-content: center;
     font-size: 1.3em;
-  }
-
-  .botao-pag-fav {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .btn-pag-fav,
-  .excluir-pag-fav {
-    width: auto;
-  }
-}
-
-/* === 1024px (telas pequenas de notebook) === */
-@media (max-width: 1024px) {
-  .cards-container-pag-fav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 300px;
-  }
-}
-
-/* ==================== */
-/* Responsividade do Desktop */
-/* ==================== */
-@media (max-width: 1440px) {
-  .card-pag-fav {
-    width: 300px;
-  }
-
-  .cards-container-pag-fav {
-    gap: 24px;
-    justify-content: center;
   }
 }
 
 /* === 2560px (telas ultra-wide) === */
 @media (min-width: 1441px) and (max-width: 2560px) {
-  .cards-container-pag-fav {
-    gap: 40px;
-    justify-content: center;
-  }
-
-  .card-pag-fav {
-    width: 320px;
-  }
-
   .favoritos-title {
     font-size: 1.8em;
     margin-left: 60px;
@@ -2332,9 +2313,6 @@ body {
 /*Final da Pg Favoritos - Mariana */
 
 /* inicio slider da página inicial - Matheus*/ 
-/* Base styles */
-
-/* inicio slider da página inicial  */ 
 .body-mais-vendidos {
   font-family: "Poppins", sans-serif;
   background-color: #f0f0f0;
@@ -2392,34 +2370,30 @@ body {
   right: 0;
 }
 
+
 .cards-mais-vendidos {
   display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease-in-out;
-  padding: 20px;
+  gap: 15px;
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  width: calc(100% - 100px);
-  margin: 0 auto;
 }
 
 .cards-mais-vendidos::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .card-mais-vendidos {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: white;
   padding: 15px;
-  width: 230px; 
-  flex: 0 0 auto; 
-  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+  width: 230px;
   scroll-snap-align: start;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
 }
 
 .card-mais-vendidos:hover {
@@ -2427,40 +2401,66 @@ body {
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-.card-mais-vendidos img {
+.img_mais-vendidos {
   width: 100%;
-  height: 160px;
-  border-radius: 8px;
+  border-radius: 5px;
+  height: 180px;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
-.card-mais-vendidos p {
-  margin: 8px 0;
-  font-size: 14px;
-  color: #333;
+.info-grid-mais-vendidos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 10px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.info-grid-mais-vendidos p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.info-grid-mais-vendidos p:nth-child(odd) {
+  font-weight: bold;
+  text-align: left;
 }
 
 .price-mais-vendidos {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 8px 0;
+  font-size: 1.2rem;
   font-weight: bold;
-  color: #000;
-  font-size: 18px;
-  margin: 10px 0;
+  color: #2a7f40;
 }
 
 .btn-mais-vendidos {
   background-color: var(--color-botao-op-Concluido);
   color: white;
   padding: 8px 16px;
-  text-decoration: none;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
   display: inline-block;
   margin-top: 10px;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .btn-mais-vendidos:hover {
-  background-color: var(--color-botao-op-Concluido-hover);
+  background-color: rgb(65, 110, 55);
+}
+
+/* Mantenha os estilos existentes das setas e outros elementos */
+.arrow-mais-vendidos {
+  /* Estilos existentes */
+  z-index: 2;
 }
 
 /* ==================== */
@@ -2762,6 +2762,183 @@ body {
 }
 /* Fim do slider da página inicial - Matheus*
 /*----------------------------------------------------------------------------*/
+
+ HEAD
+
+/* inicio pg notificação sem login */
+
+.body_not_sem_log{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color:#FFFFFF;
+}
+.notificacao-usuario-main{
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: aqua; */
+}
+.notificacao-usuario-cabesalio{
+  height: 140px;
+  width: 92%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.notificacao-usuario-notficacao{
+  /* background-color: violet; */
+  display: flex;
+  flex-direction: row;
+  width: 210px;
+  height: 43px;
+  font-size: 10px;
+  color: #40513B;
+  font-weight: bold;
+}
+.notificacao-usuario-notficacao-h1{
+  padding-left: 30px;
+}
+.fa-chevron-left{
+  padding-top: 8px;
+  font-size: 30px;
+}
+.notificacao-usuario-filtro{
+  width: 250px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-color: #40513B;
+}
+.notificacao-filtro-name{
+  padding-left: 10px;
+  color: #40513B;
+  font-weight: normal;
+}
+.notificacao-filtro-arrow{
+  color: #40513B;
+  padding-right: 10px;
+}
+.notificacao-linha-pad{
+  width: 92%;
+  height: 2px;
+  padding-bottom: 30px;
+}
+.notificacao-usuario-linha{
+  width: 100%;
+  height: 1px;
+  background-color: #40513B;
+}
+.notificacao-center-text{
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.texto-pg-not1{
+  color: #40513B;
+}
+.notificacao-login{
+  color: red;
+  text-decoration: underline;
+}
+.header_not_sem_log{
+  /* background-color: paleturquoise; */
+  width: 100%;
+}
+.footer_not_sem_log{
+  /* background-color: red; */
+  width: 100%;
+}
+@media screen and (max-width:1170px){
+  .notificacao-usuario-notficacao-h1{
+      padding-right: 30px;
+  }
+  .texto-pg-not{
+      font-size: 15px;
+  }
+}
+
+/* final pg notificação sem login Gabriel */
+/* Começo do CSS esqueci a senha pop up - Julie */
+.esqueci_a_senha_popup_body{
+  background-color: #F7F7F7;
+  display: grid;
+  align-items: center;
+  min-height: 90vh;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 8%;
+  padding-right: 8%;
+  margin-bottom: 8%;
+}
+.esqueci_senha_card_popup{
+  position: relative;
+  left: 22%;
+  margin-bottom: 5%;
+  width: 810px;
+  height: 450px;
+  background-color: #DFEBE0;
+  padding: 110px;
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.esqueci_senha_popup_texto {
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary-1);
+  font-size: 1.5rem;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  margin-top: -50px; 
+}
+.esqueci_senha_popup_linha{
+  width: 585px;
+  height: 0.5px;
+  position: relative;
+  left: 2px;
+  top: 50px;
+  transform: translateY(20px);
+  background-color: var(--color-primary-1);
+}
+.esqueci_senha_popup_botao{
+  position: relative;
+  top: 120px;
+  left: 225px;
+  width: 130px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: none;
+  color: var(--color-primary-1);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.esqueci_senha_popup_botao:hover{
+  background-color: var(--color-primary-2);
+  color: #ffffff;
+}
+.esqueci_senha-card_popup_setinha_voltar  {
+  color: var(--color-primary-1); 
+  font-size: 30px;
+}
+.esqueci_a_senha_popup_setinha{
+  width: 18px;
+  position: relative;
+  left: 15%;
+  margin-top: 90px;
+}
+
+
+/* Fim do CSS esqueci a senha pop up - Julie */
 
 
 /* Começo do CSS do menu de Recuperar Senha - Julie*/
@@ -4062,11 +4239,12 @@ input[type="checkbox"] {
   background-color: #40513B;
 }
 
-.info_menu_login {
+.div_menu_login {
   width: 100%;
   max-height: 9.2rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .logo_menu_login img {
@@ -4075,13 +4253,55 @@ input[type="checkbox"] {
   height: 7.884rem;
 }
 
-.nome_menu_login {
+.titulo_menu_login {
   font-weight: 600;
   margin-left: 20px;
-  margin-top: 50px;
   color: #FFFFFF;
   font-size: 2rem;
-  align-items: center;
+  align-self: center;
+}
+
+/* ===== Tablet (768px - 1024px) ===== */
+@media (max-width: 1024px) {
+  .menu_login {
+    height: 8rem;
+  }
+  
+  .logo_menu_login img {
+    height: 6.5rem;
+    margin-left: 15px;
+  }
+  
+  .titulo_menu_login {
+    font-size: 1.8rem;
+    margin-top: 0;
+  }
+}
+
+/* ===== Mobile (up to 767px) ===== */
+@media (max-width: 767px) {
+  .menu_login {
+    height: auto;
+    padding: 10px 0;
+  }
+  
+  .div_menu_login {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+    flex-wrap: wrap;
+  }
+  
+  .logo_menu_login img {
+    height: 4rem;
+    margin: 0 10px 0 0;
+  }
+  
+  .titulo_menu_login {
+    font-size: 1.375rem;
+    margin: 0 0 0 10px;
+    line-height: 1.875rem;
+  }
 }
 
 /*Final do menu do login-Vinycius*/
@@ -4106,7 +4326,6 @@ input[type="checkbox"] {
 
 .login_box_vinycius {
   display: flex;
-  font-family: "Poppins", sans-serif;
   flex-direction: row;
   background-color: #DFEBE0;
   border-radius: 3px;
@@ -4122,7 +4341,6 @@ input[type="checkbox"] {
   width: 50%;
   display: flex;
   flex-direction: column;
-  font-family: "Poppins", sans-serif;
   justify-content: center;
 }
 
@@ -4135,10 +4353,9 @@ input[type="checkbox"] {
 
 .text_login_vinycius {
   margin: 10px;
-  font-size: 20px;
-  color: #40513B;
+  font-size: 1.5rem;
+  color: var(--color-primary-1);
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
   padding: 10px;
 }
 
@@ -4147,7 +4364,6 @@ input[type="checkbox"] {
   height: 80%;
   display: flex;
   flex-direction: column;
-  font-family: "Poppins", sans-serif;
   align-items: center;
 }
 
@@ -4158,14 +4374,14 @@ input[type="checkbox"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
 }
 
 .login_form_vinycius h2 {
+  font-size: 2rem;
+  line-height: 1.875rem;
   text-align: center;
   margin-bottom: 100px;
-  color: #111;
-  font-family: "Poppins", sans-serif;
+  color: var(--color-primary-1);
 }
 
 .button_vinycius {
@@ -4185,40 +4401,34 @@ input[type="checkbox"] {
 }
 
 .login_form_vinycius a {
-  color: #609966;
+  color: var(--color-primary-5);
   font-size: 15px;
   text-decoration: none;
   display: flex;
   margin: 7px 0;
-  font-family: "Poppins", sans-serif;
 }
 
 .login_form_vinycius a:hover {
   text-decoration: underline;
-
 }
 
 .texto1 {
-  color: #40513B;
+  color: var(--color-primary-1 );
   font-size: 15px;
   text-decoration: none;
   display: flex;
   align-items: center;
   margin: 8px 0;
-  font-family: "Poppins", sans-serif;
 }
 .texto1 a {
   margin-left: 5px;
-  font-family: "Poppins", sans-serif;
 }
-
 
 .senha_container {
   position: relative;
   display: flex;
   width: 70%;
   align-items: center;
-  font-family: "Poppins", sans-serif;
 }
 
 .toggle_senha {
@@ -4276,33 +4486,40 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 768px) {
+  .container_geral_login {
+    margin: 8% 0;
+    min-height: auto;
+    padding: 0;
+  }
+
   .login_box_vinycius {
     flex-direction: column;
-    height: 45%;
-    display: flex;
+    height: auto;
     padding: 25px;
-    font-family: "Poppins", sans-serif;
+    margin: 0 5%;
+    width: 90%;
+  }
+  .texto1{
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .texto1 a {
     margin-left: 2px;
-    font-family: "Poppins", sans-serif;
   }
 
   .info_login_vinycius, .login_form_vinycius {
     width: 100%;
     padding: 10px;
-    font-family: "Poppins", sans-serif;
   }
 
   .form_login {
     width: 100%;
     height: 10%;
-    font-family: "Poppins", sans-serif;
   }
 
   .img_login {
-    max-width: 100%;
-    height: 100%;
+    max-width: 80%;
+    height: 80%;
     margin-bottom:2px;
   }
 
@@ -4310,12 +4527,11 @@ input[type="checkbox"] {
   .input_login_vinycius2,
   .senha_container {
     width: 100%;
-    font-family: "Poppins", sans-serif;
   }
 
   .button_vinycius {
-    font-family: "Poppins", sans-serif;
     gap: 10px;
+    margin: 0 0;
     display: flex;
     width: 200px;
     justify-content: center;
@@ -4332,26 +4548,23 @@ input[type="checkbox"] {
   .text_login_vinycius {
     font-size: 16px;
     text-align: center;
-    font-family: "Poppins", sans-serif;
   }
 }
 
 @media (max-width: 480px) {
   .login_form_vinycius h2 {
-    font-size: 24px;
-    margin-bottom: 40px;
-    font-family: "Poppins", sans-serif;
+    font-size: 1.375rem;
+    margin-bottom: 30px;
   }
 
   .text_login_vinycius {
-    font-size: 14px;
+    font-size: 1rem;
     padding: 5px;
-    font-family: "Poppins", sans-serif;
+    margin: 0 0;
   }
 
   .button_vinycius {
     font-size: 14px;
-    font-family: "Poppins", sans-serif;
   }
 
 }
@@ -4365,6 +4578,7 @@ input[type="checkbox"] {
 }
 
 /* Final da pg de login */
+HEAD
 
 
 
@@ -5158,7 +5372,7 @@ body {
     display: none;
   }
   .lotes-wrapper {
-    overflow-x: visible; /* Remove rolagem horizontal no desktop */
+    overflow-x: visible; 
   }
   
   .lotes_container_pagina_de_busca {
@@ -5167,9 +5381,6 @@ body {
     width: 100%; /* Restaura largura normal */
   }
   
-  .lote-card {
-    width: 100%; /* Cards ocupam toda a largura do grid */
-  }
 }
 
 @media (min-width: 1440px) {
@@ -5577,3 +5788,64 @@ label {
 }
 
 /* Fim popup login */
+
+
+/* Começo do componente de card */
+.card_cliente {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* ou remova isso e deixe o container definir */
+  max-width: 250px; /* igual ao .lote-card, se estiver usando */
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.card_cliente:hover {
+  transform: translateY(-5px);
+}
+
+.card_cliente img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card_info_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 10px;
+  width: 100%;
+  text-align: right;
+}
+
+.card_info_grid p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.card_info_grid p:nth-child(odd) {
+  font-weight: bold;
+  text-align: left;
+}
+
+.card_preco {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2a7f40;
+}
+
+
+/* Fim do componente de card */
+

@@ -13,7 +13,6 @@
 </head>
 <body class="body-detalhes-produto">
 
-
     <h2 class="titulo-produto-detalhes-produto">
         <i class="bi bi-chevron-left"></i> Galo Índio de León
     </h2>
@@ -31,7 +30,11 @@
             <div class="imagem-grande-detalhes-produto">
                 <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Imagem Principal">
 
+
             <!-- </div> -->
+
+            </div> 
+        </div>
             <div class="info-produto-detalhes-produto"> 
                 <div class="estrelas-detalhes-produto">★★★★★<span>4.9 (204)</span>
                     <i class="bi bi-share"></i>
@@ -55,28 +58,7 @@
         </div>
 
 
-        <div class="info-produto-detalhes-produto">
-            <div class="estrelas-detalhes-produto">
-                ★★★★★ <span>4.9 (204)</span>
-                <i class="bi bi-share ms-2"></i>
-                <i class="bi bi-heart ms-2"></i>
-            </div>
-
-            <p class="informacoes-detalhes-produto">
-                Vendido pela empresa <span>John Rooster</span>
-            </p>
-            <p class="informacoes-detalhes-produto">
-                Entregue por <span>John Rooster</span>
-            </p>
-            <p class="informacoes-detalhes-produto">
-                A empresa John Rooster garante os animais da melhor qualidade
-            </p>
-
-            <p class="preco-detalhes-produto">R$ 5.000,00</p>  
-            <button class="botao-carrinho-detalhes-produto">Adicionar ao carrinho</button>
-            <button class="botao-comprar-detalhes-produto">Comprar</button>
-        </div>
-
+        
     </main>
 
     <section class="descricao-detalhes-produto">

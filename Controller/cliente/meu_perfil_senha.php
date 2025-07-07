@@ -1,6 +1,6 @@
-
+<!-- Arthur -->
 <?php
- include 'menu_pg_inicial.php';
+    include 'menu_pg_inicial.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -12,7 +12,7 @@
 </head>
 <body class="body-arthura">
     <div class="header-arthura">
-    <h2 class="visualizar-dados-title" href="meu_perfil.php"><i class="bi bi-chevron-left"></i>Meu Perfil</h2>
+        <h2 class="visualizar-dados-title"><a href="meu_perfil.php"><i class="bi bi-chevron-left"></i></a>Meu Perfil</h2>
     </div>
     <div class="wrapper-arthura">
         <div class="card-arthura">
@@ -35,7 +35,7 @@
             
             <form>
                 <input type="password" class="password-input-arthura" placeholder="Digite sua senha:">
-                <button type="button" class="view-button-arthura">Visualizar meus dados</button>
+                <a href="meu_perfil_editar.php"><button type="button" class="view-button-arthura">Visualizar meus dados</button></a>
             </form>
         </div>
 
