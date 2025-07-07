@@ -57,7 +57,7 @@
                 <h3>Termos</h3>
                 <hr>
                 <a href="termos_e_condicoes.php">Termos e Condições</a>
-                <a href="privacidade_e_seguranca.php">Privacidade e Segurança</a>
+                <a href="privacidade-e-seguranca.php">Privacidade e Segurança</a>
             </div>
 
 
