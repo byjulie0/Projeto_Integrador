@@ -3633,8 +3633,11 @@ body {
   background-color: var(--color-botao-op-Concluido);
   width: 20rem;
   height: 2rem;
-  color: var(--color-primary-7);
-  border-style: none;
+  color: var(--color-icones);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer; 
+  transition: all 0.2s ease; 
 }
 
 /* Fim do formulário de alteração de senha */
@@ -3891,31 +3894,6 @@ input[type="checkbox"] {
   padding: 0px 5px;
 }
 
-.checkout-btn-carrinho{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.checkout-carrinho{
-  cursor: pointer;
-  background: #4B914B;
-  padding: 5px 15px;
-  border: none;
-  border-radius: 5px;
-  font: inherit;
-}
-
-.checkout-carrinho:hover{
-  background: darkgoldenrod;
-}
-
-.checkout-carrinho span{
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--color-primary-8);
-}
 
 .delete-item-carrinho:hover,
 .move-items-to-favorites-carrinho:hover {
@@ -5846,8 +5824,8 @@ label {
   color: #2a7f40;
 }
 
-
 /* Fim do componente de card */
+
 
 /* Começo de página de notificação */
 .title_area_notifications {
@@ -5955,3 +5933,29 @@ label {
 
 
 /* Fim de página de notificação */
+
+/* Começo css do componente do botão */
+.generate_report_submit_button {
+  margin-top: 5%;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.generate_report_product_button {
+  gap: 10px;
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-botao-op-Concluido);
+  color: var(--color-icones);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer; 
+  transition: all 0.2s ease; 
+}
+/* Fim do css do componente do botão*/
+
