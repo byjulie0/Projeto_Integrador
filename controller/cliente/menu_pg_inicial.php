@@ -61,7 +61,7 @@
                     </ul>
 
                 </li>
-                <a href="" class="nav-btns-pg-inicial">
+                <a href="notificacao.php" class="nav-btns-pg-inicial">
                     <i class="bi bi-bell"></i>
                     <span class="nav-text-pg-inicial">Notificações</span>
                 </a>
