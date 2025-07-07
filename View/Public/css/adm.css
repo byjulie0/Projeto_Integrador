@@ -2230,10 +2230,10 @@ main {
   width: 100%;
   margin-top: 10%;
   display: grid;
-  column-gap: 10%;
+  column-gap: 2%;
   /* row-gap: 5%; */
   grid-template-columns: 100%;
-  grid-template-rows:30% 30% 30% 30% 30% 30% 30%;
+  grid-template-rows: 20% 20% 20% 20% 20% 20% 20%;
 }
 
 .verificar_administrar_pedidos_sessao_estatisticas h4{
@@ -2264,11 +2264,11 @@ main {
 .verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
   display: flex;
   margin-left: 20%;
-  column-gap: 10%;
+  column-gap: 12%;
   position: relative;
   top: 110%;
-  left: -4%;
-  gap: 60px;
+  left: -2%;
+  /* gap: 50px; */
   font-size: 1.2rem;
 }
 
@@ -2325,7 +2325,7 @@ main {
 }
 
 /* Responsivo para telas menores que 1200px */
-@media (max-width: 1200px) {
+@media (max-width: 1220px) {
   .verificar_administrar_pedidos_sessao_info h1 {
     top: -7vh;
     left: -8%;
@@ -2342,7 +2342,8 @@ main {
   }
 
   .verificar_administrar_pedidos_sessao_coluna {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
+    top: -30vh;
   }
 
   .verificar_administrar_pedidos_sessao_coluna_direita {
@@ -2356,9 +2357,48 @@ main {
     padding-bottom: 50px;
   }
 
+  .verificar_administrar_pedidos_sessao_bloco_vendas{
+    position: relative;
+    top: 3%;
+    height: 135%;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_atividades{
+    position: relative;
+    top: 45vh;
+    margin-bottom: 60%;
+    height: 80%;
+  }
+
   .verificar_administrar_pedidos_sessao_estatisticas {
     margin-left: 0;
     padding-bottom: 200px;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_visualizacao{
+    position: relative;
+    top: -5vh;
+    column-gap: 5;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais{
+    gap: 90px;
+    /* left: 10%; */
+  }
+
+  .verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
+    top: 30%;
+    gap: 90px;
+  }
+}
+
+@media (max-width: 1100px){
+  .verificar_administrar_pedidos_sessao_info h1{
+    left: -2%;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_atividades{
+    top: 37vh;
   }
 }
 

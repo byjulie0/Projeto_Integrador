@@ -150,16 +150,16 @@ include "../adm/menu_adm.php";
                             <h6>1%</h6>
                             <hr>
                         </div>
-                    </div>
 
-                    <div class="verificar_administrar_pedidos_sessao_vendas_linhas_verticais">
-                        <h6>D</h6>
-                        <h6>S</h6>
-                        <h6>T</h6>
-                        <h6>Q</h6>
-                        <h6>Q</h6>
-                        <h6>S</h6>
-                        <h6>S</h6>
+                        <div class="verificar_administrar_pedidos_sessao_vendas_linhas_verticais">
+                            <h6>D</h6>
+                            <h6>S</h6>
+                            <h6>T</h6>
+                            <h6>Q</h6>
+                            <h6>Q</h6>
+                            <h6>S</h6>
+                            <h6>S</h6>
+                        </div>
                     </div>
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_bloco_atividades">
