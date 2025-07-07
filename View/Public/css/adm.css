@@ -2132,6 +2132,8 @@ main {
 .verificar_administrar_pedidos_sessao_periodo_linha{
   max-width: 100%;
   width: 85%;
+  position: relative;
+  left: 8%;
 }
 
 .verificar_administrar_pedidos_sessao_seta_voltar{
@@ -2325,12 +2327,12 @@ main {
 /* Responsivo para telas menores que 1200px */
 @media (max-width: 1200px) {
   .verificar_administrar_pedidos_sessao_info h1 {
-    top: -5vh;
+    top: -7vh;
     left: -8%;
   }
 
   .verificar_administrar_pedidos_sessao_periodo_bloco {
-    margin-left: 100%;
+    margin-left: 165%;
     width: 40%;
   }
 
@@ -2351,7 +2353,7 @@ main {
   .verificar_administrar_pedidos_sessao_bloco_vendas,
   .verificar_administrar_pedidos_sessao_bloco_atividades {
     width: 100%;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
   }
 
   .verificar_administrar_pedidos_sessao_estatisticas {
