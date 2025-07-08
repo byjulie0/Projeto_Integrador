@@ -2210,7 +2210,7 @@ main {
   font-size: 2.5rem;
   transform: none;
   margin-top: -10vh;
-  margin-left: -3.5vh;
+  margin-left: -3vh;
   align-items: center;
   justify-content: center;
 }
@@ -2254,13 +2254,13 @@ main {
 
 .verificar_administrar_pedidos_sessao_estatisticas_linhas_dados{
   display: flex;
-  width: 50%;
+  max-width: 100%;
   gap: 15px;
 }
 
-.verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais hr{
+.verificar_administrar_pedidos_sessao_estatisticas_linhas_dados hr{
   max-width: 100%;
-  width: 100%;
+  width: 85%;
   height: 1%;
   border-top: 2px dotted;
   transform: translateY(10px);
