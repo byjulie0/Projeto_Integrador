@@ -2457,12 +2457,6 @@ body {
 .arrow-mais-vendidos {
   z-index: 2;
 }
-
-/* ==================== */
-/* Responsividade de celular */
-/* ==================== */
-
-/* Mobile Médio: 360 x 800 */
 @media (max-width: 391px) {
   .pg-mais-vendidos {
     font-size: 1.375rem;
@@ -2485,10 +2479,6 @@ body {
     padding: 10px;
   }
 }
-
-/* ==================== */
-/* Responsividade de celular */
-/* ==================== */
 @media (min-width: 391px) and (max-width: 767px) {
   .pg-mais-vendidos {
     font-size: 1.375rem;
@@ -2497,12 +2487,6 @@ body {
     padding: 5% 2% 7%;
   }
 }
-
-/* ==================== */
-/* Responsividade do tablet */
-/* ==================== */
-
-/* Tablet Médio: 768-1023 */
 @media (min-width: 768px) and (max-width: 1024px) {
   .carrossel-mais-vendidos {
     padding: 3% 2% 5%;
@@ -2511,19 +2495,11 @@ body {
     font-size: 2rem;
   }
 }
-
-/* ==================== */
-/* Responsividade do Desktop */
-/* ==================== */
-
-/* Desktop Medium: 1440 x 900 */
 @media (min-width: 1024px) and (max-width: 1919px) {
   .carrossel-mais-vendidos {
     padding: 2% 2% 5%;
   }
 }
-
-/* Desktop Large: 1920 x 1080 */
 @media (min-width: 1920px) {
   .pg-mais-vendidos {
     font-size: 2rem;
@@ -2542,6 +2518,215 @@ body {
   }
 }
 /*Fim mais-vendidos*/
+
+/* Começo Talvez você goste */
+.body-talvez-voce-goste {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.pg-talvez-voce-goste { /*titulo*/
+  color: var(--color-primary-1);
+  padding-left: 8%;
+  padding-top: 3%;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.carrossel-talvez-voce-goste { /*card carrosel*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2% 0 5%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.arrow-talvez-voce-goste {
+  font-size: 30px;
+  cursor: pointer;
+  margin: 0 10px;
+  user-select: none;
+  color: #40513B;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.arrow-talvez-voce-goste:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
+}
+
+.arrow-talvez-voce-goste:first-child {
+  left: 0;
+}
+
+.arrow-talvez-voce-goste:last-child {
+  right: 0;
+}
+
+.cards-talvez-voce-goste {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.cards-talvez-voce-goste::-webkit-scrollbar {
+  display: none;
+}
+
+.card-talvez-voce-goste {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+  width: 230px;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+}
+
+.card-talvez-voce-goste:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.img_talvez-voce-goste {
+  width: 100%;
+  border-radius: 5px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.info-grid-talvez-voce-goste {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 10px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.info-grid-talvez-voce-goste p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.info-grid-talvez-voce-goste p:nth-child(odd) {
+  font-weight: bold;
+  text-align: left;
+}
+
+.price-talvez-voce-goste {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 8px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2a7f40;
+}
+
+.btn-talvez-voce-goste {
+  background-color: var(--color-botao-op-Concluido);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-talvez-voce-goste:hover {
+  background-color: rgb(65, 110, 55);
+}
+
+.arrow-talvez-voce-goste {
+  z-index: 2;
+}
+@media (max-width: 391px) {
+  .pg-talvez-voce-goste {
+    font-size: 1.375rem;
+    padding-left: 5%;
+    padding-top: 3%;
+  }
+  
+  .carrossel-talvez-voce-goste {
+    padding: 5% 0 10%;
+  }
+  
+  .arrow-talvez-voce-goste {
+    font-size: 24px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .cards-talvez-voce-goste {
+    width: calc(100% - 80px);
+    padding: 10px;
+  }
+}
+@media (min-width: 391px) and (max-width: 767px) {
+  .pg-talvez-voce-goste {
+    font-size: 1.375rem;
+  }
+  .carrossel-talvez-voce-goste {
+    padding: 5% 2% 7%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .carrossel-talvez-voce-goste {
+    padding: 3% 2% 5%;
+  }
+  .pg-talvez-voce-goste {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .carrossel-talvez-voce-goste {
+    padding: 2% 2% 5%;
+  }
+}
+@media (min-width: 1920px) {
+  .pg-talvez-voce-goste {
+    font-size: 2rem;
+    padding-left: 8%;
+  }
+  
+  .carrossel-talvez-voce-goste {
+    max-width: 1400px;
+    padding: 2% 2% 5%;
+  }
+  
+  .arrow-talvez-voce-goste {
+    font-size: 36px;
+    width: 50px;
+    height: 50px;
+  }
+}
+/* Fim talvez-voce-goste */
 
 /* Começo do CSS esqueci a senha pop up - Julie */
 .esqueci_a_senha_popup_body{
