@@ -136,6 +136,35 @@
                             <h6>20K</h6>
                             <hr>
                         </div>
+                        <div class="verificar_administrar_pedidos_sessao_vendas_linhas_horizontais">
+                            <h6>18K</h6>
+                            <hr>
+                        </div>
+                        <div class="verificar_administrar_pedidos_sessao_vendas_linhas_horizontais">
+                            <h6>15K</h6>
+                            <hr>
+                        </div>
+                        <div class="verificar_administrar_pedidos_sessao_vendas_linhas_horizontais">
+                            <h6>12K</h6>
+                            <hr>
+                        </div>
+                        <div class="verificar_administrar_pedidos_sessao_vendas_linhas_horizontais">
+                            <h6>10K</h6>
+                            <hr>
+                        </div>
+                        <div class="verificar_administrar_pedidos_sessao_vendas_linhas_horizontais">
+                            <h6>5K</h6>
+                            <hr>
+                        </div>
+                        <div class="verificar_administrar_pedidos_sessao_vendas_linhas_horizontais">
+                            <h6>2K</h6>
+                            <hr>
+                        </div>
+                        <div class="verificar_administrar_pedidos_sessao_vendas_linhas_horizontais">
+                            <h6>1K</h6>
+                            <hr>
+                        </div>
+                        
                         <!-- Repetir para outras porcentagens -->
                         <div class="verificar_administrar_pedidos_sessao_vendas_linhas_verticais">
                             <h6>D</h6><h6>S</h6><h6>T</h6><h6>Q</h6><h6>Q</h6><h6>S</h6><h6>S</h6>
