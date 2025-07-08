@@ -2115,6 +2115,7 @@ body {
   align-items: center;
   gap: 20px;
   padding: 20px 10% 0;
+  
 }
 .section-termos-e-condicoes{
   color: var(--color-fonte);
@@ -2144,6 +2145,11 @@ body {
   font-size: 24px;
   display: flex;
   align-items: center;
+  text-decoration: none ; 
+}
+
+.setinha-termos-e-condicoes i {
+  color: inherit; 
 }
 
 @media (min-width: 360px) and (max-width: 389px) {
