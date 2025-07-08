@@ -14,9 +14,9 @@
     <h1 class="pg-mais-vendidos" id="mais_vendidos">Talvez Você Goste</h1>
 
     <div class="carrossel-mais-vendidos">
-        <div class="arrow-mais-vendidos" id="arrow-esquerda">&#10094;</div>
+        <div class="arrow-mais-vendidos" id="arrow-esquerda2">&#10094;</div>
 
-        <div class="cards-mais-vendidos" id="carrossel-cards">
+        <div class="cards-mais-vendidos" id="carrossel-cards2">
             <?php
             $talvez_voce_goste = [
                 [
@@ -74,7 +74,7 @@
             ?>
         </div>
 
-        <div class="arrow-mais-vendidos" id="arrow-direita">&#10095;</div>
+        <div class="arrow-mais-vendidos" id="arrow-direita2">&#10095;</div>
     </div>
 
 </body>
