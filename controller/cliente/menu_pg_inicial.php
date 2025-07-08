@@ -19,13 +19,13 @@
     <!-- Início do menu -->
 
     <section class="menu-pg-inicial">
-        
-    <button class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-            <script src="menu_hamburguer.js"></script>
-        </button>
 
+        
         <div class="menu-content-pg-inicial">
+            <button class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+                <script src="menu_hamburguer.js"></script>
+            </button>
             <div class="logo-menu">
                 <img src="../../view/public/imagens/logo.png" alt="" class="logo-menu-img">
                 <a href="pg_inicial_cliente.php" class="logo-menu-title">John Rooster</a>
@@ -76,7 +76,7 @@
                     <span class="nav-text-pg-inicial">Carrinho</span>
                 </a>
             </div>
-            
+
         </div>
     </section>
 
