@@ -2271,7 +2271,7 @@ main {
   margin-left: 20%;
   column-gap: 12%;
   position: relative;
-  top: 110%;
+  top: 120%;
   left: -2%;
   font-size: 1.2rem;
   color: var(--color-primary-1);
@@ -2295,9 +2295,11 @@ main {
 }
 
 .verificar_administrar_pedidos_sessao_vendas_linhas_horizontais hr{
+  max-width: 100%;
   width: 80%;
   height: 1%;
   border-top: 2px dotted;
+  transform: translateY(10px);
 }
 
 .verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
