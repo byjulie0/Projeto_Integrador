@@ -66,51 +66,30 @@
                                 <h6>20K</h6>
                                 <hr>
                             </div>
-                            <p>
-                                <p style="visibility: hidden;">c</p>
-                            </p>
                             <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
                                 <h6>18K</h6>
                                 <hr>
                             </div>
-                            <p>
-                                <p style="visibility: hidden;">c</p>
-                            </p>
                             <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
                                 <h6>15K</h6>
                                 <hr>
                             </div>
-                            <p>
-                                <p style="visibility: hidden;">c</p>
-                            </p>
                             <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
                                 <h6>12K</h6>
                                 <hr>
                             </div>
-                            <p>
-                                <p style="visibility: hidden;">c</p>
-                            </p>
                             <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
                                 <h6>10K</h6>
                                 <hr>
                             </div>
-                            <p>
-                                <p style="visibility: hidden;">c</p>
-                            </p>
                             <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
                                 <h6>5K</h6>
                                 <hr>
                             </div>
-                            <p>
-                                <p style="visibility: hidden;">c</p>
-                            </p>
                             <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
                                 <h6>2K</h6>
                                 <hr>
                             </div>
-                            <p>
-                                <p style="visibility: hidden;">c</p>
-                            </p>
                             <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
                                 <h6>1K</h6>
                                 <hr>

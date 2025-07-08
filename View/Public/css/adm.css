@@ -2219,7 +2219,7 @@ main {
   max-width: 100%;
   width: 100%;
   background-color: #6099662e;
-  padding-bottom: 350px;
+  padding-bottom: 150px;
   margin-left: 1%;
   margin-top: 0;
   grid-column: span 2;
@@ -2245,9 +2245,11 @@ main {
 }
 
 .verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais {
-  /* display: flex; */
+  display: flex;
   /* gap: 50px; */
-  column-gap: 20px;
+  /* column-gap: 20px; */
+  flex-direction: column;
+  gap: 15px;
   margin-left: 10%;
   color: var(--color-primary-1);
 }
@@ -2296,7 +2298,7 @@ main {
 
 .verificar_administrar_pedidos_sessao_vendas_linhas_horizontais hr{
   max-width: 100%;
-  width: 80%;
+  width: 82%;
   height: 1%;
   border-top: 2px dotted;
   transform: translateY(10px);
