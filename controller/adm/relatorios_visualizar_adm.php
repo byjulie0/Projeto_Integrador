@@ -62,8 +62,39 @@
                     <div class="verificar_administrar_pedidos_sessao_estatisticas_visualizacao">
                         <!-- Linhas horizontais -->
                         <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
-                            <h6>20%</h6>
-                            <hr>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
+                                <h6>20K</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
+                                <h6>18K</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
+                                <h6>15K</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
+                                <h6>12K</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
+                                <h6>10K</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
+                                <h6>5K</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
+                                <h6>2K</h6>
+                                <hr>
+                            </div>
+                            <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
+                                <h6>1K</h6>
+                                <hr>
+                            </div>
+                            
                         </div>
                         <!-- Repetir para outras porcentagens -->
                         <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais">
@@ -78,10 +109,10 @@
                 <div class="verificar_administrar_pedidos_sessao_bloco_vendas">
                     <h4>Vendas hoje</h4>
                     <h3>R$:0,00</h3>
-                    <div class="verificar_administrar_pedidos_sessao_estatisticas_visualizacao">
+                    <div class="verificar_administrar_pedidos_sessao_vendas_visualizacao">
                         <!-- Linhas horizontais -->
                         <div class="verificar_administrar_pedidos_sessao_vendas_linhas_horizontais">
-                            <h6>20%</h6>
+                            <h6>20K</h6>
                             <hr>
                         </div>
                         <!-- Repetir para outras porcentagens -->
