@@ -60,6 +60,47 @@
         </div>
     </div>
 
+
+            <div class="card-pag-fav">
+                <img class="card-img-pag-fav" src="../../view/public/imagens/images.jpg" alt="Galináceo da raça Índio">
+                <div class="card-header-pag-fav">
+                <h2 class="produto-nome-pag-fav">Equino da raça Percheron</h2>
+                    <div class="stars-pag-fav">★</div>
+                </div>
+                <p class="produto-preco-pag-fav">R$00,00</p>
+                    <div class="botao-pag-fav">
+                        <button class="excluir-pag-fav">Excluir</button>
+                        <button class="btn-pag-fav">Comprar</button>
+                    </div>
+                    <p class="produto-vendas-pag-fav">3,7 mil vendidos</p>
+            </div>
+
+            <div class="card-pag-fav">
+            <img class="card-img-pag-fav" src="../../view/public/imagens/images.jpg" alt="Bovino da raça Angus">
+                <div class="card-header-pag-fav">
+                <h2 class="produto-nome-pag-fav">Equino da raça Percheron</h2>
+                    <div class="stars-pag-fav">★</div>
+                </div>
+                <p class="produto-preco-pag-fav">R$00,00</p>
+                    <div class="botao-pag-fav">
+                    <button class="excluir-pag-fav">Excluir</button>
+                    <button class="btn-pag-fav">Comprar</button>
+                    </div>
+                    <p class="produto-vendas-pag-fav">3,7 mil vendidos</p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+
+
+
+
+
+
+    
+
     <?php include 'footer_cliente.php'; ?>
 </body>
 </html>

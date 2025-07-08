@@ -15,7 +15,7 @@ include 'menu_pg_inicial.php';
 <body>
     <header>
         <div class="header-termos-container">
-            <a class="setinha-termos-e-condicoes" href="./pg_inicial_cliente.php">
+            <a class="setinha-termos-e-condicoes" href="#" onclick="window.history.back(); return false;">
                 <i class="fa-solid fa-chevron-left"></i>
             </a> 
             <h1 class="titulo-termos-e-condicoes">Termos e Condições</h1>
