@@ -2077,41 +2077,43 @@ main {
 
 /* Início do CSS Relatórios visualizar ADM - Denyel */
 
-.verificar_administrar_pedidos_sessao_main{
+.verificar_administrar_pedidos_sessao_main {
   margin: 40px;
 }
 
-.verificar_administrar_pedidos_sessao_seta_voltar i{
+.verificar_administrar_pedidos_sessao_seta_voltar i {
   z-index: 2;
   cursor: pointer;
   position: relative;
   left: 7%;
 }
 
-.verificar_administrar_pedidos_sessao_info{
+.verificar_administrar_pedidos_sessao_info {
   max-width: 100%;
   width: 50%;
   margin-bottom: 2%;
   color: var(--color-primary-1);
 }
 
-.verificar_administrar_pedidos_sessao_info h1{
+.verificar_administrar_pedidos_sessao_info h1 {
   position: relative;
   top: -8vh;
-  left: -16%;
+  left: -14%;
   font-weight: 400;
   max-width: 100%;
 }
 
-.verificar_administrar_pedidos_sessao_mini_titulos_1{
-  max-width: 100%;
-  width: 700px;
+.verificar_administrar_pedidos_sessao_mini_titulos_1 {
+  max-width: 120%;
+  /* width: 700px; */
+  width: 120%;
+  /* background-color: magenta; */
   position: relative;
   top: -7vh;
   left: 5%;
 }
 
-.verificar_administrar_pedidos_sessao_periodo_bloco{
+.verificar_administrar_pedidos_sessao_periodo_bloco {
   max-width: 100%;
   width: 25%;
   margin-left: 167%;
@@ -2119,32 +2121,32 @@ main {
   top: -13vh;
 }
 
-.verificar_administrar_pedidos_sessao_mini_titulos_2{
+.verificar_administrar_pedidos_sessao_mini_titulos_2 {
   cursor: pointer;
   margin-bottom: 1%;
   font-size: 1.2rem;
 }
 
-.verificar_administrar_pedidos_sessao_mini_titulos_2:hover{
+.verificar_administrar_pedidos_sessao_mini_titulos_2:hover {
   color: var(--color-primary-2);
 }
 
-.verificar_administrar_pedidos_sessao_periodo_linha{
+.verificar_administrar_pedidos_sessao_periodo_linha {
   max-width: 100%;
   width: 85%;
   position: relative;
   left: 8%;
 }
 
-.verificar_administrar_pedidos_sessao_seta_voltar{
+.verificar_administrar_pedidos_sessao_seta_voltar {
   font-size: 1.7rem;
 }
 
-.verificar_administrar_pedidos_sessao_titulo_destaque{
+.verificar_administrar_pedidos_sessao_titulo_destaque {
   font-weight: 600;
 }
 
-.verificar_administrar_pedidos_sessao_section{
+.verificar_administrar_pedidos_sessao_section {
   max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2152,50 +2154,48 @@ main {
   margin-top: -7%;
 }
 
-/* Coluna da esquerda */
-
-.verificar_administrar_pedidos_sessao_coluna{
+.verificar_administrar_pedidos_sessao_coluna {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 0px;
   max-width: 100%;
+  height: 40%;
 }
 
-.verificar_administrar_pedidos_sessao_bloco{
+.verificar_administrar_pedidos_sessao_bloco {
   display: grid;
   grid-template-columns: 2fr 2fr;
   grid-template-rows: auto auto;
   width: 100%;
-  height: 70%;
+  /* height: 40%; */
   background-color: #6099662e;
   padding-bottom: 20px;
   border-radius: 15px;
 }
 
-.verificar_administrar_pedidos_sessao_bloco h5{
+.verificar_administrar_pedidos_sessao_bloco h5 {
   width: 100%;
   height: 50%;
-  /* background-color: magenta; */
   color: var(--color-primary-1);
   text-align: left;
   position: relative;
   top: 20%;
   left: -20%;
+  margin: 0;
 }
 
-.verificar_administrar_pedidos_sessao_bloco i{
+.verificar_administrar_pedidos_sessao_bloco i {
   color: var(--color-primary-1);
   margin-top: -40%;
   margin-left: 180%;
-  /* position: relative;
-  top: -250%;
-  left: 120%; */
   font-size: 1.6rem;
   transform: scaleX(-1);
   cursor: pointer;
+  /* margin: 0; */
 }
 
-.verificar_administrar_pedidos_sessao_bloco_mini{
+.verificar_administrar_pedidos_sessao_bloco_mini {
   width: 10%;
   height: 10%;
   background-color: #9dc08b3a;
@@ -2205,38 +2205,38 @@ main {
   margin-left: 10%;
 }
 
-.verificar_administrar_pedidos_sessao_bloco_mini i{
+.verificar_administrar_pedidos_sessao_bloco_mini i {
   color: var(--color-primary-1);
   font-size: 2.5rem;
   transform: none;
   margin-top: -10vh;
-  margin-left: -3vh; 
+  margin-left: -3vh;
   align-items: center;
   justify-content: center;
 }
 
-.verificar_administrar_pedidos_sessao_estatisticas{
+.verificar_administrar_pedidos_sessao_estatisticas {
   max-width: 100%;
   width: 100%;
   background-color: #6099662e;
   padding-bottom: 350px;
   margin-left: 1%;
-  margin-top: -5%;
+  margin-top: 0;
+  grid-column: span 2;
   border-radius: 18px 18px 2px 2px;
 }
 
-.verificar_administrar_pedidos_sessao_estatisticas_visualizacao{
+.verificar_administrar_pedidos_sessao_estatisticas_visualizacao {
   max-width: 100%;
   width: 100%;
   margin-top: 10%;
   display: grid;
   column-gap: 2%;
-  /* row-gap: 5%; */
   grid-template-columns: 100%;
-  grid-template-rows: 20% 20% 20% 20% 20% 20% 20%;
+  grid-template-rows: repeat(7, 20%);
 }
 
-.verificar_administrar_pedidos_sessao_estatisticas h4{
+.verificar_administrar_pedidos_sessao_estatisticas h4 {
   color: var(--color-primary-1);
   position: relative;
   top: 5vh;
@@ -2245,42 +2245,36 @@ main {
 }
 
 .verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais,
-.verificar_administrar_pedidos_sessao_vendas_linhas_horizontais{
+.verificar_administrar_pedidos_sessao_vendas_linhas_horizontais {
   display: flex;
   gap: 20px;
   margin-left: 10%;
-  
-  /* background-color: gray; */
 }
 
 .verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais hr,
-.verificar_administrar_pedidos_sessao_vendas_linhas_horizontais hr{
+.verificar_administrar_pedidos_sessao_vendas_linhas_horizontais hr {
   width: 80%;
   height: 1%;
-  
 }
 
 .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais,
-.verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
+.verificar_administrar_pedidos_sessao_vendas_linhas_verticais {
   display: flex;
   margin-left: 20%;
   column-gap: 12%;
   position: relative;
   top: 110%;
   left: -2%;
-  /* gap: 50px; */
   font-size: 1.2rem;
 }
 
-/* Coluna da direita */
-
-.verificar_administrar_pedidos_sessao_coluna_direita{
+.verificar_administrar_pedidos_sessao_coluna_direita {
   display: grid;
   gap: 10px;
   margin-left: 5%;
 }
 
-.verificar_administrar_pedidos_sessao_bloco_vendas{
+.verificar_administrar_pedidos_sessao_bloco_vendas {
   max-width: 100%;
   width: 90%;
   height: 70%;
@@ -2289,7 +2283,7 @@ main {
   border-radius: 18px;
 }
 
-.verificar_administrar_pedidos_sessao_bloco_atividades{
+.verificar_administrar_pedidos_sessao_bloco_atividades {
   max-width: 100%;
   width: 90%;
   margin-top: -25%;
@@ -2298,7 +2292,8 @@ main {
   border-radius: 18px 18px 2px 2px;
 }
 
-.verificar_administrar_pedidos_sessao_bloco_atividades h4{
+.verificar_administrar_pedidos_sessao_bloco_atividades h4,
+.verificar_administrar_pedidos_sessao_bloco_vendas h4 {
   position: relative;
   top: 5vh;
   left: 5vh;
@@ -2306,16 +2301,7 @@ main {
   color: var(--color-primary-1);
 }
 
-.verificar_administrar_pedidos_sessao_bloco_vendas h4{
-  color: var(--color-primary-1);
-  text-align: left;
-  position: relative;
-  top: 5vh;
-  left: 5vh;
-  font-weight: 600;
-}
-
-.verificar_administrar_pedidos_sessao_bloco_vendas h3{
+.verificar_administrar_pedidos_sessao_bloco_vendas h3 {
   color: var(--color-primary-1);
   font-size: 1.5rem;
   text-align: left;
@@ -2324,8 +2310,13 @@ main {
   left: 5vh;
 }
 
-/* Responsivo para telas menores que 1200px */
+/* Responsivo para telas menores */
 @media (max-width: 1220px) {
+  .verificar_administrar_pedidos_sessao_section {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+
   .verificar_administrar_pedidos_sessao_info h1 {
     top: -7vh;
     left: -8%;
@@ -2336,73 +2327,31 @@ main {
     width: 40%;
   }
 
-  .verificar_administrar_pedidos_sessao_section {
-    grid-template-columns: 1fr;
-    margin-top: 0;
-  }
-
   .verificar_administrar_pedidos_sessao_coluna {
-    /* grid-template-columns: 1fr; */
-    top: -30vh;
+    grid-template-columns: 1fr 1fr;
+    top: 0;
   }
 
   .verificar_administrar_pedidos_sessao_coluna_direita {
     margin-left: 0;
   }
 
-  .verificar_administrar_pedidos_sessao_bloco,
-  .verificar_administrar_pedidos_sessao_bloco_vendas,
-  .verificar_administrar_pedidos_sessao_bloco_atividades {
-    width: 100%;
-    padding-bottom: 50px;
-  }
-
-  .verificar_administrar_pedidos_sessao_bloco_vendas{
-    position: relative;
+  .verificar_administrar_pedidos_sessao_bloco_vendas {
     top: 3%;
-    height: 135%;
+    height: auto;
   }
 
-  .verificar_administrar_pedidos_sessao_bloco_atividades{
-    position: relative;
+  .verificar_administrar_pedidos_sessao_bloco_atividades {
     top: 45vh;
     margin-bottom: 60%;
-    height: 80%;
   }
 
   .verificar_administrar_pedidos_sessao_estatisticas {
     margin-left: 0;
     padding-bottom: 200px;
   }
-
-  .verificar_administrar_pedidos_sessao_estatisticas_visualizacao{
-    position: relative;
-    top: -5vh;
-    column-gap: 5;
-  }
-
-  .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais{
-    gap: 90px;
-    /* left: 10%; */
-  }
-
-  .verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
-    top: 30%;
-    gap: 90px;
-  }
 }
 
-@media (max-width: 1100px){
-  .verificar_administrar_pedidos_sessao_info h1{
-    left: -2%;
-  }
-
-  .verificar_administrar_pedidos_sessao_bloco_atividades{
-    top: 37vh;
-  }
-}
-
-/* Responsivo para tablets */
 @media (max-width: 768px) {
   .verificar_administrar_pedidos_sessao_info {
     width: 90%;
@@ -2428,6 +2377,10 @@ main {
     width: 80%;
   }
 
+  .verificar_administrar_pedidos_sessao_coluna {
+    grid-template-columns: 1fr;
+  }
+
   .verificar_administrar_pedidos_sessao_bloco h5 {
     left: 0;
     text-align: center;
@@ -2445,7 +2398,6 @@ main {
 
   .verificar_administrar_pedidos_sessao_estatisticas_visualizacao {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     row-gap: 20px;
   }
 
@@ -2459,7 +2411,6 @@ main {
   }
 }
 
-/* Responsivo para celulares */
 @media (max-width: 480px) {
   .verificar_administrar_pedidos_sessao_main {
     margin: 20px;
@@ -2503,6 +2454,7 @@ main {
     width: 100%;
   }
 }
+
 
 /* Fim do CSS Relatórios visualizar ADM - Denyel */
 
