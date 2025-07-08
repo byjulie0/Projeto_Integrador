@@ -174,11 +174,21 @@ include 'menu_pg_inicial.php';
                 </div>
                 <div class="separation-line-carrinho">
                 </div>
-                <div class="checkout-btn-carrinho">
-                    <button class="checkout-carrinho">
-                        <span>Fechar pedido</span>
-                    </button>
-                </div>
+    
+                    <?php
+                    $texto_button = [
+                        [
+                            "texto" => "Fechar Pedido"
+                        ]
+                    ];
+                
+                    foreach ($texto_button as $texto_button_item) {
+                        $texto = $texto_button_item['texto'];
+                
+                        include 'botao_cliente.php';
+                    }
+                    ?>
+         
             </div>
         </section>
     </div>
