@@ -1141,7 +1141,7 @@ body {
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 .input-submit-form-cadastro{
   margin-top: 10px;
@@ -1174,7 +1174,6 @@ body {
   
 }
 .area-login-cadastro{
-
   width: 50%;
   align-items: center;
   text-align: center;
@@ -1196,7 +1195,7 @@ body {
   position: absolute;
   left: 20px;
   margin-top: 210px;
-  margin-left: 250px;
+  margin-left: 150px;
   top: 5px;
   font-size: 1.7rem;
   color: var(--color-primary-1);
