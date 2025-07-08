@@ -4565,7 +4565,7 @@ HEAD
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato,' sans-serif;
+  font-family: 'Poppins,' sans-serif;
 } 
 
 body {
@@ -4591,17 +4591,16 @@ body {
   justify-content: space-between;
 }
 
-.go-back-pes {
-  width: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.go-back-pes .fa-solid {
+.go-back-pes  {
   color: var(--color-primary-1);
   font-size: 24px;
+  display: flex;
+  align-items: center;
+  text-decoration: none ; 
+}
 
+.go-back-pes i {
+  color: inherit; 
 }
 
 .title-area-pes {
