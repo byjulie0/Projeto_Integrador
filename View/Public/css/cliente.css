@@ -3589,7 +3589,9 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 75px;
-}
+  margin-bottom: 80px; /* aumenta o espaço abaixo do formulário */
+  }
+  
 
 .espaco_forms_senha{
   display: grid;
@@ -3651,6 +3653,114 @@ body {
   border: none;
   cursor: pointer; 
   transition: all 0.2s ease; 
+}
+
+/* === 1024px === */
+@media (max-width: 1024px) {
+  #section_formulario_senha {
+    width: 70%;
+  }
+
+  .area_forms input {
+    width: 100%;
+  }
+
+  .esqueceu_senha,
+  .salvar_nova_senha {
+    width: 100%;
+  }
+}
+
+/* === 768px === */
+@media (max-width: 768px) {
+  #section_formulario_senha {
+    width: 85%;
+  }
+
+  .area_forms input {
+    width: 100%;
+  }
+
+  .title_div {
+    font-size: 1.2rem;
+    gap: 10px;
+  }
+
+  .p_form_senha {
+    font-size: 1.1rem;
+  }
+
+  .div_confirmacao {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    align-items: center;
+  }
+
+  .esqueceu_senha,
+  .salvar_nova_senha {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* === 425px, 375px, 360px === */
+@media (max-width: 425px) {
+  #section_formulario_senha {
+    width: 92%;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .area_forms input {
+    width: 100%;
+  }
+
+  .title_div {
+    font-size: 1.1rem;
+    gap: 8px;
+    height: auto;
+  }
+
+  .p_form_senha {
+    font-size: 1rem;
+  }
+
+  .div_confirmacao {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    align-items: center;
+  }
+
+  .esqueceu_senha,
+  .salvar_nova_senha {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .salvar_nova_senha {
+    width: 8rem;
+    height: 2rem;
+    font-size: 0.9rem;
+    padding: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .salvar_nova_senha {
+    width: 7.5rem;
+    height: 2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .salvar_nova_senha {
+    width: 7rem;
+    height: 1.9rem;
+    font-size: 0.8rem;
+  }
 }
 
 /* Fim do formulário de alteração de senha */
