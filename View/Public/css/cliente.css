@@ -668,8 +668,11 @@ body {
 }
 
 .categoria_title_pg_inicial {
-  color: var(--color-fonte);
+  color: var(--color-primary-1);
+  padding-left: 8%;
+  padding-top: 3%;
   font-size: 28px;
+  margin-bottom: 15px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 20px;
