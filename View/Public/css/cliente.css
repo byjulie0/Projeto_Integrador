@@ -750,16 +750,16 @@ body {
 
 }
 .card_boi_pg_inicial_categorias:hover {
-  background-image: url('../imagens/img_pg_inicial_categorias/bovinos.png');
+  background-image: url('../Imagens/img_pg_inicial_categorias/bovinos.png');
 }
 .card_cavalo_pg_inicial_categorias:hover {
   background-image: url('../imagens/img_pg_inicial_categorias/equinos.png');
 }
 .card_produtos_pg_inicial_categorias:hover {
-  background-image: url('../imagens/img_pg_inicial_categorias/produtos.png');
+  background-image: url('../Imagens/img_pg_inicial_categorias/produtos.png');
 }
 .card_campeao_pg_inicial_categorias:hover {
-  background-image: url('../imagens/img_pg_inicial_categorias/campeoes.png');
+  background-image: url('../Imagens/img_pg_inicial_categorias/campeoes.png');
 }
 
 
