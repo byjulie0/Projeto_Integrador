@@ -52,7 +52,7 @@
             </div>
             <div class="nav_page_btns_menu_adm">
 
-                <a href="#" class="nav_btns_menu_adm">
+                <a href="meu_perfil.php" class="nav_btns_menu_adm">
                     <i class="bi bi-person"></i>
                     <span class="nav_text_menu_adm">Perfil</span>
                 </a>
