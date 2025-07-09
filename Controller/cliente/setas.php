@@ -14,22 +14,22 @@
 
         .seta-voltar {
             position: absolute;
-            top: 50px;
+            top: 155px;
             left: 95px;
             font-size: 30px;
-            color: var(--primary-color-1);
+            color: #40513b;
             text-decoration: none;
             cursor: pointer;
             transition: color 0.3s ease;
         }
 
         .seta-voltar:hover {
-            color: darkblue;
+            color: #557153;
         }
 
         @media (max-width: 600px) {
             .seta-voltar {
-                top: 30px;
+                top: 50px;
                 left: 20px;
                 font-size: 24px;
             }

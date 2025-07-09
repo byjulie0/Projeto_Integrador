@@ -16,6 +16,7 @@
 <body class="body-cadastro">
     <main class="main-cadastro">
         <div class="area-form-cadastro">
+        <?php include 'setas.php';?>
             <h2 class="titulo-form-cadastro">Cadastrar</h2>
             <div class="area-geral-form-cadastro">
 

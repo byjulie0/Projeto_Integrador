@@ -21,7 +21,7 @@ include 'menu_pg_inicial.php';
 
 <body>
     <div class="main_cart_area">
-
+    <?php include 'setas.php';?>
         <div class="product_area_cart">
             <h1 class="cart_title">Carrinho</h1>
 
