@@ -2217,9 +2217,11 @@ main {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 1200px;
+  margin: 35px auto;
+  width: 90%; 
+  min-height: 70vh; 
 }
+
 
 .title_page_add_product_second{
   display: flex;
@@ -2249,6 +2251,9 @@ main {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+.title_add_product_second{
+  color: var(--color-primary-1);
 }
 
 .product_title_info_second {
@@ -2379,34 +2384,172 @@ input[type="image"] {
 }
 
 /*RESPONSIVIDADE - ADICIONAR PRODUTOS SEGUNDA ETAPA*/
-@media (min-width: 768px){
-  .product_details_collumn_second{
-    flex-direction: column;
+@media (max-width: 767px) {
+  .main_add_product_second {
+    padding: 20px 5%;
+    margin: 10px auto;
   }
+
+  .title_page_add_product_second {
+    gap: 10px;
+  }
+
+  .arrow_add_product_second {
+    font-size: 1.2rem;
+  }
+
+  .tile_add_product_second {
+    font-size: 1.2rem;
+  }
+
+  .info_add_product_second {
+    padding: 15px 0;
+    font-size: 0.9rem;
+  }
+
+  .add_product_area_second {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .img_holder_second {
+    height: 250px;
+    max-width: 100%;
+  }
+
+  .product_details_collumn_second {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .input_product_info_second,
+  .product_info_select_second {
+    width: 100%;
+    max-width: 300px;
+  }
+
   .add_product_button_second {
-    width: 30%;
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
   }
 }
 
-@media (min-width: 425px){
-  
-  .input_product_info_second,
-  .product_info_select_second{
-    width: 250px;
-    height: 25px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 10px;
-    transition: all 0.3s ease;
+/* Tela grande: 390 x 844 pixels */
+@media (min-width: 390px) and (max-width: 767px) {
+  .img_holder_second {
+    height: 280px;
   }
-  .product_details_collumn_second{
-    flex-direction: column;
-  }
-  .add_product_button_second {
-    width: 50%;
-  }
+
   .product_title_info_second {
-    font-size: 11px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ==================== TABLET ==================== */
+/* Tela média: 768px - 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main_add_product_second {
+    padding: 30px 5%;
+  }
+
+  .add_product_area_second {
+    grid-template-columns: 35% 65%;
+  }
+
+  .img_holder_second {
+    height: 280px;
+    max-width: 220px;
+  }
+
+  .product_details_collumn_second {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .input_product_info_second,
+  .product_info_select_second {
+    width: 250px;
+  }
+
+  .add_product_button_second {
+    width: 40%;
+  }
+}
+
+/* Tela grande: 768px - 1199px */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .img_holder_second {
+    height: 320px;
+    max-width: 240px;
+  }
+
+  .product_title_info_second {
+    font-size: 0.95rem;
+  }
+}
+
+/* ==================== DESKTOP ==================== */
+/* Tela média: 1440 x 900 pixels */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .main_add_product_second {
+    max-width: 1100px;
+  }
+
+  .img_holder_second {
+    height: 320px;
+    max-width: 280px;
+  }
+
+  .product_details_collumn_second {
+    gap: 40px;
+  }
+
+  .add_product_button_second {
+    width: 25%;
+  }
+}
+
+/* Tela grande: 1920 x 1080 pixels */
+@media (min-width: 1920px) {
+  .main_add_product_second {
+    max-width: 1400px;
+    padding: 50px 5%;
+  }
+
+  .img_holder_second {
+    height: 350px;
+    max-width: 320px;
+  }
+
+  .product_title_info_second {
+    font-size: 1.1rem;
+  }
+
+  .input_product_info_second,
+  .product_info_select_second {
+    width: 320px;
+    height: 30px;
+  }
+
+  .add_product_button_second {
+    width: 20%;
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+}
+
+/* ==================== AJUSTES GERAIS ==================== */
+@media (max-width: 424px) {
+  .input_product_info_second,
+  .product_info_select_second {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .add_product_button_second {
+    width: 80%;
   }
 }
 
