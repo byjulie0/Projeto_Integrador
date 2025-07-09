@@ -1607,12 +1607,13 @@ body {
 }
 
 /* Começo do CSS da página Cadastro Maria*/
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+
+.span-required{
+  font-size: 0.8rem;
+  display: none;
+  color: red;
 }
+
 .body-cadastro{
   width: 100%;
   display: flex;
@@ -1621,6 +1622,7 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+
 .area-form-cadastro{
   justify-content: center;
   width: 75rem;
@@ -1633,12 +1635,14 @@ body {
   background-color: #DFEBE0;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
 .titulo-form-cadastro{
   font-size: 2rem;
   margin-bottom: 2%;
   color: var(--color-primary-1);
   font-weight: 600;
 }
+
 .form-cadastro{
   width: 100%;
   display: flex;
@@ -1647,20 +1651,14 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .area-geral-form-cadastro{
   width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.parte1-form-cadastro{
-  align-items: center;
-  padding: 40px;
-  width: 100%;
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
-}
+
 .input-form-cadastro{
   width: 22.563rem;
   height: 2.938rem;
@@ -1680,11 +1678,13 @@ body {
   font-size: 1rem;
   box-sizing: border-box;
 }
+
 .input-form-cadastro::placeholder{
   color: var(--color-primary-1);
   font-weight: 600;
   font-size: 1rem;
 }
+
 .input-form-cadastro[type="date"] {
   appearance: none;
   -webkit-appearance: none;
@@ -1703,6 +1703,7 @@ body {
   justify-content: center;
   margin-top: 2%;
 }
+
 .input-submit-form-cadastro{
   margin-top: 10px;
   font-weight: 600;
@@ -1719,8 +1720,8 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-
 }
+
 .area-termos-privacidade-cadastro{
   margin-top: 5%;
   font-size: 0.9rem;
@@ -1729,10 +1730,7 @@ body {
   text-align: center;
   font-weight: 600;
 }
-.termos-privacidade-cadastro{
-  color: var(--color-primary-5);
-  
-}
+
 .area-login-cadastro{
   width: 50%;
   align-items: center;
@@ -1740,16 +1738,19 @@ body {
   font-weight: 600;
   font-size: 0.9rem;
 }
+
 .login-cadastro{
   text-decoration: none;
   color: var(--color-primary-5);
 }
+
 .main-cadastro{
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
+
 .icon-voltar-cadastro{
   text-decoration: none;
   position: absolute;
@@ -1761,6 +1762,7 @@ body {
   color: var(--color-primary-1);
   cursor: pointer;
 }
+
 .form-colunas-cadastro {
   display: flex;
   gap: 30px;
@@ -1779,77 +1781,61 @@ body {
   max-width: 450px;
 }
 
-/*RESPONSIVIDADE*/
-@media (max-width: 360px){
-  .area-form-cadastro{
-    width: 300px;
-    margin: 50px 125px;
-    padding: 40px;
+@media (max-width: 768px) {
+  .area-form-cadastro {
+    flex-direction: column;
+    height: auto;
+    padding: 25px;
+    margin: 8% 5%;
+    width: 90%;
   }
-  .titulo-form-cadastro{
-    font-size: 1.4rem;
+  
+  .titulo-form-cadastro {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
   }
-  .input-form-cadastro{
-    width: 11.563rem;
-    height: 1.938rem;
-    padding: 4px;
-    font-size: 0.6rem;
+  
+  .form-colunas-cadastro {
+    flex-direction: column;
+    gap: 15px;
   }
-  .input-form-cadastro::placeholder{
-    font-weight: 600;
-    font-size: 0.6rem;
-  }
-  .input-submit-form-cadastro{
-    padding: 3px;
-    font-size: 0.7rem;
-  }
-  .area-termos-privacidade-cadastro{
-    text-align: justify;
+  
+  .coluna-esquerda-cadastro,
+  .coluna-direita-cadastro {
     width: 100%;
+    padding: 10px;
   }
-  .icon-voltar-cadastro{
-    font-size: 1rem;
-    position: absolute;
-    margin-top: 172px;
-    margin-left: 50px;
+  
+  .input-form-cadastro {
+    width: 100%;
+    height: 40px;
+  }
+  
+  .icon-voltar-cadastro {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  
+  .area-termos-privacidade-cadastro,
+  .area-login-cadastro {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  
+  .input-submit-form-cadastro {
+    width: 200px;
+    padding: 8px;
+    font-size: 0.9rem;
   }
 }
 
 /* Fim do CSS da página Cadastro - Maria*/
 
-/* Inicio do CSS do Menu Cadastro - Maria*/
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-.menu-cadastro{
-  align-items: center;
-  width: 100%;
-  height: 9.2rem;
-  display: flex;
-  background-color: #40513B;
-}
-.info-menu-cadastro{
-  width: 100%;
-  max-height: 9.2rem;
-  display: flex;
-  flex-direction: row;
-}
-.logo-menu-cadastro img{
-  margin-left: 20px;
-  margin-top: 10px;
-  height: 7.884rem;
-}
-.nome-menu-cadastro{
-  font-weight: 600;
-  margin-left: 20px;
-  margin-top: 50px;
-  color: #FFFFFF;
-  font-size: 2rem;
-  align-items: center;
-}
-
+/* Inicio algo favoritos */
 /* === 320px (pequenos celulares) === */
 @media (max-width: 320px) {
   .favoritos-title {
@@ -1971,30 +1957,7 @@ body {
     margin-left: 60px;
   }
 }
-
-
-/*RESPONSIVIDADE*/
-@media (max-width: 360px){
-  .menu-cadastro{
-    height: 6.2rem;
-  }
-  .info-menu-cadastro{
-    max-height: 6.2rem;
-  }
-  .logo-menu-cadastro img{
-    height: 5.884rem;
-  }
-  .nome-menu-cadastro{
-    font-size: 1.1rem;
-    margin-left: 10px;
-    margin-top: 40px;
-  }
-}
-
-/* Fim do CSS do Menu Cadastro - Maria*/
-
-
-
+/* Fim algo favoritos */
 
 /* CSS Termos e Condições Julie*/
 .texto-termos-e-condicoes{
@@ -3893,12 +3856,6 @@ input[type="checkbox"] {
 /* Fim - PES */
 
 /*Começo do menu login-Vinycius*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .menu_login {
   align-items: center;
   width: 100%;
@@ -3916,14 +3873,11 @@ input[type="checkbox"] {
 }
 
 .logo_menu_login img {
-  margin-left: 20px;
-  margin-top: 10px;
   height: 7.884rem;
 }
 
 .titulo_menu_login {
   font-weight: 600;
-  margin-left: 20px;
   color: #FFFFFF;
   font-size: 2rem;
   align-self: center;
@@ -3937,12 +3891,10 @@ input[type="checkbox"] {
   
   .logo_menu_login img {
     height: 6.5rem;
-    margin-left: 15px;
   }
   
   .titulo_menu_login {
     font-size: 1.8rem;
-    margin-top: 0;
   }
 }
 
@@ -3962,13 +3914,16 @@ input[type="checkbox"] {
   
   .logo_menu_login img {
     height: 4rem;
-    margin: 0 10px 0 0;
   }
   
   .titulo_menu_login {
     font-size: 1.375rem;
-    margin: 0 0 0 10px;
     line-height: 1.875rem;
+  }
+}
+@media (max-width: 480px) {
+  .titulo_menu_login {
+    font-size: 1.1rem;
   }
 }
 
@@ -4246,9 +4201,6 @@ input[type="checkbox"] {
 }
 
 /* Final da pg de login */
-HEAD
-
-
 
 /* Inicio de CSS de privacidade e segurança*/
 *{
@@ -4719,14 +4671,6 @@ body {
   text-align: center;
   color: var(--color-primary-1);
   font-size: 1rem;
-}
-.linha_login {
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-primary-1);
-  margin: 30px 0;
-  border: none;
-  position: relative;
 }
 .recuperar_senha_rede_formulario{
   display: flex;
