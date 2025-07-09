@@ -6,6 +6,7 @@ include 'menu_adm.php';
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@ include 'menu_adm.php';
     <script defer src="../../view/js/menu-pg-inicial.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
 <body>
     <section id="informacoes-pedidos">
         <div id="title-informacoes-pedidos">
@@ -83,7 +85,10 @@ include 'menu_adm.php';
                         </div>
                         <div class="right-buttons-informacoes-pedidos">
                             <button class="register-payment-btn-informacoes-pedidos">Registrar pagamento</button>
-                            <button class="mark-as-sent-btn-informacoes-pedidos">Marcar como enviado</button>
+                            <?php
+                            $texto = "Marcar como enviado";
+                            include 'botao_adm.php';
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -102,7 +107,7 @@ include 'menu_adm.php';
                             John Rooster
                         </span>
                     </div>
-                    
+
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-lock"></i>
                         <span class="client-data-type-informacoes-pedidos">
@@ -164,6 +169,7 @@ include 'menu_adm.php';
         </div>
     </section>
 </body>
+
 </html>
 
 <?php

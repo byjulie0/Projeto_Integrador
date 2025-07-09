@@ -19,7 +19,7 @@ include 'menu_pg_inicial.php';
         <div class="header-termos-container">
             <a class="setinha-termos-e-condicoes" href="#" onclick="window.history.back(); return false;">
                 <i class="fa-solid fa-chevron-left"></i>
-            </a> 
+            </a>
             <h1 class="titulo-termos-e-condicoes">Termos e Condições</h1>
         </div>
         <main class = "texto-termos-e-condicoes">

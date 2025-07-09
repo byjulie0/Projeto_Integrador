@@ -21,7 +21,7 @@ include 'menu_pg_inicial.php';
 
 <body>
     <div class="main_cart_area">
-
+    <?php include 'setas.php';?>
         <div class="product_area_cart">
             <h1 class="cart_title">Carrinho</h1>
 
@@ -174,8 +174,14 @@ include 'menu_pg_inicial.php';
                 </div>
                 <div class="separation-line-carrinho">
                 </div>
+
+                <?php
+                $texto = "Fechar Pedido"; // Defina o texto do botão aqui
+                include 'botao_cliente.php';
+                ?>
+
     
-                    <?php
+                    <!-- <?php
                     $texto_button = [
                         [
                             "texto" => "Fechar Pedido"
@@ -187,7 +193,13 @@ include 'menu_pg_inicial.php';
                 
                         include 'botao_cliente.php';
                     }
-                    ?>
+                    ?> -->
+
+                    <div class="carrinho-botao-finalizar-area">
+                        <button class="carrinho-botao-finalizar">
+                            Fechar Pedido
+                        </button>
+                    </div>
          
             </div>
         </section>

@@ -17,7 +17,7 @@ include 'menu_recuperar_senha.php';
 
     <main class="esqueci_senha_card_email_main">
         <section class="esqueci_senha_card_email_section">
-            <a href="login.php" class="esqueci_senha_card_email_seta_voltar">
+            <a href="#" onclick="window.history.back(); return false;" class="esqueci_senha_card_email_seta_voltar">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <div class="esqueci_senha_card_email">

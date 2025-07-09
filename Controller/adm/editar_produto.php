@@ -141,10 +141,10 @@ include 'menu_adm.php';
         </section>
         <form method="POST" action="">
             <div class="edit_product_submit_button">
-                <button type="submit" name="btn_avançar" class="edit_product_button">
-                    Avançar
-                    <i class="fa-solid fa-arrow-right"></i>
-                </button>
+                <?php
+                $texto = "Avançar";
+                include 'botao_adm.php';
+                ?>
             </div>
         </form>
     </div>

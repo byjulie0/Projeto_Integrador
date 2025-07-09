@@ -13,14 +13,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../view/public/css/cliente.css">
 </head>
-<body class="body_pg_busca">   
+<body class="body_pg_busca">
     <!-- Seção de resultados -->
     <div class="container_pagina_de_busca">
             <a class="btn-voltar" href="pg_inicial_cliente.php" >
                 <i class="fas fa-arrow-left"></i>
             </a>
         <h2 class="h2-pag-busca">Resultados</h2>
-        <p>20 resultados encontrados para 'gado nelore'</p>
+        <p>9 resultados encontrados para 'gado nelore'</p>
         <div class="filtros-container">
             <span class="filtros-titulo">Classificar por:</span>
             <button class="filtro-btn" onclick="filtrar('relevancia')">Relevância</button>
