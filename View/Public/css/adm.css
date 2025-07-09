@@ -2379,36 +2379,106 @@ input[type="image"] {
 }
 
 /*RESPONSIVIDADE - ADICIONAR PRODUTOS SEGUNDA ETAPA*/
-@media (min-width: 768px){
-  .product_details_collumn_second{
-    flex-direction: column;
-  }
-  .add_product_button_second {
-    width: 30%;
+/* 1024px */
+@media (max-width: 1024px) {
+  .add_product_area {
+    padding: 25px;
   }
 }
 
-@media (min-width: 425px){
-  
-  .input_product_info_second,
-  .product_info_select_second{
-    width: 250px;
-    height: 25px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 10px;
-    transition: all 0.3s ease;
+/* 768px */
+@media (max-width: 768px) {
+  .tile_add_product {
+    font-size: 25px;
   }
-  .product_details_collumn_second{
-    flex-direction: column;
+
+  .info_add_product {
+    font-size: 15px;
   }
-  .add_product_button_second {
-    width: 50%;
-  }
-  .product_title_info_second {
-    font-size: 11px;
+
+  .add_product_area {
+    padding: 20px;
   }
 }
+
+/* 425px */
+@media (max-width: 425px) {
+  .tile_add_product {
+    font-size: 25px;
+  }
+
+  .arrow_add_product {
+    font-size: 16px;
+  }
+
+  .info_add_product {
+    font-size: 14px;
+  }
+
+  .input_product_info,
+  .product_info_select,
+  .product_title_info,
+  .img_holder,
+  .add_product_button {
+    max-width: 95%;
+  }
+
+  .add_product_area {
+    padding: 15px;
+    margin: 15px auto;
+  }
+}
+
+/* 375px */
+@media (max-width: 375px) {
+  .tile_add_product {
+    font-size: 24px;
+    align-items: center;
+  }
+
+  .info_add_product {
+    font-size: 13.5px;
+  }
+
+  .product_title_info {
+    font-size: 13.5px;
+  }
+
+  .add_product_button {
+    font-size: 14px;
+  }
+}
+
+/* 360px */
+@media (max-width: 360px) {
+  
+
+  .tile_add_product {
+    font-size: 23px;
+    align-items: center;
+  }
+
+  .info_add_product {
+    font-size: 13px;
+    justify-content: center;
+  }
+
+  .product_title_info {
+    font-size: 13px;
+  }
+
+  .input_product_info,
+  .product_info_select,
+  .add_product_button {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .img_holder {
+    height: 180px;
+  }
+}
+
 
 /*FIM - ADICIONAAR PRODUTOS SEGUNDA ETAPA*/
 
