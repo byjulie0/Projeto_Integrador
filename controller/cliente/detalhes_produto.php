@@ -14,7 +14,7 @@
 <body class="body-detalhes-produto">
 
     <h2 class="titulo-produto-detalhes-produto">
-        <i class="bi bi-chevron-left"></i> Galo Índio de León
+        <a href="#" onclick="window.history.back(); return false";><i class="bi bi-chevron-left"></i></a> Animal Selecionado
     </h2>
 
     <main class="main-detalhes-produto">
@@ -33,9 +33,9 @@
 
             <!-- </div> -->
 
-            </div> 
+            </div>
         </div>
-            <div class="info-produto-detalhes-produto"> 
+            <div class="info-produto-detalhes-produto">
                 <div class="estrelas-detalhes-produto">★★★★★<span>4.9 (204)</span>
                     <i class="bi bi-share"></i>
                     <i class="bi bi-heart"></i>
@@ -50,9 +50,9 @@
                 <p class="informacoes-detalhes-produto">
                     A John Rooster se compromete a oferecer apenas os melhores animais do mercado.
                 </p>
-                <p class="preco-detalhes-produto">R$ 5.000,00</p>  
-                <button class="botao-carrinho-detalhes-produto">Adicionar ao carrinho</button>
-                <button class="botao-comprar-detalhes-produto">Comprar</button>
+                <p class="preco-detalhes-produto">R$ 5.000,00</p>
+                <a href="carrinho.php"><button class="botao-carrinho-detalhes-produto">Adicionar ao carrinho</button></a>
+                <a href="https://api.whatsapp.com/send?phone=556799492638"><button class="botao-comprar-detalhes-produto">Comprar</button></a>
 
             </div>
         </div>
