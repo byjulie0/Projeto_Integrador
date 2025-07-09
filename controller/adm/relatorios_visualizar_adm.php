@@ -14,7 +14,7 @@
 
     <main class="verificar_administrar_pedidos_sessao_main">
         <div class="verificar_administrar_pedidos_sessao_info">
-            <a href="" class="verificar_administrar_pedidos_sessao_seta_voltar">
+            <a href="javascript:history.back()" class="verificar_administrar_pedidos_sessao_seta_voltar">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <h1>Visualizar relatórios</h1>
