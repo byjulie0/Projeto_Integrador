@@ -1480,13 +1480,6 @@ body {
 .esqueci_senha_card_email_formulario input::placeholder {
   text-indent: 1px;
 }
-
-.esqueci_senha_card_email_divisao{
-  max-width: 100%;
-  width: 100%;
-  background-color: var(--color-primary-1);
-}
-
 .esqueci_senha_card_email_formulario button {
   position: relative;
   left: 0;
@@ -1549,11 +1542,6 @@ body {
   .esqueci_senha_card_email_formulario button {
     max-width: 90%;
   }
-
-  .esqueci_senha_card_email_divisao{
-    max-width: 90%;
-    margin-bottom: 2%;
-  }  
 }
 
 /* Telas Pequenas */
@@ -1575,9 +1563,6 @@ body {
   }
   .esqueci_senha_card_email_content h3{
     font-size: 0.7rem;
-  }
-  .esqueci_senha_card_email_divisao{
-    display: none;
   }
   .esqueci_senha_card_email_formulario input{
     max-width: 230px;
@@ -2470,141 +2455,7 @@ body {
 }
 /* Fim do CSS esqueci a senha pop up - Julie */
 
-
-/* Começo do CSS do menu de Recuperar Senha - Julie*/
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-.menu_recuper_senha {
-  align-items: center;
-  width: 100%;
-  display: flex;
-  background-color: #40513B;
-  max-height: 120px;
-}
-
-.info_menu-recuperar_senha {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-
-.logo_menu_recuperar_senha img {
-  margin-left: 20px;
-  margin-top: 10px;
-  height: 7.884rem;
-}
-
-.nome_menu_recuperar_senha {
-  font-weight: 600;
-  padding: 40px 20px;
-  color: #FFFFFF;
-  font-size: 2rem;
-  align-items: center;
-}
-
-/* ==================== */
-/* Responsividade de celular */
-/* ==================== */
-@media (max-width: 767px) {
-  .menu_recuper_senha {
-    max-height: 110px;
-  }
-  
-  .logo_menu_recuperar_senha img {
-      height: 5.5rem;
-      margin-left: 15px;
-  }
-
-  .info_menu-recuperar_senha{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .nome_menu_recuperar_senha {
-      font-size: 0.9rem;
-      height: 100%;
-      width: 100%;
-  }
-}
-
-/* ==================== */
-/* Responsividade de celular */
-/* ==================== */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .menu_recuper_senha {
-      height: 8rem;
-  }
-  
-  .logo_menu_recuperar_senha img {
-      height: 6.5rem;
-  }
-  
-  .nome_menu_recuperar_senha {
-      font-size: 1.7rem;
-      margin-top: 45px;
-  }
-}
-/* ==================== */
-/* Responsividade Tablets */
-/* ==================== */
-/* Tablet - Tela média (768-1199px) */
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .menu_recuper_senha {
-      height: 8.5rem;
-  }
-  
-  .logo_menu_recuperar_senha img {
-      height: 7rem;
-  }
-  
-  .nome_menu_recuperar_senha {
-      font-size: 1.8rem;
-  }
-}
-/* ==================== */
-/* Responsividade do Desktop */
-/* ==================== */
-/* Desktop - Tela média (1440x900) */
-@media (min-width: 1440px) and (max-width: 1919px) {
-  .menu_recuper_senha {
-      height: 9.2rem;
-  }
-  
-  .logo_menu_recuperar_senha img {
-      height: 7.884rem;
-  }
-  
-  .nome_menu_recuperar_senha {
-      font-size: 2rem;
-  }
-}
-
-/* Desktop - Tela grande (1920x1080) */
-@media (min-width: 1920px) {
-  .menu_recuper_senha {
-      height: 10rem;
-  }
-  
-  .logo_menu_recuperar_senha img {
-      height: 8.5rem;
-      margin-left: 30px;
-  }
-  
-  .nome_menu_recuperar_senha {
-      font-size: 2.2rem;
-      margin-top: 55px;
-      margin-left: 30px;
-  }
-}
-
-/* Fim do CSS do Menu Recuperar senha - JUlie*/
-
 /* Começo De Meu Perfil - Visualizar Dados*/
-/* ===== BASE STYLES ===== */
 .body-visualizar-dados {
   display: flex;
   flex-direction: column;
@@ -2991,12 +2842,6 @@ body {
   text-indent: 1px;
 }
 
-.recuperar_senha_codigo_divisao{
-  max-width: 100%;
-  width: 100%;
-  background-color: var(--color-primary-1);
-}
-
 .recuperar_senha_codigo_formulario button {
   position: relative;
   /* left: 0; */
@@ -3059,11 +2904,6 @@ body {
   .recuperar_senha_codigo_formulario button {
     max-width: 90%;
   }
-
-  .recuperar_senha_codigo_divisao{
-    max-width: 90%;
-    margin-bottom: 2%;
-  }
 }
 
 /* Telas menores */
@@ -3085,9 +2925,6 @@ body {
   }
   .recuperar_senha_codigo_content h3{
     font-size: 0.7rem;
-  }
-  .recuperar_senha_codigo_divisao{
-    display: none;
   }
   .recuperar_senha_codigo_formulario input{
     max-width: 230px;
@@ -3856,74 +3693,93 @@ input[type="checkbox"] {
 /* Fim - PES */
 
 /*Começo do menu login-Vinycius*/
+
+/* Cabeçalho Fixo - Menu Login */
 .menu_login {
   align-items: center;
   width: 100%;
-  height: 9.2rem;
+  height: 70px; /* Altura fixa */
   display: flex;
   background-color: #40513B;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .div_menu_login {
   width: 100%;
-  max-height: 9.2rem;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .logo_menu_login img {
-  height: 7.884rem;
+  height: 50px; /* Altura fixa para a logo */
+  width: auto;
+  margin-right: 15px;
 }
 
 .titulo_menu_login {
+  display: block;
   font-weight: 600;
   color: #FFFFFF;
-  font-size: 2rem;
-  align-self: center;
+  font-size: 24px; /* Tamanho fixo para desktop */
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ===== Tablet (768px - 1024px) ===== */
 @media (max-width: 1024px) {
   .menu_login {
-    height: 8rem;
+    height: 65px;
   }
   
   .logo_menu_login img {
-    height: 6.5rem;
+    height: 45px;
   }
   
   .titulo_menu_login {
-    font-size: 1.8rem;
+    font-size: 22px;
   }
 }
 
 /* ===== Mobile (up to 767px) ===== */
 @media (max-width: 767px) {
   .menu_login {
-    height: auto;
-    padding: 10px 0;
+    height: 60px;
+    padding: 0;
   }
   
   .div_menu_login {
-    flex-direction: row;
-    align-items: center;
-    padding: 0 10px;
-    flex-wrap: wrap;
+    padding: 0 15px;
   }
   
   .logo_menu_login img {
-    height: 4rem;
+    height: 40px;
+    margin-right: 10px;
   }
   
   .titulo_menu_login {
-    font-size: 1.375rem;
-    line-height: 1.875rem;
+    font-size: 18px;
+    white-space: normal;
   }
 }
+
 @media (max-width: 480px) {
+  .menu_login {
+    height: 55px;
+  }
+  
+  .logo_menu_login img {
+    height: 35px;
+  }
+  
   .titulo_menu_login {
-    font-size: 1.1rem;
+    font-size: 16px;
   }
 }
 
@@ -4756,9 +4612,6 @@ body {
     width: 100%;
     max-width: 230px;
     margin-bottom: 5%;
-  }
-  .linha_login{
-    display: none;
   }
   .recuperar_senha_rede_formulario button{
     margin-top: 10%;
