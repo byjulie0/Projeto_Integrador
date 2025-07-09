@@ -3386,6 +3386,24 @@ input[type="checkbox"] {
   transform: translateY(-2px);
 }
 
+.carrinho-botao-finalizar-area,
+.carrinho-botao-finalizar {
+  background-color: #2e8b57;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.carrinho-botao-finalizar-area:hover,
+.carrinho-botao-finalizar:hover {
+  background-color: #246b45;
+}
+
+
 /* ==================== */
 /* Responsividade Mobile (0-767px) */
 /* ==================== */
