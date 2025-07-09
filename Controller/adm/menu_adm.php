@@ -56,7 +56,8 @@
                     <i class="bi bi-person"></i>
                     <span class="nav_text_menu_adm">Perfil</span>
                 </a>
-                <a href="../cliente/notificacao.php" class="nav_btns_menu_adm">
+                <a href="notificacao_adm.php" class="nav_btns_menu_adm">
+
                     <i class="bi bi-bell"></i>
                     <span class="nav_text_menu_adm">Notificações</span>
                 </a>
