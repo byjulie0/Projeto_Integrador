@@ -4066,12 +4066,6 @@ input[type="checkbox"] {
 /* Final da pg de login */
 
 /* Inicio de CSS de privacidade e segurança*/
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins,' sans-serif;
-}
 
 .whole-page-content-pes {
   width: 100%;
@@ -4086,9 +4080,11 @@ input[type="checkbox"] {
 .page-title-pes {
   display: flex;
   width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: flex-start;
+  gap: 15px; 
+  margin-bottom: 30px; 
 }
 
 .go-back-pes  {
@@ -4096,7 +4092,7 @@ input[type="checkbox"] {
   font-size: 24px;
   display: flex;
   align-items: center;
-  text-decoration: none ; 
+  text-decoration: none;
 }
 
 .go-back-pes i {
@@ -4104,19 +4100,16 @@ input[type="checkbox"] {
 }
 
 .title-area-pes {
-  width: 98%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8%;
+  width: auto; 
+  margin-top: 0;
 }
 
 .title-pes {
-  display: flex;
-  justify-content: center;
   color: var(--color-primary-1);
   font-size: 24px;
-  text-align: justify;
+  text-align: left; 
+  margin: 0; 
+  white-space: nowrap; 
 }
 
 .terms-pes {
@@ -4205,6 +4198,39 @@ input[type="checkbox"] {
     word-break: break-word;
   }
 }
+@media (max-width: 1024px) {
+  .page-title-pes {
+    gap: 12px;
+  }
+  
+  .title-pes {
+    font-size: 22px;
+  }
+  
+  .go-back-pes i {
+    font-size: 22px;
+  }
+}
+@media (max-width: 768px) {
+  .whole-page-content-pes {
+    padding: 30px 25px;
+  }
+  
+  .page-title-pes {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .title-pes {
+    font-size: 20px;
+    white-space: normal; 
+  }
+  
+  .go-back-pes i {
+    font-size: 20px;
+  }
+}
+
 /* Fim do CSS e privacidade e segurança*/
 
 /*Começo inserir senha alterar dados Arthur*/
