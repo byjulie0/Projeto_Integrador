@@ -1636,7 +1636,6 @@ body {
 .titulo-form-cadastro{
   font-size: 2rem;
   margin-bottom: 2%;
-  background-color: ;
   color: var(--color-primary-1);
   font-weight: 600;
 }
@@ -1650,7 +1649,7 @@ body {
 }
 .area-geral-form-cadastro{
   width: 100%;
-  flex-direction: row; 
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -1670,7 +1669,6 @@ body {
   border: 1px solid var(--color-primary-1);
   border-radius: 2px;
   position: relative;
-  /* left: 0; */
   width: 100%;
   max-width: 600px;
   height: 35px;
