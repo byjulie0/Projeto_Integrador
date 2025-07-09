@@ -2277,6 +2277,7 @@ main {
   left: -2%;
   font-size: 1.2rem;
   color: var(--color-primary-1);
+  max-width: 100%;
 }
 
 .verificar_administrar_pedidos_sessao_vendas_visualizacao{
@@ -2313,6 +2314,7 @@ main {
   left: -2%;
   font-size: 1.2rem;
   color: var(--color-primary-1);
+  max-width: 100%;
 }
 
 .verificar_administrar_pedidos_sessao_coluna_direita {
@@ -2405,6 +2407,7 @@ main {
   }
 
   .verificar_administrar_pedidos_sessao_bloco_vendas {
+    width: 100%;
     top: 3%;
     height: auto;
   }
@@ -2412,6 +2415,7 @@ main {
   .verificar_administrar_pedidos_sessao_bloco_atividades {
     /* top: 45vh;
     margin-bottom: 60%; */
+    width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -2433,6 +2437,10 @@ main {
 }
 
 @media (max-width: 768px) {
+  .verificar_administrar_pedidos_sessao_seta_voltar i{
+    top: 6vh;
+  }
+
   .verificar_administrar_pedidos_sessao_info {
     width: 90%;
   }
@@ -2496,11 +2504,23 @@ main {
 
   .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais,
   .verificar_administrar_pedidos_sessao_vendas_linhas_verticais {
-    flex-direction: column;
-    gap: 10px;
+    /* flex-direction: column; */
+    /* gap: 50px; */
     left: 0;
     top: 0;
-    margin-left: 10%;
+    /* margin-left: 10%; */
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais{
+    top: 60px;
+  }
+
+  .verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
+    top: 10px;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas{
+    padding-bottom: 10px
   }
 }
 
@@ -2540,8 +2560,15 @@ main {
     left: 2vh;
   }
 
+  .verificar_administrar_pedidos_sessao_bloco_vendas h4,
+  .verificar_administrar_pedidos_sessao_estatisticas h4 {
+    top: 5%;
+  }
+
   .verificar_administrar_pedidos_sessao_bloco_vendas h3 {
+    top: 3%;
     font-size: 1.2rem;
+    left: 2vh;
   }
 
   .verificar_administrar_pedidos_sessao_periodo_linha {
