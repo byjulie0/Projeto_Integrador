@@ -22,6 +22,7 @@
 <body class="body-cadastro">
     <main class="main-cadastro">
         <a href="#" class="icon-voltar-cadastro"><i class="fa-solid fa-chevron-left"></i></a>
+        <a href="#" class="icon-voltar-cadastro"><i class="bi bi-chevron-left"></i></a>
         <div class="area-form-cadastro">
             <h2 class="titulo-form-cadastro">Cadastrar</h2>
             <div class="area-geral-form-cadastro">
@@ -41,6 +42,16 @@
     </div>
 </div>
 
+                    <div class="parte1-form-cadastro">
+                        <input type="text" name="nome" required placeholder="Nome Completo*" class="input-form-cadastro">
+                        <input type="date" name="data_nascimento" required class="input-form-cadastro" placeholder="Data de Nascimento*">
+                        <input type="text" name="cpf_cnpj" required class="input-form-cadastro" placeholder="CPF/CNPJ*">
+                        <input type="email" name="email" required class="input-form-cadastro required" placeholder="Email*">
+                        <span class="span-required" id="emailError">O email deve ter o padrão email@empresa.com.br</span>
+                        <input type="text" name="telefone" class="input-form-cadastro" placeholder="Telefone">
+                        <input type="password" name="senha" required class="input-form-cadastro" placeholder="Senha*">
+                        <span class="span-required" id="senhaError">A senha deve ter pelo menos 6 caracteres</span>
+                    </div>
                 </form>
                 <div class="line-cadastro"></div>
                 <div class="btn-submit-cadastro">
@@ -49,6 +60,7 @@
             </div>
             <p class="area-termos-privacidade-cadastro">
                 Ao se inscrever, você concorda com as políticas do John Rooster <a href="termos_e_condicoes.php" class="termos-privacidade-cadastro">Termos de serviço & <a href="privacidade_e_seguranca.php" class="termos-privacidade-cadastro">Políticas de privacidade</a></a>
+
             </p>
             <p class="area-login-cadastro">
                 Já tem uma conta? <a href="login.php" class="login-cadastro">Entre</a>
