@@ -5474,3 +5474,30 @@ label {
 }
 /* Fim do css do componente do botão*/
 
+/* Começo do css do componente de setas*/
+
+.seta-voltar {
+  position: absolute;
+  top: 155px;
+  left: 95px;
+  font-size: 1.875rem; /* 30px */
+  color: #40513b;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.seta-voltar:hover {
+  color: #557153;
+}
+
+@media (max-width: 600px) {
+  .seta-voltar {
+      top: 50px;
+      left: 20px;
+      font-size: 1.5rem; /* 24px */
+  }
+}
+
+
+/* Fim do css do componente de setas*/
