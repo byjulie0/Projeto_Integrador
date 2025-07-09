@@ -46,11 +46,13 @@ include 'menu_adm.php';
         </article>
     </section>
     <div class="generate_report_submit_button">
-        <button type="submit" class="generate_report_product_button">
-            Gerar
-        </button>
+        <?php
+        $texto = "Gerar";
+        include 'botao_adm.php';
+        ?>
     </div>
 </body>
+
 </html>
 <?php
 include 'footer_adm.php';

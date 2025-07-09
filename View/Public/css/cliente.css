@@ -2992,11 +2992,11 @@ body {
 
 .div_confirmacao{
   width: 350px;
-  gap: 2rem;
+  gap: 1rem;
   height: 3rem;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
 }
 
 .esqueceu_senha{
@@ -5454,16 +5454,12 @@ label {
 /* Fim de página de notificação */
 
 /* Começo css do componente do botão */
-.generate_report_submit_button {
-  margin-top: 5%;
-  margin-bottom: 4rem;
+.generate_report_product_button {
+  gap: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.generate_report_product_button {
-  gap: 10px;
+  flex-direction: column;
   display: flex;
   width: 200px;
   justify-content: center;
