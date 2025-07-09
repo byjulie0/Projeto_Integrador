@@ -4496,7 +4496,8 @@ input[type="checkbox"] {
   position: relative;
   width: 100%;
   max-width: 800px;
-  margin: 50px auto 5%;
+  margin-top: 50px;
+  margin-bottom: 5%;
   padding: 0 20px;
 }
 
@@ -4542,12 +4543,15 @@ input[type="checkbox"] {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espaço entre os elementos */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .form_rede_senha input {
   width: 100%;
-  height: 35px; /* Altura original mantida */
+  max-width: 600px;
+  height: 35px;
   border: none;
   outline: none;
   border-radius: 2px;
@@ -4560,7 +4564,7 @@ input[type="checkbox"] {
 
 #btnEnviar {
   width: 130px;
-  height: 40px; /* Altura original mantida */
+  height: 40px;
   background-color: #ffffff;
   border-radius: 2px;
   border: none;
@@ -4569,33 +4573,13 @@ input[type="checkbox"] {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 10px auto 0; /* Margem ajustada para não sobrepor */
+  margin: 10px auto 0;
   display: block;
 }
 
 .form_rede_senha button:hover {
   background-color: var(--color-primary-2);
   color: #ffffff;
-}
-
-/* Ajustes para telas maiores mantendo as alturas */
-@media (min-width: 768px) {
-  .rede_senha_nav {
-      padding: 5% 8%;
-  }
-  
-  .form_rede_senha {
-      gap: 25px; /* Espaço um pouco maior em telas maiores */
-  }
-  
-  /* Mantidas as alturas originais mesmo em telas maiores */
-  .form_rede_senha input {
-      height: 35px; /* Mantido */
-  }
-  
-  #btnEnviar {
-      height: 40px; /* Mantido */
-  }
 }
 
 @media (max-width: 767px) {
