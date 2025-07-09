@@ -12,7 +12,7 @@
 
 
 </head>
-<body>
+<body class="body-mais-vendidos">
     <!-- Inicio das categorias -->
     <section id="pg_inicial_categorias">
         <h3 class="categoria_title_pg_inicial">Categorias</h3>

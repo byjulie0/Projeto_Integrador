@@ -22,23 +22,19 @@ include 'menu_recuperar_senha.php';
         <nav class="rede_senha_nav">
             <div class="recuperar_senha_rede_formulario">
                 <h1>Redefinir senha</h1>
-                <h3>Escolha sua nova senha </h3>
+                <h3>Escolha sua nova senha</h3>
                 <form action="" class="form_rede_senha" id="formRedefinirSenha">
-                <!-- pattern="[A-Za-z0-9@#$%&*]" -->
                     <input type="password" minlength="8" required placeholder="Nova senha" id="novaSenha">
-                    <input type="password" minlength="8" required placeholder="Confirmar nova senha" id="confirmarSenha" >
-                    <hr class="linha_login">
+                    <input type="password" minlength="8" required placeholder="Confirmar nova senha" id="confirmarSenha">
                     <button type="submit" id="btnEnviar">Enviar</button>
                 </form>
             </div>
         </nav>
     </section>
 
-    <!-- Popup de sucesso -->
     <div class="popup-overlay" id="popupSucesso">
         <div class="popup-content">
             <h3 class="popup-text">Senha redefinida com sucesso!</h3>
-            <hr class="popup-line">
             <button class="popup-button" id="btnLogin">Login</button>
         </div>
     </div>

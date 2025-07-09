@@ -1,4 +1,3 @@
-<!-- JULIE -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="menu_recuper_senha">
-        <div class="info_menu-recuperar_senha">
-            <div class="logo_menu_recuperar_senha">
-                <img src="../view/public/imagens/img_logofabrica.png" alt="" class="logo_menu_recuper_senha">
+    <nav class="menu_login">
+        <div class="div_menu_login">
+            <div class="logo_menu_login">
+                <img src="../../View/Public/Imagens/img_logofabrica.png" alt="Logo John Rooster">
             </div>
-            <p class="nome_menu_recuperar_senha">John Rooster - Recuperar Senha</p>
+            <h2 class="titulo_menu_login">John Rooster - Redefinir Senha</h2>
         </div>
     </nav>
 </body>

@@ -37,3 +37,10 @@ include 'menu_pg_inicial.php'
     </section>
 </body>
 </html>
+
+
+
+<?php
+
+include 'footer_cliente.php';
+?>
