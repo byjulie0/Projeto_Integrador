@@ -2605,6 +2605,21 @@ main {
   .verificar_administrar_pedidos_sessao_periodo_linha {
     width: 100%;
   }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_visualizacao,
+  .verificar_administrar_pedidos_sessao_vendas_visualizacao {
+    margin-left: -5%;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais,
+  .verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
+    margin-left: 23%;
+    column-gap: 10%;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas h4{
+    margin-bottom: 15%;
+  }
 }
 
 
