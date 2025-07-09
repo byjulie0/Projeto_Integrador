@@ -2641,6 +2641,7 @@ input[type="image"] {
 .edit_product_submit_button {
   margin-bottom: 4rem;
   margin-top: 5%;
+  margin-left: 42%;
 }
 /* Começo css do componente do botão */
 .generate_report_submit_button {

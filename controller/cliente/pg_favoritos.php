@@ -1,6 +1,7 @@
 <?php include 'menu_pg_inicial.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Página Favoritos</title>
@@ -9,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
+
 <body>
     <div class="container_pagina_de_busca">
         <a class="btn-voltar" href="pg_inicial_cliente.php">
@@ -61,46 +63,12 @@
     </div>
 
 
-            <div class="card-pag-fav">
-                <img class="card-img-pag-fav" src="../../view/public/imagens/images.jpg" alt="Galináceo da raça Índio">
-                <div class="card-header-pag-fav">
-                <h2 class="produto-nome-pag-fav">Equino da raça Percheron</h2>
-                    <div class="stars-pag-fav">★</div>
-                </div>
-                <p class="produto-preco-pag-fav">R$00,00</p>
-                    <div class="botao-pag-fav">
-                        <button class="excluir-pag-fav">Excluir</button>
-                        <button class="btn-pag-fav">Comprar</button>
-                    </div>
-                    <p class="produto-vendas-pag-fav">3,7 mil vendidos</p>
-            </div>
 
-            <div class="card-pag-fav">
-            <img class="card-img-pag-fav" src="../../view/public/imagens/images.jpg" alt="Bovino da raça Angus">
-                <div class="card-header-pag-fav">
-                <h2 class="produto-nome-pag-fav">Equino da raça Percheron</h2>
-                    <div class="stars-pag-fav">★</div>
-                </div>
-                <p class="produto-preco-pag-fav">R$00,00</p>
-                    <div class="botao-pag-fav">
-                    <button class="excluir-pag-fav">Excluir</button>
-                    <button class="btn-pag-fav">Comprar</button>
-                    </div>
-                    <p class="produto-vendas-pag-fav">3,7 mil vendidos</p>
-                </div>
-            </div>
-        </section>
-
+    </div>
     </section>
 
-
-
-
-
-
-
-    
-
+    </section>
     <?php include 'footer_cliente.php'; ?>
 </body>
+
 </html>
