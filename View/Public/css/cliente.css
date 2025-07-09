@@ -629,11 +629,15 @@ body {
   align-items: center;
   padding: 20px;
   font-family: "Poppins", sans-serif;
+  padding-bottom: 80px;
 }
 
 .categoria_title_pg_inicial {
-  color: var(--color-fonte);
+  color: var(--color-primary-1);
+  padding-left: 8%;
+  padding-top: 3%;
   font-size: 28px;
+  margin-bottom: 15px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 20px;
@@ -673,11 +677,13 @@ body {
   border-radius: 20px;
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* padding: 80%; */
 }
 
 
 .card_galinha_pg_inicial_categorias {
   background-image: url('../imagens/img_pg_inicial_categorias/galinha_categorias_pg_inicial.png');
+
 }
 .card_boi_pg_inicial_categorias {
   background-image: url('../imagens/img_pg_inicial_categorias/boi_categoria_pg_inicial.jpg');
@@ -707,19 +713,21 @@ body {
 }
 
 .card_galinha_pg_inicial_categorias:hover {
-  background-image: url('../imagens/img_pg_inicial_categorias/galinha_hover_categorias_pg_inicial.png');
+  background-image: url('../imagens/img_pg_inicial_categorias/galinaceos.png');
+  
+
 }
 .card_boi_pg_inicial_categorias:hover {
-  background-image: url('../imagens/img_pg_inicial_categorias/boi_hover_categoria_pg_inicial.png');
+  background-image: url('../Imagens/img_pg_inicial_categorias/bovinos.png');
 }
 .card_cavalo_pg_inicial_categorias:hover {
-  background-image: url('../imagens/img_pg_inicial_categorias/cavalo_hover_categorias_pg_inicial.png');
+  background-image: url('../imagens/img_pg_inicial_categorias/equinos.png');
 }
 .card_produtos_pg_inicial_categorias:hover {
-  background-image: url('../imagens/img_pg_inicial_categorias/produtos_hover_categorias_pg_inicial.png');
+  background-image: url('../Imagens/img_pg_inicial_categorias/produtos.png');
 }
 .card_campeao_pg_inicial_categorias:hover {
-  background-image: url('../imagens/img_pg_inicial_categorias/campeoes_hover_categorias_pg_inicial.png');
+  background-image: url('../Imagens/img_pg_inicial_categorias/campeoes.png');
 }
 
 
@@ -2006,7 +2014,7 @@ body {
 
 /* Inicio-nossa-historia- Valdir */
 .nossa_historia{
-  text-align: justify;
+  text-align: left;
   align-items: center;
   justify-content: center;
   padding: 10px;
