@@ -2362,11 +2362,32 @@ main {
   .verificar_administrar_pedidos_sessao_section {
     grid-template-columns: 1fr;
     margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .verificar_administrar_pedidos_sessao_seta_voltar i{
+    top: 7vh;
   }
 
   .verificar_administrar_pedidos_sessao_info h1 {
+    margin-bottom: 0;
     top: -7vh;
     left: -8%;
+  }
+
+  .verificar_administrar_pedidos_sessao_info h1,
+  .verificar_administrar_pedidos_sessao_mini_titulos_1 {
+    top: 0;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco{
+    top: -9vh;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_mini I{
+    margin-left: -2vh;
   }
 
   .verificar_administrar_pedidos_sessao_periodo_bloco {
@@ -2389,13 +2410,25 @@ main {
   }
 
   .verificar_administrar_pedidos_sessao_bloco_atividades {
-    top: 45vh;
-    margin-bottom: 60%;
+    /* top: 45vh;
+    margin-bottom: 60%; */
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 
   .verificar_administrar_pedidos_sessao_estatisticas {
     margin-left: 0;
     padding-bottom: 200px;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas,
+  .verificar_administrar_pedidos_sessao_bloco_atividades,
+  .verificar_administrar_pedidos_sessao_bloco_vendas {
+    padding-bottom: 150px;
+    min-height: 300px;
+    border-radius: 18px;
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
   }
 }
 
@@ -2444,6 +2477,16 @@ main {
   .verificar_administrar_pedidos_sessao_bloco_mini {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_mini i{
+    position: relative;
+    top: -2vh;
+    margin-left: -2vh;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco i{
+    margin-top: -20%;
   }
 
   .verificar_administrar_pedidos_sessao_estatisticas_visualizacao {

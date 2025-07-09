@@ -60,7 +60,6 @@
                 <div class="verificar_administrar_pedidos_sessao_estatisticas">
                     <h4>Estatísticas</h4>
                     <div class="verificar_administrar_pedidos_sessao_estatisticas_visualizacao">
-                        <!-- Linhas horizontais -->
                         <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais">
                             <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_dados">
                                 <h6>20K</h6>
@@ -96,7 +95,7 @@
                             </div>
                             
                         </div>
-                        <!-- Repetir para outras porcentagens -->
+
                         <div class="verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais">
                             <h6>D</h6><h6>S</h6><h6>T</h6><h6>Q</h6><h6>Q</h6><h6>S</h6><h6>S</h6>
                         </div>
@@ -110,7 +109,6 @@
                     <h4>Vendas hoje</h4>
                     <h3>R$:0,00</h3>
                     <div class="verificar_administrar_pedidos_sessao_vendas_visualizacao">
-                        <!-- Linhas horizontais -->
                         <div class="verificar_administrar_pedidos_sessao_vendas_linhas_horizontais">
                             <h6>20K</h6>
                             <hr>
@@ -144,7 +142,6 @@
                             <hr>
                         </div>
                         
-                        <!-- Repetir para outras porcentagens -->
                         <div class="verificar_administrar_pedidos_sessao_vendas_linhas_verticais">
                             <h6>D</h6><h6>S</h6><h6>T</h6><h6>Q</h6><h6>Q</h6><h6>S</h6><h6>S</h6>
                         </div>
