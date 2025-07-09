@@ -2262,29 +2262,528 @@ main {
 }
 /* FINAL PG ADM - MATHEUS*/
 
+/* Início do CSS Relatórios visualizar ADM - Denyel */
 
-/* Additional styles for the second screen */
-.additional_images_section {
-  margin-bottom: 30px;
+.verificar_administrar_pedidos_sessao_main {
+  margin: 40px;
 }
 
-.optional_text {
-  color: #666;
-  font-size: 0.9em;
+.verificar_administrar_pedidos_sessao_seta_voltar i {
+  z-index: 2;
+  cursor: pointer;
+  position: relative;
+  left: 7%;
 }
 
-.additional_images_container {
+.verificar_administrar_pedidos_sessao_info {
+  max-width: 100%;
+  width: 50%;
+  margin-bottom: 2%;
+  color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_info h1 {
+  position: relative;
+  top: -8vh;
+  left: -14%;
+  font-weight: 400;
+  max-width: 100%;
+}
+
+.verificar_administrar_pedidos_sessao_mini_titulos_1 {
+  max-width: 120%;
+  /* width: 700px; */
+  width: 120%;
+  /* background-color: magenta; */
+  position: relative;
+  top: -7vh;
+  left: 5%;
+}
+
+.verificar_administrar_pedidos_sessao_periodo_bloco {
+  max-width: 100%;
+  width: 25%;
+  margin-left: 167%;
+  position: relative;
+  top: -13vh;
+}
+
+.verificar_administrar_pedidos_sessao_mini_titulos_2 {
+  cursor: pointer;
+  margin-bottom: 1%;
+  font-size: 1.2rem;
+}
+
+.verificar_administrar_pedidos_sessao_mini_titulos_2:hover {
+  color: var(--color-primary-2);
+}
+
+.verificar_administrar_pedidos_sessao_periodo_linha {
+  max-width: 100%;
+  width: 85%;
+  position: relative;
+  left: 8%;
+}
+
+.verificar_administrar_pedidos_sessao_seta_voltar {
+  font-size: 1.7rem;
+}
+
+.verificar_administrar_pedidos_sessao_titulo_destaque {
+  font-weight: 600;
+}
+
+.verificar_administrar_pedidos_sessao_section {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 2%;
+  margin-top: -7%;
+}
+
+.verificar_administrar_pedidos_sessao_coluna {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 0px;
+  max-width: 100%;
+  height: 40%;
+}
+
+.verificar_administrar_pedidos_sessao_bloco {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: auto auto;
+  width: 100%;
+  /* height: 40%; */
+  background-color: #6099662e;
+  padding-bottom: 20px;
+  border-radius: 15px;
+}
+
+.verificar_administrar_pedidos_sessao_bloco h5 {
+  width: 100%;
+  height: 50%;
+  color: var(--color-primary-1);
+  text-align: left;
+  position: relative;
+  top: 20%;
+  left: -20%;
+  margin: 0;
+}
+
+.verificar_administrar_pedidos_sessao_bloco i {
+  color: var(--color-primary-1);
+  margin-top: -40%;
+  margin-left: 180%;
+  font-size: 1.6rem;
+  transform: scaleX(-1);
+  cursor: pointer;
+  /* margin: 0; */
+}
+
+.verificar_administrar_pedidos_sessao_bloco_mini {
+  width: 10%;
+  height: 10%;
+  background-color: #9dc08b3a;
+  padding: 40px;
+  border-radius: 18px;
+  margin-top: 8%;
+  margin-left: 10%;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_mini i {
+  color: var(--color-primary-1);
+  font-size: 2.5rem;
+  transform: none;
+  margin-top: -10vh;
+  margin-left: -3vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas {
+  max-width: 100%;
+  width: 100%;
+  background-color: #6099662e;
+  padding-bottom: 150px;
+  margin-left: 1%;
+  margin-top: 0;
+  grid-column: span 2;
+  border-radius: 18px 18px 2px 2px;
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas_visualizacao {
+  max-width: 100%;
+  width: 100%;
+  margin-top: 10%;
+  display: grid;
+  column-gap: 2%;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(7, 45%);
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas h4 {
+  color: var(--color-primary-1);
+  position: relative;
+  top: 5vh;
+  left: 5vh;
+  text-align: left;
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais {
   display: flex;
-  flex-wrap: wrap;
+  /* gap: 50px; */
+  /* column-gap: 20px; */
+  flex-direction: column;
   gap: 15px;
-  margin-top: 15px;
+  margin-left: 10%;
+  color: var(--color-primary-1);
 }
 
-.additional_image_upload {
-  width: 150px;
-  height: 150px;
-  border: 2px dashed var(--border-color);
-  border-radius: 8px;
+.verificar_administrar_pedidos_sessao_estatisticas_linhas_dados{
+  display: flex;
+  max-width: 100%;
+  gap: 15px;
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas_linhas_dados hr{
+  max-width: 100%;
+  width: 85%;
+  height: 1%;
+  border-top: 2px dotted;
+  transform: translateY(10px);
+}
+
+.verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais{
+  display: flex;
+  margin-left: 20%;
+  column-gap: 12%;
+  position: relative;
+  top: 120%;
+  left: -2%;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+  max-width: 100%;
+}
+
+.verificar_administrar_pedidos_sessao_vendas_visualizacao{
+  max-width: 100%;
+  width: 100%;
+  margin-top: 10%;
+  display: grid;
+  column-gap: 2%;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(7, 20%);
+}
+
+.verificar_administrar_pedidos_sessao_vendas_linhas_horizontais{
+  display: flex;
+  gap: 20px;
+  margin-left: 10%;
+  color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_vendas_linhas_horizontais hr{
+  max-width: 100%;
+  width: 82%;
+  height: 1%;
+  border-top: 2px dotted;
+  transform: translateY(10px);
+}
+
+.verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
+  display: flex;
+  margin-left: 20%;
+  column-gap: 12%;
+  position: relative;
+  top: 110%;
+  left: -2%;
+  font-size: 1.2rem;
+  color: var(--color-primary-1);
+  max-width: 100%;
+}
+
+.verificar_administrar_pedidos_sessao_coluna_direita {
+  display: grid;
+  gap: 10px;
+  margin-left: 5%;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_vendas {
+  max-width: 100%;
+  width: 90%;
+  height: 70%;
+  background-color: #6099662e;
+  padding-bottom: 300px;
+  border-radius: 18px;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_atividades {
+  max-width: 100%;
+  width: 90%;
+  margin-top: -25%;
+  background-color: #6099662e;
+  padding-bottom: 300px;
+  border-radius: 18px 18px 2px 2px;
+}
+
+.verificar_administrar_pedidos_sessao_bloco_atividades h4,
+.verificar_administrar_pedidos_sessao_bloco_vendas h4 {
+  position: relative;
+  top: 5vh;
+  left: 5vh;
+  text-align: left;
+  color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_bloco_vendas h3 {
+  color: var(--color-primary-1);
+  font-size: 1.5rem;
+  text-align: left;
+  position: relative;
+  top: 5vh;
+  left: 5vh;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 1220px) {
+  .verificar_administrar_pedidos_sessao_section {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .verificar_administrar_pedidos_sessao_seta_voltar i{
+    top: 7vh;
+  }
+
+  .verificar_administrar_pedidos_sessao_info h1 {
+    margin-bottom: 0;
+    top: -7vh;
+    left: -8%;
+  }
+
+  .verificar_administrar_pedidos_sessao_info h1,
+  .verificar_administrar_pedidos_sessao_mini_titulos_1 {
+    top: 0;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco{
+    top: -9vh;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_mini I{
+    margin-left: -2vh;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    margin-left: 165%;
+    width: 40%;
+  }
+
+  .verificar_administrar_pedidos_sessao_coluna {
+    grid-template-columns: 1fr 1fr;
+    top: 0;
+  }
+
+  .verificar_administrar_pedidos_sessao_coluna_direita {
+    margin-left: 0;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_vendas {
+    width: 100%;
+    top: 3%;
+    height: auto;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_atividades {
+    /* top: 45vh;
+    margin-bottom: 60%; */
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas {
+    margin-left: 0;
+    padding-bottom: 200px;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas,
+  .verificar_administrar_pedidos_sessao_bloco_atividades,
+  .verificar_administrar_pedidos_sessao_bloco_vendas {
+    padding-bottom: 150px;
+    min-height: 300px;
+    border-radius: 18px;
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
+  }
+}
+
+@media (max-width: 768px) {
+  .verificar_administrar_pedidos_sessao_seta_voltar i{
+    top: 6vh;
+  }
+
+  .verificar_administrar_pedidos_sessao_info {
+    width: 90%;
+  }
+
+  .verificar_administrar_pedidos_sessao_info h1 {
+    font-size: 1.5rem;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .verificar_administrar_pedidos_sessao_mini_titulos_1 {
+    width: 90%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    position: static;
+    margin: 20px auto;
+    width: 80%;
+  }
+
+  .verificar_administrar_pedidos_sessao_coluna {
+    grid-template-columns: 1fr;
+  }
+
+  /* .verificar_administrar_pedidos_sessao_bloco h5 {
+    left: 0;
+    text-align: center;
+  } */
+
+  .verificar_administrar_pedidos_sessao_bloco h5,
+  .verificar_administrar_pedidos_sessao_bloco i {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_mini {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_mini i{
+    position: relative;
+    top: -2vh;
+    margin-left: -2vh;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco i{
+    margin-top: -20%;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_visualizacao {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais,
+  .verificar_administrar_pedidos_sessao_vendas_linhas_verticais {
+    /* flex-direction: column; */
+    /* gap: 50px; */
+    left: 0;
+    top: 0;
+    /* margin-left: 10%; */
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais{
+    top: 60px;
+  }
+
+  .verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
+    top: 10px;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas{
+    padding-bottom: 10px
+  }
+}
+
+@media (max-width: 480px) {
+  .verificar_administrar_pedidos_sessao_main {
+    margin: 20px;
+  }
+
+  .verificar_administrar_pedidos_sessao_info h1 {
+    font-size: 1.2rem;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_mini {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_mini i {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco h5 {
+    font-size: 0.5rem;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco i {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_atividades h4,
+  .verificar_administrar_pedidos_sessao_bloco_vendas h4,
+  .verificar_administrar_pedidos_sessao_estatisticas h4 {
+    font-size: 1.1rem;
+    left: 2vh;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_vendas h4,
+  .verificar_administrar_pedidos_sessao_estatisticas h4 {
+    top: 5%;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_vendas h3 {
+    top: 3%;
+    font-size: 1.2rem;
+    left: 2vh;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_linha {
+    width: 100%;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_visualizacao,
+  .verificar_administrar_pedidos_sessao_vendas_visualizacao {
+    margin-left: -5%;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais,
+  .verificar_administrar_pedidos_sessao_vendas_linhas_verticais{
+    margin-left: 23%;
+    column-gap: 10%;
+  }
+
+  .verificar_administrar_pedidos_sessao_estatisticas h4{
+    margin-bottom: 15%;
+  }
+}
+
+
+/* Fim do CSS Relatórios visualizar ADM - Denyel */
+
+/* Inicio de reativar produto */
+#reativar_produtos {
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2540,6 +3039,105 @@ input[type="image"] {
 }
 
 /*RESPONSIVIDADE - ADICIONAR PRODUTOS SEGUNDA ETAPA*/
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .add_product_area {
+    padding: 25px;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .tile_add_product {
+    font-size: 25px;
+  }
+
+  .info_add_product {
+    font-size: 15px;
+  }
+
+  .add_product_area {
+    padding: 20px;
+  }
+}
+
+/* 425px */
+@media (max-width: 425px) {
+  .tile_add_product {
+    font-size: 25px;
+  }
+
+  .arrow_add_product {
+    font-size: 16px;
+  }
+
+  .info_add_product {
+    font-size: 14px;
+  }
+
+  .input_product_info,
+  .product_info_select,
+  .product_title_info,
+  .img_holder,
+  .add_product_button {
+    max-width: 95%;
+  }
+
+  .add_product_area {
+    padding: 15px;
+    margin: 15px auto;
+  }
+}
+
+/* 375px */
+@media (max-width: 375px) {
+  .tile_add_product {
+    font-size: 24px;
+    align-items: center;
+  }
+
+  .info_add_product {
+    font-size: 13.5px;
+  }
+
+  .product_title_info {
+    font-size: 13.5px;
+  }
+
+  .add_product_button {
+    font-size: 14px;
+  }
+}
+
+/* 360px */
+@media (max-width: 360px) {
+  
+
+  .tile_add_product {
+    font-size: 23px;
+    align-items: center;
+  }
+
+  .info_add_product {
+    font-size: 13px;
+    justify-content: center;
+  }
+
+  .product_title_info {
+    font-size: 13px;
+  }
+
+  .input_product_info,
+  .product_info_select,
+  .add_product_button {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .img_holder {
+    height: 180px;
+=======
 @media (max-width: 767px) {
   .main_add_product_second {
     padding: 20px 5%;
@@ -2708,6 +3306,7 @@ input[type="image"] {
     width: 80%;
   }
 }
+
 
 /*FIM - ADICIONAAR PRODUTOS SEGUNDA ETAPA*/
 
@@ -3690,7 +4289,6 @@ transform: translate(-50%, -50%);
 /* Fim login cliente */
 
 
-
 .title_area_notifications {
   display: flex;
   justify-content: center;
@@ -3793,3 +4391,4 @@ transform: translate(-50%, -50%);
     margin-right: auto;
   }
 }
+
