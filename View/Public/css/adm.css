@@ -1245,13 +1245,14 @@ body {
 
 .title_page_generate_report {
   padding-top: 4rem;
-  padding-left: 5rem;
+  padding-left: 0.5rem;
   display: flex;
   align-items: center;
   gap: 15px;
+
 }
 .info_generate_report{
-  padding-left: 5rem;
+  padding-left: 0.5rem;
 }
 
 .arrow_generate_report {
@@ -1260,7 +1261,7 @@ body {
 }
 
 .generate_report_area {
-  padding-left: 5rem;
+  padding-left: 0.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -1304,6 +1305,7 @@ body {
   .generate_report_area {
       grid-template-columns: 1fr;
       gap: 15px;
+      padding-left: 5rem;
   }
   
   .report_category_select, .generate_report_date {
@@ -1321,6 +1323,14 @@ body {
   .generate_report_submit_button {
       margin-top: 25px;
   }
+
+  .title_page_generate_report {
+ 
+    padding-left: 5rem;
+
+    
+  }
+
 }
 
 /* Tablet Styles (768px - 1023px) */
@@ -1329,6 +1339,7 @@ body {
   .generate_report_area {
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+      padding-left: 5rem;
   }
   
   .input_report_category {
@@ -1353,6 +1364,7 @@ body {
     margin-top: 2rem;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+    padding-left: 5rem;
   }
   
   .report_category_select, .generate_report_date {
@@ -1365,11 +1377,40 @@ body {
   }
 }
 
+.title_page_generate_report {
+  padding-top: 4rem;
+  padding-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+}
+
+
+
+
+
+
 /* Desktop Styles (1200px and above) */
 @media only screen and (min-width: 1200px) {
   .body_generate_report {
       max-width: 1800px;
       margin: 0 auto;
+
+  }
+  .title_page_generate_report {
+ 
+    padding-left: 5rem;
+
+    
+  }
+  .info_generate_report{
+    padding-left: 5rem;
+  }
+  .generate_report_area {
+    margin-top: 2rem;
+
+    padding-left: 5rem;
   }
   
   /* Button hover effects - only affects interaction, not color */
@@ -1377,6 +1418,8 @@ body {
       transform: scale(1.02);
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
+
+  
   
   .arrow_generate_report:hover {
       opacity: 0.8;
