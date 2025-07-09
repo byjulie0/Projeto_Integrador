@@ -50,7 +50,7 @@
             <div class="search-container-pg-inicial">
                 <input type="text" placeholder="O que deseja buscar?" />
                 <button type="submit">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="pagina_de_busca.php"><i class="fa-solid fa-magnifying-glass"></i></a>
                 </button>
             </div>
 

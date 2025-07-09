@@ -174,6 +174,12 @@ include 'menu_pg_inicial.php';
                 </div>
                 <div class="separation-line-carrinho">
                 </div>
+
+                <?php
+                $texto = "Fechar Pedido"; // Defina o texto do botão aqui
+                include 'botao_cliente.php';
+                ?>
+
     
                     <!-- <?php
                     $texto_button = [

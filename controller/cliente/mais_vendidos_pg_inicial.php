@@ -15,65 +15,65 @@
 
     <div id="maisvendidos" class="carrossel-mais-vendidos">
         <div class="arrow-mais-vendidos" id="arrow-esquerda">&#10094;</div>
+        <a href="detalhes_produto.php">
+            <div class="cards-mais-vendidos" id="carrossel-cards">
+                <?php
+                $mais_vendidos = [
+                    [
+                        "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
+                        "peso" => "380 kg",
+                        "raca" => "Árabe",
+                        "genealogia" => "PO",
+                        "idade" => "24 meses",
+                        "preco" => "5.200,00"
+                    ],
+                    [
+                        "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
+                        "peso" => "420 kg",
+                        "raca" => "Mustang",
+                        "genealogia" => "PO",
+                        "idade" => "28 meses",
+                        "preco" => "5.800,00"
+                    ],
+                    [
+                        "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
+                        "peso" => "420 kg",
+                        "raca" => "Mustang",
+                        "genealogia" => "PO",
+                        "idade" => "28 meses",
+                        "preco" => "5.800,00"
+                    ],
+                    [
+                        "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
+                        "peso" => "420 kg",
+                        "raca" => "Mustang",
+                        "genealogia" => "PO",
+                        "idade" => "28 meses",
+                        "preco" => "5.800,00"
+                    ],
+                    [
+                        "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
+                        "peso" => "420 kg",
+                        "raca" => "Mustang",
+                        "genealogia" => "PO",
+                        "idade" => "28 meses",
+                        "preco" => "5.800,00"
+                    ]
+                ];
 
-        <div class="cards-mais-vendidos" id="carrossel-cards">
-            <?php
-            $mais_vendidos = [
-                [
-                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
-                    "peso" => "380 kg",
-                    "raca" => "Árabe",
-                    "genealogia" => "PO",
-                    "idade" => "24 meses",
-                    "preco" => "5.200,00"
-                ],
-                [
-                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                    "peso" => "420 kg",
-                    "raca" => "Mustang",
-                    "genealogia" => "PO",
-                    "idade" => "28 meses",
-                    "preco" => "5.800,00"
-                ],
-                [
-                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                    "peso" => "420 kg",
-                    "raca" => "Mustang",
-                    "genealogia" => "PO",
-                    "idade" => "28 meses",
-                    "preco" => "5.800,00"
-                ],
-                [
-                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                    "peso" => "420 kg",
-                    "raca" => "Mustang",
-                    "genealogia" => "PO",
-                    "idade" => "28 meses",
-                    "preco" => "5.800,00"
-                ],
-                [
-                    "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                    "peso" => "420 kg",
-                    "raca" => "Mustang",
-                    "genealogia" => "PO",
-                    "idade" => "28 meses",
-                    "preco" => "5.800,00"
-                ]
-            ];
+                foreach ($mais_vendidos as $item) {
+                    $imagem = $item['imagem'];
+                    $peso = $item['peso'];
+                    $raca = $item['raca'];
+                    $genealogia = $item['genealogia'];
+                    $idade = $item['idade'];
+                    $preco = $item['preco'];
 
-            foreach ($mais_vendidos as $item) {
-                $imagem = $item['imagem'];
-                $peso = $item['peso'];
-                $raca = $item['raca'];
-                $genealogia = $item['genealogia'];
-                $idade = $item['idade'];
-                $preco = $item['preco'];
-
-                include 'card_cliente.php';
-            }
-            ?>
-        </div>
-
+                    include 'card_cliente.php';
+                }
+                ?>
+            </div>
+        </a>
         <div class="arrow-mais-vendidos" id="arrow-direita">&#10095;</div>
     </div>
 
