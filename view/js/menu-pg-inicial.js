@@ -50,7 +50,34 @@ document.addEventListener('DOMContentLoaded', function() {
       closeMobileMenu();
     });
   });
-  
+
+  // Muda posição da tela
+  document.querySelectorAll('.nav-item-pg-inicial').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      const currentPath = window.location.pathname;
+      
+      const isCorrectPage = currentPath.endsWith('/pg_inicial_cliente.php') || currentPath.endsWith('/pg_inicial_cliente');
+      console.log('Is correct page:', isCorrectPage);
+      
+      if (isCorrectPage && targetElement) {
+        console.log('Scrolling to section');
+        window.scrollTo({
+          top: targetElement.offsetTop - 10,
+          behavior: 'smooth',
+        });
+        history.pushState(null, null, targetId);
+
+      } else {
+        console.log('Redirecting to pg_inicial_cliente.php with hash');
+        window.location.href = 'pg_inicial_cliente.php' + targetId;
+      }
+    });
+  });
+
+});
   // Close menu when clicking outside
   document.addEventListener('click', function(event) {
     if (!menuPaginicial.contains(event.target)) {

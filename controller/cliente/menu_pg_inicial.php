@@ -44,7 +44,7 @@
 
                 </li>
                 <a href="" class="nav-item-pg-inicial">Campeões do mês</a>
-                <a href="mais_vendidos_pg_inicial.php" class="nav-item-pg-inicial">Mais vendidos</a>
+                <a href="#maisvendidos" class="nav-item-pg-inicial">Mais vendidos</a>
             </div>
 
             <div class="search-container-pg-inicial">
