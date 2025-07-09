@@ -19,14 +19,18 @@
     <!-- Início do menu -->
 
     <section class="menu-pg-inicial">
-        <button class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+
+        
         <div class="menu-content-pg-inicial">
+            <button class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+                <script src="menu_hamburguer.js"></script>
+            </button>
             <div class="logo-menu">
                 <img src="../../view/public/imagens/logo.png" alt="" class="logo-menu-img">
                 <a href="pg_inicial_cliente.php" class="logo-menu-title">John Rooster</a>
             </div>
+
             <div class="nav-link-pg-inicial">
                 <li class="dropdown_menu_cliente">
                     <a href="#pg_inicial_categorias" class="nav-item-pg-inicial">Categorias</a>
@@ -42,12 +46,14 @@
                 <a href="" class="nav-item-pg-inicial">Campeões do mês</a>
                 <a href="#maisvendidos" class="nav-item-pg-inicial">Mais vendidos</a>
             </div>
+
             <div class="search-container-pg-inicial">
                 <input type="text" placeholder="O que deseja buscar?" />
                 <button type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
+
             <div class="nav-page-btns-pg-inicial">
                 <li class="dropdown_menu_cliente">
                     <a href="#" class="nav-btns-pg-inicial">
@@ -61,7 +67,7 @@
                     </ul>
 
                 </li>
-                <a href="" class="nav-btns-pg-inicial">
+                <a href="notificacao.php" class="nav-btns-pg-inicial">
                     <i class="bi bi-bell"></i>
                     <span class="nav-text-pg-inicial">Notificações</span>
                 </a>
@@ -70,6 +76,7 @@
                     <span class="nav-text-pg-inicial">Carrinho</span>
                 </a>
             </div>
+
         </div>
     </section>
 

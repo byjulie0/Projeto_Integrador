@@ -23,7 +23,7 @@ include 'menu_adm.php';
         <div id="page-title-atualizar-produtos">
             <div id="title-atualizar-produtos">
                 <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
-                <h3>Atualizar produtos cadastrados</h3>
+                <h3>Catálogo de Produtos</h3>
             </div>
             <div id="subtitle-atualizar-produtos">
                 <span>Pesquise pelos produtos do catálogo que deseja alterar</span>

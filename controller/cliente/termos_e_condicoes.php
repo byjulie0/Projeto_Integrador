@@ -8,14 +8,16 @@ include 'menu_pg_inicial.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termos e Condições</title> 
+    <title>Termos e Condições</title>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
     <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid">
 </head>
 <body>
     <header>
+
+        <div style="height: 50px;"></div>
         <div class="header-termos-container">
-            <a class="setinha-termos-e-condicoes" href="./pg_inicial_cliente.php">
+            <a class="setinha-termos-e-condicoes" href="#" onclick="window.history.back(); return false;">
                 <i class="fa-solid fa-chevron-left"></i>
             </a> 
             <h1 class="titulo-termos-e-condicoes">Termos e Condições</h1>

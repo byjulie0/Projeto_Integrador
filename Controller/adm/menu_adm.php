@@ -33,23 +33,16 @@
                     <a href="#" class="nav_item_pg_inicial_adm">Gerenciar produtos</a>
                     <ul class="submenu_adm">
                         <li><a href="adicionar_produto.php">Adicionar produtos</a></li>
-                        <li><a href="#">Reativar produtos</a></li>
-                        <li><a href="#">Editar cadastro de produtos</a></li>
-                        <li><a href="#">Alterar estoque</a></li>
-                        <li><a href="#">Visualizar catálogo de produtos</a></li>
+                        <li><a href="catalogo_de_produtos_adm.php">Visualizar catálogo de produtos</a></li>
                     </ul>
                 </li>
                 <li class="dropdown_menu_adm">
-                    <a href="#" class="nav_item_pg_inicial_adm">Gerenciar clientes</a>
-                    <ul class="submenu_adm">
-                        <li><a href="#">Inativar/ativar usuários</a></li>
-                        <li><a href="#">Listagem de usuários</a></li>
-                    </ul>
+                    <a href="gerenciar_clientes_adm.php" class="nav_item_pg_inicial_adm">Gerenciar clientes</a>
                 </li>
                 <li class="dropdown_menu_adm">
                     <a href="#" class="nav_item_pg_inicial_adm">Gerenciar vendas</a>
                     <ul class="submenu_adm">
-                        <li><a href="#">Verificar e administrar pedidos</a></li>
+                        <li><a href="verificar_e_administrar_pedidos.php">Verificar e administrar pedidos</a></li>
 
                     </ul>
                 </li>

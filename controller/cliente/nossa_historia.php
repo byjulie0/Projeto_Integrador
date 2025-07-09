@@ -16,7 +16,7 @@
     <header>
         <h1 class ="titulo-nossa-historia">Nossa História</h1>
             <div class="nossa_historia">
-                <a href="#">
+                <a href="#" onclick="window.history.back(); return false;">
                     <i class="fa-solid fa-chevron-left">
 
                     </i>
