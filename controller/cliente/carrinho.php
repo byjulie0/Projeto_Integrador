@@ -21,8 +21,8 @@ include 'menu_pg_inicial.php';
 
 <body>
     <div class="main_cart_area">
-    <?php include 'setas.php';?>
         <div class="product_area_cart">
+            <?php include 'setas.php'; ?>
             <h1 class="cart_title">Carrinho</h1>
 
             <section class="cart-header-carrinho">
@@ -180,27 +180,6 @@ include 'menu_pg_inicial.php';
                 include 'botao_cliente.php';
                 ?>
 
-    
-                    <!-- <?php
-                    $texto_button = [
-                        [
-                            "texto" => "Fechar Pedido"
-                        ]
-                    ];
-                
-                    foreach ($texto_button as $texto_button_item) {
-                        $texto = $texto_button_item['texto'];
-                
-                        include 'botao_cliente.php';
-                    }
-                    ?> -->
-
-                    <div class="carrinho-botao-finalizar-area">
-                        <button class="carrinho-botao-finalizar">
-                            Fechar Pedido
-                        </button>
-                    </div>
-         
             </div>
         </section>
     </div>
