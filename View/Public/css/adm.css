@@ -2391,6 +2391,63 @@ main {
   left: 5vh;
 }
 
+/* Estilização calendário */
+
+/* Container principal do calendário */
+.ui-datepicker {
+  background: var(--color-primary-8);
+  border: 2px solid #9DC08B;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  width: auto;
+}
+
+/* Título do mês e ano */
+.ui-datepicker-title {
+  color: var(--color-primary-1);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Botões de navegação (próximo e anterior) */
+.ui-datepicker-prev, .ui-datepicker-next {
+  background-color: var(--color-primary-5);
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover {
+  background-color: var(--color-primary-7);
+}
+
+/* Cabeçalho dos dias da semana */
+.ui-datepicker th {
+  color: #40513B;
+  font-weight: bold;
+}
+
+/* Dias do mês */
+.ui-datepicker td a {
+  background: #EDF1D6;
+  color: #40513B;
+  border-radius: 8px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.ui-datepicker td a:hover {
+  background: var(--color-primary-5);
+  color: white;
+}
+
+/* Dia selecionado */
+.ui-datepicker .ui-state-active {
+  background-color: var(--color-primary-5) !important;
+  color: white !important;
+}
+
 /* Responsivo para telas menores */
 @media (max-width: 1220px) {
   .verificar_administrar_pedidos_sessao_section {
