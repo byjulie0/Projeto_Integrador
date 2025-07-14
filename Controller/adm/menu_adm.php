@@ -26,7 +26,7 @@
         <div class="menu_content_adm">
             <div class="logo_menu_adm">
                 <img src="../../view/public/imagens/logo.png" alt="" class="logo_menu_adm_img">
-                <a href="pg_inicial_cliente.php" class="logo_menu_adm_title">John Rooster</a>
+                <a href="pg_inicial_adm.php" class="logo_menu_adm_title">John Rooster</a>
             </div>
             <div class="nav_link_menu_adm">
                 <li class="dropdown_menu_adm">
@@ -40,11 +40,8 @@
                     <a href="gerenciar_clientes_adm.php" class="nav_item_pg_inicial_adm">Gerenciar clientes</a>
                 </li>
                 <li class="dropdown_menu_adm">
-                    <a href="#" class="nav_item_pg_inicial_adm">Gerenciar vendas</a>
-                    <ul class="submenu_adm">
-                        <li><a href="verificar_e_administrar_pedidos.php">Verificar e administrar pedidos</a></li>
-
-                    </ul>
+                    <a href="verificar_e_administrar_pedidos.php" class="nav_item_pg_inicial_adm">Gerenciar vendas</a>
+                    
                 </li>
             </div>
             <div class="search_container_menu_adm">
@@ -54,16 +51,17 @@
                 </button>
             </div>
             <div class="nav_page_btns_menu_adm">
-
-                <a href="#" class="nav_btns_menu_adm">
+                <a href="meu_perfil.php" class="nav_btns_menu_adm">
+                <a href="meu_perfil.php" class="nav_btns_menu_adm">
                     <i class="bi bi-person"></i>
                     <span class="nav_text_menu_adm">Perfil</span>
                 </a>
-                <a href="#" class="nav_btns_menu_adm">
+                <a href="notificacao_adm.php" class="nav_btns_menu_adm">
+
                     <i class="bi bi-bell"></i>
                     <span class="nav_text_menu_adm">Notificações</span>
                 </a>
-                <a href="#" class="nav_btns_menu_adm">
+                <a href="relatorios_visualizar_adm.php" class="nav_btns_menu_adm">
                     <i class="bi bi-file-bar-graph"></i>
                     <span class="nav_text_menu_adm">Geral</span>
                 </a>

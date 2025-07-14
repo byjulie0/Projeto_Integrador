@@ -129,10 +129,10 @@ include 'menu_adm.php';
             </aside>
         </section>
         <div class="add_product_submit_button">
-            <button type="submit" class="add_product_button">
-                Avançar
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
+            <?php
+            $texto = "Avançar";
+            include 'botao_adm.php';
+            ?>
         </div>
     </div>
 </body>
