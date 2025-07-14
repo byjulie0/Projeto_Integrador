@@ -12,8 +12,11 @@
             <div class="logo_menu_login">
                 <img src="../../View/Public/Imagens/img_logofabrica.png" alt="Logo John Rooster">
             </div>
-            <h2 class="titulo_menu_login">John Rooster - Login</h2>
+            <h2 class="titulo_menu_login">John Rooster - Login</h2>  
         </div>
     </nav>
 </body>
 </html>
+
+
+
