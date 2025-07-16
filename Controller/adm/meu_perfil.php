@@ -15,7 +15,7 @@ include 'menu_adm.php';
  
 <body class="body-visualizar-dados">
     <h2 class="visualizar-dados-title">
-        <a class="a-style" href="meu_perfil_senha.php"><a href="#" onclick="window.history.back(); return false";><i class="bi bi-chevron-left"></i></a>Meu Perfil ADM</a>
+        <a href="#" onclick="window.history.back(); return false";><i class="bi bi-chevron-left"></i></a>Meu Perfil ADM
     </h2>
     <main class="main-visualizar-dados">
  
@@ -58,10 +58,10 @@ include 'menu_adm.php';
             </div>
            
             <div class="visualizar-dados-area-botoes">
-                <a href="meu_perfil_senha.php">
+                <a href="../cliente/meu_perfil_senha.php">
                     <button class="visualizar-dados-editar">Editar meus dados</button>
                 </a>
-                <a href="login.php">
+                <a href="login_adm.php">
                 <button class="visualizar-dados-logout">Logout</button>
                 </a>
             </div>

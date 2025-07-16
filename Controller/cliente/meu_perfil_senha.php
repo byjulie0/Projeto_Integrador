@@ -1,7 +1,5 @@
 <!-- Arthur -->
-<?php
-    include 'menu_pg_inicial.php';
-?>
+<?php include 'menu_pg_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,7 +10,7 @@
 </head>
 <body class="body-arthura">
     <div class="header-arthura">
-        <h2 class="visualizar-dados-title"><a href="meu_perfil.php"><i class="bi bi-chevron-left"></i></a>Meu Perfil</h2>
+        <h2 class="visualizar-dados-title"><a href="#" onclick="window.history.back(); return false";><i class="bi bi-chevron-left"></i></a>Meu Perfil</h2>
     </div>
     <div class="wrapper-arthura">
         <div class="card-arthura">
@@ -23,15 +21,15 @@
                     </svg>
                 </div>
                 <div class="user-info-arthura">
-                    <div class="user-name-arthura">Fulano da Silva Pinto Soares</div>
-                    <div class="user-email-arthura">sample123@gmail.com</div>
+                    <div class="user-name-arthura">Nome</div>
+                    <div class="user-email-arthura">Email</div>
                 </div>
             </div>
         </div>
 
         <div class="card-arthura">
             <div class="section-title-arthura">Meus dados</div>
-            <div class="section-text-arthura">Cliente, para sua segurança, para visualizar seus dados por favor insira sua senha:</div>
+            <div class="section-text-arthura">Para sua segurança, insira sua senha para visualizar o dados:</div>
             
             <form>
                 <input type="password" class="password-input-arthura" placeholder="Digite sua senha:">
@@ -43,6 +41,4 @@
     </div>
 </body>
 </html>
-<?php
-    include 'footer_cliente.php';
-    ?>
+<?php include 'footer_cliente.php';?>
