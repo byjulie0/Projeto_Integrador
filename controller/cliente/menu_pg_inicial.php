@@ -50,7 +50,7 @@
             <div class="search-container-pg-inicial">
                 <input type="text" placeholder="O que deseja buscar?" />
                 <button type="submit">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="pagina_de_busca.php"><i class="fa-solid fa-magnifying-glass"></i></a>
                 </button>
             </div>
 
@@ -61,6 +61,7 @@
                         <span class="nav-text-pg-inicial">Perfil</span>
                     </a>
                     <ul class="submenu_cliente">
+                        <li><a href="meu_perfil.php">Login</a></li>
                         <li><a href="meu_perfil.php">Meu perfil</a></li>
                         <li><a href="#">Minhas compras</a></li>
                         <li><a href="pg_favoritos.php">Produtos favoritados</a></li>

@@ -6,6 +6,7 @@ include 'menu_adm.php';
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@ include 'menu_adm.php';
     <link rel="stylesheet" href="/PROJETO_INTEGRADOR/view/public/css/cliente.css">
     <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid">
 </head>
+
 <body class="verificar_administrar_pedidos_body">
     <main class="verificar_administrar_pedidos_content">
         <section class="verificar_administrar_pedidos_sessao_identificar">
@@ -40,19 +42,28 @@ include 'menu_adm.php';
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_pedidos_info">
                     <h5>Boi Tal</h5>
-                    <h6>Número do pedido: <span class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
-                    <h6>Comprador: <span class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
-                    <h6>Data da compra: <span class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
-                    <h6>Hora da compra: <span class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
-                    <h6>Forma de pagamento: <span class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
+                    <h6>Número do pedido: <span
+                            class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
+                    <h6>Comprador: <span
+                            class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
+                    <h6>Data da compra: <span
+                            class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
+                    <h6>Hora da compra: <span
+                            class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
+                    <h6>Forma de pagamento: <span
+                            class="verificar_administrar_pedidos_sessao_pedidos_info_item">XXXXXXXXXX</span></h6>
                     <form action="" class="verificar_administrar_pedidos_sessao_pedidos_form">
-                        <button type="submit">Verificar</button>
+                        <?php
+                        $texto = "Verificar";
+                        include 'botao_adm.php';
+                        ?>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 </body>
+
 </html>
 
 <?php

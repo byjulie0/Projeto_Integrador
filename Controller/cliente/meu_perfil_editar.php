@@ -1,22 +1,24 @@
-
 <?php
 include 'menu_pg_inicial.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Meus Dados</title>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
+
 <body>
-<main class="main">
+    <main class="main">
         <div class="container">
             <div class="page-header">
                 <button class="back-btn">
-                    <a href="meu_perfil_senha.php" class="setinha_forms_mudar_senha"><i class="bi bi-chevron-left"></i></a>
+                    <a href="meu_perfil_senha.php" class="setinha_forms_mudar_senha"><i
+                            class="bi bi-chevron-left"></i></a>
                 </button>
                 <h1 class="page-title">Editar meus dados</h1>
             </div>
@@ -43,7 +45,8 @@ include 'menu_pg_inicial.php';
                     <div class="form-column">
                         <div class="form-group">
                             <label for="address" class="form-label">Endereço:</label>
-                            <input type="text" id="address" class="form-input" placeholder="Rua General Exemplo do Exemplo, 24...">
+                            <input type="text" id="address" class="form-input"
+                                placeholder="Rua General Exemplo do Exemplo, 24...">
                         </div>
 
                         <div class="form-group">
@@ -54,18 +57,24 @@ include 'menu_pg_inicial.php';
                 </div>
 
                 <div class="warning-text">
-                    <strong>Atenção:</strong> Sua idade só pode ser alterada 1 única vez, caso seja detectado que o usuário se registrou em nosso site antes da maioridade (18 anos, em território brasileiro) ou a idade inserida seja menor que 18, sua conta será suspensa!
+                    <strong>Atenção:</strong> Sua idade só pode ser alterada 1 única vez, caso seja detectado que o
+                    usuário se registrou em nosso site antes da maioridade (18 anos, em território brasileiro) ou a
+                    idade inserida seja menor que 18, sua conta será suspensa!
                 </div>
 
                 <div class="form-actions">
                     <button type="button" class="change-password-btn">Alterar senha</button>
-                    <button type="submit" class="save-btn">Salvar</button>
+                    <?php
+                    $texto = "Salvar";
+                    include 'botao_cliente.php';
+                    ?>
                 </div>
             </form>
         </div>
     </main>
 </body>
+
 </html>
 <?php
-        include 'footer_cliente.php';
-        ?>
+include 'footer_cliente.php';
+?>

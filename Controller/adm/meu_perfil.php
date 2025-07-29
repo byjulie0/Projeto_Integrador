@@ -1,43 +1,73 @@
-<!-- MATHEUS -->
-
+<?php
+include 'menu_adm.php';
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+ 
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Projeto_Integrador/View/public/css/adm.css">
-    <title>Document</title>
+    <title>Meu Peril - Visualizar Dados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
-<body>
-     <!-- Seta de retorno -->
-  <a href="javascript:history.back()" class="seta-voltar-math-adm">   ←   </a>
-<main>
-        <h1>Meu perfil</h1>
-        <section class="perfil-math-adm">
-            <div class="avatar-math-adm">
-                <img src="/Projeto_Integrador/View/public/Imagens/visualizar-dados-icon-default.png" alt="Avatar">
-                <h2>John Rooster</h2>
-                <p>ID do vendedor: 0000</p>
-            </div>
-            <div class="dados-math-adm">
-                
-                <p><strong>Nome:</strong> Fulano da Silva Soares</p>
-                <p><strong>E-mail:</strong> sample123@gmail.com</p>
-                <p><strong>Telefone:</strong> +55 67 XXXXX-XXXX</p>
-                <p><strong>Função:</strong> Administrador geral</p>
-                <p><strong>Data de criação da conta:</strong> xx/xx/xxxx</p>
-                
-            </div>
-            <div class ="meus_dados-math-adm">
-                <strong>Meus dados</strong>
-            </div>
-            <div class="botoes-math-adm">
-                    <button class="editar-math-adm">Editar meus dados</button>
-                    <button class="logout-math-adm">Logout</button>
+</head>
+ 
+<body class="body-visualizar-dados">
+    <h2 class="visualizar-dados-title">
+        <a href="#" onclick="window.history.back(); return false";><i class="bi bi-chevron-left"></i></a>Meu Perfil ADM
+    </h2>
+    <main class="main-visualizar-dados">
+ 
+       
+       
+        <div class="visualizar-dados-card">
+            <div class="visualizar-dados-nome-email-img">
+                <div class="visualizar-dados-img-perfil-div">
+                    <i class="bi bi-person-circle"></i>
                 </div>
-        </section>
+                <div class="visualizar-dados-nome-email">
+                    <h4 class="visualizar-dados-nome">Jonh Rooster</h4>
+                    <h5 class="visualizarados-email">ID do vendedor: 0000</h5>
+                </div>
+            </div>
+           
+            <div class="visualizar-dados-geral">
+                <h3 class="visualizar-dados-geral-title">Meus Dados</h3>
+                <div class="visualizar-dados-geral0">
+                    <div class="visualizar-dados-geral1">
+                        <p class="vizualizar-dados-geral-nome">
+                            <label class="visualizar-dados-label">Nome: </label>Administrador John Rooster
+                        </p>
+                        <p class="vizualizar-dados-geral-telefone">
+                            <label class="visualizar-dados-label">Telefone: </label>+55 67 XXXXX-XXXX
+                        </p>
+                        <p class="vizualizar-dados-geral-email">
+                            <label class="visualizar-dados-label">E-mail: </label>sample123@gmail.com
+                        </p>
+                    </div>
+                    <div class="visualizar-dados-geral2">
+                        <p class="vizualizar-dados-geral-endereco">
+                            <label class="visualizar-dados-label">Função: </label>Administrador Geral
+                        </p>
+                        <p class="vizualizar-dados-geral-datanasc">
+                            <label class="visualizar-dados-label">Data de Criação da conta: </label>XX/XX/XXXX
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="visualizar-dados-area-botoes">
+                <a href="../cliente/meu_perfil_senha.php">
+                    <button class="visualizar-dados-editar">Editar meus dados</button>
+                </a>
+                <a href="login_adm.php">
+                <button class="visualizar-dados-logout">Logout</button>
+                </a>
+            </div>
+        </div>
     </main>
 </body>
- 
 </html>
+ 
+<?php include 'footer_adm.php';?>

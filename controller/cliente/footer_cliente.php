@@ -64,8 +64,7 @@
             <div id="tab5" class="footer_cli_item">
                 <h3>Pagamento</h3>
                 <hr>
-                <p>Entre em contato com nossa equipe atráves do <a
-                        href="https://api.whatsapp.com/send?phone=556799492638">whatsapp</a></p>
+                <p>Entre em contato com nossa equipe atráves do <a href="https://api.whatsapp.com/send?phone=556799492638">whatsapp</a></p>
 
             </div>
 
