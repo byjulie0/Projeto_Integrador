@@ -31,6 +31,20 @@ CREATE TABLE cliente (
     FOREIGN KEY (tipo_user_idtipo_user) REFERENCES tipo_user(idtipo_user)
 );
 
+-- Tabela: adm
+CREATE TABLE adm (
+    id_adm INT AUTO_INCREMENT PRIMARY KEY,
+    adm_nome VARCHAR(100),
+    email VARCHAR(150),
+    data_nasc DATE,
+    telefone CHAR(9),
+    senha VARCHAR(100),
+    endereco_idendereco INT,
+    tipo_user_idtipo_user INT,
+    FOREIGN KEY (endereco_idendereco) REFERENCES endereco(id_endereco),
+    FOREIGN KEY (tipo_user_idtipo_user) REFERENCES tipo_user(idtipo_user)
+);
+
 -- Tabela: user
 CREATE TABLE user (
     id_user INT AUTO_INCREMENT PRIMARY KEY,
