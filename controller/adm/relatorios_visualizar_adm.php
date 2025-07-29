@@ -36,28 +36,24 @@
                         <i class="fa-solid fa-eye"></i>
                     </div>
                     <h5>Visualizações <br>totais do site: <span><h2>0</h2></span></h5>
-                    <i class="fa-solid fa-chevron-left"></i>
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_bloco">
                     <div class="verificar_administrar_pedidos_sessao_bloco_mini">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>
                     <h5>Vendas: <span><h2>0</h2></span></h5>
-                    <i class="fa-solid fa-chevron-left"></i>
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_bloco">
                     <div class="verificar_administrar_pedidos_sessao_bloco_mini">
                         <i class="fa-solid fa-basket-shopping"></i>
                     </div>
                     <h5>Total de produtos cadastrados: <span><h2>0</h2></span></h5>
-                    <i class="fa-solid fa-chevron-left"></i>
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_bloco">
                     <div class="verificar_administrar_pedidos_sessao_bloco_mini">
                         <i class="fa-solid fa-users"></i>
                     </div>
                     <h5>Usuários <br>cadastrados: <span><h2>0</h2></span></h5>
-                    <i class="fa-solid fa-chevron-left"></i>
                 </div>
 
                 <div class="verificar_administrar_pedidos_sessao_estatisticas">
