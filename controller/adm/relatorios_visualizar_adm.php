@@ -23,8 +23,8 @@
             <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período: <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida">XX/XX/XXXX - YY/YY/YYYY</span></h3>
             <div class="verificar_administrar_pedidos_sessao_periodo_bloco">
                 <span class="verificar_administrar_pedidos_sessao_mini_titulos_2" id="abrirCalendario">Mudar período</span>
-                <input type="text" id="inputCalendario" style="display: none;">
-                <!-- <input type="date" id="dataInput" style="display: none"> -->
+                <input type="text" id="dataInicio" style="display: none;">
+                <input type="text" id="dataFim" style="display: none;">
                 <hr class="verificar_administrar_pedidos_sessao_periodo_linha">
             </div>
         </div>
