@@ -3176,7 +3176,9 @@ input[type="image"] {
 
   .img_holder {
     height: 180px;
-=======
+  }
+}
+
 @media (max-width: 767px) {
   .main_add_product_second {
     padding: 20px 5%;
@@ -4430,4 +4432,3 @@ transform: translate(-50%, -50%);
     margin-right: auto;
   }
 }
-
