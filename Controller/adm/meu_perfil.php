@@ -58,11 +58,11 @@ include 'menu_adm.php';
             </div>
            
             <div class="visualizar-dados-area-botoes">
-                <a href="../cliente/meu_perfil_senha.php">
+                <a href="meu_perfil_senha.php">
                     <button class="visualizar-dados-editar">Editar meus dados</button>
                 </a>
                 <a href="login_adm.php">
-                <button class="visualizar-dados-logout">Logout</button>
+                    <button class="visualizar-dados-logout">Logout</button>
                 </a>
             </div>
         </div>

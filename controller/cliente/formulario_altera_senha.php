@@ -1,8 +1,7 @@
 <!-- Isabella -->
 <?php
 include 'menu_pg_inicial.php'
-    ?>
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +16,8 @@ include 'menu_pg_inicial.php'
     <section id="section_formulario_senha">
         <div class="espaco_forms_senha">
             <div class="title_div">
-                <a href="#" class="setinha_forms_mudar_senha">
-                    <i class="fa-solid fa-chevron-left">
-                    </i>
+                <a href="#" onclick="window.history.back(); return false"; class="setinha_forms_mudar_senha">
+                    <i class="bi bi-chevron-left"></i>
                 </a>
                 <h3 class="titulo_forms_senha">Alterar senha</h3>
             </div>
@@ -33,10 +31,10 @@ include 'menu_pg_inicial.php'
             </div>
         </div>
         <div class="div_confirmacao">
-            <a href="#" class="esqueceu_senha">Esqueceu a senha?</a>
+            <a href="recuperar_senha_login1.php" class="esqueceu_senha">Esqueceu a senha?</a>
             <?php
-            $texto = "Salvar Favoritos"; // Defina o texto do botão aqui
-            include 'botao_cliente.php';
+                $texto = "Salvar Senha"; // Defina o texto do botão aqui
+                include 'botao_cliente.php';
             ?>
         </div>
     </section>
