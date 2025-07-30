@@ -10,7 +10,7 @@
 </head>
 <body class="body-arthura">
     <div class="header-arthura">
-        <h2 class="visualizar-dados-title"><a href="meu_perfil.php"><i class="bi bi-chevron-left"></i></a>Meu Perfil</h2>
+        <h2 class="visualizar-dados-title"><a href="#" onclick="window.history.back(); return false";><i class="bi bi-chevron-left"></i></a>Meu Perfil</h2>
     </div>
     <div class="wrapper-arthura">
         <div class="card-arthura">
