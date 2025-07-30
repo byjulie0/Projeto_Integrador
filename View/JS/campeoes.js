@@ -3,10 +3,10 @@ function initCarrossel() {
     if (!container) return;
   
     const cards = container.querySelectorAll('.card_cliente');
-    const leftArrow2 = document.getElementById('arrow-esquerda3');
-    const rightArrow2 = document.getElementById('arrow-direita3');
+    const leftArrow3 = document.getElementById('arrow-esquerda3');
+    const rightArrow3 = document.getElementById('arrow-direita3');
   
-    if (cards.length === 0 || !leftArrow2 || !rightArrow2) return;
+    if (cards.length === 0 || !leftArrow3 || !rightArrow3) return;
 
     const cardWidth = cards[0].offsetWidth;
     const gap = parseInt(getComputedStyle(container).gap) || 15;
@@ -28,13 +28,13 @@ function initCarrossel() {
         }, 500);
     }
   
-    leftArrow2.addEventListener('click', () => smoothScroll(-scrollAmount));
-    rightArrow2.addEventListener('click', () => smoothScroll(scrollAmount));
+    leftArrow3.addEventListener('click', () => smoothScroll(-scrollAmount));
+    rightArrow3.addEventListener('click', () => smoothScroll(scrollAmount));
   
     function updateArrows() {
         const maxScroll = container.scrollWidth - container.clientWidth;
-        leftArrow2.style.display = container.scrollLeft > 0 ? 'flex' : 'none';
-        rightArrow2.style.display = container.scrollLeft < maxScroll - 1 ? 'flex' : 'none';
+        leftArrow3.style.display = container.scrollLeft > 0 ? 'flex' : 'none';
+        rightArrow3.style.display = container.scrollLeft < maxScroll - 1 ? 'flex' : 'none';
     }
   
     container.addEventListener('scroll', updateArrows);
