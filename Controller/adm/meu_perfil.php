@@ -15,7 +15,7 @@ include 'menu_adm.php';
  
 <body class="body-visualizar-dados">
     <h2 class="visualizar-dados-title">
-        <a href="#" onclick="window.history.back(); return false";><i class="bi bi-chevron-left"></i></a>Meu Perfil ADM
+        <a href="#" onclick="window.history.back(); return false";><i class="bi bi-chevron-left"></i></a>Meu Perfil
     </h2>
     <main class="main-visualizar-dados">
  
@@ -37,21 +37,28 @@ include 'menu_adm.php';
                 <div class="visualizar-dados-geral0">
                     <div class="visualizar-dados-geral1">
                         <p class="vizualizar-dados-geral-nome">
-                            <label class="visualizar-dados-label">Nome: </label>Administrador John Rooster
-                        </p>
-                        <p class="vizualizar-dados-geral-telefone">
-                            <label class="visualizar-dados-label">Telefone: </label>+55 67 XXXXX-XXXX
+                            <label for="name" class="visualizar-dados-label">Nome:
+                                <input type="text" id="adm_nome" class="form-input" placeholder="Administrador Jonh Rooster" readonly>
+                            </label>
+
                         </p>
                         <p class="vizualizar-dados-geral-email">
-                            <label class="visualizar-dados-label">E-mail: </label>sample123@gmail.com
+                            <label for="email" class="visualizar-dados-label">E-mail:
+                                <input type="email" id="email" class="form-input" placeholder="jonhrooster@gmail.com" readonly>
+                            </label>
                         </p>
                     </div>
                     <div class="visualizar-dados-geral2">
-                        <p class="vizualizar-dados-geral-endereco">
-                            <label class="visualizar-dados-label">Função: </label>Administrador Geral
+                        <p class="vizualizar-dados-geral-telefone">
+                            <label for="telefone" class="visualizar-dados-label">Telefone:
+                                <input type="tel" id="telefone" class="form-input" placeholder="+55 67 91234-5678" readonly>
+                            </label>
                         </p>
+                        
                         <p class="vizualizar-dados-geral-datanasc">
-                            <label class="visualizar-dados-label">Data de Criação da conta: </label>XX/XX/XXXX
+                            <label for="cnpj" class="form-label">CNPJ:
+                                <input type="text" id="cnpj" class="form-input" placeholder="12.345.678/0001-95" readonly>
+                            </label>
                         </p>
                     </div>
                 </div>
