@@ -43,7 +43,7 @@
                     </ul>
 
                 </li>
-                <a href="" class="nav-item-pg-inicial">Campeões do mês</a>
+                <a href="#campeoesdomes" class="nav-item-pg-inicial">Campeões do mês</a>
                 <a href="#maisvendidos" class="nav-item-pg-inicial">Mais vendidos</a>
             </div>
 
