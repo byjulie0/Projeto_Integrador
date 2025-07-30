@@ -2381,7 +2381,6 @@ body {
 
 /* Começo do CSS esqueci a senha pop up - Julie */
 .esqueci_a_senha_popup_body{
-  /* background-color: #F7F7F7; */
   display: grid;
   align-items: center;
   min-height: 90vh;
@@ -5498,6 +5497,5 @@ label {
       font-size: 1.5rem; /* 24px */
   }
 }
-
 
 /* Fim do css do componente de setas*/
