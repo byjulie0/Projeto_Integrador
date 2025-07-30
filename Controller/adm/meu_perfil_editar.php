@@ -15,14 +15,7 @@ include 'menu_adm.php';
 <body>
     <main class="main">
         <div class="container">
-            <div class="page-header">
-                <button class="back-btn">
-                    <a href="meu_perfil_senha.php" class="setinha_forms_mudar_senha"><i
-                        class="bi bi-chevron-left"></i>
-                    </a>
-                </button>
-                <h1 class="page-title">Editar meus dados</h1>
-            </div>
+            <h2 class="visualizar-dados-title"><a href="meu_perfil_senha.php"><i class="bi bi-chevron-left"></i></a>Editar meus dados</h2>
 
             <form class="edit-form">
                 <div class="form-grid">
@@ -30,7 +23,7 @@ include 'menu_adm.php';
                     <div class="form-column">
                         <div class="form-group">
                             <label for="name" class="form-label">Nome:</label>
-                            <input type="text" id="name" class="form-input" placeholder="Fulano da Silva Pinto Soares">
+                            <input type="text" id="adm_nome" class="form-input" placeholder="Administrador Jonh Rooster">
                         </div>
                         
                         <div class="form-group">
@@ -43,7 +36,7 @@ include 'menu_adm.php';
                     <div class="form-column">
                         <div class="form-group">
                             <label for="phone" class="form-label">Telefone:</label>
-                            <input type="tel" id="phone" class="form-input" placeholder="+55 67 91234-5678">
+                            <input type="tel" id="telefone" class="form-input" placeholder="+55 67 91234-5678">
                         </div>
                         
                         <div class="form-group">
@@ -57,10 +50,7 @@ include 'menu_adm.php';
                     <a href="formulario_altera_senha.php">
                         <button type="button" class="change-password-btn">Alterar senha</button>
                     </a>
-                    <?php
-                        $texto = "Salvar";
-                        include '../cliente/botao_cliente.php';
-                    ?>
+                    <?php $texto = "Salvar"; include '../cliente/botao_cliente.php';?>
                 </div>
             </form>
         </div>
