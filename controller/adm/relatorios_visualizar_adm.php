@@ -6,7 +6,9 @@
     <title>Relatórios</title>
     <link rel="stylesheet" href="/PROJETO_INTEGRADOR/view/public/css/adm.css">
     <link rel="stylesheet" href="/PROJETO_INTEGRADOR/view/public/css/cliente.css">
-    <script src="/PROJETO_INTEGRADOR/view/JS/relatorios_visualizar_adm.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid">
 </head>
 <body>
@@ -18,10 +20,11 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <h1>Visualizar relatórios</h1>
-            <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período: <span class="verificar_administrar_pedidos_sessao_titulo_destaque">XX/XX/XXXX - YY/YY/YYYY</span></h3>
+            <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período: <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida">XX/XX/XXXX - YY/YY/YYYY</span></h3>
             <div class="verificar_administrar_pedidos_sessao_periodo_bloco">
-                <span class="verificar_administrar_pedidos_sessao_mini_titulos_2" id="cliqueAqui">Mudar período</span>
-                <input type="date" id="dataInput" style="display: none">
+                <span class="verificar_administrar_pedidos_sessao_mini_titulos_2" id="abrirCalendario">Mudar período</span>
+                <input type="text" id="dataInicio" style="display: none;">
+                <input type="text" id="dataFim" style="display: none;">
                 <hr class="verificar_administrar_pedidos_sessao_periodo_linha">
             </div>
         </div>
@@ -33,28 +36,24 @@
                         <i class="fa-solid fa-eye"></i>
                     </div>
                     <h5>Visualizações <br>totais do site: <span><h2>0</h2></span></h5>
-                    <i class="fa-solid fa-chevron-left"></i>
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_bloco">
                     <div class="verificar_administrar_pedidos_sessao_bloco_mini">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>
                     <h5>Vendas: <span><h2>0</h2></span></h5>
-                    <i class="fa-solid fa-chevron-left"></i>
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_bloco">
                     <div class="verificar_administrar_pedidos_sessao_bloco_mini">
                         <i class="fa-solid fa-basket-shopping"></i>
                     </div>
                     <h5>Total de produtos cadastrados: <span><h2>0</h2></span></h5>
-                    <i class="fa-solid fa-chevron-left"></i>
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_bloco">
                     <div class="verificar_administrar_pedidos_sessao_bloco_mini">
                         <i class="fa-solid fa-users"></i>
                     </div>
                     <h5>Usuários <br>cadastrados: <span><h2>0</h2></span></h5>
-                    <i class="fa-solid fa-chevron-left"></i>
                 </div>
 
                 <div class="verificar_administrar_pedidos_sessao_estatisticas">
@@ -156,5 +155,7 @@
     </main>
 
     <?php include "../adm/footer_adm.php"; ?>
+
+    <script src="/PROJETO_INTEGRADOR/view/JS/relatorios_visualizar_adm.js"></script>
 </body>
 </html>

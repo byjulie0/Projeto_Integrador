@@ -2292,9 +2292,7 @@ main {
 
 .verificar_administrar_pedidos_sessao_mini_titulos_1 {
   max-width: 120%;
-  /* width: 700px; */
   width: 120%;
-  /* background-color: magenta; */
   position: relative;
   top: -7vh;
   left: 5%;
@@ -2355,7 +2353,6 @@ main {
   grid-template-columns: 2fr 2fr;
   grid-template-rows: auto auto;
   width: 100%;
-  /* height: 40%; */
   background-color: #6099662e;
   padding-bottom: 20px;
   border-radius: 15px;
@@ -2379,7 +2376,6 @@ main {
   font-size: 1.6rem;
   transform: scaleX(-1);
   cursor: pointer;
-  /* margin: 0; */
 }
 
 .verificar_administrar_pedidos_sessao_bloco_mini {
@@ -2433,8 +2429,6 @@ main {
 
 .verificar_administrar_pedidos_sessao_estatisticas_linhas_horizontais {
   display: flex;
-  /* gap: 50px; */
-  /* column-gap: 20px; */
   flex-direction: column;
   gap: 15px;
   margin-left: 10%;
@@ -2479,7 +2473,7 @@ main {
 
 .verificar_administrar_pedidos_sessao_vendas_linhas_horizontais{
   display: flex;
-  gap: 20px;
+  gap: 15px;
   margin-left: 10%;
   color: var(--color-primary-1);
 }
@@ -2546,6 +2540,63 @@ main {
   left: 5vh;
 }
 
+/* Estilização calendário */
+
+/* Container principal do calendário */
+.ui-datepicker {
+  background: var(--color-primary-8);
+  border: 2px solid #9DC08B;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  width: auto;
+}
+
+/* Título do mês e ano */
+.ui-datepicker-title {
+  color: var(--color-primary-1);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Botões de navegação (próximo e anterior) */
+.ui-datepicker-prev, .ui-datepicker-next {
+  background-color: var(--color-primary-5);
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover {
+  background-color: var(--color-primary-7);
+}
+
+/* Cabeçalho dos dias da semana */
+.ui-datepicker th {
+  color: #40513B;
+  font-weight: bold;
+}
+
+/* Dias do mês */
+.ui-datepicker td a {
+  background: #EDF1D6;
+  color: #40513B;
+  border-radius: 8px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.ui-datepicker td a:hover {
+  background: var(--color-primary-5);
+  color: white;
+}
+
+/* Dia selecionado */
+.ui-datepicker .ui-state-active {
+  background-color: var(--color-primary-5) !important;
+  color: white !important;
+}
+
 /* Responsivo para telas menores */
 @media (max-width: 1220px) {
   .verificar_administrar_pedidos_sessao_section {
@@ -2600,8 +2651,6 @@ main {
   }
 
   .verificar_administrar_pedidos_sessao_bloco_atividades {
-    /* top: 45vh;
-    margin-bottom: 60%; */
     width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -2618,8 +2667,6 @@ main {
     padding-bottom: 150px;
     min-height: 300px;
     border-radius: 18px;
-    /* margin-top: 30px;
-    margin-bottom: 30px; */
   }
 }
 
@@ -2658,11 +2705,6 @@ main {
     grid-template-columns: 1fr;
   }
 
-  /* .verificar_administrar_pedidos_sessao_bloco h5 {
-    left: 0;
-    text-align: center;
-  } */
-
   .verificar_administrar_pedidos_sessao_bloco h5,
   .verificar_administrar_pedidos_sessao_bloco i {
     margin-left: 0;
@@ -2691,11 +2733,8 @@ main {
 
   .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais,
   .verificar_administrar_pedidos_sessao_vendas_linhas_verticais {
-    /* flex-direction: column; */
-    /* gap: 50px; */
     left: 0;
     top: 0;
-    /* margin-left: 10%; */
   }
 
   .verificar_administrar_pedidos_sessao_estatisticas_linhas_verticais{
@@ -3137,7 +3176,9 @@ input[type="image"] {
 
   .img_holder {
     height: 180px;
-=======
+  }
+}
+
 @media (max-width: 767px) {
   .main_add_product_second {
     padding: 20px 5%;
@@ -4391,4 +4432,3 @@ transform: translate(-50%, -50%);
     margin-right: auto;
   }
 }
-
