@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Meus Dados</title>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../View/Public/css/cliente/meu_perfil_editar.css">
 </head>
 <body>
     <main class="client-edit-main">
