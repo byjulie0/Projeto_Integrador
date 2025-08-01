@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil</title>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/meu_perfil_senha.css">
 </head>
 <body class="body-arthura">
     <div class="header-arthura">
@@ -36,8 +36,9 @@
                 <a href="meu_perfil_editar.php"><button type="button" class="view-button-arthura">Visualizar meus dados</button></a>
             </form>
         </div>
-
-        <button type="button" class="logout-button-arthura">Logout</button>
+        <a href="login_adm.php">
+            <button type="button" class="logout-button-arthura">Logout</button>
+        </a>
     </div>
 </body>
 </html>
