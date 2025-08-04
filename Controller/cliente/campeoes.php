@@ -4,15 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talvez você Goste</title>
-
+    <title>Campeões</title>
     <script defer src="../../view/js/campeoes.js"></script>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
-</head>
-
-<body class="body-campeoes">
-
-    <script defer src="../../view/js/talvez_voce_goste.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
 
@@ -20,18 +13,13 @@
 
     <h1 class="pg-mais-vendidos" id="mais_vendidos">Campeões do Mês</h1>
 
-    <div id= "campeoesdomes" class="carrossel-mais-vendidos">
-
+    <div class="carrossel-mais-vendidos">
         <div class="arrow-mais-vendidos" id="arrow-esquerda3">&#10094;</div>
 
         <a href="detalhes_produto.php">
             <div class="cards-mais-vendidos" id="carrossel-cards3">
-        <div class="arrow-mais-vendidos" id="arrow-esquerda2">&#10094;</div>
-
-        <a href="detalhes_produto.php">
-            <div class="cards-mais-vendidos" id="carrossel-cards2">
                 <?php
-                $talvez_voce_goste = [
+                $campeoes = [
                     [
                         "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
                         "peso" => "420 kg",
@@ -74,7 +62,7 @@
                     ]
                 ];
 
-                foreach ($talvez_voce_goste as $item) {
+                foreach ($campeoes as $item) {
                     $imagem = $item['imagem'];
                     $peso = $item['peso'];
                     $raca = $item['raca'];
@@ -88,7 +76,7 @@
             </div>
         </a>
 
-        <div class="arrow-mais-vendidos" id="arrow-direita2">&#10095;</div>
+        <div class="arrow-mais-vendidos" id="arrow-direita3">&#10095;</div>
     </div>
 
 </body>
