@@ -45,11 +45,11 @@ function initCarrossel() {
   document.addEventListener('DOMContentLoaded', initCarrossel);
   
   (function checkForCarrossel() {
-    if (document.getElementById('carrossel-cards') &&
-        !document.getElementById('arrow-esquerda').hasAttribute('data-initialized')) {
+    if (document.getElementById('carrossel-cards2') &&
+        !document.getElementById('arrow-esquerda2').hasAttribute('data-initialized')) {
         initCarrossel();
-        document.getElementById('arrow-esquerda').setAttribute('data-initialized', 'true');
-        document.getElementById('arrow-direita').setAttribute('data-initialized', 'true');
+        document.getElementById('arrow-esquerda2').setAttribute('data-initialized', 'true');
+        document.getElementById('arrow-direita2').setAttribute('data-initialized', 'true');
     }
     
     if (typeof checkForCarrossel.interval === 'undefined') {
