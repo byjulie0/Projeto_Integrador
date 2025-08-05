@@ -37,7 +37,10 @@
             </form>
         </div>
 
-        <button type="button" class="logout-button-arthura">Logout</button>
+        <a href="/Projeto_Integrador/controller/logout.php">
+            <button type="button" class="logout-button-arthura">Logout</button>
+        </a>
+
     </div>
 </body>
 </html>
