@@ -2179,14 +2179,15 @@ body {
 }
 
 .carrossel-mais-vendidos { /*card carrosel*/
+  background-color: #2a7f40;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 2% 0 5%;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 85%;
+  margin: auto;
+  margin-bottom: 30px;
 }
 
 .arrow-mais-vendidos {
