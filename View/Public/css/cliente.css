@@ -3186,6 +3186,7 @@ input[type="checkbox"] {
   transition: background-color 0.3s;
 }
 
+
 .check-box-label-carrinho{
   margin: 0;
   font-weight: 600;
@@ -3395,7 +3396,7 @@ input[type="checkbox"] {
 
 .carrinho-botao-finalizar-area,
 .carrinho-botao-finalizar {
-  background-color: #2e8b57;
+  background-color: #28814f;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
