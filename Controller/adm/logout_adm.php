@@ -6,7 +6,7 @@ $_SESSION = array();
 
 session_destroy();
 
-header("Location: ../controller/cliente/login.php");
+header("Location: /Projeto_Integrador/controller/adm/login_adm.php");
 
 exit;
 ?>

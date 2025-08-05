@@ -37,7 +37,7 @@
             </form>
         </div>
 
-        <a href="/Projeto_Integrador/controller/logout.php">
+        <a href="../cliente/logout.php">
             <button type="button" class="logout-button-arthura">Logout</button>
         </a>
 
