@@ -1,20 +1,14 @@
 <!-- ISABELLA -->
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página inicial Categorias</title>
-    
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
-
-
-
+    <link rel="stylesheet" href="../../view/public/css/cliente/categorias_pg_inicial.css">
 </head>
 <body class="body-mais-vendidos">
-    <!-- Inicio das categorias -->
-    <section id="pg_inicial_categorias">
+    <section class="pg_inicial_categorias">
         <h3 class="categoria_title_pg_inicial">Categorias</h3>
         <div class="categoria_area_cards_pg_inicial">
 

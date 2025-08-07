@@ -1,0 +1,209 @@
+@import url("../cliente.css");
+.container_pagina_favoritos{
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 100%;
+    position: relative;
+    margin-top: 35px;
+}
+.favoritos-title {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-left: 46px;
+    font-size: 1.1em;
+    color: #333;
+}
+.favoritos-title i {
+    margin-right: 50px;
+    text-align: left;
+}
+.cards-favoritos {
+    text-align: left;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+.cards-container-pag-fav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+.stars-pag-fav {
+    color: gold;
+    margin: 5px 0;
+}
+.excluir-pag-fav {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    text-decoration: underline;
+}
+.btn-favorito{
+    background-color: var(--color-botao-op-Concluido);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+    width: 50%;
+    box-sizing: border-box;
+}
+.btn-favorito:hover{
+    background-color: rgb(65, 110, 55);
+}
+.botao-pag-fav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width: 320px) {
+    .favoritos-title {
+      font-size: 1em;
+      padding-left: 10px;
+    }
+    .area-favoritos{
+      gap: 20px;
+      width: 50%;
+      flex-direction: row;
+    }
+}
+@media (max-width: 375px) {
+    .favoritos-title {
+      font-size: 1.1em;
+    }
+}
+@media (max-width: 768px) {
+    .favoritos-title {
+      justify-content: center;
+      font-size: 1.3em;
+    }
+}
+@media (min-width: 1441px) and (max-width: 2560px) {
+    .favoritos-title {
+      font-size: 1.8em;
+      margin-left: 60px;
+    }
+}
+
+/* Inicio algo favoritos */
+/* @media (max-width: 320px) {
+    .favoritos-title {
+      font-size: 1em;
+      padding-left: 10px;
+    }
+  
+    .card-pag-fav {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .botao-pag-fav {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .btn-pag-fav,
+    .excluir-pag-fav {
+      width: 100%;
+    }
+  }
+@media (max-width: 375px) {
+    .favoritos-title {
+      font-size: 1.1em;
+    }
+  
+    .card-pag-fav {
+      width: 95%;
+    }
+}
+@media (max-width: 425px) {
+    .card-pag-fav {
+      width: 95%;
+    }
+  
+    .card-header-pag-fav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .botao-pag-fav {
+      flex-direction: column;
+    }
+}
+@media (max-width: 768px) {
+    .cards-container-pag-fav {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card-pag-fav {
+      width: 85%;
+      max-width: 350px;
+    }
+    .favoritos-title {
+      justify-content: center;
+      font-size: 1.3em;
+    }
+    .botao-pag-fav {
+      flex-direction: row;
+      gap: 10px;
+    }
+    .btn-pag-fav,
+    .excluir-pag-fav {
+      width: auto;
+    }
+}
+@media (max-width: 1024px) {
+    .cards-container-pag-fav {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .card-pag-fav {
+      width: 300px;
+    }
+}
+@media (max-width: 1440px) {
+    .card-pag-fav {
+      width: 300px;
+    }
+  
+    .cards-container-pag-fav {
+      gap: 24px;
+      justify-content: center;
+    }
+}
+@media (min-width: 1441px) and (max-width: 2560px) {
+    .cards-container-pag-fav {
+      gap: 40px;
+      justify-content: center;
+    }
+  
+    .card-pag-fav {
+      width: 320px;
+    }
+  
+    .favoritos-title {
+      font-size: 1.8em;
+      margin-left: 60px;
+    }
+} */

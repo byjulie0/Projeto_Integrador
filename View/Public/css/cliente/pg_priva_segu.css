@@ -1,0 +1,155 @@
+/* Inicio de CSS de privacidade e segurança*/
+@import url("../cliente.css");
+.whole-page-content-pes {
+    width: 100%;
+    height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .page-title-pes {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  .go-back-pes  {
+    color: var(--color-primary-1);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .go-back-pes i {
+    color: inherit;
+  }
+  .title-area-pes {
+    width: auto;
+    margin-top: 0;
+  }
+  .title-pes {
+    color: var(--color-primary-1);
+    font-size: 24px;
+    text-align: left;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .terms-pes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .term-pes {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .term-title-pes {
+    color: var(--color-primary-1);
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .term-text-pes {
+    color: var(--color-primary-1);
+    font-size: 16px;
+  }
+@media (min-width: 360px) and (max-width: 389px) {
+    .whole-page-content-pes {
+      padding: 25px 20px;
+      height: auto;
+      min-height: 100vh;
+    }
+    
+    .page-title-pes {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 15px;
+    }
+    
+    .go-back-pes {
+      width: auto;
+      padding: 0;
+    }
+    
+    .go-back-pes .fa-solid {
+      font-size: 20px;
+    }
+    
+    .title-area-pes {
+      width: calc(100% - 40px);
+      margin-top: 0;
+      justify-content: flex-start;
+      padding: 0;
+    }
+    
+    .title-pes {
+      font-size: 18px;
+      margin-bottom: 0;
+      text-align: left;
+      justify-content: flex-start;
+    }
+    .terms-pes {
+      margin-top: 10px;
+      gap: 15px;
+    }
+    
+    .term-pes {
+      padding: 0;
+      gap: 5px;
+    }
+    
+    .term-title-pes {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    
+    .term-text-pes {
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;
+      word-break: break-word;
+    }
+}
+@media (max-width: 1024px) {
+    .page-title-pes {
+      gap: 12px;
+    }
+    
+    .title-pes {
+      font-size: 22px;
+    }
+    
+    .go-back-pes i {
+      font-size: 22px;
+    }
+}
+@media (max-width: 768px) {
+    .whole-page-content-pes {
+      padding: 30px 25px;
+    }
+    
+    .page-title-pes {
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .title-pes {
+      font-size: 20px;
+      white-space: normal;
+    }
+    
+    .go-back-pes i {
+      font-size: 20px;
+    }
+}

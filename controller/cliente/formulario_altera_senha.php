@@ -9,7 +9,7 @@ include 'menu_pg_inicial.php'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário para alteração de senha</title>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/formulario_altera_senha.css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@ include 'menu_pg_inicial.php'
         <div class="div_confirmacao">
             <a href="recuperar_senha_login1.php" class="esqueceu_senha">Esqueceu a senha?</a>
             <?php
-                $texto = "Salvar Senha"; // Defina o texto do botão aqui
+                $texto = "Salvar Senha";
                 include 'botao_cliente.php';
             ?>
         </div>

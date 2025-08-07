@@ -5,13 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talvez você Goste</title>
-
     <script defer src="../../view/js/campeoes.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
 
 <body class="body-campeoes">
-
     <script defer src="../../view/js/talvez_voce_goste.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>

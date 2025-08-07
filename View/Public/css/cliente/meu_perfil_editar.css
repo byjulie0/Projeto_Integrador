@@ -1,5 +1,4 @@
-/*Começo inserir senha alterar dados Arthur*/
-
+@import url("../cliente.css");
 .client-edit-main {
     padding: 2.5rem 1rem;
     min-height: calc(100vh - 70px);

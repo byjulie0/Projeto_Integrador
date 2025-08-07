@@ -10,14 +10,12 @@ include 'menu_pg_inicial.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Peril - Visualizar Dados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/meu_perfil.css">
 </head>
 </head>
  
 <body class="body-visualizar-dados">
-  <h2 class="visualizar-dados-title">
-            <a class="a-style" href="meu_perfil_senha.php"><i class="bi bi-chevron-left"></i>Meu Perfil</a>  
-          </h2>
+  <h2 class="visualizar-dados-title"><a class="a-style" href="meu_perfil_senha.php"><i class="bi bi-chevron-left"></i>Meu Perfil</a></h2>
     <main class="main-visualizar-dados">
  
        

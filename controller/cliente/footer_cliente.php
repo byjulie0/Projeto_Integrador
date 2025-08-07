@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FOOTER</title>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/footer_cliente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -56,8 +56,8 @@
             <div id="tab3" class="footer_cli_item">
                 <h3>Termos</h3>
                 <hr>
-                <a href="termos_e_condicoes.php">Termos e Condições</a>
-                <a href="privacidade-e-seguranca.php">Privacidade e Segurança</a>
+                <a href="pg_termos_condicoes.php">Termos e Condições</a>
+                <a href="pg_priva_segu.php">Privacidade e Segurança</a>
             </div>
 
 
