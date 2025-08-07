@@ -5,6 +5,7 @@ include 'menu_recuperar_senha.php';
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@ include 'menu_recuperar_senha.php';
     <script defer src="../../View/js/pop_up_redefinir_senha.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
+
 <body class="body_redefinir_senha_login">
 
     <section class="rede_senha_section">
@@ -25,8 +27,12 @@ include 'menu_recuperar_senha.php';
                 <h3>Escolha sua nova senha</h3>
                 <form action="" class="form_rede_senha" id="formRedefinirSenha">
                     <input type="password" minlength="8" required placeholder="Nova senha" id="novaSenha">
-                    <input type="password" minlength="8" required placeholder="Confirmar nova senha" id="confirmarSenha">
-                    <button type="submit" id="btnEnviar">Enviar</button>
+                    <input type="password" minlength="8" required placeholder="Confirmar nova senha"
+                        id="confirmarSenha">
+                    <?php
+                    $texto = "Enviar"; // Defina o texto do botão aqui
+                    include 'botao_cliente.php';
+                    ?>
                 </form>
             </div>
         </nav>
@@ -40,6 +46,7 @@ include 'menu_recuperar_senha.php';
     </div>
 
 </body>
+
 </html>
 
 <?php

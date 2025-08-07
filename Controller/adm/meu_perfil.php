@@ -35,7 +35,7 @@
                 <strong>Meus dados</strong>
             </div>
             <div class="botoes-math-adm">
-                <button class="editar-math-adm">Editar meus dados</button>
+                z
                 <button class="logout-math-adm">Logout</button>
             </div>
         </section>
