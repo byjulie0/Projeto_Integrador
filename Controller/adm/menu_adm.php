@@ -51,16 +51,17 @@
                 </button>
             </div>
             <div class="nav_page_btns_menu_adm">
-
-                <a href="verificar_e_administrar_pedidos.php" class="nav_btns_menu_adm">
+                <a href="meu_perfil.php" class="nav_btns_menu_adm">
+                <a href="meu_perfil.php" class="nav_btns_menu_adm">
                     <i class="bi bi-person"></i>
                     <span class="nav_text_menu_adm">Perfil</span>
                 </a>
-                <a href="../cliente/notificacao.php" class="nav_btns_menu_adm">
+                <a href="notificacao_adm.php" class="nav_btns_menu_adm">
+
                     <i class="bi bi-bell"></i>
                     <span class="nav_text_menu_adm">Notificações</span>
                 </a>
-                <a href="#" class="nav_btns_menu_adm">
+                <a href="relatorios_visualizar_adm.php" class="nav_btns_menu_adm">
                     <i class="bi bi-file-bar-graph"></i>
                     <span class="nav_text_menu_adm">Geral</span>
                 </a>

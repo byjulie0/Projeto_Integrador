@@ -43,7 +43,7 @@
                     </ul>
 
                 </li>
-                <a href="" class="nav-item-pg-inicial">Campeões do mês</a>
+                <a href="#campeoesdomes" class="nav-item-pg-inicial">Campeões do mês</a>
                 <a href="#maisvendidos" class="nav-item-pg-inicial">Mais vendidos</a>
             </div>
 
@@ -61,6 +61,7 @@
                         <span class="nav-text-pg-inicial">Perfil</span>
                     </a>
                     <ul class="submenu_cliente">
+                        <li><a href="meu_perfil.php">Login</a></li>
                         <li><a href="meu_perfil.php">Meu perfil</a></li>
                         <li><a href="#">Minhas compras</a></li>
                         <li><a href="pg_favoritos.php">Produtos favoritados</a></li>
