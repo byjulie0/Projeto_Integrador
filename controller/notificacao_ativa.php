@@ -18,7 +18,9 @@
         <div class="notificacao-usuario-cabesalio">
             <title class="notificacao-usuario-title"></title>
             <div class="notificacao-usuario-notificacao">
-                <i class="fa-solid fa-chevron-left" style="color: #2d8c37;"></i>
+                <a href="#" onclick="if (document.referrer) { history.back(); } else { window.location.href = 'menu_pg_inicial.php'; }">
+                    <i class="fa-solid fa-chevron-left" style="color: #2d8c37;"></i>
+                </a>
                 <h1 class="notificacao-usuario-h1">NOTIFICAÇÃO</h1>
             </div>
             <button class="notificacao-usuario-filtro">
