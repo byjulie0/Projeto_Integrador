@@ -39,6 +39,7 @@
                         <li><a href="#">Bovinos</a></li>
                         <li><a href="#">Equinos</a></li>
                         <li><a href="#">Galináceos</a></li>
+                        <li><a href="#">Campeões</a></li>
                         <li><a href="#">Produtos gerais</a></li>
                     </ul>
 
