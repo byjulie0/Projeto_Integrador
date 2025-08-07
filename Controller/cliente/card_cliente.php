@@ -1,4 +1,4 @@
-<div class="card_cliente card-mais-vendidos card-cat-math">
+<div class="card_cliente  card-cat-math">
   <img src="<?= $imagem ?>" alt="Imagem do produto" />
 
   <div class="card_info_grid">

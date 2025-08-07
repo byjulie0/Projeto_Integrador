@@ -4,64 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mais Vendidos</title>
-    <script defer src="../../view/js/mais_vendidos.js"></script>
+    <title>Campeões</title>
+    <script defer src="../../view/js/campeoes.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
 
 <body class="body-mais-vendidos">
 
-    <h1 class="pg-mais-vendidos" id="mais_vendidos">Mais Vendidos</h1>
+    <h1 class="pg-mais-vendidos" id="mais_vendidos">Campeões do Mês</h1>
 
-    <div id="maisvendidos" class="carrossel-mais-vendidos">
-        <div class="arrow-mais-vendidos" id="arrow-esquerda">&#10094;</div>
+    <div class="carrossel-mais-vendidos">
+        <div class="arrow-mais-vendidos" id="arrow-esquerda3">&#10094;</div>
+
         <a href="detalhes_produto.php">
-            <div class="cards-mais-vendidos" id="carrossel-cards">
+            <div class="cards-mais-vendidos" id="carrossel-cards3">
                 <?php
-                $mais_vendidos = [
+                $campeoes = [
                     [
                         "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
-                        "peso" => "380 kg",
+                        "peso" => "420 kg",
                         "raca" => "Árabe",
                         "genealogia" => "PO",
-                        "idade" => "24 meses",
-                        "preco" => "5.200,00"
+                        "idade" => "1 ano",
+                        "preco" => "2.000 000,00"
                     ],
                     [
                         "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                        "peso" => "420 kg",
+                        "peso" => "550 kg",
                         "raca" => "Mustang",
                         "genealogia" => "PO",
                         "idade" => "28 meses",
-                        "preco" => "5.800,00"
+                        "preco" => "12.000,00"
                     ],
                     [
-                        "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                        "peso" => "420 kg",
-                        "raca" => "Mustang",
+                        "imagem" => "../../view/public/imagens/img_slider_pg_inicial/puro_sangue_slider_pg_inicial.jpg",
+                        "peso" => "544 kg",
+                        "raca" => "Puro Sangue",
                         "genealogia" => "PO",
                         "idade" => "28 meses",
-                        "preco" => "5.800,00"
+                        "preco" => "18.000,00"
                     ],
                     [
-                        "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                        "peso" => "420 kg",
-                        "raca" => "Mustang",
+                        "imagem" => "../../view/public/imagens/nelore3.jpg",
+                        "peso" => "442 kg",
+                        "raca" => "Nelore",
                         "genealogia" => "PO",
-                        "idade" => "28 meses",
-                        "preco" => "5.800,00"
+                        "idade" => "1 ano",
+                        "preco" => "4.900,00"
                     ],
                     [
-                        "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                        "peso" => "420 kg",
-                        "raca" => "Mustang",
+                        "imagem" => "../../view/public/imagens/rhode-island-red-rooster.jpg",
+                        "peso" => "3,9 kg",
+                        "raca" => "Rhode Island",
                         "genealogia" => "PO",
-                        "idade" => "28 meses",
-                        "preco" => "5.800,00"
+                        "idade" => "1 ano",
+                        "preco" => "1.500,00"
                     ]
                 ];
 
-                foreach ($mais_vendidos as $item) {
+                foreach ($campeoes as $item) {
                     $imagem = $item['imagem'];
                     $peso = $item['peso'];
                     $raca = $item['raca'];
@@ -74,7 +75,8 @@
                 ?>
             </div>
         </a>
-        <div class="arrow-mais-vendidos" id="arrow-direita">&#10095;</div>
+
+        <div class="arrow-mais-vendidos" id="arrow-direita3">&#10095;</div>
     </div>
 
 </body>

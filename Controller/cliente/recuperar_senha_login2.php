@@ -19,7 +19,7 @@ include 'menu_recuperar_senha.php';
 
     <main class="recuperar_senha_codigo_main">
         <section class="recuperar_senha_codigo_section">
-            <a href="card_email.php" class="recuperar_senha_codigo_seta_voltar">
+            <a href="#" onclick="window.history.back(); return false;" class="recuperar_senha_codigo_seta_voltar">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <div class="recuperar_senha_codigo">

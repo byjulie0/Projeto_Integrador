@@ -18,7 +18,7 @@ include 'menu_recuperar_senha.php';
 <body class="body_redefinir_senha_login">
 
     <section class="rede_senha_section">
-        <a href="recuperar_senha_codigo.php" class="recuperar_senha_codigo_seta_voltar">
+        <a href="#" onclick="window.history.back(); return false;" class="recuperar_senha_codigo_seta_voltar">
             <i class="fa-solid fa-chevron-left"></i>
         </a>
         <nav class="rede_senha_nav">

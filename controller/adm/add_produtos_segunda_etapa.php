@@ -17,7 +17,7 @@
                 <i class="fa-solid fa-chevron-left">
                 </i>
             </a>
-            <h1 class="tile_add_product_second">Adicionar Produto</h1>
+            <h1 class="title_add_product_second">Adicionar Produto</h1>
         </div>
         <p class="info_add_product_second">Preencha as informações necessárias e adicione produtos ao catálogo do site
         </p>
