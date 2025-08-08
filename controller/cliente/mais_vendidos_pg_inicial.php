@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mais Vendidos</title>
     <script defer src="../../view/js/mais_vendidos.js"></script>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/carrosseis_inicial.css">
 </head>
 
 <body class="body-mais-vendidos">

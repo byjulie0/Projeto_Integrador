@@ -1,7 +1,4 @@
-<?php
-include 'menu_login.php';
-?>
-
+<?php include 'menu_login.php';?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 

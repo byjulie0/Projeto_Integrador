@@ -1,5 +1,5 @@
 @import url("../cliente.css");
-.pg_inicial_categorias {
+#pg_inicial_categorias {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -46,19 +46,19 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card_galinha_pg_inicial_categorias {
-    background-image: url('../imagens/img_pg_inicial_categorias/galinha_categorias_pg_inicial.png');
+    background-image: url('../../imagens/img_pg_inicial_categorias/galinha_categorias_pg_inicial.png');
 }
 .card_boi_pg_inicial_categorias {
-    background-image: url('../imagens/img_pg_inicial_categorias/boi_categoria_pg_inicial.jpg');
+    background-image: url('../../imagens/img_pg_inicial_categorias/boi_categoria_pg_inicial.jpg');
 }
 .card_cavalo_pg_inicial_categorias {
-    background-image: url('../imagens/img_pg_inicial_categorias/cavalo_categorias_pg_inicial.png');
+    background-image: url('../../imagens/img_pg_inicial_categorias/cavalo_categorias_pg_inicial.png');
 }
 .card_produtos_pg_inicial_categorias {
-    background-image: url('../imagens/img_pg_inicial_categorias/produtos_categorias_pg_inicial.jpg');
+    background-image: url('../../imagens/img_pg_inicial_categorias/produtos_categorias_pg_inicial.jpg');
 }
 .card_campeao_pg_inicial_categorias {
-    background-image: url('../imagens/img_pg_inicial_categorias/campeoes_categorias_pg_inicial.jpg');
+    background-image: url('../../imagens/img_pg_inicial_categorias/campeoes_categorias_pg_inicial.jpg');
 }
 .card_categoria_pg_inicial::before {
     content: '';
@@ -75,19 +75,19 @@
     z-index: 2;
 }
 .card_galinha_pg_inicial_categorias:hover {
-    background-image: url('../imagens/img_pg_inicial_categorias/galinaceos.png');
+    background-image: url('../../imagens/img_pg_inicial_categorias/galinaceos.png');
 }
 .card_boi_pg_inicial_categorias:hover {
-    background-image: url('../Imagens/img_pg_inicial_categorias/bovinos.png');
+    background-image: url('../../Imagens/img_pg_inicial_categorias/bovinos.png');
 }
 .card_cavalo_pg_inicial_categorias:hover {
-    background-image: url('../imagens/img_pg_inicial_categorias/equinos.png');
+    background-image: url('../../imagens/img_pg_inicial_categorias/equinos.png');
 }
 .card_produtos_pg_inicial_categorias:hover {
-    background-image: url('../Imagens/img_pg_inicial_categorias/produtos.png');
+    background-image: url('../../Imagens/img_pg_inicial_categorias/produtos.png');
 }
 .card_campeao_pg_inicial_categorias:hover {
-    background-image: url('../Imagens/img_pg_inicial_categorias/campeoes.png');
+    background-image: url('../../Imagens/img_pg_inicial_categorias/campeoes.png');
 }
 @media (max-width: 768px) {
     .categoria_area_cards_pg_inicial {
@@ -101,7 +101,7 @@
       gap: 15px;
     }
     .categoria_area_cards_pg_inicial::-webkit-scrollbar {
-      display: none; /* Para Chrome/Safari */
+      display: none;
     }
     .categoria_cards_pg_inicial {
       flex: 0 0 auto;
