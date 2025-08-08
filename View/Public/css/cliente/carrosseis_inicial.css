@@ -1,13 +1,12 @@
 @import url("../cliente.css");
-.pg-mais-vendidos { /*titulo*/
+.pg_mais_vendidos {
   color: var(--color-primary-1);
   padding-left: 8%;
   padding-top: 3%;
   font-size: 28px;
   margin-bottom: 15px;
 }
-
-.carrossel-mais-vendidos { /*card carrosel*/
+.carrossel_mais_vendidos {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,8 +16,7 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
-.arrow-mais-vendidos {
+.arrow_mais_vendidos {
   font-size: 30px;
   cursor: pointer;
   margin: 0 10px;
@@ -35,21 +33,17 @@
   transition: all 0.3s ease;
   position: absolute;
 }
-
-.arrow-mais-vendidos:hover {
+.arrow_mais_vendidos:hover {
   background: rgba(255, 255, 255, 0.9);
   transform: scale(1.1);
 }
-
-.arrow-mais-vendidos:first-child {
+.arrow_mais_vendidos:first-child {
   left: 0;
 }
-
-.arrow-mais-vendidos:last-child {
+.arrow_mais_vendidos:last-child {
   right: 0;
 }
-
-.cards-mais-vendidos {
+.cards_mais_vendidos {
   display: flex;
   gap: 15px;
   overflow-x: auto;
@@ -58,12 +52,10 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
-
-.cards-mais-vendidos::-webkit-scrollbar {
+.cards_mais_vendidos::-webkit-scrollbar {
   display: none;
 }
-
-.card-mais-vendidos {
+.card_mais_vendidos {
   background: white;
   padding: 15px;
   border-radius: 10px;
@@ -73,39 +65,33 @@
   scroll-snap-align: start;
   transition: transform 0.3s;
 }
-
-.card-mais-vendidos:hover {
+.card_mais_vendidos:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
-
-.img_mais-vendidos {
+.img_mais_vendidos {
   width: 100%;
   border-radius: 5px;
   height: 180px;
   object-fit: cover;
   margin-bottom: 10px;
 }
-
-.info-grid-mais-vendidos {
+.info-grid_mais_vendidos {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px 10px;
   text-align: right;
   margin-bottom: 10px;
 }
-
-.info-grid-mais-vendidos p {
+.info-grid_mais_vendidos p {
   margin: 0;
   font-size: 0.9em;
 }
-
-.info-grid-mais-vendidos p:nth-child(odd) {
+.info-grid_mais_vendidos p:nth-child(odd) {
   font-weight: bold;
   text-align: left;
 }
-
-.price-mais-vendidos {
+.price_mais_vendidos {
   grid-column: 1 / -1;
   text-align: center;
   margin: 8px 0;
@@ -113,8 +99,7 @@
   font-weight: bold;
   color: #2a7f40;
 }
-
-.btn-mais-vendidos {
+.btn_mais_vendidos {
   background-color: var(--color-botao-op-Concluido);
   color: white;
   padding: 8px 16px;
@@ -130,76 +115,439 @@
   width: 100%;
   box-sizing: border-box;
 }
-  
-.btn-mais-vendidos:hover {
+.btn_mais_vendidos:hover {
   background-color: rgb(65, 110, 55);
 }
-  
-.arrow-mais-vendidos {
+.arrow_mais_vendidos {
   z-index: 2;
 }
-
 @media (max-width: 391px) {
-  .pg-mais-vendidos {
+  .pg_mais_vendidos {
     font-size: 1.375rem;
     padding-left: 5%;
     padding-top: 3%;
   }
   
-  .carrossel-mais-vendidos {
+  .carrossel_mais_vendidos {
     padding: 5% 0 10%;
   }
   
-  .arrow-mais-vendidos {
+  .arrow_mais_vendidos {
     font-size: 24px;
     width: 35px;
     height: 35px;
   }
   
-  .cards-mais-vendidos {
+  .cards_mais_vendidos {
     width: calc(100% - 80px);
     padding: 10px;
   }
 }
-  
 @media (min-width: 391px) and (max-width: 767px) {
-  .pg-mais-vendidos {
+  .pg_mais_vendidos {
     font-size: 1.375rem;
   }
-  .carrossel-mais-vendidos {
+  .carrossel_mais_vendidos {
     padding: 5% 2% 7%;
   }
 }
-  
-  /* Tablet Médio: 768-1023 */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .carrossel-mais-vendidos {
+  .carrossel_mais_vendidos {
     padding: 3% 2% 5%;
   }
-  .pg-mais-vendidos {
+  .pg_mais_vendidos {
     font-size: 2rem;
   }
 }
-  /* Desktop Medium: 1440 x 900 */
 @media (min-width: 1024px) and (max-width: 1919px) {
-  .carrossel-mais-vendidos {
+  .carrossel_mais_vendidos {
     padding: 2% 2% 5%;
   }
 }
-  
-  /* Desktop Large: 1920 x 1080 */
 @media (min-width: 1920px) {
-  .pg-mais-vendidos {
+  .pg_mais_vendidos {
     font-size: 2rem;
     padding-left: 8%;
   }
     
-  .carrossel-mais-vendidos {
+  .carrossel_mais_vendidos {
     max-width: 1400px;
     padding: 2% 2% 5%;
   }
     
-  .arrow-mais-vendidos {
+  .arrow_mais_vendidos {
+    font-size: 36px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+
+/* TALVEZ VOCÊ GOSTE */
+.pg_talvez_goste {
+  color: var(--color-primary-1);
+  padding-left: 8%;
+  padding-top: 3%;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.carrossel_talvez_goste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2% 0 5%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.arrow_talvez_goste {
+  font-size: 30px;
+  cursor: pointer;
+  margin: 0 10px;
+  user-select: none;
+  color: #40513B;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+.arrow_talvez_goste:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
+}
+.arrow_talvez_goste:first-child {
+  left: 0;
+}
+.arrow_talvez_goste:last-child {
+  right: 0;
+}
+.cards_talvez_goste {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.cards_talvez_goste::-webkit-scrollbar {
+  display: none;
+}
+.card_talvez_goste {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+  width: 230px;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+}
+.card_talvez_goste:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.img_talvez_goste {
+  width: 100%;
+  border-radius: 5px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.info-grid_talvez_goste {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 10px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+.info-grid_talvez_goste p {
+  margin: 0;
+  font-size: 0.9em;
+}
+.info-grid_talvez_goste p:nth-child(odd) {
+  font-weight: bold;
+  text-align: left;
+}
+.price_talvez_goste {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 8px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2a7f40;
+}
+.btn_talvez_goste {
+  background-color: var(--color-botao-op-Concluido);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.btn_talvez_goste:hover {
+  background-color: rgb(65, 110, 55);
+}
+.arrow_talvez_goste {
+  z-index: 2;
+}
+@media (max-width: 391px) {
+  .pg_talvez_goste {
+    font-size: 1.375rem;
+    padding-left: 5%;
+    padding-top: 3%;
+  }
+  
+  .carrossel_talvez_goste {
+    padding: 5% 0 10%;
+  }
+  
+  .arrow_talvez_goste {
+    font-size: 24px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .cards_talvez_goste {
+    width: calc(100% - 80px);
+    padding: 10px;
+  }
+}
+@media (min-width: 391px) and (max-width: 767px) {
+  .pg_talvez_goste {
+    font-size: 1.375rem;
+  }
+  .carrossel_talvez_goste {
+    padding: 5% 2% 7%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .carrossel_talvez_goste {
+    padding: 3% 2% 5%;
+  }
+  .pg_talvez_goste {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .carrossel_talvez_goste {
+    padding: 2% 2% 5%;
+  }
+}
+@media (min-width: 1920px) {
+  .pg_talvez_goste {
+    font-size: 2rem;
+    padding-left: 8%;
+  }
+    
+  .carrossel_talvez_goste {
+    max-width: 1400px;
+    padding: 2% 2% 5%;
+  }
+    
+  .arrow_talvez_goste {
+    font-size: 36px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+
+/*CAMPEÕES*/
+.pg_campeoes {
+  color: var(--color-primary-1);
+  padding-left: 8%;
+  padding-top: 3%;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.carrossel_campeoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2% 0 5%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.arrow_campeoes {
+  font-size: 30px;
+  cursor: pointer;
+  margin: 0 10px;
+  user-select: none;
+  color: #40513B;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+.arrow_campeoes:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
+}
+.arrow_campeoes:first-child {
+  left: 0;
+}
+.arrow_campeoes:last-child {
+  right: 0;
+}
+.cards_campeoes {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.cards_campeoes::-webkit-scrollbar {
+  display: none;
+}
+.card_campeoes {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+  width: 230px;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+}
+.card_campeoes:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.img_campeoes {
+  width: 100%;
+  border-radius: 5px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.info-grid_campeoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 10px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+.info-grid_campeoes p {
+  margin: 0;
+  font-size: 0.9em;
+}
+.info-grid_campeoes p:nth-child(odd) {
+  font-weight: bold;
+  text-align: left;
+}
+.price_campeoes {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 8px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2a7f40;
+}
+.btn_campeoes {
+  background-color: var(--color-botao-op-Concluido);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.btn_campeoes:hover {
+  background-color: rgb(65, 110, 55);
+}
+.arrow_campeoes {
+  z-index: 2;
+}
+@media (max-width: 391px) {
+  .pg_campeoes {
+    font-size: 1.375rem;
+    padding-left: 5%;
+    padding-top: 3%;
+  }
+  
+  .carrossel_campeoes {
+    padding: 5% 0 10%;
+  }
+  
+  .arrow_campeoes {
+    font-size: 24px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .cards_campeoes {
+    width: calc(100% - 80px);
+    padding: 10px;
+  }
+}
+@media (min-width: 391px) and (max-width: 767px) {
+  .pg_campeoes {
+    font-size: 1.375rem;
+  }
+  .carrossel_campeoes {
+    padding: 5% 2% 7%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .carrossel_campeoes {
+    padding: 3% 2% 5%;
+  }
+  .pg_campeoes {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .carrossel_campeoes {
+    padding: 2% 2% 5%;
+  }
+}
+@media (min-width: 1920px) {
+  .pg_campeoes {
+    font-size: 2rem;
+    padding-left: 8%;
+  }
+    
+  .carrossel_campeoes {
+    max-width: 1400px;
+    padding: 2% 2% 5%;
+  }
+    
+  .arrow_campeoes {
     font-size: 36px;
     width: 50px;
     height: 50px;

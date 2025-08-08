@@ -1,6 +1,4 @@
-<?php
-    include 'menu_pg_inicial.php';
-?>
+<?php include 'menu_pg_inicial.php';?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,7 +12,6 @@
     <link rel="stylesheet" href="../view/public/css/cliente/pg_busca.css">
 </head>
 <body class="body_pg_busca">
-    <!-- Seção de resultados -->
     <div class="container_pagina_de_busca">
             <a class="btn-voltar" href="pg_inicial_cliente.php" >
                 <i class="fas fa-arrow-left"></i>
@@ -34,7 +31,7 @@
         </div>
         <div class="lotes-wrapper">
             <div class="lotes_container_pagina_de_busca" id="lotesContainer">
-                <?php 
+                <?php
                 $lotes = [
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "380 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "24 meses", "preco" => "5.200,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "420 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "28 meses", "preco" => "5.800,00"],
@@ -82,7 +79,7 @@
         
         function navegarLotes(direcao) {
             const container = document.getElementById('lotesContainer');
-            const scrollAmount = 300; // Ajuste conforme necessário
+            const scrollAmount = 300;
             container.scrollBy({
                 left: direcao * scrollAmount,
                 behavior: 'smooth'

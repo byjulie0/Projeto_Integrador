@@ -1,7 +1,4 @@
-<!-- Isabella -->
-<?php
-include 'menu_pg_inicial.php'
-?>
+<?php include 'menu_pg_inicial.php'?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,10 +38,4 @@ include 'menu_pg_inicial.php'
 </body>
 
 </html>
-
-
-
-<?php
-
-include 'footer_cliente.php';
-?>
+<?php include 'footer_cliente.php';?>

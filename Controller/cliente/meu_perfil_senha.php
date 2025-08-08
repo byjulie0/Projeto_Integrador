@@ -1,4 +1,3 @@
-<!-- Arthur -->
 <?php include 'menu_pg_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-BR">

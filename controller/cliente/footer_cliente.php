@@ -1,4 +1,3 @@
-<!-- LARA -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FOOTER</title>
     <link rel="stylesheet" href="../../view/public/css/cliente/footer_cliente.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
-    <!-- Início do rodape -->
     <footer class="footer_cliente">
         <div class="grid_container_footer">
 
@@ -37,12 +33,10 @@
             </div>
 
             <div>
-
                 <div id="tab2" class="footer_cli_item">
                     <h3>Siga nossas Redes</h3>
                     <hr>
-                    <a href="https://www.facebook.com/senacmsoficial/?locale=pt_BR"><i
-                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/senacmsoficial/?locale=pt_BR"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://www.instagram.com/senac_ms/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://api.whatsapp.com/send?phone=556799492638"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
@@ -60,7 +54,6 @@
                 <a href="pg_priva_segu.php">Privacidade e Segurança</a>
             </div>
 
-
             <div id="tab5" class="footer_cli_item">
                 <h3>Pagamento</h3>
                 <hr>
@@ -77,7 +70,6 @@
             </div>
         </div>
     </footer>
-    <!-- Fim do rodape -->
 </body>
 
 </html>

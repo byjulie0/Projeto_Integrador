@@ -9,19 +9,15 @@
     <link rel="stylesheet" href="../../view/public/css/cliente/carrosseis_inicial.css">
 </head>
 
-<body class="body-mais-vendidos">
+<body>
+    <h1 class="pg_campeoes" id="campeoes">Campeões do Mês</h1>
 
-    <h1 class="pg-mais-vendidos" id="mais_vendidos">Campeões do Mês</h1>
+    <div class="carrossel_campeoes">
 
-    <div id= "campeoesdomes" class="carrossel-mais-vendidos">
-
-        <div class="arrow-mais-vendidos" id="arrow-esquerda3">&#10094;</div>
-
-        <a href="detalhes_produto.php">
-            <div class="cards-mais-vendidos" id="carrossel-cards3">
+        <div class="arrow_campeoes" id="arrow-esquerda3">&#10094;</div>
 
         <a href="detalhes_produto.php">
-            <div class="cards-mais-vendidos" id="carrossel-cards2">
+            <div class="cards_campeoes" id="carrossel-cards3">
                 <?php
                 $talvez_voce_goste = [
                     [
@@ -80,9 +76,8 @@
             </div>
         </a>
 
-        <div class="arrow-mais-vendidos" id="arrow-direita2">&#10095;</div>
+        <div class="arrow_campeoes" id="arrow-direita3">&#10095;</div>
     </div>
-
 </body>
 
 </html>

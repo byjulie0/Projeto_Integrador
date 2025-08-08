@@ -1,4 +1,3 @@
-<!-- ANA JULIA -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,7 +16,6 @@
 <body>
 
     <section class="menu-pg-inicial">
-
         
         <div class="menu-content-pg-inicial">
             <button class="menu-toggle">
@@ -78,9 +76,6 @@
 
         </div>
     </section>
-
-    <!-- Fim do menu -->
-
 </body>
 
 </html>

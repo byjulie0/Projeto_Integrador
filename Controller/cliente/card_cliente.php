@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Card animais</title>
+  <title>Componente do card com informacoes dos animais</title>
   <link rel="stylesheet" href="../../view/public/css/cliente/card_produtos.css">
 </head>
 <body>

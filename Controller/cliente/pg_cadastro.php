@@ -1,5 +1,3 @@
-<!-- Maria  -->
-
 <?php include 'menu_cadastro.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">

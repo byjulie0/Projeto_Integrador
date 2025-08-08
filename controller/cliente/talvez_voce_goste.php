@@ -9,15 +9,14 @@
     <link rel="stylesheet" href="../../view/public/css/cliente/carrosseis_inicial.css">
 </head>
 
-<body class="body-mais-vendidos">
+<body>
+    <h1 class="pg_talvez_goste" id="talvez_goste">Talvez Você Goste</h1>
 
-    <h1 class="pg-mais-vendidos" id="mais_vendidos">Talvez Você Goste</h1>
-
-    <div class="carrossel-mais-vendidos">
-        <div class="arrow-mais-vendidos" id="arrow-esquerda2">&#10094;</div>
+    <div class="carrossel_talvez_goste">
+        <div class="arrow_talvez_goste" id="arrow-esquerda2">&#10094;</div>
 
         <a href="detalhes_produto.php">
-            <div class="cards-mais-vendidos" id="carrossel-cards2">
+            <div class="cards_talvez_goste" id="carrossel-cards2">
                 <?php
                 $talvez_voce_goste = [
                     [
@@ -76,9 +75,8 @@
             </div>
         </a>
 
-        <div class="arrow-mais-vendidos" id="arrow-direita2">&#10095;</div>
+        <div class="arrow_talvez_goste" id="arrow-direita2">&#10095;</div>
     </div>
-
 </body>
 
 </html>

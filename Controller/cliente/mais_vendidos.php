@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="../../view/public/css/cliente/carrosseis_inicial.css">
 </head>
 
-<body class="body-mais-vendidos">
+<body>
+    <h1 class="pg_mais_vendidos" id="mais_vendidos">Mais Vendidos</h1>
 
-    <h1 class="pg-mais-vendidos" id="mais_vendidos">Mais Vendidos</h1>
+    <div class="carrossel_mais_vendidos">
 
-    <div id="maisvendidos" class="carrossel-mais-vendidos">
-        <div class="arrow-mais-vendidos" id="arrow-esquerda">&#10094;</div>
+        <div class="arrow_mais_vendidos" id="arrow-esquerda">&#10094;</div>
+
         <a href="detalhes_produto.php">
-            <div class="cards-mais-vendidos" id="carrossel-cards">
+            <div class="cards_mais_vendidos" id="carrossel-cards">
                 <?php
                 $mais_vendidos = [
                     [
@@ -74,9 +75,9 @@
                 ?>
             </div>
         </a>
-        <div class="arrow-mais-vendidos" id="arrow-direita">&#10095;</div>
-    </div>
 
+        <div class="arrow_mais_vendidos" id="arrow-direita">&#10095;</div>
+    </div>
 </body>
 
 </html>
