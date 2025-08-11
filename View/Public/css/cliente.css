@@ -1624,7 +1624,7 @@ body {
   width: 75rem;
   height: auto;
   flex-direction: column;
-  margin: 100px 250px;
+  margin: 100px;
   align-items: center;
   padding: 60px;
   display: flex;
@@ -1761,8 +1761,9 @@ body {
 
 .form-colunas-cadastro {
   display: flex;
+  flex-direction: column;
   gap: 30px;
-  width: 100%;
+  max-width: 100%;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -1777,12 +1778,23 @@ body {
   max-width: 450px;
 }
 
+.form-coluna-superior{
+  display: flex;
+  gap: 20px;
+}
+
+.form-coluna-inferior{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .area-form-cadastro {
     flex-direction: column;
     height: auto;
     padding: 25px;
-    margin: 8% 5%;
+    margin: 10%;
     width: 90%;
   }
   
@@ -1792,15 +1804,17 @@ body {
     font-size: 1.5rem;
   }
   
-  .form-colunas-cadastro {
+  .form-coluna-superior {
     flex-direction: column;
-    gap: 15px;
+  }
+
+  .form-coluna-inferior{
+    transform: translateY(-10px);
   }
   
   .coluna-esquerda-cadastro,
   .coluna-direita-cadastro {
-    width: 100%;
-    padding: 10px;
+    max-width: 100%;
   }
   
   .input-form-cadastro {
