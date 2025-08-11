@@ -14,7 +14,7 @@
 <body>
     <div class="container_pagina_de_busca">
         <a class="btn-voltar" href="pg_inicial_cliente.php">
-            <i class="fas fa-arrow-left"></i>
+            <i class="fa-solid fa-chevron-left"></i>
         </a>
         <h2 class="h2-pag-busca">Itens Favoritados</h2>
 
