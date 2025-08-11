@@ -72,6 +72,12 @@ include 'menu_adm.php';
                     <button class="visualizar-dados-logout">Logout</button>
                 </a>
             </div>
+            <div class="botoes-math-adm">
+                z
+                <button class="logout-math-adm">Logout</button>
+            </div>
+        </section>
+
         </div>
     </main>
 </body>
