@@ -1,12 +1,12 @@
 <!-- Arthur -->
-<?php include 'menu_adm.php';?>
+<?php include 'menu_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil</title>
-    <link rel="stylesheet" href="../../view/public/css/cliente/meu_perfil_senha.css">
+    <link rel="stylesheet" href="../../view/public/css/adm/meu_perfil_senha.css">
 </head>
 <body class="body-arthura">
     <div class="header-arthura">
@@ -42,4 +42,4 @@
     </div>
 </body>
 </html>
-<?php include 'footer_adm.php';?>
+<?php include 'footer.php';?>

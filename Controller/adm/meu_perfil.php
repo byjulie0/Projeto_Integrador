@@ -1,6 +1,4 @@
-<?php
-include 'menu_adm.php';
-?>
+<?php include 'menu_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
  
@@ -9,7 +7,7 @@ include 'menu_adm.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Peril - Visualizar Dados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/adm/meu_perfil.css">
 </head>
 </head>
  
@@ -77,4 +75,4 @@ include 'menu_adm.php';
 </body>
 </html>
  
-<?php include 'footer_adm.php';?>
+<?php include 'footer.php';?>

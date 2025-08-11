@@ -1,18 +1,12 @@
-<!-- DENYEL -->
-
-<?php
-include 'menu_adm.php';
-?>
+<?php include 'menu_inicial.php';?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
-    <link rel="stylesheet" href="/PROJETO_INTEGRADOR/view/public/css/adm.css">
-    <link rel="stylesheet" href="/PROJETO_INTEGRADOR/view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/adm/verificar_administrar_pedido.css">
     <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid">
 </head>
 
@@ -66,6 +60,4 @@ include 'menu_adm.php';
 
 </html>
 
-<?php
-include 'footer_adm.php';
-?>
+<?php include 'footer.php';?>

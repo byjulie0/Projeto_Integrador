@@ -9,21 +9,21 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../view/public/css/cliente/pg_busca.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/pg_busca.css">
 </head>
 <body class="body_pg_busca">
     <div class="container_pagina_de_busca">
-            <a class="btn-voltar" href="pg_inicial_cliente.php" >
-                <i class="fas fa-arrow-left"></i>
-            </a>
+        <a class="btn-voltar" href="pg_inicial_cliente.php" >
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
         <h2 class="h2-pag-busca">Resultados</h2>
         <p>9 resultados encontrados para 'gado nelore'</p>
         <div class="filtros-container">
             <span class="filtros-titulo">Classificar por:</span>
-            <button class="filtro-btn" onclick="filtrar('relevancia')">Relevância</button>
-            <button class="filtro-btn" onclick="filtrar('mais_recente')">Mais Recente</button>
-            <button class="filtro-btn" onclick="filtrar('em_destaque')">Em Destaque</button>
-            <select class="filtro-select" onchange="filtrar(this.value)">
+            <button class="filtro-btn" data-filtro="relevancia">Relevância</button>
+            <button class="filtro-btn" data-filtro="mais_recente">Mais Recente</button>
+            <button class="filtro-btn" data-filtro="em_destaque">Em Destaque</button>
+            <select class="filtro-select">
                 <option value="preco">Preço</option>
                 <option value="menor_preco">Menor Preço</option>
                 <option value="maior_preco">Maior Preço</option>
@@ -43,54 +43,21 @@
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                 ];
-                foreach ($lotes as $lote) { ?>
-                    <div class="lote-card">
-                        <img src="<?php echo $lote['imagem']; ?>" alt="Lote de Gado">
-                        <div class="info-grid">
-                            <p>Peso:</p>
-                            <p><?php echo $lote['peso']; ?></p>
-                            <p>Raça:</p>
-                            <p><?php echo $lote['raca']; ?></p>
-                            <p>Genealogia:</p>
-                            <p><?php echo $lote['genealogia']; ?></p>
-                            <p>Idade:</p>
-                            <p><?php echo $lote['idade']; ?></p>
-                            <p class="preco">R$ <?php echo $lote['preco']; ?></p>
-                        </div>
-                    </div>
-                <?php } ?>
+                foreach ($lotes as $lote) {
+                    $imagem = $lote['imagem'];
+                    $peso = $lote['peso'];
+                    $raca = $lote['raca'];
+                    $genealogia = $lote['genealogia'];
+                    $idade = $lote['idade'];
+                    $preco = $lote['preco'];
+                    include 'card_busca.php';
+                }?>
             </div>
-            <button class="nav-button next" onclick="navegarLotes(1)">❯</button>
+            <button class="nav-button next">❯</button>
         </div>
     </div>
 
-    <script>
-        function filtrar(tipo) {
-            window.location.href = "?classificar=" + tipo;
-        }
-        
-        function navegarPagina(direcao) {
-            let paginaAtual = parseInt(document.querySelector(".pagina-atual").innerText);
-            let novaPagina = paginaAtual + direcao;
-            if (novaPagina > 0) {
-                document.querySelector(".pagina-atual").innerText = novaPagina;
-            }
-        }
-        
-        function navegarLotes(direcao) {
-            const container = document.getElementById('lotesContainer');
-            const scrollAmount = 300;
-            container.scrollBy({
-                left: direcao * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-    </script>
-
-    <footer>
-        <?php
-            include 'footer_cliente.php';
-        ?>
-    </footer>
+    <script src="../../view/public/js/pg_busca.js"></script>
 </body>
 </html>
+<?php include 'footer_cliente.php';?>

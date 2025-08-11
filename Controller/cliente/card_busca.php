@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Componente card favoritos</title>
-    <link rel="stylesheet" href="../../view/public/css/cliente/card_favoritos.css">
+    <title>Componente card Busca</title>
+    <link rel="stylesheet" href="../../view/public/css/cliente/card_busca.css">
 </head>
 <body>
     <div class="lote-card">
@@ -21,8 +21,6 @@
                 <p><?php echo $idade; ?></p>
                 <p class="preco">R$ <?php echo $preco; ?></p>
             </div>
-            <div class="botao-pag-fav"></div>
-            <div class="stars-pag-fav"><a href="#">★ Favorito</a></div>
         </a>
     </div>
 </body>
