@@ -7,25 +7,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Rooster - Busca</title>
+    <title>Página de Categorias</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../view/public/css/categoria_pagina.css">
 </head>
 <body class="body_pg_busca">
     <!-- Seção de resultados -->
     <div class="container_pagina_de_busca">
-            <a class="btn-voltar" href="pg_inicial_cliente.php" >
+        <div class="titulo-container">
+            <a class="btn-voltar" href="#" onclick="window.history.back(); return false;">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
-        <h2 class="h2-pag-busca">Resultados</h2>
-        <p>9 resultados encontrados para 'gado nelore'</p>
+            <h2 class="h2-pag-busca">Bovinos</h2>
+        </div>
         <div class="filtros-container">
             <span class="filtros-titulo">Classificar por:</span>
-            <button class="filtro-btn" onclick="filtrar('relevancia')">Relevância</button>
-            <button class="filtro-btn" onclick="filtrar('mais_recente')">Mais Recente</button>
-            <button class="filtro-btn" onclick="filtrar('em_destaque')">Em Destaque</button>
+            <button class="filtro-btn" onclick="filtrar('relevancia')">Angus</button>
+            <button class="filtro-btn" onclick="filtrar('mais_recente')">Brahman</button>
+            <button class="filtro-btn" onclick="filtrar('em_destaque')">Brangus</button>
+            <button class="filtro-btn" onclick="filtrar('relevancia')">Hereford</button>
+            <button class="filtro-btn" onclick="filtrar('mais_recente')">Nelore</button>
+            <button class="filtro-btn" onclick="filtrar('em_destaque')">Senepol</button>
             <select class="filtro-select" onchange="filtrar(this.value)">
                 <option value="preco">Preço</option>
                 <option value="menor_preco">Menor Preço</option>
@@ -82,7 +86,7 @@
         
         function navegarLotes(direcao) {
             const container = document.getElementById('lotesContainer');
-            const scrollAmount = 300; // Ajuste conforme necessário
+            const scrollAmount = 300;
             container.scrollBy({
                 left: direcao * scrollAmount,
                 behavior: 'smooth'
