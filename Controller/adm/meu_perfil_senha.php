@@ -36,8 +36,8 @@
                 <a href="meu_perfil_editar.php"><button type="button" class="view-button-arthura">Visualizar meus dados</button></a>
             </form>
         </div>
-        <a href="login_adm.php">
-            <button type="button" class="logout-button-arthura">Logout</button>
+        <a href="/Projeto_Integrador/controller/adm/logout_adm.php">
+    <button type="button" class="logout-button-arthura">Logout</button>
         </a>
     </div>
 </body>
