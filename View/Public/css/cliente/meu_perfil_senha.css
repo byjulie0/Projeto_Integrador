@@ -1,129 +1,156 @@
 @import url("../cliente.css");
+
+/* Cabeçalho */
 .header-arthura {
     display: flex;
     align-items: center;
-    gap: 2%;
-    padding: 2% 5%;
-    flex-wrap: wrap;
+    padding: 2% 30%;
 }
-.back-arrow-arthura {
-    color: #4CAF50;
-    font-size: clamp(1.0rem, 4vw, 1.5rem);
+
+.visualizar-dados-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary-1);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.a-style {
     text-decoration: none;
+    color: var(--color-primary-1);
+    display: flex;
+    align-items: center;
 }
-.title-arthura {
-    font-size: clamp(1.1rem, 5vw, 1.6rem);
-    font-weight: bold;
-    color: #333;
-}
+
+/* Container principal */
 .wrapper-arthura {
     width: 90%;
     max-width: 40%;
     min-width: 300px;
     margin: 0 auto;
 }
+
+/* Cards */
 .card-arthura {
-    background-color: white;
-    border-radius: 4%;
-    padding: 6%;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 30px;
     margin-bottom: 5%;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 1% 3% rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
+
+/* Perfil */
 .profile-arthura {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0;
 }
+
 .avatar-arthura {
-    width: 20%;
-    aspect-ratio: 1/1;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    background-color: #4a6741;
-    margin-right: 5%;
+    background-color: var(--color-primary-1);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
+
 .avatar-icon-arthura {
     width: 60%;
     height: 60%;
     fill: white;
 }
+
 .user-info-arthura {
-    flex: 1;
-    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.user-name-arthura,.user-email-arthura {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: #333;
-}
+
 .user-name-arthura {
-    font-weight: bold;
-    font-size: 1rem;
-    margin-bottom: 2%;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-primary-1);
 }
+
 .user-email-arthura {
-    font-size: 0.9rem;
-    color: #666;
+    font-size: 0.95rem;
+    color: #6c757d;
 }
+
+/* Títulos e textos */
 .section-title-arthura {
     font-weight: bold;
     font-size: 1rem;
-    color: #333;
-    margin-bottom: 0%;
+    color: var(--color-primary-1);
 }
+
 .section-text-arthura {
     color: #666;
     font-size: 0.9rem;
     margin-bottom: 1%;
     line-height: 1.4;
 }
+
+/* Input senha */
 .password-input-arthura {
     width: 100%;
     padding: 2%;
-    border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 1%;
     font-size: 0.95rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.875rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    background-color: #f8f9fa;
+    transition: all 0.2s;
+    width: 100%;
 }
+.password-input-arthura:hover{
+    outline: none;
+    border-color: #4CAF50;
+    background-color: #fff;
+}
+
+/* Botão visualizar dados */
 .view-button-arthura {
-    background-color: #4CAF50;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 10px 100px;
+    margin-top: 10px;
+    margin-left: 15%;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--color-botao-op-Concluido);
+    color: var(--color-primary-7);
+    transition: 0.3s ease;
+}
+
+.view-button-arthura:hover {
+    background-color: var(--color-primary-7);
+    color: var(--color-botao-op-Concluido);
+}
+
+/* Botão logout */
+.logout-button-arthura {
+    background-color: var(--color-botao-op-Cancelar);
     color: #fff;
     border: none;
-    border-radius: 8px;
-    padding: clamp(0.6em, 2.5%, 1em);
-    width: 100%;
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.view-button-arthura:hover {
-    background-color: #45a049;
-    transform: scale(1.02);
-}
-.logout-button-arthura {
-    background-color: #f8d7da;
-    color: #c0392b;
-    border: none;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     padding: clamp(0.5em, 2%, 1em);
     width: clamp(50%, 60%, 200px);
     font-size: clamp(0.9rem, 2.5vw, 1rem);
     cursor: pointer;
-    margin: 1.0em auto;
+    margin: 1em auto;
     display: block;
     transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.logout-button-arthura:hover {
-    background-color: #f5b5b5;
-    transform: scale(1.02);
-}
-a{
-    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1)
 }
