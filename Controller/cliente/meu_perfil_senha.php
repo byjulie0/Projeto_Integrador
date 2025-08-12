@@ -1,3 +1,4 @@
+<!-- Arthur -->
 <?php include 'menu_pg_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -8,10 +9,20 @@
     <link rel="stylesheet" href="../../view/public/css/cliente/meu_perfil_senha.css">
 </head>
 <body class="body-arthura">
+
+    <!-- Cabeçalho -->
     <div class="header-arthura">
-        <h2 class="visualizar-dados-title"><a href="#" onclick="window.history.back(); return false";><i class="bi bi-chevron-left"></i></a>Meu Perfil</h2>
+        <h2 class="visualizar-dados-title">
+            <a class="a-style" href="#" onclick="window.history.back(); return false;">
+                <i class="bi bi-chevron-left"></i>
+            </a>
+            Meu Perfil
+        </h2>
     </div>
+
     <div class="wrapper-arthura">
+
+        <!-- Card de Perfil -->
         <div class="card-arthura">
             <div class="profile-arthura">
                 <div class="avatar-arthura">
@@ -20,25 +31,34 @@
                     </svg>
                 </div>
                 <div class="user-info-arthura">
-                    <div class="user-name-arthura">Nome</div>
-                    <div class="user-email-arthura">Email</div>
+                    <div class="user-name-arthura">Fulano da Silva Soares</div>
+                    <div class="user-email-arthura">sample123@gmail.com</div>
                 </div>
             </div>
         </div>
 
+        <!-- Card de segurança -->
         <div class="card-arthura">
             <div class="section-title-arthura">Meus dados</div>
-            <div class="section-text-arthura">Para sua segurança, insira sua senha para visualizar o dados:</div>
+            <div class="section-text-arthura">
+                Para sua segurança, insira sua senha para visualizar os dados:
+            </div>
             
             <form>
                 <input type="password" class="password-input-arthura" placeholder="Digite sua senha:">
-                <a href="meu_perfil_editar.php"><button type="button" class="view-button-arthura">Visualizar meus dados</button></a>
+                <a href="meu_perfil_editar.php">
+                    <button type="button" class="view-button-arthura">Visualizar meus dados</button>
+                </a>
             </form>
         </div>
-        <a href="login_adm.php">
+
+        <!-- Botão de Logout -->
+        <a href="../cliente/logout.php">
             <button type="button" class="logout-button-arthura">Logout</button>
         </a>
+
     </div>
+
 </body>
 </html>
 <?php include 'footer_cliente.php';?>
