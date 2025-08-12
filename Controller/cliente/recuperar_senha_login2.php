@@ -1,8 +1,50 @@
-<!-- Denyel -->
 <?php
 include 'menu_recuperar_senha.php';
-?>
 
+// Função para gerar código aleatório
+function gerarCodigoRecuperacao($tamanho = 8) {
+    $caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    return substr(str_shuffle(str_repeat($caracteres, $tamanho)), 0, $tamanho);
+}
+
+$mensagem = '';
+
+// Se o formulário foi enviado
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email_usuario = $_POST['email'] ?? '';
+
+    if (filter_var($email_usuario, FILTER_VALIDATE_EMAIL)) {
+        $codigo = gerarCodigoRecuperacao();
+
+        // Salva no banco de dados
+        try {
+            $pdo = new PDO("mysql:host=localhost;dbname=sua_base", "usuario", "senha");
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $pdo->prepare("INSERT INTO codigos_recuperacao (email, codigo, criado_em) VALUES (?, ?, NOW())");
+            $stmt->execute([$email_usuario, $codigo]);
+        } catch (PDOException $e) {
+            die("Erro ao salvar no banco: " . $e->getMessage());
+        }
+
+        // Configura o e-mail
+        $assunto = "Código de Recuperação";
+        $mensagem_email = "Seu código de recuperação é: $codigo";
+        $headers = "From: suporte@seudominio.com\r\n";
+        $headers .= "Reply-To: suporte@seudominio.com\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
+
+        // Envia o e-mail
+        if (mail($email_usuario, $assunto, $mensagem_email, $headers)) {
+            $mensagem = "Código enviado para o seu e-mail!";
+        } else {
+            $mensagem = "Erro ao enviar o e-mail. Verifique a configuração do servidor.";
+        }
+    } else {
+        $mensagem = "E-mail inválido!";
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,27 +57,28 @@ include 'menu_recuperar_senha.php';
 </head>
 <body class="recuperar_senha_codigo_body">
 
-    <main class="recuperar_senha_codigo_main">
-        <section class="recuperar_senha_codigo_section">
-            <a href="#" onclick="window.history.back(); return false;" class="recuperar_senha_codigo_seta_voltar">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-            <div class="recuperar_senha_codigo">
-                <div class="recuperar_senha_codigo_content">
-                    <h1>Código</h1>
-                    <h3>Insira o código de 6 digitos que lhe enviamos</h3>
-                    <form action="recuperar_senha_login3.php" class="recuperar_senha_codigo_formulario">
-                        <input type="text" inputmode="numeric" pattern="[A-aZ-z0-9]+" maxlength="8" required>
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
+<main class="recuperar_senha_codigo_main">
+    <section class="recuperar_senha_codigo_section">
+        <a href="#" onclick="window.history.back(); return false;" class="recuperar_senha_codigo_seta_voltar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <div class="recuperar_senha_codigo">
+            <div class="recuperar_senha_codigo_content">
+                <h1>Recuperar Senha</h1>
+                <h3>Digite seu e-mail para receber o código</h3>
+
+                <?php if (!empty($mensagem)) echo "<p>$mensagem</p>"; ?>
+
+                <form method="POST">
+                    <input type="email" name="email" placeholder="Digite seu e-mail" required>
+                    <button type="submit">Enviar Código</button>
+                </form>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 
 </body>
 </html>
 
-<?php
-include 'footer_cliente.php';
-?>
+<?php include 'footer_cliente.php'; ?>
