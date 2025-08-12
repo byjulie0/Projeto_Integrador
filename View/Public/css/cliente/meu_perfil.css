@@ -1,272 +1,149 @@
 @import url("../cliente.css");
 .body-visualizar-dados {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    font-family: poppins, sans-serif;
-    text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
 }
+
 .main-visualizar-dados {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 20px 5%;
-    margin: 0 auto;
-    text-decoration: none;
+  width: 100%;
+  max-width: 900px;
+  padding: 30px 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
+
 .visualizar-dados-title {
-    font-size: 1.5rem;
-    color: var(--color-primary-1);
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 25px;
-    width: 90%;
-    text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-1);
+  margin: 0 0 20px 0;
+  text-align: left;
 }
-.a-style{
-    text-decoration: none;
-    color: var(--color-primary-1);
+
+.a-style {
+  text-decoration: none;
+  color: var(--color-primary-1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
-.visualizar-dados-title i {
-    color: var(--color-primary-1);
-    margin-right: 10px;
-    font-weight: bold;
-    text-decoration: none;
-}
+
 .visualizar-dados-card {
-    background-color: white;
-    border-radius: 0.625rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
 }
-.visualizar-dados-nome-email-img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    text-align: center;
-    width: 100%;
-    border-bottom: 1px solid #e0e0e0;
-    box-sizing: border-box;
+
+.visualizar-dados-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
-.visualizar-dados-img-perfil-div {
-    margin-bottom: 15px;
-}
+
 .visualizar-dados-img-perfil-div i {
-    font-size: 60px;
-    color: var(--color-primary-1);
+  font-size: 90px;
+  color: var(--color-primary-1);
+  margin-right: 20px;
 }
-.visualizar-dados-nome-email {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
+
 .visualizar-dados-nome {
-    font-size: 1.2rem;
-    color: var(--color-primary-1);
-    margin-bottom: 5px;
-    word-break: break-word;
+  font-size: 1.6rem;
+  color: var(--color-primary-1);
+  margin: 0;
 }
-.visualizarados-email {
-    font-size: 0.9rem;
-    color: var(--color-primary-1);
-    word-break: break-word;
+
+.visualizar-dados-email {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-top: 5px;
 }
-.visualizar-dados-geral {
-    margin-bottom: 25px;
-    width: 100%;
-    box-sizing: border-box;
-}
+
 .visualizar-dados-geral-title {
-    font-size: 1.3rem;
-    color: var(--color-primary-1);
-    margin-bottom: 15px;
-    text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--color-primary-1);
 }
-.visualizar-dados-geral0 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+
+.visualizar-dados-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
-.vizualizar-dados-geral-nome,
-.vizualizar-dados-geral-telefone,
-.vizualizar-dados-geral-email,
-.vizualizar-dados-geral-endereco,
-.vizualizar-dados-geral-datanasc {
-    margin-bottom: 12px;
-    font-size: 0.95rem;
-    color: var(--color-primary-1);
-    word-break: break-word;
+
+.visualizar-dados-grid p {
+  margin: 0;
+  font-size: 1rem;
+  color: #495057;
+  display: flex;
+  align-items: center;
 }
-.vizualizar-dados-geral-nome label,
-.vizualizar-dados-geral-telefone label,
-.vizualizar-dados-geral-email label,
-.vizualizar-dados-geral-endereco label,
-.vizualizar-dados-geral-datanasc label {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-primary-1);
+
+.visualizar-dados-grid i {
+  color: var(--color-primary-1);
+  margin-right: 8px;
+  font-size: 1.1rem;
 }
+
 .visualizar-dados-area-botoes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    padding-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
 }
+
 .visualizar-dados-editar,
 .visualizar-dados-logout {
-    cursor: pointer;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 0.625rem;
-    font-size: 0.95rem;
-    width: 100%;
-    max-width: 250px;
-    box-sizing: border-box;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+
 .visualizar-dados-editar {
-    color: var(--color-primary-7);
-    background-color: var(--color-botao-op-Concluido);
+  background-color: var(--color-botao-op-Concluido);
+  color: var(--color-primary-7);
 }
+
 .visualizar-dados-editar:hover {
-    color: var(--color-botao-op-Concluido);
-    background-color: var(--color-primary-7);
+  background-color: var(--color-primary-7);
+  color: var(--color-botao-op-Concluido);
 }
+
 .visualizar-dados-logout {
-    color: #fab7b7;
-    background-color: var(--color-botao-op-Cancelar);
+  background-color: var(--color-botao-op-Cancelar);
+  color: #fff;
 }
+
 .visualizar-dados-logout:hover {
-    color: var(--color-botao-op-Cancelar);
-    background-color: #fab7b7;
+  background-color: #f8d7da;
+  color: #c0392b;
 }
-@media (min-width: 360px) {
-    .main-visualizar-dados {
-      padding: 20px 7%;
-      max-width: 360px;
-    }
-   
-    .visualizar-dados-nome-email-img {
-      flex-direction: row;
-      text-align: left;
-      align-items: center;
-      justify-content: flex-start;
-    }
-   
-    .visualizar-dados-img-perfil-div {
-      margin-bottom: 0;
-      margin-right: 15px;
-    }
-   
-    .visualizar-dados-nome-email {
-      align-items: flex-start;
-      text-align: left;
-    }
-}
-@media (min-width: 390px) {
-    .main-visualizar-dados {
-      max-width: 390px;
-    }
-   
-    .visualizar-dados-title {
-      font-size: 1.6rem;
-    }
-}
-@media (min-width: 768px) {
-    .main-visualizar-dados {
-      max-width: 700px;
-      padding: 30px 40px;
-    }
-   
-    .visualizar-dados-title {
-      font-size: 2rem;
-      text-align: left;
-    }
-   
-    .visualizar-dados-img-perfil-div i {
-      font-size: 70px;
-    }
-   
-    .visualizar-dados-nome {
-      font-size: 1.5rem;
-    }
-   
-    .visualizarados-email {
-      font-size: 1rem;
-    }
-   
-    .visualizar-dados-geral-title {
-      font-size: 1.6rem;
-      text-align: left;
-    }
-   
-    .visualizar-dados-geral0 {
-      flex-direction: row;
-      gap: 30px;
-    }
-   
-    .visualizar-dados-geral1,
-    .visualizar-dados-geral2 {
-      width: 50%;
-    }
-   
-    .visualizar-dados-area-botoes {
-      flex-direction: row;
-      justify-content: flex-end;
-    }
-   
-    .visualizar-dados-editar,
-    .visualizar-dados-logout {
-      width: auto;
-      max-width: none;
-    }
-}
-@media (min-width: 1024px) {
-    .main-visualizar-dados {
-      max-width: 900px;
-    }
-   
-    .visualizar-dados-img-perfil-div i {
-      font-size: 80px;
-    }
-}
-@media (min-width: 1440px) {
-    .main-visualizar-dados {
-      max-width: 1000px;
-      padding: 40px 50px;
-    }
-   
-    .visualizar-dados-title {
-      font-size: 2.25rem;
-    }
-}
-@media (min-width: 1920px) {
-    .main-visualizar-dados {
-      max-width: 1200px;
-      padding: 50px 60px;
-    }
-   
-    .visualizar-dados-title {
-      font-size: 2.5rem;
-    }
-   
-    .visualizar-dados-img-perfil-div i {
-      font-size: 90px;
-    }
-   
-    .visualizar-dados-nome {
-      font-size: 2rem;
-    }
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .visualizar-dados-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .visualizar-dados-img-perfil-div {
+    margin-bottom: 10px;
+  }
+  .visualizar-dados-area-botoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
