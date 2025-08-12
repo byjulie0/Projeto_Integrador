@@ -19,9 +19,6 @@ include 'menu_pg_inicial.php';
             <a class="a-style" href="meu_perfil_senha.php"><i class="bi bi-chevron-left"></i>Meu Perfil</a>  
           </h2>
     <main class="main-visualizar-dados">
- 
-       
-       
         <div class="visualizar-dados-card">
             <div class="visualizar-dados-nome-email-img">
                 <div class="visualizar-dados-img-perfil-div">
@@ -72,6 +69,6 @@ include 'menu_pg_inicial.php';
 </html>
  
 <?php
-        include 'footer_cliente.php';
-        ?>
+  include 'footer_cliente.php';
+?>
  
