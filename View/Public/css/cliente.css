@@ -4396,14 +4396,16 @@ input[type="checkbox"] {
 
 
 /* Inicio do CSS da página de busca*/
-.body_pg_busca {
+.body_pg_busca,
+.body_pg_campeoes {
   padding-top: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-} 
+}
 
-.container_pagina_de_busca {
+.container_pagina_de_busca,
+.container_pagina_campeoes {
   background: white;
   padding: 25px;
   border-radius: 10px;
@@ -4414,7 +4416,8 @@ input[type="checkbox"] {
   margin-top: 35px;
 }
 
-.h2-pag-busca {
+.h2-pag-busca,
+.h2-pag-campeoes {
   margin: 0;
   display: inline-block;
   padding-bottom: 13px;
@@ -4467,7 +4470,8 @@ input[type="checkbox"] {
   background-size: 12px;
   padding-right: 28px;
 }
-.lotes_container_pagina_de_busca #lotesContainer{
+.lotes_container_pagina_de_busca #lotesContainer,
+.lotes_container_pagina_campeoes #lotesContainer {
   display: flex;
   width: 100%;
 }
@@ -4540,7 +4544,8 @@ input[type="checkbox"] {
   justify-content: center;
 }
 
-.lotes_container_pagina_de_busca {
+.lotes_container_pagina_de_busca,
+.lotes_container_pagina_campeoes {
   display: flex;
   gap: 10px;
   padding: 15px 0;

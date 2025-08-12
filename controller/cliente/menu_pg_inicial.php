@@ -44,7 +44,7 @@
                     </ul>
 
                 </li>
-                <a href="#campeoesdomes" class="nav-item-pg-inicial">Campeões do mês</a>
+                <a href="campeoes.php" class="nav-item-pg-inicial">Campeões do mês</a>
                 <a href="#maisvendidos" class="nav-item-pg-inicial">Mais vendidos</a>
             </div>
 

@@ -24,12 +24,12 @@
         </div>
         <div class="filtros-container">
             <span class="filtros-titulo">Classificar por:</span>
-            <button class="filtro-btn" onclick="filtrar('relevancia')">Angus</button>
-            <button class="filtro-btn" onclick="filtrar('mais_recente')">Brahman</button>
-            <button class="filtro-btn" onclick="filtrar('em_destaque')">Brangus</button>
-            <button class="filtro-btn" onclick="filtrar('relevancia')">Hereford</button>
-            <button class="filtro-btn" onclick="filtrar('mais_recente')">Nelore</button>
-            <button class="filtro-btn" onclick="filtrar('em_destaque')">Senepol</button>
+            <button class="filtro-btn" onclick="filtrar('angus')">Angus</button>
+            <button class="filtro-btn" onclick="filtrar('brahman')">Brahman</button>
+            <button class="filtro-btn" onclick="filtrar('bangus')">Brangus</button>
+            <button class="filtro-btn" onclick="filtrar('hereford')">Hereford</button>
+            <button class="filtro-btn" onclick="filtrar('nelore')">Nelore</button>
+            <button class="filtro-btn" onclick="filtrar('senepol')">Senepol</button>
             <select class="filtro-select" onchange="filtrar(this.value)">
                 <option value="preco">Preço</option>
                 <option value="menor_preco">Menor Preço</option>
