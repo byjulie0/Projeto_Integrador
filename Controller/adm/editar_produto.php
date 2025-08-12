@@ -1,19 +1,11 @@
-<!-- LARA -->
-
 <!-- cod php para o btn avançar -->
 <?php
 $mostrar_popup_sucesso = false;
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
     $mostrar_popup_sucesso = true;
 }
 ?>
-
-<!-- cod php para o btn avançar -->
-
-<?php
-include 'menu_adm.php';
-?>
+<?php include 'menu_inicial.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +14,7 @@ include 'menu_adm.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Produto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../../view/public/css/adm.css">
+    <link rel="stylesheet" href="../../view/public/css/adm/editar_produto.css">
     <script defer src="../../view/js/adicionar_produto_adm.js"></script>
 </head>
 
@@ -256,5 +248,5 @@ include 'menu_adm.php';
 
 </html>
 <?php
-include 'footer_adm.php';
+include 'footer.php';
 ?>

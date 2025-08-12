@@ -1,8 +1,4 @@
-<!-- ANA JULIA -->
-
-<?php
-include 'menu_adm.php';
-?>
+<?php include 'menu_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,10 +8,9 @@ include 'menu_adm.php';
     <title>Atualização de produtos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../../view/public/css/adm.css">
-    <script defer src="../../view/js/toogle.js"></script>
-    <script defer src="../../view/js/menu-pg-inicial.js"></script>
+    <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script defer src="../../view/js/toogle.js"></script>
 </head>
 
 <body>
@@ -92,5 +87,5 @@ include 'menu_adm.php';
     </section>
 </body>
 </html>
-<?php include 'footer_adm.php'; ?>
+<?php include 'footer.php'; ?>
 

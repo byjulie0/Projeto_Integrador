@@ -57,14 +57,14 @@
                         <span class="nav-text-pg-inicial">Perfil</span>
                     </a>
                     <ul class="submenu_cliente">
-                        <li><a href="meu_perfil.php">Login</a></li>
+                        <li><a href="login.php">Login</a></li>
                         <li><a href="meu_perfil.php">Meu perfil</a></li>
                         <li><a href="#">Minhas compras</a></li>
                         <li><a href="pg_favoritos.php">Produtos favoritados</a></li>
                     </ul>
 
                 </li>
-                <a href="notificacao.php" class="nav-btns-pg-inicial">
+                <a href="pg_notificacao.php" class="nav-btns-pg-inicial">
                     <i class="bi bi-bell"></i>
                     <span class="nav-text-pg-inicial">Notificações</span>
                 </a>

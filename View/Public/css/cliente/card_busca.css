@@ -1,0 +1,64 @@
+.lote-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+.lote-card:hover {
+    transform: translateY(-5px);
+}
+.lote-card img {
+    width: 100%;
+    border-radius: 5px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+    text-align: right;
+}
+.info-grid p {
+    margin: 0;
+    font-size: 0.9em;
+}
+.info-grid p:nth-child(odd) {
+    font-weight: bold;
+    text-align: left;
+}
+.preco {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2a7f40;
+}
+
+@media (min-width: 1920px) {
+    .lote-card img {
+        height: 220px;
+    }
+}
+@media (min-width: 1024px) {
+  .lote-card {
+    min-width: auto;
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+    .lote-card {
+        min-width: 220px;
+    }
+    .lote-card img {
+        height: 150px;
+    }
+    .lote-card {
+        min-width: 280px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+}
