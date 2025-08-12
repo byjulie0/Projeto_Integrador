@@ -1,6 +1,6 @@
 <?php include 'menu_inicial.php';?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <title>Adicionar Produto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../../view/public/css/adm/adicionar_produto.css">
-    <script defer src="../../view/js/adicionar_produto_adm.js"></script>
+    <script defer src="../../view/js/adm/adicionar_produto.js"></script>
 </head>
 
 <body class="body_add_product">
@@ -54,8 +54,7 @@
                         <span class="error-message">Por favor, selecione uma categoria</span>
                     </article>
                     <article class="input_product_subcategory">
-                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span
-                                class="mandatory_space">*</span></p>
+                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span class="mandatory_space">*</span></p>
                         <select name="subcategories" id="bovinos_breed" class="product_info_select subcategory-select"
                             required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>

@@ -1,12 +1,9 @@
 @import url("../cliente.css");
-
-/* Cabeçalho */
 .header-arthura {
     display: flex;
     align-items: center;
     padding: 2% 30%;
 }
-
 .visualizar-dados-title {
     font-size: 2rem;
     font-weight: 700;
@@ -16,23 +13,18 @@
     align-items: center;
     gap: 8px;
 }
-
 .a-style {
     text-decoration: none;
     color: var(--color-primary-1);
     display: flex;
     align-items: center;
 }
-
-/* Container principal */
 .wrapper-arthura {
     width: 90%;
     max-width: 40%;
     min-width: 300px;
     margin: 0 auto;
 }
-
-/* Cards */
 .card-arthura {
     background: #fff;
     border-radius: 1rem;
@@ -40,15 +32,12 @@
     margin-bottom: 5%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
-
-/* Perfil */
 .profile-arthura {
     display: flex;
     align-items: center;
     gap: 1rem;
     padding: 1rem 0;
 }
-
 .avatar-arthura {
     width: 70px;
     height: 70px;
@@ -59,45 +48,36 @@
     align-items: center;
     flex-shrink: 0;
 }
-
 .avatar-icon-arthura {
     width: 60%;
     height: 60%;
     fill: white;
 }
-
 .user-info-arthura {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .user-name-arthura {
     font-weight: 700;
     font-size: 1.1rem;
     color: var(--color-primary-1);
 }
-
 .user-email-arthura {
     font-size: 0.95rem;
     color: #6c757d;
 }
-
-/* Títulos e textos */
 .section-title-arthura {
     font-weight: bold;
     font-size: 1rem;
     color: var(--color-primary-1);
 }
-
 .section-text-arthura {
     color: #666;
     font-size: 0.9rem;
     margin-bottom: 1%;
     line-height: 1.4;
 }
-
-/* Input senha */
 .password-input-arthura {
     width: 100%;
     padding: 2%;
@@ -119,8 +99,6 @@
     border-color: #4CAF50;
     background-color: #fff;
 }
-
-/* Botão visualizar dados */
 .view-button-arthura {
     border: none;
     border-radius: 0.5rem;
@@ -138,8 +116,6 @@
     background-color: var(--color-primary-7);
     color: var(--color-botao-op-Concluido);
 }
-
-/* Botão logout */
 .logout-button-arthura {
     background-color: var(--color-botao-op-Cancelar);
     color: #fff;

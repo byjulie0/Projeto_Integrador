@@ -1,68 +1,68 @@
 /* Inicio de CSS de privacidade e segurança*/
 @import url("../cliente.css");
 .whole-page-content-pes {
-    width: 100%;
-    height: 100vh;
-    padding: 50px 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .page-title-pes {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 15px;
-    margin-bottom: 30px;
-  }
-  .go-back-pes  {
-    color: var(--color-primary-1);
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-  }
-  .go-back-pes i {
-    color: inherit;
-  }
-  .title-area-pes {
-    width: auto;
-    margin-top: 0;
-  }
-  .title-pes {
-    color: var(--color-primary-1);
-    font-size: 24px;
-    text-align: left;
-    margin: 0;
-    white-space: nowrap;
-  }
-  .terms-pes {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  .term-pes {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: left;
-  }
-  .term-title-pes {
-    color: var(--color-primary-1);
-    font-weight: 700;
-    font-size: 18px;
-  }
-  .term-text-pes {
-    color: var(--color-primary-1);
-    font-size: 16px;
-  }
+  width: 100%;
+  height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.page-title-pes {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.go-back-pes  {
+  color: var(--color-primary-1);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.go-back-pes i {
+  color: inherit;
+}
+.title-area-pes {
+  width: auto;
+  margin-top: 0;
+}
+.title-pes {
+  color: var(--color-primary-1);
+  font-size: 24px;
+  text-align: left;
+  margin: 0;
+  white-space: nowrap;
+}
+.terms-pes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.term-pes {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+.term-title-pes {
+  color: var(--color-primary-1);
+  font-weight: 700;
+  font-size: 18px;
+}
+.term-text-pes {
+  color: var(--color-primary-1);
+  font-size: 16px;
+}
 @media (min-width: 360px) and (max-width: 389px) {
     .whole-page-content-pes {
       padding: 25px 20px;

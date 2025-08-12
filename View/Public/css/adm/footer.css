@@ -1,106 +1,107 @@
+@import url("../adm.css");
 .footer_adm {
-    width: 100%;
-    background-color: var(--color-primary-1);
-    font-family: "Poppins", sans-serif;
-    padding: 40px 0;
-    color: var(--color-detalhes-16);
+  width: 100%;
+  background-color: var(--color-primary-1);
+  font-family: "Poppins", sans-serif;
+  padding: 40px 0;
+  color: var(--color-detalhes-16);
 }
 .grid_container_footer_adm {
-    display: grid;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    padding: 0 20px;
-    box-sizing: border-box;
+  display: grid;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .footer_adm_item {
-    padding: 0 15px;
-    margin-bottom: 20px;
+  padding: 0 15px;
+  margin-bottom: 20px;
 }
 .footer_adm_item h3 {
-    color: var(--color-detalhes-16);
-    font-size: 14px;
-    margin-bottom: 15px;
+  color: var(--color-detalhes-16);
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 .footer_adm_item hr {
-    border: none;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-    margin: 10px 0 15px;
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 10px 0 15px;
 }
 .footer_adm_item a {
-    text-decoration: none;
-    color: var(--color-detalhes-16);
-    display: block;
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
-    font-size: 14px;
+  text-decoration: none;
+  color: var(--color-detalhes-16);
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+  font-size: 14px;
 }
 .footer_adm_item a:hover {
-    text-decoration: underline;
-    color: white;
+  text-decoration: underline;
+  color: white;
 }
 #tab1_adm_footer address {
-    font-style: normal;
-    margin-bottom: 12px;
-    line-height: 1.5;
-    font-size: 12px;
+  font-style: normal;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 12px;
 }
 #tab2_adm_footer a {
-    display: inline-block;
-    font-size: 22px;
-    margin-right: 15px;
-    margin-bottom: 15px;
+  display: inline-block;
+  font-size: 22px;
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
 @media (max-width: 767px) {
-    .grid_container_footer_adm {
-      grid-template-columns: 1fr;
-      padding: 0 15px;
-    }
-    
-    .footer_adm_item {
-      padding: 0;
-      margin-bottom: 25px;
-    }
-    
-    #tab2_adm_footer a {
-      font-size: 20px;
-      margin-right: 12px;
-    }
+  .grid_container_footer_adm {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+  
+  .footer_adm_item {
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  
+  #tab2_adm_footer a {
+    font-size: 20px;
+    margin-right: 12px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-    .grid_container_footer_adm {
-      grid-template-columns: repeat(1, 1fr);
-    }
+  .grid_container_footer_adm {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 @media (min-width: 1024px) {
-    .grid_container_footer_adm {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .grid_container_footer_adm {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (min-width: 1200px) {
-    .grid_container_footer_adm {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .grid_container_footer_adm {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media (min-width: 1440px) {
-    .grid_container_footer_adm {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-    }
-    
-    .footer_adm_item h3 {
-      font-size: 16px;
-    }
-    
-    .footer_adm_item a,
-    .footer_adm_item address {
-      font-size: 14px;
-    }
-    
-    #tab2_adm_footer a {
-      font-size: 26px;
-    }
+  .grid_container_footer_adm {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  
+  .footer_adm_item h3 {
+    font-size: 16px;
+  }
+  
+  .footer_adm_item a,
+  .footer_adm_item address {
+    font-size: 14px;
+  }
+  
+  #tab2_adm_footer a {
+    font-size: 26px;
+  }
 }

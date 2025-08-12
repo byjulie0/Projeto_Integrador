@@ -8,9 +8,9 @@
     <title>Atualização de produtos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <script defer src="../../view/js/toogle.js"></script>
+    <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
+    <script defer src="../../view/js/adm/toogle.js"></script>
 </head>
 
 <body>
