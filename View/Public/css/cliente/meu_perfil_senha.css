@@ -4,6 +4,10 @@
     align-items: center;
     padding: 2% 30%;
 }
+.main-meu-perfil-senha{
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
 .visualizar-dados-title {
     font-size: 2rem;
     font-weight: 700;
@@ -80,53 +84,62 @@
 }
 .password-input-arthura {
     width: 100%;
-    padding: 2%;
-    border-radius: 5px;
-    margin-bottom: 1%;
-    font-size: 0.95rem;
-    font-size: 0.875rem;
-    font-weight: 500;
     padding: 0.875rem 1rem;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
     font-size: 0.875rem;
     background-color: #f8f9fa;
     transition: all 0.2s;
-    width: 100%;
 }
-.password-input-arthura:hover{
-    outline: none;
+.password-input-arthura:hover {
     border-color: #4CAF50;
     background-color: #fff;
 }
+
+/* Container dos botões */
+.botoes-arthura {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: end;
+    
+}
+
+/* Botão visualizar dados */
 .view-button-arthura {
+    flex: 1;
     border: none;
     border-radius: 0.5rem;
-    padding: 10px 100px;
-    margin-top: 10px;
-    margin-left: 15%;
+    padding: 10px;
     font-size: 1rem;
     cursor: pointer;
     background-color: var(--color-botao-op-Concluido);
     color: var(--color-primary-7);
     transition: 0.3s ease;
 }
-
 .view-button-arthura:hover {
     background-color: var(--color-primary-7);
     color: var(--color-botao-op-Concluido);
 }
 .logout-button-arthura {
+    flex: 1;
     background-color: var(--color-botao-op-Cancelar);
     color: #fff;
     border: none;
     border-radius: 0.5rem;
-    padding: clamp(0.5em, 2%, 1em);
-    width: clamp(50%, 60%, 200px);
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    padding: 10px;
+    font-size: 1rem;
     cursor: pointer;
-    margin: 1em auto;
-    display: block;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1)
+    transition: 0.3s ease;
+}
+.logout-button-arthura:hover {
+    background-color: #f8d7da;
+    color: #c0392b;
+}
+
+/* Responsividade: no celular, os botões ficam empilhados */
+@media (max-width: 600px) {
+    .botoes-arthura {
+        flex-direction: column;
+    }
 }

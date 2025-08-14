@@ -25,7 +25,17 @@
     font-weight: 600;
     color: #333;
     word-break: break-word;
+
 }
+.client-edit-title-titulo{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary-1);
+    margin: 0 0 20px 0;
+    text-align: left;
+
+}
+
 .client-edit-form {
     background-color: #fff;
     border-radius: 0.75rem;

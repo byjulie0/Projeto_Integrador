@@ -14,10 +14,7 @@
     <main class="client-edit-main">
         <div class="client-edit-container">
             <div class="client-edit-header">
-                <button class="client-edit-back-btn">
-                    <a href="meu_perfil_senha.php" class="client-edit-password-btn"><i class="bi bi-chevron-left"></i></a>
-                </button>
-                <h1 class="client-edit-title">Editar meus dados</h1>
+                <h1 class="client-edit-title-titulo"><i class="bi bi-chevron-left" onclick="window.history.back(); return false;"></i>Editar meus dados</h1>
             </div>
 
             <form class="client-edit-form">
