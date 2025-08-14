@@ -77,3 +77,20 @@
 </html>
 
 <?php include 'footer_cliente.php'; ?>
+
+
+<?php foreach ($produtos as $p): ?>
+    <div class="produto">
+        <h3><?= htmlspecialchars($p['nome']) ?></h3>
+        <p>Preço: R$ <?= number_format($p['preco'], 2, ',', '.') ?></p>
+
+        <form action="/controllers/CarrinhoController.php?action=adicionar" method="POST">
+            <input type="hidden" name="id" value="<?= $p['id'] ?>">
+            <input type="hidden" name="nome" value="<?= htmlspecialchars($p['nome']) ?>">
+            <input type="hidden" name="preco" value="<?= $p['preco'] ?>">
+            <button type="submit">Adicionar ao Carrinho</button>
+        </form>
+    </div>
+<?php endforeach; ?>
+
+   
