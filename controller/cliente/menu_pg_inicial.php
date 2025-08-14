@@ -39,11 +39,12 @@
                         <li><a href="#">Bovinos</a></li>
                         <li><a href="#">Equinos</a></li>
                         <li><a href="#">Galináceos</a></li>
+                        <li><a href="#">Campeões</a></li>
                         <li><a href="#">Produtos gerais</a></li>
                     </ul>
 
                 </li>
-                <a href="#campeoesdomes" class="nav-item-pg-inicial">Campeões do mês</a>
+                <a href="campeoes.php" class="nav-item-pg-inicial">Campeões do mês</a>
                 <a href="#maisvendidos" class="nav-item-pg-inicial">Mais vendidos</a>
             </div>
 
@@ -63,7 +64,6 @@
                     <ul class="submenu_cliente">
                         <li><a href="meu_perfil.php">Login</a></li>
                         <li><a href="meu_perfil.php">Meu perfil</a></li>
-                        <li><a href="#">Minhas compras</a></li>
                         <li><a href="pg_favoritos.php">Produtos favoritados</a></li>
                     </ul>
 

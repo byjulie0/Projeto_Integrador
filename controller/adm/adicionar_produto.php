@@ -19,7 +19,7 @@ include 'menu_adm.php';
     <div class="area_add_product">
 
         <div class="title_page_add_product">
-            <a href="#" class="arrow_add_product">
+            <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
                 <i class="fa-solid fa-chevron-left">
                 </i>
             </a>

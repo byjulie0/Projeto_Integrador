@@ -19,7 +19,7 @@ include 'menu_adm.php';
 <body class="verificar_administrar_pedidos_body">
     <main class="verificar_administrar_pedidos_content">
         <section class="verificar_administrar_pedidos_sessao_identificar">
-            <a href="" class="verificar_administrar_pedidos_sessao_seta_voltar">
+            <a href="#" onclick="window.history.back(); return false;"class="verificar_administrar_pedidos_sessao_seta_voltar">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <div class="verificar_administrar_pedidos_sessao_bloco">

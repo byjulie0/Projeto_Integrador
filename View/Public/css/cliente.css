@@ -1056,6 +1056,7 @@ body {
 
 /* Final de detalhes do produto Anna Laura*/
 
+/* Inicio de inserir senha alterar dados*/
 .header-arthura {
   display: flex;
   align-items: center;
@@ -1624,7 +1625,7 @@ body {
   width: 75rem;
   height: auto;
   flex-direction: column;
-  margin: 100px 250px;
+  margin: 100px;
   align-items: center;
   padding: 60px;
   display: flex;
@@ -1761,8 +1762,9 @@ body {
 
 .form-colunas-cadastro {
   display: flex;
+  flex-direction: column;
   gap: 30px;
-  width: 100%;
+  max-width: 100%;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -1777,12 +1779,23 @@ body {
   max-width: 450px;
 }
 
+.form-coluna-superior{
+  display: flex;
+  gap: 20px;
+}
+
+.form-coluna-inferior{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .area-form-cadastro {
     flex-direction: column;
     height: auto;
     padding: 25px;
-    margin: 8% 5%;
+    margin: 10%;
     width: 90%;
   }
   
@@ -1792,15 +1805,17 @@ body {
     font-size: 1.5rem;
   }
   
-  .form-colunas-cadastro {
+  .form-coluna-superior {
     flex-direction: column;
-    gap: 15px;
+  }
+
+  .form-coluna-inferior{
+    transform: translateY(-10px);
   }
   
   .coluna-esquerda-cadastro,
   .coluna-direita-cadastro {
-    width: 100%;
-    padding: 10px;
+    max-width: 100%;
   }
   
   .input-form-cadastro {
@@ -2179,14 +2194,15 @@ body {
 }
 
 .carrossel-mais-vendidos { /*card carrosel*/
+  background-color: #2a7f40;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 2% 0 5%;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 85%;
+  margin: auto;
+  margin-bottom: 30px;
 }
 
 .arrow-mais-vendidos {
@@ -4381,15 +4397,16 @@ input[type="checkbox"] {
 
 
 /* Inicio do CSS da página de busca*/
-.body_pg_busca {
-  /* background-color: #f8f8f8; */
+.body_pg_busca,
+.body_pg_campeoes {
   padding-top: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-} 
+}
 
-.container_pagina_de_busca {
+.container_pagina_de_busca,
+.container_pagina_campeoes {
   background: white;
   padding: 25px;
   border-radius: 10px;
@@ -4400,7 +4417,8 @@ input[type="checkbox"] {
   margin-top: 35px;
 }
 
-.h2-pag-busca {
+.h2-pag-busca,
+.h2-pag-campeoes {
   margin: 0;
   display: inline-block;
   padding-bottom: 13px;
@@ -4453,7 +4471,8 @@ input[type="checkbox"] {
   background-size: 12px;
   padding-right: 28px;
 }
-.lotes_container_pagina_de_busca #lotesContainer{
+.lotes_container_pagina_de_busca #lotesContainer,
+.lotes_container_pagina_campeoes #lotesContainer {
   display: flex;
   width: 100%;
 }
@@ -4526,7 +4545,8 @@ input[type="checkbox"] {
   justify-content: center;
 }
 
-.lotes_container_pagina_de_busca {
+.lotes_container_pagina_de_busca,
+.lotes_container_pagina_campeoes {
   display: flex;
   gap: 10px;
   padding: 15px 0;
@@ -5003,7 +5023,6 @@ label {
 }
 
 /* Fim popup login */
-
 
 /* Começo do componente de card */
 .card_cliente {

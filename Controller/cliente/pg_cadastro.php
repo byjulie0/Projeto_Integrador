@@ -26,24 +26,32 @@
                 <form action="#" class="form-cadastro" id="formCadastro">
 
                     <div class="form-colunas-cadastro">
-                        <div class="coluna-esquerda-cadastro">
-                            <input type="text" name="nome" required placeholder="Nome Completo*"
-                                class="input-form-cadastro">
-                            <input type="text" name="cpf_cnpj" required class="input-form-cadastro"
-                                placeholder="CPF/CNPJ*">
-                            <input type="email" name="email" required class="input-form-cadastro required"
-                                placeholder="Email*">
-                            <span class="span-required" id="emailError">O email deve ter o padrão
-                                email@empresa.com.br</span>
+
+                        <div class="form-coluna-superior">
+                            <div class="coluna-esquerda-cadastro">
+                                <input type="text" name="nome" required placeholder="Nome Completo*"
+                                    class="input-form-cadastro">
+                                <input type="text" name="cpf_cnpj" required class="input-form-cadastro"
+                                    placeholder="CPF/CNPJ*">
+                                <input type="email" name="email" required class="input-form-cadastro required"
+                                    placeholder="Email*">
+                                <span class="span-required" id="emailError">O email deve ter o padrão
+                                    email@empresa.com.br</span>
+                            </div>
+                            <div class="coluna-direita-cadastro">
+                                <input type="date" name="data_nascimento" required class="input-form-cadastro"
+                                    placeholder="Data de Nascimento*">
+                                <input type="text" name="telefone" class="input-form-cadastro" placeholder="Telefone">
+                                <input type="password" name="senha" required class="input-form-cadastro"
+                                    placeholder="Senha*">
+                                <span class="span-required" id="senhaError">A senha deve ter pelo menos 6 caracteres</span>
+                            </div>
                         </div>
-                        <div class="coluna-direita-cadastro">
-                            <input type="date" name="data_nascimento" required class="input-form-cadastro"
-                                placeholder="Data de Nascimento*">
-                            <input type="text" name="telefone" class="input-form-cadastro" placeholder="Telefone">
-                            <input type="password" name="senha" required class="input-form-cadastro"
-                                placeholder="Senha*">
-                            <span class="span-required" id="senhaError">A senha deve ter pelo menos 6 caracteres</span>
+                        
+                        <div class="form-coluna-inferior">
+                            <input type="password" name="senha-confirmar" placeholder="Confirmar Senha*" class="input-form-cadastro" required>
                         </div>
+
                     </div>
 
                 </form>

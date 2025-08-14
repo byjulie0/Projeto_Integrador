@@ -68,10 +68,16 @@ include 'menu_adm.php';
                 <a href="meu_perfil_senha.php">
                     <button class="visualizar-dados-editar">Editar meus dados</button>
                 </a>
-                <a href="login_adm.php">
+                <a href="/Projeto_Integrador/controller/adm/logout_adm.php">
                     <button class="visualizar-dados-logout">Logout</button>
                 </a>
             </div>
+            <div class="botoes-math-adm">
+                z
+                <button class="logout-math-adm">Logout</button>
+            </div>
+        </section>
+
         </div>
     </main>
 </body>
