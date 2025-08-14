@@ -83,17 +83,19 @@
     line-height: 1.4;
 }
 .password-input-arthura {
-    width: 100%;
     padding: 0.875rem 1rem;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
     font-size: 0.875rem;
     background-color: #f8f9fa;
     transition: all 0.2s;
+    width: 100%;
 }
-.password-input-arthura:hover {
+.password-input-arthura:focus {
+    outline: none;
     border-color: #4CAF50;
     background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
 }
 
 /* Container dos botões */

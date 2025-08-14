@@ -13,7 +13,7 @@
     <section id="section_formulario_senha">
         <div class="espaco_forms_senha">
             <div class="title_div">
-                <a href="#" onclick="window.history.back(); return false"; class="setinha_forms_mudar_senha">
+                <a href="#" onclick="window.history.back(); return false" class="setinha_forms_mudar_senha">
                     <i class="bi bi-chevron-left"></i>
                 </a>
                 <h3 class="titulo_forms_senha">Alterar senha</h3>
@@ -27,6 +27,8 @@
                 <input type="password" class="form_confirma_senha">
             </div>
         </div>
+
+        <!-- Div de confirmação com os dois elementos lado a lado -->
         <div class="div_confirmacao">
             <a href="recuperar_senha_login1.php" class="esqueceu_senha">Esqueceu a senha?</a>
             <?php
