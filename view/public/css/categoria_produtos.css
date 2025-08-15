@@ -26,7 +26,7 @@
   --input-bg: #F9FAFB;
   
 }
-.body_categoria_galinaceos{
+.body_categoria_produtos{
   padding-top: 0;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@
   font-family: 'Poppins', sans-serif;
 } 
 
-.container_categoria_galinaceos {
+.container_categoria_produtos {
     background: white;
     padding: 25px;
     border-radius: 10px;
@@ -46,14 +46,14 @@
     margin-top: 35px;
 }  
 
-.titulo-container_categoria_galinaceos {
+.titulo-container_categoria_produtos {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
 }
 
-.h2_categoria_galinaceos {
+.h2_categoria_produtos {
   margin: 0;
   padding: 0;
   display: inline-block;
@@ -74,7 +74,7 @@
 }
 
 /* Seção de filtros ajustada */
-.filtros_container_categoria_galinaceos {
+.filtros_container_categoria_produtos {
   margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -87,14 +87,14 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.filtros_titulo_categoria_galinaceos {
+.filtros_titulo_categoria_produtos {
   font-weight: bold;
   font-size: 0.95rem;
   white-space: nowrap;
   margin-right: 5px;
 }
 
-.filtro-btn, .filtro_select_categoria_galinaceos {
+.filtro_btn_produtos, .filtro_select_categoria_produtos {
   padding: 6px 12px;
   border: 1px solid #e0e0e0;
   background: white;
@@ -105,12 +105,12 @@
   white-space: nowrap;
 }
 
-.filtro-btn:hover, .filtro_select_categoria_galinaceos:hover {
+.filtro_btn_produtos:hover, .filtro_select_categoria_produtos:hover {
   background: #f7f7f7;
   border-color: #ccc;
 }
 
-.filtro_select_categoria_galinaceos {
+.filtro_select_categoria_produtos {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -121,7 +121,7 @@
   padding-right: 28px;
 }
 
-.lotes_wrapper_categoria_galinaceos {
+.lotes_wrapper_categoria_produtos {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -129,7 +129,7 @@
   justify-content: center;
 }
 
-.lotes_container_categoria_galinaceos {
+.lotes_container_categoria_produtos {
   display: flex;
   gap: 10px;
   padding: 15px 0;
@@ -137,7 +137,7 @@
 }
 
 /* Card de lote */
-.lote_card_categoria_galinaceos {
+.lote_card_categoria_produtos {
   background: white;
   padding: 15px;
   border-radius: 10px;
@@ -146,11 +146,11 @@
   transition: transform 0.3s;
 }
 
-.lote_card_categoria_galinaceos:hover {
+.lote_card_categoria_produtos:hover {
   transform: translateY(-5px);
 }
 
-.lote_card_categoria_galinaceos img {
+.lote_card_categoria_produtos img {
   width: 100%;
   border-radius: 5px;
   height: 180px;
@@ -158,24 +158,24 @@
   margin-bottom: 10px;
 }
 
-.info_grid_categoria_galinaceos {
+.info_grid_categoria_produtos {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px 10px;
   text-align: right;
 }
 
-.info_grid_categoria_galinaceos p {
+.info_grid_categoria_produtos p {
   margin: 0;
   font-size: 0.9em;
 }
 
-.info_grid_categoria_galinaceos p:nth-child(odd) {
+.info_grid_categoria_produtos p:nth-child(odd) {
   font-weight: bold;
   text-align: left;
 }
 
-.preco_categoria_galinaceos {
+.preco_categoria_produtos {
   grid-column: 1 / -1;
   text-align: center;
   margin-top: 8px;
@@ -184,7 +184,7 @@
   color: #2a7f40;
 }
 
-.nav_button_categoria_galinaceos {
+.nav_button_categoria_produtos {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -194,23 +194,23 @@
 
 /* Media Queries para responsividade */
 @media (max-width: 767px) {
-  .container_categoria_galinaceos {
+  .container_categoria_produtos {
     padding: 15px;
     margin-top: 25px;
     margin-bottom: 30px;
   }
   
-  .filtros_container_categoria_galinaceos {
+  .filtros_container_categoria_produtos {
     gap: 8px;
     padding: 10px;
   }
   
-  .filtro-btn, .filtro_select_categoria_galinaceos {
+  .filtro_btn_produtos, .filtro_select_categoria_produtos {
     padding: 5px 10px;
     font-size: 0.85rem;
   }
   
-  .lotes_container_categoria_galinaceos {
+  .lotes_container_categoria_produtos {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     flex-direction: column;
@@ -218,46 +218,46 @@
     padding-bottom: 20px;
   }
   
-  .lote_card_categoria_galinaceos {
+  .lote_card_categoria_produtos {
     min-width: 220px;
   }
   
-  .lote_card_categoria_galinaceos img {
+  .lote_card_categoria_produtos img {
     height: 150px;
   }
   
-  .nav_button_categoria_galinaceos {
+  .nav_button_categoria_produtos {
     display: none;
   }
   
-  .lote_card_categoria_galinaceos {
+  .lote_card_categoria_produtos {
     min-width: 280px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 }
 
 @media (min-width: 1024px) {
-  .lotes_container_categoria_galinaceos {
+  .lotes_container_categoria_produtos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow-x: visible;
     gap: 25px;
   }
   
-  .lote_card_categoria_galinaceos {
+  .lote_card_categoria_produtos {
     min-width: auto;
     width: 100%;
   }
   
-  .nav_button_categoria_galinaceos {
+  .nav_button_categoria_produtos {
     display: none;
   }
   
-  .lotes_wrapper_categoria_galinaceos {
+  .lotes_wrapper_categoria_produtos {
     overflow-x: visible; 
   }
   
-  .lotes_containe_categoria_galinaceos {
+  .lotes_containe_categoria_produtos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
@@ -265,36 +265,36 @@
 }
 
 @media (min-width: 1440px) {
-  .lotes_container_categoria_galinaceos {
+  .lotes_container_categoria_produtos {
     grid-template-columns: repeat(3, 1fr);
   }
   
-  .container_categoria_galinaceos {
+  .container_categoria_produtos {
     max-width: 1300px;
   }
 }
 
 @media (min-width: 1920px) {
-  .lotes_container_categoria_galinaceos {
+  .lotes_container_categoria_produtos{
     grid-template-columns: repeat(4, 1fr);
   }
   
-  .container_categoria_galinaceos {
+  .container_categoria_produtos {
     max-width: 1600px;
   }
   
-  .lote_card_categoria_galinaceos img {
+  .lote_card_categoria_produtos img {
     height: 220px;
   }
 }
 
 @media (max-width: 359px) {
-  .filtros_container_categoria_galinaceos {
+  .filtros_container_categoria_produtos {
     flex-direction: column;
     align-items: flex-start;
   }
   
-  .filtro-btn, .filtro_select_categoria_galinaceos {
+  .filtro_btn_produtos, .filtro_select_categoria_produtos {
     width: 100%;
     border-radius: 5px;
   }
