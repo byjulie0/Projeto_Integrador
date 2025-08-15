@@ -36,15 +36,15 @@
                     <a href="#pg_inicial_categorias" class="nav-item-pg-inicial">Categorias</a>
 
                     <ul class="submenu_cliente">
-                        <li><a href="#">Bovinos</a></li>
-                        <li><a href="#">Equinos</a></li>
-                        <li><a href="#">Galináceos</a></li>
-                        <li><a href="#">Campeões</a></li>
-                        <li><a href="#">Produtos gerais</a></li>
+                        <li><a href="categoria_bovinos.php">Bovinos</a></li>
+                        <li><a href="categoria_equinos.php">Equinos</a></li>
+                        <li><a href="categoria_galinaceos.php">Galináceos</a></li>
+                        <li><a href="categoria_campeoes.php">Campeões</a></li>
+                        <li><a href="categoria_produtos.php">Produtos gerais</a></li>
                     </ul>
 
                 </li>
-                <a href="campeoes.php" class="nav-item-pg-inicial">Campeões do mês</a>
+                <a href="categoria_campeoes.php" class="nav-item-pg-inicial">Campeões do mês</a>
                 <a href="#maisvendidos" class="nav-item-pg-inicial">Mais vendidos</a>
             </div>
 
