@@ -34,9 +34,9 @@
   text-align: left;
 }
 .area_forms{
-    justify-content: center;
-    align-items: end;
-    gap: 16px;
+  justify-content: center;
+  align-items: end;
+  gap: 16px;
 }
 .area_forms input{
     width: 30rem;
@@ -58,8 +58,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  flex-wrap: nowrap; /* impede quebra de linha */
+  flex-wrap: nowrap; 
   width: 100%;
+  margin-top: 15px;
 }
 .form_senha_atual,.form_nova_senha,.form_confirma_senha{
   padding: 0.875rem 1rem;
@@ -87,8 +88,8 @@
   text-decoration: underline;
   padding: 0.5rem 0;
   flex-shrink: 0;
-  width: auto !important; /* impede largura total */
-  margin: 0; /* remove margens extras */
+  width: auto !important;
+  margin: 0; 
 }
 .esqueceu_senha:hover {
   color: #45a049;
@@ -101,13 +102,13 @@
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  width: auto !important; /* impede largura total */
-  padding: 0.5rem 1rem; /* ajusta tamanho ao conteúdo */
+  width: auto !important; 
+  padding: 0.5rem 1rem; 
 }
 
 @media (max-width: 1024px) {
     #section_formulario_senha {
-      width: 70%;
+      width: 80%;
     }
   
     .area_forms input {
@@ -117,6 +118,12 @@
     .esqueceu_senha,
     .salvar_nova_senha {
       width: 100%;
+    }
+    .form_senha_atual,.form_nova_senha,.form_confirma_senha{
+      width: 100%;
+    }
+    .espaco_forms_senha{
+      width: 75%;
     }
 }
 @media (max-width: 768px) {
@@ -129,25 +136,23 @@
     }
   
     .title_div {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       gap: 10px;
     }
   
     .p_form_senha {
       font-size: 1.1rem;
     }
-  
-    .div_confirmacao {
-      flex-direction: column;
-      gap: 1rem;
-      height: auto;
-      align-items: center;
-    }
-  
     .esqueceu_senha,
     .salvar_nova_senha {
       width: 100%;
       text-align: center;
+    }
+    .form_senha_atual,.form_nova_senha,.form_confirma_senha{
+      width: 100%;
+    }
+    .espaco_forms_senha{
+      width: 75%;
     }
 }
 @media (max-width: 425px) {
@@ -200,10 +205,32 @@
     }
   }
   
-  @media (max-width: 360px) {
-    .salvar_nova_senha {
-      width: 7rem;
-      height: 1.9rem;
-      font-size: 0.8rem;
-    }
+@media (max-width: 360px) {
+  .salvar_nova_senha {
+    width: 7rem;
+    height: 1.9rem;
+    font-size: 0.8rem;
+  }
+  .div_confirmacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .setinha_forms_mudar_senha{
+    display: none;
+  }
+  .area_forms input {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .title_div {
+    font-size: 1.1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .area-forms{
+    margin-bottom: 10px;
+  }
 }
