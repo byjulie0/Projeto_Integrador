@@ -3,11 +3,10 @@ include '../../model/DB/conexao.php'; // sua conexão $con
 
 // Recebendo dados do formulário
 $user_nome = $_POST['user_nome'] ?? '';
-$email = $_POST['email'] ?? '';
 $senha = $_POST['senha'] ?? '';
 
 // Preparar a consulta
-$sql = "SELECT * FROM user WHERE user_nome=? AND email=? AND senha=?";
+$sql = "SELECT * FROM user WHERE BINARY user_nome=? AND BINARY senha=?";
 $stmt = $con->prepare($sql);
 
 if (!$stmt) {
@@ -15,7 +14,7 @@ if (!$stmt) {
 }
 
 // Vincular parâmetros
-$stmt->bind_param("sss", $user_nome, $email, $senha);
+$stmt->bind_param("ss", $user_nome, $senha);
 
 // Executar
 $stmt->execute();

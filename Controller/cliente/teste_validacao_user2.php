@@ -13,10 +13,7 @@ include '../../model/DB/conexao.php';
 <form action="teste_validacao_user.php" method="POST">
     <label>Nome:</label>
     <input type="text" name="user_nome" required><br><br>
-
-    <label>Email:</label>
-    <input type="email" name="email" required><br><br>
-
+    
     <label>Senha:</label>
     <input type="password" name="senha" required><br><br>
 
