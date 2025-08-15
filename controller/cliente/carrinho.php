@@ -184,7 +184,6 @@ include 'menu_pg_inicial.php';
         </section>
     </div>
     <script>
-    // Quando clicar no botão "Excluir"
     document.querySelectorAll(".delete-item-carrinho").forEach(function(botao) {
         botao.addEventListener("click", function() {
             // Acha o card do produto
@@ -196,7 +195,7 @@ include 'menu_pg_inicial.php';
         });
     });
 
-    // Atualiza o resumo (quantidade e total)
+    
     function atualizarResumoCarrinho() {
         let produtos = document.querySelectorAll(".product-card-carrinho");
         let totalItens = produtos.length;
