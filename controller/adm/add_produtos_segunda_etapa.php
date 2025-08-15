@@ -33,20 +33,15 @@
             </div>
             <div class="add_product_details_second">
                 <div class="product_details_collumn_second">
-                    <div class="input_product_price_second">
-                        <p class="product_title_info_second">Preço<span class="mandatory_space_second">*</span></p>
-                        <input type="number" placeholder="Valor" class="input_product_info_second" required min="0.01"
-                            step="0.01">
-                        <span class="error-message_second">Informe um valor válido (maior que zero)</span>
-                    </div>
                     <div class="input_product_category_second">
                         <p class="product_title_info_second">Sexo<span class="mandatory_space_second">*</span></p>
                         <select name="categories" id="categories" class="product_info_select_second" required>
-                            <option value="" selected disabled>Selecione um gênero</option>
+                            <option value="" selected disabled>Selecione uma opção</option>
                             <option value="bovinos" class="product_categories">Masculino</option>
                             <option value="equinos" class="product_categories">Feminino</option>
+                            <option value="bovinos" class="product_categories">Não se aplica (Produto)</option>
                         </select>
-                        <span class="error-message">Por favor, selecione um gênero</span>
+                        <span class="error-message">Por favor, selecione uma opção</span>
                     </div>
                 </div>
             </div>
