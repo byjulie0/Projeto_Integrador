@@ -114,5 +114,14 @@ CREATE TABLE item (
     FOREIGN KEY (produto_id_produto) REFERENCES produto(id_produto)
 );
 
-show tables;
+-- Tabela: carrinho
+CREATE TABLE carrinho (
+    id_item INT AUTO_INCREMENT PRIMARY KEY,
+    id_produto INT NOT NULL,
+    quantidade INT NOT NULL DEFAULT 1,
+    selecionado TINYINT(1) DEFAULT 0,
+    id_cliente INT NOT NULL,
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto)
+);
 
+show tables;
