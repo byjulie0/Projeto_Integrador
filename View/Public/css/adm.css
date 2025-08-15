@@ -2082,21 +2082,14 @@ main {
   color: var(--color-primary-1);
 }
 
-.verificar_administrar_pedidos_sessao_seta_voltar {
-  color: var(--color-primary-1);
-  font-size: 1.7rem;
-  cursor: pointer;
-  position: relative;
-  top: -2vh;
-  margin-left: -100%;
-}
 
-.verificar_administrar_pedidos_sessao_bloco_info h1, h3{
+
+.verificar_administrar_pedidos_sessao_bloco_info h3{
   color: var(--color-primary-1);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   max-width: 100%;
   width: 87%;
-  font-weight: 500;
+  font-weight: 300;
   text-align: left;
 }
 
@@ -2311,10 +2304,27 @@ main {
   margin: 40px;
 }
 
+.verificar_administrar_pedidos_sessao_seta_voltar_div{
+  display: flex;
+  height: 28px;
+  align-items: center;
+  margin-bottom: 2%;
+}
+.verificar_administrar_pedidos_sessao_seta_voltar_div h1{
+  color: var(--color-primary-1);
+  font-weight: 500;
+  margin-left: 5px;
+}
+.verificar_administrar_pedidos_sessao_seta_voltar{
+  margin-left: 0;
+  font-size: 1.7rem;
+  display: flex;
+  text-decoration: none;
+  height: 100%;
+}
 .verificar_administrar_pedidos_sessao_seta_voltar i {
   z-index: 2;
   cursor: pointer;
-  position: relative;
   left: 7%;
 }
 
@@ -2366,10 +2376,6 @@ main {
   left: 8%;
 }
 
-.verificar_administrar_pedidos_sessao_seta_voltar {
-  font-size: 1.7rem;
-}
-
 .verificar_administrar_pedidos_sessao_titulo_destaque {
   font-weight: 600;
 }
@@ -2393,10 +2399,8 @@ main {
 
 .verificar_administrar_pedidos_sessao_bloco {
   display: grid;
-  grid-template-columns: 2fr 2fr;
   grid-template-rows: auto auto;
   width: 100%;
-  background-color: #6099662e;
   padding-bottom: 20px;
   border-radius: 15px;
 }
@@ -2414,8 +2418,6 @@ main {
 
 .verificar_administrar_pedidos_sessao_bloco i {
   color: var(--color-primary-1);
-  margin-top: -40%;
-  margin-left: 180%;
   font-size: 1.6rem;
   transform: scaleX(-1);
   cursor: pointer;
