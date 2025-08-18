@@ -21,7 +21,7 @@ include 'menu_adm.php';
     <section id="gerenciar-clientes">
         <div id="page-title-gerenciar-clientes">
             <div id="title-gerenciar-clientes">
-                <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="#" onclick="window.history.back(); return false;"><i class="fa-solid fa-chevron-left"></i></a>
                 <h3>Gerenciar clientes cadastrados</h3>
             </div>
             <div id="subtitle-gerenciar-clientes">

@@ -1,5 +1,5 @@
 <!-- Arthur -->
-<?php include 'menu_pg_inicial.php';?>
+<?php include 'menu_adm.php';?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -21,27 +21,25 @@
                     </svg>
                 </div>
                 <div class="user-info-arthura">
-                    <div class="user-name-arthura">Nome</div>
-                    <div class="user-email-arthura">Email</div>
+                    <div class="user-name-arthura">Jonh Rooster</div>
+                    <div class="user-email-arthura">ID do vendedor: 0000</div>
                 </div>
             </div>
         </div>
 
         <div class="card-arthura">
             <div class="section-title-arthura">Meus dados</div>
-            <div class="section-text-arthura">Para sua segurança, insira sua senha para visualizar o dados:</div>
+            <div class="section-text-arthura">Para sua segurança, insira sua senha para visualizar os dados:</div>
             
             <form>
                 <input type="password" class="password-input-arthura" placeholder="Digite sua senha:">
                 <a href="meu_perfil_editar.php"><button type="button" class="view-button-arthura">Visualizar meus dados</button></a>
             </form>
         </div>
-
-        <a href="../cliente/logout.php">
-            <button type="button" class="logout-button-arthura">Logout</button>
+        <a href="/Projeto_Integrador/controller/adm/logout_adm.php">
+    <button type="button" class="logout-button-arthura">Logout</button>
         </a>
-
     </div>
 </body>
 </html>
-<?php include 'footer_cliente.php';?>
+<?php include 'footer_adm.php';?>

@@ -1,7 +1,5 @@
-<?php
-include 'menu_pg_inicial.php';
-?>
-
+<?php include 'menu_pg_inicial.php';?>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -13,57 +11,57 @@ include 'menu_pg_inicial.php';
 </head>
 
 <body>
-    <main class="main">
-        <div class="container">
-            <div class="page-header">
-                <button class="back-btn">
-                    <a href="meu_perfil_senha.php" class="setinha_forms_mudar_senha"><i
-                            class="bi bi-chevron-left"></i></a>
+    <main class="client-edit-main">
+        <div class="client-edit-container">
+            <div class="client-edit-header">
+                <button class="client-edit-back-btn">
+                    <a href="meu_perfil_senha.php" class="client-edit-password-btn"><i class="bi bi-chevron-left"></i></a>
                 </button>
-                <h1 class="page-title">Editar meus dados</h1>
+                <h1 class="client-edit-title">Editar meus dados</h1>
             </div>
 
-            <form class="edit-form">
-                <div class="form-grid">
-                    <div class="form-column">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Nome:</label>
-                            <input type="text" id="name" class="form-input" placeholder="Fulano da Silva Pinto Soares">
+            <form class="client-edit-form">
+                <div class="client-edit-grid">
+                    <div class="client-edit-column">
+                        <div class="client-edit-field-group">
+                            <label for="nome" class="client-edit-label">Nome:</label>
+                            <input type="text" id="cliente_nome" class="client-edit-input" placeholder="Fulano da Silva Pinto Soares">
                         </div>
 
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Telefone:</label>
-                            <input type="tel" id="phone" class="form-input" placeholder="+55 67 XXXXX-XXXX">
+                        <div class="client-edit-field-group">
+                            <label for="phone" class="client-edit-label">Telefone:</label>
+                            <input type="tel" id="telefone" class="client-edit-input" placeholder="+55 67 XXXXX-XXXX">
                         </div>
 
-                        <div class="form-group">
-                            <label for="email" class="form-label">E-mail:</label>
-                            <input type="email" id="email" class="form-input" placeholder="sample123@gmail.com">
+                        <div class="client-edit-field-group">
+                            <label for="email" class="client-edit-label">E-mail:</label>
+                            <input type="email" id="email" class="client-edit-input" placeholder="sample123@gmail.com">
                         </div>
                     </div>
 
-                    <div class="form-column">
-                        <div class="form-group">
-                            <label for="address" class="form-label">Endereço:</label>
-                            <input type="text" id="address" class="form-input"
-                                placeholder="Rua General Exemplo do Exemplo, 24...">
+                    <div class="client-edit-column">
+                        <div class="client-edit-field-group">
+                            <label for="address" class="client-edit-label">Endereço:</label>
+                            <input type="text" id="endereco" class="client-edit-input" placeholder="Rua General Exemplo do Exemplo, 24...">
                         </div>
 
-                        <div class="form-group">
-                            <label for="birthdate" class="form-label">Data de nascimento:</label>
-                            <input type="text" id="birthdate" class="form-input" placeholder="XX/XX/XXXX">
+                        <div class="client-edit-field-group">
+                            <label for="birthdate" class="client-edit-label">Data de nascimento:</label>
+                            <input type="text" id="data_nasc" class="client-edit-input" placeholder="XX/XX/XXXX">
                         </div>
                     </div>
                 </div>
 
-                <div class="warning-text">
+                <div class="client-edit-warning">
                     <strong>Atenção:</strong> Sua idade só pode ser alterada 1 única vez, caso seja detectado que o
                     usuário se registrou em nosso site antes da maioridade (18 anos, em território brasileiro) ou a
                     idade inserida seja menor que 18, sua conta será suspensa!
                 </div>
 
-                <div class="form-actions">
-                    <button type="button" class="change-password-btn">Alterar senha</button>
+                <div class="client-edit-actions">
+                    <a href="formulario_altera_senha.php">
+                        <button type="button" class="client-edit-password-btn">Alterar senha</button>
+                    </a>
                     <?php
                     $texto = "Salvar";
                     include 'botao_cliente.php';
@@ -75,6 +73,5 @@ include 'menu_pg_inicial.php';
 </body>
 
 </html>
-<?php
-include 'footer_cliente.php';
-?>
+
+<?php include 'footer_cliente.php';?>

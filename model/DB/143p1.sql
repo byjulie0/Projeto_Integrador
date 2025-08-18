@@ -31,6 +31,20 @@ CREATE TABLE cliente (
     FOREIGN KEY (tipo_user_idtipo_user) REFERENCES tipo_user(idtipo_user)
 );
 
+-- Tabela: adm
+CREATE TABLE adm (
+    id_adm INT AUTO_INCREMENT PRIMARY KEY,
+    adm_nome VARCHAR(100),
+    email VARCHAR(150),
+    data_nasc DATE,
+    telefone CHAR(9),
+    senha VARCHAR(100),
+    endereco_idendereco INT,
+    tipo_user_idtipo_user INT,
+    FOREIGN KEY (endereco_idendereco) REFERENCES endereco(id_endereco),
+    FOREIGN KEY (tipo_user_idtipo_user) REFERENCES tipo_user(idtipo_user)
+);
+
 -- Tabela: user
 CREATE TABLE user (
     id_user INT AUTO_INCREMENT PRIMARY KEY,
@@ -100,5 +114,14 @@ CREATE TABLE item (
     FOREIGN KEY (produto_id_produto) REFERENCES produto(id_produto)
 );
 
-show tables;
+-- Tabela: carrinho
+CREATE TABLE carrinho (
+    id_item INT AUTO_INCREMENT PRIMARY KEY,
+    id_produto INT NOT NULL,
+    quantidade INT NOT NULL DEFAULT 1,
+    selecionado TINYINT(1) DEFAULT 0,
+    id_cliente INT NOT NULL,
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto)
+);
 
+show tables;

@@ -1,4 +1,4 @@
-<?php
+<?php 
     include 'menu_pg_inicial.php';
 ?>
 
@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Rooster - Busca</title>
+    <title>John Rooster - Campeões</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -16,21 +16,15 @@
 <body class="body_pg_busca">
     <!-- Seção de resultados -->
     <div class="container_pagina_de_busca">
-            <a class="btn-voltar" href="pg_inicial_cliente.php" >
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-        <h2 class="h2-pag-busca">Resultados</h2>
-        <p>9 resultados encontrados para 'gado nelore'</p>
+        <a class="btn-voltar" href="pg_inicial_cliente.php">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <h2 class="h2-pag-busca">Campeões</h2>
         <div class="filtros-container">
             <span class="filtros-titulo">Classificar por:</span>
-            <button class="filtro-btn" onclick="filtrar('relevancia')">Relevância</button>
-            <button class="filtro-btn" onclick="filtrar('mais_recente')">Mais Recente</button>
-            <button class="filtro-btn" onclick="filtrar('em_destaque')">Em Destaque</button>
-            <select class="filtro-select" onchange="filtrar(this.value)">
-                <option value="preco">Preço</option>
-                <option value="menor_preco">Menor Preço</option>
-                <option value="maior_preco">Maior Preço</option>
-            </select>
+            <button class="filtro-btn" onclick="filtrar('relevancia')">Bovino</button>
+            <button class="filtro-btn" onclick="filtrar('mais_recente')">Equino</button>
+            <button class="filtro-btn" onclick="filtrar('em_destaque')">Galináceo</button>
         </div>
         <div class="lotes-wrapper">
             <div class="lotes_container_pagina_de_busca" id="lotesContainer">
@@ -82,7 +76,7 @@
         
         function navegarLotes(direcao) {
             const container = document.getElementById('lotesContainer');
-            const scrollAmount = 300; // Ajuste conforme necessário
+            const scrollAmount = 300;
             container.scrollBy({
                 left: direcao * scrollAmount,
                 behavior: 'smooth'

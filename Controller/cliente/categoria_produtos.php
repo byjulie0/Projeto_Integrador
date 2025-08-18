@@ -7,33 +7,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Rooster - Busca</title>
+    <title>Página de Categorias</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/categoria_produtos.css">
 </head>
-<body class="body_pg_busca">
+<body class="body_categoria_produtos">
     <!-- Seção de resultados -->
-    <div class="container_pagina_de_busca">
-            <a class="btn-voltar" href="pg_inicial_cliente.php" >
+    <div class="container_categoria_produtos">
+        <div class="titulo-container_categoria_produtos">
+            <a class="btn-voltar" href="#" onclick="window.history.back(); return false;">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
-        <h2 class="h2-pag-busca">Resultados</h2>
-        <p>9 resultados encontrados para 'gado nelore'</p>
-        <div class="filtros-container">
-            <span class="filtros-titulo">Classificar por:</span>
-            <button class="filtro-btn" onclick="filtrar('relevancia')">Relevância</button>
-            <button class="filtro-btn" onclick="filtrar('mais_recente')">Mais Recente</button>
-            <button class="filtro-btn" onclick="filtrar('em_destaque')">Em Destaque</button>
-            <select class="filtro-select" onchange="filtrar(this.value)">
-                <option value="preco">Preço</option>
+            <h2 class="h2_categoria_produtos">Produtos</h2>
+        </div>
+        <div class="filtros_container_categoria_produtos">
+            <span class="filtros_titulo_categoria_produtos">Classificar por:</span>
+            <button class="filtro_btn_produtos" onclick="filtrar('alimentos')">Alimentos</button>
+            <button class="filtro_btn_produtos" onclick="filtrar('acessorios')">Acessórios</button>
+            <button class="filtro_btn_produtos" onclick="filtrar('ferramentas')">Ferramentas</button>
+            <button class="filtro_btn_produtos" onclick="filtrar('maquinarios')">Maquinários</button>
+            <select class="filtro_select_categoria_produtos" onchange="filtrar(this.value)">
+                <option value="preco_categoria_produtos">Preço</option>
                 <option value="menor_preco">Menor Preço</option>
                 <option value="maior_preco">Maior Preço</option>
             </select>
         </div>
-        <div class="lotes-wrapper">
-            <div class="lotes_container_pagina_de_busca" id="lotesContainer">
+        <div class="lotes_wrapper_categoria_produtos">
+            <div class="lotes_container_categoria_produtos" id="lotesContainer">
                 <?php 
                 $lotes = [
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "380 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "24 meses", "preco" => "5.200,00"],
@@ -47,9 +49,9 @@
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                 ];
                 foreach ($lotes as $lote) { ?>
-                    <div class="lote-card">
-                        <img src="<?php echo $lote['imagem']; ?>" alt="Lote de Gado">
-                        <div class="info-grid">
+                    <div class="lote_card_categoria_produtos">
+                        <img src="<?php echo $lote['imagem']; ?>" alt="Lote de Produtos">
+                        <div class="info_grid_categoria_produtos">
                             <p>Peso:</p>
                             <p><?php echo $lote['peso']; ?></p>
                             <p>Raça:</p>
@@ -63,7 +65,7 @@
                     </div>
                 <?php } ?>
             </div>
-            <button class="nav-button next" onclick="navegarLotes(1)">❯</button>
+            <button class="nav_button_categoria_produtos next" onclick="navegarLotes(1)">❯</button>
         </div>
     </div>
 
@@ -82,7 +84,7 @@
         
         function navegarLotes(direcao) {
             const container = document.getElementById('lotesContainer');
-            const scrollAmount = 300; // Ajuste conforme necessário
+            const scrollAmount = 300;
             container.scrollBy({
                 left: direcao * scrollAmount,
                 behavior: 'smooth'
