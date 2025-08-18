@@ -1,16 +1,40 @@
-<?php include 'menu_pg_inicial.php';?>
-<!DOCTYPE html>
+<?php
+include 'menu_pg_inicial.php';
+include '../../model/conexao.php';
+session_start();
+ 
+// Supondo que o ID do cliente está salvo na sessão
+$id_cliente = $_SESSION['id_cliente'];
+ 
+$sql = "SELECT c.*, e.rua, e.numero, e.bairro, e.pais, e.cep FROM cliente c
+        JOIN endereco e ON c.endereco_idendereco = e.id_endereco
+        WHERE c.id_cliente = $id_cliente";
+ 
+$result = $con->query(query: $sql);
+ 
+if ($result->num_rows > 0) {
+    $cliente = $result->fetch_assoc();
+} else {
+    echo "Cliente não encontrado.";
+    exit;
+}
+?>
+ 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Meus Dados</title>
     <link rel="stylesheet" href="../../view/public/css/cliente.css">
 </head>
-
+ 
 <body>
+
+    <?php if (isset($_GET['atualizado'])): ?>
+        <div class="alert-success">Seus dados foram atualizados com sucesso!</div>
+    <?php endif; ?>
+    
     <main class="client-edit-main">
         <div class="client-edit-container">
             <div class="client-edit-header">
@@ -19,59 +43,54 @@
                 </button>
                 <h1 class="client-edit-title">Editar meus dados</h1>
             </div>
-
-            <form class="client-edit-form">
+ 
+            <form class="client-edit-form" method="POST" action="atualiza_cliente.php">
+                <input type="hidden" name="id_cliente" value="<?= $id_cliente ?>">
                 <div class="client-edit-grid">
                     <div class="client-edit-column">
                         <div class="client-edit-field-group">
-                            <label for="nome" class="client-edit-label">Nome:</label>
-                            <input type="text" id="cliente_nome" class="client-edit-input" placeholder="Fulano da Silva Pinto Soares">
+                            <label for="cliente_nome" class="client-edit-label">Nome:</label>
+                            <input type="text" name="cliente_nome" class="client-edit-input" value="<?= $cliente['cliente_nome'] ?>">
                         </div>
-
+ 
                         <div class="client-edit-field-group">
-                            <label for="phone" class="client-edit-label">Telefone:</label>
-                            <input type="tel" id="telefone" class="client-edit-input" placeholder="+55 67 XXXXX-XXXX">
+                            <label for="telefone" class="client-edit-label">Telefone:</label>
+                            <input type="tel" name="telefone" class="client-edit-input" value="<?= $cliente['telefone'] ?>">
                         </div>
-
+ 
                         <div class="client-edit-field-group">
                             <label for="email" class="client-edit-label">E-mail:</label>
-                            <input type="email" id="email" class="client-edit-input" placeholder="sample123@gmail.com">
+                            <input type="email" name="email" class="client-edit-input" value="<?= $cliente['email'] ?>">
                         </div>
                     </div>
-
+ 
                     <div class="client-edit-column">
                         <div class="client-edit-field-group">
-                            <label for="address" class="client-edit-label">Endereço:</label>
-                            <input type="text" id="endereco" class="client-edit-input" placeholder="Rua General Exemplo do Exemplo, 24...">
+                            <label for="endereco" class="client-edit-label">Endereço:</label>
+                            <input type="text" name="endereco" class="client-edit-input" value="<?= $cliente['rua'] . ', ' . $cliente['numero'] . ' - ' . $cliente['bairro'] ?>">
                         </div>
-
+ 
                         <div class="client-edit-field-group">
-                            <label for="birthdate" class="client-edit-label">Data de nascimento:</label>
-                            <input type="text" id="data_nasc" class="client-edit-input" placeholder="XX/XX/XXXX">
+                            <label for="data_nasc" class="client-edit-label">Data de nascimento:</label>
+                            <input type="text" name="data_nasc" class="client-edit-input" value="<?= date(format: 'd/m/Y', timestamp: strtotime(datetime: $cliente['data_nasc'])) ?>">
                         </div>
                     </div>
                 </div>
-
+ 
                 <div class="client-edit-warning">
-                    <strong>Atenção:</strong> Sua idade só pode ser alterada 1 única vez, caso seja detectado que o
-                    usuário se registrou em nosso site antes da maioridade (18 anos, em território brasileiro) ou a
-                    idade inserida seja menor que 18, sua conta será suspensa!
+                    <strong>Atenção:</strong> Sua idade só pode ser alterada 1 única vez...
                 </div>
-
+ 
                 <div class="client-edit-actions">
                     <a href="formulario_altera_senha.php">
                         <button type="button" class="client-edit-password-btn">Alterar senha</button>
                     </a>
-                    <?php
-                    $texto = "Salvar";
-                    include 'botao_cliente.php';
-                    ?>
+                    <button type="submit" class="client-edit-password-btn">Salvar</button>
                 </div>
             </form>
         </div>
     </main>
 </body>
-
 </html>
-
-<?php include 'footer_cliente.php';?>
+ 
+<?php include 'footer_cliente.php'; ?>
