@@ -1,40 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-
-:root {
-  --color-primary-1: #40513b;
-  --color-primary-2: #557153;
-  --color-primary-3: #4b914b;
-  --color-primary-4: #798645;
-  --color-primary-5: #609966;
-  --color-primary-6: #729762;
-  --color-primary-7: #edf1d6;
-  --color-primary-8: #e7f0dc;
-  --color-detalhes-9: #2278f4;
-  --color-background: #f0f0f0;
-  --color-botao-op-Cancelar: #f13b3b; /*Op = Operação*/
-  --color-botao-op-Pendente: #dba928; /*Op = Operação*/
-  --color-botao-op-Concluido: #2d8c37; /*Op = Operação*/
-  --color-fonte: #20261e;
-  --color-icones: #edf3eb;
-  --color-detalhes-15: #f7f9ff;
-  --color-detalhes-16: #e7f0dc;
-  --text-color: #20261e;
-  --border-color: #E5E7EB;
-  --warning-color: #ff4444;
-  --input-bg: #F9FAFB;
-  
-}
-.body_pg_busca {
+@import url(../cliente.css);
+.body_categoria_equinos{
   padding-top: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
-} 
+}
 
-.container_pagina_de_busca {
+.container_categoria_equinos {
   background: white;
   padding: 25px;
   border-radius: 10px;
@@ -45,14 +18,14 @@
   margin-top: 35px;
 }
 
-.titulo-container {
+.titulo-container_categoria_equinos {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
 }
 
-.h2-pag-busca {
+.h2_categoria_equinos {
   margin: 0;
   padding: 0;
   display: inline-block;
@@ -73,7 +46,7 @@
 }
 
 /* Seção de filtros ajustada */
-.filtros-container {
+.filtros_container_categoria_equinos {
   margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -86,14 +59,14 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.filtros-titulo {
+.filtros_titulo_categoria_equinos {
   font-weight: bold;
   font-size: 0.95rem;
   white-space: nowrap;
   margin-right: 5px;
 }
 
-.filtro-btn, .filtro-select {
+.filtro-btn, .filtro_select_categoria_equinos {
   padding: 6px 12px;
   border: 1px solid #e0e0e0;
   background: white;
@@ -104,12 +77,12 @@
   white-space: nowrap;
 }
 
-.filtro-btn:hover, .filtro-select:hover {
+.filtro-btn:hover, .filtro_select_categoria_equinos:hover {
   background: #f7f7f7;
   border-color: #ccc;
 }
 
-.filtro-select {
+.filtro_select_categoria_equinos {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -120,7 +93,7 @@
   padding-right: 28px;
 }
 
-.lotes-wrapper {
+.lotes_wrapper_categoria_equinos {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -128,7 +101,7 @@
   justify-content: center;
 }
 
-.lotes_container_pagina_de_busca {
+.lotes_container_categoria_equinos {
   display: flex;
   gap: 10px;
   padding: 15px 0;
@@ -136,7 +109,7 @@
 }
 
 /* Card de lote */
-.lote-card {
+.lote_card_categoria_equinos {
   background: white;
   padding: 15px;
   border-radius: 10px;
@@ -145,11 +118,11 @@
   transition: transform 0.3s;
 }
 
-.lote-card:hover {
+.lote_card_categoria_equinos:hover {
   transform: translateY(-5px);
 }
 
-.lote-card img {
+.lote_card_categoria_equinos img {
   width: 100%;
   border-radius: 5px;
   height: 180px;
@@ -157,24 +130,24 @@
   margin-bottom: 10px;
 }
 
-.info-grid {
+.info_grid_categoria_equinos {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px 10px;
   text-align: right;
 }
 
-.info-grid p {
+.info_grid_categoria_equinos p {
   margin: 0;
   font-size: 0.9em;
 }
 
-.info-grid p:nth-child(odd) {
+.info_grid_categoria_equinos p:nth-child(odd) {
   font-weight: bold;
   text-align: left;
 }
 
-.preco {
+.preco_categoria_equinos {
   grid-column: 1 / -1;
   text-align: center;
   margin-top: 8px;
@@ -183,7 +156,7 @@
   color: #2a7f40;
 }
 
-.nav-button {
+.nav_button_categoria_equinos {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -193,23 +166,23 @@
 
 /* Media Queries para responsividade */
 @media (max-width: 767px) {
-  .container_pagina_de_busca {
+  .container_categoria_equinos {
     padding: 15px;
     margin-top: 25px;
     margin-bottom: 30px;
   }
   
-  .filtros-container {
+  .filtros_container_categoria_equinos {
     gap: 8px;
     padding: 10px;
   }
   
-  .filtro-btn, .filtro-select {
+  .filtro-btn, .filtro_select_categoria_equinos {
     padding: 5px 10px;
     font-size: 0.85rem;
   }
   
-  .lotes_container_pagina_de_busca {
+  .lotes_container_categoria_equinos {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     flex-direction: column;
@@ -217,46 +190,46 @@
     padding-bottom: 20px;
   }
   
-  .lote-card {
+  .lote_card_categoria_equinos {
     min-width: 220px;
   }
   
-  .lote-card img {
+  .lote_card_categoria_equinos img {
     height: 150px;
   }
   
-  .nav-button {
+  .nav_button_categoria_equinos {
     display: none;
   }
   
-  .lote-card {
+  .lote_card_categoria_equinos {
     min-width: 280px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 }
 
 @media (min-width: 1024px) {
-  .lotes_container_pagina_de_busca {
+  .lotes_container_categoria_equinos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow-x: visible;
     gap: 25px;
   }
   
-  .lote-card {
+  .lote_card_categoria_equinos {
     min-width: auto;
     width: 100%;
   }
   
-  .nav-button {
+  .nav_button_categoria_equinos {
     display: none;
   }
   
-  .lotes-wrapper {
+  .lotes_wrapper_categoria_equinos {
     overflow-x: visible; 
   }
   
-  .lotes_container_pagina_de_busca {
+  .lotes_containe_categoria_equinos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
@@ -264,36 +237,36 @@
 }
 
 @media (min-width: 1440px) {
-  .lotes_container_pagina_de_busca {
+  .lotes_container_categoria_equinos {
     grid-template-columns: repeat(3, 1fr);
   }
   
-  .container_pagina_de_busca {
+  .container_categoria_equinos {
     max-width: 1300px;
   }
 }
 
 @media (min-width: 1920px) {
-  .lotes_container_pagina_de_busca {
+  .lotes_container_categoria_equinos {
     grid-template-columns: repeat(4, 1fr);
   }
   
-  .container_pagina_de_busca {
+  .container_categoria_equinos {
     max-width: 1600px;
   }
   
-  .lote-card img {
+  .lote_card_categoria_equinos img {
     height: 220px;
   }
 }
 
 @media (max-width: 359px) {
-  .filtros-container {
+  .filtros_container_categoria_equinos {
     flex-direction: column;
     align-items: flex-start;
   }
   
-  .filtro-btn, .filtro-select {
+  .filtro-btn, .filtro_select_categoria_equinos {
     width: 100%;
     border-radius: 5px;
   }
