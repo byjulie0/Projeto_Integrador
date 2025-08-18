@@ -1,0 +1,22 @@
+
+.icon-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 24px;
+    color: #ccc;
+    transition: all 0.3s ease;
+}
+.icon-toggle-btn[aria-pressed="true"] {
+    color: #29b5a8;
+}
+.icon-toggle-btn[aria-pressed="true"] .fa-toggle-off {
+    display: none;
+}
+.icon-toggle-btn[aria-pressed="false"] .fa-toggle-on {
+    display: none;
+}
+.icon-toggle-btn .fa-toggle-on,.icon-toggle-btn .fa-toggle-off {
+    vertical-align: middle;
+}

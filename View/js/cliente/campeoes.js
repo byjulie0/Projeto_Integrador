@@ -27,10 +27,8 @@ function initCarrossel() {
             isScrolling = false;
         }, 500);
     }
-  
     leftArrow3.addEventListener('click', () => smoothScroll(-scrollAmount));
     rightArrow3.addEventListener('click', () => smoothScroll(scrollAmount));
-  
     function updateArrows() {
         const maxScroll = container.scrollWidth - container.clientWidth;
         leftArrow3.style.display = container.scrollLeft > 0 ? 'flex' : 'none';

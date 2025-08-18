@@ -1,8 +1,4 @@
-<!-- ANA JULIA -->
-
-<?php
-include 'menu_adm.php';
-?>
+<?php include 'menu_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,10 +8,8 @@ include 'menu_adm.php';
     <title>Atualização de produtos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../../view/public/css/adm.css">
-    <script defer src="../../view/js/toogle.js"></script>
-    <script defer src="../../view/js/menu-pg-inicial.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
 </head>
 
 <body>
@@ -77,12 +71,8 @@ include 'menu_adm.php';
                             </td>
 
                             <td class="exclude-atualizar-produtos cell-atualizar-produto">
-                                <button type="button" class="icon-toggle-btn" aria-pressed="false">
-                                    <i class="fa-solid fa-toggle-off"></i>
-                                    <i class="fa-solid fa-toggle-on"></i>
-                                </button>
+                                <?php include 'toogle.php'; ?>
                             </td>
-                            <!-- botao toogle não esta aparecendo -->
                             
                         </tr>
                     </table>
@@ -92,5 +82,5 @@ include 'menu_adm.php';
     </section>
 </body>
 </html>
-<?php include 'footer_adm.php'; ?>
+<?php include 'footer.php'; ?>
 

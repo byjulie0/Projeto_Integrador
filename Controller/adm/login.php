@@ -1,6 +1,4 @@
-<?php
-include '../cliente/menu_login.php';
-?>
+<?php include '../cliente/menu_login.php';?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -9,47 +7,44 @@ include '../cliente/menu_login.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - John Rooster</title>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
-    <script src="../../view/JS/login_olho_ocultar_senha.js"></script>
+    <link rel="stylesheet" href="../../view/public/css/adm/login.css">
+    <script src="../../view/js/cliente/login_olho_ocultar_senha.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <main class="container_geral_login">
-        <div class="login_box_vinycius">
-            <div class="info_login_vinycius">
+    <main class="container_geral_login_adm">
+        <div class="login_area">
+            <div class="info_login_adm">
                 <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
-                <p class="text_login_vinycius">
+                <p class="text_login_adm">
                     Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo
                     com qualidade e confiança para o seu negócio.
                 </p>
             </div>
 
-            <div class="login_form_vinycius">
+            <div class="login_form_adm">
                 <h2>Login</h2>
                 <form class="form_login" action="login.php" method="POST">
-                    <input type="text" name="username" placeholder="Nome de usuário" class="input_login_vinycius1"
-                        required>
+                    <input type="text" name="username" placeholder="Nome de usuário" class="input_login_adm1" required>
 
                     <div class="senha_container">
-                        <input type="password" name="password" id="senha" placeholder="Senha"
-                            class="input_login_vinycius2" required>
+                        <input type="password" name="password" id="senha" placeholder="Senha" class="input_login_adm2" required>
                         <span class="toggle_senha" onclick="toggleSenha()">
                             <i id="icone_senha" class="fa-solid fa-eye"></i>
                         </span>
                     </div>
 
-                    <button type="button" class="button_vinycius"
+                    <button type="button" class="button_adm"
                         onclick="window.location.href='pg_inicial_adm.php'">LOGIN
                     </button>
-                    <a href="recuperar_senha_login1.php">Esqueci minha senha</a>
-                    </span>
+                    <a href="../cliente/recuperar_senha_login1.php">Esqueci minha senha</a>
                     <a href="../cliente/login.php">Área do cliente</a>
                 </form>
             </div>
         </div>
     </main>
-    <?php include 'footer_adm.php'; ?>
+    <?php include 'footer.php'; ?>
 
 </body>
 

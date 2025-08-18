@@ -1,19 +1,17 @@
+<?php include "menu_inicial.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios</title>
-    <link rel="stylesheet" href="/PROJETO_INTEGRADOR/view/public/css/adm.css">
-    <link rel="stylesheet" href="/PROJETO_INTEGRADOR/view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/adm/relatorios_visualizar.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid">
 </head>
 <body>
-    <?php include "../adm/menu_adm.php"; ?>
-
     <main class="verificar_administrar_pedidos_sessao_main">
         <div class="verificar_administrar_pedidos_sessao_info">
             <a href="javascript:history.back()" class="verificar_administrar_pedidos_sessao_seta_voltar">
@@ -154,7 +152,7 @@
         </section>
     </main>
 
-    <?php include "../adm/footer_adm.php"; ?>
+    <?php include "footer.php"; ?>
 
     <script src="/PROJETO_INTEGRADOR/view/JS/relatorios_visualizar_adm.js"></script>
 </body>
