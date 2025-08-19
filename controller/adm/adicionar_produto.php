@@ -1,18 +1,14 @@
-<!-- ISABELLA -->
-
-<?php
-include 'menu_adm.php';
-?>
+<?php include 'menu_inicial.php';?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Produto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../../view/public/css/adm.css">
-    <script defer src="../../view/js/adicionar_produto_adm.js"></script>
+    <link rel="stylesheet" href="../../view/public/css/adm/adicionar_produto.css">
+    <script defer src="../../view/js/adm/adicionar_produto.js"></script>
 </head>
 
 <body class="body_add_product">
@@ -39,14 +35,16 @@ include 'menu_adm.php';
             </article>
             <aside class="add_product_details">
                 <div class="product_details_collumn">
+
                     <article class="input_product_name">
                         <p class="product_title_info">Insira o nome do produto<span class="mandatory_space">*</span></p>
                         <input type="text" class="input_product_info" placeholder="Titulo" required>
                         <span class="error-message">Por favor, preencha este campo</span>
                     </article>
+
                     <article class="input_product_category">
-                        <p class="product_title_info">Selecione a categoria a qual o produto pertence<span
-                                class="mandatory_space">*</span></p>
+                        <p class="product_title_info">Selecione a categoria a qual o produto pertence<span class="mandatory_space">*</span></p>
+
                         <select name="categories" id="categories" class="product_info_select" required>
                             <option value="" selected disabled>Selecione uma categoria</option>
                             <option value="bovinos" class="product_categories">Bovinos</option>
@@ -55,11 +53,12 @@ include 'menu_adm.php';
                             <option value="premiados" class="product_categories">Premiados</option>
                             <option value="produtos_gerais" class="product_categories">Produtos Gerais</option>
                         </select>
+
                         <span class="error-message">Por favor, selecione uma categoria</span>
                     </article>
+
                     <article class="input_product_subcategory">
-                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span
-                                class="mandatory_space">*</span></p>
+                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span class="mandatory_space">*</span></p>
                         <select name="subcategories" id="bovinos_breed" class="product_info_select subcategory-select"
                             required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
@@ -69,6 +68,7 @@ include 'menu_adm.php';
                             <option value="girolando" class="product_bull">Girolando</option>
                             <option value="brahman" class="product_bull">Brahman</option>
                         </select>
+
                         <select name="subcategories" id="equinos_breed" class="product_info_select subcategory-select"
                             required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
@@ -78,6 +78,7 @@ include 'menu_adm.php';
                             <option value="lusitano" class="product_horse">Lusitano</option>
                             <option value="marchador" class="product_horse">Manfalarga Marchador</option>
                         </select>
+
                         <select name="subcategories" id="galinaceos_breed"
                             class="product_info_select subcategory-select" required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
@@ -87,6 +88,7 @@ include 'menu_adm.php';
                             <option value="playmouth" class="product_rooster">Playmouth Rock</option>
                             <option value="rhode_island" class="product_rooster">Rhode Island Redd</option>
                         </select>
+
                         <select name="subcategories" id="product_types" class="product_info_select subcategory-select"
                             required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
@@ -96,6 +98,7 @@ include 'menu_adm.php';
                             <option value="girolando" class="general_product">Equipamentos e utensílios</option>
                             <option value="brahman" class="general_product">Suplementos nutricionais e aditivos</option>
                         </select>
+
                         <select name="subcategories" id="winner_breed" class="product_info_select subcategory-select"
                             required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
@@ -106,9 +109,11 @@ include 'menu_adm.php';
                             </option>
                             <option value="melhor_apresentacao" class="champion_product">Melhor apresentação</option>
                         </select>
+
                     </article>
                 </div>
                 <div class="product_details_collumn">
+
                     <article class="input_product_price">
                         <p class="product_title_info">Defina o valor do produto<span class="mandatory_space">*</span>
                         </p>
@@ -116,15 +121,31 @@ include 'menu_adm.php';
                             step="0.01">
                         <span class="error-message">Informe um valor válido (maior que zero)</span>
                     </article>
+
                     <article class="input_product_quantity">
                         <p class="product_title_info">Quantidade em estoque<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Valor" class="input_product_info" required min="1">
                     </article>
+                    
+                    <article class="input_product_category">
+                        <p class="product_title_info">Selecione o sexo do animal<span class="mandatory_space">*</span></p>
+                        
+                        <select name="categories" id="categories" class="product_info_select" required>
+                            <option value="" selected disabled>Selecione uma opção</option>
+                            <option value="" class="product_categories">Masculino</option>
+                            <option value="" class="product_categories">Feminino</option>
+                            <option value="" class="product_categories">Não se aplica (Produto)</option>
+                        </select>
+                        
+                        <span class="error-message">Por favor, selecione uma opção</span>
+                    </article>
+                    
                     <article class="input_product_quantity">
                         <p class="product_title_info">Descreva o produto<span class="mandatory_space">*</span></p>
                         <input type="text" placeholder="Digite aqui" class="input_product_info product_details"
-                            required>
+                        required>
                     </article>
+                    
                 </div>
             </aside>
         </section>
@@ -139,5 +160,7 @@ include 'menu_adm.php';
 
 </html>
 <?php
-include 'footer_adm.php';
+include 'footer.php';
 ?>
+<!-- <p class="product_title_info_second">Sexo<span class="mandatory_space_second">*</span></p>
+<select name="categories" id="categories" class="product_info_select_second" required> -->
