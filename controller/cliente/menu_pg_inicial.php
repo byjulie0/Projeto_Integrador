@@ -1,3 +1,32 @@
+<!-- ANA JULIA -->
+<?php
+$sql = "SELECT COUNT(*) as total FROM notificacao WHERE id_cliente = ? AND lida = 0";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $_SESSION['id_cliente']);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$notificacoes_nao_lidas = $row['total'];
+?>
+
+<a href="notificacoes.php" style="position: relative; display: inline-block;">
+    <i class="bi bi-bell"></i>
+    <?php if ($notificacoes_nao_lidas > 0): ?>
+        <span class="badge" style="
+            background: red;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+        ">
+            <?= $notificacoes_nao_lidas ?>
+        </span>
+    <?php endif; ?>
+</a>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
