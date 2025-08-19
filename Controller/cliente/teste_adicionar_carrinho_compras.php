@@ -1,5 +1,5 @@
 <?php
-include '../../model/DB/conexao.php';
+// include '../../model/DB/conexao.php';
 
 // Conexão com banco de dados (ajuste conforme seu ambiente)
 $host = "localhost";
@@ -14,32 +14,26 @@ if ($con->connect_error) {
     die("Erro na conexão: " . $con->connect_error);
 }
 
-// Recebendo dados do formulário
+// Dados do formulário
+
 $id_cliente  = $_POST['id_cliente'] ?? null;
 $id_produto  = $_POST['id_produto'] ?? null;
-$quantidade  = $_POST['quantidade'] ?? 1;
-$selecionado = isset($_POST['selecionado']) ? 1 : 0;
+$quantidade  = 1; // sempre 1
+$selecionado = 1; 
 
-// Validação simples
 if (!$id_cliente || !$id_produto) {
     die("Erro: Cliente e Produto são obrigatórios.");
 }
 
-// Preparar a query
 $sql = "INSERT INTO carrinho (id_produto, quantidade, selecionado, id_cliente) 
         VALUES (?, ?, ?, ?)";
 
 $stmt = $con->prepare($sql);
-
-if ($stmt === false) {
-    die("Erro na preparação da query: " . $con->error);
-}
-
 $stmt->bind_param("iiii", $id_produto, $quantidade, $selecionado, $id_cliente);
 
 if ($stmt->execute()) {
-    echo "Produto adicionado ao carrinho com sucesso!<br>";
-    echo "<a href='index.html'>Voltar</a>";
+    header("Location: carrinho.php?id_cliente=" . $id_cliente);
+    exit;
 } else {
     echo "Erro ao adicionar no carrinho: " . $stmt->error;
 }
