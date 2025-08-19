@@ -58,34 +58,36 @@
                     </article>
 
                     <article class="input_product_subcategory">
-                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span class="mandatory_space">*</span></p>
+                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence</p>
                         <select name="subcategories" id="bovinos_breed" class="product_info_select subcategory-select"
                             required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
                             <option value="angus" class="product_bull">Angus</option>
+                            <option value="brahman" class="product_bull">Brahman</option>
+                            <option value="brangus" class="product_bull">Brangus</option>
                             <option value="hereford" class="product_bull">Hereford</option>
                             <option value="nelore" class="product_bull">Nelore</option>
-                            <option value="girolando" class="product_bull">Girolando</option>
-                            <option value="brahman" class="product_bull">Brahman</option>
+                            <option value="senepol" class="product_bull">Senepol</option>
                         </select>
 
                         <select name="subcategories" id="equinos_breed" class="product_info_select subcategory-select"
                             required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="puro_sangue" class="product_horse">Puro Sangue Inglês</option>
-                            <option value="andaluz" class="product_horse">Andaluz</option>
                             <option value="arabe" class="product_horse">Árabe</option>
-                            <option value="lusitano" class="product_horse">Lusitano</option>
-                            <option value="marchador" class="product_horse">Manfalarga Marchador</option>
+                            <option value="draftbelga" class="product_horse">Draft Belga</option>
+                            <option value="Mustang" class="product_horse">Mustang</option>
+                            <option value="painthorse" class="product_horse">Paint Horse</option>
+                            <option value="percheron" class="product_horse">Percheron</option>
+                            <option value="puro_sangue" class="product_horse">Puro Sangue Inglês</option>
                         </select>
 
                         <select name="subcategories" id="galinaceos_breed"
                             class="product_info_select subcategory-select" required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="brahma" class="product_rooster">Brahma</option>
+                            <option value="legornne" class="product_rooster">Legorne</option>
+                            <option value="leon" class="product_rooster">Léon</option>
                             <option value="orpington" class="product_rooster">Orpington</option>
-                            <option value="sussex" class="product_rooster">Sussex</option>
-                            <option value="playmouth" class="product_rooster">Playmouth Rock</option>
+                            <option value="playmouth_rock" class="product_rooster">Playmouth Rock</option>
                             <option value="rhode_island" class="product_rooster">Rhode Island Redd</option>
                         </select>
 
@@ -93,10 +95,10 @@
                             required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
                             <option value="racao" class="general_product">Rações e suplementos alimentares</option>
-                            <option value="hereford" class="general_product">Medicamentos veterinários</option>
-                            <option value="nelore" class="general_product">Produtos de higiene e cuidados</option>
-                            <option value="girolando" class="general_product">Equipamentos e utensílios</option>
-                            <option value="brahman" class="general_product">Suplementos nutricionais e aditivos</option>
+                            <option value="medicamento" class="general_product">Medicamentos veterinários</option>
+                            <option value="higiene" class="general_product">Produtos de higiene e cuidados</option>
+                            <option value="equipamento" class="general_product">Equipamentos e utensílios</option>
+                            <option value="suplemento" class="general_product">Suplementos nutricionais e aditivos</option>
                         </select>
 
                         <select name="subcategories" id="winner_breed" class="product_info_select subcategory-select"
@@ -105,8 +107,7 @@
                             <option value="melhor_exemplar" class="champion_product">Melhor exemplar</option>
                             <option value="grande_campeao" class="champion_product">Grande Campeão</option>
                             <option value="campeao_junior" class="champion_product">Campeão júnior</option>
-                            <option value="melhor_desempenho" class="champion_product">Melhor desempenho Funcional
-                            </option>
+                            <option value="melhor_desempenho" class="champion_product">Melhor desempenho Funcional</option>
                             <option value="melhor_apresentacao" class="champion_product">Melhor apresentação</option>
                         </select>
 
@@ -115,25 +116,24 @@
                 <div class="product_details_collumn">
 
                     <article class="input_product_price">
-                        <p class="product_title_info">Defina o valor do produto<span class="mandatory_space">*</span>
-                        </p>
+                        <p class="product_title_info">Defina o valor do produto<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Valor" class="input_product_info" required min="0.01"
                             step="0.01">
                         <span class="error-message">Informe um valor válido (maior que zero)</span>
                     </article>
 
                     <article class="input_product_quantity">
-                        <p class="product_title_info">Quantidade em estoque<span class="mandatory_space">*</span></p>
-                        <input type="number" placeholder="Valor" class="input_product_info" required min="1">
+                        <p class="product_title_info">Peso do animal em kg<span class="mandatory_space">*</span></p>
+                        <input type="number" placeholder="Se for produto digite 0" class="input_product_info" required min="0">
                     </article>
                     
                     <article class="input_product_category">
-                        <p class="product_title_info">Selecione o sexo do animal<span class="mandatory_space">*</span></p>
+                        <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
                         
                         <select name="categories" id="categories" class="product_info_select" required>
                             <option value="" selected disabled>Selecione uma opção</option>
-                            <option value="" class="product_categories">Masculino</option>
-                            <option value="" class="product_categories">Feminino</option>
+                            <option value="" class="product_categories">Macho</option>
+                            <option value="" class="product_categories">Fêmea</option>
                             <option value="" class="product_categories">Não se aplica (Produto)</option>
                         </select>
                         
