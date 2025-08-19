@@ -1,0 +1,89 @@
+@import url("../cliente.css");
+.menu_login {
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    background-color: #40513B;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .div_menu_login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .logo_menu_login img {
+    height: 50px;
+    width: auto;
+    margin-right: 15px;
+  }
+  
+  .titulo_menu_login {
+    display: block;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 24px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* ===== Tablet (768px - 1024px) ===== */
+@media (max-width: 1024px) {
+    .menu_login {
+      height: 65px;
+    }
+    
+    .logo_menu_login img {
+      height: 45px;
+    }
+    
+    .titulo_menu_login {
+      font-size: 22px;
+    }
+  }
+  
+  /* ===== Mobile (up to 767px) ===== */
+@media (max-width: 767px) {
+    .menu_login {
+      height: 60px;
+      padding: 0;
+    }
+    
+    .div_menu_login {
+      padding: 0 15px;
+    }
+    
+    .logo_menu_login img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    
+    .titulo_menu_login {
+      font-size: 18px;
+      white-space: normal;
+    }
+  }
+  
+@media (max-width: 480px) {
+    .menu_login {
+      height: 55px;
+    }
+    
+    .logo_menu_login img {
+      height: 35px;
+    }
+    
+    .titulo_menu_login {
+      font-size: 16px;
+    }
+}
+  

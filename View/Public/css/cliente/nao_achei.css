@@ -1,0 +1,192 @@
+/*inicio atualizar infos - Mariana */
+* {
+    box-sizing: border-box;
+  }
+  .area-atualizar-infos {
+    background-color: white;
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+  
+  .form-container-atualizar-infos {
+    max-width: 900px;
+    width: 100%;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .back-arrow-atualizar-infos {
+    text-decoration: none;
+    font-size: 24px;
+    color: green;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .h2-atualizar-infos {
+    text-align: center;
+    color: #2e4d2e;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+  }
+  
+  .form-atualizar-infos {
+    width: 100%;
+  }
+  
+  .form-grid-atualizar-infos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  
+  .form-group-atualizar-infos {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group-atualizar-infos.full-width {
+    grid-column: span 2;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.95rem;
+  }
+  
+  .input-atualizar-infos {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #628b5d;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .warning-atualizar-infos {
+    font-size: 0.85rem;
+    color: #aa0000;
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+  
+  .buttons-atualizar-infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .link-btn-atualizar-infos {
+    color: #2e8b57;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+  
+  .submit-btn-atualizar-infos {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn-atualizar-infos:hover {
+    background-color: #276c46;
+  }
+  
+  /* Responsividade */
+  
+  /* 1600px ou menos */
+  @media (max-width: 1600px) {
+    .form-grid-atualizar-infos {
+      gap: 24px;
+    }
+  }
+  
+  /* 1200px ou menos */
+  @media (max-width: 1200px) {
+    .form-grid-atualizar-infos {
+      gap: 22px;
+    }
+  }
+  
+  /* 960px ou menos */
+  @media (max-width: 960px) {
+    .form-grid-atualizar-infos {
+      gap: 20px;
+    }
+  }
+  
+  /* 840px ou menos — FORÇA 1 COLUNA */
+  @media (max-width: 840px) {
+    .form-grid-atualizar-infos {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+  
+    .form-group-atualizar-infos.full-width {
+      grid-column: auto;
+    }
+  }
+  
+  /* 480px ou menos */
+  @media (max-width: 480px) {
+    .form-grid-atualizar-infos {
+      gap: 14px;
+    }
+  
+    .form-group-atualizar-infos {
+      font-size: 14px;
+    }
+  }
+  
+  /* 425px ou menos */
+  @media (max-width: 425px) {
+    .form-grid-atualizar-infos {
+      gap: 12px;
+    }
+  
+    .form-group-atualizar-infos {
+      font-size: 13.5px;
+    }
+  }
+  
+  /* 375px ou menos */
+  @media (max-width: 375px) {
+    .form-grid-atualizar-infos {
+      gap: 11px;
+    }
+  
+    .form-group-atualizar-infos {
+      font-size: 13px;
+    }
+  }
+  
+  /* 320px ou menos */
+  @media (max-width: 320px) {
+    .form-grid-atualizar-infos {
+      gap: 10px;
+    }
+  
+    .form-group-atualizar-infos {
+      font-size: 12.5px;
+    }
+  }
+  
+  
+  /*fim atualizar infos - Mariana */
