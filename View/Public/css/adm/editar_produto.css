@@ -1,0 +1,127 @@
+@import url("../adm.css");
+.body_edit_product, .body_add_product {
+    color: var(--color-fonte);
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.edit_produt_area, .area_add_product{
+    width: 90%;
+    margin: 5% 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.title_page_edit_product {
+    padding-top: 3rem;
+    padding-left: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.arrow_edit_product {
+    color: var(--color-primary-1);
+    font-size: 1.5rem;
+}
+.tile_edit_product {
+    color: var(--color-primary-1);
+}
+.info_edit_product {
+    padding: 25px 5rem 20px;
+}
+.mandatory_space {
+    color: var(--color-botao-op-Cancelar);
+}
+.edit_product_area {
+    padding-left: 5rem;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 20px;
+}
+.product_edit_title_info {
+    font-size: 20px;
+}
+.img_holder_edit {
+    border: solid 1px var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    margin: 0 auto;
+}
+.img_holder_button_edit {
+    background-color: var(--color-botao-op-Concluido);
+    color: var(--color-icones);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.edit_product_details {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.input_product_info {
+    height: 25px;
+    padding-left: 10px;
+    border: solid 1px;
+    width: 60%;
+    border-radius: 5px;
+}
+.product_info_select {
+    width: 60%;
+    height: 25px;
+    padding-left: 10px;
+    border: solid 1px;
+    border-radius: 5px;
+}
+.product_details_collumn {
+    gap: 20px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+}
+.product_details {
+    height: 75px;
+}
+.edit_product_submit_button {
+    margin-bottom: 4rem;
+    margin-top: 5%;
+    margin-left: 42%;
+}
+.subcategory-select {
+    display: none;
+    width: 60%;
+    margin-top: 5px;
+}
+
+.product_info_select {
+    width: 60%;
+    height: 25px;
+    padding-left: 10px;
+    border: solid 1px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Estilo para campos inválidos */
+.invalid-field {
+    border-color: #ff0000 !important;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 0.8rem;
+    display: none;
+}
+
+.invalid-field + .error-message {
+    display: block;
+}

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../view/public/css/cliente/menu_geral.css">
+    <title>Menu recuperar Senha</title>
 </head>
 <body>
     <nav class="menu_login">

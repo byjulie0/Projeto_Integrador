@@ -1,45 +1,38 @@
-<!-- ISABELLA -->
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página inicial Categorias</title>
-    
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
-
-
-
+    <link rel="stylesheet" href="../../view/public/css/cliente/categorias_pg_inicial.css">
 </head>
-<body class="body-mais-vendidos">
-    <!-- Inicio das categorias -->
+<body>
     <section id="pg_inicial_categorias">
         <h3 class="categoria_title_pg_inicial">Categorias</h3>
         <div class="categoria_area_cards_pg_inicial">
 
             <div class="categoria_cards_pg_inicial ">
-                <a href="https://chromewebstore.google.com/" class="card_categoria_pg_inicial card_galinha_pg_inicial_categorias">
+                <a href="categoria_galinaceos.php" class="card_categoria_pg_inicial card_galinha_pg_inicial_categorias">
                 </a>
             </div>
 
             <div class="categoria_cards_pg_inicial ">
-                <a href="" class="card_categoria_pg_inicial card_boi_pg_inicial_categorias">
+                <a href="categoria_bovinos.php" class="card_categoria_pg_inicial card_boi_pg_inicial_categorias">
                 </a>
             </div>
 
             <div class="categoria_cards_pg_inicial">
-                <a href="" class="card_categoria_pg_inicial card_cavalo_pg_inicial_categorias">
+                <a href="categoria_equinos.php" class="card_categoria_pg_inicial card_cavalo_pg_inicial_categorias">
                 </a>
             </div>
 
             <div class="categoria_cards_pg_inicial">
-                <a href="" class="card_categoria_pg_inicial card_produtos_pg_inicial_categorias">
+                <a href="categoria_produtos.php" class="card_categoria_pg_inicial card_produtos_pg_inicial_categorias">
                 </a>
             </div>
 
             <div class="categoria_cards_pg_inicial">
-                <a href="" class="card_categoria_pg_inicial card_campeao_pg_inicial_categorias">
+                <a href="categoria_campeoes.php" class="card_categoria_pg_inicial card_campeao_pg_inicial_categorias">
                 </a>
             </div>
         </div>
