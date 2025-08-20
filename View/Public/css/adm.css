@@ -711,6 +711,10 @@ ul{
   align-items: center;
 }
 
+.add_product_submit_button a{
+  text-decoration: none;
+}
+
 .add_product_button {
   gap: 10px;
   display: flex;

@@ -12,21 +12,23 @@ include 'menu_adm.php';
     <title>Adicionar Produto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../../view/public/css/adm.css">
-    <script defer src="../../view/js/adicionar_produto_adm.js"></script>
+    <script defer src="../../View/JS/adicionar_produto_adm.js"></script>
 </head>
 
 <body class="body_add_product">
     <div class="area_add_product">
 
         <div class="title_page_add_product">
-            <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
+            <a href="pg_inicial_adm.php" class="arrow_add_product">
                 <i class="fa-solid fa-chevron-left">
                 </i>
             </a>
             <h1 class="tile_add_product">Adicionar Produto</h1>
         </div>
         <p class="info_add_product">Preencha as informações necessárias e adicione produtos ao catálogo do site</p>
-        <section class="add_product_area">
+        <form class="add_product_area" action="add_produtos_segunda_etapa.php" method="POST"
+            enctype="multipart/form-data">
+
             <article class="add_product_image">
                 <p class="product_title_info">Carregar imagem de capa<span class="mandatory_space">*</span></p>
                 <div class="img_holder">
@@ -47,7 +49,8 @@ include 'menu_adm.php';
                     </article>
 
                     <article class="input_product_category">
-                        <p class="product_title_info">Selecione a categoria a qual o produto pertence<span class="mandatory_space">*</span></p>
+                        <p class="product_title_info">Selecione a categoria a qual o produto pertence<span
+                                class="mandatory_space">*</span></p>
 
                         <select name="categories" id="categories" class="product_info_select" required>
                             <option value="" selected disabled>Selecione uma categoria</option>
@@ -62,7 +65,8 @@ include 'menu_adm.php';
                     </article>
 
                     <article class="input_product_subcategory">
-                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span class="mandatory_space">*</span></p>
+                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span
+                                class="mandatory_space">*</span></p>
 
                         <select name="subcategories" id="bovinos_breed" class="product_info_select subcategory-select"
                             required>
@@ -131,35 +135,39 @@ include 'menu_adm.php';
                         <p class="product_title_info">Quantidade em estoque<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Valor" class="input_product_info" required min="1">
                     </article>
-                    
+
                     <article class="input_product_category">
-                        <p class="product_title_info">Selecione o sexo do animal<span class="mandatory_space">*</span></p>
-                        
+                        <p class="product_title_info">Selecione o sexo do animal<span class="mandatory_space">*</span>
+                        </p>
+
                         <select name="categories" id="categories" class="product_info_select" required>
                             <option value="" selected disabled>Selecione uma opção</option>
                             <option value="" class="product_categories">Masculino</option>
                             <option value="" class="product_categories">Feminino</option>
                             <option value="" class="product_categories">Não se aplica (Produto)</option>
                         </select>
-                        
+
                         <span class="error-message">Por favor, selecione uma opção</span>
                     </article>
-                    
+
                     <article class="input_product_quantity">
                         <p class="product_title_info">Descreva o produto<span class="mandatory_space">*</span></p>
                         <input type="text" placeholder="Digite aqui" class="input_product_info product_details"
-                        required>
+                            required>
                     </article>
-                    
+
                 </div>
             </aside>
-        </section>
-        <div class="add_product_submit_button">
-            <?php
-            $texto = "Avançar";
-            include 'botao_adm.php';
-            ?>
-        </div>
+            <div class="add_product_submit_button">
+                <button type="submit" class="btn-avancar">
+                    <?php
+                    $texto = "Avançar";
+                    include 'botao_adm.php';
+                    ?>
+                </button>
+            </div>
+        </form>
+
     </div>
 </body>
 
