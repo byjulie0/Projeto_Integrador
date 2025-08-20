@@ -13,12 +13,19 @@
 <body class="verificar_administrar_pedidos_body">
     <main class="verificar_administrar_pedidos_content">
         <section class="verificar_administrar_pedidos_sessao_identificar">
-            <a href="#" onclick="window.history.back(); return false;"class="verificar_administrar_pedidos_sessao_seta_voltar">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
+
             <div class="verificar_administrar_pedidos_sessao_bloco">
                 <div class="verificar_administrar_pedidos_sessao_bloco_info">
-                    <h1>Verificar e administrar pedidos</h1>
+                    <div class="verificar_administrar_pedidos_sessao_seta_voltar_div">
+                        <a href="#" onclick="window.history.back(); return false;"
+                            class="verificar_administrar_pedidos_sessao_seta_voltar">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <h1>
+                            Verificar e administrar pedidos
+                        </h1>
+                    </div>
+
                     <h3>Pesquise o número do pedido ou CPF/CNPJ do cliente para gerenciar o pedido em específico</h3>
                     <form action="" class="verificar_administrar_pedidos_sessao_formulario_pesquisa">
                         <input type="text" id="" placeholder="Pesquisar">
@@ -32,7 +39,7 @@
             <div class="verificar_administrar_pedidos_sessao_pedidos">
                 <div class="verificar_administrar_pedidos_sessao_pedidos_img">
                     <h5>Pedido XXXXXXXXXX</h5>
-                    <img src="/PROJETO_INTEGRADOR/view/public/imagens/Rectangle 195.png" alt="">
+                    <img src="../..//View/Public/Imagens/Rectangle 195.png" alt="">
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_pedidos_info">
                     <h5>Boi Tal</h5>

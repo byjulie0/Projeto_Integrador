@@ -52,7 +52,7 @@
                     $imagem = $item['imagem'];
                     $peso = $item['peso'];
                     $raca = $item['raca'];
-                    $genealogia = $item['genealogia'];
+                    $genealogia = $item['genealogia']
                     $idade = $item['idade'];
                     $preco = $item['preco'];
                     include 'card_favoritos.php';

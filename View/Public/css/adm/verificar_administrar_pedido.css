@@ -38,10 +38,10 @@
 }
 .verificar_administrar_pedidos_sessao_bloco_info h1, h3{
     color: var(--color-primary-1);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     max-width: 100%;
     width: 87%;
-    font-weight: 500;
+    font-weight: 300;
     text-align: left;
 }
 .verificar_administrar_pedidos_sessao_divisao{

@@ -1,4 +1,11 @@
-<?php include 'menu_login.php';?>
+<?php
+include 'menu_login.php';
+/*cod para validar o user no banco de dados */ 
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -24,7 +31,7 @@
 
             <div class="login_form_vinycius">
                 <h2>Login</h2>
-                <form class="form_login" action="login.php" method="POST">
+                <form class="form_login" action="validacao-user-bd.php" method="POST">
                     <input type="text" name="username" placeholder="Nome de usuário" class="input_login_vinycius1"
                         required>
 
@@ -36,8 +43,11 @@
                         </span>
                     </div>
 
-                    <button type="button" class="button_vinycius"
-                        onclick="window.location.href='pg_inicial_cliente.php'">LOGIN</button>
+                    <button type="submit" class="button_vinycius">LOGIN</button> 
+
+                    <?php if(isset($erro)) { echo '<p style="color:red;">'.$erro.'</p>'; } ?>
+
+
                     <a href="recuperar_senha_login1.php">Esqueci minha senha</a>
                     <span class="texto1">Não tem conta? <a href="pg_cadastro.php" class="texto1">Cadastre-se</a>
                     </span>
