@@ -1,31 +1,20 @@
-<!-- LARA -->
-
-<!-- cod php para o btn avançar -->
+<?php include 'menu_inicial.php';?>
 <?php
 $mostrar_popup_sucesso = false;
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
     $mostrar_popup_sucesso = true;
 }
 ?>
-
-<!-- cod php para o btn avançar -->
-
-<?php
-include 'menu_adm.php';
-?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Produto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../../view/public/css/adm.css">
-    <script defer src="../../view/js/adicionar_produto_adm.js"></script>
+    <link rel="stylesheet" href="../../view/public/css/adm/editar_produto.css">
+    <script defer src="../../view/js/adm/aditar_produto.js"></script>
 </head>
-
 <body class="body_edit_product">
     <div class="edit_produt_area">
 
@@ -69,8 +58,7 @@ include 'menu_adm.php';
                         <span class="error-message">Por favor, selecione uma categoria</span>
                     </article>
                     <article class="input_product_subcategory">
-                        <p class="product_title_info">Edite a subcategoria a qual o produto pertence<span
-                                class="mandatory_space">*</span></p>
+                        <p class="product_title_info">Edite a subcategoria a qual o produto pertence<span class="mandatory_space">*</span></p>
                         <select name="subcategories" id="bovinos_breed" class="product_info_select subcategory-select"
                             required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
@@ -148,113 +136,10 @@ include 'menu_adm.php';
             </div>
         </form>
     </div>
-
-    <!-- cod em php para o btn_avancar, quando o user clicar nele o pop up vai abrir e exibir a informação  - matheus 11/6/25 -->
-    <!-- cod php para o btn avançar -->
-    <?php if ($mostrar_popup_sucesso): ?>
-        <div id="popupSucesso" class="popup-overlay" style="display: flex;">
-            <div class="popup-box">
-                <button class="popup-close" id="fecharPopup">&times;</button>
-                <p>Informações atualizadas com sucesso</p>
-            </div>
-        </div>
-    <?php endif; ?>
-    <!-- cod php para o btn avançar -->
-    <script>
-        document.editEventListener('DOMContentLoaded', function () {
-            const popup = document.getElementById('popupSucesso');
-            const fechar = document.getElementById('fecharPopup');
-
-            if (fechar && popup) {
-                fechar.editEventListener('click', () => {
-                    popup.style.display = 'none';
-                });
-
-                window.editEventListener('click', function (e) {
-                    if (e.target === popup) {
-                        popup.style.display = 'none';
-                    }
-                });
-            }
-        });
-    </script>
-    <!-- cod php para o btn avançar -->
-
-    <style>
-        /* Estilo do overlay do popup */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            /* Fundo semi-transparente */
-            display: none;
-            /* Inicialmente escondido */
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        /* Caixa do popup com largura e altura mínimas ajustadas */
-        .popup-box {
-            background: #fff;
-            pediting: 20px 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            width: 500px;
-            /* mais largo */
-            min-height: 200px;
-            /* altura mínima */
-            position: relative;
-            text-align: center;
-            pediting: 100px
-        }
-
-        /* Botão de fechar (X) */
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: transparent;
-            border: none;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #333;
-            transition: color 0.3s ease;
-        }
-
-        .popup-close:hover {
-            color: #ff0000;
-        }
-
-        /* Estilo do botão avançar com cor #2d8c37 */
-        .edit_product_button {
-            background-color: #2d8c37;
-            /* verde solicitado */
-            border: none;
-            color: white;
-            pediting: 12px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: background-color 0.3s ease;
-        }
-
-        .edit_product_button:hover {
-            background-color: #246a2b;
-            /* tom mais escuro para hover */
-        }
-    </style>
-
+    <?php if ($mostrar_popup_sucesso):
+        $texto = "Informações atualizadas com sucesso!";
+        include 'pop_up_sucesso.php';
+    endif; ?>
 </body>
-
 </html>
-<?php
-include 'footer_adm.php';
-?>
+<?php include 'footer.php';?>

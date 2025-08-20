@@ -1,0 +1,147 @@
+@import url("../cliente.css");
+.header-arthura {
+    display: flex;
+    align-items: center;
+    padding: 2% 30%;
+}
+.main-meu-perfil-senha{
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+.visualizar-dados-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary-1);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.a-style {
+    text-decoration: none;
+    color: var(--color-primary-1);
+    display: flex;
+    align-items: center;
+}
+.wrapper-arthura {
+    width: 90%;
+    max-width: 40%;
+    min-width: 300px;
+    margin: 0 auto;
+}
+.card-arthura {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 30px;
+    margin-bottom: 5%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.profile-arthura {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+.avatar-arthura {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-primary-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+.avatar-icon-arthura {
+    width: 60%;
+    height: 60%;
+    fill: white;
+}
+.user-info-arthura {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.user-name-arthura {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-primary-1);
+}
+.user-email-arthura {
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+.section-title-arthura {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--color-primary-1);
+}
+.section-text-arthura {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1%;
+    line-height: 1.4;
+}
+.password-input-arthura {
+    padding: 0.875rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    background-color: #f8f9fa;
+    transition: all 0.2s;
+    width: 100%;
+}
+.password-input-arthura:focus {
+    outline: none;
+    border-color: #4CAF50;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Container dos botões */
+.botoes-arthura {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: end;
+    
+}
+
+/* Botão visualizar dados */
+.view-button-arthura {
+    flex: 1;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--color-botao-op-Concluido);
+    color: var(--color-primary-7);
+    transition: 0.3s ease;
+}
+.view-button-arthura:hover {
+    background-color: var(--color-primary-7);
+    color: var(--color-botao-op-Concluido);
+}
+.logout-button-arthura {
+    flex: 1;
+    background-color: var(--color-botao-op-Cancelar);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.logout-button-arthura:hover {
+    background-color: #f8d7da;
+    color: #c0392b;
+}
+
+/* Responsividade: no celular, os botões ficam empilhados */
+@media (max-width: 600px) {
+    .botoes-arthura {
+        flex-direction: column;
+    }
+}
