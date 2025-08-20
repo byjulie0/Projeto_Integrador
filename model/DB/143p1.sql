@@ -24,7 +24,7 @@ CREATE TABLE cliente (
     email VARCHAR(150),
     data_nasc DATE,
     telefone CHAR(9),
-    senha VARCHAR(100),
+    senha VARCHAR(100), -- tirar senha
     endereco_idendereco INT,
     tipo_user_idtipo_user INT,
     FOREIGN KEY (endereco_idendereco) REFERENCES endereco(id_endereco),
@@ -38,9 +38,9 @@ CREATE TABLE adm (
     email VARCHAR(150),
     data_nasc DATE,
     telefone CHAR(9),
-    senha VARCHAR(100),
+    senha VARCHAR(100), -- tirar senha
     endereco_idendereco INT,
-    tipo_user_idtipo_user INT,
+    tipo_user_idtipo_user INT, -- tirar
     FOREIGN KEY (endereco_idendereco) REFERENCES endereco(id_endereco),
     FOREIGN KEY (tipo_user_idtipo_user) REFERENCES tipo_user(idtipo_user)
 );
@@ -48,11 +48,11 @@ CREATE TABLE adm (
 -- Tabela: user
 CREATE TABLE user (
     id_user INT AUTO_INCREMENT PRIMARY KEY,
-    user_nome VARCHAR(150),
-    email VARCHAR(150),
-    senha VARCHAR(100)
+    user_nome VARCHAR(150) NOT NULL UNIQUE,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL, -- 255 para suportar hash seguro
+    tipo_user INT DEFAULT 0
 );
-
 -- Tabela: categoria
 CREATE TABLE categoria (
     id_categorias INT AUTO_INCREMENT PRIMARY KEY,
@@ -114,5 +114,14 @@ CREATE TABLE item (
     FOREIGN KEY (produto_id_produto) REFERENCES produto(id_produto)
 );
 
-show tables;
+-- Tabela: carrinho
+CREATE TABLE carrinho (
+    id_item INT AUTO_INCREMENT PRIMARY KEY,
+    id_produto INT NOT NULL,
+    quantidade INT NOT NULL DEFAULT 1,
+    selecionado TINYINT(1) DEFAULT 0,
+    id_cliente INT NOT NULL,
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto)
+);
 
+show tables;

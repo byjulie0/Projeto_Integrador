@@ -12,7 +12,7 @@ include 'menu_recuperar_senha.php';
     <title>Redefinir senha login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="../../View/js/pop_up_redefinir_senha.js"></script>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/pg_recuperar_senha.css">
 </head>
 
 <body class="body_redefinir_senha_login">
@@ -25,7 +25,7 @@ include 'menu_recuperar_senha.php';
             <div class="recuperar_senha_rede_formulario">
                 <h1>Redefinir senha</h1>
                 <h3>Escolha sua nova senha</h3>
-                <form action="" class="form_rede_senha" id="formRedefinirSenha">
+                <form action="pg_login.php" class="form_rede_senha" id="formRedefinirSenha">
                     <input type="password" minlength="8" required placeholder="Nova senha" id="novaSenha">
                     <input type="password" minlength="8" required placeholder="Confirmar nova senha"
                         id="confirmarSenha">
