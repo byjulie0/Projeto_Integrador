@@ -1,3 +1,36 @@
+<?php
+include '../../model/DB/conexao.php';
+
+$msgErro = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id_cliente  = $_POST['id_cliente'] ?? null;
+    $id_produto  = $_POST['id_produto'] ?? null;
+    $quantidade  = 1;
+    $selecionado = 1;
+
+    if ($id_cliente && $id_produto) {
+        $sql = "INSERT INTO carrinho (id_produto, quantidade, selecionado, id_cliente) 
+                VALUES (?, ?, ?, ?)";
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param("iiii", $id_produto, $quantidade, $selecionado, $id_cliente);
+
+        if ($stmt->execute()) {
+            header("Location: carrinho.php?id_cliente=" . $id_cliente);
+            exit;
+        } else {
+            $msgErro = "Erro ao adicionar no carrinho: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } else {
+        $msgErro = "Erro: Cliente e Produto são obrigatórios.";
+    }
+}
+
+$con->close();
+?>
+
 <?php include 'menu_pg_inicial.php'; ?>
 
 <!DOCTYPE html>
@@ -46,7 +79,11 @@
                     A John Rooster se compromete a oferecer apenas os melhores animais do mercado.
                 </p>
                 <p class="preco-detalhes-produto">R$ 5.000,00</p>
-                <a href="carrinho.php"><button class="botao-carrinho-detalhes-produto">Adicionar ao carrinho</button></a>
+                <form action="detalhes_produto.php" method="POST">
+                    <input type="hidden" name="id_cliente" value="1">
+                    <input type="hidden" name="id_produto" value="1">
+                    <button type="submit" class="botao-carrinho-detalhes-produto">Adicionar ao carrinho</button>
+                </form>
                 <a href="https://api.whatsapp.com/send?phone=556799492638"><button class="botao-comprar-detalhes-produto">Comprar</button></a>
 
             </div>
