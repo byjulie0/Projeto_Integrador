@@ -21,7 +21,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../../view/public/imagens/img_carrossel_pg_inicial/img_carrossel_pecuaria.svg" class="d-block w-100"
+        <img src="../../view/public/imagens/img_carrossel_pg_inicial/carrossel_trator.jpg" class="d-block w-100"
           alt="Slide 1">
         <div class="carousel-caption d-none d-md-block">
           <h5 class="texto_carrossel">Seja bem-vindo ao nosso site!</h5>
@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="../../view/public/imagens/img_carrossel_pg_inicial/img_carrossel_pecuaria.svg" class="d-block w-100"
+        <img src="../../view/public/imagens/img_carrossel_pg_inicial/mato.jpg" class="d-block w-100"
           alt="Slide 2">
         <div class="carousel-caption d-none d-md-block">
           <h5 class="texto_carrossel">Seja bem-vindo ao nosso site!</h5>
