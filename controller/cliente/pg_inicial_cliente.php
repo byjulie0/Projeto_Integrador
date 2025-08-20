@@ -2,7 +2,8 @@
 include 'menu_pg_inicial.php';
 include 'carrossel_pg_inicial.php';
 include 'categorias_pg_inicial.php';
-include 'mais_vendidos_pg_inicial.php';
+include 'campeoes.php';
+include 'mais_vendidos.php';
 include 'talvez_voce_goste.php';
 include 'footer_cliente.php';
 

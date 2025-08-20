@@ -1,5 +1,3 @@
-<!-- Maria  -->
-
 <?php include 'menu_cadastro.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Rooster - Cadastro</title>
     <script defer src="../../view/js/cadastro.js"></script>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/pg_cadastro.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet"
@@ -19,7 +17,6 @@
 <body class="body-cadastro">
     <main class="main-cadastro">
         <div class="area-form-cadastro">
-        <?php include 'setas.php';?>
             <h2 class="titulo-form-cadastro">Cadastrar</h2>
             <div class="area-geral-form-cadastro">
 

@@ -1,10 +1,6 @@
-<!-- ISABELLA -->
-
-<?php
-include 'menu_adm.php';
-?>
+<?php include 'menu_inicial.php';?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +9,7 @@ include 'menu_adm.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../../view/public/css/adm.css">
     <script defer src="../../View/JS/adicionar_produto_adm.js"></script>
+
 </head>
 
 <body class="body_add_product">
@@ -65,9 +62,8 @@ include 'menu_adm.php';
                     </article>
 
                     <article class="input_product_subcategory">
-                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span
-                                class="mandatory_space">*</span></p>
 
+                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span class="mandatory_space">*</span></p>
                         <select name="subcategories" id="bovinos_breed" class="product_info_select subcategory-select"
                             required>
                             <option value="" selected disabled>Selecione uma subcategoria</option>
@@ -173,7 +169,5 @@ include 'menu_adm.php';
 
 </html>
 <?php
-include 'footer_adm.php';
+include 'footer.php';
 ?>
-<!-- <p class="product_title_info_second">Sexo<span class="mandatory_space_second">*</span></p>
-<select name="categories" id="categories" class="product_info_select_second" required> -->

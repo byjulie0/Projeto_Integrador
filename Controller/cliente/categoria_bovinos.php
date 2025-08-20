@@ -1,44 +1,41 @@
-<?php
-    include 'menu_pg_inicial.php';
-?>
+<?php include 'menu_pg_inicial.php';?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Categorias</title>
+    <title>Página de Categoria dos Bovinos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../view/public/css/categoria_pagina.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/categoria_bovinos.css">
 </head>
-<body class="body_pg_busca">
-    <!-- Seção de resultados -->
-    <div class="container_pagina_de_busca">
-        <div class="titulo-container">
-            <a class="btn-voltar" href="#" onclick="window.history.back(); return false;">
+<body class="body_categoria_bovinos">
+    <div class="container_categoria_bovinos">
+        <div class="titulo_categoria_bovinos">
+            <a class="btn_voltar" href="#" onclick="window.history.back(); return false;">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
-            <h2 class="h2-pag-busca">Bovinos</h2>
+            <h2 class="h2_categoria_bovinos">Bovinos</h2>
         </div>
-        <div class="filtros-container">
-            <span class="filtros-titulo">Classificar por:</span>
-            <button class="filtro-btn" onclick="filtrar('angus')">Angus</button>
-            <button class="filtro-btn" onclick="filtrar('brahman')">Brahman</button>
-            <button class="filtro-btn" onclick="filtrar('bangus')">Brangus</button>
-            <button class="filtro-btn" onclick="filtrar('hereford')">Hereford</button>
-            <button class="filtro-btn" onclick="filtrar('nelore')">Nelore</button>
-            <button class="filtro-btn" onclick="filtrar('senepol')">Senepol</button>
-            <select class="filtro-select" onchange="filtrar(this.value)">
+        <div class="filtros_categoria_bovinos">
+            <span class="filtros_titulo">Classificar por:</span>
+            <button class="filtro_btn" onclick="filtrar('angus')">Angus</button>
+            <button class="filtro_btn" onclick="filtrar('brahman')">Brahman</button>
+            <button class="filtro_btn" onclick="filtrar('bangus')">Brangus</button>
+            <button class="filtro_btn" onclick="filtrar('hereford')">Hereford</button>
+            <button class="filtro_btn" onclick="filtrar('nelore')">Nelore</button>
+            <button class="filtro_btn" onclick="filtrar('senepol')">Senepol</button>
+            <select class="filtro_select" onchange="filtrar(this.value)">
                 <option value="preco">Preço</option>
                 <option value="menor_preco">Menor Preço</option>
                 <option value="maior_preco">Maior Preço</option>
             </select>
         </div>
-        <div class="lotes-wrapper">
-            <div class="lotes_container_pagina_de_busca" id="lotesContainer">
-                <?php 
+        <div class="lotes_geral">
+            <div class="lotes_categoria_bovinos" id="lotesCategoria_bovinos">
+                <?php
                 $lotes = [
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "380 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "24 meses", "preco" => "5.200,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "420 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "28 meses", "preco" => "5.800,00"],
@@ -51,9 +48,9 @@
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                 ];
                 foreach ($lotes as $lote) { ?>
-                    <div class="lote-card">
-                        <img src="<?php echo $lote['imagem']; ?>" alt="Lote de Gado">
-                        <div class="info-grid">
+                    <div class="lote_card">
+                        <img src="<?php echo $lote['imagem']; ?>" alt="Imagem de Gado">
+                        <div class="info_grid">
                             <p>Peso:</p>
                             <p><?php echo $lote['peso']; ?></p>
                             <p>Raça:</p>
@@ -67,7 +64,7 @@
                     </div>
                 <?php } ?>
             </div>
-            <button class="nav-button next" onclick="navegarLotes(1)">❯</button>
+            <button class="nav_button next" onclick="navegarLotes(1)">❯</button>
         </div>
     </div>
 

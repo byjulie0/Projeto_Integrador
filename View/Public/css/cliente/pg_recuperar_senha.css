@@ -1,0 +1,504 @@
+@import url("../cliente.css");
+/* Recuperar senha login 1 */
+.esqueci_senha_card_email_body {
+    display: grid;
+    place-items: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.esqueci_senha_card_email_main {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 5%;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+}
+.esqueci_senha_card_email {
+    position: relative;
+    background-color: #DFEBE0;
+    padding: 100px 80px;
+    border-radius: 2px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    width: 100%;
+    transform: translateY(-30px);
+}
+.esqueci_senha_card_email_content h1 {
+    max-width: 100%;
+    position: relative;
+    top: -10px;
+    text-align: center;
+    color: var(--color-fonte);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.esqueci_senha_card_email_content h3 {
+    max-width: 100%;
+    text-align: center;
+    color: var(--color-primary-1);
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+.esqueci_senha_card_email_formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.esqueci_senha_card_email_formulario input {
+    position: relative;
+    left: 0;
+    width: 100%;
+    max-width: 600px;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    padding: 0 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    color: #000000;
+    box-sizing: border-box;
+}
+.esqueci_senha_card_email_formulario input::placeholder {
+  text-indent: 1px;
+}
+.esqueci_senha_card_email_formulario button {
+    position: relative;
+    left: 0;
+    width: 130px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    border: none;
+    color: var(--color-primary-1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.esqueci_senha_card_email_formulario button:hover {
+    background-color: var(--color-primary-2);
+    color: #ffffff;
+}
+.esqueci_senha_card_email_seta_voltar {
+    position: relative;
+    top: 5px;
+    left: calc(50% - 33vw);
+    font-size: 1.7rem;
+    color: var(--color-primary-1);
+    cursor: pointer;
+}
+@media (max-width: 1250px) {
+    .esqueci_senha_card_email_seta_voltar{
+      top: -35px;
+      left: 10px;
+    }
+}
+@media (max-width: 768px){
+    .esqueci_senha_card_email_main {
+      padding: 0 20px;
+    }
+  
+    .esqueci_senha_card_email {
+      padding-bottom: 100px;
+    }
+  
+    .esqueci_senha_card_email_content h1 {
+      top: -30px;
+      font-size: 1.2rem;
+      margin-bottom: -10px;
+    }
+  
+    .esqueci_senha_card_email_content h3 {
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+  
+    .esqueci_senha_card_email_formulario input,
+    .esqueci_senha_card_email_formulario button {
+      max-width: 90%;
+    }
+}
+@media (max-width: 500px){
+    .esqueci_senha_card_email_seta_voltar{
+      display: none;
+    }
+    .esqueci_senha_card_email_main{
+      margin-top: 25%;
+      margin-bottom: 15%;
+    }
+    .esqueci_senha_card_email{
+      padding-bottom: 20px;
+    }
+    .esqueci_senha_card_email_content h1{
+      top: -70px;
+      font-size: 1rem;
+      margin-bottom: -60px;
+    }
+    .esqueci_senha_card_email_content h3{
+      font-size: 0.7rem;
+    }
+    .esqueci_senha_card_email_formulario input{
+      max-width: 230px;
+      width: 120%;
+      height: 25px;
+      font-size: 0.7rem;
+      margin-top: -5%;
+      margin-bottom: 2%;
+    }
+    .esqueci_senha_card_email_formulario button{
+      font-size: 0.8rem;
+      width: 60%;
+      height: 30px;
+    }
+}
+
+/* Recuperar senha login 2 */
+.recuperar_senha_codigo_body {
+    display: grid;
+    place-items: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.recuperar_senha_codigo_main {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 5%;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+}
+.recuperar_senha_codigo {
+    position: relative;
+    background-color: #DFEBE0;
+    padding: 100px 80px;
+    border-radius: 2px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.302);
+    box-sizing: border-box;
+    width: 100%;
+    transform: translateY(-30px);
+}
+.recuperar_senha_codigo_content h1 {
+    max-width: 100%;
+    position: relative;
+    top: -10px;
+    text-align: center;
+    color: var(--color-fonte);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.recuperar_senha_codigo_content h3 {
+    max-width: 100%;
+    text-align: center;
+    color: var(--color-primary-1);
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+.recuperar_senha_codigo_formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.recuperar_senha_codigo_formulario input {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    padding: 0 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    color: #000000;
+    box-sizing: border-box;
+}
+.recuperar_senha_codigo_formulario input::placeholder {
+    text-indent: 1px;
+}
+.recuperar_senha_codigo_formulario button {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    border: none;
+    color: var(--color-primary-1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.recuperar_senha_codigo_formulario button:hover {
+    background-color: var(--color-primary-2);
+    color: #ffffff;
+}
+.recuperar_senha_codigo_seta_voltar {
+    position: relative;
+    top: 5px;
+    left: calc(50% - 33vw);
+    font-size: 1.7rem;
+    color: var(--color-primary-1);
+    cursor: pointer;
+}
+@media (max-width: 1250px){
+    .recuperar_senha_codigo_seta_voltar{
+      top: -35px;
+      left: 5px;
+    }
+}
+@media (max-width: 768px){
+    .recuperar_senha_codigo_main {
+      padding: 0 20px;
+    }
+  
+    .recuperar_senha_codigo {
+      padding: 100px;
+    }
+  
+    .recuperar_senha_codigo_content h1 {
+      top: -30px;
+      font-size: 1.2rem;
+      margin-bottom: -10px;
+    }
+  
+    .recuperar_senha_codigo_content h3 {
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+  
+    .recuperar_senha_codigo_formulario input,
+    .recuperar_senha_codigo_formulario button {
+      max-width: 90%;
+    }
+}
+@media (max-width: 500px){
+    .recuperar_senha_codigo_seta_voltar{
+      display: none;
+    }
+    .recuperar_senha_codigo_main{
+      margin-top: 25%;
+      margin-bottom: 15%;
+    }
+    .recuperar_senha_codigo{
+      padding-bottom: 20px;
+    }
+    .recuperar_senha_codigo_content h1{
+      top: -70px;
+      font-size: 1rem;
+      margin-bottom: -60px;
+    }
+    .recuperar_senha_codigo_content h3{
+      font-size: 0.7rem;
+    }
+    .recuperar_senha_codigo_formulario input{
+      max-width: 230px;
+      width: 120%;
+      height: 25px;
+      font-size: 0.7rem;
+      margin-top: -5%;
+      margin-bottom: 2%;
+    }
+    .recuperar_senha_codigo_formulario button{
+      font-size: 0.8rem;
+      width: 60%;
+      height: 30px;
+    }
+}
+
+/* Recuperar senha login 3 */
+.body_redefinir_senha_login {
+  display: block;
+  place-items: center;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  box-sizing: border-box;
+}
+.rede_senha_section {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 50px;
+  margin-bottom: 5%;
+  padding: 0 20px;
+}
+.rede_senha_nav {
+  position: relative;
+  background-color: #DFEBE0;
+  padding: 10% 8%;
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  width: 100%;
+  transform: translateY(-30px);
+}
+.recuperar_senha_rede_formulario h1 {
+  text-align: center;
+  color: var(--color-fonte);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.recuperar_senha_rede_formulario h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--color-primary-1);
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+.recuperar_senha_rede_formulario {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.form_rede_senha {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.form_rede_senha input {
+  width: 100%;
+  max-width: 600px;
+  height: 35px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 0 15px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  color: #000000;
+  box-sizing: border-box;
+}
+#btnEnviar {
+  width: 130px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: none;
+  color: var(--color-primary-1);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 10px auto 0;
+  display: block;
+}
+.form_rede_senha button:hover {
+  background-color: var(--color-primary-2);
+  color: #ffffff;
+}
+@media (max-width: 767px) {
+    .recuperar_senha_codigo_seta_voltar, .recuperar_senha_codigo_seta_voltar i{
+      display: none;
+    }
+    .recuperar_senha_rede_formulario{
+      width: 300px;
+      flex-direction: column;
+    }
+    .rede_senha_nav{
+      padding: 15px 10px;
+      width: 350px;
+      margin:auto;
+      display: flex;
+      justify-content: center;
+    }
+    .rede_senha_section{
+      height: 300px;
+      display: flex;
+      justify-content: center;
+    }
+    .recuperar_senha_rede_formulario h1 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .recuperar_senha_rede_formulario h3 {
+      font-size: 0.7rem;
+    }
+    .recuperar_senha_rede_formulario input{
+      height: 25px;
+      font-size: 0.7rem;
+      top: 20px;
+      width: 100%;
+      max-width: 230px;
+      margin-bottom: 5%;
+    }
+    .recuperar_senha_rede_formulario button{
+      margin-top: 10%;
+      width: 40%;
+      height: 30px;
+      font-size: 0.8rem;
+    }
+}
+
+/* POP-UP */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.popup-content {
+  background-color: #fff;
+  width: 90%;
+  max-width: 400px;
+  min-height: 30vh;
+  border-radius: 8px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.popup-text {
+  color: #40513b;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+.popup-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  margin-top: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+.popup-button:hover {
+  background-color: #4CAF50;
+}
+@media (max-width: 768px) {
+  .popup-content {
+    width: 80vw;
+    min-height: 30vh;
+    padding: 1.5rem;
+  }
+  
+  .popup-text {
+    font-size: 1rem;
+  }
+}
