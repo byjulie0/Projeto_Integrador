@@ -36,10 +36,12 @@ CREATE TABLE adm (
     id_adm INT AUTO_INCREMENT PRIMARY KEY,
     adm_nome VARCHAR(100),
     email VARCHAR(150),
-    data_nasc DATE,
+    data_nasc DATE, --dado desnecessário
     telefone CHAR(9),
     senha VARCHAR(100), -- tirar senha
-    endereco_idendereco INT,
+    -- inserir cnpj
+    -- inserir atributo ativado como booleano ou 0 e 1
+    endereco_idendereco INT, --dado desnecessário
     tipo_user_idtipo_user INT, -- tirar
     FOREIGN KEY (endereco_idendereco) REFERENCES endereco(id_endereco),
     FOREIGN KEY (tipo_user_idtipo_user) REFERENCES tipo_user(idtipo_user)
@@ -70,9 +72,10 @@ CREATE TABLE produto (
     id_produto INT AUTO_INCREMENT PRIMARY KEY,
     prod_nome VARCHAR(100),
     valor FLOAT(10,2),
-    quant_estoque INT,
+    quant_estoque INT, -- dado desnecessário observações da Lara
+    -- inserir atributo ativado como booleano ou 0 e 1
     descricao TINYTEXT,
-    sexo ENUM('F', 'M'),
+    sexo ENUM('F', 'M'), -- inserir opção de não se aplica para quando se trata de produtos
     peso DECIMAL(10,2),
     id_categorias INT,
     id_subcategorias INT,
@@ -98,7 +101,7 @@ CREATE TABLE pedido (
     data_pedido DATE,
     status ENUM('Pendente', 'Aprovado', 'Enviado', 'Concluído', 'Cancelado'),
     qte INT,
-    pagamento ENUM('Cartão', 'Boleto', 'Pix'),
+    pagamento ENUM('Cartão', 'Boleto', 'Pix'), -- descartar
     cliente_id_cliente INT,
     FOREIGN KEY (cliente_id_cliente) REFERENCES cliente(id_cliente)
 );
