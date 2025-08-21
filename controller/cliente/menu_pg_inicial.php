@@ -1,3 +1,5 @@
+<?php include 'busca_verificar_produto'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
