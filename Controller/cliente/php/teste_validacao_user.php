@@ -1,5 +1,5 @@
 <?php
-include '../../model/DB/conexao.php'; // sua conexão $con
+include '../../../model/DB/conexao.php'; // sua conexão $con
 
 // Recebendo dados do formulário
 $user_nome = $_POST['user_nome'] ?? '';

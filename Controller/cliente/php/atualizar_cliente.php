@@ -1,5 +1,5 @@
 <?php
-include '../../model/conexao.php';
+include '../../../model/conexao.php';
 session_start();
 
 if (!isset($_SESSION['id_cliente'])) {
