@@ -121,7 +121,8 @@ CREATE TABLE carrinho (
     quantidade INT NOT NULL DEFAULT 1,
     selecionado TINYINT(1) DEFAULT 0,
     id_cliente INT NOT NULL,
-    FOREIGN KEY (id_produto) REFERENCES produto(id_produto)
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto),
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
 );
 
 show tables;

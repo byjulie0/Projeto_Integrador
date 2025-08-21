@@ -53,6 +53,28 @@ if (isset($_SESSION['id_cliente'])) {
                 <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Imagem Principal">
             </div>
         </div>
+            <div class="info-produto-detalhes-produto">
+                <div class="estrelas-detalhes-produto">★★★★★<span>4.9 (204)</span>
+                    <i class="bi bi-share"></i>
+                    <i class="bi bi-heart"></i>
+                </div>
+                    
+                <p class="informacoes-detalhes-produto">
+                    Vendido pela empresa <span>John Rooster</span>
+                </p>
+                <p class="informacoes-detalhes-produto">
+                    Entregue por <span>John Rooster</span>
+                </p>
+                <p class="informacoes-detalhes-produto">
+                    A John Rooster se compromete a oferecer apenas os melhores animais do mercado.
+                </p>
+                <p class="preco-detalhes-produto">R$ 5.000,00</p>
+                <form action="detalhes_produto.php" method="POST">
+                    <input type="hidden" name="id_cliente" value="1">
+                    <input type="hidden" name="id_produto" value="1">
+                    <button type="submit" class="botao-carrinho-detalhes-produto">Adicionar ao carrinho</button>
+                </form>
+                <a href="https://api.whatsapp.com/send?phone=556799492638"><button class="botao-comprar-detalhes-produto">Comprar</button></a>
 
         <div class="info-produto-detalhes-produto">
             <div class="estrelas-detalhes-produto">
