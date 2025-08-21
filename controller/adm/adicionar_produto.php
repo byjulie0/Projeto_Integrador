@@ -24,7 +24,7 @@
         <p class="info_add_product">Preencha as informações necessárias e adicione produtos ao catálogo do site</p>
         <section class="add_product_area">
             <article class="add_product_image">
-                <p class="product_title_info">Carregar imagem de capa<span class="mandatory_space">*</span></p>
+                <p class="product_title_info_img">Carregar imagem de capa<span class="mandatory_space">*</span></p>
                 <div class="img_holder">
                     <label class="img_holder_button">
                         <i class="fa-solid fa-arrow-up-from-bracket"></i>
@@ -141,9 +141,8 @@
                     </article>
                     
                     <article class="input_product_quantity">
-                        <p class="product_title_info">Descreva o produto<span class="mandatory_space">*</span></p>
-                        <input type="text" placeholder="Digite aqui" class="input_product_info product_details"
-                        required>
+                        <p class="product_title_info">Insira a descrição do produto</p>
+                        <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição_que_esta_no_DB" class="input_product_info product_details" required></textarea>
                     </article>
                     
                 </div>
