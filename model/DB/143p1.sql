@@ -72,7 +72,7 @@ CREATE TABLE produto (
     id_produto INT AUTO_INCREMENT PRIMARY KEY,
     prod_nome VARCHAR(100),
     valor FLOAT(10,2),
-    quant_estoque INT, -- dado desnecessário
+    quant_estoque INT, -- dado desnecessário observações da Lara
     -- inserir atributo ativado como booleano ou 0 e 1
     descricao TINYTEXT,
     sexo ENUM('F', 'M'), -- inserir opção de não se aplica para quando se trata de produtos
