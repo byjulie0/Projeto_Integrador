@@ -1,4 +1,4 @@
-<?php include 'php/adicionar_compras_carrinho.php'; ?>
+<?php require_once '../../model/DB/conexao.php'; ?>
 
 <?php include 'menu_pg_inicial.php'; ?>
 
@@ -48,7 +48,7 @@
                     A John Rooster se compromete a oferecer apenas os melhores animais do mercado.
                 </p>
                 <p class="preco-detalhes-produto">R$ 5.000,00</p>
-                <form action="adicionar_compras_carrinho.php" method="POST">
+                <form action="php/adicionar_compras_carrinho.php" method="POST">
                     <input type="hidden" name="id_cliente" value="1">
                     <input type="hidden" name="id_produto" value="1">
                     <button type="submit" class="botao-carrinho-detalhes-produto">Adicionar ao carrinho</button>

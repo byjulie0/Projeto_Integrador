@@ -1,6 +1,4 @@
 <?php
-require_once '../../model/DB/conexao.php';
-
 $msgErro = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
