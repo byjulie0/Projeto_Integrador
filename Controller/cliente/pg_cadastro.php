@@ -50,16 +50,16 @@
                         </div>
 
                     </div>
-
-                </form>
-
-                <div class="line-cadastro"></div>
-                <div class="btn-submit-cadastro">
+                    <div class="btn-submit-cadastro">
                     <?php
                     $texto = "Cadastrar";
                     include 'botao_cliente.php';
                     ?>
-                </div>
+                    </div>
+                </form>
+
+                <div class="line-cadastro"></div>
+              
             </div>
 
             <p class="area-termos-privacidade-cadastro">
