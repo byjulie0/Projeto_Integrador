@@ -35,7 +35,7 @@
                                     placeholder="CPF/CNPJ*">
                                 <input type="email" name="email" required class="input-form-cadastro required"
                                     placeholder="Email*">
-                                <span class="span-required" id="emailError">O email deve ter o padrão
+                                <span class="span-required" id="emailError">Use o padrão
                                     email@empresa.com.br</span>
                             </div>
                             <div class="coluna-direita-cadastro">
@@ -53,16 +53,16 @@
                         </div>
 
                     </div>
-
-                </form>
-
-                <div class="line-cadastro"></div>
-                <div class="btn-submit-cadastro">
+                      <div class="btn-submit-cadastro">
                     <?php
                     $texto = "Cadastrar";
                     include 'botao_cliente.php';
                     ?>
                 </div>
+                </form>
+
+                <div class="line-cadastro"></div>
+              
             </div>
 
             <p class="area-termos-privacidade-cadastro">
@@ -74,7 +74,6 @@
                 Já tem uma conta? <a href="login.php" class="login-cadastro">Entre</a>
             </p>
 
-        </div>
         </div>
     </main>
 </body>

@@ -1606,10 +1606,12 @@ body {
 
 /* Começo do CSS da página Cadastro Maria*/
 
-.span-required{
+.span-required {
   font-size: 0.8rem;
-  display: none;
   color: red;
+  display: none;   
+  top: 65%;
+  position: absolute;
 }
 
 .body-cadastro{
@@ -1644,7 +1646,7 @@ body {
   width: 100%;
   display: flex;
   margin-top: 2%;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -1746,6 +1748,21 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+
+.campo-senha-confirmar {
+  display: flex;
+  flex-direction: column; 
+  width: 100%;
+  max-width: 600px; 
+}
+
+.campo-senha-confirmar .span-required {
+  font-size: 0.85rem;
+  color: #dc3545;
+  margin-top: 4px;
+  padding-left: 2px; 
+  position: absolute;
 }
 
 .icon-voltar-cadastro{
