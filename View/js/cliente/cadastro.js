@@ -1,63 +1,74 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const email = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        const senha = 6;
-        const form = document.getElementById('formCadastro');
-        const submitButton = document.getElementById('submitButton');
-        const emailInput = document.querySelector('input[name="email"]');
-        const senhaInput = document.querySelector('input[name="senha"]');
-        const cpfcnpjInput = document.querySelector('input[name="cpf_cnpj"]');
-        function emailValidate() {
-            const emailValue = emailInput.value;
-            if (email.test(emailValue)) {
-                document.getElementById('emailError').style.display = 'none';
-                return true;
-            } else {
-                document.getElementById('emailError').style.display = 'block';
-                return false;
-            }
+document.addEventListener('DOMContentLoaded', function () {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const senhaMinLength = 6;
+
+    const form = document.getElementById('formCadastro');
+    const emailInput = document.querySelector('input[name="email"]');
+    const senhaInput = document.querySelector('input[name="senha"]');
+    const confirmarSenhaInput = document.querySelector('input[name="senha-confirmar"]');
+    const emailError = document.getElementById('emailError');
+    const senhaLengthError = document.getElementById('senhaLengthError');
+    const senhaConfirmError = document.getElementById('senhaConfirmError');
+
+    function emailValidate() {
+        const emailValue = emailInput.value;
+        if (emailRegex.test(emailValue)) {
+            emailError.style.display = 'none';
+            return true;
+        } else {
+            emailError.style.display = 'block';
+            return false;
         }
-        function senhaValidate() {
-            const senhaValue = senhaInput.value;
-            if (senhaValue.length >= senha) {
-                document.getElementById('senhaError').style.display = 'none';
-                return true;
-            } else {
-                document.getElementById('senhaError').style.display = 'block';
-                return false;
-            }
+    }
+
+    function senhaValidate() {
+        const senhaValue = senhaInput.value;
+        if (senhaValue.length >= senhaMinLength) {
+            senhaLengthError.style.display = 'none';
+            return true;
+        } else {
+            senhaLengthError.textContent = `A senha deve ter pelo menos ${senhaMinLength} caracteres.`;
+            senhaLengthError.style.display = 'block';
+            senhaConfirmError.style.display = 'none'; 
+            return false;
         }
-        function validateForm(event) {
-            const isEmailValid = emailValidate();
-            const isSenhaValid = senhaValidate();
-    
-            if (!isEmailValid || !isSenhaValid) {
-                event.preventDefault();
-            }
+    }
+
+    function confirmarSenhaValidate() {
+        const senhaValue = senhaInput.value;
+        const confirmarValue = confirmarSenhaInput.value;
+
+        if (senhaValue.length < senhaMinLength) {
+            senhaConfirmError.style.display = "none";
+            return false;
         }
-        form.addEventListener('submit', validateForm);
-        emailInput.addEventListener('input', emailValidate);
-        senhaInput.addEventListener('input', senhaValidate);
+
+        if (senhaValue !== confirmarValue) {
+            senhaConfirmError.textContent = "As senhas não coincidem";
+            senhaConfirmError.style.display = "block";
+            return false;
+        } else {
+            senhaConfirmError.style.display = "none";
+            return true;
+        }
+    }
+
+    function validateForm(event) {
+        const isEmailValid = emailValidate();
+        const isSenhaValid = senhaValidate();
+        const isConfirmValid = confirmarSenhaValidate();
+
+        if (!isEmailValid || !isSenhaValid || !isConfirmValid) {
+            event.preventDefault();
+        }
+    }
+
+    emailInput.addEventListener('input', emailValidate);
+    senhaInput.addEventListener('input', () => {
+        senhaValidate();
+        confirmarSenhaValidate(); 
     });
-    document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("formCadastro");
-        const senha = document.querySelector('input[name="senha"]');
-        const confirmarSenha = document.querySelector('input[name="senha-confirmar"]');
-        const senhaError = document.getElementById("senhaError");
-        form.addEventListener("submit", (e) => {
-            senhaError.style.display = "none"; 
-    
-            if (senha.value !== confirmarSenha.value) {
-                e.preventDefault();
-                senhaError.textContent = "As senhas não coincidem";
-                senhaError.style.display = "block";
-            }
-        });
-        confirmarSenha.addEventListener("input", () => {
-            if (confirmarSenha.value && senha.value !== confirmarSenha.value) {
-                senhaError.textContent = "As senhas não coincidem";
-                senhaError.style.display = "block";
-            } else {
-                senhaError.style.display = "none";
-            }
-        });
-    });
+    confirmarSenhaInput.addEventListener('input', confirmarSenhaValidate);
+
+    form.addEventListener('submit', validateForm);
+});

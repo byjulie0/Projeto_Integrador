@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Rooster - Cadastro</title>
-    <script defer src="../../view/js/cadastro.js"></script>
+    <script defer src="../../view/js/cliente/cadastro.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente/pg_cadastro.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -32,7 +32,7 @@
                                     placeholder="CPF/CNPJ*">
                                 <input type="email" name="email" required class="input-form-cadastro required"
                                     placeholder="Email*">
-                                <span class="span-required" id="emailError">O email deve ter o padrão
+                                <span class="span-required" id="emailError">Use o padrão
                                     email@empresa.com.br</span>
                             </div>
                             <div class="coluna-direita-cadastro">
@@ -41,7 +41,8 @@
                                 <input type="text" name="telefone" class="input-form-cadastro" placeholder="Telefone">
                                 <input type="password" name="senha" required class="input-form-cadastro"
                                     placeholder="Senha*">
-                                <span class="span-required" id="senhaError">A senha deve ter pelo menos 6 caracteres</span>
+                                <span class="span-required" id="senhaLengthError"></span>
+                                <span class="span-required" id="senhaConfirmError"></span>
                             </div>
                         </div>
                         
@@ -50,12 +51,12 @@
                         </div>
 
                     </div>
-                    <div class="btn-submit-cadastro">
+                      <div class="btn-submit-cadastro">
                     <?php
                     $texto = "Cadastrar";
                     include 'botao_cliente.php';
                     ?>
-                    </div>
+                </div>
                 </form>
 
                 <div class="line-cadastro"></div>
@@ -72,9 +73,9 @@
             </p>
 
         </div>
-        </div>
     </main>
 </body>
 
 </html>
+
 <?php include 'footer_cliente.php'; ?>
