@@ -1,13 +1,9 @@
 USE 143p1;
 
 -- Tabela: endereco
-CREATE TABLE endereco (
+CREATE TABLE endereco ( -- criar tabela pais e estado
     id_endereco INT AUTO_INCREMENT PRIMARY KEY,
     pais VARCHAR(100),
-    bairro VARCHAR(100),
-    rua VARCHAR(100),
-    numero INT,
-    cep CHAR(8)
 );
 
 -- Tabela: tipo-user
@@ -21,28 +17,20 @@ CREATE TABLE tipo_user (
 CREATE TABLE cliente (
     id_cliente INT AUTO_INCREMENT PRIMARY KEY,
     cliente_nome VARCHAR(100),
+    user_nome VARCHAR(150) NOT NULL UNIQUE,
     email VARCHAR(150),
     data_nasc DATE,
     telefone CHAR(9),
     senha VARCHAR(100), -- tirar senha
+    -- pais
+    -- estado
+    -- cidade
+    bairro VARCHAR(100),
+    rua VARCHAR(100),
+    numero INT,
+    cep CHAR(8),
     endereco_idendereco INT,
-    tipo_user_idtipo_user INT,
-    FOREIGN KEY (endereco_idendereco) REFERENCES endereco(id_endereco),
-    FOREIGN KEY (tipo_user_idtipo_user) REFERENCES tipo_user(idtipo_user)
-);
-
--- Tabela: adm
-CREATE TABLE adm (
-    id_adm INT AUTO_INCREMENT PRIMARY KEY,
-    adm_nome VARCHAR(100),
-    email VARCHAR(150),
-    data_nasc DATE, --dado desnecessário
-    telefone CHAR(9),
-    senha VARCHAR(100), -- tirar senha
-    -- inserir cnpj
     -- inserir atributo ativado como booleano ou 0 e 1
-    endereco_idendereco INT, --dado desnecessário
-    tipo_user_idtipo_user INT, -- tirar
     FOREIGN KEY (endereco_idendereco) REFERENCES endereco(id_endereco),
     FOREIGN KEY (tipo_user_idtipo_user) REFERENCES tipo_user(idtipo_user)
 );
@@ -50,11 +38,21 @@ CREATE TABLE adm (
 -- Tabela: user
 CREATE TABLE user (
     id_user INT AUTO_INCREMENT PRIMARY KEY,
-    user_nome VARCHAR(150) NOT NULL UNIQUE,
     email VARCHAR(150) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL, -- 255 para suportar hash seguro
     tipo_user INT DEFAULT 0
 );
+
+-- Tabela: adm
+CREATE TABLE adm (
+    id_adm INT AUTO_INCREMENT PRIMARY KEY,
+    adm_nome VARCHAR(100),
+    email VARCHAR(150),
+    telefone CHAR(9),
+    senha VARCHAR(100),
+    -- inserir cnpj
+);
+
 -- Tabela: categoria
 CREATE TABLE categoria (
     id_categorias INT AUTO_INCREMENT PRIMARY KEY,
@@ -72,10 +70,11 @@ CREATE TABLE produto (
     id_produto INT AUTO_INCREMENT PRIMARY KEY,
     prod_nome VARCHAR(100),
     valor FLOAT(10,2),
-    quant_estoque INT, -- dado desnecessário observações da Lara
+    quant_estoque INT,
+    path_img VARCHAR(200), --endereco onde a imagem esta salva
     -- inserir atributo ativado como booleano ou 0 e 1
     descricao TINYTEXT,
-    sexo ENUM('F', 'M'), -- inserir opção de não se aplica para quando se trata de produtos
+    sexo ENUM('F', 'M', 'Não se aplica'), -- inserir opção de não se aplica para quando se trata de produtos
     peso DECIMAL(10,2),
     id_categorias INT,
     id_subcategorias INT,
@@ -93,15 +92,12 @@ CREATE TABLE favorito (
     FOREIGN KEY (produto_id_produto) REFERENCES produto(id_produto)
 );
 
-
-
 -- Tabela: pedido
 CREATE TABLE pedido (
     id_pedido INT AUTO_INCREMENT PRIMARY KEY,
     data_pedido DATE,
     status ENUM('Pendente', 'Aprovado', 'Enviado', 'Concluído', 'Cancelado'),
     qte INT,
-    pagamento ENUM('Cartão', 'Boleto', 'Pix'), -- descartar
     cliente_id_cliente INT,
     FOREIGN KEY (cliente_id_cliente) REFERENCES cliente(id_cliente)
 );
