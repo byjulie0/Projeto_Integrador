@@ -1,4 +1,4 @@
-<?php include 'busca_verificar_produto'; ?>
+<?php include 'php/busca_verificar_produto.php'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../../view/public/css/cliente/menu_pg_inicial.css">
     <script defer src="../../view/js/menu-pg-inicial.js"></script>
+    <script defer src="../../view/js/busca_verificar_produto.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
@@ -47,10 +48,11 @@
             </div>
 
             <div class="search-container-pg-inicial">
-                <input type="text" placeholder="O que deseja buscar?" />
-                <button type="submit">
+                <input type="text" placeholder="O que deseja buscar?" id="busca" autocomplete="off"/>
+                <div id="resultado"></div>
+                <!-- <button type="submit">
                     <a href="pg_busca.php"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </button>
+                </button> -->
             </div>
 
             <div class="nav-page-btns-pg-inicial">

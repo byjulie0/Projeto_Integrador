@@ -1,9 +1,13 @@
 <?php
-$host= "192.168.22.9";
-$usuario = "turma143p1";
-$senha = "sucesso@143";
-$bd = "143p1";
+// $host= "192.168.22.9";
+// $usuario = "turma143p1";
+// $senha = "sucesso@143";
+// $bd = "143p1";
 
+$host= "localhost";
+$usuario = "root";
+$senha = "";
+$bd = "teste_projeto";
 
 $con = new mysqli($host, $usuario, $senha, $bd);
 
