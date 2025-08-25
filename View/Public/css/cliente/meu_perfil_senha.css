@@ -145,3 +145,41 @@
         flex-direction: column;
     }
 }
+@media (max-width: 360px) {
+    .visualizar-dados-title{
+        font-size: 1.5rem;
+        justify-content: flex-start; 
+        text-align: left;
+    }
+    .a-style{
+        display: none;
+    }
+    .header-arthura {
+        padding: 3% 11%;              
+        justify-content: flex-start; 
+    }
+    .wrapper-arthura{
+        width: 100%;
+        align-items: center;
+        justify-content: center; 
+    }
+    .profile-arthura{
+        width: 100%;
+       align-items: center;
+       justify-content: end;
+       margin-left: 7px;
+
+    }
+    .botoes-arthura{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .section-text-arthura,.form-botoes-arthura{
+        margin-top: 5px;
+    }
+    .section-title-arthura{
+        margin-bottom: 10px;
+    }
+  }
