@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../../../model/DB/conexao.php'; // arquivo com a conexão ao banco
+include '../../model/DB/conexao.php'; // arquivo com a conexão ao banco
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recebe dados do formulário
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($retorno["senha"] == $password)
         {
             $_SESSION["username"] = $username;
-            header("Location: ../pg_inicial_cliente.php");
+            header("Location: ../cliente/pg_inicial_cliente.php");
         }
         else{
             echo  "senha invalida ";

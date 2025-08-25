@@ -1,5 +1,5 @@
 <?php
-include '../../../model/DB/conexao.php';
+include '../../model/DB/conexao.php';
 ?>
 
 <!DOCTYPE html>

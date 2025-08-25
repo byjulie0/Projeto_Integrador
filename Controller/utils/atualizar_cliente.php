@@ -1,11 +1,11 @@
 <?php
-include '../../../model/conexao.php';
+include '../../model/DB/conexao.php';
 session_start();
 
-if (!isset($_SESSION['id_cliente'])) {
-    header(header: "Location: login.php");
-    exit;
-}
+// if (!isset($_SESSION['id_cliente'])) {
+//     header(header: "Location: ../cliente/login.php");
+//     exit;
+// }
 
 $id_cliente   = $_SESSION['id_cliente'];
 $cliente_nome = $_POST['cliente_nome'];
@@ -62,6 +62,6 @@ if ($res && $res->num_rows > 0) {
 
 $con->close();
 
-header(header: "Location: meu_perfil.php?atualizado=1");
+header(header: "Location: ../cliente/meu_perfil.php?atualizado=1");
 exit;
 ?>
