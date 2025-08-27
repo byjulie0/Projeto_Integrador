@@ -185,6 +185,34 @@
     left: auto;
     min-width: 180px;
 }
+
+/* Personalização na aba de pesquisa */
+
+#resultado_busca {
+  position: absolute; /* para ficar abaixo do input */
+  transform: translateY(75px);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  max-width: 100%;
+  width: 25%;
+  max-height: 200px; /* limite de altura */
+  overflow-y: auto; /* rolagem se passar do limite */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 999; /* ficar acima de outros elementos */
+  display: none; /* começa escondido */
+}
+
+#resultado_busca .item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+#resultado_busca .item:hover {
+  background-color: #f2f2f2;
+}
+
+
 /* ===== MOBILE MENU STATES ===== */
 .mobile-menu-container {
     display: none;
