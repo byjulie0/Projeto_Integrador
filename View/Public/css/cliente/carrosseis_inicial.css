@@ -313,7 +313,6 @@
   .arrow_talvez_goste { font-size: 36px; width: 50px; height: 50px; }
 }
 
-
 /* ---------------------- CAMPEÕES ---------------------- */
 .pg_campeoes {
   color: var(--color-primary-1);
@@ -329,7 +328,8 @@
   justify-content: center;
   position: relative;
   padding: 2% 0 5%;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
