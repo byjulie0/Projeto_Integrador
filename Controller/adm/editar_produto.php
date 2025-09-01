@@ -47,6 +47,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
                         <span class="error-message">Por favor, preencha este campo</span>
                     </article>
 
+                    <article class="input_product_champion">
+                            <p class="product_title_info">Categoria é um campeão?</p>
+                            <select name="is_champion" id="is_champion" class="product_info_select" required>
+                            <option value="" selected disabled>Selecione uma opção</option>
+                            <option value="sim">Sim</option>
+                             <option value="nao">Não</option>
+                        </select>
+                        <span class="error-message">Por favor, selecione uma opção</span>
+                    </article>
+
+                    <article class="input_product_quantity">
+                        <p class="product_title_info">Quantidade do produto</p>
+                        <input type="number" placeholder="Quantidade_que_esta_no_DB" class="input_product_info" required min="0">
+                    </article>
+
                     <article class="input_product_category">
                         <p class="product_title_info">Edite a categoria</p>
 
@@ -145,6 +160,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
                         <span class="error-message">Por favor, selecione uma opção</span>
                     </article>
                     
+                    
+
                     <article class="input_product_quantity">
                         <p class="product_title_info">Edite a descrição do produto</p>
                         <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição_que_esta_no_DB" class="input_product_info product_details" required></textarea>
