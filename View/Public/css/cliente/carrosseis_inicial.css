@@ -322,6 +322,10 @@
   margin-bottom: 15px;
 }
 
+.body_pg_campeoes{
+  max-width: 100%;
+}
+
 .carrossel_campeoes {
   display: flex;
   align-items: center;
@@ -442,7 +446,7 @@
 .arrow_campeoes { z-index: 2; }
 
 /* Responsividade */
-@media (max-width: 390px) {
+@media (max-width: 375px) {
   .pg_campeoes {
     font-size: 1.375rem;
     padding-left: 5%;
