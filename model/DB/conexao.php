@@ -7,11 +7,6 @@ $senha = "sucesso@143";
 // $senha = "";
 $bd = "143p1";
 
-$host= "localhost";
-$usuario = "root";
-$senha = "";
-$bd = "teste_projeto";
-
 $con = new mysqli($host, $usuario, $senha, $bd);
 
 

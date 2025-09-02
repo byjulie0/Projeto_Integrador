@@ -11,7 +11,7 @@ inputBusca.addEventListener("keyup", function() {
     }
 
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "php/busca_verificar_produto.php?q=" + termo, true);
+    xhr.open("GET", "../utils/busca_verificar_produto.php?q=" + termo, true);
     xhr.onload = function() {
         if (this.status === 200) {
             resultadoContainer.innerHTML = this.responseText;

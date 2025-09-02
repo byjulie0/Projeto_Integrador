@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . "/../../../model/DB/conexao.php");
+require_once(__DIR__ . "/../../model/DB/conexao.php");
 
 $q = isset($_GET['q']) ? $con->real_escape_string($_GET['q']) : '';
 
