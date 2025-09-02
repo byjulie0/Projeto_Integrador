@@ -1,4 +1,3 @@
-<!-- VALDIR -->
 <?php
     include 'menu_pg_inicial.php';
 ?>
