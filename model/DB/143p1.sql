@@ -27,6 +27,21 @@ CREATE TABLE cliente (
     FOREIGN KEY (estado_id_estado) REFERENCES estado(id_estado),
     FOREIGN KEY (pais_id_pais) REFERENCES pais(id_pais)
 );
+/* criando clientes na tab clientes */
+INSERT INTO cliente (
+    cliente_nome,
+    email,
+    data_nasc,
+    telefone,
+    senha,
+    endereco_idendereco,
+    tipo_user_idtipo_user
+) VALUES
+('ana.silva', 'ana@example.com', '1995-04-12', '999999991', 'ana123', 1, 1),
+('bruno.souza', 'bruno@example.com', '1990-08-25', '988888882', 'bruno456', 2, 1),
+('carla.moura', 'carla@example.com', '1988-11-30', '977777773', 'carla789', 3, 1),
+('daniel.pereira', 'daniel@example.com', '1992-03-15', '966666664', 'daniel000', 4, 1),
+('elisa.almeida', 'elisa@example.com', '1998-07-07', '955555555', 'elisa999', 5, 1);
 
 CREATE TABLE adm (
     id_adm INT AUTO_INCREMENT PRIMARY KEY,
