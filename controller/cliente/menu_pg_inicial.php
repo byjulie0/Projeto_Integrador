@@ -48,9 +48,6 @@
             <div class="search-container-pg-inicial">
                 <input type="text" placeholder="O que deseja buscar?" id="busca" autocomplete="off"/>
                 <div id="resultado_busca"></div>
-                <!-- <button type="submit">
-                    <a href="pg_busca.php"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </button> -->
             </div>
 
             <div class="nav-page-btns-pg-inicial">
