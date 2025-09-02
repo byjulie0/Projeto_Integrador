@@ -105,8 +105,7 @@
   margin-top: 25px;
 }
 
-.visualizar-dados-editar,
-.visualizar-dados-logout {
+.visualizar-dados-editar{
   border: none;
   border-radius: 0.5rem;
   padding: 10px 20px;
@@ -128,15 +127,7 @@
   color: var(--color-botao-op-Concluido);
 }
 
-.visualizar-dados-logout {
-  background-color: var(--color-botao-op-Cancelar);
-  color: #fff;
-}
 
-.visualizar-dados-logout:hover {
-  background-color: #f8d7da;
-  color: #c0392b;
-}
 .visualizar-dados-img-perfil{
   width: 70px;
   height: 70px;

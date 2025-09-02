@@ -1,12 +1,11 @@
 <?php
-include '../../model/conexao.php';
+include '../../model/DB/conexao.php';
 session_start();
 
-// Verifica se o cliente está logado
-if (!isset($_SESSION['id_cliente'])) {
-    header(header: "Location: login.php");
-    exit;
-}
+// if (!isset($_SESSION['id_cliente'])) {
+//     header(header: "Location: ../cliente/login.php");
+//     exit;
+// }
 
 $id_cliente   = $_SESSION['id_cliente'];
 $cliente_nome = $_POST['cliente_nome'];
@@ -15,14 +14,12 @@ $telefone     = $_POST['telefone'];
 $data_nasc    = date(format: 'Y-m-d', timestamp: strtotime(datetime: str_replace(search: '/', replace: '-', subject: $_POST['data_nasc'])));
 $endereco     = $_POST['endereco'];
 
-// Separar endereço (esperado no formato: Rua, Numero - Bairro)
 $partes         = explode(separator: ',', string: $endereco);
 $rua            = trim(string: $partes[0]);
 $numero_bairro  = explode(separator: '-', string: $partes[1]);
 $numero         = trim(string: $numero_bairro[0]);
 $bairro         = isset($numero_bairro[1]) ? trim(string: $numero_bairro[1]) : '';
 
-// Atualizar cliente
 $stmt = $con->prepare(query: "UPDATE cliente 
                        SET cliente_nome=?, email=?, telefone=?, data_nasc=? 
                        WHERE id_cliente=?");
@@ -38,7 +35,6 @@ if (!$stmt->execute()) {
 }
 $stmt->close();
 
-// Obter ID do endereço do cliente
 $res = $con->query(query: "SELECT endereco_idendereco 
                     FROM cliente 
                     WHERE id_cliente = $id_cliente");
@@ -46,7 +42,6 @@ $res = $con->query(query: "SELECT endereco_idendereco
 if ($res && $res->num_rows > 0) {
     $id_endereco = $res->fetch_assoc()['endereco_idendereco'];
 
-    // Atualizar endereço
     $stmt2 = $con->prepare(query: "UPDATE endereco 
                             SET rua=?, numero=?, bairro=? 
                             WHERE id_endereco=?");
@@ -67,7 +62,6 @@ if ($res && $res->num_rows > 0) {
 
 $con->close();
 
-// Redirecionar com sucesso
-header(header: "Location: meu_perfil.php?atualizado=1");
+header(header: "Location: ../cliente/meu_perfil.php?atualizado=1");
 exit;
 ?>

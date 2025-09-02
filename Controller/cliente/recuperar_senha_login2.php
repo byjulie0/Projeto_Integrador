@@ -2,7 +2,9 @@
 <?php
 include 'menu_recuperar_senha.php';
 ?>
-
+<?php
+$email = htmlspecialchars($_GET['esqueci_senha_card_email_digitar']);
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,7 +28,7 @@ include 'menu_recuperar_senha.php';
                 <div class="recuperar_senha_codigo_content">
                     <h1>Código</h1>
                     <h3>Insira o código de 6 digitos que lhe enviamos</h3>
-                    <form action="recuperar_senha_login3.php" class="recuperar_senha_codigo_formulario">
+                    <form action="recuperar_senha_login3.php?email=<?php echo urlencode($email);?>" class="recuperar_senha_codigo_formulario">
                         <input type="text" inputmode="numeric" pattern="[A-aZ-z0-9]+" maxlength="8" required>
                         <?php
                         $texto = "Enviar"; 

@@ -87,3 +87,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// Remover itens do carrinho
+document.querySelectorAll(".delete-item-carrinho").forEach(function(botao) {
+    botao.addEventListener("click", function() {
+        // Acha o card do produto
+        let cardProduto = this.closest(".product-card-carrinho");
+        if (cardProduto) {
+            cardProduto.remove(); // Remove do DOM
+            atualizarResumoCarrinho();
+        }
+    });
+});
+
+
+function atualizarResumoCarrinho() {
+    let produtos = document.querySelectorAll(".product-card-carrinho");
+    let totalItens = produtos.length;
+    let totalPreco = 0;
+
+    produtos.forEach(function(produto) {
+        let preco = parseFloat(produto.getAttribute("data-price"));
+        totalPreco += preco;
+    });
+
+    document.querySelector(".total-items-count").textContent = totalItens;
+    document.querySelector(".grand-total-price").textContent = totalPreco.toFixed(2).replace(".", ",");
+}
