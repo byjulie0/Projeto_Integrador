@@ -1,8 +1,5 @@
 <?php
 include 'menu_login.php';
-/*cod para validar o user no banco de dados */ 
-
-
 
 ?>
 
@@ -31,7 +28,7 @@ include 'menu_login.php';
 
             <div class="login_form_vinycius">
                 <h2>Login</h2>
-                <form class="form_login" action="validacao-user-bd.php" method="POST">
+                <form class="form_login" action="../utils/validacao_user_bd.php" method="POST">
                     <input type="text" name="username" placeholder="Nome de usuário" class="input_login_vinycius1"
                         required>
 
