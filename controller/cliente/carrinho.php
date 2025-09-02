@@ -45,7 +45,7 @@ $totalValor = $resumo['total'] ?? 0.00;
     <title>Carrinho</title>
     <link rel="stylesheet" href="../../view/public/css/cliente/carrinho.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="../../view/js/carrinho.js"></script>
+    <script defer src="../../view/js/cliente/carrinho.js"></script>
 </head>
 
 <body>

@@ -1,4 +1,4 @@
-@import url("../cliente.css");
+/* @import url("../cliente.css"); */
 
 /* ---------------------- MAIS VENDIDOS ---------------------- */
 .pg_mais_vendidos {
@@ -125,37 +125,12 @@
   width: 100%;
   box-sizing: border-box;
 }
-.btn_mais_vendidos:hover { background-color: rgb(65, 110, 55); }
-.arrow_mais_vendidos { z-index: 2; }
-
-/* Responsividade */
-@media (max-width: 390px) {
-  .pg_mais_vendidos {
-    font-size: 1.375rem;
-    padding-left: 5%;
-    padding-top: 3%;
-  }
-  .carrossel_mais_vendidos { padding: 5% 0 10%; }
-  .arrow_mais_vendidos { font-size: 24px; width: 35px; height: 35px; }
-  .cards_mais_vendidos { width: calc(100% - 80px); padding: 10px; }
+.btn_mais_vendidos:hover { 
+  background-color: rgb(65, 110, 55); 
 }
-@media (min-width: 391px) and (max-width: 767px) {
-  .pg_mais_vendidos { font-size: 1.375rem; }
-  .carrossel_mais_vendidos { padding: 5% 2% 7%; }
+.arrow_mais_vendidos { 
+  z-index: 2; 
 }
-@media (min-width: 768px) and (max-width: 1024px) {
-  .carrossel_mais_vendidos { padding: 3% 2% 5%; }
-  .pg_mais_vendidos { font-size: 2rem; }
-}
-@media (min-width: 1024px) and (max-width: 1919px) {
-  .carrossel_mais_vendidos { padding: 2% 2% 5%; }
-}
-@media (min-width: 1920px) {
-  .pg_mais_vendidos { font-size: 2rem; padding-left: 8%; }
-  .carrossel_mais_vendidos { max-width: 1400px; padding: 2% 2% 5%; }
-  .arrow_mais_vendidos { font-size: 36px; width: 50px; height: 50px; }
-}
-
 
 /* ---------------------- TALVEZ VOCÊ GOSTE ---------------------- */
 .pg_talvez_goste {
@@ -209,8 +184,6 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-
-  /* 🔹 Correções */
   padding-right: 15px;
   overscroll-behavior-x: contain;
   scroll-padding-left: 10px;
@@ -282,35 +255,11 @@
   width: 100%;
   box-sizing: border-box;
 }
-.btn_talvez_goste:hover { background-color: rgb(65, 110, 55); }
-.arrow_talvez_goste { z-index: 2; }
-
-/* Responsividade */
-@media (max-width: 390px) {
-  .pg_talvez_goste {
-    font-size: 1.375rem;
-    padding-left: 5%;
-    padding-top: 3%;
-  }
-  .carrossel_talvez_goste { padding: 5% 0 10%; }
-  .arrow_talvez_goste { font-size: 24px; width: 35px; height: 35px; }
-  .cards_talvez_goste { width: calc(100% - 80px); padding: 10px; }
+.btn_talvez_goste:hover {
+  background-color: rgb(65, 110, 55); 
 }
-@media (min-width: 391px) and (max-width: 767px) {
-  .pg_talvez_goste { font-size: 1.375rem; }
-  .carrossel_talvez_goste { padding: 5% 2% 7%; }
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  .carrossel_talvez_goste { padding: 3% 2% 5%; }
-  .pg_talvez_goste { font-size: 2rem; }
-}
-@media (min-width: 1024px) and (max-width: 1919px) {
-  .carrossel_talvez_goste { padding: 2% 2% 5%; }
-}
-@media (min-width: 1920px) {
-  .pg_talvez_goste { font-size: 2rem; padding-left: 8%; }
-  .carrossel_talvez_goste { max-width: 1400px; padding: 2% 2% 5%; }
-  .arrow_talvez_goste { font-size: 36px; width: 50px; height: 50px; }
+.arrow_talvez_goste { 
+  z-index: 2; 
 }
 
 /* ---------------------- CAMPEÕES ---------------------- */
@@ -369,8 +318,6 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-
-  /* 🔹 Correções */
   padding-right: 15px;
   overscroll-behavior-x: contain;
   scroll-padding-left: 10px;
@@ -442,33 +389,10 @@
   width: 100%;
   box-sizing: border-box;
 }
-.btn_campeoes:hover { background-color: rgb(65, 110, 55); }
-.arrow_campeoes { z-index: 2; }
+.btn_campeoes:hover { 
+  background-color: rgb(65, 110, 55); 
+}
+.arrow_campeoes {
+  z-index: 2; 
+}
 
-/* Responsividade */
-@media (max-width: 375px) {
-  .pg_campeoes {
-    font-size: 1.375rem;
-    padding-left: 5%;
-    padding-top: 3%;
-  }
-  .carrossel_campeoes { padding: 5% 0 10%; }
-  .arrow_campeoes { font-size: 24px; width: 35px; height: 35px; }
-  .cards_campeoes { width: calc(100% - 80px); padding: 10px; }
-}
-@media (min-width: 391px) and (max-width: 767px) {
-  .pg_campeoes { font-size: 1.375rem; }
-  .carrossel_campeoes { padding: 5% 2% 7%; }
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  .carrossel_campeoes { padding: 3% 2% 5%; }
-  .pg_campeoes { font-size: 2rem; }
-}
-@media (min-width: 1024px) and (max-width: 1919px) {
-  .carrossel_campeoes { padding: 2% 2% 5%; }
-}
-@media (min-width: 1920px) {
-  .pg_campeoes { font-size: 2rem; padding-left: 8%; }
-  .carrossel_campeoes { max-width: 1400px; padding: 2% 2% 5%; }
-  .arrow_campeoes { font-size: 36px; width: 50px; height: 50px; }
-}

@@ -118,7 +118,9 @@
   margin-top: 25px;
 }
 
+
 .visualizar-dados-editar {
+.visualizar-dados-editar{
   border: none;
   border-radius: 0.5rem;
   padding: 10px 20px;
@@ -141,6 +143,22 @@
 }
 
 /* ================= RESPONSIVIDADE ================= */
+
+.visualizar-dados-img-perfil{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-primary-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.avatar-icon {
+  width: 60%;
+  height: 60%;
+  fill: white;
+}
 
 /* Tablets e telas médias */
 @media (max-width: 768px) {

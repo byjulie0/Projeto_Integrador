@@ -19,7 +19,7 @@
         <a href="detalhes_produto.php">
             <div class="cards_campeoes" id="carrossel-cards3">
                 <?php
-                $talvez_voce_goste = [
+                $campeos = [
                     [
                         "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
                         "peso" => "420 kg",
@@ -62,7 +62,7 @@
                     ]
                 ];
 
-                foreach ($talvez_voce_goste as $item) {
+                foreach ($campeos as $item) {
                     $imagem = $item['imagem'];
                     $peso = $item['peso'];
                     $raca = $item['raca'];
