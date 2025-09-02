@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../view/public/css/cliente/carrosseis_inicial.css">
 </head>
 
-<body class="body_pg_campeoes">
+<body class="body_pg_carrossel_campeoes">
     <h1 class="pg_campeoes" id="campeoes">Campeões do Mês</h1>
 
     <div class="carrossel_campeoes">

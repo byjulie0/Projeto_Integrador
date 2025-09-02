@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../view/public/css/cliente/carrosseis_inicial.css">
 </head>
 
-<body>
+<body class="body_pg_carrossel_mais_vendidos">
     <h1 class="pg_mais_vendidos" id="mais_vendidos">Mais Vendidos</h1>
 
     <div class="carrossel_mais_vendidos">
