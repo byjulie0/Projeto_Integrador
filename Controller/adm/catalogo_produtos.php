@@ -43,7 +43,7 @@
                             <th class="select-all-label-atualizar-produtos"><button>Selecionar tudo</button></th>
                             <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>
                             <th class="header-cell-atualizar-produto">Categoria</th>
-                            <th class="header-cell-atualizar-produto">Estoque</th>
+                            <th class="header-cell-atualizar-produto">Subcategoria</th>
                             <th class="header-cell-atualizar-produto">Preço</th>
                             <th class="header-cell-atualizar-produto">Editar</th>
                             <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
@@ -62,7 +62,7 @@
                                 <div class="category-name-atualizar-produtos"><span>Nome da categoria</span></div>
                             </td>
 
-                            <td class="qt-atualizar-produtos cell-atualizar-produto">Quantidade em estoque</td>
+                            <td class="qt-atualizar-produtos cell-atualizar-produto">Subcategoria</td>
 
                             <td class="price-atualizar-produtos cell-atualizar-produto">Preço do produto</td>
 
