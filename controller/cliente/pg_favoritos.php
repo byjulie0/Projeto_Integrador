@@ -14,7 +14,7 @@
 <body>
     <div class="seta_titulo_pg_favoritos">
         <a class="btn_voltar_favoritos" href="#" onclick="window.history.back(); return false;">
-            <i class="fa-solid fa-chevron-left"></i>
+            <i class="bi bi-chevron-left"></i>
         </a>
         <h2 class="h2_pg_favoritos">Favoritos</h2>
     </div>
