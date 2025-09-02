@@ -2,6 +2,9 @@
 <?php
 include 'menu_recuperar_senha.php';
 ?>
+<?php
+$email_recuperar_senha = isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,7 +28,8 @@ include 'menu_recuperar_senha.php';
             <div class="recuperar_senha_rede_formulario">
                 <h1>Redefinir senha</h1>
                 <h3>Escolha sua nova senha</h3>
-                <form action="pg_login.php" class="form_rede_senha" id="formRedefinirSenha">
+                <form action="../utils/recuperar_senha_action.php" class="form_rede_senha" id="formRedefinirSenha" method="POST">
+                    <input type="hidden" name="email_recuperar_senha" value="<?php echo $email_recuperar_senha; ?>">
                     <input type="password" minlength="8" required placeholder="Nova senha" id="novaSenha">
                     <input type="password" minlength="8" required placeholder="Confirmar nova senha"
                         id="confirmarSenha">
