@@ -25,39 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($retorno["senha"] == $password)
         {
             $_SESSION["username"] = $username;
-            header("Location: pg_inicial_cliente.php");
+            header("Location: ../cliente/pg_inicial_cliente.php");
         }
         else{
             echo  "senha invalida ";
         }
     }
     
-/*
-    if ($result->num_rows === 1) {
-        $user = $result->fetch_assoc();
-
-        // Verifica senha
-        if (password_verify($password, $user['senha'])) {
-            // Usuário autenticado
-            $_SESSION['username'] = $user['cliente_nome'];
-            header("Location: pg_inicial_cliente.php"); // redireciona para página inicial
-            exit();
-        } else {
-            $erro = "Senha incorreta.";
-        }
-    } else {
-        $erro = "Usuário não encontrado.";
-    }
-
-    $stmt->close();
-    $con->close();
-}
-?>
-<?php
-$senhas = ['senha123', 'teste456', 'admin123', 'usuario456', 'johnrooster'];
-
-foreach ($senhas as $senha) {
-    echo "Senha: $senha <br>";
-    echo "Hash: " . password_hash($senha, PASSWORD_DEFAULT) . "<br><br>";*/
 }
 ?>

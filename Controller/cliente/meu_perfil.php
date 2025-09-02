@@ -52,7 +52,10 @@
             ?>
         </a>
         <a href="/Projeto_Integrador/controller/cliente/logout.php">
-          <button class="visualizar-dados-logout">Logout</button>
+        <a href="../cliente/logout.php">
+          <?php include 'botao_logout.php';?>
+        </a>
+        
         </a>
       </div>
     </div>

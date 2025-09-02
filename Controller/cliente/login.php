@@ -1,8 +1,5 @@
 <?php
 include 'menu_login.php';
-/*cod para validar o user no banco de dados */ 
-
-
 
 ?>
 
@@ -14,7 +11,7 @@ include 'menu_login.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - John Rooster</title>
     <link rel="stylesheet" href="../../view/public/css/cliente/pg_login.css">
-    <script src="../../view/JS/login_olho_ocultar_senha.js"></script>
+    <script src="../../view/js/cliente/login_olho_ocultar_senha.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -31,7 +28,7 @@ include 'menu_login.php';
 
             <div class="login_form_vinycius">
                 <h2>Login</h2>
-                <form class="form_login" action="validacao-user-bd.php" method="POST">
+                <form class="form_login" action="../utils/validacao_user_bd.php" method="POST">
                     <input type="text" name="username" placeholder="Nome de usuário" class="input_login_vinycius1"
                         required>
 

@@ -1,6 +1,6 @@
 <?php
 include 'menu_pg_inicial.php';
-include '../../model/conexao.php';
+include '../../model/DB/conexao.php';
 session_start();
  
 // Supondo que o ID do cliente está salvo na sessão
@@ -39,9 +39,7 @@ if ($result->num_rows > 0) {
         <div class="client-edit-container">
             <div class="client-edit-header">
                 <h1 class="client-edit-title-titulo">
-                    <a href="#">
-                        <i class="bi bi-chevron-left" onclick="window.history.back(); return false;"></i>
-                     </a>
+                <a href="#"><i class="bi bi-chevron-left" onclick="window.history.back(); return false;"></i></a>
                 Editar meus dados</h1>
             </div>
  
