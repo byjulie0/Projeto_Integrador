@@ -9,13 +9,7 @@
   width: 100%;
   position: relative;
   margin-top: 35px;
-}
-
-.h2_pg_favoritos {
-  margin: 0;
-  display: inline-block;
-  padding-bottom: 13px;
-  color: var(--color-primary-1);
+  margin-bottom: 5%;
 }
 
 .lotes-wrapper_favoritos {
@@ -36,17 +30,19 @@
   display: flex;
   width: 100%;
 }
-.btn_voltar_favoritos {
-  display: inline-flex;
+.seta_titulo_pg_favoritos{
+  display: flex;
   align-items: center;
-  margin-right: 10px;
-  vertical-align: middle;
-  text-decoration: none;
-}
-
-.btn_voltar_favoritos i {
+  justify-content: left;
   color: var(--color-primary-1);
-  font-size: 1.5rem;
+  padding-left:8%;
+  gap: 10px;
+}
+.h2_pg_favoritos{
+  font-size: 2rem;
+}
+.btn_voltar_favoritos i {
+  font-size: 30px;
 }
 
 @media (max-width: 767px) {
@@ -93,5 +89,16 @@
   }
   .container_pg_favoritos {
     max-width: 1600px;
+  }
+}
+@media (min-width: 360px) {
+ .container_pg_favoritos{
+  width: 85%;
+ }
+  .seta_titulo_pg_favoritos{
+   margin-top: 6%;
+  }
+  .h2_pg_favoritos, .btn_voltar_favoritos i{
+    font-size: 1.5rem;
   }
 }
