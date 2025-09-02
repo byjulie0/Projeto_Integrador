@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PopUp Login</title>
     <link rel="stylesheet" href="../../View/Public/Css/cliente/pop_up_login.css">
-    <script defer src="../../view/js/pop_up_login.js"></script>
 </head>
 
 <body>

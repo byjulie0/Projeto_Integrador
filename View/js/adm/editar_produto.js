@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos do DOM - IDs e classes específicos da página de edição
     const categorySelect = document.getElementById('categories');
     const subcategorySelects = document.querySelectorAll('.subcategory-select');
-    
-    // Mapeamento de categorias para subcategorias (mesmo da página de adicionar)
     const categoryToSubcategoryMap = {
         'bovinos': 'bovinos_breed',
         'equinos': 'equinos_breed',
@@ -11,8 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         'produtos_gerais': 'product_types',
         'premiados': 'winner_breed'
     };
-    
-    // Função para manipular a mudança de categoria (igual)
     function handleCategoryChange() {
         subcategorySelects.forEach(select => {
             select.style.display = 'none';
@@ -32,29 +27,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    
-    // Event Listeners (ajustado para página de edição)
     if (categorySelect) {
         categorySelect.addEventListener('change', handleCategoryChange);
-        
-        // Dispara o evento change se já houver uma categoria selecionada (importante para edição)
-        if (categorySelect.value) {
-            handleCategoryChange.call(categorySelect);
-        }
     }
-    
-    // Inicialização
     subcategorySelects.forEach(select => {
         select.disabled = true;
     });
 
-    // Validação do formulário - classes específicas da página de edição
-    const form = document.querySelector('.edit_product_area'); // Classe diferente
+    // Validação do formulário
+    const form = document.querySelector('.edit_product_area');
     if (form) {
         let formSubmitted = false;
         const requiredFields = document.querySelectorAll('[required]');
 
-        // Função para validar campos individuais (igual)
+        // Função para validar campos individuais
         function validateField(field) {
             if (!formSubmitted) return true;
             
@@ -63,18 +49,18 @@ document.addEventListener('DOMContentLoaded', function() {
             return isValid;
         }
 
-        // Validação em tempo real após primeira tentativa (igual)
+        // Validação em tempo real após primeira tentativa
         requiredFields.forEach(field => {
             field.addEventListener('input', () => formSubmitted && validateField(field));
             field.addEventListener('change', () => formSubmitted && validateField(field));
         });
 
-        // Evento de submit (com ajustes para edição)
+        // Evento de submit
         form.addEventListener('submit', function(event) {
             formSubmitted = true;
             let formIsValid = true;
             
-            // Valida campos obrigatórios (igual)
+            // Valida campos obrigatórios
             requiredFields.forEach(field => {
                 if (!validateField(field)) formIsValid = false;
             });
@@ -92,9 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 formIsValid = false;
             }
 
-            // Na edição, a imagem NÃO é obrigatória (diferente da adição)
-            // Pois o produto já pode ter uma imagem cadastrada
-            // Removemos a validação obrigatória do file input
+            const imageInput = document.querySelector('input[type="file"]');
+            if (!imageInput?.files.length) {
+                alert('Selecione uma imagem para o produto');
+                formIsValid = false;
+            }
 
             if (!formIsValid) {
                 event.preventDefault();
