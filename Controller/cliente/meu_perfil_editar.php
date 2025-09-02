@@ -1,6 +1,6 @@
 <?php
 include 'menu_pg_inicial.php';
-include '../../model/conexao.php';
+include '../../model/DB/conexao.php';
 session_start();
  
 // Supondo que o ID do cliente está salvo na sessão

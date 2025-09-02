@@ -32,7 +32,7 @@
                                     placeholder="CPF/CNPJ*">
                                 <input type="email" name="email" required class="input-form-cadastro required"
                                     placeholder="Email*">
-                                <span class="span-required" id="emailError">O email deve ter o padrão
+                                <span class="span-required" id="emailError">Use o padrão
                                     email@empresa.com.br</span>
                             </div>
                             <div class="coluna-direita-cadastro">
@@ -41,7 +41,8 @@
                                 <input type="text" name="telefone" class="input-form-cadastro" placeholder="Telefone">
                                 <input type="password" name="senha" required class="input-form-cadastro"
                                     placeholder="Senha*">
-                                <span class="span-required" id="senhaError">A senha deve ter pelo menos 6 caracteres</span>
+                                <span class="span-required" id="senhaLengthError"></span>
+                                <span class="span-required" id="senhaConfirmError"></span>
                             </div>
                         </div>
                         
@@ -50,16 +51,16 @@
                         </div>
 
                     </div>
-
-                </form>
-
-                <div class="line-cadastro"></div>
-                <div class="btn-submit-cadastro">
+                      <div class="btn-submit-cadastro">
                     <?php
                     $texto = "Cadastrar";
                     include 'botao_cliente.php';
                     ?>
                 </div>
+                </form>
+
+                <div class="line-cadastro"></div>
+              
             </div>
 
             <p class="area-termos-privacidade-cadastro">
@@ -72,9 +73,9 @@
             </p>
 
         </div>
-        </div>
     </main>
 </body>
 
 </html>
+
 <?php include 'footer_cliente.php'; ?>
