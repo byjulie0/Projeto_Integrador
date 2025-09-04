@@ -30,7 +30,7 @@
                                     class="input-form-cadastro">
                                 <input type="text" name="cpf_cnpj" required class="input-form-cadastro"
                                     placeholder="CPF/CNPJ*">
-                                <input type="text" name="Nome de usuario" class="input-form-cadastro" placeholder="nome de usuario">
+                                
                                 <input type="email" name="email" required class="input-form-cadastro required"
                                     placeholder="Email*">
                                 <span class="span-required" id="emailError">Use o padrão
