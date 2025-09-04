@@ -30,6 +30,7 @@
                                     class="input-form-cadastro">
                                 <input type="text" name="cpf_cnpj" required class="input-form-cadastro"
                                     placeholder="CPF/CNPJ*">
+                                <input type="text" name="Nome de usuario" class="input-form-cadastro" placeholder="nome de usuario">
                                 <input type="email" name="email" required class="input-form-cadastro required"
                                     placeholder="Email*">
                                 <span class="span-required" id="emailError">Use o padrão
@@ -39,6 +40,7 @@
                                 <input type="date" name="data_nascimento" required class="input-form-cadastro"
                                     placeholder="Data de Nascimento*">
                                 <input type="text" name="telefone" class="input-form-cadastro" placeholder="Telefone">
+                                <input type="text" name="CEP" class="input-form-cadastro" placeholder="CEP">
                                 <input type="password" name="senha" required class="input-form-cadastro"
                                     placeholder="Senha*">
                                 <span class="span-required" id="senhaLengthError"></span>
