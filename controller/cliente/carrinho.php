@@ -7,23 +7,37 @@ session_start();
 
 $id_cliente = $_SESSION['id_cliente'] ?? 0;
 
+// ====================
 // Busca os itens do carrinho
-$sql = "SELECT c.id_item, c.quantidade, c.selecionado, p.prod_nome, p.valor, p.descricao, p.imagem
+// ====================
+$sql = "SELECT c.id_carrinho, c.quantidade, c.selecionado, 
+               p.prod_nome, p.valor, p.descricao, p.imagem
         FROM carrinho c
         JOIN produto p ON c.id_produto = p.id_produto
-        WHERE c.id_cliente = :id_cliente";
-$stmt = $pdo->prepare($sql);
-$stmt->execute([':id_cliente' => $id_cliente]);
-$itens = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        WHERE c.id_cliente = ?";
 
+$stmt = $con->prepare($sql);
+if (!$stmt) {
+    die("Erro ao preparar a query: " . $con->error);
+}
+$stmt->bind_param("i", $id_cliente);
+$stmt->execute();
+$result = $stmt->get_result();
+$itens = $result->fetch_all(MYSQLI_ASSOC);
+
+// ====================
 // Calcula o total apenas dos selecionados
+// ====================
 $sqlResumo = "SELECT COUNT(*) AS itens, SUM(p.valor * c.quantidade) AS total
               FROM carrinho c
               JOIN produto p ON c.id_produto = p.id_produto
-              WHERE c.id_cliente = :id_cliente AND c.selecionado = 1";
-$stmtResumo = $pdo->prepare($sqlResumo);
-$stmtResumo->execute([':id_cliente' => $id_cliente]);
-$resumo = $stmtResumo->fetch(PDO::FETCH_ASSOC);
+              WHERE c.id_cliente = ? AND c.selecionado = 1";
+
+$stmtResumo = $con->prepare($sqlResumo);
+$stmtResumo->bind_param("i", $id_cliente);
+$stmtResumo->execute();
+$resResumo = $stmtResumo->get_result();
+$resumo = $resResumo->fetch_assoc();
 
 $totalItensSelecionados = $resumo['itens'] ?? 0;
 $totalValor = $resumo['total'] ?? 0.00;
@@ -123,7 +137,7 @@ $totalValor = $resumo['total'] ?? 0.00;
         <section class="checkout-btns-carrinho">
             <div class="checkout-btns-space-carrinho">
                 <h3 class="resumo_carrinho">Resumo da compra</h3>
-                <span class="total_items_cart">Items: <span class="total-items-count"><?= $totalItensSelecionados ?></span></span>
+                <span class="total_items_cart">Itens: <span class="total-items-count"><?= $totalItensSelecionados ?></span></span>
                 <div class="total-price-checkout-carrinho">
                     <span class="total-label-carrinho">
                         Total: R$: <span class="grand-total-price"><?= number_format($totalValor, 2, ',', '.') ?></span>
