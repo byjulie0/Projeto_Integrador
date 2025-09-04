@@ -7,9 +7,8 @@
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
     transition: transform 0.3s;
-
-    width: 260px;     /* largura fixa */
-    max-width: 100%;  /* não estoura em telas pequenas */
+    width: 260px;     
+    max-width: 100%;  
 }
 
 .lote-card:hover {
@@ -18,8 +17,8 @@
 
 .lote-card img {
     width: 100%;
-    height: 160px;     /* altura controlada */
-    object-fit: cover; /* corta sem distorcer */
+    height: 160px;     
+    object-fit: cover; 
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -53,9 +52,9 @@
 /* Responsividade */
 @media (max-width: 767px) {
     .lote-card {
-        width: 100%;      /* ocupa toda a largura disponível no mobile */
-        max-width: 320px; /* mas nunca passa de 320px */
-        margin: 0 auto;   /* centraliza */
+        width: 100%;      
+        max-width: 320px;
+        margin: 0 auto;  
     }
 
     .lote-card img {
