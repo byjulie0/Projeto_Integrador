@@ -322,7 +322,9 @@
   scroll-padding-left: 10px;
   scroll-padding-right: 10px;
 }
-.cards_campeoes::-webkit-scrollbar { display: none; }
+.cards_campeoes::-webkit-scrollbar { 
+  display: none; 
+}
 
 .card_campeoes {
   background: white;
