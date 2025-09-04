@@ -34,7 +34,7 @@
             </select>
         </div>
         <div class="lotes_geral">
-            <div class="lotes_categoria_bovinos" id="lotesCategoria_bovinos">
+            <div class="lotes_container" id="lotesContainer_bovinos">
                 <?php
                 $lotes = [
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "380 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "24 meses", "preco" => "5.200,00"],
@@ -62,7 +62,7 @@
                             <p class="preco">R$ <?php echo $lote['preco']; ?></p>
                         </div>
                     </div>
-                <?php } ?>
+                <?php }?>
             </div>
             <button class="nav_button next" onclick="navegarLotes(1)">❯</button>
         </div>
@@ -82,7 +82,7 @@
         }
         
         function navegarLotes(direcao) {
-            const container = document.getElementById('lotesContainer');
+            const container = document.getElementById('lotesContainer_bovinos');
             const scrollAmount = 300;
             container.scrollBy({
                 left: direcao * scrollAmount,
@@ -91,10 +91,6 @@
         }
     </script>
 
-    <footer>
-        <?php
-            include 'footer_cliente.php';
-        ?>
-    </footer>
 </body>
 </html>
+<?php include 'footer_cliente.php';?>
