@@ -6,99 +6,71 @@
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
-  width: 100%;
+  width: 90%;
   position: relative;
   margin-top: 35px;
   margin-bottom: 5%;
 }
 
-.lotes-wrapper_favoritos {
+.lotes-wrapper {
   display: flex;
   width: 100%;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  padding: 20px 0;
 }
 
-.lotes_container_pg_favoritos {
+.lotes_container_pg_favoritos{
   display: flex;
-  gap: 10px;
-  padding: 15px 0;
-  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 0;
+  gap: 20px;
 }
-.lotes_container_pg_favoritos #lotesContainerFavoritos{
-  display: flex;
-  width: 100%;
-}
-.seta_titulo_pg_favoritos{
+
+.seta_titulo_pg_favoritos {
   display: flex;
   align-items: center;
   justify-content: left;
   color: var(--color-primary-1);
-  padding-left:8%;
+  padding-left: 5%;
   gap: 10px;
+  margin-top:3%;
 }
-.h2_pg_favoritos{
+.h2_pg_favoritos {
   font-size: 2rem;
 }
 .btn_voltar_favoritos i {
   font-size: 30px;
 }
 
-@media (max-width: 767px) {
+/* Responsividade */
+@media (max-width: 768px) {
   .container_pg_favoritos {
     padding: 15px;
     margin-top: 25px;
     margin-bottom: 30px;
+    width: 85%;
   }
-  .lotes_container_pg_favoritos {
+  .lotes_container_pagina_de_busca {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     flex-direction: column;
     gap: 15px;
     padding-bottom: 20px;
   }
-}
-@media (min-width: 1024px) {
-  .lotes_container_pg_favoritos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    overflow-x: visible;
-    gap: 25px;
-  }
-  .lotes-wrapper_pg_favoritos {
-    overflow-x: visible;
-  }
-  .lotes_container_pg_favoritos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  }
-}
-@media (min-width: 1440px) {
-  .lotes_container_pg_favoritos {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .container_pg_favoritos {
-    max-width: 1300px;
-  }
-}
-@media (min-width: 1920px) {
-  .lotes_container_pg_favoritos {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .container_pg_favoritos {
-    max-width: 1600px;
-  }
-}
-@media (min-width: 360px) {
- .container_pg_favoritos{
-  width: 85%;
- }
   .seta_titulo_pg_favoritos{
-   margin-top: 6%;
+    padding-left: 6%;
   }
-  .h2_pg_favoritos, .btn_voltar_favoritos i{
+}
+
+@media (max-width: 360px) {
+  .seta_titulo_pg_favoritos{
+    padding-left: 15px;
+    margin-top: 5%;
+  }
+
+  .h2_pg_favoritos, .btn_voltar_favoritos i {
     font-size: 1.5rem;
   }
 }

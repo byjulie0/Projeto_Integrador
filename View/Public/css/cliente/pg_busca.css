@@ -166,5 +166,22 @@
     width: 100%;
     border-radius: 5px;
   }
+  .container_pagina_de_busca {
+    max-width: 1600px;
+  }
+  
+  .lote-card img {
+    height: 220px;
+  }
 }
- 
+@media (max-width: 359px) {
+  .filtros-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filtro-btn, .filtro-select {
+    width: 100%;
+    border-radius: 5px;
+  }
+}
