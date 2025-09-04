@@ -11,10 +11,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../view/public/css/categoria_produtos.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/categoria_produtos.css">
 </head>
 <body class="body_categoria_produtos">
-    <!-- Seção de resultados -->
     <div class="container_categoria_produtos">
         <div class="titulo-container_categoria_produtos">
             <a class="btn-voltar" href="#" onclick="window.history.back(); return false;">

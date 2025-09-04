@@ -8,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/pg_favoritos.css">
 </head>
 
 <body>
-    <div class="container_pagina_de_busca">
-        <a class="btn-voltar" href="pg_inicial_cliente.php">
+    <div class="container_pg_favoritos">
+        <a class="btn_voltar_favoritos" href="pg_inicial_cliente.php">
             <i class="fa-solid fa-chevron-left"></i>
         </a>
-        <h2 class="h2-pag-busca">Itens Favoritados</h2>
+        <h2 class="h2_pg_favoritos">Itens Favoritados</h2>
 
-        <div class="lotes-wrapper">
-            <div class="lotes_container_pagina_de_busca" id="lotesContainer">
+        <div class="lotes-wrapper_pg_favoritos">
+            <div class="lotes_container_pg_favoritos" id="lotesContainerFavoritos">
                 <?php
                 $favoritos = [
                     [
@@ -61,14 +61,7 @@
             </div>
         </div>
     </div>
-
-
-
-    </div>
-    </section>
-
-    </section>
-    <?php include 'footer_cliente.php'; ?>
 </body>
 
 </html>
+<?php include 'footer_cliente.php'; ?>

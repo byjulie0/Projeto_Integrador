@@ -1,8 +1,6 @@
-<!-- Ana Julia e Isabella -->
-
 <?php
 include 'menu_pg_inicial.php';
-require_once __DIR__ . '/../../model/DB/conexao.php';
+require_once __DIR__ . '/../../model\DB/conexao.php'; // cria $con
 session_start();
 
 $id_cliente = $_SESSION['id_cliente'] ?? 0;
@@ -10,8 +8,11 @@ $id_cliente = $_SESSION['id_cliente'] ?? 0;
 // ====================
 // Busca os itens do carrinho
 // ====================
+
 $sql = "SELECT c.id_carrinho, c.quantidade, c.selecionado, 
                p.prod_nome, p.valor, p.descricao, p.imagem
+ --- Busca os itens do carrinho ---
+$sql = "SELECT c.id_item, c.quantidade, c.selecionado, p.prod_nome, p.valor, p.descricao, p.imagem
         FROM carrinho c
         JOIN produto p ON c.id_produto = p.id_produto
         WHERE c.id_cliente = ?";
@@ -28,6 +29,9 @@ $itens = $result->fetch_all(MYSQLI_ASSOC);
 // ====================
 // Calcula o total apenas dos selecionados
 // ====================
+$stmt->close();
+
+ --- Calcula o total apenas dos selecionados ---
 $sqlResumo = "SELECT COUNT(*) AS itens, SUM(p.valor * c.quantidade) AS total
               FROM carrinho c
               JOIN produto p ON c.id_produto = p.id_produto
@@ -38,6 +42,9 @@ $stmtResumo->bind_param("i", $id_cliente);
 $stmtResumo->execute();
 $resResumo = $stmtResumo->get_result();
 $resumo = $resResumo->fetch_assoc();
+$res = $stmtResumo->get_result();
+$resumo = $res->fetch_assoc();
+$stmtResumo->close();
 
 $totalItensSelecionados = $resumo['itens'] ?? 0;
 $totalValor = $resumo['total'] ?? 0.00;
@@ -47,22 +54,18 @@ $totalValor = $resumo['total'] ?? 0.00;
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
-    <link rel="stylesheet" href="../../view/public/css/cliente.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="../../view/js/carrinho.js"></script>
+    <link rel="stylesheet" href="../../view/public/css/cliente/carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="../../view/js/cliente/carrinho.js"></script>
 </head>
 
 <body>
     <div class="main_cart_area">
         <div class="product_area_cart">
-            <?php include 'setas.php'; ?>
             <h1 class="cart_title">Carrinho</h1>
 
             <section class="cart-header-carrinho">
@@ -146,7 +149,7 @@ $totalValor = $resumo['total'] ?? 0.00;
                 <div class="separation-line-carrinho"></div>
 
                 <?php
-                $texto = "Fechar Pedido"; // Defina o texto do botão aqui
+                $texto = "Fechar Pedido"; 
                 include 'botao_cliente.php';
                 ?>
             </div>

@@ -1,127 +1,123 @@
-USE 143p1;
+use 143p1;
 
--- Tabela: endereco
-CREATE TABLE endereco (
-    id_endereco INT AUTO_INCREMENT PRIMARY KEY,
-    pais VARCHAR(100),
-    bairro VARCHAR(100),
-    rua VARCHAR(100),
-    numero INT,
-    cep CHAR(8)
+CREATE TABLE pais(
+    id_pais INT AUTO_INCREMENT PRIMARY KEY,
+    pais VARCHAR(100)
 );
 
--- Tabela: tipo-user
-CREATE TABLE tipo_user (
-    idtipo_user INT AUTO_INCREMENT PRIMARY KEY,
-    cpf CHAR(11),
-    cnpj CHAR(14)
+CREATE TABLE estado (
+    id_estado INT AUTO_INCREMENT PRIMARY KEY,
+    estado VARCHAR(100)
 );
 
--- Tabela: cliente
 CREATE TABLE cliente (
     id_cliente INT AUTO_INCREMENT PRIMARY KEY,
-    cliente_nome VARCHAR(100),
-    email VARCHAR(150),
-    data_nasc DATE,
-    telefone CHAR(9),
-    senha VARCHAR(100),
-    endereco_idendereco INT,
-    tipo_user_idtipo_user INT,
-    FOREIGN KEY (endereco_idendereco) REFERENCES endereco(id_endereco),
-    FOREIGN KEY (tipo_user_idtipo_user) REFERENCES tipo_user(idtipo_user)
+    cliente_nome VARCHAR(100) NOT NULL,
+    user_nome VARCHAR(150) NOT NULL UNIQUE,
+    email VARCHAR(150) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    cpf_cnpj varchar(20) NOT NULL UNIQUE,
+    data_nasc DATE NOT NULL,
+    user_ativo INT NOT NULL DEFAULT 1,
+    telefone VARCHAR(9),
+    cep VARCHAR(8) NOT NULL,
+    cidade VARCHAR(100),
+    estado_id_estado INT,
+    pais_id_pais INT,
+    FOREIGN KEY (estado_id_estado) REFERENCES estado(id_estado),
+    FOREIGN KEY (pais_id_pais) REFERENCES pais(id_pais)
 );
 
--- Tabela: adm
 CREATE TABLE adm (
     id_adm INT AUTO_INCREMENT PRIMARY KEY,
     adm_nome VARCHAR(100),
     email VARCHAR(150),
-    data_nasc DATE,
-    telefone CHAR(9),
+    telefone VARCHAR(9),
     senha VARCHAR(100),
-    endereco_idendereco INT,
-    tipo_user_idtipo_user INT,
-    FOREIGN KEY (endereco_idendereco) REFERENCES endereco(id_endereco),
-    FOREIGN KEY (tipo_user_idtipo_user) REFERENCES tipo_user(idtipo_user)
+    cnpj VARCHAR(14)
 );
 
--- Tabela: user
-CREATE TABLE user (
-    id_user INT AUTO_INCREMENT PRIMARY KEY,
-    user_nome VARCHAR(150),
-    email VARCHAR(150),
-    senha VARCHAR(100)
-);
-
--- Tabela: categoria
 CREATE TABLE categoria (
-    id_categorias INT AUTO_INCREMENT PRIMARY KEY,
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
     cat_nome VARCHAR(100)
 );
 
--- Tabela: subcategoria
 CREATE TABLE subcategoria (
-    id_subcategorias INT AUTO_INCREMENT PRIMARY KEY,
-    subcat_nome VARCHAR(100)
+    id_subcategoria INT AUTO_INCREMENT PRIMARY KEY,
+    subcat_nome VARCHAR(100),
+    id_categoria INT NOT NULL,
+    FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
 );
 
--- Tabela: produto
 CREATE TABLE produto (
     id_produto INT AUTO_INCREMENT PRIMARY KEY,
-    prod_nome VARCHAR(100),
-    valor FLOAT(10,2),
-    quant_estoque INT,
-    descricao TINYTEXT,
-    sexo ENUM('F', 'M'),
-    peso DECIMAL(10,2),
-    id_categorias INT,
-    id_subcategorias INT,
-    campeao TINYINT,
-    FOREIGN KEY (id_categorias) REFERENCES categoria(id_categorias),
-    FOREIGN KEY (id_subcategorias) REFERENCES subcategoria(id_subcategorias)
+    prod_nome VARCHAR(100)NOT NULL,
+    valor FLOAT(10,2) NOT NULL,
+    quant_estoque INT, -- valido para produtos
+    path_img VARCHAR(255) NOT NULL,
+    descricao TINYTEXT NOT NULL,
+    sexo ENUM('F', 'M', 'Não se aplica') NOT NULL,
+    peso DECIMAL(10,2) NOT NULL DEFAULT 0.0,
+    campeao TINYINT NOT NULL DEFAULT 0,
+    id_categoria INT,
+    id_subcategoria INT,
+    produto_ativo TINYINT NOT NULL DEFAULT 1,
+    FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria),
+    FOREIGN KEY (id_subcategoria) REFERENCES subcategoria(id_subcategoria)
 );
 
--- Tabela: favorito
 CREATE TABLE favorito (
-    cliente_id_cliente INT,
+    cliente_id_cliente INT PRIMARY KEY,
     produto_id_produto INT,
-    PRIMARY KEY (cliente_id_cliente, produto_id_produto),
     FOREIGN KEY (cliente_id_cliente) REFERENCES cliente(id_cliente),
     FOREIGN KEY (produto_id_produto) REFERENCES produto(id_produto)
 );
 
-
-
--- Tabela: pedido
 CREATE TABLE pedido (
     id_pedido INT AUTO_INCREMENT PRIMARY KEY,
-    data_pedido DATE,
-    status ENUM('Pendente', 'Aprovado', 'Enviado', 'Concluído', 'Cancelado'),
-    qte INT,
-    pagamento ENUM('Cartão', 'Boleto', 'Pix'),
     cliente_id_cliente INT,
+    data_pedido DATE,
+    status_pedido ENUM('Pendente','Concluído', 'Cancelado') DEFAULT "Pendente",
     FOREIGN KEY (cliente_id_cliente) REFERENCES cliente(id_cliente)
 );
 
--- Tabela: item
 CREATE TABLE item (
+    id_item INT PRIMARY KEY,
     pedido_id_pedido INT,
     produto_id_produto INT,
-    preco FLOAT(10,2),
-    qtd_total INT,
-    PRIMARY KEY (pedido_id_pedido, produto_id_produto),
+    qtd_produto INT,
     FOREIGN KEY (pedido_id_pedido) REFERENCES pedido(id_pedido),
     FOREIGN KEY (produto_id_produto) REFERENCES produto(id_produto)
 );
 
--- Tabela: carrinho
 CREATE TABLE carrinho (
-    id_item INT AUTO_INCREMENT PRIMARY KEY,
-    id_produto INT NOT NULL,
-    quantidade INT NOT NULL DEFAULT 1,
+    id_carrinho INT AUTO_INCREMENT PRIMARY KEY,
+    produto_id_produto INT NOT NULL,
+    qtd_selecionada INT NOT NULL DEFAULT 1,
     selecionado TINYINT(1) DEFAULT 0,
+    cliente_id_cliente INT NOT NULL,
+    FOREIGN KEY (produto_id_produto) REFERENCES produto(id_produto),
+    FOREIGN KEY (cliente_id_cliente) REFERENCES cliente(id_cliente)
+);
+
+CREATE TABLE notificacoes(
+    id_notificacao INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT NOT NULL,
-    FOREIGN KEY (id_produto) REFERENCES produto(id_produto)
+    tipo VARCHAR(100) NOT NULL,
+    mensagemtexto TINYTEXT NOT NULL,
+    data_recebida DATE NOT NULL,
+    lida TINYINT DEFAULT 0,
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
 );
 
 show tables;
+describe adm;
+describe carrinho;
+describe categoria;
+describe cliente;
+describe subcategoria;
+describe favorito;
+describe notificacoes;
+describe item;
+describe pedido;
+describe produto;
