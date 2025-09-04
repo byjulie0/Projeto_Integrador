@@ -1,50 +1,31 @@
 <?php
 include 'menu_pg_inicial.php';
-require_once __DIR__ . '/../../model\DB/conexao.php'; // cria $con
+require_once __DIR__ . '/../../model/DB/conexao.php';
 session_start();
 
 $id_cliente = $_SESSION['id_cliente'] ?? 0;
 
-// ====================
 // Busca os itens do carrinho
-// ====================
-
 $sql = "SELECT c.id_carrinho, c.quantidade, c.selecionado, 
                p.prod_nome, p.valor, p.descricao, p.imagem
- --- Busca os itens do carrinho ---
-$sql = "SELECT c.id_item, c.quantidade, c.selecionado, p.prod_nome, p.valor, p.descricao, p.imagem
         FROM carrinho c
         JOIN produto p ON c.id_produto = p.id_produto
         WHERE c.id_cliente = ?";
-
 $stmt = $con->prepare($sql);
-if (!$stmt) {
-    die("Erro ao preparar a query: " . $con->error);
-}
 $stmt->bind_param("i", $id_cliente);
 $stmt->execute();
 $result = $stmt->get_result();
 $itens = $result->fetch_all(MYSQLI_ASSOC);
 
-// ====================
 // Calcula o total apenas dos selecionados
-// ====================
-$stmt->close();
-
- --- Calcula o total apenas dos selecionados ---
 $sqlResumo = "SELECT COUNT(*) AS itens, SUM(p.valor * c.quantidade) AS total
               FROM carrinho c
               JOIN produto p ON c.id_produto = p.id_produto
               WHERE c.id_cliente = ? AND c.selecionado = 1";
-
 $stmtResumo = $con->prepare($sqlResumo);
 $stmtResumo->bind_param("i", $id_cliente);
 $stmtResumo->execute();
-$resResumo = $stmtResumo->get_result();
-$resumo = $resResumo->fetch_assoc();
-$res = $stmtResumo->get_result();
-$resumo = $res->fetch_assoc();
-$stmtResumo->close();
+$resumo = $stmtResumo->get_result()->fetch_assoc();
 
 $totalItensSelecionados = $resumo['itens'] ?? 0;
 $totalValor = $resumo['total'] ?? 0.00;
