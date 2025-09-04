@@ -30,8 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("A senha precisa ter no mínimo 6 caracteres.");
     }
 
-    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
-
     $stmt = $con->prepare("INSERT INTO cliente (cliente_nome, cpf_cnpj, email, data_nasc, telefone, senha, user_ativo) VALUES (?, ?, ?, ?, ?, ?, 1)");
 
     if (!$stmt) {
