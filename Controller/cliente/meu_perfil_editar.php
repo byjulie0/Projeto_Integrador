@@ -1,23 +1,23 @@
 <?php
 include 'menu_pg_inicial.php';
-include '../../model/DB/conexao.php';
-session_start();
+// include '../../model/DB/conexao.php';
+// session_start();
  
 // Supondo que o ID do cliente está salvo na sessão
-$id_cliente = $_SESSION['id_cliente'];
+// $id_cliente = $_SESSION['id_cliente'];
  
-$sql = "SELECT c.*, e.rua, e.numero, e.bairro, e.pais, e.cep FROM cliente c
-        JOIN endereco e ON c.endereco_idendereco = e.id_endereco
-        WHERE c.id_cliente = $id_cliente";
+// $sql = "SELECT c.*, e.rua, e.numero, e.bairro, e.pais, e.cep FROM cliente c
+//         JOIN endereco e ON c.endereco_idendereco = e.id_endereco
+//         WHERE c.id_cliente = $id_cliente";
  
-$result = $con->query(query: $sql);
+// $result = $con->query(query: $sql);
  
-if ($result->num_rows > 0) {
-    $cliente = $result->fetch_assoc();
-} else {
-    echo "Cliente não encontrado.";
-    exit;
-}
+// if ($result->num_rows > 0) {
+//     $cliente = $result->fetch_assoc();
+// } else {
+//     echo "Cliente não encontrado.";
+//     exit;
+// }
 ?>
  
 <!DOCTYPE html>
@@ -31,9 +31,9 @@ if ($result->num_rows > 0) {
  
 <body>
 
-    <?php if (isset($_GET['atualizado'])): ?>
+    <!-- php if (isset($_GET['atualizado'])): ?>
         <div class="alert-success">Seus dados foram atualizados com sucesso!</div>
-    <?php endif; ?>
+    php endif; ?> -->
     
     <main class="client-edit-main">
         <div class="client-edit-container">
@@ -49,29 +49,30 @@ if ($result->num_rows > 0) {
                     <div class="client-edit-column">
                         <div class="client-edit-field-group">
                             <label for="cliente_nome" class="client-edit-label">Nome:</label>
-                            <input type="text" name="cliente_nome" class="client-edit-input" value="<?= $cliente['cliente_nome'] ?>">
+                            
+                            <input type="text" name="cliente_nome" class="client-edit-input">
                         </div>
  
                         <div class="client-edit-field-group">
                             <label for="telefone" class="client-edit-label">Telefone:</label>
-                            <input type="tel" name="telefone" class="client-edit-input" value="<?= $cliente['telefone'] ?>">
+                            <input type="tel" name="telefone" class="client-edit-input">
                         </div>
  
                         <div class="client-edit-field-group">
                             <label for="email" class="client-edit-label">E-mail:</label>
-                            <input type="email" name="email" class="client-edit-input" value="<?= $cliente['email'] ?>">
+                            <input type="email" name="email" class="client-edit-input">
                         </div>
                     </div>
  
                     <div class="client-edit-column">
                         <div class="client-edit-field-group">
                             <label for="endereco" class="client-edit-label">Endereço:</label>
-                            <input type="text" name="endereco" class="client-edit-input" value="<?= $cliente['rua'] . ', ' . $cliente['numero'] . ' - ' . $cliente['bairro'] ?>">
+                            <input type="text" name="endereco" class="client-edit-input">
                         </div>
  
                         <div class="client-edit-field-group">
                             <label for="data_nasc" class="client-edit-label">Data de nascimento:</label>
-                            <input type="text" name="data_nasc" class="client-edit-input" value="<?= date(format: 'd/m/Y', timestamp: strtotime(datetime: $cliente['data_nasc'])) ?>">
+                            <input type="text" name="data_nasc" class="client-edit-input">
                         </div>
                     </div>
                 </div>
