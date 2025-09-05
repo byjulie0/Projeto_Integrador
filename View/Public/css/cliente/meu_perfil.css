@@ -117,8 +117,6 @@
   margin-top: 25px;
 }
 
-
-.visualizar-dados-editar {
 .visualizar-dados-editar{
   border: none;
   border-radius: 0.5rem;
@@ -129,11 +127,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.visualizar-dados-editar {
-  background-color: var(--color-botao-op-Concluido);
-  color: var(--color-primary-7);
 }
 
 .visualizar-dados-editar:hover {
@@ -175,10 +168,10 @@
     grid-template-columns: 1fr; /* força 1 coluna */
   }
 
-  .visualizar-dados-area-botoes {
+  /* .visualizar-dados-area-botoes {
     flex-direction: column;
     align-items: stretch;
-  }
+  } */
 }
 
 /* Celulares médios */
@@ -232,10 +225,6 @@
     text-align: left;
     margin-left: 6px;
   }
-  .a-style i{
-    display: none;
-  }
-
   .visualizar-dados-geral-title {
     font-size: 1.2rem;
   }
@@ -243,7 +232,6 @@
   .visualizar-dados-area-botoes {
     gap: 10px;
     padding: 5% 10%;
-    
     display: flex;
   }
 
