@@ -16,9 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nome = $_POST['nome'] ?? '';
     $cpf_cnpj = $_POST['cpf_cnpj'] ?? '';
+    $user_nome = $_POST['user_nome'] ?? '';
     $email = $_POST['email'] ?? '';
     $data_nasc = $_POST['data_nascimento'] ?? '';
     $telefone = $_POST['telefone'] ?? '';
+    $cep = $_POST['CEP'] ?? '';
     $senha = $_POST['senha'] ?? '';
     $senha_confirmar = $_POST['senha-confirmar'] ?? '';
 
@@ -30,13 +32,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("A senha precisa ter no mínimo 6 caracteres.");
     }
 
-    $stmt = $con->prepare("INSERT INTO cliente (cliente_nome, cpf_cnpj, email, data_nasc, telefone, senha, user_ativo) VALUES (?, ?, ?, ?, ?, ?, 1)");
+    $hoje = new DateTime();
+    $nascimento = DateTime::createFromFormat('Y-m-d', $data_nasc);
+
+    if (!$nascimento) {
+        die("Data de nascimento inválida.");
+    }
+
+    $idade = $hoje->diff($nascimento)->y;
+
+    if ($idade < 18) {
+        die("Você precisa ter pelo menos 18 anos para se cadastrar.");
+    }
+
+    $stmt = $con->prepare("INSERT INTO cliente (cliente_nome, cpf_cnpj, user_nome, email, data_nasc, telefone, cep, senha, user_ativo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)");
 
     if (!$stmt) {
         die("Erro na preparação da query: " . $con->error);
     }
 
-    $stmt->bind_param("ssssss", $nome, $cpf_cnpj, $email, $data_nasc, $telefone, $senha_hash);
+    $stmt->bind_param("ssssssss", $nome, $cpf_cnpj, $user_nome, $email, $data_nasc, $telefone, $cep, $senha);
 
     if ($stmt->execute()) {
         $_SESSION['mensagem_sucesso'] = "Usuário cadastrado com sucesso!";
