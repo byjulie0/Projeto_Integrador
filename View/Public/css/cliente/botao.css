@@ -18,3 +18,8 @@
     cursor: pointer;
     transition: all 0.2s ease;
 }
+@media (max-width: 1024px){
+    .generate_report_product_button{
+        width: 190px;
+    }
+}

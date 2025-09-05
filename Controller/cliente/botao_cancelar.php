@@ -8,7 +8,7 @@
     <script src="../../view/js/cliente/botao_cancelar.js"></script>
 </head>
 <body>
-    <button type="button" class="generate_report_product_button cancelar-operacao">
+    <button type="button" class="generate_report_product_button_cancelar-operacao">
         Cancelar
     </button>
 </body>
