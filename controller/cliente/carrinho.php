@@ -3,36 +3,9 @@ include 'menu_pg_inicial.php';
 require_once __DIR__ . '/../../model\DB/conexao.php'; // cria $con
 session_start();
 
-$id_cliente = $_SESSION['id_cliente'] ?? 0;
+// É preciso fazer o PHP Seguindo o Molde do Matheus comm Mysqli Valdir em 05.09.2025
 
-// --- Busca os itens do carrinho ---
-$sql = "SELECT c.id_item, c.quantidade, c.selecionado, p.prod_nome, p.valor, p.descricao, p.imagem
-        FROM carrinho c
-        JOIN produto p ON c.id_produto = p.id_produto
-        WHERE c.id_cliente = ?";
 
-$stmt = $con->prepare($sql);
-$stmt->bind_param("i", $id_cliente);
-$stmt->execute();
-$result = $stmt->get_result();
-$itens = $result->fetch_all(MYSQLI_ASSOC);
-$stmt->close();
-
-// --- Calcula o total apenas dos selecionados ---
-$sqlResumo = "SELECT COUNT(*) AS itens, SUM(p.valor * c.quantidade) AS total
-              FROM carrinho c
-              JOIN produto p ON c.id_produto = p.id_produto
-              WHERE c.id_cliente = ? AND c.selecionado = 1";
-
-$stmtResumo = $con->prepare($sqlResumo);
-$stmtResumo->bind_param("i", $id_cliente);
-$stmtResumo->execute();
-$res = $stmtResumo->get_result();
-$resumo = $res->fetch_assoc();
-$stmtResumo->close();
-
-$totalItensSelecionados = $resumo['itens'] ?? 0;
-$totalValor = $resumo['total'] ?? 0.00;
 ?>
 
 <!-- HTML DO CARRINHO-->
