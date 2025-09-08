@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 250px;
+    max-width: 550px;
     flex: 0 0 auto;
     scroll-snap-align: start;
 }
@@ -18,7 +18,7 @@
     transform: translateY(-5px);
 }
 .card_cliente img {
-    width: 100%;
+    width: 220px;
     height: 180px;
     object-fit: cover;
     border-radius: 5px;

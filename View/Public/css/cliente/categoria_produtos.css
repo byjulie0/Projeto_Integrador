@@ -14,12 +14,11 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
   width: 100%;
-  max-width: 1300px; /* ou valor que preferir */
   position: relative;
   margin-top: 35px;
 }
 
-.titulo-container_categoria_produtos {
+.titulo_categoria_produtos {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -32,7 +31,7 @@
   display: inline-block;
 }
 
-.btn-voltar {
+.btn_voltar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -41,13 +40,13 @@
   height: 30px;
 }
 
-.btn-voltar i {
+.btn_voltar i {
   color: var(--color-primary-1);
   font-size: 1.2rem;
 }
 
 /* Seção de filtros ajustada */
-.filtros_container_categoria_produtos {
+.filtros_categoria_produtos {
   margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -60,14 +59,14 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.filtros_titulo_categoria_produtos {
+.filtros_categoria_produtos {
   font-weight: bold;
   font-size: 0.95rem;
   white-space: nowrap;
   margin-right: 5px;
 }
 
-.filtro_btn_produtos, .filtro_select_categoria_produtos {
+.filtro_btn, .filtro_select {
   padding: 6px 12px;
   border: 1px solid #e0e0e0;
   background: white;
@@ -78,12 +77,12 @@
   white-space: nowrap;
 }
 
-.filtro_btn_produtos:hover, .filtro_select_categoria_produtos:hover {
+.filtro_btn:hover, .filtro_select:hover {
   background: #f7f7f7;
   border-color: #ccc;
 }
 
-.filtro_select_categoria_produtos {
+.filtro_select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -94,7 +93,7 @@
   padding-right: 28px;
 }
 
-.lotes_wrapper_categoria_produtos {
+.lotes_geral {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -102,7 +101,7 @@
   justify-content: center;
 }
 
-.lotes_container_categoria_produtos {
+.lotes_container {
   display: flex;
   gap: 10px;
   padding: 15px 0;
@@ -110,7 +109,7 @@
 }
 
 /* Card de lote */
-.lote_card_categoria_produtos {
+.lote_card {
   background: white;
   padding: 15px;
   border-radius: 10px;
@@ -119,11 +118,11 @@
   transition: transform 0.3s;
 }
 
-.lote_card_categoria_produtos:hover {
+.lote_card:hover {
   transform: translateY(-5px);
 }
 
-.lote_card_categoria_produtos img {
+.lote_card img {
   width: 100%;
   border-radius: 5px;
   height: 180px;
@@ -131,24 +130,24 @@
   margin-bottom: 10px;
 }
 
-.info_grid_categoria_produtos {
+.info_grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px 10px;
   text-align: right;
 }
 
-.info_grid_categoria_produtos p {
+.info_grid p {
   margin: 0;
   font-size: 0.9em;
 }
 
-.info_grid_categoria_produtos p:nth-child(odd) {
+.info_grid p:nth-child(odd) {
   font-weight: bold;
   text-align: left;
 }
 
-.preco_categoria_produtos {
+.preco {
   grid-column: 1 / -1;
   text-align: center;
   margin-top: 8px;
@@ -157,7 +156,7 @@
   color: #2a7f40;
 }
 
-.nav_button_categoria_produtos {
+.nav_button {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -173,17 +172,17 @@
     margin-bottom: 30px;
   }
   
-  .filtros_container_categoria_produtos {
+  .filtros_categoria_produtos {
     gap: 8px;
     padding: 10px;
   }
   
-  .filtro_btn_produtos, .filtro_select_categoria_produtos {
+  .filtro_btn, .filtro_select {
     padding: 5px 10px;
     font-size: 0.85rem;
   }
   
-  .lotes_container_categoria_produtos {
+  .lotes_container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     flex-direction: column;
@@ -191,43 +190,43 @@
     padding-bottom: 20px;
   }
   
-  .lote_card_categoria_produtos {
+  .lote_card {
     min-width: 220px;
   }
   
-  .lote_card_categoria_produtos img {
+  .lote_card img {
     height: 150px;
   }
   
-  .nav_button_categoria_produtos {
+  .nav_button {
     display: none;
   }
   
-  .lote_card_categoria_produtos {
+  .lote_card {
     min-width: 280px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 }
 
 @media (min-width: 1024px) {
-  .lotes_container_categoria_produtos {
+  .lotes_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow-x: visible;
     gap: 25px;
   }
   
-  .lote_card_categoria_produtos {
+  .lote_card {
     min-width: auto;
     width: 100%;
   }
   
-  .nav_button_categoria_produtos {
+  .nav_button {
     display: none;
   }
   
-  .lotes_wrapper_categoria_produtos {
-    overflow-x: visible; 
+  .lotes_geral {
+    overflow-x: visible;
   }
   
   .lotes_containe_categoria_produtos {
@@ -238,7 +237,7 @@
 }
 
 @media (min-width: 1440px) {
-  .lotes_container_categoria_produtos {
+  .lotes_container {
     grid-template-columns: repeat(3, 1fr);
   }
   
@@ -248,7 +247,7 @@
 }
 
 @media (min-width: 1920px) {
-  .lotes_container_categoria_produtos{
+  .lotes_container {
     grid-template-columns: repeat(4, 1fr);
   }
   
@@ -256,18 +255,18 @@
     max-width: 1600px;
   }
   
-  .lote_card_categoria_produtos img {
+  .lote_card img {
     height: 220px;
   }
 }
 
 @media (max-width: 359px) {
-  .filtros_container_categoria_produtos {
+  .filtros_categoria_produtos {
     flex-direction: column;
     align-items: flex-start;
   }
   
-  .filtro_btn_produtos, .filtro_select_categoria_produtos {
+  .filtro_btn, .filtro_select {
     width: 100%;
     border-radius: 5px;
   }
