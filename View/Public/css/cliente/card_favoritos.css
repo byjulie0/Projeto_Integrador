@@ -6,15 +6,17 @@
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
     transition: transform 0.3s;
+    width: 260px;     
+    max-width: 100%;  
 }
 .lote-card:hover {
     transform: translateY(-5px);
 }
 .lote-card img {
     width: 100%;
-    border-radius: 5px;
-    height: 180px;
+    height: 160px;     
     object-fit: cover;
+    border-radius: 5px;
     margin-bottom: 10px;
 }
 .info-grid {
@@ -48,4 +50,20 @@
     text-align: center;
     margin-top: 8px;
     margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+    .lote-card {
+        width: 100%;     
+        max-width: 320px; 
+        margin: 0 auto;  
+    }
+
+    .lote-card img {
+        height: 150px;
+    }
+}
+@media (min-width: 1920px) {
+    .lote-card img {
+        height: 200px;
+    }
 }

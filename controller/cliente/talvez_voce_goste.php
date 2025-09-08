@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../view/public/css/cliente/carrosseis_inicial.css">
 </head>
 
-<body>
+<body class="body_pg_carrossel_talvez_voce_goste">
     <h1 class="pg_talvez_goste" id="talvez_goste">Talvez Você Goste</h1>
 
     <div class="carrossel_talvez_goste">
@@ -69,7 +69,9 @@
                     $idade = $item['idade'];
                     $preco = $item['preco'];
 
-                    include 'card_cliente.php';
+                    echo '<a href="detalhes_produto.php">';
+                        include 'card_cliente.php';
+                    echo '</a>';
                 }
                 ?>
             </div>

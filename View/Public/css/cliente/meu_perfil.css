@@ -1,4 +1,5 @@
 @import url("../cliente.css");
+
 .body-visualizar-dados {
   display: flex;
   flex-direction: column;
@@ -6,7 +7,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa;
 }
 
 .main-visualizar-dados {
@@ -26,9 +26,10 @@
   margin: 0 0 20px 0;
   text-align: left;
 }
-.visualizar-dados-title:hover{
+.visualizar-dados-title:hover {
   color: #45a049;
 }
+
 .a-style {
   text-decoration: none;
   color: var(--color-primary-1);
@@ -52,10 +53,22 @@
   margin-bottom: 20px;
 }
 
-.visualizar-dados-img-perfil  {
-  font-size: 90px;
-
+.visualizar-dados-img-perfil {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-primary-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
   margin-right: 20px;
+}
+
+.avatar-icon {
+  width: 60%;
+  height: 60%;
+  fill: white;
 }
 
 .visualizar-dados-nome {
@@ -74,7 +87,6 @@
   font-size: 1.4rem;
   margin-bottom: 15px;
   color: var(--color-primary-1);
-
 }
 
 .visualizar-dados-grid {
@@ -117,16 +129,12 @@
   gap: 8px;
 }
 
-.visualizar-dados-editar {
-  background-color: var(--color-botao-op-Concluido);
-  color: var(--color-primary-7);
-}
-
 .visualizar-dados-editar:hover {
   background-color: var(--color-primary-7);
   color: var(--color-botao-op-Concluido);
 }
 
+/* ================= RESPONSIVIDADE ================= */
 
 .visualizar-dados-img-perfil{
   width: 70px;
@@ -144,17 +152,91 @@
   fill: white;
 }
 
+/* Tablets e telas médias */
 @media (max-width: 768px) {
   .visualizar-dados-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .visualizar-dados-img-perfil-div {
-    margin-bottom: 10px;
+
+  .visualizar-dados-nome-email {
+    margin-top: 10px;
   }
-  .visualizar-dados-area-botoes {
+
+  .visualizar-dados-grid {
+    grid-template-columns: 1fr; /* força 1 coluna */
+  }
+
+  /* .visualizar-dados-area-botoes {
     flex-direction: column;
     align-items: stretch;
+  } */
+}
+
+/* Celulares médios */
+@media (max-width: 480px) {
+  .main-visualizar-dados {
+    padding: 20px;
+  }
+
+  .visualizar-dados-title {
+    font-size: 1.5rem;
+  }
+
+  .visualizar-dados-nome {
+    font-size: 1.2rem;
+  }
+
+  .visualizar-dados-email {
+    font-size: 0.9rem;
+  }
+
+  .visualizar-dados-card {
+    padding: 20px;
+  }
+
+  .visualizar-dados-grid p {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column; /* label em cima, valor embaixo */
+    align-items: flex-start;
+  }
+
+  .visualizar-dados-grid strong {
+    margin-bottom: 2px;
+  }
+
+  .visualizar-dados-area-botoes a {
+    width: 90%; /* botões não colam na lateral */
+    margin: 0 auto;
+  }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+  .visualizar-dados-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .visualizar-dados-title {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 6px;
+  }
+  .visualizar-dados-geral-title {
+    font-size: 1.2rem;
+  }
+
+  .visualizar-dados-area-botoes {
+    gap: 10px;
+    padding: 5% 10%;
+    display: flex;
+  }
+
+  .visualizar-dados-editar {
+    font-size: 0.9rem;
+    padding: 8px 15px;
   }
 }
