@@ -15,7 +15,7 @@
     <div class="container_categoria_galinaceos">
         <div class="titulo_categoria_galinaceos">
             <a class="btn_voltar" href="#" onclick="window.history.back(); return false;">
-                <i class="fa-solid fa-chevron-left"></i>
+                <i class="bi bi-chevron-left"></i>
             </a>
             <h2 class="h2_categoria_galinaceos">Galináceos</h2>
         </div>
@@ -33,7 +33,7 @@
             </select>
         </div>
         <div class="lotes_geral">
-            <div class="lotes_container" id="lotesContainer_galinaceos_galinaceos">
+            <div class="lotes_container" id="lotesContainer_galinaceos">
                 <?php
                 $lotes = [
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "380 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "24 meses", "preco" => "5.200,00"],
@@ -45,23 +45,20 @@
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "350 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "22 meses", "preco" => "4.900,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
+                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "350 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "22 meses", "preco" => "4.900,00"],
+                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
+                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                 ];
-                foreach ($lotes as $lote) { ?>
-                    <div class="lote_card">
-                        <img src="<?php echo $lote['imagem']; ?>" alt="Lote de Galinaceos">
-                        <div class="info_grid">
-                            <p>Peso:</p>
-                            <p><?php echo $lote['peso']; ?></p>
-                            <p>Raça:</p>
-                            <p><?php echo $lote['raca']; ?></p>
-                            <p>Genealogia:</p>
-                            <p><?php echo $lote['genealogia']; ?></p>
-                            <p>Idade:</p>
-                            <p><?php echo $lote['idade']; ?></p>
-                            <p class="preco">R$ <?php echo $lote['preco']; ?></p>
-                        </div>
-                    </div>
-                <?php } ?>
+                foreach ($lotes as $item) { 
+                    $imagem = $item['imagem'];
+                    $peso = $item['peso'];
+                    $raca = $item['raca'];
+                    $genealogia = $item['genealogia'];
+                    $idade = $item['idade'];
+                    $preco = $item['preco'];
+                    include 'card_telas.php';
+                }
+                ?>
             </div>
             <button class="nav_button next" onclick="navegarLotes(1)">❯</button>
         </div>

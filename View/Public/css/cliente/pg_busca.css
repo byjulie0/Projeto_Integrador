@@ -1,11 +1,5 @@
 @import url("../cliente.css");
 
-.body_pg_busca {
-  padding-top: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
 .container_pagina_de_busca {
   background: white;
@@ -17,14 +11,33 @@
   position: relative;
   margin-top: 35px;
 }
-
-.h2-pag-busca {
-  margin: 0;
-  display: inline-block;
-  padding-bottom: 13px;
+.titulo_e_seta_pg_busca{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
   color: var(--color-primary-1);
 }
 
+.h2-pag-busca {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.btn_voltar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.bi-chevron-left {
+  font-size: 1.5rem;
+}
+
+.p_pg_busca{
+  color: var(--color-primary-1);
+}
 /* FILTROS */
 .filtros-container {
   margin-top: 15px;
@@ -37,13 +50,11 @@
   background: white;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.filtros-titulo {
   font-weight: bold;
   font-size: 0.95rem;
   white-space: nowrap;
   margin-right: 5px;
+  color: var(--color-primary-1);
 }
 
 .filtro-btn, .filtro-select {
@@ -55,6 +66,7 @@
   font-size: 0.9rem;
   transition: all 0.2s ease;
   white-space: nowrap;
+  color: var(--color-primary-1);
 }
 
 .filtro-btn:hover, .filtro-select:hover {
@@ -82,19 +94,6 @@
   padding: 20px 0;
 }
 
-.btn-voltar {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 10px;
-  vertical-align: middle;
-  text-decoration: none;
-}
-
-.btn-voltar i {
-  color: var(--color-primary-1);
-  font-size: 1.5rem;
-}
-
 .lotes-wrapper {
   display: flex;
   width: 100%;
@@ -103,11 +102,6 @@
   justify-content: center;
 }
 
-/* Remove o width:100px que estava esmagando os cards */
-.lote-card {
-  width: auto;
-  height: auto;
-}
 
 /* MOBILE */
 @media (max-width: 767px) {

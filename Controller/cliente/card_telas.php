@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Componente card Busca</title>
-    <link rel="stylesheet" href="../../view/public/css/cliente/card_busca.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/card_telas.css">
 </head>
 <body>
     <div class="lote-card">
