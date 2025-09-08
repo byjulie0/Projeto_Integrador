@@ -19,7 +19,7 @@ include 'menu_pg_inicial.php';
 
         <div class="area_notifications">
         <a href="#" onclick="if (document.referrer) { history.back(); } else { window.location.href = 'menu_pg_inicial.php'; }" class=notification_arrow>
-        <i class="fa-solid fa-chevron-left" style="color: #2d8c37;"></i>
+            <i class="bi bi-chevron-left"></i>
         </a>
             <h1 class="notification_title">Notificações</h1>
         </div>
