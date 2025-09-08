@@ -70,7 +70,7 @@
                     $preco = $item['preco'];
 
                     echo '<a href="detalhes_produto.php">';
-                        include 'card_cliente.php';
+                        include 'card_carrossel.php';
                     echo '</a>';
                 }
                 ?>

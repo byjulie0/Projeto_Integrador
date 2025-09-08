@@ -1,19 +1,12 @@
 @import url(../cliente.css);
-.body_categoria_galinaceos{
-  padding-top: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
-}
 
 .container_categoria_galinaceos {
   background: white;
-  padding: 25px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  width: 100%;
+  margin: 5px auto;
+  width: 95%;
   position: relative;
   margin-top: 35px;
 }
@@ -23,6 +16,7 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
+  color: var(--color-primary-1);
 }
 
 .h2_categoria_galinaceos {
@@ -36,13 +30,10 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  width: 30px;
-  height: 30px;
 }
 
 .btn_voltar i {
-  color: var(--color-primary-1);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 /* Seção de filtros ajustada */
@@ -57,13 +48,11 @@
   background: white;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.filtros_categoria_galinaceos {
   font-weight: bold;
   font-size: 0.95rem;
   white-space: nowrap;
   margin-right: 5px;
+  color: var(--color-primary-1);
 }
 
 .filtro_btn, .filtro_select {
@@ -75,6 +64,7 @@
   font-size: 0.9rem;
   transition: all 0.2s ease;
   white-space: nowrap;
+  color: var(--color-primary-1);
 }
 
 .filtro_btn:hover, .filtro_select:hover {
@@ -93,67 +83,19 @@
   padding-right: 28px;
 }
 
-.lotes_geral {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .lotes_container {
   display: flex;
-  gap: 10px;
-  padding: 15px 0;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
 }
-
-/* Card de lote */
-.lote_card {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-  transition: transform 0.3s;
-}
-
-.lote_card:hover {
-  transform: translateY(-5px);
-}
-
-.lote_card img {
-  width: 100%;
-  border-radius: 5px;
-  height: 180px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.info_grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px 10px;
-  text-align: right;
-}
-
-.info_grid p {
-  margin: 0;
-  font-size: 0.9em;
-}
-
-.info_grid p:nth-child(odd) {
-  font-weight: bold;
-  text-align: left;
-}
-
-.preco {
-  grid-column: 1 / -1;
-  text-align: center;
-  margin-top: 8px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2a7f40;
+.lotes_geral, #lotesContainer_galinaceos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
 }
 
 .nav_button {
@@ -190,14 +132,6 @@
     padding-bottom: 20px;
   }
   
-  .lote_card {
-    min-width: 220px;
-  }
-  
-  .lote_card img {
-    height: 150px;
-  }
-  
   .nav_button {
     display: none;
   }
@@ -214,11 +148,6 @@
     grid-template-columns: repeat(2, 1fr);
     overflow-x: visible;
     gap: 25px;
-  }
-  
-  .lote_card {
-    min-width: auto;
-    width: 100%;
   }
   
   .nav_button {
@@ -254,10 +183,7 @@
   .container_categoria_galinaceos {
     max-width: 1600px;
   }
-  
-  .lote_card img {
-    height: 220px;
-  }
+ 
 }
 
 @media (max-width: 359px) {
