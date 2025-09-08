@@ -8,6 +8,7 @@
 }
 .arrow_edit_product {
   color: var(--color-primary-1);
+  background-color: blueviolet;
   font-size: 1.5rem;
 }
 
@@ -35,7 +36,7 @@
 }
 
 .img_holder {
-  background-color: white;
+  background-color: rgb(255, 0, 0);
   border: solid 1px var(--border-color);
   display: flex;
   justify-content: center;
@@ -63,9 +64,9 @@
 }
 
 .edit_product_details {
-  gap: 20px;
+  gap: 100px;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 100% 100%;
 }
 
 .input_product_info {
@@ -125,7 +126,7 @@ textarea {
 }
 
 .edit_product_button:hover {
-  background-color: #3d6a3f;
+  background-color: #e70000;
 }
 
 input[type="image"] {

@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
                     </article>
 
                     <article class="input_product_quantity">
-                        <p class="product_title_info">Quantidade do produto</p>
+                        <p class="product_title_info">Edite a quantidade do produto</p>
                         <input type="number" placeholder="Quantidade_que_esta_no_DB" class="input_product_info" required min="0">
                     </article>
 
