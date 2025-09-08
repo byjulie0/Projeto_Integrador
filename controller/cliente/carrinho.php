@@ -12,6 +12,9 @@ $sql = "SELECT c.id_carrinho, c.quantidade, c.selecionado,
         JOIN produto p ON c.id_produto = p.id_produto
         WHERE c.id_cliente = ?";
 $stmt = $con->prepare($sql);
+if (!$stmt) {
+    die("Erro ao preparar a query: " . $con->error);
+}
 $stmt->bind_param("i", $id_cliente);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -23,6 +26,8 @@ $sqlResumo = "SELECT COUNT(*) AS itens, SUM(p.valor * c.quantidade) AS total
               JOIN produto p ON c.id_produto = p.id_produto
               WHERE c.id_cliente = ? AND c.selecionado = 1";
 $stmtResumo = $con->prepare($sqlResumo);
+if (!$stmtResumo) {
+    die("Erro ao preparar a query do resumo: " . $con->error);}
 $stmtResumo->bind_param("i", $id_cliente);
 $stmtResumo->execute();
 $resumo = $stmtResumo->get_result()->fetch_assoc();
