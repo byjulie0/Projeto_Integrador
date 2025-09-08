@@ -52,28 +52,12 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 
-  /* 🔹 Correções */
   padding-right: 15px;
   overscroll-behavior-x: contain;
   scroll-padding-left: 10px;
   scroll-padding-right: 10px;
 }
 .cards_mais_vendidos::-webkit-scrollbar { display: none; }
-
-.card_mais_vendidos {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  flex: 0 0 auto;
-  width: 230px;
-  scroll-snap-align: start;
-  transition: transform 0.3s;
-}
-.card_mais_vendidos:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
 
 .img_mais_vendidos {
   width: 100%;
@@ -190,21 +174,6 @@
 }
 .cards_talvez_goste::-webkit-scrollbar { display: none; }
 
-.card_talvez_goste {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  flex: 0 0 auto;
-  width: 230px;
-  scroll-snap-align: start;
-  transition: transform 0.3s;
-}
-.card_talvez_goste:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
 .img_talvez_goste {
   width: 100%;
   border-radius: 5px;
@@ -263,7 +232,7 @@
 
 /* ---------------------- CAMPEÕES ---------------------- */
 .pg_campeoes {
-  color: var(--color-primary-1);
+  color: white;
   padding-left: 8%;
   padding-top: 3%;
   font-size: 28px;
@@ -273,7 +242,10 @@
 .body_pg_carrosel_campeoes{
   max-width: 100%;
 }
-
+.carrossel_campeoes_cor{
+  width: 100%;
+  background-color: #2a7f40;
+}
 .carrossel_campeoes {
   display: flex;
   align-items: center;
@@ -324,21 +296,6 @@
 }
 .cards_campeoes::-webkit-scrollbar { 
   display: none; 
-}
-
-.card_campeoes {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  flex: 0 0 auto;
-  width: 230px;
-  scroll-snap-align: start;
-  transition: transform 0.3s;
-}
-.card_campeoes:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .img_campeoes {
@@ -396,4 +353,3 @@
 .arrow_campeoes {
   z-index: 2; 
 }
-
