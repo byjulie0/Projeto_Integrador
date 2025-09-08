@@ -69,7 +69,9 @@
                     $idade = $item['idade'];
                     $preco = $item['preco'];
 
-                    include 'card_cliente.php';
+                    echo '<a href="detalhes_produto.php">';
+                        include 'card_cliente.php';
+                    echo '</a>';
                 }
                 ?>
             </div>
