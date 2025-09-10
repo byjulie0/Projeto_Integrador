@@ -9,59 +9,60 @@ $bd = "143p1";
 $con = new mysqli($host, $usuario, $senha, $bd);
 
 if ($con->connect_errno) {
-    die("Falha na Conexão: (" . $con->connect_errno . ") " . $con->connect_error);
+    die("Falha na conexão: " . $con->connect_error);
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $nome = $_POST['nome'] ?? '';
-    $cpf_cnpj = $_POST['cpf_cnpj'] ?? '';
-    $user_nome = $_POST['user_nome'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $data_nasc = $_POST['data_nascimento'] ?? '';
-    $telefone = $_POST['telefone'] ?? '';
-    $cep = $_POST['CEP'] ?? '';
-    $senha = $_POST['senha'] ?? '';
+    $nome            = $con->real_escape_string(trim($_POST['nome'] ?? ''));
+    $cpf_cnpj        = $con->real_escape_string(trim($_POST['cpf_cnpj'] ?? ''));
+    $user_nome       = $con->real_escape_string(trim($_POST['user_nome'] ?? ''));
+    $email           = $con->real_escape_string(trim($_POST['email'] ?? ''));
+    $data_nasc       = $con->real_escape_string(trim($_POST['data_nascimento'] ?? ''));
+    $telefone        = $con->real_escape_string(trim($_POST['telefone'] ?? ''));
+    $cep             = $con->real_escape_string(trim($_POST['CEP'] ?? ''));
+    $senha           = $_POST['senha'] ?? '';
     $senha_confirmar = $_POST['senha-confirmar'] ?? '';
 
     if ($senha !== $senha_confirmar) {
-        die("As senhas não coincidem.");
+        die("Erro: As senhas não coincidem.");
     }
 
     if (strlen($senha) < 6) {
-        die("A senha precisa ter no mínimo 6 caracteres.");
+        die("Erro: A senha precisa ter no mínimo 6 caracteres.");
+    }
+
+    $nascimento = DateTime::createFromFormat('Y-m-d', $data_nasc);
+    if (!$nascimento) {
+        die("Erro: Data de nascimento inválida.");
     }
 
     $hoje = new DateTime();
-    $nascimento = DateTime::createFromFormat('Y-m-d', $data_nasc);
-
-    if (!$nascimento) {
-        die("Data de nascimento inválida.");
-    }
-
     $idade = $hoje->diff($nascimento)->y;
-
     if ($idade < 18) {
-        die("Você precisa ter pelo menos 18 anos para se cadastrar.");
+        die("Erro: Você precisa ter pelo menos 18 anos para se cadastrar.");
     }
 
-    $stmt = $con->prepare("INSERT INTO cliente (cliente_nome, cpf_cnpj, user_nome, email, data_nasc, telefone, cep, senha, user_ativo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)");
+    $senha_s = $con->real_escape_string($senha);
 
-    if (!$stmt) {
-        die("Erro na preparação da query: " . $con->error);
+
+    $query_insert = "
+        INSERT INTO cliente (
+            cliente_nome, email, senha, cpf_cnpj, data_nasc, user_ativo, telefone, cep
+        ) VALUES (
+            '$nome', '$email', '$senha_s', '$cpf_cnpj', '$data_nasc', 1, '$telefone', '$cep'
+        )
+    ";
+
+    $result_insert = mysqli_query($con, $query_insert);
+
+    if (!$result_insert) {
+        die("Erro ao cadastrar: "); 
     }
 
-    $stmt->bind_param("ssssssss", $nome, $cpf_cnpj, $user_nome, $email, $data_nasc, $telefone, $cep, $senha);
-
-    if ($stmt->execute()) {
-        $_SESSION['mensagem_sucesso'] = "Usuário cadastrado com sucesso!";
-        header("Location: login.php");
-        exit();
-    } else {
-        echo "Erro ao cadastrar: " . $stmt->error;
-    }
-
-    $stmt->close();
+    $_SESSION['mensagem_sucesso'] = "Usuário cadastrado com sucesso!";
     $con->close();
+    header("Location: login.php");
+    exit();
 }
 ?>
