@@ -25,6 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($retorno["senha"] == $password)
         {
             $_SESSION["username"] = $username;
+            $_SESSION["funcao"] = $retorno["funcao"];
+
             header("Location: ../cliente/pg_inicial_cliente.php");
         }
         else{
