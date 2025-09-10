@@ -35,6 +35,7 @@
                                 <span class="span-required" id="emailError">Use o padrão
                                     email@empresa.com.br</span>
                             </div>
+
                             <div class="coluna-direita-cadastro">
                                 <input type="date" name="data_nascimento" required class="input-form-cadastro"
                                     placeholder="Data de Nascimento*">
@@ -51,12 +52,17 @@
                         </div>
 
                     </div>
-                      <div class="btn-submit-cadastro">
-                    <?php
-                    $texto = "Cadastrar";
-                    include 'botao_cliente.php';
-                    ?>
-                </div>
+
+                    <div class="btn-submit-cadastro">
+                        <?php
+                        $texto = "Cadastrar";
+                        include 'botao_cliente.php';
+                        ?>
+                        <?php
+                        $texto = "Cancelar";
+                        include 'botao_cancelar.php';
+                        ?>
+                    </div>
                 </form>
 
                 <div class="line-cadastro"></div>
