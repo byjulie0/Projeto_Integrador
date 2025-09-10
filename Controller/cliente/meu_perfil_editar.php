@@ -38,13 +38,16 @@ include 'menu_pg_inicial.php';
     
     <main class="client-edit-main">
         <div class="client-edit-container">
-            <div class="client-edit-header">
-                <h1 class="client-edit-title-titulo">
-                <a href="#"><i class="bi bi-chevron-left" onclick="window.history.back(); return false;"></i></a>
-                Editar meus dados</h1>
-            </div>
+       
  
             <form class="client-edit-form" method="POST" action="atualiza_cliente.php">
+                     
+                <div class="client-edit-header">
+                    <h1 class="client-edit-title-titulo">
+                    <a href="#"><i class="bi bi-chevron-left" onclick="window.history.back(); return false;"></i></a>
+                    Editar meus dados</h1>
+                </div>
+                
                 <input type="hidden" name="id_cliente" value="<?= $id_cliente ?>">
                 <div class="client-edit-grid">
                     <div class="client-edit-column">
