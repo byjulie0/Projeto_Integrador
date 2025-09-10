@@ -1,36 +1,45 @@
 <?php
 session_start();
-include '../../model/DB/conexao.php'; // arquivo com a conexão ao banco
-
+include '../../model/DB/conexao.php'; 
+mysqli_report(MYSQLI_REPORT_OFF);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Recebe dados do formulário
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    // Preparar consulta segura para evitar SQL Injection
-    $stmt = "SELECT * FROM user WHERE user_nome = '{$username}';";
-    echo $stmt;
-    $result = mysqli_query($con,$stmt);
-    $row = mysqli_num_rows($result);
-    echo $row;
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-    if ($row>0){
-        
-        $query = "select * from user";
-
-        $retorno = mysqli_fetch_array($result);
-        echo $retorno["user_nome"];
-        echo $retorno["senha"];
-
-        if ($retorno["senha"] == $password)
-        {
-            $_SESSION["username"] = $username;
-            header("Location: ../cliente/pg_inicial_cliente.php");
-        }
-        else{
-            echo  "senha invalida ";
-        }
+    if (empty($username) || empty($password)) {
+        echo "Preencha usuário e senha.";
+        exit();
     }
-    
+
+    if ($stmt = $con->prepare("SELECT cliente_nome, senha FROM cliente WHERE cliente_nome = ?")) {
+
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        if ($result && $result->num_rows === 1) {
+            $user = $result->fetch_assoc();
+
+            if (password_verify($password, $user['senha'])) {
+                $_SESSION['username'] = $username;
+                header("Location: ../cliente/pg_inicial_cliente.php");
+                exit();
+            } else {
+                echo "Senha inválida.";
+            }
+        } else {
+            echo "Usuário não encontrado.";
+        }
+
+        $stmt->close();
+
+    } else {
+        error_log("Erro: " . $con->error); 
+        echo "Ocorreu um erro inesperado. Por favor, tente novamente mais tarde.";
+    }
+
+    $con->close();
 }
 ?>
