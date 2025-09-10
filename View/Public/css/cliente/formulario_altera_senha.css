@@ -19,19 +19,25 @@
     grid-template-rows: 15% 75%;
 }
 .title_div{
-    margin-bottom: 25px;
-    font-size: 1.5rem;
-    display: flex;
-    gap: 15px;
-    flex-direction: row;
-    height: 2rem;
+  display: flex;
+  align-items: center;   
+  gap: 8px;            
+  justify-content: flex-start;
+  margin-top: 0;
+  margin-bottom: 10px;
+
 }
 .setinha_forms_mudar_senha{
-  font-size: 2rem;
+  font-size: 2rem;   
   font-weight: 700;
   color: var(--color-primary-1);
-  margin: 0 0 20px 0;
   text-align: left;
+}
+.titulo_forms_senha {
+  font-size: 1.6rem;
+  color: var(--color-primary-1);
+  margin: 0;            
+  font-weight: bold;     
 }
 .area_forms{
   justify-content: center;
@@ -62,6 +68,7 @@
   width: 100%;
   margin-top: 15px;
 }
+
 .form_senha_atual,.form_nova_senha,.form_confirma_senha{
   padding: 0.875rem 1rem;
   border: 1px solid #ddd;
@@ -215,9 +222,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .setinha_forms_mudar_senha{
-    display: none;
+    margin-bottom: 5%;
   }
   .area_forms input {
     width: 100%;
@@ -226,11 +231,19 @@
     margin-bottom: 10px;
   }
   .title_div {
-    font-size: 1.1rem;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    align-items: center; 
+    gap: 8px;              
+    justify-content: flex-start;
+    margin-right: 15px;
   }
-  .area-forms{
-    margin-bottom: 10px;
+  .setinha_forms_mudar_senha {
+    font-size: 24px;
+    margin: 0;  
   }
+  .titulo_forms_senha {
+    font-size: 23px;
+    margin: 0;  /
+  }
+
 }
