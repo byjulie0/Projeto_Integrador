@@ -7,6 +7,12 @@
   margin-bottom: 15px;
 }
 
+.carrossel_mais_vendidos_container{
+  width: 100%;
+  padding: 20px 2%;
+  margin-bottom: 40px;
+}
+
 .carrossel_mais_vendidos {
   display: flex;
   align-items: center;
@@ -121,6 +127,12 @@
   padding-top: 3%;
   font-size: 28px;
   margin-bottom: 15px;
+}
+
+.carrossel_talvez_goste_container{
+  width: 100%;
+  padding: 20px 2%;
+  margin-bottom: 20px;
 }
 
 .carrossel_talvez_goste {
@@ -241,10 +253,14 @@
 .body_pg_carrosel_campeoes{
   max-width: 100%;
 }
+
 .carrossel_campeoes_cor{
   width: 100%;
   background-color: #2a7f40;
+  padding: 20px 2%;
+  margin-bottom: 50px;
 }
+
 .carrossel_campeoes {
   display: flex;
   align-items: center;
