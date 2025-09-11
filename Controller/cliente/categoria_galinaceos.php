@@ -1,8 +1,8 @@
 <?php
-if ($_SESSION['funcao'] != 'CLIENTE'){
-    header("location: login.php");
-    exit();
-    }
+// if ($_SESSION['funcao'] != 'CLIENTE'){
+//     header("location: login.php");
+//     exit();
+//     }
 
   
     include 'menu_pg_inicial.php';
