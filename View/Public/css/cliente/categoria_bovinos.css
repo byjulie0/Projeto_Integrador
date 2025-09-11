@@ -48,14 +48,14 @@
   background: white;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.filtros_categoria_bovinos {
   font-weight: bold;
   font-size: 0.95rem;
   white-space: nowrap;
   margin-right: 5px;
+  color: var(--color-primary-1);
 }
+
+
 
 .filtro_btn, .filtro_select {
   padding: 6px 12px;
@@ -66,6 +66,7 @@
   font-size: 0.9rem;
   transition: all 0.2s ease;
   white-space: nowrap;
+  color: var(--color-primary-1);
 }
 
 .filtro_btn:hover, .filtro_select:hover {
