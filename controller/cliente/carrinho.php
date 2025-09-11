@@ -1,4 +1,11 @@
 <?php
+
+// if ($_SESSION['funcao'] != 'CLIENTE'){
+//     header("location: login.php");
+//     exit();
+//     }
+
+
 include 'menu_pg_inicial.php';
 require_once __DIR__ . '/../../model\DB/conexao.php'; // cria $con
 session_start();

@@ -1,3 +1,12 @@
+<?php
+// if ($_SESSION['funcao'] != 'CLIENTE'){
+//     header("location: login.php");
+//     exit();
+//     }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
