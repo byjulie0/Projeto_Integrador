@@ -1,4 +1,6 @@
 <?php include 'menu_inicial.php';?>
+<?php require_once __DIR__ .'/../../model/DB/conexao.php'?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -45,7 +47,7 @@
 
 
                     <article class="input_product_champion">
-                            <p class="product_title_info">Categoria é um campeão?</p>
+                            <p class="product_title_info">Categoria é um campeão?<span class="mandatory_space">*</span></p>
                             <select name="campeao" id="is_champion" class="product_info_select" name="campeao" required>
                             <option value="" selected disabled>Selecione uma opção</option>
                             <option value="sim">Sim</option>
@@ -55,81 +57,72 @@
                     </article>
 
                     <article class="input_product_quantity">
-                        <p class="product_title_info">Quantidade do produto</p>
+                        <p class="product_title_info">Quantidade do produto<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Quantidade_que_esta_no_DB" class="input_product_info" name="quantidade" required min="0">
                     </article>
 
+<?php
+$sqlCat = "SELECT id_categoria, cat_nome FROM categoria";
+$resCat = mysqli_query($con, $sqlCat);
+$categorias = [];
+while ($r = mysqli_fetch_assoc($resCat)) {
+    $categorias[] = $r;
+}
 
-                    <article class="input_product_category">
-                        <p class="product_title_info">Selecione a categoria a qual o produto pertence<span class="mandatory_space">*</span></p>
+$sqlSub = "SELECT id_subcategoria, subcat_nome, id_categoria FROM subcategoria";
+$resSub = mysqli_query($con, $sqlSub);
+$subMap = [];
+while ($r = mysqli_fetch_assoc($resSub)) {
+    $subMap[$r['id_categoria']][] = $r;
+}
+?>
+ 
+<article class="input_product_subcategory"> 
+    <p class="product_title_info">Selecione uma categoria<span class="mandatory_space">*</span></p>
+<select name="categoria" class="input_product_info" id="categoria" required>
+    <option value="" selected disabled>Selecione uma categoria</option>
+    <?php foreach ($categorias as $cat): ?>
+        <option value="<?= $cat['id_categoria'] ?>">
+            <?= htmlspecialchars($cat['cat_nome']) ?>
+        </option>
+    <?php endforeach; ?>
+</select>
+</article>
 
-                        <select name="categoria" id="categories" class="product_info_select" name="categoria" required>
-                            <option value="" selected disabled>Selecione uma categoria</option>
-                            <option value="bovinos" class="product_categories">Bovinos</option>
-                            <option value="equinos" class="product_categories">Equinos</option>
-                            <option value="galinaceos" class="product_categories">Galináceos</option>
-                            <option value="premiados" class="product_categories">Premiados</option>
-                            <option value="produtos_gerais" class="product_categories">Produtos Gerais</option>
-                            <option value="equinos2" class="product_categories">Equinos</option>
-                            <option value="galinaceos3" class="product_categories">Galináceos</option>
-                            <option value="premiados4" class="product_categories">Premiados</option>
-                            <option value="produtos_gerais5" class="product_categories">Produtos Gerais</option>
-                        </select>
 
-                        <span class="error-message">Por favor, selecione uma categoria</span>
-                    </article>
+<article class="input_product_subcategory"> 
+    <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span class="mandatory_space">*</span></p>
+<select name="subcategoria" class="input_product_info" id="subcategoria" required disabled>
+    <option value="" selected disabled>Selecione uma subcategoria</option>
+</select>
+</article>
 
-                    <article class="input_product_subcategory">
-                        <p class="product_title_info">Selecione a subcategoria a qual o produto pertence</p>
-                        <select name="subcategoria" id="bovinos_breed" class="product_info_select subcategory-select" name="subcategoria"required>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="angus" class="product_bull">Angus</option>
-                            <option value="brahman" class="product_bull">Brahman</option>
-                            <option value="brangus" class="product_bull">Brangus</option>
-                            <option value="hereford" class="product_bull">Hereford</option>
-                            <option value="nelore" class="product_bull">Nelore</option>
-                            <option value="senepol" class="product_bull">Senepol</option>
-                        </select>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const subMap = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
+    const catSel = document.getElementById('categoria');
+    const subSel = document.getElementById('subcategoria');
 
-                        <select name="subcategoria" id="equinos_breed" class="product_info_select subcategory-select" required>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="arabe" class="product_horse">Árabe</option>
-                            <option value="draftbelga" class="product_horse">Draft Belga</option>
-                            <option value="Mustang" class="product_horse">Mustang</option>
-                            <option value="painthorse" class="product_horse">Paint Horse</option>
-                            <option value="percheron" class="product_horse">Percheron</option>
-                            <option value="puro_sangue" class="product_horse">Puro Sangue Inglês</option>
-                        </select>
+    catSel.addEventListener('change', () => {
+        const catId = catSel.value;
 
-                        <select name="subcategoria" id="galinaceos_breed"
-                            class="product_info_select subcategory-select"  required>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="legornne" class="product_rooster">Legorne</option>
-                            <option value="leon" class="product_rooster">Léon</option>
-                            <option value="orpington" class="product_rooster">Orpington</option>
-                            <option value="playmouth_rock" class="product_rooster">Playmouth Rock</option>
-                            <option value="rhode_island" class="product_rooster">Rhode Island Redd</option>
-                        </select>
+        subSel.innerHTML = '<option value="" selected disabled>Selecione uma subcategoria</option>';
 
-                        <select name="subcategoria" id="product_types" class="product_info_select subcategory-select" required>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="racao" class="general_product">Rações e suplementos alimentares</option>
-                            <option value="medicamento" class="general_product">Medicamentos veterinários</option>
-                            <option value="higiene" class="general_product">Produtos de higiene e cuidados</option>
-                            <option value="equipamento" class="general_product">Equipamentos e utensílios</option>
-                            <option value="suplemento" class="general_product">Suplementos nutricionais e aditivos</option>
-                        </select>
+        if (subMap[catId]) {
+            subMap[catId].forEach(sub => {
+                const opt = document.createElement('option');
+                opt.value = sub.id_subcategoria;
+                opt.textContent = sub.subcat_nome;
+                subSel.appendChild(opt);
+            });
+            subSel.disabled = false;
+        } else {
+            subSel.disabled = true;
+        }
+    });
+});
+</script>
 
-                        <select name="subcategoria" id="winner_breed" class="product_info_select subcategory-select" required>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="melhor_exemplar" class="champion_product">Melhor exemplar</option>
-                            <option value="grande_campeao" class="champion_product">Grande Campeão</option>
-                            <option value="campeao_junior" class="champion_product">Campeão júnior</option>
-                            <option value="melhor_desempenho" class="champion_product">Melhor desempenho Funcional</option>
-                            <option value="melhor_apresentacao" class="champion_product">Melhor apresentação</option>
-                        </select>
-
-                    </article>
                 </div>
                 <div class="product_details_collumn">
 
@@ -158,7 +151,7 @@
                     </article>
                     
                     <article class="input_product_quantity">
-                        <p class="product_title_info">Insira a descrição do produto</p>
+                        <p class="product_title_info">Insira a descrição do produto<span class="mandatory_space">*</span></p>
                         <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição_que_esta_no_DB" class="input_product_info product_details" name="descricao" required></textarea>
                     </article>
                     

@@ -23,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // echo "sexo = ".$sexo;
 // echo "peso = ".$peso;
 // echo "camp = ".$campeao;
-// echo "cat = ".$categoria;
-// echo "sub = ".$subcategoria;
+echo "cat = ".$categoria;
+echo "sub = ".$subcategoria;
 
 
 
@@ -35,6 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //      }
 
 $query = "insert into produto (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, campeao, id_categoria, id_subcategoria) values ('{$nome}', '{$valor}',
-'{$quantidade}', 'caminho' , '{$descricao}', '{$sexo}' , '{$peso}', '{$campeao}', 1, 1)";
+'{$quantidade}', 'caminho' , '{$descricao}', '{$sexo}' , '{$peso}', '{$campeao}', '{$categoria}', '{$subcategoria}')";
 
 $result= mysqli_query($con, $query);

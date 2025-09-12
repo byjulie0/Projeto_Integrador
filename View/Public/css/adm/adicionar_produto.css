@@ -22,7 +22,7 @@
   padding-left: 5rem;
   display: grid;
   grid-template-columns: 25% 75%;
-  gap: 20px;
+  gap: 40px;
 }
 
 .product_title_info_img {
@@ -69,7 +69,7 @@
 .add_product_details {
   gap: 20px;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 40% 50%;
 }
 
 .input_product_info {
@@ -89,18 +89,17 @@
 }
 
 .product_details_collumn {
-  gap: 20px;
-  flex-direction: column;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  gap: 20px
 }
-
+product_details_collumn
 textarea {
   resize: none;
 }
 
 .product_details {
-  height: 75px;
+  height: 70px;
 }
 
 .add_product_submit_button {
