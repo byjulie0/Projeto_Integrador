@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../../view/public/css/cliente/card_carrossel.css">
 </head>
 <body>
-
   <div class="card_cliente card-mais-vendidos card-cat-math">
     <img src="<?= $imagem ?>" alt="Imagem do produto" />
 
