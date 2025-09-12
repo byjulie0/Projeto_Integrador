@@ -47,3 +47,57 @@
     font-weight: bold;
     color: #2a7f40;
 }
+
+/* Responsivo para 768px */
+@media (max-width: 768px) {
+    .card_cliente {
+        max-width: 90%;
+        height: 300px;
+    }
+
+    .card_cliente img {
+        width: 180px;
+        height: 140px;
+    }
+
+    .card_info_grid p {
+        font-size: 0.75em;
+    }
+
+    .card_preco {
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsivo para 425px */
+@media (max-width: 425px) {
+    .card_cliente {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    .card_cliente img {
+        width: 160px;
+        height: 120px;
+    }
+}
+
+/* Responsivo para 365px */
+@media (max-width: 365px) {
+    .card_cliente {
+        padding: 8px;
+    }
+
+    .card_cliente img {
+        width: 140px;
+        height: 100px;
+    }
+
+    .card_info_grid p {
+        font-size: 0.20em;
+    }
+
+    .card_preco {
+        font-size: 1.1rem;
+    }
+}
