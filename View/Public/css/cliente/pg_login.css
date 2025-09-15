@@ -34,19 +34,27 @@
   justify-content: center;
 }
 
-.img_login {
-  max-width: 330px;
+.container-img-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  padding: 2%;
-  margin: 0 auto;
+}
+
+.img_login {
+  max-height: 330px;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 .text_login_vinycius {
   margin: 10px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--color-primary-1);
-  font-weight: bold;
+  font-weight: 400;
   padding: 10px;
+  text-align: center;
 }
 
 .form_login {
@@ -74,20 +82,13 @@
   color: var(--color-primary-1);
 }
 
-.button_vinycius {
-  margin: 30px 0;
-  gap: 10px;
+.btn-submit-login {
   display: flex;
-  width: 200px;
-  justify-content: center;
+  width: 100%;
   align-items: center;
-  background-color: var(--color-botao-op-Concluido);
-  color: var(--color-icones);
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  justify-content: center;
+  margin-top: 2%;
+  gap: 15px;
 }
 
 .login_form_vinycius a {
@@ -102,16 +103,35 @@
   text-decoration: underline;
 }
 
-.texto1 {
-  color: var(--color-primary-1 );
-  font-size: 15px;
-  text-decoration: none;
+.info-login {
+  margin-top: 5%;
   display: flex;
+  width: 50%;
+  flex-direction: column;
   align-items: center;
-  margin: 8px 0;
+  justify-content: center;
 }
-.texto1 a {
-  margin-left: 5px;
+
+.texto1-span {
+  background-color: red;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.esqueci_senha_login {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.texto1-a {
+  text-decoration: none;
+  color: var(--color-primary-5);
 }
 
 .senha_container {
@@ -148,6 +168,12 @@
   color: #000000;
   box-sizing: border-box;
 }
+.input_login_vinycius1::placeholder {
+  color: var(--color-primary-1);
+  font-weight: 500;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
 
 .input_login_vinycius2 {
   padding: 10px;
@@ -168,6 +194,13 @@
   font-size: 1rem;
   color: #000000;
   box-sizing: border-box;
+}
+
+.input_login_vinycius2::placeholder {
+  color: var(--color-primary-1);
+  font-weight: 500;
+  font-size: 0.8rem;
+  opacity: 0.7;
 }
 
 .input_login_vinycius {

@@ -19,10 +19,11 @@ include 'menu_login.php';
     <main class="container_geral_login">
         <div class="login_box_vinycius">
             <div class="info_login_vinycius">
-                <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
+                <div class="container-img-login">
+                    <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
+                </div>
                 <p class="text_login_vinycius">
-                    Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo
-                    com qualidade e confiança para o seu negócio.
+                    Aqui você encontra bovinos, galináceos, equinos e produtos agropecuários com qualidade e confiança.
                 </p>
             </div>
 
@@ -40,15 +41,20 @@ include 'menu_login.php';
                         </span>
                     </div>
 
-                    <button type="submit" class="button_vinycius">LOGIN</button> 
+                    <div class="btn-submit-login">
+                        <?php
+                        $texto = "Login";
+                        include 'botao_cliente.php';
+                        ?>
+                    </div>
 
                     <?php if(isset($erro)) { echo '<p style="color:red;">'.$erro.'</p>'; } ?>
 
-
-                    <a href="recuperar_senha_login1.php">Esqueci minha senha</a>
-                    <span class="texto1">Não tem conta? <a href="pg_cadastro.php" class="texto1">Cadastre-se</a>
-                    </span>
-                    <a href="../adm/login_adm.php">Área administrativa</a>
+                    <div class="info-login">
+                        <a href="recuperar_senha_login1.php" class="esqueci_senha_login">Esqueci minha senha</a>
+                        <span class="texto1-span">Não tem conta? <a href="pg_cadastro.php">Cadastre-se</a></span>
+                        <a href="../adm/login_adm.php">Área administrativa</a>
+                    </div>
                 </form>
             </div>
         </div>
