@@ -25,32 +25,29 @@
                     <div class="form-colunas-cadastro">
 
                         <div class="form-coluna-superior">
+                            <input type="text" name="nome" placeholder="Nome Completo*" class="input-form-cadastro" required>
+                        </div>
+
+                        <div class="form-coluna-inferior">
                             <div class="coluna-esquerda-cadastro">
-                                <input type="text" name="nome" required placeholder="Nome Completo*"
-                                    class="input-form-cadastro">
-                                <input type="text" name="cpf_cnpj" required class="input-form-cadastro"
-                                    placeholder="CPF/CNPJ*">
-                                <input type="email" name="email" required class="input-form-cadastro required"
-                                    placeholder="Email*">
-                                <span class="span-required" id="emailError">Use o padrão
-                                    email@empresa.com.br</span>
+                                <input type="text" name="cpf_cnpj" required placeholder="CPF/CNPJ*" class="input-form-cadastro">
+                                
+                                <input type="email" name="email" required class="input-form-cadastro" placeholder="Email*">
+                                <span class="span-required" id="emailError">Use o padrão email@empresa.com.br</span>
+                                
+                                <input type="date" name="data_nascimento" required class="input-form-cadastro" required placeholder="Data de Nascimento*">
                             </div>
 
                             <div class="coluna-direita-cadastro">
-                                <input type="date" name="data_nascimento" required class="input-form-cadastro"
-                                    placeholder="Data de Nascimento*">
-                                <input type="text" name="telefone" class="input-form-cadastro" placeholder="Telefone">
-                                <input type="password" name="senha" required class="input-form-cadastro"
-                                    placeholder="Senha*">
+                                <input type="text" name="telefone" required class="input-form-cadastro" placeholder="Telefone">
+                                
+                                <input type="password" name="senha" class="input-form-cadastro" placeholder="Senha*">
                                 <span class="span-required" id="senhaLengthError"></span>
+
+                                <input type="password" name="senha-confirmar" placeholder="Confirmar Senha*" class="input-form-cadastro" required>
                                 <span class="span-required" id="senhaConfirmError"></span>
                             </div>
                         </div>
-                        
-                        <div class="form-coluna-inferior">
-                            <input type="password" name="senha-confirmar" placeholder="Confirmar Senha*" class="input-form-cadastro" required>
-                        </div>
-
                     </div>
 
                     <div class="btn-submit-cadastro">
@@ -64,8 +61,6 @@
                         ?>
                     </div>
                 </form>
-
-                <div class="line-cadastro"></div>
               
             </div>
 
