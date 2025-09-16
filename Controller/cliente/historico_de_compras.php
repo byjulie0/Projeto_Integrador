@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container_historico_compras">
-
+ 
         <div class="title_historico_compras">
             <a href="#" onclick="window.history.back(); return false;" class="arrow_compras">
                 <i class="fa-solid fa-chevron-left">
@@ -21,22 +21,26 @@
         </div>
         
         <div class="area_historico_compras">
-            <table class="table_historico_compras">
-                <tr class="row_info">
-                    <td class="th_historico_compras">Data do Pedido:</td>
-                    <td><?php
-                        $texto = "Cancelar";
-                        include 'botao_cancelar.php';
-                        ?></td>
+            
+           <table class="table_historico_compras">
+
+                <tr class="row_info row_header">
+                    <th class="th_data_compras">Data do Pedido</th>
+                    <th class="th_botao">
+                        <?php
+                            $texto = "Cancelar";
+                            include 'botao_cancelar.php';
+                        ?>
+                    </th>
                 </tr>
 
-                <tr class="row_info">
-                    <td class="th_historico_compras">Código do pedido:</td>
-                    <td class="th_historico_compras">Total de itens:</td>
-                    <td class="th_historico_compras">Valor do pedido:</td>
-                    <td class="status_historico_compras">Status do pedido:</td>
+                <tr class="row_info row_detalhes">
+                    <th class="th_codigo_compras">Código do pedido</th>
+                    <th class="th_historico_compras">Total de itens</th>
+                    <th class="th_historico_compras">Valor do pedido</th>
+                    <th class="status_historico_compras">Status do pedido</th>
                 </tr>
-            </table>
+        </table>
         </div>
     </div>
     

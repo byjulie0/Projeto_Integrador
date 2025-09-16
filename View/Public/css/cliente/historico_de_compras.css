@@ -35,31 +35,61 @@
     gap: 15px;
     
 }
-.table_historico_compras{
+.table_historico_compras {
+  width: 100%;
+  border-collapse: collapse;
   background-color: var(--color-detalhes-16);
-  display: flex;
   border-radius: 10px;
-  height: 100%;
-  padding: 25px;
-  overflow: hidden;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
 }
-.row_info td{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 500;
-    color: var(--color-primary-1);
-    padding-bottom: 10px;
-    
+
+/* Primeira linha: Data do Pedido + Botão */
+.row_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+  padding: 20px;
 }
-.row_info td {
-    padding: 5px 15px 0 0;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--color-primary-1);
+
+.row_header th {
+  font-weight: 600;
+  color: var(--color-primary-1);
+  font-size: 1rem;
 }
-.status_historico_compras{
-    color: var(--warning-color);
-    font-weight: 500;
+
+/* Segunda linha: 4 colunas */
+.row_detalhes {
+  display: flex;
+  align-items: center;
+  gap: 18%;            
+  padding: 10px 20px;
+}
+
+.th_codigo_compras,
+.th_historico_compras,
+.th_data_compras 
+{
+  text-align: left;
+  font-weight: 500;
+  color: var(--color-primary-1);
+  font-size: 0.95rem;
+}
+
+.status_historico_compras {
+  margin-right: auto;  
+  text-align: right;
+  font-weight: 500;
+  color: var(--warning-color);
+  font-size: 0.95rem;
+}
+@media (max-width: 360px){
+    .table_historico_compras{
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
 }
