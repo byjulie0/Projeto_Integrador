@@ -2,6 +2,7 @@
 .main_cart_area{
   display: grid;
   grid-template-columns: 75% 25%;
+  max-width: 100%;
 }
 .product_area_cart{
   justify-content: center;
@@ -35,8 +36,9 @@
   margin: 0 80px;
   padding: 10px 20px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border-radius: 3px;
+  
 }
 
 .check-btn-carrinho{
@@ -83,6 +85,20 @@ input[type="checkbox"] {
   color: #20261E;
 }
 
+.labels-themselves-carrinho-qtd{
+  margin-right: 15px;
+  justify-content: center;
+  font-weight: 600;
+  color: #20261E;
+}
+
+.labels-themselves-carrinho-preco{
+  margin-left: 10px;
+  justify-content: center;
+  font-weight: 600;
+  color: #20261E;
+}
+
 .product-cards-carrinho{
   display: flex;
   flex-direction: column;
@@ -93,6 +109,7 @@ input[type="checkbox"] {
 }
 
 .product-card-carrinho{
+  padding: 2% 10px;
   display: flex;
   flex-direction: column;
   border-radius: 6px;
@@ -100,6 +117,10 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+}
+
+.product-card-carrinho:hover{
+  box-shadow:  0 5px 10px rgba(0, 0, 0, 0.119);
 }
 
 .product-title-area-carrinho{
@@ -284,197 +305,122 @@ input[type="checkbox"] {
 .carrinho-botao-finalizar:hover {
   background-color: #246b45;
 }
-@media only screen and (max-width: 767px) {
-    .main_cart_area {
-      grid-template-columns: 1fr;
-      padding: 0 10px;
-    }
-    
-    .product_area_cart {
-      width: 100%;
-      margin: 20px 0 !important;
-      padding: 10px;
-    }
-    
-    .cart_title {
-      padding-left: 20px;
-      padding-top: 15px;
-      font-size: 22px;
-      text-align: center;
-    }
-    
-    .cart-header-carrinho {
-      padding-top: 15px;
-    }
-    
-    .cart-header-labels-carrinho {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 10px;
-      margin: 0 20px;
-    }
-    
-    .check-btn-carrinho,
-    .labels-carrinho {
-      width: 100% !important;
-      justify-content: flex-start;
-      margin: 5px 0;
-    }
-    
-    .product-cards-carrinho {
-      padding: 15px !important;
-    }
-    .checkout-carrinho span{
-      font-size: 16px;
-    }
-    
-    .product-card-carrinho {
-      margin: 15px 0 !important;
-      padding: 15px;
-    }
-    
-    .product-carrinho {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .non-labeled-content-carrinho {
-      width: 100% !important;
-      margin-bottom: 15px;
-    }
-    
-    .product-img-carrinho {
-      width: 100px;
-    }
-    
-    .labels-respective-content-carrinho {
-      width: 100% !important;
-      justify-content: space-between !important;
-      padding: 8px 0;
-      border-top: 1px solid #eee;
-    }
-    
-    .change-quantity-carrinho {
-      width: 100%;
-      justify-content: center;
-    }
-    
-    .checkout-btns-carrinho {
-      height: 95%;
-      width: 100%;
-      margin-bottom: 20px;
-      margin-top: 0;
-      padding: 15px;
-    }
-}
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .main_cart_area {
-      grid-template-columns: 60% 40%;
-      gap: 15px;
-    }
-    
-    .product_area_cart {
-      width: 100%;
-      margin: 25px 0 25px 15px !important;
-    }
-    
-    .cart_title {
-      padding-left: 30px;
-      padding-top: 20px;
-      font-size: 24px;
-    }
-    
-    .cart-header-carrinho {
-      padding-top: 15px;
-    }
-    
-    .cart-header-labels-carrinho {
-      margin: 0 30px;
-      padding: 8px 15px;
-      flex-wrap: nowrap;
-    }
-    
-    .product-cards-carrinho {
-      padding: 15px 30px !important;
-    }
-    
-    .product-card-carrinho {
-      margin: 15px 30px !important;
-      padding: 15px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    
-    /* Layout mais compacto para o conteúdo do produto */
-    .product-carrinho {
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    
-    .non-labeled-content-carrinho {
-      width: 100% !important;
-      gap: 15px;
-    }
-    
-    /* Ajuste das colunas de preços */
-    .labels-respective-content-carrinho {
-      width: 30% !important;
-      min-width: auto;
-      justify-content: flex-start;
-      padding: 5px 0;
-    }
-    
-    /* Container dos labels */
-    .labels-carrinho {
-      width: 30% !important;
-      justify-content: flex-start;
-    }
-    
-    /* Ajuste específico para o seletor de quantidade */
-    .change-quantity-carrinho {
-      min-width: 120px;
-      justify-content: center;
-    }
-    
-    .quantity-carrinho {
-      padding: 5px 15px;
-    }
-    
-    .product-img-carrinho {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-    }
-    
-    /* Ajustes no resumo do pedido */
-    .checkout-btns-carrinho {
-      width: 90%;
-      margin: 25px 10px 25px 0;
-      padding: 15px;
-    }
-    
-    .checkout-btns-space-carrinho {
-      width: 90%;
-    }
-    
-    /* Melhorias nos textos */
-    .product-title-carrinho,
-    .product-name-carrinho,
-    .product-description-carrinho,
-    .labels-themselves-carrinho {
-      font-size: 14px;
-    }
-    
-    .product-price-carrinho,
-    .total-price {
-      font-size: 15px;
-    }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1199px) {
-    .product-cards-carrinho {
-      padding: 25px 80px !important;
-    }
-    
-    .product-card-carrinho {
-      margin: 25px 100px !important;
-    }
+
+/*RESPONSIVIDADE*/
+@media screen and (max-width: 365px) {
+  .main_cart_area {
+    display: block;
+  }
+  
+  .product_area_cart {
+    width: 100%; 
+    margin: 20px;
+    padding: 10px; 
+  }
+  
+  .cart_title {
+    font-size: 10px;
+  }
+
+  .cart-header-carrinho {
+    flex-direction: column; /* Mudar de linha para coluna para melhor visualização */
+    justify-content: flex-start;
+  }
+
+  .cart-header-labels-carrinho {
+    flex-direction: column; /* Alterar a direção para coluna */
+    margin: 10px 0; /* Ajustar as margens */
+    padding: 10px; /* Ajustar o padding */
+  }
+
+  .check-btn-carrinho {
+    width: 100%; /* Deixar os botões de check ocuparem toda a largura */
+    justify-content: space-between; /* Colocar o botão e o label em extremos opostos */
+  }
+
+  .product-cards-carrinho {
+    padding: 10px 25px; /* Ajustar o padding */
+    margin: 0; /* Remover margens */
+  }
+
+  .product-card-carrinho {
+    margin: 10px 0; /* Ajustar margens para que os produtos não fiquem tão distantes */
+    padding: 15px 10px; /* Ajustar padding para caber melhor */
+  }
+
+  .product-title-area-carrinho {
+    flex-direction: column; /* Alterar a direção para coluna */
+    align-items: flex-start;
+  }
+
+  .product-title-carrinho {
+    font-size: 16px; /* Reduzir o tamanho da fonte */
+  }
+
+  .delete-item-btn-area-carrinho {
+    justify-content: flex-start; /* Ajustar para que o botão de exclusão apareça no topo */
+  }
+
+  .product-carrinho {
+    flex-direction: column; /* Alterar a direção para coluna */
+    width: 100%;
+  }
+
+  .non-labeled-content-carrinho {
+    width: 100%; /* Aumentar a largura para 100% */
+    justify-content: flex-start;
+    gap: 15px; /* Ajustar o espaço entre os itens */
+  }
+
+  .product-img-carrinho {
+    width: 120px; /* Ajustar o tamanho da imagem */
+    height: auto; /* Manter a proporção da imagem */
+  }
+
+  .labels-respective-content-carrinho {
+    width: 100%; /* Ajustar a largura dos labels */
+    justify-content: flex-start; /* Ajustar o alinhamento */
+  }
+
+  .change-quantity-carrinho {
+    width: 100%; /* Ajustar para ocupar toda a largura disponível */
+    padding: 5px;
+  }
+
+  .checkout-btns-carrinho {
+    flex-direction: column; /* Alterar para uma coluna */
+    padding: 10px; /* Ajustar o padding */
+    height: auto; /* Ajustar altura automaticamente */
+    box-shadow: none; /* Remover sombra */
+  }
+
+  .checkout-btns-space-carrinho {
+    width: 100%; /* Fazer o espaço de checkout ocupar toda a largura */
+    margin-top: 15px; /* Ajustar o espaço entre os botões */
+  }
+
+  .total-price-checkout-carrinho {
+    flex-direction: column; /* Alterar para uma coluna */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .total-label-carrinho {
+    font-size: 14px; /* Ajustar o tamanho da fonte */
+  }
+
+  .price-itself-carrinho {
+    font-size: 18px; /* Ajustar o tamanho da fonte */
+  }
+
+  .carrinho-botao-finalizar-area,
+  .carrinho-botao-finalizar {
+    width: 100%; /* Fazer o botão ocupar toda a largura */
+    font-size: 14px; /* Reduzir o tamanho da fonte */
+    padding: 8px; /* Ajustar o padding */
+  }
+
+  .product-card-carrinho:hover {
+    box-shadow: none; /* Remover o efeito de hover no produto para evitar sobrecarga visual */
+  }
 }
