@@ -1,5 +1,11 @@
 
 <?php
+
+
+if (!isset($_SESSION['id_cliente'])) {
+    header(header: "Location: ../cliente/login.php");
+    exit;
+}
 include 'menu_pg_inicial.php';
 // include '../../model/DB/conexao.php';
 // session_start();
