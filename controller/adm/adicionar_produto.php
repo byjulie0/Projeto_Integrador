@@ -59,6 +59,7 @@
                     <article class="input_product_quantity">
                         <p class="product_title_info">Quantidade do produto<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Quantidade_que_esta_no_DB" class="input_product_info" name="quantidade" required min="0">
+                        <span class="error-message">Por favor, preencha este campo</span>
                     </article>
 
 <?php
@@ -87,14 +88,16 @@ while ($r = mysqli_fetch_assoc($resSub)) {
         </option>
     <?php endforeach; ?>
 </select>
+<span class="error-message">Por favor, selecione uma opção</span>
 </article>
 
 
 <article class="input_product_subcategory"> 
-    <p class="product_title_info">Selecione a subcategoria a qual o produto pertence<span class="mandatory_space">*</span></p>
+    <p class="product_title_info">Selecione a subcategoria a qual o <br> produto pertence<span class="mandatory_space">*</span></p>
 <select name="subcategoria" class="input_product_info" id="subcategoria" required disabled>
     <option value="" selected disabled>Selecione uma subcategoria</option>
 </select>
+<span class="error-message">Por favor, selecione uma opção</span>
 </article>
 
 <script>
@@ -136,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <article class="input_product_quantity">
                         <p class="product_title_info">Peso do animal em kg<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Se for produto digite 0" class="input_product_info" name="peso" required min="0">
+                        <span class="error-message">Por favor, preencha este campo</span>
                     </article>
                     
                     <article class="input_product_category">
@@ -146,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <option value="F" class="product_categories">Fêmea</option>
                             <option value="Não se aplica" class="product_categories">Não se aplica (Produto)</option>
                         </select>
-                        
                         <span class="error-message">Por favor, selecione uma opção</span>
                     </article>
                     
@@ -154,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="product_title_info">Insira a descrição do produto<span class="mandatory_space">*</span></p>
                         <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição_que_esta_no_DB" class="input_product_info product_details" name="descricao" required></textarea>
                     </article>
+
                     
                 </div>
             </aside>
