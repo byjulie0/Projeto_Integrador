@@ -3,145 +3,116 @@ include 'menu_pg_inicial.php';
 require_once __DIR__ . '/../../model/DB/conexao.php';
 session_start();
 
-$id_cliente = $_SESSION['id_cliente'] ?? 0;
+$id_cliente = 1; //$_SESSION['id_cliente'] ?? 0;
 
-// Busca os itens do carrinho
-$sql = "SELECT c.id_carrinho, c.quantidade, c.selecionado, 
+//if ($id_cliente == 0) {
+  //  die("Você precisa estar logado para acessar o carrinho.");
+//}
+
+// ----- AÇÕES (atualizar ou remover) -----
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['acao']) && $_POST['acao'] === 'atualizar') {
+        $id_carrinho = $_POST['id_carrinho'] ?? 0;
+        $qtd = $_POST['qtd_selecionada'] ?? 1;
+
+        $sql = "UPDATE carrinho 
+                SET qtd_selecionada = ? 
+                WHERE id_carrinho = ? AND cliente_id_cliente = ?";
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param("iii", $qtd, $id_carrinho, $id_cliente);
+        $stmt->execute();
+    }
+
+    if (isset($_POST['acao']) && $_POST['acao'] === 'remover') {
+        $id_carrinho = $_POST['id_carrinho'] ?? 0;
+
+        $sql = "DELETE FROM carrinho 
+                WHERE id_carrinho = ? AND cliente_id_cliente = ?";
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param("ii", $id_carrinho, $id_cliente);
+        $stmt->execute();
+    }
+
+    // Recarregar página após ação
+    header("Location: carrinho.php");
+    exit;
+}
+
+// ----- BUSCAR ITENS DO CARRINHO -----
+$sql = "SELECT c.id_carrinho, c.qtd_selecionada, c.selecionado,
                p.prod_nome, p.valor, p.descricao, p.imagem
         FROM carrinho c
-        JOIN produto p ON c.id_produto = p.id_produto
-        WHERE c.id_cliente = ?";
+        JOIN produto p ON c.produto_id_produto = p.id_produto
+        WHERE c.cliente_id_cliente = ?";
 $stmt = $con->prepare($sql);
-if (!$stmt) {
-    die("Erro ao preparar a query: " . $con->error);
-}
 $stmt->bind_param("i", $id_cliente);
 $stmt->execute();
 $result = $stmt->get_result();
 $itens = $result->fetch_all(MYSQLI_ASSOC);
 
-// Calcula o total apenas dos selecionados
-$sqlResumo = "SELECT COUNT(*) AS itens, SUM(p.valor * c.quantidade) AS total
-              FROM carrinho c
-              JOIN produto p ON c.id_produto = p.id_produto
-              WHERE c.id_cliente = ? AND c.selecionado = 1";
-$stmtResumo = $con->prepare($sqlResumo);
-if (!$stmtResumo) {
-    die("Erro ao preparar a query do resumo: " . $con->error);}
-$stmtResumo->bind_param("i", $id_cliente);
-$stmtResumo->execute();
-$resumo = $stmtResumo->get_result()->fetch_assoc();
-
-$totalItensSelecionados = $resumo['itens'] ?? 0;
-$totalValor = $resumo['total'] ?? 0.00;
+$total = 0;
+foreach ($itens as $item) {
+    $total += $item['valor'] * $item['qtd_selecionada'];
+}
 ?>
-
-<!-- HTML DO CARRINHO-->
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
-    <link rel="stylesheet" href="../../view/public/css/cliente/carrinho.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="../../view/js/cliente/carrinho.js"></script>
+    <style>
+        .carrinho-container { max-width: 1000px; margin: 20px auto; padding: 20px; }
+        .item { display: flex; align-items: center; border-bottom: 1px solid #ccc; padding: 10px 0; }
+        .item img { width: 100px; margin-right: 20px; }
+        .item-info { flex-grow: 1; }
+        .item-preco { font-weight: bold; }
+        .total { text-align: right; margin-top: 20px; font-size: 18px; font-weight: bold; }
+        .btn { padding: 8px 12px; margin: 5px; border: none; cursor: pointer; border-radius: 5px; }
+        .btn-remover { background: #e74c3c; color: #fff; }
+        .btn-finalizar { background: #2ecc71; color: #fff; }
+    </style>
 </head>
-
 <body>
-    <div class="main_cart_area">
-        <div class="product_area_cart">
-            <h1 class="cart_title">Carrinho</h1>
+<div class="carrinho-container">
+    <h2>Seu Carrinho</h2>
 
-            <section class="cart-header-carrinho">
-                <div class="cart-header-labels-carrinho">
-                    <div class="check-btn-carrinho">
-                        <input type="checkbox" id="check-square-carrinho" class="select-all-checkbox">
-                        <div class="check-square-carrinho"></div>
-                        <label for="check-square" class="check-box-label-carrinho">Selecionar tudo</label>
-                    </div>
-                    <div class="labels-carrinho">
-                        <span class="labels-themselves-carrinho">Preço unitário</span>
-                    </div>
-                    <div class="labels-carrinho">
-                        <span class="labels-themselves-carrinho">Quantidade</span>
-                    </div>
-                    <div class="labels-carrinho">
-                        <span class="labels-themselves-carrinho">Preço total</span>
-                    </div>
+    <?php if (count($itens) > 0): ?>
+        <?php foreach ($itens as $item): ?>
+            <div class="item">
+                <img src="<?= $item['imagem'] ?>" alt="<?= $item['prod_nome'] ?>">
+                <div class="item-info">
+                    <h3><?= $item['prod_nome'] ?></h3>
+                    <p><?= $item['descricao'] ?></p>
+                    <p class="item-preco">R$ <?= number_format($item['valor'], 2, ',', '.') ?></p>
+
+                    <!-- Form atualizar quantidade -->
+                    <form method="post" style="display:inline-block;">
+                        <input type="hidden" name="acao" value="atualizar">
+                        <input type="hidden" name="id_carrinho" value="<?= $item['id_carrinho'] ?>">
+                        <input type="number" name="qtd_selecionada" 
+                               value="<?= $item['qtd_selecionada'] ?>" min="1">
+                        <button type="submit" class="btn">Atualizar</button>
+                    </form>
+
+                    <!-- Form remover item -->
+                    <form method="post" style="display:inline-block;">
+                        <input type="hidden" name="acao" value="remover">
+                        <input type="hidden" name="id_carrinho" value="<?= $item['id_carrinho'] ?>">
+                        <button type="submit" class="btn btn-remover">Remover</button>
+                    </form>
                 </div>
-            </section>
-
-            <section class="product-cards-carrinho">
-                <?php foreach ($itens as $item): ?>
-                <div class="product-card-carrinho" data-price="<?= number_format($item['valor'], 2, '.', '') ?>">
-                    <div class="product-title-area-carrinho">
-                        <div class="check-btn-carrinho">
-                            <input type="checkbox" class="product-checkbox" <?= $item['selecionado'] ? 'checked' : '' ?>>
-                            <div class="check-square-carrinho"></div>
-                            <span class="product-title-carrinho"><?= htmlspecialchars($item['prod_nome']) ?></span>
-                        </div>
-                        <div class="delete-item-btn-area-carrinho">
-                            <button class="delete-item-carrinho" data-id="<?= $item['id_item'] ?>">Excluir</button>
-                        </div>
-                    </div>
-                    <div class="separation-line-carrinho"></div>
-                    <div class="product-carrinho">
-                        <div class="non-labeled-content-carrinho">
-                            <img src="<?= $item['imagem'] ?: '../../view/public/imagens/blank_image.png' ?>" alt="" class="product-img-carrinho">
-                            <div class="title-and-description-carrinho">
-                                <span class="product-name-carrinho"><?= htmlspecialchars($item['prod_nome']) ?></span>
-                                <span class="product-description-carrinho"><?= htmlspecialchars($item['descricao']) ?></span>
-                            </div>
-                        </div>
-
-                        <div class="labels-respective-content-carrinho">
-                            <span class="product-price-carrinho">
-                                R$: <span class="unit-price"><?= number_format($item['valor'], 2, ',', '.') ?></span>
-                            </span>
-                        </div>
-                        <div class="labels-respective-content-carrinho">
-                            <div class="change-quantity-carrinho">
-                                <button class="change-quantity-btn-carrinho minus-btn" data-id="<?= $item['id_item'] ?>">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <span class="quantity-carrinho"><?= $item['quantidade'] ?></span>
-                                <button class="change-quantity-btn-carrinho plus-btn" data-id="<?= $item['id_item'] ?>">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="labels-respective-content-carrinho">
-                            <span class="total-price">
-                                R$: <span class="product-total-price"><?= number_format($item['valor'] * $item['quantidade'], 2, ',', '.') ?></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </section>
-        </div>
-
-        <section class="checkout-btns-carrinho">
-            <div class="checkout-btns-space-carrinho">
-                <h3 class="resumo_carrinho">Resumo da compra</h3>
-                <span class="total_items_cart">Itens: <span class="total-items-count"><?= $totalItensSelecionados ?></span></span>
-                <div class="total-price-checkout-carrinho">
-                    <span class="total-label-carrinho">
-                        Total: R$: <span class="grand-total-price"><?= number_format($totalValor, 2, ',', '.') ?></span>
-                    </span>
-                </div>
-                <div class="separation-line-carrinho"></div>
-
-                <?php
-                $texto = "Fechar Pedido"; 
-                include 'botao_cliente.php';
-                ?>
             </div>
-        </section>
-    </div>
+        <?php endforeach; ?>
+
+        <div class="total">
+            Total: R$ <?= number_format($total, 2, ',', '.') ?>
+        </div>
+        <button class="btn btn-finalizar">Finalizar Compra</button>
+
+    <?php else: ?>
+        <p>Seu carrinho está vazio.</p>
+    <?php endif; ?>
+</div>
 </body>
 </html>
-
-<?php include 'footer_cliente.php'; ?>
