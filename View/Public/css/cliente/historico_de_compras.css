@@ -85,11 +85,4 @@
   color: var(--warning-color);
   font-size: 0.95rem;
 }
-@media (max-width: 360px){
-    .table_historico_compras{
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
 
-}
