@@ -1,12 +1,9 @@
 <?php
 session_start();
 
-$host = "192.168.22.9";
-$usuario = "turma143p1";
-$senha = "sucesso@143";
-$bd = "143p1";
+include '../../model/DB/conexao.php';
 
-$con = new mysqli($host, $usuario, $senha, $bd);
+
 
 if ($con->connect_errno) {
     die("Falha na conexão: " . $con->connect_error);
