@@ -1,3 +1,7 @@
+<?php
+require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
+?>
+
 <?php include 'menu_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
