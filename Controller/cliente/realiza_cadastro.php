@@ -3,12 +3,6 @@ session_start();
 
 include '../../model/DB/conexao.php';
 
-
-
-if ($con->connect_errno) {
-    die("Falha na conexão: " . $con->connect_error);
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nome            = $con->real_escape_string(trim($_POST['nome'] ?? ''));
