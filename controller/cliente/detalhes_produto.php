@@ -2,6 +2,7 @@
 // session_start();
 // require_once '../../model/db/conexao.php';
 include 'menu_pg_inicial.php';
+// include '../utils/validacao_login.php';
 
 // $id_produto = $_GET['id'] ?? null;
 // if (!$id_produto) {
