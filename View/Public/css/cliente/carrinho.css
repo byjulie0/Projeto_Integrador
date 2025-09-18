@@ -305,21 +305,31 @@ input[type="checkbox"] {
 .carrinho-botao-finalizar:hover {
   background-color: #246b45;
 }
+.area_seta_titulo{
+  font-size: 1rem;
+  color: var(--color-primary-1);
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+.bi-chevron-left{
+  font-size: 1.5rem;
+}
+
 
 /*RESPONSIVIDADE*/
-@media screen and (max-width: 365px) {
+@media screen and (max-width: 360px) {
   .main_cart_area {
     display: block;
   }
   
   .product_area_cart {
-    width: 100%; 
-    margin: 20px;
-    padding: 10px; 
+    width: 90%; 
+    margin: 10px auto;
+    margin-top: 6%;
   }
   
   .cart_title {
-    font-size: 10px;
+    font-size: 24px;
   }
 
   .cart-header-carrinho {

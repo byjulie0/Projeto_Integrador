@@ -16,7 +16,10 @@ include 'menu_pg_inicial.php';
 <body>
     <div class="main_cart_area">
         <div class="product_area_cart">
-            <h1 class="cart_title">Carrinho</h1>
+            <div class="area_seta_titulo">
+                <h1 class="cart_title">Carrinho</h1>
+                <i class="bi bi-chevron-left"></i>
+            </div>
             <section class="cart-header-carrinho">
                 <div class="cart-header-labels-carrinho">
                     <div class="check-btn-carrinho">
