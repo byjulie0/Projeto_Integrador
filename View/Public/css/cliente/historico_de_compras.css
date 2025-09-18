@@ -1,4 +1,7 @@
-@import url("../cliente.css");
+
+.body_historico_compras{
+ max-width: 100%;
+}
 
 .container_historico_compras{
   background: white;
@@ -12,27 +15,28 @@
   margin-bottom: 5%;
 }
 .title_historico_compras{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    color: var(--color-primary-1);
-    
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: var(--color-primary-1); 
 }
+
 .arrow_compras{
-    font-size: 1.5rem;
+  font-size: 30px;
 }
 .titulo_historico_compras{
-    font-size: 30px;
+  font-size: 30px;
 }
 .area_historico_compras{
-    margin: 4% 4%;
-    margin-left: 7%;
-    margin-right: 7%;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  margin: 4% 4%;
+  margin-left: 7%;
+  margin-right: 7%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 100%;
     
 }
 .table_historico_compras {
@@ -66,12 +70,13 @@
   align-items: center;
   gap: 18%;            
   padding: 10px 20px;
+  max-width: 100%;
 }
 
 .th_codigo_compras,
 .th_historico_compras,
 .th_data_compras 
-{
+{ 
   text-align: left;
   font-weight: 500;
   color: var(--color-primary-1);
@@ -86,3 +91,56 @@
   font-size: 0.95rem;
 }
 
+/*RESPONSIVIDADE*/
+
+@media (max-width: 365px){
+  .container_historico_compras {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .title_historico_compras {
+    font-size: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .arrow_compras {
+    font-size: 0.9rem;
+  }
+
+  .title_historico_compras {
+    font-size: 10px;
+  }
+
+  .area_historico_compras {
+    margin: 3% 5%;
+  }
+
+  .table_historico_compras {
+    padding: 15px;
+  }
+
+  .row_header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .row_detalhes {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .th_codigo_compras,
+  .th_historico_compras,
+  .th_data_compras,
+  .status_historico_compras {
+    font-size: 0.85rem;
+  }
+
+  .status_historico_compras {
+    text-align: left;
+  }
+}
