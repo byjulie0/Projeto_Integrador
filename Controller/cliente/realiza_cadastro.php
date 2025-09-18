@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nome            = $con->real_escape_string(trim($_POST['nome'] ?? ''));
     $cpf_cnpj        = $con->real_escape_string(trim($_POST['cpf_cnpj'] ?? ''));
-    $user_nome       = $con->real_escape_string(trim($_POST['user_nome'] ?? ''));
     $email           = $con->real_escape_string(trim($_POST['email'] ?? ''));
     $data_nasc       = $con->real_escape_string(trim($_POST['data_nascimento'] ?? ''));
     $telefone        = $con->real_escape_string(trim($_POST['telefone'] ?? ''));
