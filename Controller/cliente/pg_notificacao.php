@@ -1,5 +1,8 @@
 <?php
+
+session_start(); // Inicia a sessão PHP
 include 'menu_pg_inicial.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,7 +30,7 @@ include 'menu_pg_inicial.php';
             <div class="notification">
                 <div class="notification_info">
                     <p class="notification_date">12/12/2024 - Produtos</p>
-                    <p class="notification_text">{Usuário}, a sela que você estava de olho voltou ao estoque, dê uma
+                    <p class="notification_text"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : $username; ?>, a sela que você estava de olho voltou ao estoque, dê uma
                         olhada!
                     </p>
                 </div>
@@ -35,7 +38,7 @@ include 'menu_pg_inicial.php';
             <div class="notification">
                 <div class="notification_info">
                     <p class="notification_date">12/12/2024 - Produtos</p>
-                    <p class="notification_text">{Usuário}, o Nelore que você estava de olho voltou ao estoque, dê uma
+                    <p class="notification_text"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : $username; ?>, o Nelore que você estava de olho voltou ao estoque, dê uma
                         olhada!
                     </p>
                 </div>
@@ -43,7 +46,7 @@ include 'menu_pg_inicial.php';
             <div class="notification">
                 <div class="notification_info">
                     <p class="notification_date">10/12/2024 - Produtos</p>
-                    <p class="notification_text">{Usuário}, o Barred Plymouth Rock que você estava de olho voltou ao
+                    <p class="notification_text"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : $username; ?>, o Barred Plymouth Rock que você estava de olho voltou ao
                         estoque, dê uma olhada!
                     </p>
                 </div>
@@ -51,7 +54,7 @@ include 'menu_pg_inicial.php';
             <div class="notification">
                 <div class="notification_info">
                     <p class="notification_date">10/12/2024 - Produtos</p>
-                    <p class="notification_text">{Usuário}, o Rhode Island Red que você estava de olho voltou ao
+                    <p class="notification_text"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : $username; ?>, o Rhode Island Red que você estava de olho voltou ao
                         estoque, dê
                         uma olhada!
                     </p>
