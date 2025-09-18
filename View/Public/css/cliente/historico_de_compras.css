@@ -1,146 +1,109 @@
+/* @import url(../cliente.css); */
 
-.body_historico_compras{
- max-width: 100%;
+.body_historico_compras {
+  max-width: 100%;
 }
 
-.container_historico_compras{
+.container_historico_compras {
+  display: flex;
+  flex-direction: column;
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin: 5px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 5% auto;
   width: 90%;
   position: relative;
-  margin-top: 5%;
-  margin-bottom: 5%;
 }
-.title_historico_compras{
+
+.title_historico_compras {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
-  color: var(--color-primary-1); 
+  color: var(--color-primary-1);
 }
 
-.arrow_compras{
+.arrow_compras {
+  font-size: 25px;
+}
+
+.titulo_historico_compras {
   font-size: 30px;
 }
-.titulo_historico_compras{
-  font-size: 30px;
-}
-.area_historico_compras{
-  margin: 4% 4%;
-  margin-left: 7%;
-  margin-right: 7%;
-  justify-content: center;
+
+.area_historico_compras {
+  display: flex;
+  margin: 4% 7%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
   max-width: 100%;
-    
-}
-.table_historico_compras {
-  width: 100%;
-  border-collapse: collapse;
   background-color: var(--color-detalhes-16);
   border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
 }
 
-/* Primeira linha: Data do Pedido + Botão */
-.row_header {
+.pedido_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: none;
   padding: 20px;
-}
-
-.row_header th {
   font-weight: 600;
-  color: var(--color-primary-1);
   font-size: 1rem;
 }
 
-/* Segunda linha: 4 colunas */
-.row_detalhes {
+.pedido_detalhes {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 18%;            
-  padding: 10px 20px;
-  max-width: 100%;
+  padding: 20px;
 }
 
-.th_codigo_compras,
-.th_historico_compras,
-.th_data_compras 
-{ 
-  text-align: left;
+.codigo_pedido, .total_pedido, .valor_pedido {
   font-weight: 500;
+  font-size: 0.95rem;
   color: var(--color-primary-1);
-  font-size: 0.95rem;
 }
 
-.status_historico_compras {
-  margin-right: auto;  
-  text-align: right;
+.status_pedido {
   font-weight: 500;
-  color: var(--warning-color);
   font-size: 0.95rem;
+  color: rgb(235, 39, 39);
 }
 
-/*RESPONSIVIDADE*/
-
-@media (max-width: 365px){
+/* RESPONSIVIDADE */
+@media screen and (max-width: 360px) {
   .container_historico_compras {
-    width: 90%;
-    padding: 15px;
+    margin: 20px;
+    padding: 10px;
+    min-height: 200px;
   }
-
-  .title_historico_compras {
-    font-size: 32px;
-    flex-direction: column;
-    align-items: flex-start;
+  
+  .titulo_historico_compras {
+    font-size: 18px;
   }
-
+  
   .arrow_compras {
-    font-size: 0.9rem;
+    font-size: 18px;
   }
-
-  .title_historico_compras {
-    font-size: 10px;
-  }
-
+  
   .area_historico_compras {
-    margin: 3% 5%;
+    margin: 8% 1%;
   }
-
-  .table_historico_compras {
-    padding: 15px;
-  }
-
-  .row_header {
-    flex-direction: column;
-    align-items: flex-start;
+  
+  .pedido_detalhes {
     padding: 10px;
   }
-
-  .row_detalhes {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-
-  .th_codigo_compras,
-  .th_historico_compras,
-  .th_data_compras,
-  .status_historico_compras {
+  
+  .codigo_pedido, 
+  .total_pedido, 
+  .valor_pedido,
+  .status_pedido {
     font-size: 0.85rem;
   }
+  
+  .pedido_header {
+    font-size: 0.9rem;
+    padding: 10px;
 
-  .status_historico_compras {
-    text-align: left;
   }
 }
