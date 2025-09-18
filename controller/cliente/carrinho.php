@@ -16,9 +16,9 @@ include 'menu_pg_inicial.php';
 <body>
     <div class="main_cart_area">
         <div class="product_area_cart">
-            <div class="area_seta_titulo">
+            <div class="'area_seta_titulo'">
+                 <i class="bi bi-chevron-left"></i>
                 <h1 class="cart_title">Carrinho</h1>
-                <i class="bi bi-chevron-left"></i>
             </div>
             <section class="cart-header-carrinho">
                 <div class="cart-header-labels-carrinho">
@@ -26,12 +26,6 @@ include 'menu_pg_inicial.php';
                         <input type="checkbox" id="check-square-carrinho" class="select-all-checkbox">
                         <div class="check-square-carrinho"></div>
                         <label for="check-square" class="check-box-label-carrinho">Selecionar tudo</label>
-                    </div>
-                    <div class="labels-carrinho">
-                        <span class="labels-themselves-carrinho-qtd">Quantidade</span>
-                    </div>
-                    <div class="labels-carrinho">
-                        <span class="labels-themselves-carrinho-preco">Preço total</span>
                     </div>
                 </div>
             </section>
