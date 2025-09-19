@@ -1,15 +1,15 @@
-
+@import url("../adm.css");
 .icon-toggle-btn {
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
     font-size: 24px;
-    color: #ccc;
+    color: var(--color-primary-6);
     transition: all 0.3s ease;
 }
 .icon-toggle-btn[aria-pressed="true"] {
-    color: #29b5a8;
+    color: var(--color-detalhes-17);
 }
 .icon-toggle-btn[aria-pressed="true"] .fa-toggle-off {
     display: none;
