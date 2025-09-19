@@ -51,6 +51,19 @@
   font-size: 1rem;
 }
 
+.div_data_pedido{
+  /* background-color: aqua; */
+  width: 50%;
+  display: block;
+}
+
+.botao_cancelar{
+  /* background-color: green; */
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .pedido_detalhes {
   display: flex;
   justify-content: space-between;
@@ -58,16 +71,16 @@
   padding: 20px;
 }
 
-.codigo_pedido, .total_pedido, .valor_pedido {
+.codigo_pedido, .total_itens, .valor_pedido, 
+.status_pedido{
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--color-primary-1);
 }
 
-.status_pedido {
-  font-weight: 500;
-  font-size: 0.95rem;
-  color: rgb(235, 39, 39);
+.codigo_pedido span, .total_itens span, .valor_pedido span, 
+.status_pedido span{
+  color: transparent;
 }
 
 /* RESPONSIVIDADE */
@@ -87,20 +100,30 @@
   }
   
   .area_historico_compras {
-    margin: 8% 1%;
+    margin: 5% 1%;
+    flex-direction: column-reverse;
   }
-  
+
   .pedido_detalhes {
     padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
   }
   
   .codigo_pedido, 
-  .total_pedido, 
+  .total_itens, 
   .valor_pedido,
   .status_pedido {
     font-size: 0.85rem;
   }
-  
+
+  .codigo_pedido span, .total_itens span, .valor_pedido span, 
+  .status_pedido span{
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-primary-1);
+  }
+
   .pedido_header {
     font-size: 0.9rem;
     padding: 10px;
