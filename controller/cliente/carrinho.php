@@ -1,7 +1,23 @@
 <!-- HTML DO CARRINHO-->
 
 <?php include 'menu_pg_inicial.php';
-include 'carrinho2.php'?>
+// include '../utils/carrinho2';
+require_once __DIR__ . '/../../model/DB/conexao.php';
+
+
+$stmt = "select * from carrinho join produto on carrinho.produto_id_produto = produto.id_produto WHERE cliente_id_cliente = 27;"; //teste busca banco
+    // echo $stmt;
+    $result = mysqli_query($con,$stmt);
+    $row = mysqli_num_rows($result);
+    // echo $row;
+
+
+    
+?>
+
+
+
+
 
 
 <!DOCTYPE html>
@@ -16,6 +32,32 @@ include 'carrinho2.php'?>
 </head>
 
 <body>
+
+<table border="1">
+<thead>
+<tr>
+<th>img</th>
+<th>nome</th>
+
+</tr>
+</thead>
+<?php while ($retorno = mysqli_fetch_array($result)){
+?>
+<tbody>
+<tr>
+<!-- <td ><?php 
+// echo $retorno["path_img"];
+?></td> -->
+ <td ><img src="<?php echo $retorno["path_img"]; ?>" alt="" class="product-img-carrinho"></td>
+ <td ><?php echo $retorno["prod_nome"]; ?></td>
+
+</tr>
+<?php }?>
+</tbody>
+</table>
+
+
+
     <div class="main_cart_area">
         <div class="product_area_cart">
             <h1 class="cart_title">Carrinho</h1>
@@ -40,31 +82,30 @@ include 'carrinho2.php'?>
             </section>
 
             <section class="product-cards-carrinho">
-                <?php foreach ($itens as $item): ?>
                 <div class="product-card-carrinho" data-price="<?= number_format($item['valor'], 2, '.', '') ?>">
                     <div class="product-title-area-carrinho">
                         <div class="check-btn-carrinho">
-                            <input type="checkbox" class="product-checkbox" <?= $item['selecionado'] ? 'checked' : '' ?>>
+                            <input type="checkbox" class="product-checkbox" >
                             <div class="check-square-carrinho"></div>
-                            <span class="product-title-carrinho"><?= htmlspecialchars($item['prod_nome']) ?></span>
+                            <span class="product-title-carrinho"></span>
                         </div>
                         <div class="delete-item-btn-area-carrinho">
-                            <button class="delete-item-carrinho" data-id="<?= $item['id_item'] ?>">Excluir</button>
+                            <button class="delete-item-carrinho" data-id="">Excluir</button>
                         </div>
                     </div>
                     <div class="separation-line-carrinho"></div>
                     <div class="product-carrinho">
                         <div class="non-labeled-content-carrinho">
-                            <img src="<?= $item['imagem'] ?: '../../view/public/imagens/blank_image.png' ?>" alt="" class="product-img-carrinho">
+                            <img src="" alt="" class="product-img-carrinho">
                             <div class="title-and-description-carrinho">
-                                <span class="product-name-carrinho"><?= htmlspecialchars($item['prod_nome']) ?></span>
-                                <span class="product-description-carrinho"><?= htmlspecialchars($item['descricao']) ?></span>
+                                <span class="product-name-carrinho"></span>
+                                <span class="product-description-carrinho"></span>
                             </div>
                         </div>
 
                         <div class="labels-respective-content-carrinho">
                             <span class="product-price-carrinho">
-                                R$: <span class="unit-price"><?= number_format($item['valor'], 2, ',', '.') ?></span>
+                                R$: <span class="unit-price"></span>
                             </span>
                         </div>
                         <div class="labels-respective-content-carrinho">
@@ -72,7 +113,7 @@ include 'carrinho2.php'?>
                                 <button class="change-quantity-btn-carrinho minus-btn" data-id="<?= $item['id_item'] ?>">
                                     <i class="fa-solid fa-minus"></i>
                                 </button>
-                                <span class="quantity-carrinho"><?= $item['quantidade'] ?></span>
+                                <span class="quantity-carrinho"></span>
                                 <button class="change-quantity-btn-carrinho plus-btn" data-id="<?= $item['id_item'] ?>">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
@@ -80,22 +121,22 @@ include 'carrinho2.php'?>
                         </div>
                         <div class="labels-respective-content-carrinho">
                             <span class="total-price">
-                                R$: <span class="product-total-price"><?= number_format($item['valor'] * $item['quantidade'], 2, ',', '.') ?></span>
+                                R$: <span class="product-total-price"></span>
                             </span>
                         </div>
                     </div>
                 </div>
-                <?php endforeach; ?>
+            
             </section>
         </div>
 
         <section class="checkout-btns-carrinho">
             <div class="checkout-btns-space-carrinho">
                 <h3 class="resumo_carrinho">Resumo da compra</h3>
-                <span class="total_items_cart">Itens: <span class="total-items-count"><?= $totalItensSelecionados ?></span></span>
+                <span class="total_items_cart">Itens: <span class="total-items-count"></span></span>
                 <div class="total-price-checkout-carrinho">
                     <span class="total-label-carrinho">
-                        Total: R$: <span class="grand-total-price"><?= number_format($totalValor, 2, ',', '.') ?></span>
+                        Total: R$: <span class="grand-total-price"></span>
                     </span>
                 </div>
                 <div class="separation-line-carrinho"></div>

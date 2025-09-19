@@ -113,3 +113,17 @@ function atualizarResumoCarrinho() {
     document.querySelector(".total-items-count").textContent = totalItens;
     document.querySelector(".grand-total-price").textContent = totalPreco.toFixed(2).replace(".", ",");
 }
+
+fetch("carrinho2.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+        action: "add",
+        id: 1,
+        nome: "Produto Exemplo",
+        preco: 10.50,
+        quantidade: 2
+    })
+})
+.then(res => res.json())
+.then(data => console.log(data));

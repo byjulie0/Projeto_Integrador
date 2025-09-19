@@ -2,55 +2,61 @@
 require_once __DIR__ . '/../../model/DB/conexao.php';
 session_start();
 
-$id_cliente = 1; //$_SESSION['id_cliente'] ?? 0;
+switch ($action) {
+    // Adicionar produto
+    case 'add':
+        $id = intval($_POST['id']);
+        $nome = $_POST['nome'] ?? '';
+        $preco = floatval($_POST['preco']);
+        $qtd = intval($_POST['quantidade'] ?? 1);
 
-//if ($id_cliente == 0) {
-  //  die("Você precisa estar logado para acessar o carrinho.");
-//}
+        if (!isset($_SESSION['carrinho'][$id])) {
+            $_SESSION['carrinho'][$id] = [
+                'id' => $id,
+                'nome' => $nome,
+                'preco' => $preco,
+                'quantidade' => $qtd
+            ];
+        } else {
+            $_SESSION['carrinho'][$id]['quantidade'] += $qtd;
+        }
 
-// ----- AÇÕES (atualizar ou remover) -----
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['acao']) && $_POST['acao'] === 'atualizar') {
-        $id_carrinho = $_POST['id_carrinho'] ?? 0;
-        $qtd = $_POST['qtd_selecionada'] ?? 1;
+        echo json_encode(["success" => true, "carrinho" => $_SESSION['carrinho']]);
+        break;
 
-        $sql = "UPDATE carrinho 
-                SET qtd_selecionada = ? 
-                WHERE id_carrinho = ? AND cliente_id_cliente = ?";
-        $stmt = $con->prepare($sql);
-        $stmt->bind_param("iii", $qtd, $id_carrinho, $id_cliente);
-        $stmt->execute();
-    }
+    // Atualizar quantidade
+    case 'update':
+        $id = intval($_POST['id']);
+        $qtd = intval($_POST['quantidade']);
+        if (isset($_SESSION['carrinho'][$id])) {
+            $_SESSION['carrinho'][$id]['quantidade'] = $qtd;
+        }
+        echo json_encode(["success" => true, "carrinho" => $_SESSION['carrinho']]);
+        break;
 
-    if (isset($_POST['acao']) && $_POST['acao'] === 'remover') {
-        $id_carrinho = $_POST['id_carrinho'] ?? 0;
+    // Remover produto
+    case 'remove':
+        $id = intval($_POST['id']);
+        if (isset($_SESSION['carrinho'][$id])) {
+            unset($_SESSION['carrinho'][$id]);
+        }
+        echo json_encode(["success" => true, "carrinho" => $_SESSION['carrinho']]);
+        break;
 
-        $sql = "DELETE FROM carrinho 
-                WHERE id_carrinho = ? AND cliente_id_cliente = ?";
-        $stmt = $con->prepare($sql);
-        $stmt->bind_param("ii", $id_carrinho, $id_cliente);
-        $stmt->execute();
-    }
+    // Listar carrinho
+    case 'list':
+        echo json_encode($_SESSION['carrinho']);
+        break;
 
-    // Recarregar página após ação
-    header("Location: carrinho.php");
-    exit;
+    default:
+        echo json_encode(["error" => "Ação inválida"]);
 }
 
-// ----- BUSCAR ITENS DO CARRINHO -----
-$sql = "SELECT c.id_carrinho, c.qtd_selecionada, c.selecionado,
-               p.prod_nome, p.valor, p.descricao, p.path_img as imagem
-        FROM carrinho c
-        JOIN produto p ON c.produto_id_produto = p.id_produto
-        WHERE c.cliente_id_cliente = ?";
-$stmt = $con->prepare($sql);
-$stmt->bind_param("i", $id_cliente);
-$stmt->execute();
-$result = $stmt->get_result();
-$itens = $result->fetch_all(MYSQLI_ASSOC);
+// Inicializa variáveis para evitar erro
+$items = $_SESSION['carrinho'] ?? [];
+$totalItensSelecionados = 0;
+$totalValor = 0;
 
-$total = 0;
-foreach ($itens as $item) {
-    $total += $item['valor'] * $item['qtd_selecionada'];
-}
-?>
+foreach ($items as $item) {
+    $totalItensSelecionados += $item['quantidade'];
+    $totalValor += $item['quantidade'] * $item['preco'];}
