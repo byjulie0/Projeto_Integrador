@@ -53,32 +53,43 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                             <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
                         </tr>
 
-                        <tr>
-                            <td class="select-all-atualizar-produtos">
-                                <input type="checkbox" id="#" name="#" class="product-checkbox">
-                            </td>
+                        <?php if (!empty($produtos)): ?>
+                            <?php foreach ($produtos as $p): ?>
+                                <tr>
+                                    <td class="select-all-atualizar-produtos">
+                                        <input type="checkbox" name="produto_id[]" value="<?= $p['id_produto'] ?>" class="product-checkbox">
+                                    </td>
 
-                            <td class="product-name-atualizar-produtos cell-atualizar-produto">
-                                <div class="product-atualizar-produtos"><span>Nome do produto</span></div>
-                            </td>
+                                    <td class="product-name-atualizar-produtos cell-atualizar-produto">
+                                        <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['produto']) ?></span></div>
+                                    </td>
 
-                            <td class="product-category-atualizar-produtos cell-atualizar-produto">
-                                <div class="category-name-atualizar-produtos"><span>Nome da categoria</span></div>
-                            </td>
+                                    <td class="product-category-atualizar-produtos cell-atualizar-produto">
+                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['categoria'] ?? 'Sem categoria') ?></span></div>
+                                    </td>
 
-                            <td class="qt-atualizar-produtos cell-atualizar-produto">Subcategoria</td>
+                                    <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                        <?= htmlspecialchars($p['subcategoria'] ?? 'Sem subcategoria') ?>
+                                    </td>
 
-                            <td class="price-atualizar-produtos cell-atualizar-produto">Preço do produto</td>
+                                    <td class="price-atualizar-produtos cell-atualizar-produto">
+                                        R$ <?= number_format($p['preco'], 2, ',', '.') ?>
+                                    </td>
 
-                            <td class="update-atualizar-produtos cell-atualizar-produto">
-                                <a href="editar_produto.php"><i class="fa-solid fa-pen-to-square"></i></a>
-                            </td>
+                                    <td class="update-atualizar-produtos cell-atualizar-produto">
+                                        <a href="editar_produto.php?id=<?= $p['id_produto'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    </td>
 
-                            <td class="exclude-atualizar-produtos cell-atualizar-produto">
-                                <?php include 'toogle.php'; ?>
-                            </td>
-                            
-                        </tr>
+                                    <td class="exclude-atualizar-produtos cell-atualizar-produto">
+                                        <?php include 'toogle.php'; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="7" style="text-align:center;">Nenhum produto cadastrado</td>
+                            </tr>
+                        <?php endif; ?>
                     </table>
                 </div>
             </div>
