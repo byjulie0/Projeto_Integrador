@@ -28,7 +28,7 @@
       <div class="login_form_vinycius">
         <h2>Login</h2>
         <form class="form_login" action="../utils/validacao_user_bd.php" method="POST">
-          <input type="text" name="email" placeholder="Nome de usuário" class="input_login_vinycius1" required>
+          <input type="email" name="email" placeholder="E-mail cadastrado" class="input_login_vinycius1" required>
 
           <div class="senha_container">
             <input type="password" name="password" id="senha" placeholder="Senha" class="input_login_vinycius2" required>
@@ -51,7 +51,7 @@
             <div class="texto1-span">
               Não tem conta? <a href="pg_cadastro.php">Cadastre-se</a>
             </div>
-            <a class="login-adm" href="../adm/login_adm.php">Área administrativa</a>
+            <a class="login-adm" href="../adm/login.php">Área administrativa</a>
           </div>
         </form>
       </div>

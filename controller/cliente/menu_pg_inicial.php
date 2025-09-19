@@ -42,11 +42,11 @@
 
                 </li>
                 <a href="categoria_campeoes.php" class="nav-item-pg-inicial">Campeões do mês</a>
-                <a href="#maisvendidos" class="nav-item-pg-inicial">Mais vendidos</a>
+                <a href="#" class="nav-item-pg-inicial">Mais vendidos</a>
             </div>
 
             <div class="search-container-pg-inicial">
-                <input type="text" placeholder="O que deseja buscar?" id="busca" autocomplete="off"/>
+                <input type="text" placeholder="O que deseja buscar?" id="busca" autocomplete="on"/>
                 <div id="resultado_busca"></div>
             </div>
 
@@ -57,11 +57,10 @@
                         <span class="nav-text-pg-inicial">Perfil</span>
                     </a>
                     <ul class="submenu_cliente">
-                        <li><a href="login.php">Login</a></li>
-                        <li><a href="meu_perfil.php">Meu perfil</a></li>
-                        <li><a href="pg_favoritos.php">Produtos favoritados</a></li>
+                        <li><a href="meu_perfil.php">Meus dados</a></li>
+                        <li><a href="pg_favoritos.php">Favoritos</a></li>
+                        <li><a href="login.php">Login - Usuário sem sessão</a></li>
                     </ul>
-
                 </li>
                 <a href="pg_notificacao.php" class="nav-btns-pg-inicial">
                     <i class="bi bi-bell"></i>
