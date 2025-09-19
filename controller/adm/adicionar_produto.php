@@ -30,21 +30,18 @@ require_once __DIR__ .'/../../model/DB/conexao.php';
         <form action="adicionar_produto_backend.php" method="POST" enctype="multipart/form-data">
 
         <section class="add_product_area">
+
+            <!-- Campo de Imagem -->
             <article class="add_product_image">
-  <p class="product_title_info_img">
-    Carregar imagem de capa<span class="mandatory_space">*</span>
-  </p>
-
-  <div class="img_holder" id="imgPreview">
-    <label class="img_holder_button">
-      <i class="fa-solid fa-arrow-up-from-bracket"></i>
-      <span> Selecione uma imagem</span>
-      <input type="file" accept="image/*" name="imagem" id="imagemInput" required style="display:none;">
-    </label>
-  </div>
-                  </article>
-
-
+                <p class="product_title_info_img">Carregar imagem de capa<span class="mandatory_space">*</span></p>
+                <div class="img_holder">
+                    <label class="img_holder_button">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        <span>Selecione uma imagem</span>
+                        <input type="file" accept="image/*" name="imagem" required style="display:none;">
+                    </label>
+                </div>
+            </article>
 
             <aside class="add_product_details">
                 <div class="product_details_collumn">

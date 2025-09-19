@@ -50,8 +50,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Nenhuma imagem foi enviada ou ocorreu um erro no upload.";
     }
 }
-
-// $query = "insert into produto (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, campeao, id_categoria, id_subcategoria) values ('{$nome}', '{$valor}',
-// '{$quantidade}', 'caminho' , '{$descricao}', '{$sexo}' , '{$peso}', '{$campeao}', '{$categoria}', '{$subcategoria}')";
-
-// $result= mysqli_query($con, $query);
+?>
