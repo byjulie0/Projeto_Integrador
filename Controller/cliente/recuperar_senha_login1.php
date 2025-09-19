@@ -1,6 +1,8 @@
 <!-- Denyel -->
 <?php
 include 'menu_recuperar_senha.php';
+// include '../utils/validacao_login.php';
+
 ?>
 
 

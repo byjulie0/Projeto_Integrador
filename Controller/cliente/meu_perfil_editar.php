@@ -1,5 +1,6 @@
 
 <?php
+// include '../utils/validacao_login.php';
 
 
 if (!isset($_SESSION['id_cliente'])) {
@@ -7,6 +8,8 @@ if (!isset($_SESSION['id_cliente'])) {
     exit;
 }
 include 'menu_pg_inicial.php';
+
+// include 'menu_pg_inicial.php';
 // include '../../model/DB/conexao.php';
 // session_start();
  

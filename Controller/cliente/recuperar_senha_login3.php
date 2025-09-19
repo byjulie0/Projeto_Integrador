@@ -1,6 +1,8 @@
 <!-- Lara -->
 <?php
 include 'menu_recuperar_senha.php';
+// include '../utils/validacao_login.php';
+
 ?>
 <?php
 $email_recuperar_senha = isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '';
