@@ -1,11 +1,6 @@
 
 <?php
-
-
-if (!isset($_SESSION['id_cliente'])) {
-    header(header: "Location: ../cliente/login.php");
-    exit;
-}
+include '../../Controller/utils/validacao_login.php';
 include 'menu_pg_inicial.php';
 // include '../../model/DB/conexao.php';
 // session_start();
@@ -103,4 +98,4 @@ include 'menu_pg_inicial.php';
 </body>
 </html>
  
-<?php include 'footer_cliente.php'; ?>
+<?php include 'footer_cliente.php'; ?> 
