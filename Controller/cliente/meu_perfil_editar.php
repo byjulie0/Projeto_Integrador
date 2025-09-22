@@ -41,7 +41,7 @@ include 'menu_pg_inicial.php';
         <div class="client-edit-container">
        
  
-            <form class="client-edit-form" method="POST" action="atualiza_cliente.php">
+            <form class="client-edit-form" method="POST" action="../utils/atualiza_cliente.php">
                      
                 <div class="client-edit-header">
                     <h1 class="client-edit-title-titulo">

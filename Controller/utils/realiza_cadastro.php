@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result_insert = mysqli_query($con, $query_insert);
 
     if (!$result_insert) {
-        die("Erro ao cadastrar: "); 
+        die("Erro ao cadastrar: ");
     }
 
     $_SESSION['mensagem_sucesso'] = "Usuário cadastrado com sucesso!";
