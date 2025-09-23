@@ -1,6 +1,7 @@
 @import url("../adm.css");
+@import url("toogle.css");
 #gerenciar-clientes {
-  background-color: #fff;
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
