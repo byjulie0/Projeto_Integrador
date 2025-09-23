@@ -102,7 +102,7 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   border-radius: 6px;
-  margin: 25px 150px;
+  margin: 25px ;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
@@ -342,33 +342,27 @@ input[type="checkbox"] {
     flex-direction: column; 
     justify-content: flex-start;
   }
+  .product-card-carrinho{
+    padding: 10px 5%;
+    margin: 15px;
 
-  .cart-header-labels-carrinho {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0; /* Ajustar as margens */
-    padding: 10px; /* Ajustar o padding */
   }
-
+ 
   .check-btn-carrinho {
-    width: 100%; /* Deixar os botões de check ocuparem toda a largura */
-    justify-content: space-between; /* Colocar o botão e o label em extremos opostos */
+    width: 100%; 
+    justify-content: left; 
   }
 
   .product-cards-carrinho {
-    padding: 10px 25px; /* Ajustar o padding */
-    margin: 0; /* Remover margens */
-  }
-
-  .product-card-carrinho {
-    margin: 10px 0; /* Ajustar margens para que os produtos não fiquem tão distantes */
-    padding: 15px 10px; /* Ajustar padding para caber melhor */
+    width: 100%;
   }
 
   .product-title-area-carrinho {
-    flex-direction: column; /* Alterar a direção para coluna */
+    flex-direction: column; 
     align-items: flex-start;
+  }
+  .delete-item-btn-area-carrinho {
+    justify-content: flex-start; 
   }
 
   .product-title-carrinho {

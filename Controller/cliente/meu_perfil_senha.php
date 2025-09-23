@@ -1,5 +1,8 @@
 <!-- Arthur -->
-<?php include 'menu_pg_inicial.php';?>
+
+<?php
+include '../../Controller/utils/validacao_login.php';
+include 'menu_pg_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -42,12 +45,10 @@
                     Para sua segurança, insira sua senha para visualizar os dados:
                 </div>
                 
-                <form class="form-botoes-arthura">
-                    <input type="password" class="password-input-arthura" placeholder="Digite sua senha:">
-                </form>
-
-                <div class="botoes-arthura">
-                    <a href="meu_perfil_editar.php">
+                <form action="../../Controller/utils/valida_user_alterar_dados.php" method="POST" class="form-botoes-arthura">
+                    <input type="password" name="senha" class="password-input-arthura" placeholder="Digite sua senha:">
+                    
+                    <div class="botoes-arthura">
                     <?php
                     $texto = "Visualizar meu dados";
                     include 'botao_cliente.php';
@@ -58,6 +59,9 @@
                     </a>
                 </div>
             
+                </form>
+
+          
             </div>
 
         </div>

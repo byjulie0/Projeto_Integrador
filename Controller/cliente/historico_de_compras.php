@@ -13,7 +13,7 @@
     <div class="container_historico_compras">
 
         <div class="title_historico_compras">
-            <a href="#" onclick="window.history.back(); return fAalse;" class="arrow_compras">
+            <a href="#" onclick="window.history.back(); return false;" class="arrow_compras">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
             <h1 class="titulo_historico_compras">Histórico de Compras</h1>
@@ -22,8 +22,8 @@
         <div class="area_historico_compras">
 
             <div class="pedido_header">
-                <div class="div_data_pedido">
-                    <p class="data_pedido">Data do Pedido:</p>
+                <div class="div_data_pedido_pc">
+                    <p class="data_pedido_pc">Data do Pedido:</p>
                 </div>
                 <div class="botao_cancelar">
                     <?php
@@ -32,15 +32,20 @@
                     ?>
                 </div>
             </div>
+            
+            <div class="atributos_pedido_mobile">
+                <div class="div_data_pedido_mobile">
+                    <p class="data_pedido_mobile">Data do Pedido:</p>
+                </div>
+                <div class="pedido_detalhes">
+                    <p class="codigo_pedido">Código do pedido<span>:</span> </p>
 
-            <div class="pedido_detalhes">
-                <p class="codigo_pedido">Código do pedido<span>:</span> </p>
+                    <p class="total_itens">Total de itens<span>:</span> </p>
 
-                <p class="total_itens">Total de itens<span>:</span> </p>
+                    <p class="valor_pedido">Valor do pedido<span>:</span> </p>
 
-                <p class="valor_pedido">Valor do pedido<span>:</span> </p>
-
-                <p class="status_pedido">Status do pedido<span>:</span> </p>
+                    <p class="status_pedido">Status do pedido<span>:</span> </p>
+                </div>
             </div>
 
         </div>
