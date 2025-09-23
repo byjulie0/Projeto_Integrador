@@ -103,8 +103,7 @@
     display: flex;
     gap: 10px;
     margin-top: 10px;
-    justify-content: end;
-    
+    justify-content: center;
 }
 
 /* Botão visualizar dados */

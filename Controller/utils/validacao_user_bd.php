@@ -1,44 +1,36 @@
 <?php
 session_start();
-include '../../model/DB/conexao.php'; 
+include '../../model/DB/conexao.php'; // arquivo com a conexão ao banco
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Recebe dados do formulário
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
+    // Preparar consulta segura para evitar SQL Injection
+    $stmt = "SELECT * FROM cliente WHERE email = '{$email}';";
+    // echo $stmt;
+    $result = mysqli_query($con,$stmt);
+    $row = mysqli_num_rows($result);
+    // echo $row;
 
-    if (empty($username) || empty($password)) {
-        echo "Preencha usuário e senha.";
-        exit();
-    }
+    if ($row>0){
+        
+        // $query = "select * from user";
 
-    if ($stmt = $con->prepare("SELECT cliente_nome, senha FROM cliente WHERE cliente_nome = ?")) {
+        $retorno = mysqli_fetch_array($result);
+        // echo $retorno["email"];
+        // echo $retorno["senha"];
 
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-
-        $result = $stmt->get_result();
-
-        if ($result && $result->num_rows === 1) {
-            $user = $result->fetch_assoc();
-
-            if (password_verify($password, $user['senha'])) {
-                $_SESSION['username'] = $username;
-                header("Location: ../cliente/pg_inicial_cliente.php");
-                exit();
-            } else {
-                echo "Senha inválida.";
-            }
-        } else {
-            echo "Usuário não encontrado.";
+        if ($retorno["senha"] == $password)
+        {
+            $_SESSION["email"] = $email;
+            header("Location: ../cliente/pg_inicial_cliente.php");
         }
-
-        $stmt->close();
-
-    } else {
-        error_log("Erro: " . $con->error); 
-        echo "Ocorreu um erro inesperado. Por favor, tente novamente mais tarde.";
+        else{
+            echo  "senha invalida ";
+        }
     }
-
-    $con->close();
+    
 }
 ?>

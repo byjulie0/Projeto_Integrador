@@ -26,7 +26,7 @@
             <div class="login_form_adm">
                 <h2>Login</h2>
                 <form class="form_login" action="login.php" method="POST">
-                    <input type="text" name="username" placeholder="Nome de usuário" class="input_login_adm1" required>
+                    <input type="email" name="email" placeholder="E-mail do ADM" class="input_login_adm1" required>
 
                     <div class="senha_container">
                         <input type="password" name="password" id="senha" placeholder="Senha" class="input_login_adm2" required>
