@@ -16,15 +16,13 @@
 
         <div class="title_page_add_product">
             <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
-                <i class="fa-solid fa-chevron-left">
-                </i>
+                <i class="bi bi-chevron-left"></i>
             </a>
             <h1 class="tile_add_product">Adicionar Produto</h1>
         </div>
-        <p class="info_add_product">Preencha as informações necessárias e adicione produtos ao catálogo do site</p>
+
         <section class="add_product_area">
             <article class="add_product_image">
-                <p class="product_title_info_img">Carregar imagem de capa<span class="mandatory_space">*</span></p>
                 <div class="img_holder">
                     <label class="img_holder_button">
                         <i class="fa-solid fa-arrow-up-from-bracket"></i>

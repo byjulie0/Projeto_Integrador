@@ -1,16 +1,36 @@
 @import url("../adm.css");
+.area_add_product{
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  margin-bottom: 5%;
+  width: 95%;
+  position: relative;
+  margin-top: 35px;
+}
 .title_page_add_product {
-  padding-top: 3rem;
-  padding-left: 5rem;
   display: flex;
   align-items: center;
+  justify-content: left;
   gap: 15px;
 }
-.arrow_add_product {
+.tile_add_product{
+  margin: 0;
+  padding: 0;
+  display: inline-block;
   color: var(--color-primary-1);
-  font-size: 1.5rem;
 }
-
+.arrow_add_product {
+  display: inline-flex;
+  text-decoration: none;
+  font-size: 28px;
+  color: var(--color-primary-1);
+}
+p{
+  color: var(--color-primary-1);
+}
 .info_add_product {
   padding: 25px 5rem 20px;
 }
@@ -19,6 +39,7 @@
 }
 
 .add_product_area {
+  margin-top: 3%;
   padding-left: 5rem;
   display: grid;
   grid-template-columns: 25% 75%;
@@ -40,14 +61,15 @@
 
 .img_holder {
   background-color: white;
-  border: solid 1px var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
   width: 100%;
   max-width: 300px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 .img_holder_button {
@@ -60,6 +82,7 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
+  gap: 10px;
 }
 
 .img_holder_button span{
@@ -70,6 +93,7 @@
   gap: 20px;
   display: grid;
   grid-template-columns: 50% 50%;
+  color: var(--color-primary-1);
 }
 
 .input_product_info {
@@ -198,6 +222,24 @@ input[type="image"] {
   .add_product_button {
     width: 100%;
     max-width: 300px;
+  }
+}
+@media (max-width: 360px){
+  .arrow_add_product,
+  .tile_add_product{
+    font-size: 22px;
+  }
+  .img_holder_button {
+    width: 80%;
+    font-size: 12px;   
+  }
+  .img_holder{
+    height: 280px;
+    width: 100%;
+  }
+  .area_add_product{
+    width: 90%;
+    margin-bottom: 10%;
   }
 }
 @media (min-width: 390px) and (max-width: 767px) {
