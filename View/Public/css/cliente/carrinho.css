@@ -9,7 +9,8 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin: 5px auto;
+  margin: 10px auto;
+  margin-bottom: 5%;
   width: 95%;
   position: relative;
   margin-top: 35px;
@@ -336,9 +337,10 @@ input[type="checkbox"] {
   .cart_title {
     font-size: 24px;
   }
-  .check-btn-carrinho label {
-    width: 100%;
-    justify-content: left;
+
+  .cart-header-carrinho {
+    flex-direction: column; 
+    justify-content: flex-start;
   }
   .product-card-carrinho{
     padding: 10px 5%;

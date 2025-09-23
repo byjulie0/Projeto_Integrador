@@ -20,20 +20,15 @@ require_once __DIR__ .'/../../model/DB/conexao.php';
 
         <div class="title_page_add_product">
             <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
-                <i class="fa-solid fa-chevron-left"></i>
+                <i class="bi bi-chevron-left"></i>
             </a>
             <h1 class="tile_add_product">Adicionar Produto</h1>
         </div>
-
-        <p class="info_add_product">Preencha as informações necessárias e adicione produtos ao catálogo do site</p>
-
-        <form action="adicionar_produto_backend.php" method="POST" enctype="multipart/form-data">
 
         <section class="add_product_area">
 
             <!-- Campo de Imagem -->
             <article class="add_product_image">
-                <p class="product_title_info_img">Carregar imagem de capa<span class="mandatory_space">*</span></p>
                 <div class="img_holder">
                     <label class="img_holder_button">
                         <i class="fa-solid fa-arrow-up-from-bracket"></i>
