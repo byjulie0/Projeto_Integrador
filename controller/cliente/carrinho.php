@@ -96,9 +96,10 @@ $stmt = "select * from carrinho join produto on carrinho.produto_id_produto = pr
                     <div class="separation-line-carrinho"></div>
                     <div class="product-carrinho">
                         <div class="non-labeled-content-carrinho">
-                            <img src="" alt="" class="product-img-carrinho">
+                            <td ><img src="<?php echo $retorno["path_img"]; ?>" alt="" class="product-img-carrinho"></td>
                             <div class="title-and-description-carrinho">
                                 <span class="product-name-carrinho"></span>
+                                <td ><?php echo $retorno["prod_nome"]; ?></td>
                                 <span class="product-description-carrinho"></span>
                             </div>
                         </div>
