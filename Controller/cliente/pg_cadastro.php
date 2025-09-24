@@ -21,7 +21,7 @@
             <h2 class="titulo-form-cadastro">Cadastrar</h2>
             <div class="area-geral-form-cadastro">
 
-                <form action="realiza_cadastro.php" method="POST" class="form-cadastro" id="formCadastro">
+                <form action="../utils/realiza_cadastro.php" method="POST" class="form-cadastro" id="formCadastro">
 
                     <div class="form-colunas-cadastro">
 
