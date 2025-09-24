@@ -94,23 +94,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
-// Preview da imagem 
-  const input = document.getElementById('imagemInput');
-  const preview = document.getElementById('imgPreview');
-
-  input.addEventListener('change', () => {
-    const file = input.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        preview.style.backgroundImage = `url(${reader.result})`;
-        preview.style.backgroundSize = 'cover';
-        preview.style.backgroundPosition = 'center';
-        preview.style.backgroundRepeat = 'no-repeat';
-        preview.innerHTML = ''; // remove o conteúdo interno (botão)
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-

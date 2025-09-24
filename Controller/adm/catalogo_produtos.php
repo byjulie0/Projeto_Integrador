@@ -3,6 +3,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
 ?>
 
 <?php include 'menu_inicial.php';?>
+<?php include 'catalogo_adm_produtos_action.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,7 +18,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
 </head>
 
 <body>
-    <section id="atualizar-produtos">
+     <section id="atualizar-produtos">
         <div id="page-title-atualizar-produtos">
             <div id="title-atualizar-produtos">
                 <a href="#" onclick="window.history.back(); return false;"><i class="fa-solid fa-chevron-left"></i></a>
@@ -35,7 +36,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                <a href="#">Inativados</a>
+                  <a href="?status=ativos">Ativos</a> | <a href="?status=inativados">Inativados</a> 
             </div>
             <div id="break-line">
             </div>
@@ -90,6 +91,19 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                 <td colspan="7" style="text-align:center;">Nenhum produto cadastrado</td>
                             </tr>
                         <?php endif; ?>
+                         <?php foreach ($produtos as $produto): ?>
+                        <tr>
+                            <td><input type="checkbox" name="produtos[]" value="<?= $produto['id_produto'] ?>"></td>
+                            <td><?= htmlspecialchars($produto['prod_nome']) ?></td>
+                            <td><?= htmlspecialchars($produto['id_categoria']) ?></td>
+                            <td><?= htmlspecialchars($produto['id_subcategoria']) ?></td>
+                            <td><?= number_format($produto['valor'], 2, ',', '.') ?></td>
+                            <td><a href="editar_produto.php?id=<?= $produto['id_produto'] ?>">Editar</a></td>
+                            <td>
+                                <?php include 'toogle.php'; ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
                     </table>
                 </div>
             </div>
