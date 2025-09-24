@@ -17,11 +17,8 @@
     <section id="gerenciar-clientes">
         <div id="page-title-gerenciar-clientes">
             <div id="title-gerenciar-clientes">
-                <a href="#" onclick="window.history.back(); return false;"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="#" onclick="window.history.back(); return false;"><i class="bi bi-chevron-left"></i></a>
                 <h3>Gerenciar clientes cadastrados</h3>
-            </div>
-            <div id="subtitle-gerenciar-clientes">
-                <span>Pesquise pelos clientes cadastrados que deseja vizualizar</span>
             </div>
         </div>
         <div id="page-content-gerenciar-clientes">

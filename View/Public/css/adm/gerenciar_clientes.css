@@ -1,7 +1,6 @@
 @import url("../adm.css");
 @import url("toogle.css");
 #gerenciar-clientes {
-  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -26,14 +25,25 @@
   gap: 25px
 }
 
-#title-gerenciar-clientes .fa-solid{
-  color: var(--color-primary-3);
+#title-gerenciar-clientes {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 15px;
 }
 
 #title-gerenciar-clientes h3{
+  margin: 0;
+  padding: 0;
+  display: inline-block;
   color: var(--color-primary-1);
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 24px;
+}
+.bi-chevron-left{
+  display: inline-flex;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--color-primary-1);
 }
 
 #subtitle-gerenciar-clientes span {
