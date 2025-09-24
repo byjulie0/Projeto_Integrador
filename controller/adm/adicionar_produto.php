@@ -44,7 +44,7 @@ require_once __DIR__ .'/../../model/DB/conexao.php';
                     <!-- Nome -->
                     <article class="input_product_name">
                         <p class="product_title_info">Insira o nome do produto<span class="mandatory_space">*</span></p>
-                        <input type="text" class="input_product_info" placeholder="Titulo" name="nome" required>
+                        <input type="text" class="input_product_info" placeholder="Nome do produto" name="nome" required>
                         <span class="error-message">Por favor, preencha este campo</span>
                     </article>
 
@@ -62,7 +62,7 @@ require_once __DIR__ .'/../../model/DB/conexao.php';
                     <!-- Quantidade -->
                     <article class="input_product_quantity">
                         <p class="product_title_info">Quantidade do produto<span class="mandatory_space">*</span></p>
-                        <input type="number" placeholder="Quantidade_que_esta_no_DB" class="input_product_info" name="quantidade" required min="0">
+                        <input type="number" placeholder="Quantidade do produto" class="input_product_info" name="quantidade" required min="0">
                         <span class="error-message">Por favor, preencha este campo</span>
                     </article>
 
@@ -136,7 +136,7 @@ require_once __DIR__ .'/../../model/DB/conexao.php';
                     <!-- Valor -->
                     <article class="input_product_price">
                         <p class="product_title_info">Defina o valor do produto<span class="mandatory_space">*</span></p>
-                        <input type="number" placeholder="Valor" class="input_product_info" name="valor" required min="0.01" step="0.01">
+                        <input type="number" placeholder="Valor do produto" class="input_product_info" name="valor" required min="0.01" step="0.01">
                         <span class="error-message">Informe um valor válido (maior que zero)</span>
                     </article>
 
@@ -162,7 +162,7 @@ require_once __DIR__ .'/../../model/DB/conexao.php';
                     <!-- Descrição -->
                     <article class="input_product_quantity">
                         <p class="product_title_info">Insira a descrição do produto<span class="mandatory_space">*</span></p>
-                        <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição_que_esta_no_DB" class="input_product_info product_details" required></textarea>
+                        <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição..." class="input_product_info product_details" required></textarea>
                     </article>
 
                 </div>
