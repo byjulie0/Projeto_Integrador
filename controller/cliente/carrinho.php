@@ -33,28 +33,7 @@ $stmt = "select * from carrinho join produto on carrinho.produto_id_produto = pr
 
 <body>
 
-<table border="1">
-<thead>
-<tr>
-<th>img</th>
-<th>nome</th>
 
-</tr>
-</thead>
-<?php while ($retorno = mysqli_fetch_array($result)){
-?>
-<tbody>
-<tr>
-<!-- <td ><?php 
-// echo $retorno["path_img"];
-?></td> -->
- <td ><img src="<?php echo $retorno["path_img"]; ?>" alt="" class="product-img-carrinho"></td>
- <td ><?php echo $retorno["prod_nome"]; ?></td>
-
-</tr>
-<?php }?>
-</tbody>
-</table>
 
 
 
@@ -95,11 +74,32 @@ $stmt = "select * from carrinho join produto on carrinho.produto_id_produto = pr
                     </div>
                     <div class="separation-line-carrinho"></div>
                     <div class="product-carrinho">
-                        <div class="non-labeled-content-carrinho">
+                            <table border="0">
+                            <thead>
+                            <tr>
+                            <th>img</th>
+                            <th>nome</th>
+                            <!--<th>detalhes</th>-->
+
+                            </tr>
+                            </thead>
+                            <?php while ($retorno = mysqli_fetch_array($result)){
+                            ?>
+                            <tbody>
+                            <tr>
+                            <!-- <td ><?php 
+                            // echo $retorno["path_img"];
+                            ?></td> -->
                             <td ><img src="<?php echo $retorno["path_img"]; ?>" alt="" class="product-img-carrinho"></td>
+                            <td ><?php echo $retorno["prod_nome"]; ?></td>
+
+                            </tr>
+                            <?php }?>
+                            </tbody>
+                            </table>
+                        <div class="non-labeled-content-carrinho">
                             <div class="title-and-description-carrinho">
                                 <span class="product-name-carrinho"></span>
-                                <td ><?php echo $retorno["prod_nome"]; ?></td>
                                 <span class="product-description-carrinho"></span>
                             </div>
                         </div>
