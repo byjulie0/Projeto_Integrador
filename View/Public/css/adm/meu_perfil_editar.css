@@ -26,6 +26,10 @@
     color: var(--color-primary-1);
     word-break: break-word;
 }
+.bi-chevron-left{
+    font-size: 1.5rem;
+    color: var(--color-primary-1)
+}
 .client-edit-form {
     background-color: #fff;
     border-radius: 0.75rem;

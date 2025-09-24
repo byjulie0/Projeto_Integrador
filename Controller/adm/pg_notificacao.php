@@ -18,8 +18,8 @@
 
         <div class="area_notifications">
             <a href="#" class="notification_arrow">
-                <i class="fa-solid fa-chevron-left">
-                </i>
+                <i class="bi bi-chevron-left"></i>
+               
             </a>
             <h1 class="notification_title">Notificações</h1>
         </div>

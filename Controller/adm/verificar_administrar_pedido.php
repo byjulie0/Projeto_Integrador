@@ -19,14 +19,13 @@
                     <div class="verificar_administrar_pedidos_sessao_seta_voltar_div">
                         <a href="#" onclick="window.history.back(); return false;"
                             class="verificar_administrar_pedidos_sessao_seta_voltar">
-                            <i class="fa-solid fa-chevron-right"></i>
+                            <i class="bi bi-chevron-left"></i>
                         </a>
                         <h1>
                             Verificar e administrar pedidos
                         </h1>
                     </div>
 
-                    <h3>Pesquise o número do pedido ou CPF/CNPJ do cliente para gerenciar o pedido em específico</h3>
                     <form action="" class="verificar_administrar_pedidos_sessao_formulario_pesquisa">
                         <input type="text" id="" placeholder="Pesquisar">
                         <button type="submit"></button>
