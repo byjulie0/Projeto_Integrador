@@ -3,7 +3,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
 ?>
 
 <?php include 'menu_inicial.php';?>
-<?php include 'catalogo_adm_produtos_action.php';?>
+<!-- include 'catalogo_adm_produtos_action.php' -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -33,10 +33,11 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                  <a href="?status=ativos">Ativos</a> | <a href="?status=inativados">Inativados</a> 
+                <a href="?status=ativos">Ativos</a>
+                <a href="#">Inativados</a>
             </div>
-            <div id="break-line">
-            </div>
+            <hr class="break-line">
+            <!-- ?status=inativados -->
             <div id="table2-atualizar-produtos">
                 <div id="table-space-atualizar-produtos">
                     <table>
