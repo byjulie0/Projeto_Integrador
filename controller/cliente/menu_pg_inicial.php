@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../../view/public/css/cliente/menu_pg_inicial.css">
     <script defer src="../../view/js/cliente/menu-pg-inicial.js"></script>
+    <script defer src="../../view/js/cliente/busca_verificar_produto.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
@@ -41,14 +42,12 @@
 
                 </li>
                 <a href="categoria_campeoes.php" class="nav-item-pg-inicial">Campeões do mês</a>
-                <a href="#maisvendidos" class="nav-item-pg-inicial">Mais vendidos</a>
+                <a href="#" class="nav-item-pg-inicial">Mais vendidos</a>
             </div>
 
             <div class="search-container-pg-inicial">
-                <input type="text" placeholder="O que deseja buscar?" />
-                <button type="submit">
-                    <a href="pg_busca.php"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </button>
+                <input type="text" placeholder="O que deseja buscar?" id="busca" autocomplete="on"/>
+                <div id="resultado_busca"></div>
             </div>
 
             <div class="nav-page-btns-pg-inicial">
@@ -58,11 +57,10 @@
                         <span class="nav-text-pg-inicial">Perfil</span>
                     </a>
                     <ul class="submenu_cliente">
-                        <li><a href="login.php">Login</a></li>
-                        <li><a href="meu_perfil.php">Meu perfil</a></li>
-                        <li><a href="pg_favoritos.php">Produtos favoritados</a></li>
+                        <li><a href="meu_perfil.php">Meus dados</a></li>
+                        <li><a href="pg_favoritos.php">Favoritos</a></li>
+                        <li><a href="login.php">Login - Usuário sem sessão</a></li>
                     </ul>
-
                 </li>
                 <a href="pg_notificacao.php" class="nav-btns-pg-inicial">
                     <i class="bi bi-bell"></i>

@@ -12,20 +12,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-    <section class="menu_adm">
-        <button class="menu_adm_toggle">
+    <section class="menu">
+        <button class="menu_toggle">
             <i class="fa-solid fa-bars"></i>
         </button>
-        <div class="menu_content_adm">
-            <div class="logo_menu_adm">
-                <img src="../../view/public/imagens/logo.png" alt="" class="logo_menu_adm_img">
-                <a href="pg_inicial_adm.php" class="logo_menu_adm_title">John Rooster</a>
+        <div class="menu_content">
+            <div class="logo_menu">
+                <img src="../../view/public/imagens/logo.png" alt="" class="logo_menu_img">
+                <a href="pg_inicial.php" class="logo_menu_title">John Rooster</a>
             </div>
-            <div class="nav_link_menu_adm">
-                <li class="dropdown_menu_adm">
-                    <a href="#" class="nav_item_pg_inicial_adm">Gerenciar produtos</a>
-                    <ul class="submenu_adm">
+
+            <div class="nav_link_menu">
+                <li class="dropdown_menu">
+                    <a href="#" class="nav_item_pg_inicial">Gerenciar produtos</a>
+
+                    <ul class="submenu">
                         <li><a href="adicionar_produto.php">Adicionar produtos</a></li>
+                        <li><a href="catalogo_produtos.php">Visualizar catálogo de produtos</a></li>
                         <li><a href="catalogo_produtos.php">Visualizar catálogo de produtos</a></li>
                     </ul>
                 </li>
@@ -36,6 +39,9 @@
                     <a href="verificar_e_administrar_pedido.php" class="nav_item_pg_inicial_adm">Gerenciar vendas</a>
                     
                 </li>
+                <a href="gerenciar_clientes.php" class="nav_item_pg_inicial">Gerenciar clientes</a>
+                <a href="verificar_administrar_pedido.php" class="nav_item_pg_inicial">Gerenciar vendas</a>
+
             </div>
             <div class="search_container_menu_adm">
                 <input type="text" placeholder="O que deseja buscar?" />
@@ -50,12 +56,25 @@
                 </a>
                 <a href="pg_notificacao.php" class="nav_btns_menu_adm">
 
+
+            <div class="nav_page_btns_menu">
+                <li class="dropdown_menu">
+                    <a href="#" class="nav_btns_pg_inicial">
+                        <i class="bi bi-person"></i>
+                        <span class="nav_text_pg_inicial">Perfil</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="meu_perfil.php">Meus dados</a></li>
+                        <li><a href="redefinir_senha.php">Redefinir senha</a></li>
+                    </ul>
+                </li>
+                <a href="notificacao.php" class="nav_btns_menu">
                     <i class="bi bi-bell"></i>
-                    <span class="nav_text_menu_adm">Notificações</span>
+                    <span class="nav_text_menu">Notificações</span>
                 </a>
-                <a href="relatorios_visualizar.php" class="nav_btns_menu_adm">
+                <a href="relatorios_visualizar_adm.php" class="nav_btns_menu_adm">
                     <i class="bi bi-file-bar-graph"></i>
-                    <span class="nav_text_menu_adm">Geral</span>
+                    <span class="nav_text_menu">Geral</span>
                 </a>
             </div>
         </div>

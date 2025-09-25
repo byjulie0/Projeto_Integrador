@@ -1,4 +1,5 @@
 @import url("../cliente.css");
+
 .body_login .login_html {
   height: 100%;
   font-family: "Poppins", sans-serif;
@@ -10,8 +11,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  width: 25z0vh;
-  padding-top: 0,1rem;
+  width: 100%;
 }
 
 .login_box_vinycius {
@@ -32,34 +32,35 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container-img-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .img_login {
-  max-width: 330px;
-  width: 100%;
-  padding: 2%;
-  margin: 0 auto;
+  max-height: 330px;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 .text_login_vinycius {
-  margin: 10px;
-  font-size: 1.5rem;
+  margin-top: 15px;
+  font-size: 1rem;
   color: var(--color-primary-1);
-  font-weight: bold;
+  font-weight: 400;
   padding: 10px;
-}
-
-.form_login {
-  width: 90%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .login_form_vinycius {
-  width: 45%;
-  height: 110%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,56 +69,61 @@
 
 .login_form_vinycius h2 {
   font-size: 2rem;
-  line-height: 1.875rem;
-  text-align: center;
   margin-bottom: 100px;
   color: var(--color-primary-1);
+  text-align: center;
 }
 
-.button_vinycius {
-  margin: 30px 0;
-  gap: 10px;
+.form_login {
+  width: 90%;
   display: flex;
-  width: 200px;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: var(--color-botao-op-Concluido);
-  color: var(--color-icones);
-  padding: 5px 10px;
-  border-radius: 5px;
+}
+
+.input_login_vinycius1 {
+  width: 70%;
+  max-width: 600px;
+  height: 35px;
+  padding: 0 15px;
+  margin: 10px 0;
   border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  outline: none;
+  border-radius: 2px;
+  font-size: 1rem;
+  color: #000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 
-.login_form_vinycius a {
-  color: var(--color-primary-5);
-  font-size: 15px;
-  text-decoration: none;
-  display: flex;
-  margin: 7px 0;
+.input_login_vinycius2 {
+  width: 100%;
+  max-width: 600px;
+  height: 35px;
+  padding: 0 15px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  font-size: 1rem;
+  color: #000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 
-.login_form_vinycius a:hover {
-  text-decoration: underline;
-}
-
-.texto1 {
-  color: var(--color-primary-1 );
-  font-size: 15px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  margin: 8px 0;
-}
-.texto1 a {
-  margin-left: 5px;
+.input_login_vinycius1::placeholder,
+.input_login_vinycius2::placeholder {
+  color: var(--color-primary-1);
+  font-weight: 500;
+  font-size: 0.8rem;
+  opacity: 0.7;
 }
 
 .senha_container {
   position: relative;
-  display: flex;
   width: 70%;
+  max-width: 600px;
+  display: flex;
   align-items: center;
 }
 
@@ -129,56 +135,64 @@
   font-size: 18px;
 }
 
-.input_login_vinycius1 {
-  margin: 1px ;
-  border: 1px solid #ffffff;
-  border-radius: 2px;
-  font-size: 11px;
-  position: relative;
-  left: 0;
-  width: 70%;
-  max-width: 600px;
-  height: 35px;
-  border: none;
-  outline: none;
-  border-radius: 2px;
-  padding: 0 15px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  font-size: 1rem;
-  color: #000000;
-  box-sizing: border-box;
-}
-
-.input_login_vinycius2 {
-  padding: 10px;
-  margin: 19px 0;
-  border: 0px solid #ffffff;
-  border-radius: 2px;
-  font-size: 11px;
-  position: relative;
-  left: 0;
+.btn-submit-login {
+  display: flex;
   width: 100%;
-  max-width: 600px;
-  height: 35px;
-  border: none;
-  outline: none;
-  border-radius: 2px;
-  padding: 0 15px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  font-size: 1rem;
-  color: #000000;
-  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  gap: 15px;
 }
 
-.input_login_vinycius {
+.info-login {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  padding-right: 40px;
 }
 
+.esqueci_senha_login {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin: 5px 0;
+  color: var(--color-primary-5);
+}
+
+.texto1-span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.texto1-span a {
+  color: var(--color-primary-5);
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.texto1-span a:hover,
+.esqueci_senha_login:hover,
+.login-adm:hover {
+  text-decoration: underline;
+}
+
+.login-adm {
+  color: var(--color-primary-5);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .container_geral_login {
     margin: 8% 0;
-    min-height: auto;
     padding: 0;
   }
 
@@ -189,50 +203,26 @@
     margin: 0 5%;
     width: 90%;
   }
-  .texto1{
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .texto1 a {
-    margin-left: 2px;
-  }
 
-  .info_login_vinycius, .login_form_vinycius {
+  .info_login_vinycius,
+  .login_form_vinycius {
     width: 100%;
     padding: 10px;
   }
 
   .form_login {
     width: 100%;
-    height: 10%;
   }
 
   .img_login {
     max-width: 80%;
-    height: 80%;
-    margin-bottom:2px;
+    margin-bottom: 10px;
   }
 
   .input_login_vinycius1,
   .input_login_vinycius2,
   .senha_container {
     width: 100%;
-  }
-
-  .button_vinycius {
-    gap: 10px;
-    margin: 0 0;
-    display: flex;
-    width: 200px;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-botao-op-Concluido);
-    color: var(--color-icones);
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
   }
 
   .text_login_vinycius {
@@ -243,26 +233,12 @@
 
 @media (max-width: 480px) {
   .login_form_vinycius h2 {
-    font-size: 1.375rem;
+    font-size: 1.5rem;
     margin-bottom: 30px;
   }
 
   .text_login_vinycius {
     font-size: 1rem;
     padding: 5px;
-    margin: 0 0;
-  }
-
-  .button_vinycius {
-    font-size: 14px;
-  }
-  
-}
-  
-@media (min-width: 1024px) {
-  .img_login {
-    align-self: flex-start;
-    margin-left: 0;
-    padding-left: 0;
   }
 }

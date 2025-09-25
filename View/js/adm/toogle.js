@@ -5,4 +5,3 @@ document.querySelectorAll('.icon-toggle-btn').forEach(button => {
     this.setAttribute('aria-pressed', !isPressed);
   });
 });
-console.log("Chegou")

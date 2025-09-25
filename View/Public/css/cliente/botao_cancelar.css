@@ -1,6 +1,6 @@
 /* Começo css do componente do botão */
 @import url("../cliente.css");
-.cancel_logout_button {
+.cancel_logout_button, .generate_report_product_button_cancelar-operacao {
     gap: 10px;
     display: flex;
     justify-content: center;
@@ -17,4 +17,9 @@
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
+}
+@media (max-width: 1024px){
+    .cancel_logout_button{
+        width: 150px;
+    }
 }
