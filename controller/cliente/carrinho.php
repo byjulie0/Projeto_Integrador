@@ -1,24 +1,15 @@
-<!-- HTML DO CARRINHO-->
-
-<?php include 'menu_pg_inicial.php';
-// include '../utils/carrinho2';
+<?php 
+include 'menu_pg_inicial.php';
 require_once __DIR__ . '/../../model/DB/conexao.php';
 
+$stmt = "SELECT * 
+         FROM carrinho 
+         JOIN produto ON carrinho.produto_id_produto = produto.id_produto 
+         WHERE cliente_id_cliente = 27;"; 
 
-$stmt = "select * from carrinho join produto on carrinho.produto_id_produto = produto.id_produto WHERE cliente_id_cliente = 27;"; //teste busca banco
-    // echo $stmt;
-    $result = mysqli_query($con,$stmt);
-    $row = mysqli_num_rows($result);
-    // echo $row;
-
-
-    
+$result = mysqli_query($con,$stmt);
+$row = mysqli_num_rows($result);
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,122 +23,104 @@ $stmt = "select * from carrinho join produto on carrinho.produto_id_produto = pr
 </head>
 
 <body>
-
-
-
-
-
     <div class="main_cart_area">
-        <div class="product_area_cart">
-            <h1 class="cart_title">Carrinho</h1>
+        <table border="0" width="100%">
+            <tr valign="top">
+                <!-- Coluna da esquerda: produtos -->
+                <td width="75%">
+                    <div class="product_area_cart">
+                        <h1 class="cart_title">Carrinho</h1>
 
-            <section class="cart-header-carrinho">
-                <div class="cart-header-labels-carrinho">
-                    <div class="check-btn-carrinho">
-                        <input type="checkbox" id="check-square-carrinho" class="select-all-checkbox">
-                        <div class="check-square-carrinho"></div>
-                        <label for="check-square" class="check-box-label-carrinho">Selecionar tudo</label>
-                    </div>
-                    <div class="labels-carrinho">
-                        <span class="labels-themselves-carrinho">Preço unitário</span>
-                    </div>
-                    <div class="labels-carrinho">
-                        <span class="labels-themselves-carrinho">Quantidade</span>
-                    </div>
-                    <div class="labels-carrinho">
-                        <span class="labels-themselves-carrinho">Preço total</span>
-                    </div>
-                </div>
-            </section>
+                        <section class="cart-header-carrinho">
+                            <div class="cart-header-labels-carrinho">
+                                <div class="check-btn-carrinho">
+                                    <input type="checkbox" id="check-square-carrinho" class="select-all-checkbox">
+                                    <div class="check-square-carrinho"></div>
+                                    <label for="check-square" class="check-box-label-carrinho">Selecionar tudo</label>
+                                </div>
+                                <div class="labels-carrinho">
+                                    <span class="labels-themselves-carrinho">Preço unitário</span>
+                                </div>
+                                <div class="labels-carrinho">
+                                    <span class="labels-themselves-carrinho">Quantidade</span>
+                                </div>
+                                <div class="labels-carrinho">
+                                    <span class="labels-themselves-carrinho">Preço total</span>
+                                </div>
+                            </div>
+                        </section>
 
-            <section class="product-cards-carrinho">
-                <div class="product-card-carrinho" data-price="<?= number_format($item['valor'], 2, '.', '') ?>">
-                    <div class="product-title-area-carrinho">
-                        <div class="check-btn-carrinho">
-                            <input type="checkbox" class="product-checkbox" >
-                            <div class="check-square-carrinho"></div>
-                            <span class="product-title-carrinho"></span>
-                        </div>
-                        <div class="delete-item-btn-area-carrinho">
-                            <button class="delete-item-carrinho" data-id="">Excluir</button>
-                        </div>
-                    </div>
-                    <div class="separation-line-carrinho"></div>
-                    <div class="product-carrinho">
-                            <table border="0">
-                            <thead>
-                            <tr>
-                            <th>img</th>
-                            <th>nome</th>
-                            <!--<th>detalhes</th>-->
+                        <section class="product-cards-carrinho">
+                            <?php while ($retorno = mysqli_fetch_array($result)) { ?>
+                                <div class="product-card-carrinho" data-price="<?= number_format($retorno['valor'], 2, '.', '') ?>">
+                                    <div class="product-title-area-carrinho">
+                                        <div class="check-btn-carrinho">
+                                            <input type="checkbox" class="product-checkbox">
+                                            <div class="check-square-carrinho"></div>
+                                            <span class="product-title-carrinho"><?= $retorno["prod_nome"]; ?></span>
+                                        </div>
+                                        <div class="delete-item-btn-area-carrinho">
+                                            <button class="delete-item-carrinho" data-id="<?= $retorno['id_produto'] ?>">Excluir</button>
+                                        </div>
+                                    </div>
 
-                            </tr>
-                            </thead>
-                            <?php while ($retorno = mysqli_fetch_array($result)){
+                                    <div class="separation-line-carrinho"></div>
+
+                                    <div class="product-carrinho">
+                                        <img src="<?= $retorno["path_img"]; ?>" alt="<?= $retorno["prod_nome"]; ?>" class="product-img-carrinho">
+
+                                        <div class="labels-respective-content-carrinho">
+                                            <span class="product-price-carrinho">
+                                                R$: <span class="unit-price"><?= number_format($retorno['valor'], 2, ',', '.') ?></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="labels-respective-content-carrinho">
+                                            <div class="change-quantity-carrinho">
+                                                <button class="change-quantity-btn-carrinho minus-btn" data-id="<?= $retorno['id_produto'] ?>">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </button>
+                                                <span class="quantity-carrinho"><?= $retorno['quantidade'] ?? 1 ?></span>
+                                                <button class="change-quantity-btn-carrinho plus-btn" data-id="<?= $retorno['id_produto'] ?>">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="labels-respective-content-carrinho">
+                                            <span class="total-price">
+                                                R$: <span class="product-total-price"><?= number_format(($retorno['valor'] * ($retorno['quantidade'] ?? 1)), 2, ',', '.') ?></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </section>
+                    </div>
+                </td>
+
+                <!-- Coluna da direita: resumo -->
+                <td width="25%" align="right">
+                    <section class="checkout-btns-carrinho">
+                        <div class="checkout-btns-space-carrinho">
+                            <h3 class="resumo_carrinho">Resumo da compra</h3>
+                            <span class="total_items_cart">Itens: <span class="total-items-count"></span></span>
+                            <div class="total-price-checkout-carrinho">
+                                <span class="total-label-carrinho">
+                                    Total: R$: <span class="grand-total-price"></span>
+                                </span>
+                            </div>
+                            <div class="separation-line-carrinho"></div>
+
+                            <?php
+                            $texto = "Fechar Pedido"; 
+                            include 'botao_cliente.php';
                             ?>
-                            <tbody>
-                            <tr>
-                            <!-- <td ><?php 
-                            // echo $retorno["path_img"];
-                            ?></td> -->
-                            <td ><img src="<?php echo $retorno["path_img"]; ?>" alt="" class="product-img-carrinho"></td>
-                            <td ><?php echo $retorno["prod_nome"]; ?></td>
-
-                            </tr>
-                            <?php }?>
-                            </tbody>
-                            </table>
-                        <div class="non-labeled-content-carrinho">
-                            <div class="title-and-description-carrinho">
-                                <span class="product-name-carrinho"></span>
-                                <span class="product-description-carrinho"></span>
-                            </div>
                         </div>
-
-                        <div class="labels-respective-content-carrinho">
-                            <span class="product-price-carrinho">
-                                R$: <span class="unit-price"></span>
-                            </span>
-                        </div>
-                        <div class="labels-respective-content-carrinho">
-                            <div class="change-quantity-carrinho">
-                                <button class="change-quantity-btn-carrinho minus-btn" data-id="<?= $item['id_item'] ?>">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <span class="quantity-carrinho"></span>
-                                <button class="change-quantity-btn-carrinho plus-btn" data-id="<?= $item['id_item'] ?>">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="labels-respective-content-carrinho">
-                            <span class="total-price">
-                                R$: <span class="product-total-price"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            
-            </section>
-        </div>
-
-        <section class="checkout-btns-carrinho">
-            <div class="checkout-btns-space-carrinho">
-                <h3 class="resumo_carrinho">Resumo da compra</h3>
-                <span class="total_items_cart">Itens: <span class="total-items-count"></span></span>
-                <div class="total-price-checkout-carrinho">
-                    <span class="total-label-carrinho">
-                        Total: R$: <span class="grand-total-price"></span>
-                    </span>
-                </div>
-                <div class="separation-line-carrinho"></div>
-
-                <?php
-                $texto = "Fechar Pedido"; 
-                include 'botao_cliente.php';
-                ?>
-            </div>
-        </section>
+                    </section>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
