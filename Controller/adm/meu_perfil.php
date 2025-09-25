@@ -40,7 +40,7 @@
     </div>
     
     <div class="visualizar-dados-area-botoes">
-        <a href="meu_perfil_senha.php">
+        <a href="meu_perfil_editar.php">
             <?php
             $texto = "Editar meus dados";
             include '../cliente/botao_cliente.php';
