@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $_SESSION['mensagem_sucesso'] = "Usuário cadastrado com sucesso!";
     $con->close();
-    header("Location: login.php");
+    header("Location: ../../Controller/cliente/login.php");
     exit();
 }
 ?>
