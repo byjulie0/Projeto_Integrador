@@ -2,25 +2,25 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Menu Página Inicial</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../../view/public/css/adm/menu_inicial.css">
-    <script defer src="../../view/js/cliente/menu-pg-adm.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../view/public/css/adm/menu_inicial.css" />
+    <script defer src="../../view/js/adm/menu-pg-adm.js"></script>
 </head>
 
 <body>
     <section class="menu-pg-adm">
         <div class="menu-content-pg-adm">
-            <button class="menu-toggle">
+            <button class="menu-toggle" aria-label="Abrir menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            
+
             <div class="logo-menu">
-                <img src="../../view/public/imagens/logo.png" alt="Logo John Rooster" class="logo-menu-img">
+                <img src="../../view/public/imagens/logo.png" alt="Logo John Rooster" class="logo-menu-img" />
                 <a href="pg_inicial_adm.php" class="logo-menu-title">John Rooster</a>
             </div>
 
@@ -38,7 +38,7 @@
 
             <div class="nav-page-btns-pg-adm">
                 <div class="dropdown_menu_adm">
-                    <a href="#" class="nav-btns-pg-adm">
+                    <a href="#" class="nav-btns-pg-adm" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person"></i>
                         <span class="nav-text-pg-adm">Perfil</span>
                     </a>
@@ -59,4 +59,5 @@
         </div>
     </section>
 </body>
+
 </html>

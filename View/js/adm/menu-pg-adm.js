@@ -1,48 +1,56 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-link-pg-adm");
-    const icon = menuToggle.querySelector("i");
+    const icon = menuToggle?.querySelector("i");
 
-    if (!menuToggle || !navLinks) return;
+    if (!menuToggle || !navLinks || !icon) return;
 
-    function isMobile() {
-        return window.innerWidth <= 768;
-    }
+    const isMobile = () => window.innerWidth <= 768;
 
-    function openMenu() {
+    const openMenu = () => {
         navLinks.classList.add("mobile-active");
-        icon.classList.replace("fa-bars", "fa-xmark");
-    }
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+        menuToggle.setAttribute("aria-label", "Fechar menu");
+    };
 
-    function closeMenu() {
+    const closeMenu = () => {
         navLinks.classList.remove("mobile-active");
-        icon.classList.replace("fa-xmark", "fa-bars");
-    }
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+        menuToggle.setAttribute("aria-label", "Abrir menu");
+    };
 
-    function toggleMenu() {
+    const toggleMenu = () => {
         if (!isMobile()) return;
-        navLinks.classList.contains("mobile-active") ? closeMenu() : openMenu();
-    }
+        if (navLinks.classList.contains("mobile-active")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    };
 
-    menuToggle.addEventListener("click", function (e) {
+    menuToggle.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
         toggleMenu();
     });
 
-    document.addEventListener("click", function (e) {
+    document.addEventListener("click", (e) => {
         if (isMobile() && navLinks.classList.contains("mobile-active")) {
-            if (!e.target.closest('.menu-pg-adm')) {
+            if (!e.target.closest(".menu-pg-adm")) {
                 closeMenu();
             }
         }
     });
 
-    window.addEventListener("resize", function () {
-        if (!isMobile()) closeMenu();
+    window.addEventListener("resize", () => {
+        if (!isMobile()) {
+            closeMenu();
+        }
     });
 
-    document.addEventListener("keydown", function (e) {
+    document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && isMobile()) {
             closeMenu();
         }
