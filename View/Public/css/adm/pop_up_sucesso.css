@@ -13,14 +13,13 @@
 }
 .popup-box {
     background: #fff;
-    padding: 20px 30px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    width: 500px;
+    width: 30%;
     min-height: 200px;
     position: relative;
     text-align: center;
-    padding: 100px
+   
 }
 .popup-close {
     position: absolute;
@@ -53,4 +52,15 @@
 }
 .edit_product_button:hover {
     background-color: #246a2b;
+}
+@media (max-width:360px){
+    .popup-box{
+        width: 80%;
+    }
+}
+@media  only screen and (min-width: 425px) and (max-width: 800px){
+    .popup-box{
+        width: 80%;
+    }
+
 }
