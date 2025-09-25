@@ -7,7 +7,6 @@ $senha = "sucesso@143";
 // $senha = "";
 $bd = "143p1";
 
-
 $con = new mysqli($host, $usuario, $senha, $bd);
 
 
@@ -17,7 +16,7 @@ echo "Falha na Conexão: (".$con->connect_errno.")".$con-> connect_error;
 
 
 else{
-echo "Conectado:" . $con->host_info . "\n";
+// echo "Conectado:" . $con->host_info . "\n";
 }
 
 ?>

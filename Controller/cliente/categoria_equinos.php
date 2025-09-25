@@ -1,44 +1,42 @@
-<?php
-    include 'menu_pg_inicial.php';
-?>
+<?php include 'menu_pg_inicial.php';?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Categorias</title>
+    <title>Página de Categorias dos Equinos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../view/public/css/cliente/categoria_equinos.css">
 </head>
 <body class="body_categoria_equinos">
-    <!-- Seção de resultados -->
     <div class="container_categoria_equinos">
-        <div class="titulo-container_categoria_equinos">
-            <a class="btn-voltar" href="#" onclick="window.history.back(); return false;">
-                <i class="fa-solid fa-chevron-left"></i>
+        <div class="titulo_categoria_equinos">
+            <a class="btn_voltar" href="#" onclick="window.history.back(); return false;">
+                <i class="bi bi-chevron-left"></i>
             </a>
             <h2 class="h2_categoria_equinos">Equinos</h2>
         </div>
-        <div class="filtros_container_categoria_equinos">
-            <span class="filtros_titulo_categoria_equinos">Classificar por:</span>
-            <button class="filtro-btn" onclick="filtrar('arabe')">Árabe</button>
-            <button class="filtro-btn" onclick="filtrar('draft_belga')">Draft Belga</button>
-            <button class="filtro-btn" onclick="filtrar('mustang')">Mustang</button>
-            <button class="filtro-btn" onclick="filtrar('paint_horse')">Paint Horse</button>
-            <button class="filtro-btn" onclick="filtrar('percheron')">Percheron</button>
-            <button class="filtro-btn" onclick="filtrar('puro_sangue_ingles')">Puro Sangue Inglês</button>
-            <select class="filtro_select_categoria_equinos" onchange="filtrar(this.value)">
-                <option value="preco_categoria_equinos">Preço</option>
+        <div class="filtros_categoria_equinos">
+            <span class="filtros_titulo">Classificar por:</span>
+            <button class="filtro_btn" onclick="filtrar('arabe')">Árabe</button>
+            <button class="filtro_btn" onclick="filtrar('draft_belga')">Draft Belga</button>
+            <button class="filtro_btn" onclick="filtrar('mustang')">Mustang</button>
+            <button class="filtro_btn" onclick="filtrar('paint_horse')">Paint Horse</button>
+            <button class="filtro_btn" onclick="filtrar('percheron')">Percheron</button>
+            <button class="filtro_btn" onclick="filtrar('puro_sangue_ingles')">Puro Sangue Inglês</button>
+            <select class="filtro_select" onchange="filtrar(this.value)">
+                <option value="preco">Preço</option>
                 <option value="menor_preco">Menor Preço</option>
                 <option value="maior_preco">Maior Preço</option>
             </select>
         </div>
-        <div class="lotes_wrapper_categoria_equinos">
-            <div class="lotes_container_categoria_equinos" id="lotesContainer">
-                <?php 
+
+        <div class="lotes_geral">
+            <div class="lotes_container" id="lotesContainer_equinos">
+                <?php
                 $lotes = [
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "380 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "24 meses", "preco" => "5.200,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "420 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "28 meses", "preco" => "5.800,00"],
@@ -49,25 +47,22 @@
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "350 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "22 meses", "preco" => "4.900,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
+                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
+                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
+                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                 ];
-                foreach ($lotes as $lote) { ?>
-                    <div class="lote_card_categoria_equinos">
-                        <img src="<?php echo $lote['imagem']; ?>" alt="Lote de Equino">
-                        <div class="info_grid_categoria_equinos">
-                            <p>Peso:</p>
-                            <p><?php echo $lote['peso']; ?></p>
-                            <p>Raça:</p>
-                            <p><?php echo $lote['raca']; ?></p>
-                            <p>Genealogia:</p>
-                            <p><?php echo $lote['genealogia']; ?></p>
-                            <p>Idade:</p>
-                            <p><?php echo $lote['idade']; ?></p>
-                            <p class="preco">R$ <?php echo $lote['preco']; ?></p>
-                        </div>
-                    </div>
-                <?php } ?>
+                foreach ($lotes as $item) { 
+                    $imagem = $item['imagem'];
+                    $peso = $item['peso'];
+                    $raca = $item['raca'];
+                    $genealogia = $item['genealogia'];
+                    $idade = $item['idade'];
+                    $preco = $item['preco'];
+                    include 'card_telas.php';
+                }
+                ?>
             </div>
-            <button class="nav_button_categoria_equinos next" onclick="navegarLotes(1)">❯</button>
+            <button class="nav_button next" onclick="navegarLotes(1)">❯</button>
         </div>
     </div>
 
@@ -85,7 +80,7 @@
         }
         
         function navegarLotes(direcao) {
-            const container = document.getElementById('lotesContainer');
+            const container = document.getElementById('lotesContainer_equinos');
             const scrollAmount = 300;
             container.scrollBy({
                 left: direcao * scrollAmount,
@@ -94,10 +89,6 @@
         }
     </script>
 
-    <footer>
-        <?php
-            include 'footer_cliente.php';
-        ?>
-    </footer>
 </body>
 </html>
+<?php include 'footer_cliente.php';?>
