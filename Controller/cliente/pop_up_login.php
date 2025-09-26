@@ -15,8 +15,15 @@
             <h2 class="h2_popup_login">Login necessário!</h2>
             <p>Você precisa estar logado para acessar esta funcionalidade</p>
             <div class="botoes_popup_login">
-                <a href="login.php" class="botao_popup_login">Fazer Login</a>
-                <button class="botao_popup_cancelar">Cancelar</button>
+                <a href="login.php">
+                    <?php 
+                    $texto = "Fazer Login"; 
+                    include 'botao_cliente.php';
+                    ?>
+                </a>
+                <a href="#" onclick="window.history.back(); return false;>
+                    <?php include 'botao_cancelar.php'; ?>
+                </a>
             </div>
         </div>
     </div>
