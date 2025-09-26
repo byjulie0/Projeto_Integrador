@@ -22,19 +22,28 @@
     justify-content: flex-start;
     gap: 25px
 }
-#title-atualizar-produtos .fa-solid{
-    color: var(--color-primary-3);
+#title-atualizar-produtos{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px
 }
 #title-atualizar-produtos h3{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
     color: var(--color-primary-1);
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 24px;
 }
-#subtitle-atualizar-produtos span {
-    color: var(--color-primary-1);
-    font-size: 16px;
-    font-weight: 500;
+.bi-chevron-left{
+  display: inline-flex;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--color-primary-1);
 }
+
 #page-content-atualizar-produtos{
     width: 100%;
     display: flex;

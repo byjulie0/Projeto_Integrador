@@ -9,7 +9,8 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin: 5px auto;
+  margin: 10px auto;
+  margin-bottom: 5%;
   width: 95%;
   position: relative;
   margin-top: 35px;
@@ -97,7 +98,7 @@ input[type="checkbox"] {
 }
 
 .product-card-carrinho{
-  padding: 20px 15px;
+  padding: 3% 15px;
   display: flex;
   flex-direction: column;
   border-radius: 6px;
@@ -336,9 +337,10 @@ input[type="checkbox"] {
   .cart_title {
     font-size: 24px;
   }
-  .check-btn-carrinho label {
-    width: 100%;
-    justify-content: left;
+
+  .cart-header-carrinho {
+    flex-direction: column; 
+    justify-content: flex-start;
   }
   .product-card-carrinho{
     padding: 10px 5%;
@@ -367,7 +369,9 @@ input[type="checkbox"] {
     font-size: 16px; /* Reduzir o tamanho da fonte */
   }
 
- 
+  .delete-item-btn-area-carrinho {
+    justify-content: flex-start; /* Ajustar para que o botão de exclusão apareça no topo */
+  }
 
   .product-carrinho {
     flex-direction: column; /* Alterar a direção para coluna */
