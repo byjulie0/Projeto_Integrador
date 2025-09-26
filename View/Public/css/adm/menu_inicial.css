@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--menu-padding);
-    width: 100%;
+    max-width: 100%;
     background-color: var(--menu-bg);
     box-shadow: var(--menu-shadow);
     position: relative;
@@ -196,7 +196,6 @@
     }
     
     .menu-content-pg-adm {
-        flex-wrap: wrap;
         gap: 15px;
     }
     
@@ -215,7 +214,7 @@
     
     .nav-page-btns-pg-adm {
         order: 3;
-        gap: 15px;
+        gap: 1px;
     }
     
     .nav-link-pg-adm {
@@ -276,39 +275,77 @@
 
 @media (max-width: 425px) {
     .menu-pg-adm {
-        padding: 6px 3%;
+        padding: 8px 4%;
         min-height: 60px;
     }
     
     .menu-content-pg-adm {
-        gap: 10px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
     }
-    
-    .logo-menu-img {
-        width: 45px;
-    }
-    
-    .logo-menu-title {
-        font-size: 1.1rem;
-    }
-    
+
     .menu-toggle {
-        padding: 8px 10px;
-        font-size: 1.3rem;
-        border-width: 1px;
+        display: flex;
+        grid-column: 1;
+        justify-self: start;
+        order: 1;
     }
-    
-    .nav-page-btns-pg-adm {
+
+    .logo-menu {
+        grid-column: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 8px;
+        min-width: 0;
+        order: 2;
     }
-    
+
+    .logo-menu-title {
+        font-size: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+    }
+
+    .logo-menu-img {
+        width: 40px;
+    }
+
+    .nav-page-btns-pg-adm {
+        grid-column: 3;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-self: end;
+        order: 3;
+    }
+
     .nav-btns-pg-adm {
-        min-width: 45px;
-        padding: 5px 6px;
+        padding: 6px;
+        min-width: auto;
     }
-    
+
     .nav-btns-pg-adm .bi {
         font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+
+    .nav-text-pg-adm {
+        display: none;
+    }
+
+    .nav-link-pg-adm {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
     }
 }
 
@@ -322,7 +359,7 @@
     }
     
     .logo-menu-title {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .menu-toggle {
