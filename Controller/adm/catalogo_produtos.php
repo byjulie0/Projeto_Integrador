@@ -63,19 +63,19 @@ require_once(__DIR__ . "/../utils/catalogo_adm_produtos_action.php");
                                     </td>
 
                                     <td class="product-name-atualizar-produtos cell-atualizar-produto">
-                                        <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['produto']) ?></span></div>
+                                        <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['prod_nome']) ?></span></div>
                                     </td>
 
                                     <td class="product-category-atualizar-produtos cell-atualizar-produto">
-                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['categoria'] ?? 'Sem categoria') ?></span></div>
+                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['cat_nome'] ?? 'Sem categoria') ?></span></div>
                                     </td>
 
                                     <td class="qt-atualizar-produtos cell-atualizar-produto">
-                                        <?= htmlspecialchars($p['subcategoria'] ?? 'Sem subcategoria') ?>
+                                        <?= htmlspecialchars($p['subcat_nome'] ?? 'Sem subcategoria') ?>
                                     </td>
 
                                     <td class="price-atualizar-produtos cell-atualizar-produto">
-                                        R$ <?= number_format($p['preco'], 2, ',', '.') ?>
+                                        R$ <?= number_format($p['valor'], 2, ',', '.') ?>
                                     </td>
 
                                     <td class="update-atualizar-produtos cell-atualizar-produto">
@@ -93,23 +93,6 @@ require_once(__DIR__ . "/../utils/catalogo_adm_produtos_action.php");
                             </tr>
                         <?php endif; ?>
 
-                        <!-- Gabriel - Início -->
-
-                         <?php foreach ($produtos as $produto): ?>
-                        <tr>
-                            <td><input type="checkbox" name="produtos[]" value="<?= $produto['id_produto'] ?>"></td>
-                            <td><?= htmlspecialchars($produto['prod_nome']) ?></td>
-                            <td><?= htmlspecialchars($produto['id_categoria']) ?></td>
-                            <td><?= htmlspecialchars($produto['id_subcategoria']) ?></td>
-                            <td><?= number_format($produto['valor'], 2, ',', '.') ?></td>
-                            <td><a href="editar_produto.php?id=<?= $produto['id_produto'] ?>">Editar</a></td>
-                            <td>
-                                <?php include 'toogle.php'; ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-
-                        <!-- Gabriel - Final -->
                     </table>
                 </div>
             </div>
