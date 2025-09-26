@@ -5,12 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Menu Página Inicial</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../../view/public/css/adm/menu_inicial.css">
-    <script defer src="../../view/js/cliente/menu-pg-adm.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../view/public/css/adm/menu_inicial.css" />
+    <script defer src="../../view/js/adm/menu-pg-adm.js"></script>
 </head>
 
 <body>
@@ -28,7 +27,6 @@
             <ul class="nav-link-pg-adm">
                 <li class="dropdown_menu_adm">
                     <a href="#" class="nav-item-pg-adm">Gerenciar produtos</a>
-            
                     <ul class="submenu_adm">
                         <li><a href="adicionar_produto.php">Adicionar produtos</a></li>
                         <li><a href="catalogo_produtos.php">Visualizar catálogo de produtos</a></li>
@@ -49,7 +47,6 @@
                         <li><a href="redefinir_senha.php">Redefinir senha</a></li>
                     </ul>
                 </div>
-                </li>
                 <a href="notificacao.php" class="nav-btns-pg-adm">
                     <i class="bi bi-bell"></i>
                     <span class="nav-text-pg-adm">Notificações</span>
@@ -59,7 +56,6 @@
                     <span class="nav-text-pg-adm">Geral</span>
                 </a>
             </div>
-
         </div>
     </section>
 </body>
