@@ -107,16 +107,12 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                 </div>
 
                 <div class="product_details_collumn">
-                    <article class="input_product_price">
-                        <p class="product_title_info">Defina o valor do produto<span class="mandatory_space">*</span></p>
-                        <input type="number" placeholder="Valor" class="input_product_info" name="valor" required min="0.01" step="0.01">
-                    </article>
-
+                    
                     <article class="input_product_quantity">
-                        <p class="product_title_info">Peso do animal em kg<span class="mandatory_space">*</span></p>
-                        <input type="number" placeholder="Se for produto digite 0" class="input_product_info" name="peso" required min="0">
+                        <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
+                        <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso" required min="0">
                     </article>
-
+                    
                     <article class="input_product_category">
                         <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
                         <select class="product_info_select" name="sexo" required>
@@ -126,7 +122,17 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                             <option value="Não se aplica">Não se aplica (Produto)</option>
                         </select>
                     </article>
-
+                    
+                    <article class="input_product_quantity">
+                        <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
+                        <input type="date" class="input_product_info" name="idade" required>
+                    </article>
+                    
+                    <article class="input_product_price">
+                        <p class="product_title_info">Defina o valor do produto<span class="mandatory_space">*</span></p>
+                        <input type="number" placeholder="Valor" class="input_product_info" name="valor" required min="0.01" step="0.01">
+                    </article>
+                    
                     <article class="input_product_quantity">
                         <p class="product_title_info">Insira a descrição do produto<span class="mandatory_space">*</span></p>
                         <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição..." class="input_product_info product_details" required></textarea>

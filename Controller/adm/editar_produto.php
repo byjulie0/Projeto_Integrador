@@ -41,8 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
                     <article class="input_product_name">
                         <p class="product_title_info">Nome do produto</p>
                         <input type="text" class="input_product_info" placeholder="Nome do produto" required>
-                        <span class="error-message">Por favor, preencha este campo</span>
-                    </article>
+                        
 
                     <article class="input_product_champion">
                             <p class="product_title_info">Categoria é um campeão?</p>
@@ -51,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
                             <option value="sim">Sim</option>
                              <option value="nao">Não</option>
                         </select>
-                        <span class="error-message">Por favor, selecione uma opção</span>
                     </article>
 
                     <article class="input_product_quantity">
@@ -136,7 +134,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
                         <p class="product_title_info">Valor do produto</p>
                         <input type="number" placeholder=" Valor do produto" class="input_product_info" required min="0.01"
                             step="0.01">
-                        <span class="error-message">Informe um valor válido (maior que zero)</span>
                     </article>
 
                     <article class="input_product_quantity">
@@ -153,8 +150,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
                             <option value="" class="product_categories">Fêmea</option>
                             <option value="" class="product_categories">Não se aplica (Produto)</option>
                         </select>
-                        
-                        <span class="error-message">Por favor, selecione uma opção</span>
                     </article>
                     
                     
