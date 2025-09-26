@@ -1,5 +1,5 @@
 <?php
-include "conexão.php";
+require_once(__DIR__ . "/../../model/DB/conexao.php");
 $status = $_GET['status'] ?? 'ativos';
 
 

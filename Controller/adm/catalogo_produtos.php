@@ -1,9 +1,10 @@
 <?php
 require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
+require_once(__DIR__ . "/../utils/catalogo_adm_produtos_action.php");
 ?>
 
 <?php include 'menu_inicial.php';?>
-<?php include 'catalogo_adm_produtos_action.php';?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -91,6 +92,9 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                 <td colspan="7" style="text-align:center;">Nenhum produto cadastrado</td>
                             </tr>
                         <?php endif; ?>
+
+                        <!-- Gabriel - Início -->
+
                          <?php foreach ($produtos as $produto): ?>
                         <tr>
                             <td><input type="checkbox" name="produtos[]" value="<?= $produto['id_produto'] ?>"></td>
@@ -104,6 +108,8 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                             </td>
                         </tr>
                         <?php endforeach; ?>
+
+                        <!-- Gabriel - Final -->
                     </table>
                 </div>
             </div>
