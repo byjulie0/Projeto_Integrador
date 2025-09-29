@@ -7,17 +7,34 @@ $popup_tipo = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $nome         = mysqli_real_escape_string($con, $_POST["nome"]);
-    $valor        = mysqli_real_escape_string($con, $_POST['valor']);
-    $quantidade   = mysqli_real_escape_string($con, $_POST['quantidade']);
-    $descricao    = mysqli_real_escape_string($con, $_POST['descricao']);
-    $sexo         = mysqli_real_escape_string($con, $_POST['sexo']);
-    $peso         = mysqli_real_escape_string($con, $_POST['peso']);
-    $campeao      = mysqli_real_escape_string($con, $_POST['campeao']);
-    $categoria    = mysqli_real_escape_string($con, $_POST['categoria']);
-    $subcategoria = mysqli_real_escape_string($con, $_POST['subcategoria']);
+    $nome         = mysqli_real_escape_string($con, $_POST["nome"] ?? "");
+    $valor        = mysqli_real_escape_string($con, $_POST['valor'] ?? "");
+    $quantidade   = mysqli_real_escape_string($con, $_POST['quantidade'] ?? "");
+    $descricao    = mysqli_real_escape_string($con, $_POST['descricao'] ?? "");
+    $sexo         = mysqli_real_escape_string($con, $_POST['sexo'] ?? "");
+    $peso         = mysqli_real_escape_string($con, $_POST['peso'] ?? "");
+    $campeao      = mysqli_real_escape_string($con, $_POST['campeao'] ?? "");
+    $categoria    = mysqli_real_escape_string($con, $_POST['categoria'] ?? "");
+    $subcategoria = mysqli_real_escape_string($con, $_POST['subcategoria'] ?? "");
 
-    if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+    $erros = [];
+
+    if (empty($nome)) $erros[] = "O campo Nome do Produto é obrigatório.";
+    if ($valor === "" || !is_numeric($valor) || $valor <= 0) $erros[] = "O Valor deve ser maior que zero.";
+    if ($quantidade === "" || !is_numeric($quantidade) || $quantidade < 0) $erros[] = "Quantidade inválida.";
+    if (empty($descricao)) $erros[] = "A Descrição é obrigatória.";
+    if (empty($sexo)) $erros[] = "O campo Sexo é obrigatório.";
+    if ($peso === "" || !is_numeric($peso) || $peso < 0) $erros[] = "Peso inválido.";
+    if (empty($campeao)) $erros[] = "Informe se o produto é campeão.";
+    if (empty($categoria)) $erros[] = "Selecione uma Categoria.";
+    if (empty($subcategoria)) $erros[] = "Selecione uma Subcategoria.";
+
+    if (!empty($erros)) {
+        $popup_titulo = "Erro no cadastro!";
+        $popup_mensagem = implode("\n", $erros);
+        $popup_tipo = "erro";
+    } 
+    else if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
 
         $nomeImagem = basename($_FILES['imagem']['name']);
         $caminhoTemp = $_FILES['imagem']['tmp_name'];

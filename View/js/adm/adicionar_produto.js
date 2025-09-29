@@ -34,13 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
         select.disabled = true;
     });
 
-    // Validação do formulário
     const form = document.querySelector('.add_product_area');
     if (form) {
         let formSubmitted = false;
         const requiredFields = document.querySelectorAll('[required]');
 
-        // Função para validar campos individuais
         function validateField(field) {
             if (!formSubmitted) return true;
             
@@ -49,23 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return isValid;
         }
 
-        // Validação em tempo real após primeira tentativa
         requiredFields.forEach(field => {
             field.addEventListener('input', () => formSubmitted && validateField(field));
             field.addEventListener('change', () => formSubmitted && validateField(field));
         });
 
-        // Evento de submit
         form.addEventListener('submit', function(event) {
             formSubmitted = true;
             let formIsValid = true;
             
-            // Valida campos obrigatórios
             requiredFields.forEach(field => {
                 if (!validateField(field)) formIsValid = false;
             });
 
-            // Validações específicas
             const visibleSubcategory = document.querySelector('.subcategory-select[style="display: block;"]');
             if (visibleSubcategory?.value === "") {
                 visibleSubcategory.classList.add('invalid-field');

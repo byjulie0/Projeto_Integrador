@@ -170,12 +170,12 @@ input[type="image"] {
   display: none;
 }
 
-.invalid-field,
+/* .invalid-field,
 .input_product_info:invalid,
 .product_info_select:invalid {
   border-color: #ff4444;
   box-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
-}
+} */
 
 .invalid-field+.error-message,
 .input_product_info:invalid+.error-message,
