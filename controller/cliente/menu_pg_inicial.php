@@ -17,7 +17,7 @@
 <body>
 
     <section class="menu-pg-inicial">
-        
+
         <div class="menu-content-pg-inicial">
             <button class="menu-toggle">
                 <i class="fa-solid fa-bars"></i>
@@ -46,7 +46,7 @@
             </div>
 
             <div class="search-container-pg-inicial">
-                <input type="text" placeholder="O que deseja buscar?" id="busca" autocomplete="on"/>
+                <input type="text" placeholder="O que deseja buscar?" id="busca" autocomplete="on" />
                 <div id="resultado_busca"></div>
             </div>
 

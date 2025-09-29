@@ -130,6 +130,7 @@ include 'menu_pg_inicial.php';
                 <?php
                 $texto = "Fechar Pedido"; 
                 include 'botao_cliente.php';
+
                 ?>
             </div>
         </section>
