@@ -30,7 +30,7 @@
             <form method="GET" id="form-pesquisa-gerenciar-clientes">
                 <div id="search-bar-gerenciar-clientes">
                     <input type="text" id="campo-busca" placeholder="Pesquisar..." autocomplete="off">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </form>
             <a href="#">Inativados</a>
