@@ -11,7 +11,7 @@
 <div id="popupSucesso" class="popup-overlay" style="display: flex;">
     <div class="popup-box">
         <button class="popup-close" id="fecharPopup">&times;</button>
-        <p><?= $texto ?></p>
+        <!-- <p><?= $texto ?></p> -->
     </div>
 </div>
 </body>
