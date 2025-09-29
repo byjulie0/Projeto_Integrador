@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         INSERT INTO cliente (
             cliente_nome, email, senha, cpf_cnpj, data_nasc, user_ativo, telefone, cep
         ) VALUES (
-            '$nome', '$email', '$senha_s', '$cpf_cnpj', '$data_nasc', 1, '$telefone', '$cep'
+            '$nome', '$email', '$senha_s', '$cpf_cnpj', '$data_nasc', '$telefone', '$cep'
         )
     ";
 
