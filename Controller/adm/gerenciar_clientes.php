@@ -27,10 +27,12 @@
 
     <div id="page-content-gerenciar-clientes">
         <div class="first-container-gerenciar-clientes">
-            <div id="search-bar-gerenciar-clientes">
-                <input type="text" placeholder="Pesquisar" />
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
+            <form method="GET" id="form-pesquisa-gerenciar-clientes">
+                <div id="search-bar-gerenciar-clientes">
+                    <input type="text" id="campo-busca" placeholder="Pesquisar..." autocomplete="off">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
             <a href="#">Inativados</a>
         </div>
 
@@ -78,21 +80,65 @@
 </section>
 
 <script>
-$(document).on("click", ".icon-toggle-btn", function () {
-    let btn = $(this);
-    let id = btn.data("id");
+$(document).ready(function () {
 
-    $.post("toggle_cliente.php", { id_cliente: id }, function (res) {
-        if (res.success) {
-         if (res.novo_status == 0) {
-        btn.attr("aria-pressed", "true").html('<i class="fa-solid fa-toggle-on"></i>');
-    } else {
-        btn.attr("aria-pressed", "false").html('<i class="fa-solid fa-toggle-off"></i>');
+    $(document).on("click", ".icon-toggle-btn", function () {
+        let btn = $(this);
+        let id = btn.data("id");
+
+        $.post("toggle_cliente.php", { id_cliente: id }, function (res) {
+            if (res.success) {
+                if (res.novo_status == 0) {
+                    btn.attr("aria-pressed", "true").html('<i class="fa-solid fa-toggle-on"></i>');
+                } else {
+                    btn.attr("aria-pressed", "false").html('<i class="fa-solid fa-toggle-off"></i>');
+                }
+            } else {
+                alert("Erro ao atualizar status!");
+            }
+        }, "json");
+    });
+
+$('#campo-busca').on('input', function () {
+  const termo = $(this).val();
+
+  $.ajax({
+    url: '../../Controller/utils/buscar_clientes.php',
+    method: 'POST',
+    dataType: 'json',
+    data: { busca: termo },
+    success: function (clientes) {
+      let html = '';
+
+      if (clientes.length) {
+        clientes.forEach(c => {
+          html += `
+            <tr>
+              <td><input type="checkbox" name="cliente[]" value="${c.id_cliente}" class="cliente-checkbox"></td>
+              <td>${c.cliente_nome}</td>
+              <td>${c.cpf_cnpj}</td>
+              <td>${new Date(c.data_nasc).toLocaleDateString('pt-BR')}</td>
+              <td>
+                <button type="button" class="icon-toggle-btn" data-id="${c.id_cliente}" aria-pressed="${c.user_ativo == 0 ? 'true' : 'false'}">
+                  <i class="fa-solid ${c.user_ativo == 0 ? 'fa-toggle-on' : 'fa-toggle-off'}"></i>
+                </button>
+              </td>
+            </tr>
+          `;
+        });
+      } else {
+        html = `<tr><td colspan="5" style="text-align:center;">Nenhum cliente encontrado.</td></tr>`;
+      }
+
+      $('#table2-gerenciar-clientes table tbody').html(html);
+    },
+    error: function () {
+      alert('Erro ao buscar clientes.');
     }
-        } else {
-            alert("Erro ao atualizar status!");
-        }
-    }, "json");
+  });
+});
+
+
 });
 </script>
 
