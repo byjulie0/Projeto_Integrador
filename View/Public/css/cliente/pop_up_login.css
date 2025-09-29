@@ -42,40 +42,20 @@
     font-size: 1.5rem;
     margin-bottom: 15px;
 }
-.area_login_popup p {
-    color: #666;
-    margin-bottom: 25px;
-    line-height: 1.5;
-}
+
 .botoes_popup_login {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    justify-content: center;  
+    gap: 15px;                
     margin-top: 20px;
 }
-.botao_popup_login,
-.botao_popup_cancelar {
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
+
+.botoes_popup_login a {
+    width: 130px;           
+    height: 40px;             
+    display: flex;
+    justify-content: center; 
+    align-items: center;      
+    text-align: center;
     text-decoration: none;
-    display: inline-block;
-}
-.botao_popup_login {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-}
-.botao_popup_login:hover {
-    background-color: #45a049;
-}
-.botao_popup_cancelar {
-    background-color: var(--color-botao-op-Cancelar);
-    color: white;
-    border: 1px solid #ddd;
-}
-.botao_popup_cancelar:hover {
-    background-color: #c61f1f;
 }
