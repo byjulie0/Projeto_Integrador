@@ -1,13 +1,16 @@
-<?php include 'menu_inicial.php';?>
+<?php include 'menu_inicial.php'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
     <link rel="stylesheet" href="../../view/public/css/adm/verificar_administrar_pedido.css">
-    <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 
 <body class="verificar_administrar_pedidos_body">
@@ -26,10 +29,14 @@
                         </h1>
                     </div>
 
-                    <form action="" class="verificar_administrar_pedidos_sessao_formulario_pesquisa">
-                        <input type="text" id="" placeholder="Pesquisar">
-                        <button type="submit"></button>
+                    <form action="" method="GET" class="verificar_administrar_pedidos_sessao_formulario_pesquisa">
+                        <div class="div_pesquisa">
+
+                            <input type="text" name="pesquisa" placeholder="Pesquisar"></i>
+                            <button type="submit"><i class="bi bi-search"></i></button>
+                        </div>
                     </form>
+
                 </div>
             </div>
             <hr class="verificar_administrar_pedidos_sessao_divisao">
@@ -38,7 +45,7 @@
             <div class="verificar_administrar_pedidos_sessao_pedidos">
                 <div class="verificar_administrar_pedidos_sessao_pedidos_img">
                     <h5>Pedido XXXXXXXXXX</h5>
-                    <img src="../..//View/Public/Imagens/Rectangle 195.png" alt="">
+                    <img src="../../View/Public/Imagens/Rectangle 195.png" alt="">
                 </div>
                 <div class="verificar_administrar_pedidos_sessao_pedidos_info">
                     <h5>Boi Tal</h5>
@@ -66,4 +73,4 @@
 
 </html>
 
-<?php include 'footer.php';?>
+<?php include 'footer.php'; ?>
