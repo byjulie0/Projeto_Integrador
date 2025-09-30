@@ -80,6 +80,7 @@
 
 .nav-item-pg-adm:hover {
     background-color: var(--hover-bg);
+    transform: translateY(-2px);
 }
 
 .nav-page-btns-pg-adm {

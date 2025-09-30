@@ -92,9 +92,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $query_insert = "
         INSERT INTO cliente (
-            cliente_nome, email, senha, cpf_cnpj, data_nasc, user_ativo, telefone, cep
+            cliente_nome, email, senha, cpf_cnpj, data_nasc, telefone
         ) VALUES (
-            '$nome', '$email', '$senha_hash', '$cpf_cnpj', '$data_nasc', 1, '$telefone', '$cep'
+            '$nome', '$email', '$senha_hash', '$cpf_cnpj', '$data_nasc', '$telefone'
         )
     ";
 
