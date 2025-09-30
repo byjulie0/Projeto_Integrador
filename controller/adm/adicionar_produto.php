@@ -1,4 +1,4 @@
-<?php
+<?php 
 include 'menu_inicial.php';
 require_once __DIR__ .'/../../model/DB/conexao.php';
 
@@ -26,12 +26,13 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 </head>
 <body class="body_add_product">
 
-        <div class="title_page_add_product">
-            <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
-                <i class="bi bi-chevron-left"></i>
-            </a>
-            <h1 class="tile_add_product">Adicionar Produto</h1>
-        </div>
+    <div class="title_page_add_product">
+        <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
+            <i class="bi bi-chevron-left"></i>
+        </a>
+        <h1 class="tile_add_product">Adicionar Produto</h1>
+    </div>
+    <form action="adicionar_produto_backend.php" method="POST" enctype="multipart/form-data">
 
         <section class="add_product_area">
             <article class="add_product_image">
@@ -49,7 +50,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                     <article class="input_product_name">
                         <p class="product_title_info">Insira o nome do produto<span class="mandatory_space">*</span></p>
                         <input type="text" class="input_product_info" placeholder="Nome do produto" name="nome" required>
-                        <span class="error-message">Por favor, preencha este campo</span>
                     </article>
 
                     <article class="input_product_champion">
@@ -107,12 +107,16 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                 </div>
 
                 <div class="product_details_collumn">
-                    
                     <article class="input_product_quantity">
                         <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso" required min="0">
                     </article>
                     
+                    <article class="input_product_quantity">
+                        <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
+                        <input type="date" class="input_product_info" name="idade" required>
+                    </article>
+
                     <article class="input_product_category">
                         <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
                         <select class="product_info_select" name="sexo" required>
@@ -121,11 +125,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                             <option value="F">Fêmea</option>
                             <option value="Não se aplica">Não se aplica (Produto)</option>
                         </select>
-                    </article>
-                    
-                    <article class="input_product_quantity">
-                        <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
-                        <input type="date" class="input_product_info" name="idade" required>
                     </article>
                     
                     <article class="input_product_price">
@@ -142,10 +141,13 @@ while ($r = mysqli_fetch_assoc($resSub)) {
         </section>
 
         <div class="add_product_submit_button">
-            <button type="submit" class="botao_adm">Avançar</button>
+            <?php
+            $texto = "Avançar";
+            include 'botao_adm.php';
+            ?>
         </div>
+
     </form>
-</div>
 
 <?php include 'footer.php'; ?>
 </body>
