@@ -7,7 +7,6 @@
     <title>PopUp Pergunta Carrinho </title>
     <link rel="stylesheet" href="../../View/Public/Css/cliente/pop_up_login.css">
 </head>
-
 <body>
     <div id="popup_login" class="login_popup">
         <div class="area_login_popup">

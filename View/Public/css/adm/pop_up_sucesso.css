@@ -30,28 +30,21 @@
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    color: #333;
+    color: #ff0000;
     transition: color 0.3s ease;
 }
-
-.popup-close:hover {
-    color: #ff0000;
-}
-.edit_product_button {
-    background-color: #2d8c37;
-    border: none;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-flex;
+h1{
     align-items: center;
-    gap: 8px;
-    transition: background-color 0.3s ease;
+    justify-content: center;
+    margin: 15px auto;
+    color: var( --color-primary-1);
 }
-.edit_product_button:hover {
-    background-color: #246a2b;
+.texto_popup_sucesso{
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-top: 20px;
+    color: var(--color-primary-1);
 }
 @media (max-width:360px){
     .popup-box{
