@@ -33,14 +33,14 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                 </a>
                 <h1 class="tile_add_product">Adicionar Produto</h1>
         </div>
-
+        <form action="adicionar_produto_backend.php" method="POST" enctype="multipart/form-data">
         <section class="add_product_area">
             <article class="add_product_image">
                 <div class="img_holder">
                     <label class="img_holder_button">
                         <i class="fa-solid fa-arrow-up-from-bracket"></i>
                         <span>Selecione uma imagem</span>
-                        <input type="file" accept="image/*" name="imagem" required style="display:none;">
+                        <input type="file" class="input_product_info" accept="image/*" name="imagem" required style="display:none;">
                     </label>
                 </div>
             </article>
@@ -113,16 +113,12 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                         <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso" required min="0">
                     </article>
-<<<<<<< Updated upstream
-                        
-=======
-                    
+         
                     <article class="input_product_quantity">
                         <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
                         <input type="date" class="input_product_info" name="idade" required>
                     </article>
                     
->>>>>>> Stashed changes
                     <article class="input_product_category">
                         <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
                         <select class="product_info_select" name="sexo" required>
