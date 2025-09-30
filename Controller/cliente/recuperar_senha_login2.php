@@ -32,7 +32,7 @@ $email = htmlspecialchars($_GET['esqueci_senha_card_email_digitar']);
                         <input type="text" inputmode="numeric" pattern="[A-aZ-z0-9]+" maxlength="8" required>
                         <?php
                         $texto = "Enviar"; 
-                        include 'botao_cliente.php';
+                        include 'botao_verde_cliente.php';
                         ?>
                     </form>
                 </div>

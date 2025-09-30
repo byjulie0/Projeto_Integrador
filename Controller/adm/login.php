@@ -36,7 +36,7 @@
                     </div>
 
                     <button type="button" class="button_adm"
-                        onclick="window.location.href='pg_inicial_adm.php'">LOGIN
+                        onclick="window.location.href='pg_inicial_adm.php'">Login
                     </button>
                     <a href="../cliente/recuperar_senha_login1.php">Esqueci minha senha</a>
                     <a href="../cliente/login.php">Área do cliente</a>

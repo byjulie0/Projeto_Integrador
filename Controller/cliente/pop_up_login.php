@@ -18,11 +18,11 @@
                 <a href="login.php">
                     <?php 
                     $texto = "Fazer Login"; 
-                    include 'botao_cliente.php';
+                    include 'botao_verde_cliente.php';
                     ?>
                 </a>
                 <a href="#" onclick="window.history.back(); return false;>
-                    <?php include 'botao_cancelar.php'; ?>
+                    <?php include 'botao_vermelho_cliente.php'; ?>
                 </a>
             </div>
         </div>

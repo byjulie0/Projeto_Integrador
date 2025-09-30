@@ -35,7 +35,7 @@ $email_recuperar_senha = isset($_GET['email']) ? htmlspecialchars($_GET['email']
                         id="confirmarSenha">
                     <?php
                     $texto = "Enviar"; // Defina o texto do botão aqui
-                    include 'botao_cliente.php';
+                    include 'botao_verde_cliente.php';
                     ?>
                 </form>
             </div>

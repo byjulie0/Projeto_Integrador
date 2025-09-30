@@ -28,7 +28,7 @@ include 'menu_recuperar_senha.php';
                         <input type="email" name="esqueci_senha_card_email_digitar" placeholder="E-mail" required>
                         <?php
                         $texto = "Enviar"; 
-                        include 'botao_cliente.php';
+                        include 'botao_verde_cliente.php';
                         ?>
                     </form>
                 </div>
