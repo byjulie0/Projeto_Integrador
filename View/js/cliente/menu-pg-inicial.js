@@ -12,6 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
     icon.classList.remove("fa-bars");
     icon.classList.add("fa-xmark");
     menuToggle.setAttribute("aria-label", "Fechar menu");
+    
+    setTimeout(() => {
+      const buscaMobile = document.getElementById('busca-mobile');
+      if (buscaMobile && isMobile()) {
+        buscaMobile.focus();
+      }
+    }, 300);
   };
 
   const closeMenu = () => {
@@ -54,5 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.key === "Escape" && isMobile()) {
       closeMenu();
     }
+  });
+
+  document.querySelectorAll('.dropdown_menu_inicial').forEach(dropdown => {
+    dropdown.addEventListener('click', (e) => {
+      if (isMobile()) {
+        e.stopPropagation();
+      }
+    });
   });
 });
