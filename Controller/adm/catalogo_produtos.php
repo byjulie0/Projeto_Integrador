@@ -60,19 +60,19 @@ require_once(__DIR__ . "/../utils/catalogo_adm_produtos_action.php");
                                     </td>
 
                                     <td class="product-name-atualizar-produtos cell-atualizar-produto">
-                                        <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['prod_nome']) ?></span></div>
+                                        <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['produto']) ?></span></div>
                                     </td>
 
                                     <td class="product-category-atualizar-produtos cell-atualizar-produto">
-                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['cat_nome'] ?? 'Sem categoria') ?></span></div>
+                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['categoria'] ?? 'Ops! Está vazio') ?></span></div>
                                     </td>
 
                                     <td class="qt-atualizar-produtos cell-atualizar-produto">
-                                        <?= htmlspecialchars($p['subcat_nome'] ?? 'Sem subcategoria') ?>
+                                        <?= htmlspecialchars($p['subcategoria'] ?? 'Ops! Também está vazio') ?>
                                     </td>
 
                                     <td class="price-atualizar-produtos cell-atualizar-produto">
-                                        R$ <?= number_format($p['valor'], 2, ',', '.') ?>
+                                        R$ <?= number_format($p['preco'], 2, ',', '.') ?>
                                     </td>
 
                                     <td class="update-atualizar-produtos cell-atualizar-produto">
