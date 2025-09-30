@@ -314,12 +314,8 @@ $row_count = $result->num_rows;
                 <div class="separation-line-carrinho"></div>
 
                 <?php
-
                 $texto = "Fechar Pedido"; 
                 include 'botao_cliente.php';
-                    $texto = "Fechar Pedido"; 
-                    include 'botao_cliente.php';
-
                 ?>
             </div>
         </section>
