@@ -47,7 +47,7 @@
                         <li><a href="redefinir_senha.php">Redefinir senha</a></li>
                     </ul>
                 </div>
-                <a href="notificacao.php" class="nav-btns-pg-adm">
+                <a href="pg_notificacao.php" class="nav-btns-pg-adm">
                     <i class="bi bi-bell"></i>
                     <span class="nav-text-pg-adm">Notificações</span>
                 </a>
