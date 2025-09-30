@@ -50,7 +50,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                     <article class="input_product_name">
                         <p class="product_title_info">Insira o nome do produto<span class="mandatory_space">*</span></p>
                         <input type="text" class="input_product_info" placeholder="Nome do produto" name="nome" required>
-                        <span class="error-message">Por favor, preencha este campo</span>
                     </article>
 
                     <article class="input_product_champion">
