@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__ . "/../../model/DB/conexao.php");
+require_once(__DIR__ . "/catalogo_adm_produtos_action.php");
 
 $sql = "SELECT 
             p.id_produto,
@@ -11,6 +12,7 @@ $sql = "SELECT
         FROM produto p
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
         LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria
+        WHERE $filtroStatus
         ORDER BY p.prod_nome ASC";
 
 $result = $con->query($sql);

@@ -1,6 +1,5 @@
 <?php
 require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
-require_once(__DIR__ . "/../utils/catalogo_adm_produtos_action.php");
 ?>
 
 <?php include 'menu_inicial.php';?>
@@ -80,7 +79,7 @@ require_once(__DIR__ . "/../utils/catalogo_adm_produtos_action.php");
                                     </td>
 
                                     <td class="exclude-atualizar-produtos cell-atualizar-produto">
-                                        <?php include 'toogle.php'; ?>
+                                        <?php include 'toogle_adm_inativar.php'; ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
