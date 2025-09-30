@@ -1,4 +1,7 @@
-<?php include 'menu_pg_inicial.php';?>
+
+<?php
+include '../../Controller/utils/validacao_login.php';
+include 'menu_pg_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

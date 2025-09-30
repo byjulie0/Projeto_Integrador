@@ -1,0 +1,5 @@
+.body_pg_inicial_cliente{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

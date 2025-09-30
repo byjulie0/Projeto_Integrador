@@ -13,11 +13,15 @@
 </head>
 <body class="body_pg_busca">
     <div class="container_pagina_de_busca">
-        <a class="btn-voltar" href="pg_inicial_cliente.php" >
-            <i class="fa-solid fa-chevron-left"></i>
-        </a>
-        <h2 class="h2-pag-busca">Resultados</h2>
-        <p>9 resultados encontrados para 'gado nelore'</p>
+
+        <div class="titulo_e_seta_pg_busca">
+            <a class="btn-voltar" href="pg_inicial_cliente.php" >
+                <i class="bi bi-chevron-left"></i> 
+            </a>
+            <h2 class="h2-pag-busca">Resultados</h2>
+        </div>
+        <p class="p_pg_busca">9 resultados encontrados para 'gado nelore'</p>
+        
         <div class="filtros-container">
             <span class="filtros-titulo">Classificar por:</span>
             <button class="filtro-btn" data-filtro="relevancia">Relevância</button>
@@ -29,6 +33,7 @@
                 <option value="maior_preco">Maior Preço</option>
             </select>
         </div>
+        
         <div class="lotes-wrapper">
             <div class="lotes_container_pagina_de_busca" id="lotesContainer">
                 <?php
@@ -42,18 +47,18 @@
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "350 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "22 meses", "preco" => "4.900,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
+                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                 ];
-                foreach ($lotes as $lote) {
-                    $imagem = $lote['imagem'];
-                    $peso = $lote['peso'];
-                    $raca = $lote['raca'];
-                    $genealogia = $lote['genealogia'];
-                    $idade = $lote['idade'];
-                    $preco = $lote['preco'];
-                    include 'card_busca.php';
+                foreach ($lotes as $item) {
+                    $imagem = $item['imagem'];
+                    $peso = $item['peso'];
+                    $raca = $item['raca'];
+                    $genealogia = $item['genealogia'];
+                    $idade = $item['idade'];
+                    $preco = $item['preco'];
+                    include 'card_telas.php';
                 }?>
             </div>
-            <button class="nav-button next">❯</button>
         </div>
     </div>
 

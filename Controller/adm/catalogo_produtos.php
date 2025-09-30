@@ -1,4 +1,9 @@
+<?php
+require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
+?>
+
 <?php include 'menu_inicial.php';?>
+<?php include 'catalogo_adm_produtos_action.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,7 +18,7 @@
 </head>
 
 <body>
-    <section id="atualizar-produtos">
+     <section id="atualizar-produtos">
         <div id="page-title-atualizar-produtos">
             <div id="title-atualizar-produtos">
                 <a href="#" onclick="window.history.back(); return false;"><i class="fa-solid fa-chevron-left"></i></a>
@@ -31,7 +36,7 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                <a href="#">Inativados</a>
+                  <a href="?status=ativos">Ativos</a> | <a href="?status=inativados">Inativados</a> 
             </div>
             <div id="break-line">
             </div>
@@ -49,32 +54,56 @@
                             <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
                         </tr>
 
+                        <?php if (!empty($produtos)): ?>
+                            <?php foreach ($produtos as $p): ?>
+                                <tr>
+                                    <td class="select-all-atualizar-produtos">
+                                        <input type="checkbox" name="produto_id[]" value="<?= $p['id_produto'] ?>" class="product-checkbox">
+                                    </td>
+
+                                    <td class="product-name-atualizar-produtos cell-atualizar-produto">
+                                        <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['produto']) ?></span></div>
+                                    </td>
+
+                                    <td class="product-category-atualizar-produtos cell-atualizar-produto">
+                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['categoria'] ?? 'Sem categoria') ?></span></div>
+                                    </td>
+
+                                    <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                        <?= htmlspecialchars($p['subcategoria'] ?? 'Sem subcategoria') ?>
+                                    </td>
+
+                                    <td class="price-atualizar-produtos cell-atualizar-produto">
+                                        R$ <?= number_format($p['preco'], 2, ',', '.') ?>
+                                    </td>
+
+                                    <td class="update-atualizar-produtos cell-atualizar-produto">
+                                        <a href="editar_produto.php?id=<?= $p['id_produto'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    </td>
+
+                                    <td class="exclude-atualizar-produtos cell-atualizar-produto">
+                                        <?php include 'toogle.php'; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="7" style="text-align:center;">Nenhum produto cadastrado</td>
+                            </tr>
+                        <?php endif; ?>
+                         <?php foreach ($produtos as $produto): ?>
                         <tr>
-                            <td class="select-all-atualizar-produtos">
-                                <input type="checkbox" id="#" name="#" class="product-checkbox">
-                            </td>
-
-                            <td class="product-name-atualizar-produtos cell-atualizar-produto">
-                                <div class="product-atualizar-produtos"><span>Nome do produto</span></div>
-                            </td>
-
-                            <td class="product-category-atualizar-produtos cell-atualizar-produto">
-                                <div class="category-name-atualizar-produtos"><span>Nome da categoria</span></div>
-                            </td>
-
-                            <td class="qt-atualizar-produtos cell-atualizar-produto">Subcategoria</td>
-
-                            <td class="price-atualizar-produtos cell-atualizar-produto">Preço do produto</td>
-
-                            <td class="update-atualizar-produtos cell-atualizar-produto">
-                                <a href="editar_produto.php"><i class="fa-solid fa-pen-to-square"></i></a>
-                            </td>
-
-                            <td class="exclude-atualizar-produtos cell-atualizar-produto">
+                            <td><input type="checkbox" name="produtos[]" value="<?= $produto['id_produto'] ?>"></td>
+                            <td><?= htmlspecialchars($produto['prod_nome']) ?></td>
+                            <td><?= htmlspecialchars($produto['id_categoria']) ?></td>
+                            <td><?= htmlspecialchars($produto['id_subcategoria']) ?></td>
+                            <td><?= number_format($produto['valor'], 2, ',', '.') ?></td>
+                            <td><a href="editar_produto.php?id=<?= $produto['id_produto'] ?>">Editar</a></td>
+                            <td>
                                 <?php include 'toogle.php'; ?>
                             </td>
-                            
                         </tr>
+                        <?php endforeach; ?>
                     </table>
                 </div>
             </div>

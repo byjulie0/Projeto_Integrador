@@ -45,7 +45,7 @@
 }
 .client-edit-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; 
     gap: 2.5rem;
     margin-bottom: 1.875rem;
 }
@@ -172,6 +172,7 @@
         font-size: 0.8125rem;
     }
 }
+
 @media (max-width: 360px) {
     .client-edit-main {
         padding: 0.875rem 0.375rem;
@@ -189,5 +190,24 @@
         padding: 0.625rem 0.75rem;
         font-size: 0.75rem;
     }
+
+    .client-edit-column {
+        flex-direction: column;
+    }
+    .client-edit-grid {
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+    }
+    .client-edit-title-titulo{
+        font-size: 24px;
+        margin-top: 2%;
+        margin-bottom: 0;
+    }
 }
-/*Fim inserir senha alterar dados Arthur*/
+@media (max-width: 768px) {
+    .client-edit-title-titulo{
+        margin-top: 2%;
+        margin-bottom: 0;
+    }
+
+}
