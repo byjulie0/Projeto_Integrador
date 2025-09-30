@@ -3,6 +3,9 @@ session_start();
 include '../../model/DB/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Recebe dados do formulário
+    $email = $_POST['username'];
+    $password = $_POST['password'];
     $senhaDigitada = trim($_POST['senha'] ?? '');
     $email = $_SESSION['email'] ?? '';
 
