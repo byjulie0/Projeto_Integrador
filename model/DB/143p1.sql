@@ -99,9 +99,6 @@ CREATE TABLE carrinho (
     FOREIGN KEY (produto_id_produto) REFERENCES produto(id_produto),
     FOREIGN KEY (cliente_id_cliente) REFERENCES cliente(id_cliente)
 );
-ALTER TABLE produto ADD imagem VARCHAR(255) NULL;
-UPDATE produto SET imagem = '../../view/public/imagens/blank_image.png' WHERE id_produto = 1;
-
 
 CREATE TABLE notificacoes(
     id_notificacao INT AUTO_INCREMENT PRIMARY KEY,
