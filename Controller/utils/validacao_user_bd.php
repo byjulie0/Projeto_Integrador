@@ -4,7 +4,7 @@ include '../../model/DB/conexao.php'; // arquivo com a conexão ao banco
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recebe dados do formulário
-    $email = $_POST['email'];
+    $email = $_POST['username'];
     $password = $_POST['password'];
 
     // Preparar consulta segura para evitar SQL Injection
