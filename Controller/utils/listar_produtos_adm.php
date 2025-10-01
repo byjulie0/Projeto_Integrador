@@ -12,7 +12,6 @@ $sql = "SELECT
         FROM produto p
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
         LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria
-        WHERE $filtroStatus
         ORDER BY p.prod_nome ASC";
 
 $result = $con->query($sql);

@@ -14,6 +14,8 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
+    <link rel="stylesheet" href="../../view/public/css/adm/toogle.css">
+    <script defer src="../../view/js/adm/toogle.js"></script>
 </head>
 
 <body>
@@ -79,8 +81,23 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                     </td>
 
                                     <td class="exclude-atualizar-produtos cell-atualizar-produto">
-                                        <?php include 'toogle_adm_inativar.php'; ?>
+                                        <form method="POST" action="toggle_adm_inativar.php" style="display:inline;">
+                                            <input type="hidden" name="id_produto" value="<?= $p['id_produto'] ?>">
+                                            <input type="hidden" name="status_atual" value="<?= $p['produto_ativo'] ?>">
+
+                                            <?php 
+                                            $icone = $p['produto_ativo'] ? 'fa-toggle-on' : 'fa-toggle-off';
+                                            $ariaPressed = $p['produto_ativo'] ? 'true' : 'false';
+                                            ?>
+
+                                            <button type="submit" name="toggle_produto" 
+                                                    class="icon-toggle-btn" 
+                                                    aria-pressed="<?= $ariaPressed ?>">
+                                                <i class="fa-solid <?= $icone ?>"></i>
+                                            </button>
+                                        </form>
                                     </td>
+
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
