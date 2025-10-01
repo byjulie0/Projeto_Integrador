@@ -16,7 +16,6 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
 </head>
-
 <body>
      <section id="atualizar-produtos">
         <div id="page-title-atualizar-produtos">

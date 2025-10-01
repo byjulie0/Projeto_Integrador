@@ -94,3 +94,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// --- adicionar_produto.js ---
+
+// Espera o DOM carregar antes de rodar
+document.addEventListener("DOMContentLoaded", () => {
+    const catSel = document.getElementById('categoria');
+    const subSel = document.getElementById('subcategoria');
+
+    // subMap é carregado do PHP via JSON no HTML
+    const subMap = window.subMapData || {};
+
+    // Campos que devem ser desabilitados caso "Produtos Gerais" seja escolhido
+    const camposAnimal = [
+        document.querySelector('input[name="peso"]'),
+        document.querySelector('input[name="idade"]'),
+        document.querySelector('select[name="sexo"]'),
+        document.querySelector('select[name="campeao"]')
+    ];
+
+    // Função para atualizar o estado dos campos
+    function atualizarCamposAnimal() {
+        const catId = parseInt(catSel.value);
+        const desabilitar = (catId === 5); // 5 = Produtos Gerais
+
+        camposAnimal.forEach(campo => {
+            campo.disabled = desabilitar;
+            campo.required = !desabilitar;
+            if (desabilitar) campo.value = "";
+        });
+    }
+
+    // Atualiza subcategorias e campos quando mudar a categoria
+    catSel.addEventListener('change', () => {
+        const catId = catSel.value;
+        subSel.innerHTML = '<option value="" selected disabled>Selecione uma subcategoria</option>';
+
+        if (subMap[catId]) {
+            subMap[catId].forEach(sub => {
+                const opt = document.createElement('option');
+                opt.value = sub.id_subcategoria;
+                opt.textContent = sub.subcat_nome;
+                subSel.appendChild(opt);
+            });
+            subSel.disabled = false;
+        } else {
+            subSel.disabled = true;
+        }
+
+        atualizarCamposAnimal();
+    });
+});
