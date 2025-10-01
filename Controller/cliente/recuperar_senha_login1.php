@@ -23,10 +23,18 @@ include 'menu_recuperar_senha.php';
                     <p>Digite seu e-mail para enviarmos o código e gerar uma nova senha</p>
                     <form action="recuperar_senha_login2.php" class="esqueci_senha_card_email_formulario" method="GET">
                         <input type="email" name="esqueci_senha_card_email_digitar" placeholder="E-mail" required>
-                        <?php
-                        $texto = "Enviar"; 
-                        include 'botao_verde_cliente.php';
-                        ?>
+                        <div class="botoes_div">
+                            <?php
+                            $texto = "Enviar"; 
+                            include 'botao_verde_cliente.php';
+                            ?>
+                            <a href="#" onclick="window.history.back(); return false;">
+                            <?php
+                            $texto = "Cancelar"; 
+                            include 'botao_vermelho_cliente.php';
+                            ?>
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>
