@@ -51,68 +51,71 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                         <p class="product_title_info">Insira o nome do produto<span class="mandatory_space">*</span></p>
                         <input type="text" class="input_product_info" placeholder="Nome do produto" name="nome" required>
                     </article>
-
-                    <article class="input_product_champion">
-                        <p class="product_title_info">Categoria é um campeão?<span class="mandatory_space">*</span></p>
-                        <select id="is_champion" class="product_info_select" name="campeao" required>
-                            <option value="" selected disabled>Selecione uma opção</option>
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
-                        </select>
+                    
+                    <article class="input_product_price">
+                        <p class="product_title_info">Defina o valor do produto<span class="mandatory_space">*</span></p>
+                        <input type="number" placeholder="Valor" class="input_product_info" name="valor" required min="0.01" step="0.01">
                     </article>
-
+                    
                     <article class="input_product_quantity">
                         <p class="product_title_info">Quantidade do produto<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Quantidade" class="input_product_info" name="quantidade" required min="0">
                     </article>
-
+                    
                     <article class="input_product_subcategory">
                         <p class="product_title_info">Selecione uma categoria<span class="mandatory_space">*</span></p>
                         <select name="categoria" class="input_product_info" id="categoria" required>
                             <option value="" selected disabled>Selecione uma categoria</option>
                             <?php foreach ($categorias as $cat): ?>
                                 <option value="<?= $cat['id_categoria'] ?>"><?= htmlspecialchars($cat['cat_nome']) ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </article>
-
-                    <article class="input_product_subcategory">
-                        <p class="product_title_info">Selecione a subcategoria<span class="mandatory_space">*</span></p>
-                        <select name="subcategoria" class="input_product_info" id="subcategoria" required disabled>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                        </select>
-                    </article>
-
-                    <script>
-                        const subMap = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
-                        const catSel = document.getElementById('categoria');
-                        const subSel = document.getElementById('subcategoria');
-
-                        catSel.addEventListener('change', () => {
-                        const catId = catSel.value;
-                        subSel.innerHTML = '<option value="" selected disabled>Selecione uma subcategoria</option>';
-                        if (subMap[catId]) {
+                                <?php endforeach; ?>
+                            </select>
+                        </article>
+                        
+                        <article class="input_product_subcategory">
+                            <p class="product_title_info">Selecione a subcategoria<span class="mandatory_space">*</span></p>
+                            <select name="subcategoria" class="input_product_info" id="subcategoria" required disabled>
+                                <option value="" selected disabled>Selecione uma subcategoria</option>
+                            </select>
+                        </article>
+                        
+                        <script>
+                            const subMap = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
+                            const catSel = document.getElementById('categoria');
+                            const subSel = document.getElementById('subcategoria');
+                            
+                            catSel.addEventListener('change', () => {
+                                const catId = catSel.value;
+                                subSel.innerHTML = '<option value="" selected disabled>Selecione uma subcategoria</option>';
+                                if (subMap[catId]) {
                             subMap[catId].forEach(sub => {
-                            const opt = document.createElement('option');
-                            opt.value = sub.id_subcategoria;
-                            opt.textContent = sub.subcat_nome;
-                            subSel.appendChild(opt);
-                        });
-                        subSel.disabled = false;
+                                const opt = document.createElement('option');
+                                opt.value = sub.id_subcategoria;
+                                opt.textContent = sub.subcat_nome;
+                                subSel.appendChild(opt);
+                            });
+                            subSel.disabled = false;
                         } else {
                             subSel.disabled = true;
                         }
-                        });
+                    });
                     </script>
                 </div>
-
+                
                 <div class="product_details_collumn">
                         
                     <article class="input_product_quantity">
                         <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso" required min="0">
                     </article>
-                        
+
+                    
+                    <article class="input_product_quantity">
+                        <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
+                        <input type="date" class="input_product_info" name="idade" required>
+                    </article>
+                    
+
                     <article class="input_product_category">
                         <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
                         <select class="product_info_select" name="sexo" required>
@@ -122,21 +125,17 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                             <option value="Não se aplica">Não se aplica (Produto)</option>
                         </select>
                     </article>
-                        
-                    <article class="input_product_quantity">
-                        <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
-                        <input type="date" class="input_product_info" name="idade" required>
+                    
+                    <article class="input_product_champion">
+                        <p class="product_title_info">Categoria é um campeão?<span class="mandatory_space">*</span></p>
+                        <select id="is_champion" class="product_info_select" name="campeao" required>
+                            <option value="" selected disabled>Selecione uma opção</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
                     </article>
                         
-                    <article class="input_product_price">
-                        <p class="product_title_info">Defina o valor do produto<span class="mandatory_space">*</span></p>
-                        <input type="number" placeholder="Valor" class="input_product_info" name="valor" required min="0.01" step="0.01">
-                    </article>
                         
-                    <article class="input_product_quantity">
-                        <p class="product_title_info">Insira a descrição do produto<span class="mandatory_space">*</span></p>
-                        <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição..." class="input_product_info product_details" required></textarea>
-                    </article>
                 </div>
             </aside>
             </section>
