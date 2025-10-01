@@ -49,11 +49,18 @@
 @media (min-width: 360px) and (max-width: 391px) {
     .sub-titulo-termos-e-condicoes{
       padding-top: 20px;
+      font-size: 20px;
+      margin: 0 ;
     }
     .sub-titulo2-termos-e-condicoes{
       padding-top: 20px;
+      font-size: 20px;
     }
     .texto-termos-e-condicoes {
       padding: 20px 6%;
     }
+    h1{
+        font-size: 24px;
+    }
+    
 }

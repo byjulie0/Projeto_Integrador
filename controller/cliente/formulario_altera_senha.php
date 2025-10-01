@@ -32,7 +32,7 @@
                     <a href="recuperar_senha_login1.php" class="esqueceu_senha">Esqueceu a senha?</a>
                     <?php
                         $texto = "Salvar Senha";
-                        include 'botao_cliente.php';
+                        include 'botao_verde_cliente.php';
                     ?>
                 </div>
             </div>

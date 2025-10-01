@@ -40,7 +40,7 @@ include 'menu_login.php';
           <div class="btn-submit-login">
             <?php
             $texto = "Login";
-            include 'botao_cliente.php';
+            include 'botao_verde_cliente.php';
             ?>
           </div>
 

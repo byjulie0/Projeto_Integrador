@@ -50,7 +50,7 @@
                     </a>
                     <?php
                         $texto = "Salvar";
-                        include '../cliente/botao_cliente.php';
+                        include '../cliente/botao_verde_cliente.php';
                     ?>
                 </div>
             </form>
