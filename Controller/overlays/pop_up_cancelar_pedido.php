@@ -18,11 +18,15 @@
                 <a href="login.php">
                     <?php 
                     $texto = "Sim"; 
-                    include 'botao_cliente.php';
+                    include '../cliente/botao_verde_cliente.php';
                     ?>
                 </a>
-                <a href="#" onclick="window.history.back(); return false;>
-                    <?php include 'botao_cancelar.php'; ?>
+                <a>
+                <!-- <a href="#" onclick="window.history.back(); return false;> -->
+                    <?php 
+                    $texto = "Não"; 
+                    include '../cliente/botao_vermelho_cliente.php'; 
+                    ?>
                 </a>
             </div>
         </div>
