@@ -1,5 +1,7 @@
 <?php
 include 'menu_pg_inicial.php';
+
+include '../utils/libras.php'
 ?>
 
 <!DOCTYPE html>
