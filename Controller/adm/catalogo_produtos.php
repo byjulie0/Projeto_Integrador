@@ -3,7 +3,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
 ?>
 
 <?php include 'menu_inicial.php';?>
-<?php include 'catalogo_adm_produtos_action.php';?>
+<!-- include 'catalogo_adm_produtos_action.php' -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,11 +21,8 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
      <section id="atualizar-produtos">
         <div id="page-title-atualizar-produtos">
             <div id="title-atualizar-produtos">
-                <a href="#" onclick="window.history.back(); return false;"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="#" onclick="window.history.back(); return false;"><i class="bi bi-chevron-left"></i></a>
                 <h3>Catálogo de Produtos</h3>
-            </div>
-            <div id="subtitle-atualizar-produtos">
-                <span>Pesquise pelos produtos do catálogo que deseja alterar</span>
             </div>
         </div>
         <div id="page-content-atualizar-produtos">
@@ -36,10 +33,11 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                  <a href="?status=ativos">Ativos</a> | <a href="?status=inativados">Inativados</a> 
+                <a href="?status=ativos">Ativos</a>
+                <a href="#">Inativados</a>
             </div>
-            <div id="break-line">
-            </div>
+            <hr class="break-line">
+            <!-- ?status=inativados -->
             <div id="table2-atualizar-produtos">
                 <div id="table-space-atualizar-produtos">
                     <table>

@@ -128,13 +128,8 @@ include 'menu_pg_inicial.php';
                 <div class="separation-line-carrinho"></div>
 
                 <?php
-<<<<<<< HEAD
                 $texto = "Fechar Pedido"; 
-                include 'botao_cliente.php';
-=======
-                    $texto = "Fechar Pedido"; 
-                    include 'botao_cliente.php';
->>>>>>> 2e5584122721940def2a7c8b176a728e6d172c8e
+                include 'botao_verde_cliente.php';
                 ?>
             </div>
         </section>

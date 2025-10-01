@@ -49,15 +49,15 @@ include 'menu_pg_inicial.php';?>
                     <input type="password" name="senha" class="password-input-arthura" placeholder="Digite sua senha:">
                     
                     <div class="botoes-arthura">
-                    <?php
-                    $texto = "Visualizar meu dados";
-                    include 'botao_cliente.php';
-                    ?>
-                    </a>
-                    <a href="../cliente/logout.php">
-                        <?php include 'botao_logout.php';?>
-                    </a>
-                </div>
+                        <?php
+                        $texto = "Visualizar meu dados";
+                        include 'botao_verde_cliente.php';
+                        ?>
+                        </a>
+                        <a href="../cliente/logout.php">
+                            <?php include 'botao_logout.php';?>
+                        </a>
+                   </div>
             
                 </form>
 

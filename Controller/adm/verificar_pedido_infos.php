@@ -16,7 +16,7 @@
 <body>
     <section id="informacoes-pedidos">
         <div id="title-informacoes-pedidos">
-            <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
+            <a href="#"><i class="bi bi-chevron-left"></i></a>
             <h3>Verificar e administrar pedidos</h3>
         </div>
         <div id="subtitle-informacoes-pedidos">
@@ -82,7 +82,7 @@
                             <button class="register-payment-btn-informacoes-pedidos">Registrar pagamento</button>
                             <?php
                             $texto = "Marcar como enviado";
-                            include 'botao_adm.php';
+                            include 'botao_verde_adm.php';
                             ?>
                         </div>
                     </div>
