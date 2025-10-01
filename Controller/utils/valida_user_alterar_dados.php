@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result->num_rows === 1) {
         $row = $result->fetch_assoc();
 
-        if ($senhaDigitada === $row['senha']) {
+        if (password_verify($senhaDigitada, $row['senha'])) {
             header("Location: ../../Controller/cliente/meu_perfil_editar.php");
             exit;
         } else {
@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Usuário não encontrado.";
         exit;
     }
-}
+
     $stmt->close();
+}
 ?>
