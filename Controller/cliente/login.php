@@ -46,7 +46,7 @@ unset($_SESSION['erro_login']); // Limpa a mensagem após exibir
           <div class="btn-submit-login">
             <?php
             $texto = "Login";
-            include 'botao_cliente.php';
+            include 'botao_verde_cliente.php';
             ?>
           </div>
 

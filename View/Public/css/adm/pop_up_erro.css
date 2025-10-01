@@ -30,14 +30,14 @@
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    color:  var( --warning-color);
+    color: var( --warning-color);
     transition: color 0.3s ease;
 }
 h1{
     align-items: center;
     justify-content: center;
     margin: 15px auto;
-    color: #2d8c37;
+    color: #ff0000;
 }
 .texto_popup_sucesso{
     align-items: center;

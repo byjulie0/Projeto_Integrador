@@ -165,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
         <div class="edit_product_submit_button">
             <?php
             $texto = "Avançar";
-            include 'botao_adm.php';
+            include 'botao_verde_adm.php';
             ?>
         </div>
     </div>

@@ -105,24 +105,17 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                 <div class="product_details_collumn">
                         
                     <article class="input_product_quantity">
-                        <p class="product_title_info">Insira a descrição do produto<span class="mandatory_space">*</span></p>
-                        <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição..." class="input_product_info product_details" required></textarea>
-                    </article>
-                    
-                    <article class="input_product_quantity">
                         <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
                         <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso" required min="0">
                     </article>
-<<<<<<< Updated upstream
-                        
-=======
+
                     
                     <article class="input_product_quantity">
                         <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
                         <input type="date" class="input_product_info" name="idade" required>
                     </article>
                     
->>>>>>> Stashed changes
+
                     <article class="input_product_category">
                         <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
                         <select class="product_info_select" name="sexo" required>
@@ -150,7 +143,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
             <div class="add_product_submit_button">
                 <?php
                 $texto = "Avançar";
-                include 'botao_adm.php';
+                include 'botao_verde_adm.php';
                 ?>
             </div>
         </form>
