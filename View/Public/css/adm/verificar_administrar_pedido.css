@@ -63,8 +63,9 @@
   cursor: pointer;
   padding: 0;
 }
-.bi-search{
+.verificar_administrar_pedidos_sessao_formulario_pesquisa i{
   color: var(--color-primary-1);
+  
 }
 
 /* Linha divisória */
@@ -91,8 +92,9 @@
   border-collapse: collapse;
   table-layout: fixed;
 }
-.verificar_administrar_pedidos_sessao_pedidos th{
+.linha_cinza th{
   width: 100%;
+  padding: 14px;
   background-color: #E5E7E5;
 }
 
@@ -108,7 +110,7 @@
   font-weight: 400;
   color: var(--color-primary-1);
 }
-.lupa-administar-pedidos, .bi-search{
+.lupa-administar-pedidos i{
   color: var(--color-primary-3);
   cursor: pointer;
   font-size: 16px;

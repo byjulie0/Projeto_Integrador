@@ -131,7 +131,7 @@ include '../utils/libras.php'
 
                 <?php
                 $texto = "Fechar Pedido"; 
-                include 'botao_cliente.php';
+                include 'botao_verde_cliente.php';
                 ?>
             </div>
         </section>

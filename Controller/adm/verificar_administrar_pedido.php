@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../../view/public/css/adm/verificar_administrar_pedido.css">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fontawesome.com/icons/money-check-pen?f=classic&s=solid">
 </head>
 
 <body class="verificar_administrar_pedidos_body">
@@ -42,7 +41,7 @@
         <div class="verificar_administrar_pedidos_sessao_visualizar">
             <div class="verificar_administrar_pedidos_sessao_pedidos">
                 <table>
-                    <tr>
+                    <tr class="linha_cinza">
                         <th class="header-cliente-name-verificar-administar header-cell-gerenciar-clientes">Pedido</th>
                         <th class="header-cell-verificar-administar-pedidos">Abertura</th>
                         <th class="header-cell-verificar-administar-pedidoss">Status</th>
@@ -65,7 +64,7 @@
                         <td class="price-atualizar-produtos cell-atualizar-produto">014.254.789-50</td>
 
                         <td class="lupa-administar-pedidos cell-atualizar-produto">
-                            <a href="verificar_pedidos_infos.php"><i class="fa-solid fa-money-check-pen"></i></a>
+                            <a href="verificar_pedidos_infos.php"> <i class="bi bi-search"></i></a>
                         </td>
                     </tr>
                 </table>
