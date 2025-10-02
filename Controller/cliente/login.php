@@ -1,6 +1,5 @@
-<?php include 'menu_login.php'; 
-
-
+<?php
+include 'menu_login.php';
 
 ?>
 <!DOCTYPE html>
@@ -15,20 +14,21 @@
 </head>
 
 <body>
-  <main class="container_geral_login">
-    <div class="login_box_vinycius">
-      <div class="info_login_vinycius">
-        <div class="container-img-login">
-          <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
-        </div>
-        <p class="text_login_vinycius">
-          Aqui você encontra bovinos, galináceos, equinos e produtos agropecuários com qualidade e confiança.
-        </p>
-      </div>
-      <div class="login_form_vinycius">
-        <h2>Login</h2>
-        <form class="form_login" action="../utils/validacao_user_bd.php" method="POST">
-          <input type="email" name="email" placeholder="E-mail cadastrado" class="input_login_vinycius1" required>
+    <main class="container_geral_login">
+        <div class="login_box_vinycius">
+            <div class="info_login_vinycius">
+                <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
+                <p class="text_login_vinycius">
+                    Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo
+                    com qualidade e confiança para o seu negócio.
+                </p>
+            </div>
+
+            <div class="login_form_vinycius">
+                <h2>Login</h2>
+                <form class="form_login" action="../utils/validacao_user_bd.php" method="POST">
+                    <input type="text" name="email" placeholder="E-mail" class="input_login_vinycius1"
+                        required>
 
           <div class="senha_container">
             <input type="password" name="password" id="senha" placeholder="Senha" class="input_login_vinycius2" required>
@@ -40,7 +40,7 @@
           <div class="btn-submit-login">
             <?php
             $texto = "Login";
-            include 'botao_cliente.php';
+            include 'botao_verde_cliente.php';
             ?>
           </div>
 

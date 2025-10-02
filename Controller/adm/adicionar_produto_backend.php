@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $descricao    = mysqli_real_escape_string($con, $_POST['descricao']);
     $sexo         = mysqli_real_escape_string($con, $_POST['sexo']);
     $peso         = mysqli_real_escape_string($con, $_POST['peso']);
+    $idade        = mysqli_real_escape_string($con, $_POST['idade']);
     $campeao      = mysqli_real_escape_string($con, $_POST['campeao']);
     $categoria    = mysqli_real_escape_string($con, $_POST['categoria']);
     $subcategoria = mysqli_real_escape_string($con, $_POST['subcategoria']);
@@ -31,10 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (move_uploaded_file($caminhoTemp, $caminhoFinal)) {
             $caminhoRelativo = 'uploads/' . $nomeUnico;
 
+            // 🔹 Agora incluindo o campo "idade" no INSERT
             $query = "INSERT INTO produto 
-                (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, campeao, id_categoria, id_subcategoria) 
+                (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria) 
                 VALUES 
-                ('$nome', '$valor', '$quantidade', '$caminhoRelativo', '$descricao', '$sexo', '$peso', '$campeao', '$categoria', '$subcategoria')";
+                ('$nome', '$valor', '$quantidade', '$caminhoRelativo', '$descricao', '$sexo', '$peso', '$idade', '$campeao', '$categoria', '$subcategoria')";
 
             if (mysqli_query($con, $query)) {
                 $popup_titulo = "Produto cadastrado!";
@@ -72,6 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </div>
 
-<link rel="stylesheet" href="../../view/public/css/adm/pop_up_resultado.css">
+<link rel="stylesheet" href="../../view/public/css/cliente/pop_up_resultado.css">
 <script src="../../view/public/js/pop_up_resultado.js"></script>
 <?php endif; ?>

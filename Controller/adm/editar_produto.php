@@ -22,15 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
 
         <div class="title_page_edit_product">
             <a href="#" onclick="window.history.back(); return false;" class="arrow_edit_product">
-                <i class="fa-solid fa-chevron-left">
-                </i>
+                <i class="bi bi-chevron-left"></i>
             </a>
             <h1 class="tile_edit_product">Editar Produto</h1>
         </div>
-        <p class="info_edit_product">Preencha as informações necessárias para edição das informações do produto</p>
         <section class="edit_product_area">
             <article class="edit_product_image">
-                <p class="product_title_info_img">Carregar nova imagem</p>
                 <div class="img_holder">
                     <label class="img_holder_button">
                         <i class="fa-solid fa-arrow-up-from-bracket"> <span>Selecione uma imagem</span> </i>
@@ -43,9 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
 
                     <article class="input_product_name">
                         <p class="product_title_info">Nome do produto</p>
-                        <input type="text" class="input_product_info" placeholder="Titulo_que_esta_no_DB" required>
-                        <span class="error-message">Por favor, preencha este campo</span>
-                    </article>
+                        <input type="text" class="input_product_info" placeholder="Nome do produto" required>
+                        
 
                     <article class="input_product_champion">
                             <p class="product_title_info">Categoria é um campeão?</p>
@@ -54,12 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
                             <option value="sim">Sim</option>
                              <option value="nao">Não</option>
                         </select>
-                        <span class="error-message">Por favor, selecione uma opção</span>
                     </article>
 
                     <article class="input_product_quantity">
                         <p class="product_title_info">Quantidade do produto</p>
-                        <input type="number" placeholder="Quantidade_que_esta_no_DB" class="input_product_info" required min="0">
+                        <input type="number" placeholder="Quantidade do produto" class="input_product_info" required min="0">
                     </article>
 
                     <article class="input_product_category">
@@ -136,15 +131,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
                 <div class="product_details_collumn">
 
                     <article class="input_product_price">
-                        <p class="product_title_info">Edite o valor do produto</p>
-                        <input type="number" placeholder="Valor_que_esta_no_DB" class="input_product_info" required min="0.01"
+                        <p class="product_title_info">Valor do produto</p>
+                        <input type="number" placeholder=" Valor do produto" class="input_product_info" required min="0.01"
                             step="0.01">
-                        <span class="error-message">Informe um valor válido (maior que zero)</span>
                     </article>
 
                     <article class="input_product_quantity">
                         <p class="product_title_info">Peso do animal em kg</p>
-                        <input type="number" placeholder="Peso_que_esta_no_DB" class="input_product_info" required min="0">
+                        <input type="number" placeholder="Peso do animal" class="input_product_info" required min="0">
                     </article>
                     
                     <article class="input_product_category">
@@ -156,15 +150,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
                             <option value="" class="product_categories">Fêmea</option>
                             <option value="" class="product_categories">Não se aplica (Produto)</option>
                         </select>
-                        
-                        <span class="error-message">Por favor, selecione uma opção</span>
                     </article>
                     
                     
 
                     <article class="input_product_quantity">
-                        <p class="product_title_info">Edite a descrição do produto</p>
-                        <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição_que_esta_no_DB" class="input_product_info product_details" required></textarea>
+                        <p class="product_title_info">Descrição do produto</p>
+                        <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição..." class="input_product_info product_details" required></textarea>
                     </article>
                     
                 </div>
@@ -173,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
         <div class="edit_product_submit_button">
             <?php
             $texto = "Avançar";
-            include 'botao_adm.php';
+            include 'botao_verde_adm.php';
             ?>
         </div>
     </div>
