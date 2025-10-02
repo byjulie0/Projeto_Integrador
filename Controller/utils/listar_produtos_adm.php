@@ -11,8 +11,14 @@ $sql = "SELECT
             p.produto_ativo
         FROM produto p
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
-        LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria
-        ORDER BY p.prod_nome ASC";
+        LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria";
+
+
+if (!empty($filtroStatus)) {
+    $sql .= " WHERE $filtroStatus";
+}
+
+$sql .= " ORDER BY p.prod_nome ASC";
 
 $result = $con->query($sql);
 
@@ -22,5 +28,3 @@ if ($result && $result->num_rows > 0) {
         $produtos[] = $row;
     }
 }
-
-?>

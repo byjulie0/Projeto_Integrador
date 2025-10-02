@@ -35,7 +35,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                     </button>
                 </div>
                 <a href="?status=ativos">Ativos</a>
-                <a href="#">Inativados</a>
+                <a href="?status=inativos">Inativados</a>
             </div>
             <hr class="break-line">
             <!-- ?status=inativados -->

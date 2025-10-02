@@ -1,14 +1,10 @@
 <?php
-require_once(__DIR__ . "/../../model/DB/conexao.php");
+$status = $_GET['status'] ?? null;
 
-$status = $_GET['status'] ?? 'ativos';
-
-if ($status === 'inativados') {
+if ($status === 'inativos') {
     $filtroStatus = "p.produto_ativo = 0";
-} else {
+} elseif ($status === 'ativos') {
     $filtroStatus = "p.produto_ativo = 1";
+} else {
+    $filtroStatus = "";
 }
-
-
-
-?>
