@@ -33,7 +33,8 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </form>
-            <a href="#">Inativados</a>
+            <a href="#" id="btn-inativos">Inativados</a>
+
         </div>
 
         <div id="break-line"></div>
@@ -139,7 +140,47 @@ $('#campo-busca').on('input', function () {
 });
 
 
+})
+//----- cod para user inativos
+$('#btn-inativos').click(function(e) {
+    e.preventDefault();
+
+    $.ajax({
+        url: '../../Controller/utils/buscar_clientes.php',
+        method: 'POST',
+        dataType: 'json',
+        data: { inativos: 1 },  // enviando um parâmetro para filtrar inativos
+        success: function(clientes) {
+            let html = '';
+
+            if (clientes.length) {
+                clientes.forEach(c => {
+                    html += `
+                        <tr>
+                            <td><input type="checkbox" name="cliente[]" value="${c.id_cliente}" class="cliente-checkbox"></td>
+                            <td>${c.cliente_nome}</td>
+                            <td>${c.cpf_cnpj}</td>
+                            <td>${new Date(c.data_nasc).toLocaleDateString('pt-BR')}</td>
+                            <td>
+                                <button type="button" class="icon-toggle-btn" data-id="${c.id_cliente}" aria-pressed="${c.user_ativo == 0 ? 'true' : 'false'}">
+                                    <i class="fa-solid ${c.user_ativo == 0 ? 'fa-toggle-on' : 'fa-toggle-off'}"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                html = `<tr><td colspan="5" style="text-align:center;">Nenhum cliente encontrado.</td></tr>`;
+            }
+
+            $('#table2-gerenciar-clientes table tbody').html(html);
+        },
+        error: function() {
+            alert('Erro ao buscar clientes inativos.');
+        }
+    });
 });
+;
 </script>
 
 </body>

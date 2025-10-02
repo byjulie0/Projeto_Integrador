@@ -13,16 +13,21 @@
         <div class="area_login_popup">
             <span class="fechar_login_popup">&times;</span>
             <h2 class="h2_popup_login">Login necessário!</h2>
-            <p>Você precisa estar logado para acessar esta funcionalidade</p>
+            <p>Você precisa estar logado para acessar esta funcionalidade.</p>
+            <p>Deseja fazer o login?</p>
             <div class="botoes_popup_login">
                 <a href="login.php">
                     <?php 
                     $texto = "Fazer Login"; 
-                    include 'botao_cliente.php';
+                    include '../cliente/botao_verde_cliente.php';
                     ?>
                 </a>
-                <a href="#" onclick="window.history.back(); return false;>
-                    <?php include 'botao_cancelar.php'; ?>
+                <a>
+                <!-- <a href="#" onclick="window.history.back(); return false;> -->
+                    <?php 
+                    $texto = "Não"; 
+                    include '../cliente/botao_vermelho_cliente.php'; 
+                    ?>
                 </a>
             </div>
         </div>

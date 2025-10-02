@@ -127,7 +127,7 @@
 .menu-toggle {
     display: none;
     background: none;
-    border: 2px solid var(--color-primary);
+    border: none;
     border-radius: 6px;
     font-size: 1.4rem;
     color: var(--color-primary);

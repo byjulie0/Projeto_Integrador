@@ -43,11 +43,12 @@
         <a href="meu_perfil_editar.php">
             <?php
             $texto = "Editar meus dados";
-            include '../cliente/botao_cliente.php';
+            include '../cliente/botao_verde_cliente.php';
             ?>
         </a>
         <a href="login.php">
-            <?php include '../cliente/botao_logout.php';?>
+            <?php 
+            include '../cliente/botao_logout.php';?>
         </a>
     </div>
 </div>

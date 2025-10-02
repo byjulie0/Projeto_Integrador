@@ -28,7 +28,7 @@
                 <div class="botao_cancelar">
                     <?php
                         $texto = "Cancelar";
-                        include 'botao_cancelar.php';
+                        include 'botao_vermelho_cliente.php';
                     ?>
                 </div>
             </div>
