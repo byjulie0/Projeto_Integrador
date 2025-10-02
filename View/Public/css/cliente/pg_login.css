@@ -36,13 +36,6 @@
   text-align: center;
 }
 
-.container-img-login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .img_login {
   max-height: 330px;
   max-width: 100%;
