@@ -100,7 +100,13 @@
 }
 
 /* RESPONSIVIDADE */
-@media (max-width: 425px) {
+@media (max-width: 768px) {
+  .pedido_detalhes p{
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 760px) {
   .container_historico_compras{
     align-items: center;
   }
@@ -108,11 +114,10 @@
   .area_historico_compras {
     flex-direction: column-reverse;
     width: 100%;
-    
   }
 
   .titulo_historico_compras {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .div_data_pedido_pc {
