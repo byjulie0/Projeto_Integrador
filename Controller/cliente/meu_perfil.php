@@ -86,7 +86,7 @@ catch (PDOException $e) {
         <a href="meu_perfil_senha.php">
           <?php
             $texto = "Editar meu dados";
-            include 'botao_cliente.php';
+            include 'botao_verde_cliente.php';
             ?>
         </a>
         <a href="/Projeto_Integrador/controller/cliente/logout.php">
