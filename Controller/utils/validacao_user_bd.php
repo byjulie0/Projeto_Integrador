@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = mysqli_real_escape_string($con,$_POST['password']);
 
     $query = "select * from cliente where email = '{$email}' ";
-    echo $query;
 
 
     $result = mysqli_query($con, $query);
