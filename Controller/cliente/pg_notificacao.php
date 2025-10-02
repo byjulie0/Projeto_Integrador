@@ -68,4 +68,4 @@ $stmt->close();
 </body>
 </html>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer_cliente.php'; ?>
