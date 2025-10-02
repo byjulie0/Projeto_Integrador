@@ -50,6 +50,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="mt-3">
+                        <div class="g-recaptcha" data-sitekey="<?php echo '6Lc2Z9wrAAAAANVCpF0OuokXx1kvr9MSBb7GpFwT'?>"></div>
+                    </div>
+
+                    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
                     <div class="btn-submit-cadastro">
                         <?php
