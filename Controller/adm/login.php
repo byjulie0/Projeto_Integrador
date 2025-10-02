@@ -25,7 +25,7 @@
 
             <div class="login_form_adm">
                 <h2>Login</h2>
-                <form class="form_login" action="login.php" method="POST">
+                <form class="form_login" action="../../Controller/utils/valida_login_adm.php" method="POST">
                     <input type="email" name="email" placeholder="E-mail do ADM" class="input_login_adm1" required>
 
                     <div class="senha_container">
