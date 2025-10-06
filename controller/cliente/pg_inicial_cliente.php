@@ -1,6 +1,8 @@
 
-<?php include '../utils/validacao_login.php'; 
-include '../utils/libras.php';?>
+<?php 
+include '../utils/validacao_login.php'; 
+include '../utils/libras.php';
+?>
       
 
 <!DOCTYPE html>
