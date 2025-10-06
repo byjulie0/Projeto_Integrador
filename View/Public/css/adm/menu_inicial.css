@@ -80,6 +80,7 @@
 
 .nav-item-pg-adm:hover {
     background-color: var(--hover-bg);
+    transform: translateY(-2px);
 }
 
 .nav-page-btns-pg-adm {
@@ -126,7 +127,7 @@
 .menu-toggle {
     display: none;
     background: none;
-    border: 2px solid var(--color-primary);
+    border: none;
     border-radius: 6px;
     font-size: 1.4rem;
     color: var(--color-primary);

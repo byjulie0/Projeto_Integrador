@@ -30,12 +30,12 @@
     position: relative;
     top: -10px;
     text-align: center;
-    color: var(--color-fonte);
+    color: var(--color-primary-1);
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 20px;
 }
-.esqueci_senha_card_email_content h3 {
+.esqueci_senha_card_email_content p {
     max-width: 100%;
     text-align: center;
     color: var(--color-primary-1);
@@ -59,45 +59,22 @@
     border-radius: 2px;
     padding: 0 15px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-    font-size: 1rem;
-    color: #000000;
+    font-size: 14px;
     box-sizing: border-box;
+    color: var(--color-primary-1);
 }
 .esqueci_senha_card_email_formulario input::placeholder {
   text-indent: 1px;
+  font-size: 13px;
+  color: var(--color-primary-1);
 }
-.esqueci_senha_card_email_formulario button {
-    position: relative;
-    left: 0;
-    width: 130px;
-    height: 40px;
-    background-color: #ffffff;
-    border-radius: 2px;
-    border: none;
-    color: var(--color-primary-1);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.botoes_div{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
 }
-.esqueci_senha_card_email_formulario button:hover {
-    background-color: var(--color-primary-2);
-    color: #ffffff;
-}
-.esqueci_senha_card_email_seta_voltar {
-    position: relative;
-    top: 5px;
-    left: calc(50% - 33vw);
-    font-size: 1.7rem;
-    color: var(--color-primary-1);
-    cursor: pointer;
-}
-@media (max-width: 1250px) {
-    .esqueci_senha_card_email_seta_voltar{
-      top: -35px;
-      left: 10px;
-    }
-}
+
 @media (max-width: 768px){
     .esqueci_senha_card_email_main {
       padding: 0 20px;
@@ -118,8 +95,7 @@
       margin-bottom: 30px;
     }
   
-    .esqueci_senha_card_email_formulario input,
-    .esqueci_senha_card_email_formulario button {
+    .esqueci_senha_card_email_formulario input {
       max-width: 90%;
     }
 }
@@ -150,11 +126,7 @@
       margin-top: -5%;
       margin-bottom: 2%;
     }
-    .esqueci_senha_card_email_formulario button{
-      font-size: 0.8rem;
-      width: 60%;
-      height: 30px;
-    }
+    
 }
 
 /* Recuperar senha login 2 */
@@ -188,12 +160,12 @@
     position: relative;
     top: -10px;
     text-align: center;
-    color: var(--color-fonte);
+    color: var(--color-primary-1);
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 20px;
 }
-.recuperar_senha_codigo_content h3 {
+.recuperar_senha_codigo_content p{
     max-width: 100%;
     text-align: center;
     color: var(--color-primary-1);
@@ -216,38 +188,23 @@
     border-radius: 2px;
     padding: 0 15px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-    font-size: 1rem;
-    color: #000000;
+    font-size: 14px;
+    color: var(--color-primary-1);
     box-sizing: border-box;
 }
 .recuperar_senha_codigo_formulario input::placeholder {
-    text-indent: 1px;
+  text-indent: 1px;
+  font-size: 13px;
+  color: var(--color-primary-1);
 }
-.recuperar_senha_codigo_formulario button {
-    position: relative;
-    width: 130px;
-    height: 40px;
-    background-color: #ffffff;
-    border-radius: 2px;
-    border: none;
-    color: var(--color-primary-1);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+
+.botoes_div{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
 }
-.recuperar_senha_codigo_formulario button:hover {
-    background-color: var(--color-primary-2);
-    color: #ffffff;
-}
-.recuperar_senha_codigo_seta_voltar {
-    position: relative;
-    top: 5px;
-    left: calc(50% - 33vw);
-    font-size: 1.7rem;
-    color: var(--color-primary-1);
-    cursor: pointer;
-}
+
 @media (max-width: 1250px){
     .recuperar_senha_codigo_seta_voltar{
       top: -35px;
@@ -341,12 +298,12 @@
 }
 .recuperar_senha_rede_formulario h1 {
   text-align: center;
-  color: var(--color-fonte);
+  color: var(--color-primary-1);
   font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 20px;
 }
-.recuperar_senha_rede_formulario h3 {
+.recuperar_senha_rede_formulario p {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -380,28 +337,18 @@
   border-radius: 2px;
   padding: 0 15px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  font-size: 1rem;
-  color: #000000;
+  font-size: 14px;
+  color: var(--color-primary-1);
   box-sizing: border-box;
 }
-#btnEnviar {
-  width: 130px;
-  height: 40px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  border: none;
+.form_rede_senha input::placeholder {
+  text-indent: 1px;
+  font-size: 13px;
   color: var(--color-primary-1);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 10px auto 0;
-  display: block;
 }
-.form_rede_senha button:hover {
-  background-color: var(--color-primary-2);
-  color: #ffffff;
-}
+
+
+
 @media (max-width: 767px) {
     .recuperar_senha_codigo_seta_voltar, .recuperar_senha_codigo_seta_voltar i{
       display: none;
@@ -443,6 +390,14 @@
       height: 30px;
       font-size: 0.8rem;
     }
+}
+@media (max-width: 360px){
+  .botoes_div{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+    
+  }
 }
 
 /* POP-UP */
