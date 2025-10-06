@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 25px;
+  max-width: 100%;
 }
 
 /* Cabeçalho */
@@ -114,6 +115,8 @@
   background: #e7f0e8;
   padding: 15px;
   border-radius: 12px;
+  height: 180px;  
+  align-items: center;
 }
 .card_atividades h3 {
   margin-bottom: 10px;
@@ -130,3 +133,7 @@
 .btn_imprimir:hover {
   background: var(--color-primary-6);
 }
+
+
+
+

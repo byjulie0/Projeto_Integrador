@@ -1,4 +1,5 @@
 <?php
+include '../../Controller/utils/valida_adm.php';
 include 'menu_inicial.php';
 include '../cliente/carrossel_pg_inicial.php';
 include '../cliente/categorias_pg_inicial.php';
