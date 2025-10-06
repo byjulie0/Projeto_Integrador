@@ -2,8 +2,7 @@
 session_start();
 
 include '../../model/DB/conexao.php';
-include '/../includes/recaptcha_verify.php';
-
+include '../verificacao_robo/verify_robo.php';
 
 function validarCPF($cpf) {
     $cpf = preg_replace('/\D/', '', $cpf);
@@ -43,16 +42,6 @@ function validarCNPJ($cnpj) {
     }
     return true;
 }
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $token = $_POST['g-recaptcha-response'] ?? '';
-    if (!verify_recaptcha($token)) {
-        $_SESSION['erro'] = "⚠️ Falha na verificação do reCAPTCHA. Tente novamente.";
-        header("Location: ../controler/cliente/cadastro.php");
-        exit;
-    }
-}
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

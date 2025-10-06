@@ -16,7 +16,7 @@ function mostrarPopup(tipo, mensagem) {
     texto.classList.add("texto_popup");
 
     // configura por tipo
-    if (tipo === "success") {
+    if (tipo === "sucesso") {
         titulo.innerText = "Sucesso!";
         titulo.style.color = "#2d8c37";  
         texto.style.color = "#2d8c37";
