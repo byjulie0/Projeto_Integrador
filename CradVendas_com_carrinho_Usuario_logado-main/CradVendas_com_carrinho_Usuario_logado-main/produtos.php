@@ -40,8 +40,7 @@ $id_cliente = $_SESSION['id_cliente'];
     $sql = "SELECT * FROM produtos";
     $result = $mysqli->query($sql);
 
-    while ($row = $result->fetch_assoc()):
-    ?>
+    while ($row = $result->fetch_assoc()):?>
         <div class="card">
             <img src="<?php echo $row['imagem']; ?>" alt="<?php echo $row['nome']; ?>">
             <h3><?php echo $row['nome']; ?></h3>
