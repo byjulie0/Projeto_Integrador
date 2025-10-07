@@ -3,42 +3,40 @@ session_start();
 include '../../model/DB/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Recebe dados do formulário
-    $email = $_POST['username'];
-    $password = $_POST['password'];
-    $senhaDigitada = trim($_POST['senha'] ?? '');
-    $email = $_SESSION['email'] ?? '';
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con,$_POST['password']);
 
-    if (!$email) {
-        echo "Usuário não está logado.";
-        exit;
-    }
+    $query = "select * from cliente where email = '{$email}' ";
 
-    if (empty($senhaDigitada)) {
-        echo "Por favor, insira a senha.";
-        exit;
-    }
 
-    $stmt = $con->prepare("SELECT senha FROM cliente WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $result = mysqli_query($con, $query);
 
-    if ($result->num_rows === 1) {
-        $row = $result->fetch_assoc();
+    $row = mysqli_num_rows($result);
 
-        if (password_verify($senhaDigitada, $row['senha'])) {
-            header("Location: ../../Controller/cliente/meu_perfil_editar.php");
-            exit;
-        } else {
-            echo "Senha inválida.";
-            exit;
-        }
+    if ($row > 0) {
+        $retorno = mysqli_fetch_array($result);
     } else {
-        echo "Usuário não encontrado.";
-        exit;
+        // echo 'Login invalido'; //criar um alerta ALGUM DADO ERRADO
+        header("location: ../cliente/login.php");
+        exit();
     }
 
-    $stmt->close();
+    if (password_verify($password, $retorno['senha'])) {
+
+        $_SESSION["nome"] = $retorno['cliente_nome'];
+        $_SESSION["email"] = $retorno['email'];
+
+
+        header("location: ../cliente/pg_inicial_cliente.php");
+        exit();
+    } else {
+        // echo 'Login invalido'; //criar um alerta
+        header("location: ../cliente/login.php");
+
+    }
 }
+
+
+
+
 ?>
