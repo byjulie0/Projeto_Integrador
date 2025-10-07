@@ -77,7 +77,7 @@
   flex: 1;
   display: flex;
   align-items: center;
-  background: #e7f0e8;
+  background: #d2efd5;
   padding: 12px;
   gap: 10px;
   border-radius: 12px;
@@ -90,7 +90,7 @@
 .fa-cart-plus,
 .fa-users {
   display: flex;
-  background-color: #d1e2cd;
+  background-color: #ddf3df;
   padding: 10px;
   border-radius: 100%;
 }
@@ -102,7 +102,7 @@
 }
 
 .card_estatisticas {
-  background: #e7f0e8;
+  background: #ddf3df;
   padding: 15px;
   border-radius: 12px;
   grid-column: span 3;
@@ -113,7 +113,7 @@
 }
 
 .card_atividades {
-  background: #e7f0e8;
+  background: #ddf3df;
   padding: 15px;
   border-radius: 12px;
   height: 180px;  
@@ -191,6 +191,7 @@
     margin: 0 auto;
     grid-template-columns: 1fr;
     gap: 10px;
+    margin-left: 200px;
   }
 
   .relatorios_main {
