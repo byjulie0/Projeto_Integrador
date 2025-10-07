@@ -26,11 +26,12 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 </head>
 <body class="body_add_product">
 
+    <div class="area_add_product">
         <div class="title_page_add_product">
             <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
                 <i class="bi bi-chevron-left"></i>
-            </a>
-            <h1 class="tile_add_product">Adicionar Produto</h1>
+                </a>
+                <h1 class="tile_add_product">Adicionar Produto</h1>
         </div>
 
         <section class="add_product_area">
@@ -134,18 +135,96 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                     </article>
                     
                     <article class="input_product_quantity">
-                        <p class="product_title_info">Insira a descrição do produto<span class="mandatory_space">*</span></p>
-                        <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição..." class="input_product_info product_details" required></textarea>
+                        <p class="product_title_info">Quantidade do produto<span class="mandatory_space">*</span></p>
+                        <input type="number" placeholder="Quantidade" class="input_product_info" name="quantidade" required min="0">
                     </article>
+                    
+                    <article class="input_product_subcategory">
+                        <p class="product_title_info">Selecione uma categoria<span class="mandatory_space">*</span></p>
+                        <select name="categoria" class="input_product_info" id="categoria" required>
+                            <option value="" selected disabled>Selecione uma categoria</option>
+                            <?php foreach ($categorias as $cat): ?>
+                                <option value="<?= $cat['id_categoria'] ?>"><?= htmlspecialchars($cat['cat_nome']) ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </article>
+                        
+                        <article class="input_product_subcategory">
+                            <p class="product_title_info">Selecione a subcategoria<span class="mandatory_space">*</span></p>
+                            <select name="subcategoria" class="input_product_info" id="subcategoria" required disabled>
+                                <option value="" selected disabled>Selecione uma subcategoria</option>
+                            </select>
+                        </article>
+                        
+                        <script>
+                            const subMap = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
+                            const catSel = document.getElementById('categoria');
+                            const subSel = document.getElementById('subcategoria');
+                            
+                            catSel.addEventListener('change', () => {
+                                const catId = catSel.value;
+                                subSel.innerHTML = '<option value="" selected disabled>Selecione uma subcategoria</option>';
+                                if (subMap[catId]) {
+                            subMap[catId].forEach(sub => {
+                                const opt = document.createElement('option');
+                                opt.value = sub.id_subcategoria;
+                                opt.textContent = sub.subcat_nome;
+                                subSel.appendChild(opt);
+                            });
+                            subSel.disabled = false;
+                        } else {
+                            subSel.disabled = true;
+                        }
+                    });
+                    </script>
+                </div>
+                
+                <div class="product_details_collumn">
+                        
+                    <article class="input_product_quantity">
+                        <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
+                        <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso" required min="0">
+                    </article>
+
+                    
+                    <article class="input_product_quantity">
+                        <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
+                        <input type="date" class="input_product_info" name="idade" required>
+                    </article>
+                    
+
+                    <article class="input_product_category">
+                        <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
+                        <select class="product_info_select" name="sexo" required>
+                            <option value="" selected disabled>Selecione uma opção</option>
+                            <option value="M">Macho</option>
+                            <option value="F">Fêmea</option>
+                            <option value="Não se aplica">Não se aplica (Produto)</option>
+                        </select>
+                    </article>
+                    
+                    <article class="input_product_champion">
+                        <p class="product_title_info">Categoria é um campeão?<span class="mandatory_space">*</span></p>
+                        <select id="is_champion" class="product_info_select" name="campeao" required>
+                            <option value="" selected disabled>Selecione uma opção</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </article>
+                        
+                        
                 </div>
             </aside>
-        </section>
+            </section>
 
-        <div class="add_product_submit_button">
-            <button type="submit" class="botao_adm">Avançar</button>
-        </div>
-    </form>
-</div>
+            <div class="add_product_submit_button">
+                <?php
+                $texto = "Avançar";
+                include 'botao_verde_adm.php';
+                ?>
+            </div>
+        </form>
+    </div>
 
 <?php include 'footer.php'; ?>
 </body>

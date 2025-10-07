@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 25px;
+  max-width: 100%;
 }
 
 .relatorios_header {
@@ -51,7 +52,7 @@
 
 .verificar_administrar_pedidos_sessao_mini_titulos_2 {
   font-size: 0.9rem;
-  color: var(--color-fonte);
+  color: var(--color-primary-1);
   cursor: pointer;
   font-weight: 500;
 }
@@ -60,6 +61,7 @@
   border: none;
   border-bottom: 1px solid #bbb;
   margin-top: 5px;
+  color: var(--color-primary-1);
 }
 
 .relatorios_cards_topo {
@@ -114,6 +116,8 @@
   background: #e7f0e8;
   padding: 15px;
   border-radius: 12px;
+  height: 180px;  
+  align-items: center;
 }
 
 .card_atividades h3 {

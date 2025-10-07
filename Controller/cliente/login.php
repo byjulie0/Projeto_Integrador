@@ -27,20 +27,19 @@ include 'menu_login.php';
             <div class="login_form_vinycius">
                 <h2>Login</h2>
                 <form class="form_login" action="../utils/validacao_user_bd.php" method="POST">
-                    <input type="text" name="username" placeholder="Nome de usuário" class="input_login_vinycius1"
-                        required>
+                  <input type="text" name="email" placeholder="E-mail" class="input_login_vinycius1" required>
 
-          <div class="senha_container">
-            <input type="password" name="password" id="senha" placeholder="Senha" class="input_login_vinycius2" required>
-            <span class="toggle_senha" onclick="toggleSenha()">
-              <i id="icone_senha" class="fa-solid fa-eye"></i>
-            </span>
-          </div>
+                  <div class="senha_container">
+                    <input type="password" name="password" id="senha" placeholder="Senha" class="input_login_vinycius2" required>
+                    <span class="toggle_senha" onclick="toggleSenha()">
+                      <i id="icone_senha" class="fa-solid fa-eye"></i>
+                    </span>
+                  </div>
 
           <div class="btn-submit-login">
             <?php
             $texto = "Login";
-            include 'botao_cliente.php';
+            include 'botao_verde_cliente.php';
             ?>
           </div>
 
