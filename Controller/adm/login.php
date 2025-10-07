@@ -35,17 +35,10 @@
                         </span>
                     </div>
 
-                    <div class="btn-submit-login-adm">
-                        <?php
-                        $texto = "Login";
-                        include 'botao_verde_adm.php';
-                        ?>
-                    </div>
+                    <button type="submit" class="button_adm">LOGIN</button> 
 
-                    <div class="info-login">
-                        <a href="../cliente/recuperar_senha_login1.php" class="esqueci_senha_login">Esqueci minha senha</a>
-                        <a href="../cliente/login.php" class="area-cliente">Área do cliente</a>
-                    </div>
+                    <a href="../cliente/recuperar_senha_login1.php">Esqueci minha senha</a>
+                    <a href="../cliente/login.php">Área do cliente</a>
                 </form>
             </div>
         </div>
