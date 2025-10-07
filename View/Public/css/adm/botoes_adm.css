@@ -19,11 +19,15 @@
 }
 
 .botao_verde_adm {
-    background-color: var(--color-botao-op-Concluido);  
+    background-color: var(--color-botao-op-Concluido);
 }
 
 .botao_vermelho_adm {
-    background-color: red;  
+    background-color: red;
+}
+
+.logout-confirm {
+    background-color: red;
 }
 
 .logout-confirm {
