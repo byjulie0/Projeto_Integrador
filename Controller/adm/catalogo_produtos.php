@@ -33,8 +33,10 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                <a href="?status=ativos">Ativos</a>
-                <a href="#">Inativados</a>
+                <div class="botoes-catalogo-container">
+                    <a href="?status=ativos">Ativos</a>
+                    <a href="#">Inativados</a>
+                </div>
             </div>
             <hr class="break-line">
             <!-- ?status=inativados -->
