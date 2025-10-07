@@ -2,6 +2,7 @@
 session_start();
 
 include '../../model/DB/conexao.php';
+include '../verificacao_robo/verify_robo.php';
 
 function validarCPF($cpf) {
     $cpf = preg_replace('/\D/', '', $cpf);
@@ -41,7 +42,6 @@ function validarCNPJ($cnpj) {
     }
     return true;
 }
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -109,4 +109,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: ../../Controller/cliente/login.php");
     exit();
 }
+
 ?>
