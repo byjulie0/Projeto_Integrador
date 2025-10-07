@@ -34,6 +34,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
+                <a href="">Todos</a>
                 <a href="?status=ativos">Ativos</a>
                 <a href="?status=inativos">Inativados</a>
             </div>
