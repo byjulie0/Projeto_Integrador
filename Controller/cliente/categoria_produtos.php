@@ -115,7 +115,7 @@ $result = $con->query($query);
                         $nome = $row['prod_nome'];
                         $valor = number_format($row['valor'], 2, ',', '.');
                         $subcategoria = $row['subcat_nome']; // Para possível uso no card
-                        include 'card_telas.php'; 
+                        include 'card_telas.php';
                         ?>
                     </div>
                 <?php endwhile;
@@ -134,7 +134,7 @@ $result = $con->query($query);
                         </button>
                     </div>
                 <?php endif;
-            } 
+            }
             ?>
         </div>
         

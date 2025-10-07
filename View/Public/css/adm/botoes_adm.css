@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:View/Public/css/cliente/botoes_cliente.css
+@import url("../cliente.css");
+========
 @import url("../adm.css");
+>>>>>>>> ajustes_front_end:View/Public/css/adm/botoes_adm.css
 
 .generate_report_product_button {
     gap: 10px;
@@ -18,11 +22,23 @@
     transition: all 0.2s ease;
 }
 
+<<<<<<<< HEAD:View/Public/css/cliente/botoes_cliente.css
+.botao_verde_cliente {
+    background-color: var(--color-botao-op-Concluido);  
+}
+
+.botao_vermelho_cliente {
+========
 .botao_verde_adm {
     background-color: var(--color-botao-op-Concluido);  
 }
 
 .botao_vermelho_adm {
+>>>>>>>> ajustes_front_end:View/Public/css/adm/botoes_adm.css
+    background-color: red;  
+}
+
+.logout-confirm {
     background-color: red;  
 }
 
