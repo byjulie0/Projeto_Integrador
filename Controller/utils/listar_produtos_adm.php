@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__ . "/../../model/DB/conexao.php");
 
-$sql = "SELECT 
+$sql = "SELECT
             p.id_produto,
             p.prod_nome AS produto,
             c.cat_nome AS categoria,
@@ -10,7 +10,8 @@ $sql = "SELECT
         FROM produto p
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
         LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria
-        ORDER BY p.prod_nome ASC";
+        ORDER BY p.prod_nome ASC"
+;
 
 $result = $con->query($sql);
 

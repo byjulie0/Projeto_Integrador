@@ -137,6 +137,7 @@
 .btn_imprimir:hover {
   background: var(--color-primary-6);
 }
+
 .grafico-container {
   width: 100%;
   max-width: 600px;
@@ -295,3 +296,9 @@
     font-size: 15px;
   }
 }
+
+
+
+
+
+

@@ -64,6 +64,29 @@ include 'menu_cadastro.php';?>
                     </div>
 
                 </form>
+
+
+
+                    <form id="myForm" action="verify_robo.php" method="POST">
+                        <div class="g-recaptcha" data-sitekey="6LdIlOArAAAAAFvXhEakEwdsM9ZiX0H-RtF7xguk"></div>
+
+
+
+
+                    </form> 
+                    <script>
+                        document.getElementById('myForm')addEventLister('submit',function(e) {
+                            var response = grecaptcha.getResponse();
+                            if (response.length == 0){
+                                e.preventDefault();
+                                alert("Por favor,marque o reCAPTCHA antes de enviar o formulário")
+                            }   
+                        });
+                        </script>
+              
+           
+                   
+              
               
             </div>
 

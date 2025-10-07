@@ -1,5 +1,7 @@
 <?php
 include 'menu_pg_inicial.php';
+
+include 'sessao_ativa.php';
 ?>
 
 <!DOCTYPE html>
