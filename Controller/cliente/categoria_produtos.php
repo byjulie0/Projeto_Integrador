@@ -1,6 +1,7 @@
 <?php
 include 'menu_pg_inicial.php';
-include '../../model/DB/conexao.php';
+include '../../model/DB/conexao.php'
+;
 
 // Obter o parâmetro de filtro da URL
 $filtro = isset($_GET['classificar']) ? $_GET['classificar'] : '';

@@ -3,6 +3,7 @@
 include '../../Controller/utils/validacao_login.php';
 include '../../model/DB/conexao.php';
 include 'menu_pg_inicial.php';
+include '../utils/libras.php';
 
 $email_user = $_SESSION['email'];
 
