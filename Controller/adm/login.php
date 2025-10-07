@@ -35,7 +35,7 @@
                         </span>
                     </div>
 
-                    <button type="submit" class="button_adm">LOGIN</button> 
+                    <button type="submit" class="button_adm">LOGIN</button>
 
                     <a href="../cliente/recuperar_senha_login1.php">Esqueci minha senha</a>
                     <a href="../cliente/login.php">Área do cliente</a>
