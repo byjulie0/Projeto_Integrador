@@ -2,53 +2,7 @@
 include 'menu_pg_inicial.php';
 include '../utils/libras.php';
 include '../utils/sessao_ativa.php';
-
-$email_user = $_SESSION['email'];
-
-
-try {
-    $stmt = $con->prepare("SELECT cliente_nome, email, telefone, cidade, data_nasc, cep FROM cliente WHERE email = ?");
-    $stmt->bind_param("s", $email_user);
-    $stmt->execute();
-
-    $result = $stmt->get_result();
-    $usuario = $result->fetch_assoc();
-
-    if (!$email_user) {
-        die('Usuário não encontrado.');
-    }
-
-    $cep = preg_replace('/[^0-9]/', '', $usuario['cep']);
-    $url = "https://viacep.com.br/ws/{$cep}/json/";
-    $response = file_get_contents($url);
-    $endereco = json_decode($response, true);
-
-    if (!isset($endereco['erro'])) {
-        $rua = $endereco['logradouro'];
-        $bairro = $endereco['bairro'];
-        $cidade = $endereco['localidade'];
-    } else {
-        $rua = $bairro = $cidade = "CEP inválido";
-  }
-}
-catch (PDOException $e) {
-  echo "Erro ao buscar dados do usuário: " . $e->getMessage();
-}
-
-
 ?>
-
-<!-- $cep = preg_replace('/[^0-9]/', '', $usuario['cep']);
-$url = "https://viacep.com.br/ws/{$cep}/json/";
-$response = file_get_contents($url);
-$endereco = json_decode($response, true);
- if (!isset($endereco['erro'])) {
-$rua = $endereco['logradouro'];
-$bairro = $endereco['bairro'];
-$cidade = $endereco['localidade'];
-} else {
-$rua = $bairro = $cidade = "CEP inválido";
-} -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
