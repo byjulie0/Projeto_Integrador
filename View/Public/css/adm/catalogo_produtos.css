@@ -72,7 +72,17 @@
 .first-container-atualizar-produtos a{
     font-size: 14px;
     font-weight: 400;
-    color: var(--warning-color);
+    color: var(--color-primary-1);
+    /* text-decoration: underline; */
+}
+.catalogo_produtos_botao_todos:hover{
+    color: rgb(130, 136, 141);
+}
+.catalogo_produtos_botao_ativos:hover{
+    color: #28a745;
+}
+.catalogo_produtos_botao_inativos:hover{
+    color: #dc3545;
 }
 #search-bar-atualizar-produtos input {
     border: none;
