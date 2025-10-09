@@ -1,4 +1,7 @@
-<?php include 'menu_inicial.php' ?>
+<?php
+include 'menu_inicial.php';
+include '../utils/sessao_ativa.php';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
