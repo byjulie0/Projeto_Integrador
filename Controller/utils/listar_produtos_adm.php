@@ -2,7 +2,7 @@
 require_once(__DIR__ . "/../../model/DB/conexao.php");
 require_once(__DIR__ . "/catalogo_adm_produtos_action.php");
 
-$sql = "SELECT 
+$sql = "SELECT
             p.id_produto,
             p.prod_nome AS produto,
             c.cat_nome AS categoria,
