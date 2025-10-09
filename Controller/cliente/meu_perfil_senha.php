@@ -1,8 +1,7 @@
-<!-- Arthur -->
-
 <?php
-include '../../Controller/utils/validacao_login.php';
-include 'menu_pg_inicial.php';?>
+include 'menu_pg_inicial.php';
+include '../../Controller/utils/sessao_ativa.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -51,7 +50,7 @@ include 'menu_pg_inicial.php';?>
                     <div class="botoes-arthura">
                         <?php
                         $texto = "Visualizar meu dados";
-                        include 'botao_cliente.php';
+                        include 'botao_verde_cliente.php';
                         ?>
                         </a>
                         <a href="../cliente/logout.php">

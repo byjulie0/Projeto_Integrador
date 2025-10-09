@@ -165,6 +165,11 @@ while ($r = mysqli_fetch_assoc($resSub)) {
             <button type="submit" class="add_product_button">
                 <i class="bi bi-save"></i> Salvar Alterações
             </button>
+        <div class="edit_product_submit_button">
+            <?php
+            $texto = "Avançar";
+            include 'botao_verde_adm.php';
+            ?>
         </div>
     </form>
 </div>
