@@ -1,7 +1,6 @@
 <?php
 include 'menu_pg_inicial.php';
-
-include 'sessao_ativa.php';
+include '../utils/sessao_ativa.php';
 ?>
 
 <!DOCTYPE html>
@@ -130,7 +129,7 @@ include 'sessao_ativa.php';
                 <div class="separation-line-carrinho"></div>
 
                 <?php
-                $texto = "Fechar Pedido"; 
+                $texto = "Fechar Pedido";
                 include 'botao_verde_cliente.php';
                 ?>
             </div>
