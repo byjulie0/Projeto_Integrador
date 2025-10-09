@@ -1,19 +1,8 @@
 <?php
 include 'menu_pg_inicial.php';
+include '../utils/libras.php';
 include '../utils/sessao_ativa.php';
 ?>
-
-<!-- $cep = preg_replace('/[^0-9]/', '', $usuario['cep']);
-$url = "https://viacep.com.br/ws/{$cep}/json/";
-$response = file_get_contents($url);
-$endereco = json_decode($response, true);
- if (!isset($endereco['erro'])) {
-$rua = $endereco['logradouro'];
-$bairro = $endereco['bairro'];
-$cidade = $endereco['localidade'];
-} else {
-$rua = $bairro = $cidade = "CEP inválido";
-} -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
