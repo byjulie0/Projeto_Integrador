@@ -1,18 +1,43 @@
 <?php
 include 'menu_inicial.php';
-include '../utils/sessao_ativa';
+include '../../model/DB/conexao.php';
+
+if (!isset($_SESSION['id_adm'])) {
+    die(include '../overlays/pop_up_login.php');
+}
+
+$id_adm = $_SESSION['id_adm'];
+
+$sql = "SELECT tipo, mensagemtexto, data_recebida
+        FROM notificacoes
+        WHERE id_adm = $id_adm
+        ORDER BY data_recebida DESC";
+
+$stmt = $con->prepare($sql);
+$stmt->bind_param("i", $id_adm);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$notificacoes = [];
+while ($row = $result->fetch_assoc()) {
+    $notificacoes[] = $row;
+}
+$stmt->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notificações</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
-    integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../view/public/css/adm/pg_notificacao.css">
 </head>
+
 <body>
     <div class="title_area_notifications">
         <div class="area_notifications">
@@ -42,6 +67,7 @@ include '../utils/sessao_ativa';
         </div>
     </div>
 </body>
+
 </html>
 
 <?php include 'footer.php'; ?>

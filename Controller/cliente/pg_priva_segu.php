@@ -1,6 +1,7 @@
 <?php
 
     include 'menu_pg_inicial.php';
+    include '../utils/libras.php';
 
 ?>
 
@@ -20,7 +21,7 @@
         <div class="page-title-pes">
             <div class="go-back-pes">
                 <a class="setinha-termos-e-condicoes" href="#" onclick="window.history.back(); return false;">
-                    <i class="fa-solid fa-chevron-left"></i>
+                    <i class="bi bi-chevron-left"></i> 
                 </a>
             </div>
             <div class="title-area-pes">

@@ -1,30 +1,22 @@
-<?php 
-session_start(); 
-
+<?php
 include 'menu_pg_inicial.php';
-include '../../model/DB/conexao.php';
-
-if (!isset($_SESSION['id_cliente'])) {
-    die( include '../overlays/pop_up_login.php');
-}
+include '../utils/libras.php';
+include '../utils/sessao_ativa.php';
 
 $id_cliente = $_SESSION['id_cliente'];
 
-$sql = "SELECT tipo, mensagemtexto, data_recebida 
-        FROM notificacoes 
-        WHERE id_cliente = ? 
+$query = "SELECT tipo, mensagemtexto, data_recebida
+        FROM notificacoes
+        WHERE id_cliente = $id_cliente
         ORDER BY data_recebida DESC";
 
-$stmt = $con->prepare($sql);
-$stmt->bind_param("i", $id_cliente);
-$stmt->execute();
-$result = $stmt->get_result();
+$result = $con->query($query);
 
 $notificacoes = [];
-while ($row = $result->fetch_assoc()) {
+while ($row = $result->fetch_all()) {
     $notificacoes[] = $row;
 }
-$stmt->close();
+$result->close();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

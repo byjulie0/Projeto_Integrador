@@ -26,7 +26,7 @@ $(function () {
     // Inicia os dois calendários
     $('#dataInicio').datepicker({
         onSelect: function () {
-            $('#dataFim').datepicker('show'); // abre o fim depois do início
+            $('#dataFim').datepicker('show');
         }
     });
 
@@ -51,23 +51,32 @@ $(function () {
         }
     }
 
-
     // ---------- Configuração do Gráfico ----------
     if (document.getElementById('graficoEstatisticas')) {
         const ctx = document.getElementById('graficoEstatisticas').getContext('2d');
+
         new Chart(ctx, {
             type: 'pie',
             data: {
                 labels: ['Cancelados', 'Vendidos', 'Pendentes'],
                 datasets: [{
-                    data: [30, 50, 20], // <- você troca pelos dados reais depois
+                    data: [30, 50, 20],
                     backgroundColor: ['#f28b82', '#aecbfa', '#fdd663']
                 }]
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false, // ✅ permite o gráfico se adaptar à altura do contêiner
                 plugins: {
-                    legend: { position: 'top' }
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: { size: 14 }
+                        }
+                    }
+                },
+                layout: {
+                    padding: 10
                 }
             }
         });

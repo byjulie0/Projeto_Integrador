@@ -25,7 +25,7 @@
 
             <div class="login_form_adm">
                 <h2>Login</h2>
-                <form class="form_login" action="login.php" method="POST">
+                <form class="form_login" action="../../Controller/utils/valida_login_adm.php" method="POST">
                     <input type="email" name="email" placeholder="E-mail do ADM" class="input_login_adm1" required>
 
                     <div class="senha_container">
@@ -35,17 +35,21 @@
                         </span>
                     </div>
 
-                    <button type="button" class="button_adm"
-                        onclick="window.location.href='pg_inicial_adm.php'">Login
-                    </button>
-                    <a href="../cliente/recuperar_senha_login1.php">Esqueci minha senha</a>
-                    <a href="../cliente/login.php">Área do cliente</a>
+                    <div class="btn-submit-login-adm">
+                        <?php
+                        $texto = "Login";
+                        include 'botao_verde_adm.php';
+                        ?>
+                    </div>
+
+                    <div class="info-login">
+                        <a href="../cliente/recuperar_senha_login1.php" class="esqueci_senha_login">Esqueci minha senha</a>
+                        <a href="../cliente/login.php" class="area-cliente">Área do cliente</a>
+                    </div>
                 </form>
             </div>
         </div>
     </main>
     <?php include 'footer.php'; ?>
-
 </body>
-
 </html>
