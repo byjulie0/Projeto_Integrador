@@ -1,8 +1,7 @@
-<!-- Arthur -->
-
 <?php
-include '../../Controller/utils/validacao_login.php';
-include 'menu_pg_inicial.php';?>
+include 'menu_pg_inicial.php';
+include '../../Controller/utils/sessao_ativa.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
