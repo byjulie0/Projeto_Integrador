@@ -86,8 +86,8 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                             $ariaPressed = $p['produto_ativo'] ? 'true' : 'false';
                                             ?>
 
-                                            <button type="submit" name="toggle_produto" 
-                                                    class="icon-toggle-btn" 
+                                            <button type="submit" name="toggle_produto"
+                                                    class="icon-toggle-btn"
                                                     aria-pressed="<?= $ariaPressed ?>">
                                                 <i class="fa-solid <?= $icone ?>"></i>
                                             </button>
