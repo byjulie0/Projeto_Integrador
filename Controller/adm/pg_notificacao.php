@@ -1,29 +1,6 @@
-<?php 
-session_start();
+<?php
 include 'menu_inicial.php';
-include '../../model/DB/conexao.php'; 
-
-if (!isset($_SESSION['id_adm'])) {
-    die( include '../overlays/pop_up_login.php');
-}
-
-$id_adm = $_SESSION['id_adm'];
-
-$sql = "SELECT tipo, mensagemtexto, data_recebida 
-        FROM notificacoes 
-        WHERE id_adm = ? 
-        ORDER BY data_recebida DESC";
-
-$stmt = $con->prepare($sql);
-$stmt->bind_param("i", $id_adm);
-$stmt->execute();
-$result = $stmt->get_result();
-
-$notificacoes = [];
-while ($row = $result->fetch_assoc()) {
-    $notificacoes[] = $row;
-}
-$stmt->close();
+include '../utils/sessao_ativa';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
