@@ -34,13 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
         select.disabled = true;
     });
 
-    // Validação do formulário
     const form = document.querySelector('.add_product_area');
     if (form) {
         let formSubmitted = false;
         const requiredFields = document.querySelectorAll('[required]');
 
-        // Função para validar campos individuais
         function validateField(field) {
             if (!formSubmitted) return true;
             
@@ -49,23 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return isValid;
         }
 
-        // Validação em tempo real após primeira tentativa
         requiredFields.forEach(field => {
             field.addEventListener('input', () => formSubmitted && validateField(field));
             field.addEventListener('change', () => formSubmitted && validateField(field));
         });
 
-        // Evento de submit
         form.addEventListener('submit', function(event) {
             formSubmitted = true;
             let formIsValid = true;
-            
-            // Valida campos obrigatórios
+
             requiredFields.forEach(field => {
                 if (!validateField(field)) formIsValid = false;
             });
 
-            // Validações específicas
             const visibleSubcategory = document.querySelector('.subcategory-select[style="display: block;"]');
             if (visibleSubcategory?.value === "") {
                 visibleSubcategory.classList.add('invalid-field');
@@ -95,17 +89,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// --- adicionar_produto.js ---
-
-// Espera o DOM carregar antes de rodar
 document.addEventListener("DOMContentLoaded", () => {
     const catSel = document.getElementById('categoria');
     const subSel = document.getElementById('subcategoria');
 
-    // subMap é carregado do PHP via JSON no HTML
     const subMap = window.subMapData || {};
 
-    // Campos que devem ser desabilitados caso "Produtos Gerais" seja escolhido
     const camposAnimal = [
         document.querySelector('input[name="peso"]'),
         document.querySelector('input[name="idade"]'),
@@ -113,11 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('select[name="campeao"]')
     ];
 
-    // Função para atualizar o estado dos campos
     function atualizarCamposAnimal() {
         const catId = parseInt(catSel.value);
-        const desabilitar = (catId === 5); // 5 = Produtos Gerais
-
+        const desabilitar = (catId === 5);
         camposAnimal.forEach(campo => {
             campo.disabled = desabilitar;
             campo.required = !desabilitar;
@@ -125,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Atualiza subcategorias e campos quando mudar a categoria
     catSel.addEventListener('change', () => {
         const catId = catSel.value;
         subSel.innerHTML = '<option value="" selected disabled>Selecione uma subcategoria</option>';

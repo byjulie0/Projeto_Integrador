@@ -1,181 +1,178 @@
-<?php include 'menu_inicial.php';?>
 <?php
-$mostrar_popup_sucesso = false;
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_avançar'])) {
-    $mostrar_popup_sucesso = true;
+include 'menu_inicial.php';
+include '../../model/DB/conexao.php';
+
+// Verifica se o ID foi enviado
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    echo "<script>alert('Produto não encontrado.'); window.history.back();</script>";
+    exit;
+}
+
+$id_produto = intval($_GET['id']);
+
+// Busca os dados do produto
+$sqlProd = "SELECT * FROM produto WHERE id_produto = $id_produto";
+$resProd = mysqli_query($con, $sqlProd);
+
+if (!$resProd || mysqli_num_rows($resProd) == 0) {
+    echo "<script>alert('Produto não encontrado.'); window.history.back();</script>";
+    exit;
+}
+
+$produto = mysqli_fetch_assoc($resProd);
+
+// Busca categorias
+$sqlCat = "SELECT id_categoria, cat_nome FROM categoria";
+$resCat = mysqli_query($con, $sqlCat);
+$categorias = [];
+while ($r = mysqli_fetch_assoc($resCat)) {
+    $categorias[] = $r;
+}
+
+// Busca subcategorias
+$sqlSub = "SELECT id_subcategoria, subcat_nome, id_categoria FROM subcategoria";
+$resSub = mysqli_query($con, $sqlSub);
+$subMap = [];
+while ($r = mysqli_fetch_assoc($resSub)) {
+    $subMap[$r['id_categoria']][] = $r;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Produto</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../../view/public/css/adm/editar_produto.css">
-    <script defer src="../../view/js/adm/editar_produto.js"></script>
+    <title>Editar Produto</title>
+    <link rel="stylesheet" href="../../view/public/css/adm/adicionar_produto.css">
+    <script defer src="../../view/js/adm/adicionar_produto.js"></script>
 </head>
+<body class="body_add_product">
 
-<body class="body_edit_product">
-    <div class="area_edit_product">
+<div class="area_add_product">
+    <div class="title_page_add_product">
+        <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
+            <i class="bi bi-chevron-left"></i>
+        </a>
+        <h1 class="tile_add_product">Editar Produto</h1>
+    </div>
 
-        <div class="title_page_edit_product">
-            <a href="#" onclick="window.history.back(); return false;" class="arrow_edit_product">
-                <i class="bi bi-chevron-left"></i>
-            </a>
-            <h1 class="tile_edit_product">Editar Produto</h1>
-        </div>
-        <section class="edit_product_area">
-            <article class="edit_product_image">
+    <form action="../utils/editar_produto_backend.php" method="POST" enctype="multipart/form-data">
+        <!-- ID oculto -->
+        <input type="hidden" name="id_produto" value="<?= $produto['id_produto'] ?>">
+
+        <section class="add_product_area">
+            <article class="add_product_image">
                 <div class="img_holder">
                     <label class="img_holder_button">
-                        <i class="fa-solid fa-arrow-up-from-bracket"> <span>Selecione uma imagem</span> </i>
-                        <input type="file" accept="image/*" style="display: none;">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        <span>Alterar imagem</span>
+                        <input type="file" class="input_product_info" accept="image/*" name="imagem" style="display:none;">
                     </label>
                 </div>
+                <?php if (!empty($produto['imagem'])): ?>
+                    <div style="text-align:center; margin-top:10px;">
+                        <img src="../../uploads/<?= htmlspecialchars($produto['imagem']) ?>" alt="Imagem atual" style="width:150px; border-radius:8px;">
+                    </div>
+                <?php endif; ?>
             </article>
-            <aside class="edit_product_details">
+
+            <aside class="add_product_details">
                 <div class="product_details_collumn">
 
                     <article class="input_product_name">
-                        <p class="product_title_info">Nome do produto</p>
-                        <input type="text" class="input_product_info" placeholder="Nome do produto" required>
-                        
+                        <p class="product_title_info">Nome do produto<span class="mandatory_space">*</span></p>
+                        <input type="text" class="input_product_info" name="nome" required value="<?= htmlspecialchars($produto['nome']) ?>">
+                    </article>
 
-                    <article class="input_product_champion">
-                            <p class="product_title_info">Categoria é um campeão?</p>
-                            <select name="is_champion" id="is_champion" class="product_info_select" required>
-                            <option value="" selected disabled>Selecione uma opção</option>
-                            <option value="sim">Sim</option>
-                             <option value="nao">Não</option>
-                        </select>
+                    <article class="input_product_price">
+                        <p class="product_title_info">Valor<span class="mandatory_space">*</span></p>
+                        <input type="number" class="input_product_info" name="valor" required min="0.01" step="0.01" value="<?= htmlspecialchars($produto['valor']) ?>">
                     </article>
 
                     <article class="input_product_quantity">
-                        <p class="product_title_info">Quantidade do produto</p>
-                        <input type="number" placeholder="Quantidade do produto" class="input_product_info" required min="0">
-                    </article>
-
-                    <article class="input_product_category">
-                        <p class="product_title_info">Edite a categoria</p>
-
-                        <select name="categories" id="categories" class="product_info_select" required>
-                            <option value="" selected disabled>Selecione uma categoria</option>
-                            <option value="bovinos" class="product_categories">Bovinos</option>
-                            <option value="equinos" class="product_categories">Equinos</option>
-                            <option value="galinaceos" class="product_categories">Galináceos</option>
-                            <option value="premiados" class="product_categories">Premiados</option>
-                            <option value="produtos_gerais" class="product_categories">Produtos Gerais</option>
-                        </select>
-
-                        <span class="error-message">Por favor, selecione uma categoria</span>
+                        <p class="product_title_info">Quantidade<span class="mandatory_space">*</span></p>
+                        <input type="number" class="input_product_info" name="quantidade" required min="0" value="<?= htmlspecialchars($produto['quantidade']) ?>">
                     </article>
 
                     <article class="input_product_subcategory">
-                        <p class="product_title_info">Edite a subcategoria</p>
-                        <select name="subcategories" id="bovinos_breed" class="product_info_select subcategory-select"
-                            required>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="angus" class="product_bull">Angus</option>
-                            <option value="brahman" class="product_bull">Brahman</option>
-                            <option value="brangus" class="product_bull">Brangus</option>
-                            <option value="hereford" class="product_bull">Hereford</option>
-                            <option value="nelore" class="product_bull">Nelore</option>
-                            <option value="senepol" class="product_bull">Senepol</option>
+                        <p class="product_title_info">Categoria<span class="mandatory_space">*</span></p>
+                        <select name="categoria" class="input_product_info" id="categoria" required>
+                            <option value="" disabled>Selecione uma categoria</option>
+                            <?php foreach ($categorias as $cat): ?>
+                                <option value="<?= $cat['id_categoria'] ?>" <?= ($cat['id_categoria'] == $produto['id_categoria']) ? 'selected' : '' ?>>
+                                    <?= htmlspecialchars($cat['cat_nome']) ?>
+                                </option>
+                            <?php endforeach; ?>
                         </select>
-
-                        <select name="subcategories" id="equinos_breed" class="product_info_select subcategory-select"
-                            required>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="arabe" class="product_horse">Árabe</option>
-                            <option value="draftbelga" class="product_horse">Draft Belga</option>
-                            <option value="Mustang" class="product_horse">Mustang</option>
-                            <option value="painthorse" class="product_horse">Paint Horse</option>
-                            <option value="percheron" class="product_horse">Percheron</option>
-                            <option value="puro_sangue" class="product_horse">Puro Sangue Inglês</option>
-                        </select>
-
-                        <select name="subcategories" id="galinaceos_breed"
-                            class="product_info_select subcategory-select" required>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="legornne" class="product_rooster">Legorne</option>
-                            <option value="leon" class="product_rooster">Léon</option>
-                            <option value="orpington" class="product_rooster">Orpington</option>
-                            <option value="playmouth_rock" class="product_rooster">Playmouth Rock</option>
-                            <option value="rhode_island" class="product_rooster">Rhode Island Redd</option>
-                        </select>
-
-                        <select name="subcategories" id="product_types" class="product_info_select subcategory-select"
-                            required>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="racao" class="general_product">Rações e suplementos alimentares</option>
-                            <option value="medicamento" class="general_product">Medicamentos veterinários</option>
-                            <option value="higiene" class="general_product">Produtos de higiene e cuidados</option>
-                            <option value="equipamento" class="general_product">Equipamentos e utensílios</option>
-                            <option value="suplemento" class="general_product">Suplementos nutricionais e aditivos</option>
-                        </select>
-
-                        <select name="subcategories" id="winner_breed" class="product_info_select subcategory-select"
-                            required>
-                            <option value="" selected disabled>Selecione uma subcategoria</option>
-                            <option value="melhor_exemplar" class="champion_product">Melhor exemplar</option>
-                            <option value="grande_campeao" class="champion_product">Grande Campeão</option>
-                            <option value="campeao_junior" class="champion_product">Campeão júnior</option>
-                            <option value="melhor_desempenho" class="champion_product">Melhor desempenho Funcional</option>
-                            <option value="melhor_apresentacao" class="champion_product">Melhor apresentação</option>
-                        </select>
-
                     </article>
+
+                    <article class="input_product_subcategory">
+                        <p class="product_title_info">Subcategoria<span class="mandatory_space">*</span></p>
+                        <select name="subcategoria" class="input_product_info" id="subcategoria" required>
+                            <option value="" disabled>Selecione uma subcategoria</option>
+                            <?php
+                            if (isset($subMap[$produto['id_categoria']])) {
+                                foreach ($subMap[$produto['id_categoria']] as $sub) {
+                                    $selected = ($sub['id_subcategoria'] == $produto['id_subcategoria']) ? 'selected' : '';
+                                    echo "<option value='{$sub['id_subcategoria']}' $selected>" . htmlspecialchars($sub['subcat_nome']) . "</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+                    </article>
+
                 </div>
+
                 <div class="product_details_collumn">
 
-                    <article class="input_product_price">
-                        <p class="product_title_info">Valor do produto</p>
-                        <input type="number" placeholder=" Valor do produto" class="input_product_info" required min="0.01"
-                            step="0.01">
+                    <article>
+                        <p class="product_title_info">Descrição<span class="mandatory_space">*</span></p>
+                        <textarea name="descricao" class="input_product_info product_details" required><?= htmlspecialchars($produto['descricao']) ?></textarea>
                     </article>
 
-                    <article class="input_product_quantity">
-                        <p class="product_title_info">Peso do animal em kg</p>
-                        <input type="number" placeholder="Peso do animal" class="input_product_info" required min="0">
+                    <article>
+                        <p class="product_title_info">Peso (kg)<span class="mandatory_space">*</span></p>
+                        <input type="number" class="input_product_info" name="peso" min="0" value="<?= htmlspecialchars($produto['peso']) ?>">
                     </article>
-                    
-                    <article class="input_product_category">
-                        <p class="product_title_info">Sexo do animal</p>
-                        
-                        <select name="categories" id="categories" class="product_info_select" required>
-                            <option value="" selected disabled>Selecione uma opção</option>
-                            <option value="" class="product_categories">Macho</option>
-                            <option value="" class="product_categories">Fêmea</option>
-                            <option value="" class="product_categories">Não se aplica (Produto)</option>
+
+                    <article>
+                        <p class="product_title_info">Idade<span class="mandatory_space">*</span></p>
+                        <input type="date" class="input_product_info" name="idade" value="<?= htmlspecialchars($produto['idade']) ?>">
+                    </article>
+
+                    <article>
+                        <p class="product_title_info">Sexo<span class="mandatory_space">*</span></p>
+                        <select class="product_info_select" name="sexo" required>
+                            <option value="M" <?= ($produto['sexo'] == 'M') ? 'selected' : '' ?>>Macho</option>
+                            <option value="F" <?= ($produto['sexo'] == 'F') ? 'selected' : '' ?>>Fêmea</option>
+                            <option value="Não se aplica" <?= ($produto['sexo'] == 'Não se aplica') ? 'selected' : '' ?>>Não se aplica (Produto)</option>
                         </select>
                     </article>
-                    
-                    
 
-                    <article class="input_product_quantity">
-                        <p class="product_title_info">Descrição do produto</p>
-                        <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição..." class="input_product_info product_details" required></textarea>
+                    <article>
+                        <p class="product_title_info">É campeão?<span class="mandatory_space">*</span></p>
+                        <select class="product_info_select" name="campeao" required>
+                            <option value="sim" <?= ($produto['campeao'] == 'sim') ? 'selected' : '' ?>>Sim</option>
+                            <option value="nao" <?= ($produto['campeao'] == 'nao') ? 'selected' : '' ?>>Não</option>
+                        </select>
                     </article>
-                    
+
                 </div>
             </aside>
         </section>
-        <div class="edit_product_submit_button">
-            <?php
-            $texto = "Avançar";
-            include 'botao_adm.php';
-            ?>
+
+        <div class="add_product_submit_button">
+            <button type="submit" class="add_product_button">
+                <i class="bi bi-save"></i> Salvar Alterações
+            </button>
         </div>
-    </div>
+    </form>
+</div>
+
+<script>
+window.subMapData = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
+</script>
+
+<?php include 'footer.php'; ?>
 </body>
-<?php if ($mostrar_popup_sucesso):
-        $texto = "Informações atualizadas com sucesso!";
-        include 'pop_up_sucesso.php';
-    endif;
-?>
 </html>
-<?php
-include 'footer.php';
-?>
