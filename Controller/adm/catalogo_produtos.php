@@ -45,7 +45,6 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                     <table>
                         
                         <tr>
-                            <th class="select-all-label-atualizar-produtos"><button>Selecionar tudo</button></th>
                             <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>
                             <th class="header-cell-atualizar-produto">Categoria</th>
                             <th class="header-cell-atualizar-produto">Subcategoria</th>
@@ -57,10 +56,6 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                         <?php if (!empty($produtos)): ?>
                             <?php foreach ($produtos as $p): ?>
                                 <tr>
-                                    <td class="select-all-atualizar-produtos">
-                                        <input type="checkbox" name="produto_id[]" value="<?= $p['id_produto'] ?>" class="product-checkbox">
-                                    </td>
-
                                     <td class="product-name-atualizar-produtos cell-atualizar-produto">
                                         <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['produto']) ?></span></div>
                                     </td>
