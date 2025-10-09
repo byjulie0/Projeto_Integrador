@@ -1,7 +1,7 @@
 <?php
+include '../utils/sessao_ativa.php';
 include 'menu_pg_inicial.php';
 include '../utils/libras.php';
-include '../utils/sessao_ativa.php';
 
 $id_cliente = $_SESSION['id_cliente'];
 
