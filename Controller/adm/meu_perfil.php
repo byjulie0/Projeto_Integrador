@@ -53,22 +53,7 @@
             </div>
 
         </div>
-    </div>
-    
-    <div class="visualizar-dados-area-botoes">
-        <a href="meu_perfil_editar.php">
-            <?php
-            $texto = "Editar meus dados";
-            include '../cliente/botao_verde_cliente.php';
-            ?>
-        </a>
-        <a href="login.php">
-            <?php 
-            include '../cliente/botao_logout.php';?>
-        </a>
-    </div>
-</div>
-</main>
+    </main>
 </body>
 
 </html>
