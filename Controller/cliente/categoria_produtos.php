@@ -1,15 +1,14 @@
 <?php
 include 'menu_pg_inicial.php';
-include '../../model/DB/conexao.php'
-;
+include '../utils/sessao_ativa.php';
 
 // Obter o parâmetro de filtro da URL
 $filtro = isset($_GET['classificar']) ? $_GET['classificar'] : '';
 
 // Query base para produtos da categoria 5 (Produtos Gerais)
-$query = "SELECT p.*, s.subcat_nome 
-          FROM produto p 
-          LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria 
+$query = "SELECT p.*, s.subcat_nome
+          FROM produto p
+          LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria
           WHERE p.id_categoria = 5";
 
 // Aplicar filtros baseados no parâmetro

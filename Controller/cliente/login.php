@@ -27,7 +27,7 @@ include '../utils/libras.php'
 
             <div class="login_form_vinycius">
                 <h2>Login</h2>
-                <form class="form_login" action="../utils/validacao_user_bd.php" method="POST">
+                <form class="form_login" action="../utils/sessao_ativa.php" method="POST">
                   <input type="text" name="email" placeholder="E-mail" class="input_login_vinycius1" required>
 
                   <div class="senha_container">

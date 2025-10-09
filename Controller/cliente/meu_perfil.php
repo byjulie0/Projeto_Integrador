@@ -1,9 +1,7 @@
-
 <?php
-include '../../Controller/utils/validacao_login.php';
-include '../../model/DB/conexao.php';
 include 'menu_pg_inicial.php';
 include '../utils/libras.php';
+include '../utils/sessao_ativa.php';
 
 $email_user = $_SESSION['email'];
 
@@ -37,7 +35,21 @@ catch (PDOException $e) {
   echo "Erro ao buscar dados do usuário: " . $e->getMessage();
 }
 
+
 ?>
+
+<!-- $cep = preg_replace('/[^0-9]/', '', $usuario['cep']);
+$url = "https://viacep.com.br/ws/{$cep}/json/";
+$response = file_get_contents($url);
+$endereco = json_decode($response, true);
+ if (!isset($endereco['erro'])) {
+$rua = $endereco['logradouro'];
+$bairro = $endereco['bairro'];
+$cidade = $endereco['localidade'];
+} else {
+$rua = $bairro = $cidade = "CEP inválido";
+} -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -62,40 +74,39 @@ catch (PDOException $e) {
 
         <div class="visualizar-dados-img-perfil">
           <svg class="avatar-icon" viewBox="0 0 24 24">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            <path
+              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
           </svg>
         </div>
 
         <div class="visualizar-dados-nome-email">
-          <h4 class="visualizar-dados-nome"><?= htmlspecialchars($usuario['cliente_nome']); ?></h4>
-          <h5 class="visualizar-dados-email"><?= htmlspecialchars($usuario['email']); ?></h5>
+          <h4 class="visualizar-dados-nome"><?= htmlspecialchars($_SESSION['cliente_nome']); ?></h4>
+          <h5 class="visualizar-dados-email"><?= htmlspecialchars($_SESSION['email']); ?></h5>
         </div>
       </div>
 
       <div class="visualizar-dados-geral">
         <h3 class="visualizar-dados-geral-title">Meus Dados</h3>
         <div class="visualizar-dados-grid">
-          <p><strong>Nome: </strong> <?= htmlspecialchars($usuario['cliente_nome']); ?></p>
-          <p><strong>Telefone: </strong> <?= htmlspecialchars($usuario['telefone']); ?></p>
-          <p><strong>E-mail: </strong> <?= htmlspecialchars($usuario['email']); ?></p>
-          <p><strong>Endereço: </strong> Rua: <?= htmlspecialchars($rua); ?>, Bairro: <?= htmlspecialchars($bairro); ?>, Cidade: <?= htmlspecialchars($cidade); ?></p>
-          <p><strong>Data de Nascimento: </strong> <?= date('d/m/Y', strtotime($usuario['data_nasc'])); ?></p>
+          <p><strong>Nome: </strong> <?= htmlspecialchars($_SESSION['cliente_nome']); ?></p>
+          <p><strong>E-mail: </strong> <?= htmlspecialchars($_SESSION['email']); ?></p>
+          <p><strong>Data de Nascimento: </strong> <?= date('d/m/Y', strtotime($_SESSION['data_nasc'])); ?></p>
         </div>
       </div>
 
       <div class="visualizar-dados-area-botoes">
         <a href="meu_perfil_senha.php">
           <?php
-            $texto = "Editar meu dados";
-            include 'botao_verde_cliente.php';
-            ?>
+          $texto = "Editar meu dados";
+          include 'botao_verde_cliente.php';
+          ?>
         </a>
         <a href="/Projeto_Integrador/controller/cliente/logout.php">
-        <a href="../cliente/logout.php">
-          <?php include 'botao_logout.php';?>
+          <a href="../cliente/logout.php">
+            <?php include 'botao_logout.php'; ?>
+          </a>
         </a>
-        
-        </a>
+
       </div>
     </div>
   </main>
@@ -104,6 +115,5 @@ catch (PDOException $e) {
 </html>
 
 <?php
-  include 'footer_cliente.php';
+include 'footer_cliente.php';
 ?>
- 
