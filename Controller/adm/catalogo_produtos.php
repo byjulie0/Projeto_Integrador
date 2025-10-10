@@ -42,7 +42,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
             <!-- ?status=inativados -->
             <div id="table2-atualizar-produtos">
                 <div id="table-space-atualizar-produtos">
-                    <table>
+                    <table class="catalogo_produtos_table_tr">
                         
                         <tr>
                             <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>

@@ -129,6 +129,11 @@
     border-collapse: collapse;
     table-layout: fixed;
 }
+#table-space-atualizar-produtos table td[colspan] {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
 #table-space-atualizar-produtos table th {
     width: 100%;
     background-color: #E5E7E5;
