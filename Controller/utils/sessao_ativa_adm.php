@@ -6,7 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    $query = "SELECT id_adm, adm_nome, email, telefone, senha, cnpj, funcao FROM cliente WHERE email = '{$email}' and funcao = 'ADM' ";
+    echo $email;
+    echo $password;
+
+    $query = "SELECT id_adm, adm_nome, email, telefone, senha, cnpj, funcao FROM adm WHERE email = '{$email}' and funcao = 'ADM' ";
 
     $result = mysqli_query($con, $query);
 
@@ -20,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    if (password_verify($password, $retorno['senha'])) {
+    if ($password === $retorno['senha']) {
 
         $_SESSION["id_adm"] = $retorno['id_adm'];
         $_SESSION["adm_nome"] = $retorno['adm_nome'];

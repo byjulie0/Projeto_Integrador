@@ -1,6 +1,6 @@
 <?php
 include 'menu_inicial.php';
-include '../../model/DB/conexao.php';
+include '../utils/sessao_ativa_adm.php';
 
 if (!isset($_SESSION['id_adm'])) {
     die(include '../overlays/pop_up_login.php');
@@ -13,16 +13,16 @@ $sql = "SELECT tipo, mensagemtexto, data_recebida
         WHERE id_adm = $id_adm
         ORDER BY data_recebida DESC";
 
-$stmt = $con->prepare($sql);
-$stmt->bind_param("i", $id_adm);
-$stmt->execute();
-$result = $stmt->get_result();
+$query = $con->prepare($sql);
+// $query->bind_param("i", $id_adm);
+$query->execute();
+$result = $query->get_result();
 
 $notificacoes = [];
 while ($row = $result->fetch_assoc()) {
     $notificacoes[] = $row;
 }
-$stmt->close();
+$query->close();
 ?>
 
 <!DOCTYPE html>

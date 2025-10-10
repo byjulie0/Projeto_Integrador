@@ -145,42 +145,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                     });
                     </script>
                 </div>
-                
-                <div class="product_details_collumn">
-                        
-                    <article class="input_product_quantity">
-                        <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
-                        <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso" required min="0">
-                    </article>
-
-                    
-                    <article class="input_product_quantity">
-                        <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
-                        <input type="date" class="input_product_info" name="idade" required>
-                    </article>
-                    
-
-                    <article class="input_product_category">
-                        <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
-                        <select class="product_info_select" name="sexo" required>
-                            <option value="" selected disabled>Selecione uma opção</option>
-                            <option value="M">Macho</option>
-                            <option value="F">Fêmea</option>
-                            <option value="Não se aplica">Não se aplica (Produto)</option>
-                        </select>
-                    </article>
-                    
-                    <article class="input_product_champion">
-                        <p class="product_title_info">Categoria é um campeão?<span class="mandatory_space">*</span></p>
-                        <select id="is_champion" class="product_info_select" name="campeao" required>
-                            <option value="" selected disabled>Selecione uma opção</option>
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
-                        </select>
-                    </article>
-                        
-                        
-                </div>
             </aside>
             </section>
 

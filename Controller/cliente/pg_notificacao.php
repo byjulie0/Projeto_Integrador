@@ -5,15 +5,17 @@ include '../utils/libras.php';
 
 $id_cliente = $_SESSION['id_cliente'];
 
-$query = "SELECT tipo, mensagemtexto, data_recebida
+$sql = "SELECT tipo, mensagemtexto, data_recebida
         FROM notificacoes
         WHERE id_cliente = $id_cliente
         ORDER BY data_recebida DESC";
 
-$result = $con->query($query);
+$query = $con->prepare($sql);
+$query->execute();
+$result = $query->get_result();
 
 $notificacoes = [];
-while ($row = $result->fetch_all()) {
+while ($row = $result->fetch_assoc()) {
     $notificacoes[] = $row;
 }
 $result->close();
