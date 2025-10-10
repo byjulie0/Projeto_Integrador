@@ -1,7 +1,10 @@
 
 <?php
-include '../../Controller/utils/validacao_login.php';
-include 'menu_pg_inicial.php';?>
+include 'menu_pg_inicial.php';
+include '../utils/libras.php';
+include '../utils/sessao_ativa.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

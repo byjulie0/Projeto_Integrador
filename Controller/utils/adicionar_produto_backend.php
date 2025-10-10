@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../../model/DB/conexao.php';
 
 $popup_titulo = '';

@@ -112,6 +112,7 @@
     background-color: #f8d7da;
     color: #c0392b;
 }
+
 @media (max-width: 768px) {
     .visualizar-dados-header {
       flex-direction: column;
@@ -124,5 +125,38 @@
     .visualizar-dados-area-botoes {
       flex-direction: column;
       align-items: stretch;
+    }
+
+    .visualizar-dados-geral-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 510px) {
+    .visualizar-dados-area-botoes {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+}
+
+@media (max-width: 416px) {
+    .visualizar-dados-title{
+        font-size: 25px;
+    }
+
+    .visualizar-dados-nome-email h4{
+        font-size: 17px;
+    }
+
+    .visualizar-dados-grid p {
+        font-size: 14px;
+        color: #495057;
+        display: flex;
+        align-items: center;
+    }
+
+    .visualizar-dados-card {
+        padding: 10px;
     }
 }

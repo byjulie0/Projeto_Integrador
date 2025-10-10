@@ -79,7 +79,21 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                     </td>
 
                                     <td class="exclude-atualizar-produtos cell-atualizar-produto">
-                                        <?php include 'toogle.php'; ?>
+                                        <form method="POST" action="toggle_adm_inativar.php" style="display:inline;">
+                                            <input type="hidden" name="id_produto" value="<?= $p['id_produto'] ?>">
+                                            <input type="hidden" name="status_atual" value="<?= $p['produto_ativo'] ?>">
+
+                                            <?php 
+                                            $icone = $p['produto_ativo'] ? 'fa-toggle-on' : 'fa-toggle-off';
+                                            $ariaPressed = $p['produto_ativo'] ? 'true' : 'false';
+                                            ?>
+
+                                            <button type="submit" name="toggle_produto"
+                                                    class="icon-toggle-btn"
+                                                    aria-pressed="<?= $ariaPressed ?>">
+                                                <i class="fa-solid <?= $icone ?>"></i>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

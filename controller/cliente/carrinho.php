@@ -1,17 +1,7 @@
 <?php 
 include 'menu_pg_inicial.php';
-require_once __DIR__ . '/../../model/DB/conexao.php';
-
-$cliente_id = 27;
-$stmt = $con->prepare("SELECT * 
-                      FROM carrinho 
-                      JOIN produto ON carrinho.produto_id_produto = produto.id_produto 
-                      WHERE cliente_id_cliente = ?");
-$stmt->bind_param("i", $cliente_id);
-$stmt->execute();
-$result = $stmt->get_result();
-$row_count = $result->num_rows;
-
+include '../utils/libras.php';
+include '../utils/sessao_ativa.php';
 ?>
 
 <!DOCTYPE html>

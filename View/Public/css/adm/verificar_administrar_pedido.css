@@ -7,7 +7,11 @@
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding: 50px 100px;
+  padding: 100px;
+}
+
+.verificar_administrar_pedidos_sessao_identificar {
+  width: 100%;
 }
 
 /* Cabeçalho com seta + título */
@@ -109,9 +113,12 @@
   font-size: 14px;
   font-weight: 400;
   color: var(--color-primary-1);
+  padding: 10px;
 }
 .lupa-administar-pedidos i{
   color: var(--color-primary-3);
   cursor: pointer;
   font-size: 16px;
 }
+
+/* RESPONSIVIDADE */
