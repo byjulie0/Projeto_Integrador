@@ -2,7 +2,6 @@
 include 'menu_inicial.php';
 include '../../model/DB/conexao.php';
 
-// Verifica se o ID foi enviado
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     echo "<script>alert('Produto não encontrado.'); window.history.back();</script>";
     exit;
@@ -10,7 +9,6 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 
 $id_produto = intval($_GET['id']);
 
-// Busca os dados do produto
 $sqlProd = "SELECT * FROM produto WHERE id_produto = $id_produto";
 $resProd = mysqli_query($con, $sqlProd);
 
@@ -21,7 +19,6 @@ if (!$resProd || mysqli_num_rows($resProd) == 0) {
 
 $produto = mysqli_fetch_assoc($resProd);
 
-// Busca categorias
 $sqlCat = "SELECT id_categoria, cat_nome FROM categoria";
 $resCat = mysqli_query($con, $sqlCat);
 $categorias = [];
@@ -29,7 +26,6 @@ while ($r = mysqli_fetch_assoc($resCat)) {
     $categorias[] = $r;
 }
 
-// Busca subcategorias
 $sqlSub = "SELECT id_subcategoria, subcat_nome, id_categoria FROM subcategoria";
 $resSub = mysqli_query($con, $sqlSub);
 $subMap = [];
@@ -57,7 +53,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
     </div>
 
     <form action="../utils/editar_produto_backend.php" method="POST" enctype="multipart/form-data">
-        <!-- ID oculto -->
         <input type="hidden" name="id_produto" value="<?= $produto['id_produto'] ?>">
 
         <section class="add_product_area">
