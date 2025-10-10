@@ -21,24 +21,19 @@ $email = htmlspecialchars($_GET['esqueci_senha_card_email_digitar']);
 
     <main class="recuperar_senha_codigo_main">
         <section class="recuperar_senha_codigo_section">
+            <a href="#" onclick="window.history.back(); return false;" class="recuperar_senha_codigo_seta_voltar">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
             <div class="recuperar_senha_codigo">
                 <div class="recuperar_senha_codigo_content">
                     <h1>Código</h1>
-                    <p>Insira o código de 6 digitos que lhe enviamos</p>
+                    <h3>Insira o código de 6 digitos que lhe enviamos</h3>
                     <form action="recuperar_senha_login3.php?email=<?php echo urlencode($email);?>" class="recuperar_senha_codigo_formulario">
                         <input type="text" inputmode="numeric" pattern="[A-aZ-z0-9]+" maxlength="8" required>
-                        <div class="botoes_div">
-                            <?php
-                            $texto = "Enviar"; 
-                            include 'botao_verde_cliente.php';
-                            ?>
-                            <a href="#" onclick="window.history.back(); return false;">
-                            <?php
-                            $texto = "Cancelar"; 
-                            include 'botao_vermelho_cliente.php';
-                            ?>
-                            </a>
-                        </div>
+                        <?php
+                        $texto = "Enviar"; 
+                        include 'botao_cliente.php';
+                        ?>
                     </form>
                 </div>
             </div>

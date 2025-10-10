@@ -13,8 +13,8 @@
     <div class="container_historico_compras">
 
         <div class="title_historico_compras">
-            <a href="#" onclick="window.history.back(); return false" class="arrow_compras">
-                <i class="bi bi-chevron-left"></i>
+            <a href="#" onclick="window.history.back(); return false;" class="arrow_compras">
+                <i class="fa-solid fa-chevron-left"></i>
             </a>
             <h1 class="titulo_historico_compras">Histórico de Compras</h1>
         </div>
@@ -28,7 +28,7 @@
                 <div class="botao_cancelar">
                     <?php
                         $texto = "Cancelar";
-                        include 'botao_vermelho_cliente.php';
+                        include 'botao_cancelar.php';
                     ?>
                 </div>
             </div>

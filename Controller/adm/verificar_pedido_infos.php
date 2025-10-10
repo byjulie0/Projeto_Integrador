@@ -82,7 +82,7 @@
                             <button class="register-payment-btn-informacoes-pedidos">Registrar pagamento</button>
                             <?php
                             $texto = "Marcar como enviado";
-                            include 'botao_verde_adm.php';
+                            include 'botao_adm.php';
                             ?>
                         </div>
                     </div>

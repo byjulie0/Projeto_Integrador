@@ -24,7 +24,8 @@
                 class="verificar_administrar_pedidos_sessao_seta_voltar"> <i class="bi bi-chevron-left"></i> </a>
             <h1>Visualizar relatórios</h1>
             <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período:
-                <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida">XX/XX/XXXX - YY/YY/YYYY</span>
+                <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida">XX/XX/XXXX -
+                    YY/YY/YYYY</span>
             </h3>
             <div class="verificar_administrar_pedidos_sessao_periodo_bloco"> <span
                     class="verificar_administrar_pedidos_sessao_mini_titulos_2" id="abrirCalendario">Mudar
@@ -44,9 +45,7 @@
                         class="fa-solid fa-chevron-right"></i></div>
                 <div class="card_estatisticas">
                     <h3>Estatísticas</h3>
-                    <div class="grafico-container">
-                        <canvas id="graficoEstatisticas"></canvas>
-                    </div>
+                    <canvas id="graficoEstatisticas"></canvas>
                 </div>
             </div>
             <div class="card_atividades">

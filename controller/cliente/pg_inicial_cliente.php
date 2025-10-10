@@ -1,5 +1,5 @@
 
-<?php include '../utils/sessao_ativa.php';?>
+<?php include '../utils/validacao_login.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

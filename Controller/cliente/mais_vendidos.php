@@ -23,7 +23,6 @@
                     $mais_vendidos = [
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "380 kg",
                             "raca" => "Árabe",
                             "genealogia" => "PO",
@@ -32,7 +31,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "420 kg",
                             "raca" => "Mustang",
                             "genealogia" => "PO",
@@ -41,7 +39,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "420 kg",
                             "raca" => "Mustang",
                             "genealogia" => "PO",
@@ -50,7 +47,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "420 kg",
                             "raca" => "Mustang",
                             "genealogia" => "PO",
@@ -59,7 +55,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "420 kg",
                             "raca" => "Mustang",
                             "genealogia" => "PO",
@@ -70,7 +65,6 @@
 
                     foreach ($mais_vendidos as $item) {
                         $imagem = $item['imagem'];
-                        $nome = $item['nome'];
                         $peso = $item['peso'];
                         $raca = $item['raca'];
                         $genealogia = $item['genealogia'];

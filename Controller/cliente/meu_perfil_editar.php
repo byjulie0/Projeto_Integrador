@@ -1,6 +1,25 @@
+
 <?php
+include '../../Controller/utils/validacao_login.php';
 include 'menu_pg_inicial.php';
-include '../../Controller/utils/sessao_ativa.php';
+// include '../../model/DB/conexao.php';
+// session_start();
+ 
+// Supondo que o ID do cliente está salvo na sessão
+// $id_cliente = $_SESSION['id_cliente'];
+ 
+// $sql = "SELECT c.*, e.rua, e.numero, e.bairro, e.pais, e.cep FROM cliente c
+//         JOIN endereco e ON c.endereco_idendereco = e.id_endereco
+//         WHERE c.id_cliente = $id_cliente";
+ 
+// $result = $con->query(query: $sql);
+ 
+// if ($result->num_rows > 0) {
+//     $cliente = $result->fetch_assoc();
+// } else {
+//     echo "Cliente não encontrado.";
+//     exit;
+// }
 ?>
  
 <!DOCTYPE html>

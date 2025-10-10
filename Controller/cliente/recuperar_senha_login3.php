@@ -27,24 +27,16 @@ $email_recuperar_senha = isset($_GET['email']) ? htmlspecialchars($_GET['email']
         <nav class="rede_senha_nav">
             <div class="recuperar_senha_rede_formulario">
                 <h1>Redefinir senha</h1>
-                <p>Escolha sua nova senha</p>
+                <h3>Escolha sua nova senha</h3>
                 <form action="../utils/recuperar_senha_action.php" class="form_rede_senha" id="formRedefinirSenha" method="POST">
                     <input type="hidden" name="email_recuperar_senha" value="<?php echo $email_recuperar_senha; ?>">
                     <input type="password" minlength="8" required placeholder="Nova senha" id="novaSenha">
                     <input type="password" minlength="8" required placeholder="Confirmar nova senha"
                         id="confirmarSenha">
-                    <div class="botoes_div">
-                        <?php
-                        $texto = "Enviar"; 
-                        include 'botao_verde_cliente.php';
-                        ?>
-                        <a href="#" onclick="window.history.back(); return false;">
-                        <?php
-                        $texto = "Cancelar"; 
-                        include 'botao_vermelho_cliente.php';
-                        ?>
-                        </a>
-                    </div>
+                    <?php
+                    $texto = "Enviar"; // Defina o texto do botão aqui
+                    include 'botao_cliente.php';
+                    ?>
                 </form>
             </div>
         </nav>

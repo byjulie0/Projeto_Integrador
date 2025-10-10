@@ -9,19 +9,17 @@
 <body>
     <div class="lote-card">
         <a href="detalhes_produto.php">
-            <img src="<?php echo $imagem; ?>" alt="<?php $legenda?>">
+            <img src="<?php echo $imagem; ?>" alt="Imagem do Animal">
             <div class="info-grid">
-                <p>Nome:</p>
-                <p><?= $nome ?></p>
-                <!-- <p>Peso:</p>
-                <p>echo $peso; ?></p>
+                <p>Peso:</p>
+                <p><?php echo $peso; ?></p>
                 <p>Raça:</p>
-                <p>echo $raca; ?></p>
+                <p><?php echo $raca; ?></p>
                 <p>Genealogia:</p>
-                <p>echo $genealogia; ?></p>
+                <p><?php echo $genealogia; ?></p>
                 <p>Idade:</p>
-                <p>echo $idade; ?></p> -->
-                <p class="preco">R$ <?php echo $valor; ?></p>
+                <p><?php echo $idade; ?></p>
+                <p class="preco">R$ <?php echo $preco; ?></p>
             </div>
         </a>
     </div>
