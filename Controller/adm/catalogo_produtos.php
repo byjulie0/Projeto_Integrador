@@ -15,6 +15,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
     <link rel="stylesheet" href="../../view/public/css/adm/toogle.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script defer src="../../view/js/adm/toogle.js"></script>
 </head>
 <body>
@@ -27,11 +28,9 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
         </div>
         <div id="page-content-atualizar-produtos">
             <div class="first-container-atualizar-produtos">
-                <div id="search-bar-atualizar-produtos">
-                    <input type="text" placeholder="Pesquisar" />
-                    <button type="submit">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                <div id="search-bar-atualizar-produtos"> 
+                    <input type="text" id="searchInput" placeholder="Pesquisar" />
+                    <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button> 
                 </div>
                 <a href="">Todos</a>
                 <a href="?status=ativos">Ativos</a>
@@ -42,16 +41,17 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
             <div id="table2-atualizar-produtos">
                 <div id="table-space-atualizar-produtos">
                     <table>
-                        
-                        <tr>
-                            <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>
-                            <th class="header-cell-atualizar-produto">Categoria</th>
-                            <th class="header-cell-atualizar-produto">Subcategoria</th>
-                            <th class="header-cell-atualizar-produto">Preço</th>
-                            <th class="header-cell-atualizar-produto">Editar</th>
-                            <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
-                        </tr>
-
+                       <thead>
+                            <tr>
+                                <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>
+                                <th class="header-cell-atualizar-produto">Categoria</th>
+                                <th class="header-cell-atualizar-produto">Subcategoria</th>
+                                <th class="header-cell-atualizar-produto">Preço</th>
+                                <th class="header-cell-atualizar-produto">Editar</th>
+                                <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
+                            </tr>
+                        </thead> 
+                        <tbody>
                         <?php if (!empty($produtos)): ?>
                             <?php foreach ($produtos as $p): ?>
                                 <tr>
@@ -100,12 +100,83 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                 <td colspan="7" style="text-align:center;">Nenhum produto cadastrado</td>
                             </tr>
                         <?php endif; ?>
-
+                    </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        $(document).ready(function() {
+
+            function atualizarTabela(produtos) {
+                let html = '';
+
+                if (produtos.length) {
+                    produtos.forEach(p => {
+                        const icone = p.produto_ativo == 1 ? 'fa-toggle-on' : 'fa-toggle-off';
+                        const ariaPressed = p.produto_ativo == 1 ? 'true' : 'false';
+                        const precoFormatado = 'R$ ' + Number(p.preco).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+                        html += `
+                            <tr>
+                                <td>${p.produto}</td>
+                                <td>${p.categoria ?? '--'}</td>
+                                <td>${p.subcategoria ?? '--'}</td>
+                                <td>${precoFormatado}</td>
+                                <td>
+                                    <a href="editar_produto.php?id=${p.id_produto}">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <form method="POST" action="toggle_adm_inativar.php" style="display:inline;">
+                                        <input type="hidden" name="id_produto" value="${p.id_produto}">
+                                        <input type="hidden" name="status_atual" value="${p.produto_ativo}">
+                                        <button type="submit" class="icon-toggle-btn" aria-pressed="${ariaPressed}">
+                                            <i class="fa-solid ${icone}"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                } else {
+                    html = `<tr><td colspan="6" style="text-align:center;">Nenhum produto encontrado.</td></tr>`;
+                }
+
+                $('#table2-atualizar-produtos table tbody').html(html);
+            }
+
+            function buscarProdutos(termo = '') {
+                $.ajax({
+                    url: '../../Controller/utils/buscar_produtos.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { busca: termo },
+                    success: function(resposta) {
+                        atualizarTabela(resposta);
+                    },
+                    error: function() {
+                        console.log('Erro ao buscar produtos.');
+                    }
+                });
+            }
+
+            
+            buscarProdutos();
+
+            
+            $('#searchInput').on('input', function() {
+                const termo = $(this).val();
+                buscarProdutos(termo);
+            });
+        });
+
+
+    </script>
+
+
 </body>
 </html>
 <?php include 'footer.php'; ?>
