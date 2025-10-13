@@ -22,7 +22,7 @@ if (!empty($_FILES['imagem']['name'])) {
     $imgQuery = "";
 }
 
-$sql = "UPDATE produto SET 
+$sql = "UPDATE produto SET
             nome = '$nome',
             valor = '$valor',
             quantidade = '$quantidade',
