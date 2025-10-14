@@ -93,7 +93,9 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                             </button>
                                         </form>
                                     </td>
-
+                                    <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                        <?= htmlspecialchars($p['produto_ativo'] ?? 'Ops! Também está vazio') ?>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
