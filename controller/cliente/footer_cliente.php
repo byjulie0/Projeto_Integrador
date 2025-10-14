@@ -43,7 +43,6 @@
                 <div id="tab4" class="footer_cli_item">
                     <h3>Sobre a Empresa</h3>
                     <hr>
-                    <a href="nossa_historia.php">Nossa História</a>
                 </div>
             </div>
 

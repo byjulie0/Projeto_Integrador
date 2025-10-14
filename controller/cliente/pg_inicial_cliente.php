@@ -14,7 +14,6 @@
     include 'carrossel_pg_inicial.php';
     include 'categorias_pg_inicial.php';
     include 'campeoes.php';
-    include 'mais_vendidos.php';
     include 'talvez_voce_goste.php';
     include 'footer_cliente.php';
     ?>
