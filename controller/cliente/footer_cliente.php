@@ -65,7 +65,7 @@
                 <h3>Meu perfil</h3>
                 <hr>
                 <a href="carrinho.php">Carrinho de compras</a>
-                <a href="#">Minhas Compras</a>
+                <a href="historico_de_compras.php">Minhas Compras</a>
                 <a href="pg_favoritos.php">Produtos Favoritados</a>
             </div>
         </div>
