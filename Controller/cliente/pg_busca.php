@@ -16,7 +16,7 @@
 
         <div class="titulo_e_seta_pg_busca">
             <a class="btn-voltar" href="pg_inicial_cliente.php" >
-                <i class="bi bi-chevron-left"></i> 
+                <i class="bi bi-chevron-left"></i>
             </a>
             <h2 class="h2-pag-busca">Resultados</h2>
         </div>

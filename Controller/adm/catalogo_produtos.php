@@ -17,7 +17,6 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
     <link rel="stylesheet" href="../../view/public/css/adm/toogle.css">
     <script defer src="../../view/js/adm/toogle.js"></script>
 </head>
-
 <body>
      <section id="atualizar-produtos">
         <div id="page-title-atualizar-produtos">
@@ -86,8 +85,8 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                             $ariaPressed = $p['produto_ativo'] ? 'true' : 'false';
                                             ?>
 
-                                            <button type="submit" name="toggle_produto" 
-                                                    class="icon-toggle-btn" 
+                                            <button type="submit" name="toggle_produto"
+                                                    class="icon-toggle-btn"
                                                     aria-pressed="<?= $ariaPressed ?>">
                                                 <i class="fa-solid <?= $icone ?>"></i>
                                             </button>

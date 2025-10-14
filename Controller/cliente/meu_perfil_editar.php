@@ -1,6 +1,6 @@
 <?php
-include 'menu_pg_inicial.php';
 include '../../Controller/utils/sessao_ativa.php';
+include 'menu_pg_inicial.php';
 ?>
  
 <!DOCTYPE html>
