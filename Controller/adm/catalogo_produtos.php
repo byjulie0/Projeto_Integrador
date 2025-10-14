@@ -50,6 +50,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                             <th class="header-cell-atualizar-produto">Preço</th>
                             <th class="header-cell-atualizar-produto">Editar</th>
                             <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
+                            <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Status</th>
                         </tr>
 
                         <?php if (!empty($produtos)): ?>
@@ -92,7 +93,9 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                             </button>
                                         </form>
                                     </td>
-
+                                    <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                        <?= htmlspecialchars($p['produto_ativo'] ?? 'Ops! Também está vazio') ?>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
