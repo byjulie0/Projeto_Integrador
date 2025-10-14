@@ -3,7 +3,6 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
 ?>
 
 <?php include 'menu_inicial.php';?>
-<!-- include 'catalogo_adm_produtos_action.php' -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,8 +14,9 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
+    <link rel="stylesheet" href="../../view/public/css/adm/toogle.css">
+    <script defer src="../../view/js/adm/toogle.js"></script>
 </head>
-
 <body>
      <section id="atualizar-produtos">
         <div id="page-title-atualizar-produtos">
@@ -33,8 +33,9 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
+                <a href="">Todos</a>
                 <a href="?status=ativos">Ativos</a>
-                <a href="#">Inativados</a>
+                <a href="?status=inativos">Inativados</a>
             </div>
             <hr class="break-line">
             <!-- ?status=inativados -->
@@ -43,32 +44,28 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                     <table>
                         
                         <tr>
-                            <th class="select-all-label-atualizar-produtos"><button>Selecionar tudo</button></th>
                             <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>
                             <th class="header-cell-atualizar-produto">Categoria</th>
                             <th class="header-cell-atualizar-produto">Subcategoria</th>
                             <th class="header-cell-atualizar-produto">Preço</th>
                             <th class="header-cell-atualizar-produto">Editar</th>
                             <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
+                            <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Status</th>
                         </tr>
 
                         <?php if (!empty($produtos)): ?>
                             <?php foreach ($produtos as $p): ?>
                                 <tr>
-                                    <td class="select-all-atualizar-produtos">
-                                        <input type="checkbox" name="produto_id[]" value="<?= $p['id_produto'] ?>" class="product-checkbox">
-                                    </td>
-
                                     <td class="product-name-atualizar-produtos cell-atualizar-produto">
                                         <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['produto']) ?></span></div>
                                     </td>
 
                                     <td class="product-category-atualizar-produtos cell-atualizar-produto">
-                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['categoria'] ?? 'Sem categoria') ?></span></div>
+                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['categoria'] ?? 'Ops! Está vazio') ?></span></div>
                                     </td>
 
                                     <td class="qt-atualizar-produtos cell-atualizar-produto">
-                                        <?= htmlspecialchars($p['subcategoria'] ?? 'Sem subcategoria') ?>
+                                        <?= htmlspecialchars($p['subcategoria'] ?? 'Ops! Também está vazio') ?>
                                     </td>
 
                                     <td class="price-atualizar-produtos cell-atualizar-produto">
@@ -80,7 +77,24 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                     </td>
 
                                     <td class="exclude-atualizar-produtos cell-atualizar-produto">
-                                        <?php include 'toogle.php'; ?>
+                                        <form method="POST" action="toggle_adm_inativar.php" style="display:inline;">
+                                            <input type="hidden" name="id_produto" value="<?= $p['id_produto'] ?>">
+                                            <input type="hidden" name="status_atual" value="<?= $p['produto_ativo'] ?>">
+
+                                            <?php 
+                                            $icone = $p['produto_ativo'] ? 'fa-toggle-on' : 'fa-toggle-off';
+                                            $ariaPressed = $p['produto_ativo'] ? 'true' : 'false';
+                                            ?>
+
+                                            <button type="submit" name="toggle_produto"
+                                                    class="icon-toggle-btn"
+                                                    aria-pressed="<?= $ariaPressed ?>">
+                                                <i class="fa-solid <?= $icone ?>"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                        <?= htmlspecialchars($p['produto_ativo'] ?? 'Ops! Também está vazio') ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -89,19 +103,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                 <td colspan="7" style="text-align:center;">Nenhum produto cadastrado</td>
                             </tr>
                         <?php endif; ?>
-                         <?php foreach ($produtos as $produto): ?>
-                        <tr>
-                            <td><input type="checkbox" name="produtos[]" value="<?= $produto['id_produto'] ?>"></td>
-                            <td><?= htmlspecialchars($produto['prod_nome']) ?></td>
-                            <td><?= htmlspecialchars($produto['id_categoria']) ?></td>
-                            <td><?= htmlspecialchars($produto['id_subcategoria']) ?></td>
-                            <td><?= number_format($produto['valor'], 2, ',', '.') ?></td>
-                            <td><a href="editar_produto.php?id=<?= $produto['id_produto'] ?>">Editar</a></td>
-                            <td>
-                                <?php include 'toogle.php'; ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
+
                     </table>
                 </div>
             </div>

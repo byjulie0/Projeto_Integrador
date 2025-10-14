@@ -1,6 +1,8 @@
 <?php
 session_start();
-require_once '../../model/conexao.php';
+require_once '../../model/DB/conexao.php';
+
+
 
 if (!isset($_SESSION['id_cliente'])) {
     header("Location: login.php");
