@@ -1,20 +1,26 @@
 @import url("../adm.css");
 
-/* Conteúdo principal */
+.verificar_administrar_pedidos_body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .verificar_administrar_pedidos_content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding: 100px;
+  padding: 50px 100px;
+  min-height: 400px;
 }
 
 .verificar_administrar_pedidos_sessao_identificar {
   width: 100%;
 }
 
-/* Cabeçalho com seta + título */
 .verificar_administrar_pedidos_sessao_seta_voltar_div {
   display: flex;
   align-items: center;
@@ -25,6 +31,11 @@
 .verificar_administrar_pedidos_sessao_seta_voltar {
   font-size: 1.5rem;
   color: var(--color-primary-1);
+  transition: color 0.3s ease;
+}
+
+.verificar_administrar_pedidos_sessao_seta_voltar:hover {
+  color: var(--color-primary-3);
 }
 
 .verificar_administrar_pedidos_sessao_bloco_info h1 {
@@ -34,11 +45,9 @@
   color: var(--color-primary-1);
 }
 
-/* Campo de pesquisa */
 .verificar_administrar_pedidos_sessao_formulario_pesquisa {
   display: flex;
   align-items: center;
-  background-color: none;
   border-radius: 50px;
   border: 0.5px solid var(--color-primary-1);
   padding: 4px 15px;
@@ -55,6 +64,7 @@
   width: 100%;
   color: var(--color-primary-1);
 }
+
 .verificar_administrar_pedidos_sessao_formulario_pesquisa input::placeholder {
   color: var(--color-primary-1);
   font-weight: 500;
@@ -67,58 +77,113 @@
   cursor: pointer;
   padding: 0;
 }
-.verificar_administrar_pedidos_sessao_formulario_pesquisa i{
+
+.verificar_administrar_pedidos_sessao_formulario_pesquisa i {
   color: var(--color-primary-1);
-  
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
-/* Linha divisória */
+.verificar_administrar_pedidos_sessao_formulario_pesquisa i:hover {
+  color: var(--color-primary-3);
+}
+
 .verificar_administrar_pedidos_sessao_divisao {
-  width: 100%; 
-  display: flex;
+  width: 100%;
+  height: 0.5px;
   background-color: var(--color-primary-1);
   margin: 25px auto;
+  border: none;
 }
 
 
+.verificar_administrar_pedidos_sessao_visualizar {
+  width: 100%;
+  overflow-x: auto;
+}
 
-
-/* Card de pedido */
-.verificar_administrar_pedidos_sessao_pedidos{
+.verificar_administrar_pedidos_sessao_pedidos {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.verificar_administrar_pedidos_sessao_pedidos table{
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-.linha_cinza th{
-  width: 100%;
-  padding: 14px;
-  background-color: #E5E7E5;
+  flex-direction: column;
 }
 
-.verificar_administrar_pedidos_sessao_pedidos table{
+.verificar_administrar_pedidos_sessao_pedidos table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  table-layout: fixed;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
   color: var(--color-primary-1);
 }
-.verificar_administrar_pedidos_sessao_pedidos table td,.cell-atualizar-produto{
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
+
+.linha_cinza th {
+  padding: 14px;
+  background-color: #E5E7E5;
+  font-weight: 600;
   color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_pedidos td,
+.verificar_administrar_pedidos_sessao_pedidos th {
   padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
 }
-.lupa-administar-pedidos i{
+
+.lupa-administar-pedidos i {
   color: var(--color-primary-3);
   cursor: pointer;
   font-size: 16px;
+  transition: color 0.3s ease;
 }
 
-/* RESPONSIVIDADE */
+.lupa-administar-pedidos i:hover {
+  color: var(--color-primary-1);
+}
+
+@media (max-width: 1024px) {
+  .verificar_administrar_pedidos_content {
+    padding: 30px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .verificar_administrar_pedidos_content {
+    padding: 40px;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco {
+    width: 100%;
+  }
+
+  .verificar_administrar_pedidos_sessao_seta_voltar_div h1 {
+    font-size: 1.2rem;
+  }
+
+  .verificar_administrar_pedidos_sessao_seta_voltar_div i {
+    font-size: 1.2rem;
+  }
+
+  .verificar_administrar_pedidos_sessao_visualizar {
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .verificar_administrar_pedidos_sessao_formulario_pesquisa {
+    max-width: 100%;
+  }
+
+  .verificar_administrar_pedidos_sessao_seta_voltar_div h1 {
+    font-size: 1rem;
+  }
+
+  .verificar_administrar_pedidos_sessao_formulario_pesquisa input {
+    font-size: 13px;
+  }
+}
