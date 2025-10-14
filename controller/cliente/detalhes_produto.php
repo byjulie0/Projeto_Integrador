@@ -1,6 +1,6 @@
 <?php
-include 'menu_pg_inicial.php';
 session_start();
+include 'menu_pg_inicial.php';
 
 $id_cliente = $_SESSION['id_cliente'] ?? null;
 $id_produto = $_GET['id_produto'] ?? null;

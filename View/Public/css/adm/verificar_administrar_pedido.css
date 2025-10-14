@@ -15,6 +15,7 @@
   width: 100%;
   padding: 50px 100px;
   min-height: 400px;
+  padding: 100px;
 }
 
 .verificar_administrar_pedidos_sessao_identificar {
@@ -124,6 +125,7 @@
   background-color: #E5E7E5;
   font-weight: 600;
   color: var(--color-primary-1);
+  padding: 10px;
 }
 
 .verificar_administrar_pedidos_sessao_pedidos td,
@@ -187,3 +189,5 @@
     font-size: 13px;
   }
 }
+
+/* RESPONSIVIDADE */
