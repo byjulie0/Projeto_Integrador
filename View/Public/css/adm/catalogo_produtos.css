@@ -63,9 +63,10 @@
     max-width: 400px;
 }
 .first-container-atualizar-produtos{
+    position: relative;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 50%;
     justify-content: space-between;
     align-items: flex-end;
 }
@@ -73,7 +74,17 @@
     font-size: 14px;
     font-weight: 400;
     color: var(--color-primary-1);
+    position: absolute;
     /* text-decoration: underline; */
+}
+.catalogo_produtos_botao_todos{
+    left: 145%;
+}
+.catalogo_produtos_botao_ativos{
+    left: 165%;
+}
+.catalogo_produtos_botao_inativos{
+    left: 185%;
 }
 .catalogo_produtos_botao_todos:hover{
     color: rgb(130, 136, 141);
@@ -126,10 +137,12 @@
 }
 #table-space-atualizar-produtos table {
     width: 100%;
+    min-width: 700px;
     border-collapse: collapse;
     table-layout: fixed;
 }
 #table-space-atualizar-produtos table td[colspan] {
+    display: block;
     text-align: center;
     padding: 20px;
     width: 100%;

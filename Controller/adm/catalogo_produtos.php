@@ -82,8 +82,8 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                             <input type="hidden" name="status_atual" value="<?= $p['produto_ativo'] ?>">
 
                                             <?php 
-                                            $icone = $p['produto_ativo'] ? 'fa-toggle-on' : 'fa-toggle-off';
-                                            $ariaPressed = $p['produto_ativo'] ? 'true' : 'false';
+                                            $icone = $p['produto_ativo'] ? 'fa-toggle-off' : 'fa-toggle-on';
+                                            $ariaPressed = $p['produto_ativo'] ? 'false' : 'true';
                                             ?>
 
                                             <button type="submit" name="toggle_produto" 
