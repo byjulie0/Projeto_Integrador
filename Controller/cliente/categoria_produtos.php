@@ -72,27 +72,21 @@ include 'menu_pg_inicial.php';
 
         <div class="lotes_geral">
             <?php
-            if ($result && $result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()): ?>
-                    <div class="lotes_container">
-                        <?php
-                        $legenda = $row['prod_nome'];
-                        $imagem = $row['path_img'];
-                        $nome = $row['prod_nome'];
-                        $valor = number_format($row['valor'], 2, ',', '.');
-                        $subcategoria = $row['subcat_nome']; // Para possível uso no card
-                        include 'card_telas.php';
-                        ?>
-                    </div>
-                <?php endwhile;
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()):
+                    $id_prod = $row['id_produto'];
+                    $imagem = $row['path_img'];
+                    $nome = $row['prod_nome'];
+                    $valor = number_format($row['valor'], 2, ',', '.');
+                    include 'card_telas.php';
+                endwhile;
             } else {
-                echo "<p class='sem-produtos'>Nenhum produto encontrado ";
+                echo "<p class='sem-produtos'>Nenhum produto encontrado!";
                 if ($filtro) {
                     echo "para " . obterNomeFiltro($filtro);
                 }
                 echo "</p>";
 
-                // Se há filtro ativo, mostra opção para limpar
                 if ($filtro): ?>
                     <div style="text-align: center; margin-top: 20px;">
                         <button class="filtro_btn limpar" onclick="limparFiltros()" style="margin: 0 auto;">
@@ -113,7 +107,7 @@ include 'menu_pg_inicial.php';
         }
 
         function limparFiltros() {
-            window.location.href = window.location.pathname; // Remove parâmetros da URL
+            window.location.href = window.location.pathname;
         }
 
         function navegarLotes(direcao) {
@@ -134,7 +128,7 @@ include 'menu_pg_inicial.php';
 </html>
 
 <?php
-// Função para obter o nome amigável do filtro
+
 function obterNomeFiltro($filtro)
 {
     $nomes = [

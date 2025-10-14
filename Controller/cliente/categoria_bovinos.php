@@ -18,7 +18,7 @@ include '../utils/libras.php'
 
         <div class="titulo_categoria_bovinos">
             <a class="btn_voltar" href="#" onclick="window.history.back(); return false;">
-                <i class="bi bi-chevron-left"></i> 
+                <i class="bi bi-chevron-left"></i>
             </a>
             <h2 class="h2_categoria_bovinos">Bovinos</h2>
         </div>
@@ -59,7 +59,7 @@ include '../utils/libras.php'
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "nome" => "Boi", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                     ["imagem" => "../../view/public/imagens/nelore1.webp", "nome" => "Boi", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
                 ];
-                foreach ($lotes as $item) { 
+                foreach ($lotes as $item) {
                     $imagem = $item['imagem'];
                     $nome = $item['nome'];
                     $peso = $item['peso'];
