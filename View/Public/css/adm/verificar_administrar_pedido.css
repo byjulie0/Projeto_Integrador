@@ -8,6 +8,11 @@
   justify-content: center;
   width: 100%;
   padding: 50px 100px;
+  min-height:400px;
+}
+
+.verificar_administrar_pedidos_sessao_identificar {
+  width: 100%;
 }
 
 /* Cabeçalho com seta + título */
@@ -114,4 +119,8 @@
   color: var(--color-primary-3);
   cursor: pointer;
   font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .verificar_administrar_pedidos_sessao_bloco
 }
