@@ -122,6 +122,30 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 
                     </div>
                 </aside>
+                        
+                        <script>
+                            const subMap = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
+                            const catSel = document.getElementById('categoria');
+                            const subSel = document.getElementById('subcategoria');
+                            
+                            catSel.addEventListener('change', () => {
+                                const catId = catSel.value;
+                                subSel.innerHTML = '<option value="" selected disabled>Selecione uma subcategoria</option>';
+                                if (subMap[catId]) {
+                            subMap[catId].forEach(sub => {
+                                const opt = document.createElement('option');
+                                opt.value = sub.id_subcategoria;
+                                opt.textContent = sub.subcat_nome;
+                                subSel.appendChild(opt);
+                            });
+                            subSel.disabled = false;
+                        } else {
+                            subSel.disabled = true;
+                        }
+                    });
+                    </script>
+                </div>
+            </aside>
             </section>
 
             <div class="add_product_submit_button">

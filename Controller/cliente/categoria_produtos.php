@@ -1,5 +1,7 @@
 <?php
-    include 'menu_pg_inicial.php';
+include '../utils/sessao_ativa.php';
+include '../utils/categoria5.php';
+include 'menu_pg_inicial.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,50 +21,86 @@
             <a class="btn_voltar" href="#" onclick="window.history.back(); return false;">
                 <i class="bi bi-chevron-left"></i> 
             </a>
-            <h2 class="h2_categoria_produtos">Produtos</h2>
+            <h2 class="h2_categoria_produtos">Produtos Gerais
+                <?php if ($filtro): ?>
+                    <span style="font-size: 0.8em; color: #666;">
+                        - <?php echo obterNomeFiltro($filtro); ?>
+                    </span>
+                <?php endif; ?>
+            </h2>
         </div>
         <div class="filtros_container_categoria_produtos">
-            <span class="filtros_titulo">Classificar por:</span>
-            <button class="filtro_btn" onclick="filtrar('alimentos')">Alimentos</button>
-            <button class="filtro_btn" onclick="filtrar('acessorios')">Acessórios</button>
-            <button class="filtro_btn" onclick="filtrar('ferramentas')">Ferramentas</button>
-            <button class="filtro_btn" onclick="filtrar('maquinarios')">Maquinários</button>
+            <span class="filtros_titulo">Filtrar por:</span>
+            <button class="filtro_btn <?php echo $filtro == 'racao_suplementos' ? 'active' : ''; ?>"
+                onclick="filtrar('racao_suplementos')">
+                Rações e Suplementos
+            </button>
+            <button class="filtro_btn <?php echo $filtro == 'medicamentos' ? 'active' : ''; ?>"
+                onclick="filtrar('medicamentos')">
+                Medicamentos
+            </button>
+            <button class="filtro_btn <?php echo $filtro == 'higiene_cuidado' ? 'active' : ''; ?>"
+                onclick="filtrar('higiene_cuidado')">
+                Higiene e Cuidado
+            </button>
+            <button class="filtro_btn <?php echo $filtro == 'equipamentos' ? 'active' : ''; ?>"
+                onclick="filtrar('equipamentos')">
+                Equipamentos
+            </button>
+            <button class="filtro_btn <?php echo $filtro == 'suplementos_nutricionais' ? 'active' : ''; ?>"
+                onclick="filtrar('suplementos_nutricionais')">
+                Suplementos Nutricionais
+            </button>
+
+            <span class="filtros_titulo" style="margin-left: 20px;">Ordenar por:</span>
             <select class="filtro_select" onchange="filtrar(this.value)">
                 <option value="preco">Preço</option>
                 <option value="menor_preco">Menor Preço</option>
                 <option value="maior_preco">Maior Preço</option>
             </select>
+
+            <!-- Botão para limpar filtros -->
+            <?php if ($filtro): ?>
+                <button class="filtro_btn limpar" onclick="limparFiltros()">
+                    <i class="bi bi-x-circle"></i> Limpar Filtros
+                </button>
+            <?php endif; ?>
         </div>
         <div class="lotes_geral">
-            <div class="lotes_container" id="lotesContainer_produtos">
-                <?php
-                $lotes = [
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "380 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "24 meses", "preco" => "5.200,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "420 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "28 meses", "preco" => "5.800,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "350 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "22 meses", "preco" => "4.900,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "380 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "24 meses", "preco" => "5.200,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "420 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "28 meses", "preco" => "5.800,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "350 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "22 meses", "preco" => "4.900,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "350 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "22 meses", "preco" => "4.900,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
-                    ["imagem" => "../../view/public/imagens/nelore1.webp", "peso" => "400 kg", "raca" => "Nelore", "genealogia" => "PO", "idade" => "26 meses", "preco" => "5.500,00"],
-                ];
-                foreach ($lotes as $item) { 
-                    $imagem = $item['imagem'];
-                    $peso = $item['peso'];
-                    $raca = $item['raca'];
-                    $genealogia = $item['genealogia'];
-                    $idade = $item['idade'];
-                    $preco = $item['preco'];
-                    include 'card_telas.php';
+            <?php
+            if ($result && $result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()): ?>
+                    <div class="lotes_container">
+                        <?php
+                        $legenda = $row['prod_nome'];
+                        $imagem = $row['path_img'];
+                        $nome = $row['prod_nome'];
+                        $valor = number_format($row['valor'], 2, ',', '.');
+                        $subcategoria = $row['subcat_nome']; // Para possível uso no card
+                        include 'card_telas.php';
+                        ?>
+                    </div>
+                <?php endwhile;
+            } else {
+                echo "<p class='sem-produtos'>Nenhum produto encontrado ";
+                if ($filtro) {
+                    echo "para " . obterNomeFiltro($filtro);
                 }
-                ?>
-            </div>
-            <button class="nav_button next" onclick="navegarLotes(1)">❯</button>
+                echo "</p>";
+
+                // Se há filtro ativo, mostra opção para limpar
+                if ($filtro): ?>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button class="filtro_btn limpar" onclick="limparFiltros()" style="margin: 0 auto;">
+                            <i class="bi bi-arrow-counterclockwise"></i> Ver Todos os Produtos
+                        </button>
+                    </div>
+                <?php endif;
+            }
+            ?>
         </div>
+
+        <button class="nav_button next" onclick="navegarLotes(1)">❯</button>
     </div>
 
     <script>
@@ -94,4 +132,24 @@
         ?>
     </footer>
 </body>
+
 </html>
+
+<?php
+// Função para obter o nome amigável do filtro
+function obterNomeFiltro($filtro)
+{
+    $nomes = [
+        'racao_suplementos' => 'Rações e Suplementos',
+        'medicamentos' => 'Medicamentos Veterinários',
+        'higiene_cuidado' => 'Produtos de Higiene e Cuidado',
+        'equipamentos' => 'Equipamentos e Utensílios',
+        'suplementos_nutricionais' => 'Suplementos Nutricionais',
+        'menor_preco' => 'Menor Preço',
+        'maior_preco' => 'Maior Preço',
+        'preco' => 'Padrão'
+    ];
+
+    return isset($nomes[$filtro]) ? $nomes[$filtro] : ucfirst(str_replace('_', ' ', $filtro));
+}
+?>

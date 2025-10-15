@@ -15,6 +15,10 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
+    <link rel="stylesheet" href="../../view/public/css/adm/toogle.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script defer src="../../view/js/adm/toogle.js"></script>
+    <script defer src="../../view/js/adm/buscar_produto.js"></script>
 </head>
 <body>
      <section id="atualizar-produtos">
@@ -26,11 +30,9 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
         </div>
         <div id="page-content-atualizar-produtos">
             <div class="first-container-atualizar-produtos">
-                <div id="search-bar-atualizar-produtos">
-                    <input type="text" placeholder="Pesquisar" />
-                    <button type="submit">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                <div id="search-bar-atualizar-produtos"> 
+                    <input type="text" id="searchInput" placeholder="Pesquisar" />
+                    <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button> 
                 </div>
                 <a href="?status=ativos">Ativos</a>
                 <a href="#">Inativados</a>
@@ -40,17 +42,17 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
             <div id="table2-atualizar-produtos">
                 <div id="table-space-atualizar-produtos">
                     <table>
-                        
-                        <tr>
-                            <th class="select-all-label-atualizar-produtos"><button>Selecionar tudo</button></th>
-                            <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>
-                            <th class="header-cell-atualizar-produto">Categoria</th>
-                            <th class="header-cell-atualizar-produto">Subcategoria</th>
-                            <th class="header-cell-atualizar-produto">Preço</th>
-                            <th class="header-cell-atualizar-produto">Editar</th>
-                            <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
-                        </tr>
-
+                       <thead>
+                            <tr>
+                                <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>
+                                <th class="header-cell-atualizar-produto">Categoria</th>
+                                <th class="header-cell-atualizar-produto">Subcategoria</th>
+                                <th class="header-cell-atualizar-produto">Preço</th>
+                                <th class="header-cell-atualizar-produto">Editar</th>
+                                <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
+                            </tr>
+                        </thead> 
+                        <tbody>
                         <?php if (!empty($produtos)): ?>
                             <?php foreach ($produtos as $p): ?>
                                 <tr>
@@ -95,6 +97,9 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                             </button>
                                         </form>
                                     </td>
+                                    <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                        <?= htmlspecialchars($p['produto_ativo'] ?? 'Ops! Também está vazio') ?>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
@@ -102,19 +107,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                 <td colspan="7" style="text-align:center;">Nenhum produto cadastrado</td>
                             </tr>
                         <?php endif; ?>
-                         <?php foreach ($produtos as $produto): ?>
-                        <tr>
-                            <td><input type="checkbox" name="produtos[]" value="<?= $produto['id_produto'] ?>"></td>
-                            <td><?= htmlspecialchars($produto['prod_nome']) ?></td>
-                            <td><?= htmlspecialchars($produto['id_categoria']) ?></td>
-                            <td><?= htmlspecialchars($produto['id_subcategoria']) ?></td>
-                            <td><?= number_format($produto['valor'], 2, ',', '.') ?></td>
-                            <td><a href="editar_produto.php?id=<?= $produto['id_produto'] ?>">Editar</a></td>
-                            <td>
-                                <?php include 'toogle.php'; ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
+                    </tbody>
                     </table>
                 </div>
             </div>

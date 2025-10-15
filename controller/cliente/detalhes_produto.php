@@ -1,6 +1,5 @@
 <?php
-// session_start();
-// require_once '../../model/db/conexao.php';
+session_start();
 include 'menu_pg_inicial.php';
 
 // $id_produto = $_GET['id'] ?? null;

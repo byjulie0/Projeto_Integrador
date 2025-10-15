@@ -1,8 +1,8 @@
 
 <?php
-include 'menu_pg_inicial.php';
-include '../utils/libras.php';
 include '../utils/sessao_ativa.php';
+include '../utils/libras.php';
+include 'menu_pg_inicial.php';
 ?>
 
 <!DOCTYPE html>
