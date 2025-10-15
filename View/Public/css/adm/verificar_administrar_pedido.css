@@ -1,6 +1,9 @@
 @import url("../adm.css");
 
 /* Conteúdo principal */
+.verificar_administrar_pedidos_body{
+  background-color: #fff;
+}
 .verificar_administrar_pedidos_content {
   display: flex;
   flex-direction: column;
@@ -84,13 +87,22 @@
   justify-content: space-around;
 }
 
-.first-container-atualizar-produtos a {
+.first-container-atualizar-produtos {
   font-size: 14px;
   font-weight: 400;
-  color: var(--warning-color);
-  text-decoration: none;
   margin-right: 10px;
   margin-top: 5px;
+}
+.filtros_pedidos{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.filtros_pedidos button{
+  padding: 8px 5px;
+  border-radius: 8px;
+ 
 }
 
 /* Linha divisória */
