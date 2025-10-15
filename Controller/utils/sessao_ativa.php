@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
     //recaptcha
-    
+
     $query = "SELECT id_cliente, cliente_nome, email, senha, cpf_cnpj, data_nasc, telefone, user_ativo FROM cliente WHERE email = '{$email}' ";
 
 
@@ -79,7 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("location: ../cliente/login.php");
     }
 }
-
 
 
 
