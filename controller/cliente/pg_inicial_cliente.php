@@ -1,5 +1,8 @@
 
-<?php include '../utils/validacao_login.php';?>
+<?php
+include '../utils/libras.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

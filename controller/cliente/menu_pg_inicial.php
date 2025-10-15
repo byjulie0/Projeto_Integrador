@@ -10,7 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../view/public/css/cliente/menu_pg_inicial.css">
     <script defer src="../../view/js/cliente/menu-pg-inicial.js"></script>
-    <script defer src="../../view/js/cliente/pg_busca.js"></script>
+    <script defer src="../../view/js/cliente/busca_verificar_produto.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 
 <body>
