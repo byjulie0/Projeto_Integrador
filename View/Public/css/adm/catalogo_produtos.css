@@ -141,11 +141,12 @@
     border-collapse: collapse;
     table-layout: fixed;
 }
-#table-space-atualizar-produtos table td[colspan] {
-    display: block;
+#table-space-atualizar-produtos table td[colspan="7"] {
+    /* display: block; */
     text-align: center;
     padding: 20px;
     width: 100%;
+    /* min-width: 1300px; */
 }
 #table-space-atualizar-produtos table th {
     width: 100%;

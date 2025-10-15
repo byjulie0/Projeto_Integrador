@@ -98,7 +98,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
-                                <td colspan="7" style="text-align:center;">Nenhum produto cadastrado</td>
+                                <td colspan="7">Nenhum produto cadastrado</td>
                             </tr>
                         <?php endif; ?>
 
