@@ -36,14 +36,17 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
                                 <i class="bi bi-search"></i>
                             </button>
                         </form>
-                        <a
-                            href="?status=pendente<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Pendente</a>
-                        <a
-                            href="?status=concluído<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Concluído</a>
-                        <a
-                            href="?status=cancelado<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Cancelado</a>
-                        <a
-                            href="?<?= isset($_GET['pesquisa']) ? 'pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Todos</a>
+                        <div class="filtros_pedidos">
+
+                            <a
+                                href="?status=pendente<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Pendente</a>
+                            <a
+                                href="?status=concluído<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Concluído</a>
+                            <a
+                                href="?status=cancelado<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Cancelado</a>
+                            <a
+                                href="?<?= isset($_GET['pesquisa']) ? 'pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Todos</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,74 +54,80 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
         </section>
 
         <div class="verificar_administrar_pedidos_sessao_visualizar">
-            <div class="verificar_administrar_pedidos_sessao_pedidos">
-                <table>
-                    <tr class="linha_cinza">
-                        <th class="header-cliente-name-verificar-administar header-cell-gerenciar-clientes">Pedido</th>
-                        <th class="header-cell-verificar-administar-pedidos">Abertura</th>
-                        <th class="header-cell-verificar-administar-pedidoss">Status</th>
-                        <th class="header-cell-verificar-administar-pedidos">Cliente</th>
-                        <th class="header-cell-verificar-administar-pedidos">Preço</th>
-                        <th class="header-cell-verificar-administar-pedidos">CPJ/CPF</th>
-                        <th class="header-cell-verificar-administar-pedidos">Verificar</th>
-                    </tr>
-
-                    <?php
-                    $status = $_GET['status'] ?? '';
-                    $pesquisa = $_GET['pesquisa'] ?? '';
-
-                    $pedidos_filtrados = [];
-
-                    foreach ($pedidos as $pedido) {
-                        $matchStatus = !$status || strtolower($pedido['status_pedido']) === strtolower($status);
-                        $matchPesquisa = !$pesquisa || stripos($pedido['cliente_nome'], $pesquisa) !== false;
-
-                        if ($matchStatus && $matchPesquisa) {
-                            $pedidos_filtrados[] = $pedido;
-                        }
-                    }
-
-                    if (!empty($pedidos_filtrados)):
-                        foreach ($pedidos_filtrados as $pedido):
-                            ?>
-                            <tr>
-                                <td class="product-name-atualizar-produtos cell-atualizar-produto">
-                                    <?= htmlspecialchars($pedido['id_pedido']) ?>
-                                </td>
-
-                                <td class="product-category-atualizar-produtos cell-atualizar-produto">
-                                    <?= htmlspecialchars($pedido['data_pedido']) ?>
-                                </td>
-
-                                <td class="qt-atualizar-produtos cell-atualizar-produto">
-                                    <?= htmlspecialchars($pedido['status_pedido']) ?>
-                                </td>
-
-                                <td class="price-atualizar-produtos cell-atualizar-produto">
-                                    <?= htmlspecialchars($pedido['cliente_nome']) ?>
-                                </td>
-
-                                <td class="price-atualizar-produtos cell-atualizar-produto">
-                                    R$ <?= number_format($pedido['preco_total'] ?? 0, 2, ',', '.') ?>
-                                </td>
-
-                                <td class="price-atualizar-produtos cell-atualizar-produto">
-                                    <?= htmlspecialchars($pedido['cpf_cnpj']) ?>
-                                </td>
-
-                                <td class="lupa-administar-pedidos cell-atualizar-produto">
-                                    <a href="verificar_pedidos_infos.php?id=<?= urlencode($pedido['id_pedido']) ?>">
-                                        <i class="bi bi-search"></i>
-                                    </a>
-                                </td>
+            <div class="table-container">
+                <div class="verificar_administrar_pedidos_sessao_pedidos">
+                    <table>
+                        <thead>
+                            <tr class="linha_cinza">
+                                <th class="header-cliente-name-verificar-administar header-cell-gerenciar-clientes">
+                                    Pedido</th>
+                                <th class="header-cell-verificar-administar-pedidos">Abertura</th>
+                                <th class="header-cell-verificar-administar-pedidoss">Status</th>
+                                <th class="header-cell-verificar-administar-pedidos">Cliente</th>
+                                <th class="header-cell-verificar-administar-pedidos">Preço</th>
+                                <th class="header-cell-verificar-administar-pedidos">CPJ/CPF</th>
+                                <th class="header-cell-verificar-administar-pedidos">Verificar</th>
                             </tr>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <tr>
-                            <td colspan="7" style="text-align:center;">Nenhum pedido encontrado</td>
-                        </tr>
-                    <?php endif; ?>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $status = $_GET['status'] ?? '';
+                            $pesquisa = $_GET['pesquisa'] ?? '';
+
+                            $pedidos_filtrados = [];
+
+                            foreach ($pedidos as $pedido) {
+                                $matchStatus = !$status || strtolower($pedido['status_pedido']) === strtolower($status);
+                                $matchPesquisa = !$pesquisa || stripos($pedido['cliente_nome'], $pesquisa) !== false;
+
+                                if ($matchStatus && $matchPesquisa) {
+                                    $pedidos_filtrados[] = $pedido;
+                                }
+                            }
+
+                            if (!empty($pedidos_filtrados)):
+                                foreach ($pedidos_filtrados as $pedido):
+                                    ?>
+                                    <tr>
+                                        <td class="product-name-atualizar-produtos cell-atualizar-produto">
+                                            <?= htmlspecialchars($pedido['id_pedido']) ?>
+                                        </td>
+
+                                        <td class="product-category-atualizar-produtos cell-atualizar-produto">
+                                            <?= htmlspecialchars($pedido['data_pedido']) ?>
+                                        </td>
+
+                                        <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                            <?= htmlspecialchars($pedido['status_pedido']) ?>
+                                        </td>
+
+                                        <td class="price-atualizar-produtos cell-atualizar-produto">
+                                            <?= htmlspecialchars($pedido['cliente_nome']) ?>
+                                        </td>
+
+                                        <td class="price-atualizar-produtos cell-atualizar-produto">
+                                            R$ <?= number_format($pedido['preco_total'] ?? 0, 2, ',', '.') ?>
+                                        </td>
+
+                                        <td class="price-atualizar-produtos cell-atualizar-produto">
+                                            <?= htmlspecialchars($pedido['cpf_cnpj']) ?>
+                                        </td>
+
+                                        <td class="lupa-administar-pedidos cell-atualizar-produto">
+                                            <a href="verificar_pedidos_infos.php?id=<?= urlencode($pedido['id_pedido']) ?>">
+                                                <i class="bi bi-search"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="7" style="text-align:center;">Nenhum pedido encontrado</td>
+                                </tr>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>

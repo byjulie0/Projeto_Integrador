@@ -76,8 +76,12 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  align-items: flex-end;
   flex-wrap: wrap;
+}
+.filtros_pedidos{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .first-container-atualizar-produtos a {
@@ -102,18 +106,38 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  overflow-x: auto; 
+  overflow-x: auto;
 }
 
 .verificar_administrar_pedidos_sessao_pedidos table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
-  min-width: 700px;
+  table-layout: auto;
+  min-width: 800px;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
   color: var(--color-primary-1);
+}
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Suave scroll no iOS */
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.verificar_administrar_pedidos_sessao_visualizar {
+  width: 100%;
+  overflow: visible;
+}
+
+.verificar_administrar_pedidos_sessao_pedidos table th,
+.verificar_administrar_pedidos_sessao_pedidos table td {
+  min-width: 100px;
+  padding: 12px 8px;
+  white-space: nowrap;
+  text-align: center;
 }
 
 /* Cabeçalho */
@@ -165,9 +189,8 @@
   .verificar_administrar_pedidos_sessao_pedidos table {
     min-width: 500px;
     font-size: 12px;
-    
   }
-  .verificar_administrar_pedidos_sessao_pedidos{
+  .verificar_administrar_pedidos_sessao_pedidos {
     overflow-x: auto;
   }
 }
@@ -187,7 +210,7 @@
     min-width: 550px;
     font-size: 13px;
   }
-  .verificar_administrar_pedidos_sessao_pedidos{
+  .verificar_administrar_pedidos_sessao_pedidos {
     overflow-x: auto;
   }
 }
@@ -197,17 +220,28 @@
   .verificar_administrar_pedidos_content {
     padding: 30px 40px;
   }
+  .table-container {
+    margin: 0 -15px;
+    width: calc(100% + 30px);
+  }
+  .first-container-atualizar-produtos {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
   .verificar_administrar_pedidos_sessao_bloco_info h1 {
     font-size: 1.4rem;
   }
   .verificar_administrar_pedidos_sessao_formulario_pesquisa {
-    max-width: 60%;
+    max-width: 100%;
+    width: 100%;
   }
   .verificar_administrar_pedidos_sessao_pedidos table {
     min-width: 650px;
     font-size: 14px;
   }
-  .verificar_administrar_pedidos_sessao_pedidos{
+  .verificar_administrar_pedidos_sessao_pedidos {
     overflow-x: auto;
   }
 }
