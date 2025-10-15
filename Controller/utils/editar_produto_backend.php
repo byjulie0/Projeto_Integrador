@@ -3,31 +3,31 @@ include '../../model/DB/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $id = $_POST['id_produto'] ?? 0;
-    $nome = $_POST['nome'] ?? '';
-    $valor = $_POST['valor'] ?? 0;
-    $quantidade = $_POST['quantidade'] ?? 0;
-    $categoria = $_POST['categoria'] ?? 0;
-    $subcategoria = $_POST['subcategoria'] ?? 0;
-    $descricao = $_POST['descricao'] ?? '';
-    $peso = $_POST['peso'] ?? 0;
-    $idade = $_POST['idade'] ?? '';
-    $sexo = $_POST['sexo'] ?? '';
-    $campeao = $_POST['campeao'] ?? '';
+    $id = intval($_POST['id_produto'] ?? 0);
+    $nome = mysqli_real_escape_string($con, $_POST['nome'] ?? '');
+    $valor = floatval($_POST['valor'] ?? 0);
+    $quantidade = intval($_POST['quantidade'] ?? 0);
+    $categoria = intval($_POST['categoria'] ?? 0);
+    $subcategoria = intval($_POST['subcategoria'] ?? 0);
+    $descricao = mysqli_real_escape_string($con, $_POST['descricao'] ?? '');
+    $peso = floatval($_POST['peso'] ?? 0);
+    $idade = mysqli_real_escape_string($con, $_POST['idade'] ?? '');
+    $sexo = mysqli_real_escape_string($con, $_POST['sexo'] ?? '');
+    $campeao = mysqli_real_escape_string($con, $_POST['campeao'] ?? '');
 
     if (!empty($_FILES['imagem']['name'])) {
         $nomeImagem = basename($_FILES['imagem']['name']);
         $caminho = '../../uploads/' . $nomeImagem;
         move_uploaded_file($_FILES['imagem']['tmp_name'], $caminho);
-        $imgQuery = ", imagem = '$nomeImagem'";
+        $imgQuery = ", path_img = '$nomeImagem'";
     } else {
         $imgQuery = "";
     }
 
     $sql = "UPDATE produto SET 
-                nome = '$nome',
+                prod_nome = '$nome',
                 valor = '$valor',
-                quantidade = '$quantidade',
+                quant_estoque = '$quantidade',
                 id_categoria = '$categoria',
                 id_subcategoria = '$subcategoria',
                 descricao = '$descricao',
@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_query($con, $sql)) {
         echo "<script>alert('Produto atualizado com sucesso!'); window.location.href='../pages/listar_produtos.php';</script>";
     } else {
+        echo '<pre>Erro SQL: ' . mysqli_error($con) . '</pre>';
         echo "<script>alert('Erro ao atualizar produto.'); window.history.back();</script>";
     }
 
@@ -48,3 +49,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "<script>alert('Acesso inválido!'); window.history.back();</script>";
     exit;
 }
+?>
