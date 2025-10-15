@@ -114,7 +114,7 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
                                         </td>
 
                                         <td class="lupa-administar-pedidos cell-atualizar-produto">
-                                            <a href="verificar_pedidos_infos.php?id=<?= urlencode($pedido['id_pedido']) ?>">
+                                            <a href="verificar_pedido_infos.php?id=<?= $pedido['id_pedido'] ?>">
                                                 <i class="bi bi-search"></i>
                                             </a>
                                         </td>

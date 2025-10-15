@@ -29,7 +29,60 @@
   font-size: 25px;
   color: var(--color-primary-1);
 }
+.status-pendente {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
 
+.status-concluído {
+    background-color: #d1edff;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.status-cancelado {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.label-pedido-informacoes-pedidos {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+.buttons-area-informacoes-pedidos {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.left-buttons-informacoes-pedidos {
+    text-align: left;
+}
 #subtitle-informacoes-pedidos {
     display: flex;
     flex-direction: row;
