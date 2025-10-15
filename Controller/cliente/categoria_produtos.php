@@ -62,7 +62,6 @@ include 'menu_pg_inicial.php';
                 <option value="maior_preco" <?php echo $filtro == 'maior_preco' ? 'selected' : ''; ?>>Maior Preço</option>
             </select>
 
-            <!-- Botão para limpar filtros -->
             <?php if ($filtro): ?>
                 <button class="filtro_btn limpar" onclick="limparFiltros()">
                     <i class="bi bi-x-circle"></i> Limpar Filtros
@@ -70,14 +69,10 @@ include 'menu_pg_inicial.php';
             <?php endif; ?>
         </div>
 
-        <div class="lotes_geral">
-            <?php
+        <div class="lotes_geral"><?php
+
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()):
-                    $id_prod = $row['id_produto'];
-                    $imagem = $row['path_img'];
-                    $nome = $row['prod_nome'];
-                    $valor = number_format($row['valor'], 2, ',', '.');
                     include 'card_telas.php';
                 endwhile;
             } else {
@@ -94,8 +89,8 @@ include 'menu_pg_inicial.php';
                         </button>
                     </div>
                 <?php endif;
-            }
-            ?>
+            }?>
+    
         </div>
 
         <button class="nav_button next" onclick="navegarLotes(1)">❯</button>
@@ -120,15 +115,11 @@ include 'menu_pg_inicial.php';
         }
     </script>
 
-    <footer>
-        <?php include 'footer_cliente.php'; ?>
-    </footer>
 </body>
-
+<?php include 'footer_cliente.php'; ?>
 </html>
 
 <?php
-
 function obterNomeFiltro($filtro)
 {
     $nomes = [

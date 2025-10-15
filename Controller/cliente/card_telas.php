@@ -6,6 +6,12 @@
     <title>Componente card produtos</title>
     <link rel="stylesheet" href="../../view/public/css/cliente/card_telas.css">
 </head>
+<?php
+$id_prod = $row['id_produto'];
+$imagem = $row['path_img'];
+$nome = $row['prod_nome'];
+$valor = number_format($row['valor'], 2, ',', '.');
+?>
 <body>
     <div class="lote-card">
         <a href="detalhes_produto.php?id_produto=<?php echo $id_prod; ?>">

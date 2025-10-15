@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -23,10 +23,10 @@
                     ?>
                 </a>
                 <a>
-                <!-- <a href="#" onclick="window.history.back(); return false;> -->
+                    <!-- <a href="#" onclick="window.history.back(); return false;> -->
                     <?php
                     $texto = "Não";
-                    include '../cliente/botao_vermelho_cliente.php'; 
+                    include '../cliente/botao_vermelho_cliente.php';
                     ?>
                 </a>
             </div>

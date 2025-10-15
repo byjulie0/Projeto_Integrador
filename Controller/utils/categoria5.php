@@ -2,13 +2,11 @@
 // Obter o parâmetro de filtro da URL
 $filtro = isset($_GET['classificar']) ? $_GET['classificar'] : '';
 
-// Query base para produtos da categoria 5 (Produtos Gerais)
 $query = "SELECT p.*, s.subcat_nome
           FROM produto p
           LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria
           WHERE p.id_categoria = 5 AND p.produto_ativo = 1";
 
-// Aplicar filtros baseados no parâmetro
 switch ($filtro) {
     case 'racao_suplementos':
         $query .= " AND p.id_subcategoria = 23"; // Rações e suplementos alimentares

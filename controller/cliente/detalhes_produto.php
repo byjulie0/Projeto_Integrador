@@ -1,28 +1,6 @@
 <?php
-include '../../model/DB/conexao.php';
-session_start();
+include '../utils/detalhes_prod.php';
 include 'menu_pg_inicial.php';
-
-$id_produto = $_GET['id_produto'] ?? null;
-
-$sql = "SELECT p.*, c.cat_nome, s.subcat_nome
-        FROM produto p
-        LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
-        LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria
-        WHERE p.id_produto = ?";
-
-$query = $con->prepare($sql);
-$query->bind_param("i", $id_produto);
-$query->execute();
-$result = $query->get_result();
-$produto = $result->fetch_assoc();
-
-if (!$produto) {
-    die("Produto não encontrado!");
-}
-
-$valor_formatado = number_format($produto['valor'], 2, ',', '.');
-$peso_formatado = $produto['peso'] ? number_format($produto['peso'], 2, ',', '.') . ' kg' : 'Não informado';
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +17,7 @@ $peso_formatado = $produto['peso'] ? number_format($produto['peso'], 2, ',', '.'
 </head>
 
 <body class="body-detalhes-produto">
-    <script>var usuarioLogado = <?php echo isset($_SESSION['id_cliente']) ? 'true' : 'false'; ?>;</script>
+    <!-- <script>var usuarioLogado = <php echo isset($_SESSION['id_cliente']) ? 'true' : 'false'; ?>;</script> -->
     <h2 class="titulo-produto-detalhes-produto">
         <a href="#" onclick="window.history.back(); return false"><i class="bi bi-chevron-left"></i></a>
         <?php echo htmlspecialchars($produto['prod_nome']); ?>
@@ -48,13 +26,17 @@ $peso_formatado = $produto['peso'] ? number_format($produto['peso'], 2, ',', '.'
 
         <div class="galeria-detalhes-produto">
             <div class="miniaturas-detalhes-produto">
-                <img src="<?php echo $produto['path_img']; ?>"
-                    alt="<?php echo htmlspecialchars($produto['prod_nome']); ?>">
+                <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Miniatura 1">
+                <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Miniatura 2">
+                <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Miniatura 3">
+                <!-- <img src="<php echo $produto['path_img']; ?>"
+                    alt="?php echo htmlspecialchars($produto['prod_nome']); ?>"> -->
             </div>
 
             <div class="imagem-grande-detalhes-produto">
-                <img src="<?php echo $produto['path_img']; ?>"
-                    alt="Imagem Principal de <?php echo htmlspecialchars($produto['prod_nome']); ?>">
+                <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Imagem Principal">
+                <!-- <img src="<php echo $produto['path_img']; ?>"
+                    alt="Imagem Principal de <php echo htmlspecialchars($produto['prod_nome']); ?>"> -->
             </div>
         </div>
 
@@ -69,12 +51,9 @@ $peso_formatado = $produto['peso'] ? number_format($produto['peso'], 2, ',', '.'
 
             <p class="preco-detalhes-produto">R$ <?php echo $valor_formatado; ?></p>
 
-            <form id="formCarrinho" action="add_carrinho.php" method="POST">
-                <input type="hidden" name="id_cliente" value="<?php echo $_SESSION['id_cliente'] ?? ''; ?>">
-                <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
-                <button type="button" class="botao-carrinho-detalhes-produto" onclick="verificarLoginCarrinho()">
-                    Adicionar ao carrinho
-                </button>
+            <form id="formCarrinho" action="add_carrinho.php" method="GET">
+                <!-- <input type="hidden" name="id_produto" value="<php echo $produto['id_produto']; ?>"> -->
+                <a type="button" class="botao-carrinho-detalhes-produto" href="../utils/add_carrinho.php?id_produto=<?php echo $produto['id_produto']; ?>">Adicionar ao carrinho</a>
             </form>
 
             <section class="descricao-detalhes-produto">
@@ -84,16 +63,18 @@ $peso_formatado = $produto['peso'] ? number_format($produto['peso'], 2, ',', '.'
             </section>
 
             <section class="sub-descricao-detalhes-produto">
-                <p><strong>Peso: </strong><?php echo $peso_formatado; ?></p>
-                <p><strong>Data de nascimento: </strong><?php echo $produto['idade']; ?></p>
-                <p><strong>Categoria: </strong><?php echo $produto['subcat_nome'] ?? 'Não categorizado'; ?></span></p>
-                <?php if ($produto['campeao']): ?>
-                    <p><strong>Status:</strong> <span class="badge bg-success">Animal Campeão</span></p>
+                <?php if ($produto['id_categoria'] != 5): ?>
+                    <p><strong>Peso: </strong><?php echo $peso_formatado; ?></p>
+                    <p><strong>Data de nascimento: </strong><?php echo $produto['idade']; ?></p>
+                    <p><strong>Tipo: </strong><?php echo $produto['subcat_nome'] ?? 'Não categorizado'; ?></span></p>
+                    <?php if ($produto['campeao']): ?>
+                        <p><strong>Status:</strong> <span class="badge bg-success">Animal Campeão</span></p>
+                    <?php endif; ?>
                 <?php endif; ?>
             </section>
     </main>
 </body>
-<?php include '../overlays/pop_up_login.php'; ?>
+<!-- <php include '../overlays/pop_up_login.php'; ?> -->
 <?php include 'footer_cliente.php'; ?>
 
 </html>
