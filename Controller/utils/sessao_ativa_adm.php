@@ -2,41 +2,47 @@
 session_start();
 include '../../model/DB/conexao.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo "<script>alert('Método não permitido!'); window.location.href='../../Controller/adm/login.php';</script>";
+    exit;
+}
 
-    echo $email;
-    echo $password;
+$email = trim($_POST['email'] ?? '');
+$password = trim($_POST['password'] ?? '');
 
-    $query = "SELECT id_adm, adm_nome, email, telefone, senha, cnpj, funcao FROM adm WHERE email = '{$email}' and funcao = 'ADM' ";
+if (empty($email) || empty($password)) {
+    echo "<script>alert('Preencha todos os campos!'); window.location.href='../../Controller/adm/login.php';</script>";
+    exit;
+}
 
-    $result = mysqli_query($con, $query);
+$sql = "SELECT id_adm, adm_nome, email, telefone, senha, cnpj, funcao
+        FROM adm
+        WHERE email = ? AND funcao = 'ADM'
+        LIMIT 1";
 
-    $row = mysqli_num_rows($result);
+$query = $con->prepare($sql);
+$query->bind_param("s", $email);
+$query->execute();
+$result = $query->get_result();
 
-    if ($row > 0) {
-        $retorno = mysqli_fetch_assoc($result);
+if ($row = $result->fetch_assoc()) {
+    if ($password === $row['senha']) {
+        $_SESSION['id_adm'] = $row['id_adm'];
+        $_SESSION['adm_nome'] = $row['adm_nome'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['telefone'] = $row['telefone'];
+        $_SESSION['cnpj'] = $row['cnpj'];
+        $_SESSION['funcao'] = $row['funcao'];
+        $_SESSION['tipo_usuario'] = 'ADM';
+
+        echo "<script>alert('Login realizado com sucesso!'); window.location.href='../../Controller/adm/pg_inicial_adm.php';</script>";
+        exit;
     } else {
-        echo 'Login invalido';
-        header("Location: ../adm/login.php");
-        exit();
+        echo "<script>alert('Senha incorreta!'); window.location.href='../../Controller/adm/login.php';</script>";
+        exit;
     }
-
-    if ($password === $retorno['senha']) {
-
-        $_SESSION["id_adm"] = $retorno['id_adm'];
-        $_SESSION["adm_nome"] = $retorno['adm_nome'];
-        $_SESSION["email"] = $retorno['email'];
-        $_SESSION["telefone"] = $retorno['telefone'];
-        $_SESSION["cnpj"] = $retorno['cnpj'];
-        $_SESSION["funcao"] = $retorno['funcao'];
-        header("Location: ../adm/pg_inicial_adm.php");
-        exit();
-    } else {
-        echo 'Login invalido';
-        header("Location: ../adm/login.php");
-        exit();
-    }
+} else {
+    echo "<script>alert('Administrador não encontrado!'); window.location.href='../../Controller/adm/login.php';</script>";
+    exit;
 }
 ?>
