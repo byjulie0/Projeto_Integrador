@@ -7,7 +7,7 @@
     justify-content: center;
     width: 100%;
     padding: 50px 100px;
-    min-height: 100%;
+    /* min-height: 100%; */
 }
 #page-title-atualizar-produtos {
     padding-bottom: 25px;
@@ -23,38 +23,35 @@
     justify-content: flex-start;
     gap: 25px
 }
-#title-atualizar-produtos{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 25px
+
+.break-line {
+    margin-top: 20px;
 }
+
 #title-atualizar-produtos h3{
     margin: 0;
     padding: 0;
-    display: inline-block;
+    /* display: inline-block; */
     color: var(--color-primary-1);
     font-size: 24px;
 }
 .bi-chevron-left{
-  display: inline-flex;
-  text-decoration: none;
+  /* display: inline-flex; */
   font-size: 25px;
   color: var(--color-primary-1);
+  text-decoration: none;
 }
 
 #page-content-atualizar-produtos{
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    /* gap: 25px; */
 }
 #search-bar-atualizar-produtos {
     display: flex;
     align-items: center;
-    background-color: none;
+    /* background-color: none; */
     border-radius: 50px;
     border: 0.5px solid var(--color-primary-1);
     padding: 5px 15px;
@@ -63,10 +60,10 @@
     max-width: 400px;
 }
 .first-container-atualizar-produtos{
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 100%;
     justify-content: space-between;
     align-items: flex-end;
 }
@@ -75,16 +72,16 @@
     font-weight: 400;
     color: var(--color-primary-1);
     position: absolute;
-    /* text-decoration: underline; */
+    text-decoration: none;
 }
 .catalogo_produtos_botao_todos{
-    left: 145%;
+    left: 65%;
 }
 .catalogo_produtos_botao_ativos{
-    left: 165%;
+    left: 75%;
 }
 .catalogo_produtos_botao_inativos{
-    left: 185%;
+    left: 85%;
 }
 .catalogo_produtos_botao_todos:hover{
     color: rgb(130, 136, 141);
@@ -106,49 +103,91 @@
 #search-bar-atualizar-produtos input::placeholder {
     color: var(--color-primary-1);
     font-weight: 500;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 #search-bar-atualizar-produtos button {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
+    /* padding: 0; */
 }
 #search-bar-atualizar-produtos button .fa-solid {
     color: var(--color-primary-1);
     font-size: 16px;
 }
-#break-line{
+/* #break-line{
     width: 100%;
     display: flex;
     height: 0.5px;
     background-color: var(--color-primary-1);
     margin: 25px 0px;
+} */
+.botoes-catalogo-container {
+    display: flex;
+    gap: 50px;
 }
 
-
+#table2-atualizar-produtos {
+    width: 100%;
+    margin-top: 20px;
+}
 
 #table-space-atualizar-produtos {
     width: 100%;
-    display: flex;
+    overflow-x: auto;
+    /* display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 #table-space-atualizar-produtos table {
     width: 100%;
-    min-width: 700px;
+    /* min-width: 700px; */
     border-collapse: collapse;
     table-layout: fixed;
 }
-#table-space-atualizar-produtos table td[colspan="7"] {
-    /* display: block; */
+/* #table-space-atualizar-produtos table td[colspan="7"] {
+    display: block;
     text-align: center;
     padding: 20px;
     width: 100%;
-    /* min-width: 1300px; */
+    min-width: 1300px;
+} */
+
+#table-space-atualizar-produtos th {
+    background-color: #E5E7E5;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary-1);
+    padding: 10px;
 }
-#table-space-atualizar-produtos table th {
+
+#table-space-atualizar-produtos td {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-primary-1);
+    padding: 10px;
+}
+
+#table-space-atualizar-produtos tr {
+    padding: 20px 10px;
+}
+  
+.fa-pen-to-square {
+    color: var(--color-primary-3);
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+.fa-trash {
+    color: var(--warning-color);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* #table-space-atualizar-produtos table th {
     width: 100%;
     background-color: #E5E7E5;
 }
@@ -211,7 +250,7 @@
     width: 50%;
     border-radius: 5px;
 
-}
+} */
 .product-checkbox {
   appearance: none;
   -webkit-appearance: none;
@@ -219,11 +258,20 @@
   height: 16px;
   border: 1px solid var(--color-primary-1);
   border-radius: 3px;
-  outline: none;
+  /* outline: none; */
   cursor: pointer;
-  margin-right: 8px;
+  /* margin-right: 8px; */
   position: relative;
-  vertical-align: middle;
+  /* vertical-align: middle; */
+}
+.select-all-label-atualizar-produtos button {
+    border: none;
+    background-color: none;
+    background: none;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: underline;
+    color: var(--color-primary-1);
 }
 .product-checkbox:checked {
   background-color: var(--color-primary-3);
@@ -240,11 +288,74 @@
 }
 .category-name-atualizar-produtos {
     background-color: #afdbaf;
-    margin: 0px 5px;
+    /* margin: 0px 5px; */
     border-radius: 15px;
-    padding: 5px;
+    padding: 5px 10px;
+    display: inline-block;
 }
 .category-name-atualizar-produtos span {
     font-weight: 600;
     color: var(--color-primary-3);
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    #atualizar-produtos {
+      padding: 30px;
+    }
+  
+    #atualizar-produtos {
+      padding: 30px 20px;
+    }
+  
+    #title-atualizar-produtos {
+      gap: 10px;
+    }
+  
+    #title-atualizar-produtos h3 {
+      font-size: 18px;
+    }
+  
+    .first-container-atualizar-produtos {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+  
+    .botoes-catalogo-container {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+    }  
+  
+    #search-bar-atualizar-produtos {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    #table-space-atualizar-produtos {
+      overflow-x: auto;
+    }
+  
+    #table-space-atualizar-produtos table {
+      min-width: 700px;
+    }
+  
+    #table-space-atualizar-produtos th,
+    #table-space-atualizar-produtos td {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    .product-atualizar-produtos {
+      flex-direction: column;
+    }
+  
+    .product-atualizar-produtos img {
+      width: 60%;
+    }
+  
+    .select-all-label-atualizar-produtos button {
+      font-size: 12px;
+    }
+  }
