@@ -106,7 +106,7 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
                                         </td>
 
                                         <td class="price-atualizar-produtos cell-atualizar-produto">
-                                            R$ <?= number_format($pedido['preco_total'] ?? 0, 2, ',', '.') ?>
+                                            R$ <?= number_format($pedido['valor_pedido'] ?? 0, 2, ',', '.') ?>
                                         </td>
 
                                         <td class="price-atualizar-produtos cell-atualizar-produto">
