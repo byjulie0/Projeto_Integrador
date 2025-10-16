@@ -15,7 +15,7 @@ $valor = number_format($row['valor'], 2, ',', '.');
 <body>
     <div class="lote-card">
         <a href="detalhes_produto.php?id_produto=<?php echo $id_prod; ?>">
-            <img src="<?php echo $imagem; ?>" alt="<?php echo $nome; ?>">
+            <img src="../../View/Public/<?php echo $imagem; ?>" alt="<?php echo $nome; ?>">
             <div class="info-grid">
                 <p>Nome:</p>
                 <p><?php echo $nome; ?></p>
