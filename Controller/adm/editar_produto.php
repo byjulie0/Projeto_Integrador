@@ -37,7 +37,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 <head>
     <meta charset="UTF-8">
     <title>Editar Produto</title>
-    <link rel="stylesheet" href="../../view/public/css/adm/adicionar_produto.css">
+    <link rel="stylesheet" href="../../view/public/css/adm/editar_produto.css">
     <script defer src="../../view/js/adm/editar_produto.js"></script>
 </head>
 <body class="body_add_product">
@@ -49,7 +49,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
             </a>
             <h1 class="tile_add_product">Editar Produto</h1>
         </div>
-
+pop
         <form action="../utils/editar_produto_backend.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id_produto" value="<?= $produto['id_produto'] ?>">
 

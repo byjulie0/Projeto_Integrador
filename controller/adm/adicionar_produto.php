@@ -26,7 +26,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
     <script defer src="../../view/js/adm/adicionar_produto.js"></script>
 </head>
 <body class="body_add_product">
-
+pop
     <div class="area_add_product">
         <div class="title_page_add_product">
             <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
