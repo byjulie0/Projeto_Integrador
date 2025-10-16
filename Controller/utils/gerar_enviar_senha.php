@@ -1,18 +1,37 @@
 <?php
 require '../../model/composer/vendor/autoload.php';
+include '../../model/DB/conexao.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-$emailUsuario = 'usuario@exemplo.com';
+$emailUsuario = $_POST["esqueci_senha_card_email_digitar"];
 
 $novaSenha = substr(md5(uniqid(rand(), true)), 0, 8);     
 
-$stmt = $con->prepare("UPDATE cliente SET senha = ? WHERE email = ?");
-$stmt->bind_param("ss", $novaSenha, $emailUsuario);
-$stmt->execute();
+$stmt_test=$con->prepare("SELECT * FROM adm WHERE email = ?");
+$stmt_test->bind_param("s",$emailUsuario);
+$stmt_test->execute();
+$stmt_test->store_result();
+$num_linhas = $stmt_test->num_rows;
+
+if ($num_linhas > 0) {
 
 
+    $stmt_adm = $con->prepare("UPDATE adm SET senha = ? WHERE email = ?");
+    $stmt_adm->bind_param("ss", $novaSenha, $emailUsuario);
+    $stmt_adm->execute();
+
+
+} else {
+
+
+    $stmt_cli = $con->prepare("UPDATE cliente SET senha = ? WHERE email = ?");
+    $stmt_cli->bind_param("ss", $novaSenha, $emailUsuario);
+    $stmt_cli->execute();
+
+
+}
 $mail = new PHPMailer(true);
 
 try {
@@ -34,14 +53,17 @@ try {
     $mail->Body = "
         <h2>Recuperação de Acesso</h2>
         <p>Uma nova senha temporária foi gerada para sua conta:</p>
-        <p><b style='font-size:18px;'>$senhaTemporaria</b></p>
+        <p><b style='font-size:18px;'>$novaSenha</b></p>
         <p>Por segurança, altere sua senha ao fazer login.</p>
     ";
-    $mail->AltBody = "Olá, Uma nova senha temporária foi gerada para sua conta: $senhaTemporaria";
-
-
+    $mail->AltBody = "Olá, Uma nova senha temporária foi gerada para sua conta: $novaSenha";
     $mail->send();
-    echo 'Senha temporária enviada com sucesso!';
+
+    header("Location: ../cliente/recuperar_senha_login1.php?status=sucesso");
+    exit();
+
 } catch (Exception $e) {
-    echo "Erro ao enviar e-mail: {$mail->ErrorInfo}";
+    // echo "Erro ao enviar e-mail: {$mail->ErrorInfo}";
+    header("Location: ../cliente/recuperar_senha_login1.php?status=erro");
+    exit();
 }

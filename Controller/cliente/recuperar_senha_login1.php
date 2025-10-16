@@ -21,7 +21,7 @@ include 'menu_recuperar_senha.php';
                 <div class="esqueci_senha_card_email_content">
                     <h1>Esqueceu a Senha</h1>
                     <p>Digite seu e-mail para enviarmos o código e gerar uma nova senha</p>
-                    <form action="recuperar_senha_login2.php" class="esqueci_senha_card_email_formulario" method="GET">
+                    <form action="../utils/gerar_enviar_senha.php" class="esqueci_senha_card_email_formulario" method="POST">
                         <input type="email" name="esqueci_senha_card_email_digitar" placeholder="E-mail" required>
                         <div class="botoes_div">
                             <?php
