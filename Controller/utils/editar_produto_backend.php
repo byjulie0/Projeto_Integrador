@@ -58,7 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($caminhoRelativo) {
             $setParts[] = "path_img = '$caminhoRelativo'";
         }
-
         $setQuery = implode(', ', $setParts);
         $query = "UPDATE produto SET $setQuery WHERE id_produto = $id_produto";
 
