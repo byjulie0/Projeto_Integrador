@@ -1,31 +1,32 @@
-<div class="card_favorito">
-    <a href="detalhes_produto.php" class="card-link">
-        
-        <div class="thumb">
-            <?php if (!empty($imagem)): ?>
-                <img src="<?php echo $imagem; ?>" alt="Imagem do produto favorito">
-            <?php else: ?>
-                <span class="img_fallback">Sem Imagem</span>
-            <?php endif; ?>
-        </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componente card favoritos</title>
+    <link rel="stylesheet" href="../../view/public/css/cliente/card_favoritos.css">
+</head>
+<body>
+    <div class="lote-card">
+        <a href="detalhes_produto.php">
+            <img src="<?php echo $imagem; ?>" alt="Imagem do Animal">
+            <div class="info-grid">
+                <p>Nome:</p>
+                <p><?= $nome ?></p>
+                <p>Peso:</p>
+                <p><?php echo $peso; ?></p>
+                <p>Raça:</p>
+                <p><?php echo $raca; ?></p>
+                <p>Genealogia:</p>
+                <p><?php echo $genealogia; ?></p>
+                <p>Idade:</p>
+                <p><?php echo $idade; ?></p>
+                <p class="preco">R$ <?php echo $preco; ?></p>
+            </div>
+            <div class="botao-pag-fav"></div>
+            <div class="stars-pag-fav"><a href="#">★ Favorito</a></div>
+        </a>
+    </div>
+</body>
+</html>
 
-        <div class="info_card">
-            <div>
-                <h3 class="nome"><?php echo $nome ?? 'Nome Indisponível'; ?></h3>
-                
-                <div class="detalhes">
-                    <p>Peso: <strong><?php echo $peso ?? 'N/A'; ?></strong></p>
-                    <p>Raça: <strong><?php echo $raca ?? 'N/A'; ?></strong></p>
-                    <p>Genealogia: <strong><?php echo $genealogia ?? 'N/A'; ?></strong></p>
-                    <p>Idade: <strong><?php echo $idade ?? 'N/A'; ?></strong></p>
-                </div>
-            </div>
-            
-            <p class="preco">R$ <?php echo $preco ?? '0,00'; ?></p>
-            
-            <div class="acoes">
-                <button class="btn_fav">★ Favorito</button> 
-            </div>
-        </div>
-    </a>
-</div>
