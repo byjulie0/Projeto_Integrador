@@ -2,13 +2,11 @@
 include 'menu_inicial.php';
 include '../../model/DB/conexao.php';
 
-// Verifica se foi passado um ID válido
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("ID de produto inválido.");
 }
 $id_produto = (int)$_GET['id'];
 
-// Buscar dados do produto
 $sqlProd = "SELECT * FROM produto WHERE id_produto = $id_produto";
 $resProd = mysqli_query($con, $sqlProd);
 if (!$resProd || mysqli_num_rows($resProd) == 0) {
@@ -16,7 +14,6 @@ if (!$resProd || mysqli_num_rows($resProd) == 0) {
 }
 $produto = mysqli_fetch_assoc($resProd);
 
-// Carregar categorias e subcategorias (igual ao adicionar)
 $sqlCat = "SELECT id_categoria, cat_nome FROM categoria";
 $resCat = mysqli_query($con, $sqlCat);
 $categorias = [];
