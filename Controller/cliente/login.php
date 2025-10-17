@@ -2,9 +2,10 @@
 include 'menu_login.php';
 include '../utils/libras.php'
 
-?>
+  ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,6 @@ include '../utils/libras.php'
 
 <body>
   <main class="container_geral_login">
-    
     <div class="login_box_vinycius">
       <div class="info_login_vinycius">
         <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
@@ -47,7 +47,8 @@ include '../utils/libras.php'
             ?>
           </div>
 
-          <?php if (isset($erro)) echo '<p style="color:red;">' . $erro . '</p>'; ?>
+          <?php if (isset($erro))
+            echo '<p style="color:red;">' . $erro . '</p>'; ?>
 
           <div class="info-login">
             <a href="recuperar_senha_login1.php" class="esqueci_senha_login">Esqueci minha senha</a>
@@ -61,4 +62,5 @@ include '../utils/libras.php'
   </main>
   <?php include 'footer_cliente.php'; ?>
 </body>
+
 </html>
