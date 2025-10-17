@@ -13,6 +13,7 @@ include '../utils/libras.php'
   <link rel="stylesheet" href="../../view/public/css/cliente/pg_login.css">
   <script src="../../view/js/cliente/login_olho_ocultar_senha.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -28,16 +29,16 @@ include '../utils/libras.php'
 
       <div class="login_form_vinycius">
         <h2>Login</h2>
-        <form class="form_login" action="../utils/sessao_ativa.php" method="POST">
-          <input type="text" name="email" placeholder="E-mail" class="input_login_vinycius1" required>
+        <form class="form_login" action="../utils/sessao_ativa.php" method="POST"  id="myForm">
 
+          <input type="text" name="email" placeholder="E-mail" class="input_login_vinycius1" required>
           <div class="senha_container">
-            <input type="password" name="password" id="senha" placeholder="Senha" class="input_login_vinycius2"
-              required>
+            <input type="password" name="password" id="senha" placeholder="Senha" class="input_login_vinycius2" required>
             <span class="toggle_senha" onclick="toggleSenha()">
               <i id="icone_senha" class="fa-solid fa-eye"></i>
             </span>
           </div>
+          <div class="g-recaptcha" data-sitekey="6LdyqOUrAAAAAGCnu7xdDfJ4QovvUsJMRuOgUvOa"></div>
 
           <div class="btn-submit-login">
             <?php
@@ -51,9 +52,7 @@ include '../utils/libras.php'
 
           <div class="info-login">
             <a href="recuperar_senha_login1.php" class="esqueci_senha_login">Esqueci minha senha</a>
-            <div class="texto1-span">
-              Não tem conta? <a href="pg_cadastro.php">Cadastre-se</a>
-            </div>
+            <div class="texto1-span">Não tem conta? <a href="pg_cadastro.php">Cadastre-se</a></div>
             <a class="login-adm" href="../adm/login.php">Área administrativa</a>
           </div>
         </form>
