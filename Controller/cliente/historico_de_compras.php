@@ -20,7 +20,7 @@ include 'C:\xampp\htdocs\Projeto_Integrador\model\DB\conexao.php'; // Ajuste o c
 ?>
 <?php
 $sql = "
-SELECT 
+SELECT
     p.id_pedido,
     p.data_pedido,
     p.status_pedido,
@@ -29,7 +29,7 @@ SELECT
 FROM pedido p
 LEFT JOIN item i ON p.id_pedido = i.pedido_id_pedido
 LEFT JOIN produto pr ON i.produto_id_produto = pr.id_produto
-WHERE p.cliente_id_cliente = ?
+WHERE p.id_cliente = ?
 GROUP BY p.id_pedido
 ORDER BY p.data_pedido DESC
 ";
