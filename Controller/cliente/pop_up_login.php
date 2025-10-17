@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,13 +16,17 @@
             <p>Você precisa estar logado para acessar esta funcionalidade</p>
             <div class="botoes_popup_login">
                 <a href="login.php">
-                    <?php 
-                    $texto = "Fazer Login"; 
-                    include 'botao_cliente.php';
+                    <?php
+                    $texto = "Fazer Login";
+                    include '../cliente/botao_verde_cliente.php';
                     ?>
                 </a>
-                <a href="#" onclick="window.history.back(); return false;>
-                    <?php include 'botao_cancelar.php'; ?>
+                <a>
+                    <!-- <a href="#" onclick="window.history.back(); return false;> -->
+                    <?php
+                    $texto = "Não";
+                    include '../cliente/botao_vermelho_cliente.php';
+                    ?>
                 </a>
             </div>
         </div>
