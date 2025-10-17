@@ -1,5 +1,8 @@
 
-<?php include '../utils/sessao_ativa.php';?>
+<?php
+include '../utils/libras.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +17,6 @@
     include 'carrossel_pg_inicial.php';
     include 'categorias_pg_inicial.php';
     include 'campeoes.php';
-    include 'mais_vendidos.php';
     include 'talvez_voce_goste.php';
     include 'footer_cliente.php';
     ?>

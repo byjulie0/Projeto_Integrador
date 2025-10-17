@@ -8,9 +8,10 @@ $sql = "SELECT id_cliente, cliente_nome, cpf_cnpj, data_nasc, user_ativo FROM cl
 
 $where = [];
 
-if ($inativos === 1) {
-    $where[] = "user_ativo = 0";
+if ($inativos === 0) {
+    $where[] = "user_ativo = 1";
 }
+
 
 if (!empty($busca)) {
     $busca_esc = $con->real_escape_string($busca);
