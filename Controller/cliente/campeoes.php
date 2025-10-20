@@ -23,7 +23,6 @@
                     $campeos = [
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "420 kg",
                             "raca" => "Árabe",
                             "genealogia" => "PO",
@@ -32,7 +31,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "550 kg",
                             "raca" => "Mustang",
                             "genealogia" => "PO",
@@ -41,7 +39,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/puro_sangue_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "544 kg",
                             "raca" => "Puro Sangue",
                             "genealogia" => "PO",
@@ -50,7 +47,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/nelore3.jpg",
-                            "nome" => "Boi",
                             "peso" => "442 kg",
                             "raca" => "Nelore",
                             "genealogia" => "PO",
@@ -59,7 +55,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/rhode-island-red-rooster.jpg",
-                            "nome" => "Galo",
                             "peso" => "3,9 kg",
                             "raca" => "Rhode Island",
                             "genealogia" => "PO",
@@ -70,7 +65,6 @@
 
                     foreach ($campeos as $item) {
                         $imagem = $item['imagem'];
-                        $nome = $item['nome'];
                         $peso = $item['peso'];
                         $raca = $item['raca'];
                         $genealogia = $item['genealogia'];

@@ -1,5 +1,4 @@
-<?php session_start(); 
-include 'menu_cadastro.php';?>
+<?php session_start(); include 'menu_cadastro.php';?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -54,11 +53,11 @@ include 'menu_cadastro.php';?>
                     <div class="btn-submit-cadastro">
                         <?php
                         $texto = "Cadastrar";
-                        include 'botao_verde_cliente.php';
+                        include 'botao_cliente.php';
                         ?>
                         <?php
                         $texto = "Cancelar";
-                        include 'botao_vermelho_cliente.php';
+                        include 'botao_cancelar.php';
                         ?>
                     </div>
 

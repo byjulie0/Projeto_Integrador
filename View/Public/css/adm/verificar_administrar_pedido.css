@@ -10,7 +10,11 @@
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding: 50px 100px;
+  padding: 100px;
+}
+
+.verificar_administrar_pedidos_sessao_identificar {
+  width: 100%;
 }
 
 .verificar_administrar_pedidos_sessao_identificar {
