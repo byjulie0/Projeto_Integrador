@@ -60,8 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    
-
+ 
     if (password_verify($password, $retorno['senha'])) {
 
         $_SESSION["id_cliente"] = $retorno['id_cliente'];
@@ -79,9 +78,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("location: ../cliente/login.php");
     }
 }
-
-
-
-
 
 ?>

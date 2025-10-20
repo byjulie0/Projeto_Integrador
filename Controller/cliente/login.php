@@ -18,6 +18,7 @@ include '../utils/libras.php'
 
 <body>
   <main class="container_geral_login">
+    
     <div class="login_box_vinycius">
       <div class="info_login_vinycius">
         <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
@@ -62,5 +63,4 @@ include '../utils/libras.php'
   </main>
   <?php include 'footer_cliente.php'; ?>
 </body>
-
-</html>
+</html>  
