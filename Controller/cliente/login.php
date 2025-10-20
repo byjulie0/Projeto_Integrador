@@ -14,6 +14,7 @@ include 'menu_login.php';
 </head>
 
 <body>
+<<<<<<< HEAD
     <main class="container_geral_login">
         <div class="login_box_vinycius">
             <div class="info_login_vinycius">
@@ -23,6 +24,18 @@ include 'menu_login.php';
                     com qualidade e confiança para o seu negócio.
                 </p>
             </div>
+=======
+  <main class="container_geral_login">
+    
+    <div class="login_box_vinycius">
+      <div class="info_login_vinycius">
+        <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
+        <p class="text_login_vinycius">
+          Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo
+          com qualidade e confiança para o seu negócio.
+        </p>
+      </div>
+>>>>>>> cd885a5c4a6c18392fb60c8d1c908b0b579f3a2b
 
             <div class="login_form_vinycius">
                 <h2>Login</h2>
@@ -59,4 +72,8 @@ include 'menu_login.php';
   </main>
   <?php include 'footer_cliente.php'; ?>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>  
+>>>>>>> cd885a5c4a6c18392fb60c8d1c908b0b579f3a2b

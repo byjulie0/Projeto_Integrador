@@ -68,6 +68,41 @@
   
 }
 
+<<<<<<< HEAD
+=======
+/* Filtro de status */
+.first-container-atualizar-produtos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.filtros_pedidos{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.first-container-atualizar-produtos {
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.filtros_pedidos{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.filtros_pedidos button{
+  padding: 8px 5px;
+  border-radius: 8px;
+ 
+}
+
+>>>>>>> cd885a5c4a6c18392fb60c8d1c908b0b579f3a2b
 /* Linha divisória */
 .verificar_administrar_pedidos_sessao_divisao {
   width: 100%; 
@@ -115,3 +150,106 @@
   cursor: pointer;
   font-size: 16px;
 }
+<<<<<<< HEAD
+=======
+
+/* RESPONSIVIDADE */
+
+/* Mobile médio: 360 x 800 */
+@media screen and (max-width: 360px) {
+  .verificar_administrar_pedidos_content {
+    padding: 20px 15px;
+  }
+  .verificar_administrar_pedidos_sessao_bloco_info h1 {
+    font-size: 1.2rem;
+  }
+  .verificar_administrar_pedidos_sessao_formulario_pesquisa {
+    max-width: 100%;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos table {
+    min-width: 500px;
+    font-size: 12px;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos {
+    overflow-x: auto;
+  }
+}
+
+/* Mobile grande: 390 x 844 */
+@media screen and (min-width: 361px) and (max-width: 390px) {
+  .verificar_administrar_pedidos_content {
+    padding: 25px 20px;
+  }
+  .verificar_administrar_pedidos_sessao_bloco_info h1 {
+    font-size: 1.3rem;
+  }
+  .verificar_administrar_pedidos_sessao_formulario_pesquisa {
+    max-width: 100%;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos table {
+    min-width: 550px;
+    font-size: 13px;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos {
+    overflow-x: auto;
+  }
+}
+
+/* Tablet médio: 768px - 1023px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .verificar_administrar_pedidos_content {
+    padding: 30px 40px;
+  }
+  .table-container {
+    margin: 0 -15px;
+    width: calc(100% + 30px);
+  }
+  .first-container-atualizar-produtos {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .verificar_administrar_pedidos_sessao_bloco_info h1 {
+    font-size: 1.4rem;
+  }
+  .verificar_administrar_pedidos_sessao_formulario_pesquisa {
+    max-width: 100%;
+    width: 100%;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos table {
+    min-width: 650px;
+    font-size: 14px;
+  }
+  .verificar_administrar_pedidos_sessao_pedidos {
+    overflow-x: auto;
+  }
+}
+
+/* Tablet grande: 1024px - 1199px */
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  .verificar_administrar_pedidos_content {
+    padding: 40px 50px;
+  }
+  .verificar_administrar_pedidos_sessao_bloco_info h1 {
+    font-size: 1.5rem;
+  }
+  .verificar_administrar_pedidos_sessao_formulario_pesquisa {
+    max-width: 50%;
+  }
+}
+
+/* Desktop médio: 1440 x 900 */
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .verificar_administrar_pedidos_content {
+    padding: 50px 80px;
+  }
+}
+
+/* Desktop grande: 1920 x 1080 */
+@media screen and (min-width: 1441px) {
+  .verificar_administrar_pedidos_content {
+    padding: 50px 100px;
+  }
+}
+>>>>>>> cd885a5c4a6c18392fb60c8d1c908b0b579f3a2b
