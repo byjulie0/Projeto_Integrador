@@ -1,29 +1,4 @@
-<?php
-include 'menu_inicial.php';
-include '../utils/sessao_ativa_adm.php';
-
-if (!isset($_SESSION['id_adm'])) {
-    die(include '../overlays/pop_up_login.php');
-}
-
-$id_adm = $_SESSION['id_adm'];
-
-$sql = "SELECT tipo, mensagemtexto, data_recebida
-        FROM notificacoes
-        WHERE id_adm = $id_adm
-        ORDER BY data_recebida DESC";
-
-$query = $con->prepare($sql);
-// $query->bind_param("i", $id_adm);
-$query->execute();
-$result = $query->get_result();
-
-$notificacoes = [];
-while ($row = $result->fetch_assoc()) {
-    $notificacoes[] = $row;
-}
-$query->close();
-?>
+<?php include 'menu_inicial.php' ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -33,41 +8,61 @@ $query->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notificações</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
-        integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../view/public/css/adm/pg_notificacao.css">
 </head>
 
 <body>
     <div class="title_area_notifications">
+
         <div class="area_notifications">
             <a href="#" class="notification_arrow">
                 <i class="bi bi-chevron-left"></i>
+               
             </a>
             <h1 class="notification_title">Notificações</h1>
         </div>
-
         <div class="notification_area">
-            <?php if (!empty($notificacoes)): ?>
-                <?php foreach ($notificacoes as $n): ?>
-                    <div class="notification">
-                        <div class="notification_info">
-                            <p class="notification_date">
-                                <?= date("d/m/Y", strtotime($n["data_recebida"])) ?> - <?= htmlspecialchars($n["tipo"]) ?>
-                            </p>
-                            <p class="notification_text"><?= htmlspecialchars($n["mensagemtexto"]) ?></p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div class="notification_empty">
-                    <p>Você não possui notificações no momento.</p>
+            <div class="notification">
+                <div class="notification_info">
+                    <p class="notification_date">12/12/2024 - Produtos</p>
+                    <p class="notification_text">{Usuário}, a sela que você estava de olho voltou ao estoque, dê uma
+                        olhada!
+                    </p>
                 </div>
-            <?php endif; ?>
+            </div>
+            <div class="notification">
+                <div class="notification_info">
+                    <p class="notification_date">12/12/2024 - Produtos</p>
+                    <p class="notification_text">{Usuário}, o Nelore que você estava de olho voltou ao estoque, dê uma
+                        olhada!
+                    </p>
+                </div>
+            </div>
+            <div class="notification">
+                <div class="notification_info">
+                    <p class="notification_date">10/12/2024 - Produtos</p>
+                    <p class="notification_text">{Usuário}, o Barred Plymouth Rock que você estava de olho voltou ao
+                        estoque, dê uma olhada!
+                    </p>
+                </div>
+            </div>
+            <div class="notification">
+                <div class="notification_info">
+                    <p class="notification_date">10/12/2024 - Produtos</p>
+                    <p class="notification_text">{Usuário}, o Rhode Island Red que você estava de olho voltou ao
+                        estoque, dê
+                        uma olhada!
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 
 </html>
 
-<?php include 'footer.php'; ?>
+<?php
+include 'footer.php';
+?>

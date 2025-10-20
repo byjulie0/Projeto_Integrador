@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -17,16 +17,16 @@
             <p>Deseja fazer o login?</p>
             <div class="botoes_popup_login">
                 <a href="login.php">
-                    <?php
-                    $texto = "Fazer Login";
+                    <?php 
+                    $texto = "Fazer Login"; 
                     include '../cliente/botao_verde_cliente.php';
                     ?>
                 </a>
                 <a>
-                    <!-- <a href="#" onclick="window.history.back(); return false;> -->
-                    <?php
-                    $texto = "Não";
-                    include '../cliente/botao_vermelho_cliente.php';
+                <!-- <a href="#" onclick="window.history.back(); return false;> -->
+                    <?php 
+                    $texto = "Não"; 
+                    include '../cliente/botao_vermelho_cliente.php'; 
                     ?>
                 </a>
             </div>

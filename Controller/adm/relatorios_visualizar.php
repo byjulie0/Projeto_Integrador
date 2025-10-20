@@ -44,9 +44,7 @@
                         class="fa-solid fa-chevron-right"></i></div>
                 <div class="card_estatisticas">
                     <h3>Estatísticas</h3>
-                    <div class="grafico-container">
-                        <canvas id="graficoEstatisticas"></canvas>
-                    </div>
+                    <canvas id="graficoEstatisticas"></canvas>
                 </div>
             </div>
             <div class="card_atividades">

@@ -10,9 +10,10 @@ include 'menu_cadastro.php';?>
     <title>John Rooster - Cadastro</title>
     <script defer src="../../view/js/cliente/cadastro.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente/pg_cadastro.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../../view/js/pop_up.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
@@ -21,9 +22,11 @@ include 'menu_cadastro.php';?>
         <div class="area-form-cadastro">
             <h2 class="titulo-form-cadastro">Cadastrar</h2>
             <div class="area-geral-form-cadastro">
-                <form action="../utils/realiza_cadastro.php" method="POST" class="form-cadastro" id="myForm">
-                    
-                    <div class="form-colunas-cadastro">     
+
+                <form action="../utils/realiza_cadastro.php" method="POST" class="form-cadastro" id="formCadastro">
+
+                    <div class="form-colunas-cadastro">
+
                         <div class="form-coluna-superior">
                             <input type="text" name="nome" placeholder="Nome Completo*" class="input-form-cadastro" required>
                         </div>
@@ -48,9 +51,7 @@ include 'menu_cadastro.php';?>
                                 <span class="span-required" id="senhaConfirmError"></span>
                             </div>
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6LdyqOUrAAAAAGCnu7xdDfJ4QovvUsJMRuOgUvOa"></div>
                     </div>
-
                     <div class="btn-submit-cadastro">
                         <?php
                         $texto = "Cadastrar";
@@ -62,26 +63,26 @@ include 'menu_cadastro.php';?>
                         ?>
                     </div>
 
+                </form>
 
 
-                 
+
+                    <form id="myForm" action="verify_robo.php" method="POST">
+                        <div class="g-recaptcha" data-sitekey="6LdIlOArAAAAAFvXhEakEwdsM9ZiX0H-RtF7xguk"></div>
 
 
 
 
                     </form> 
-
-                    
                     <script>
-                        document.getElementById('myForm').addEventListener('submit', function(e){
-                        var response = grecaptcha.getResponse();
-                        if (response.length === 0) {
-                            e.preventDefault();
-                            alert('Por favor, marque o reCAPTCHA antes de enviar o formulário.');
-                        }
+                        document.getElementById('myForm')addEventLister('submit',function(e) {
+                            var response = grecaptcha.getResponse();
+                            if (response.length == 0){
+                                e.preventDefault();
+                                alert("Por favor,marque o reCAPTCHA antes de enviar o formulário")
+                            }   
                         });
-                    </script>
-                    
+                        </script>
               
            
                    

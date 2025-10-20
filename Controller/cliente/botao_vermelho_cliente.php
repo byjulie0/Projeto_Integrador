@@ -1,4 +1,3 @@
-<?include '../utils/libras.php'?>
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>

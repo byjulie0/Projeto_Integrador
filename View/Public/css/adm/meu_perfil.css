@@ -22,7 +22,6 @@
     gap: 8px;
 }
 .visualizar-dados-card {
-    width: 100%;
     background: #fff;
     border-radius: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -111,7 +110,6 @@
     background-color: #f8d7da;
     color: #c0392b;
 }
-
 @media (max-width: 768px) {
     .visualizar-dados-header {
       flex-direction: column;
@@ -135,21 +133,20 @@
     .visualizar-dados-area-botoes {
       flex-direction: column;
       width: 100%;
-      align-items: center;
     }
 }
 
-@media (max-width: 416px) {
+@media (max-width: 360px) {
     .visualizar-dados-title{
         font-size: 25px;
     }
 
-    .visualizar-dados-nome-email h4{
-        font-size: 17px;
+    .visualizar-dados-nome-email {
+        font-size: 10px;
     }
 
     .visualizar-dados-grid p {
-        font-size: 14px;
+        font-size: 0.9rem;
         color: #495057;
         display: flex;
         align-items: center;
@@ -157,5 +154,9 @@
 
     .visualizar-dados-card {
         padding: 10px;
+    }
+
+    .visualizar-dados-area-botoes {
+        margin-left: 30px;
     }
 }

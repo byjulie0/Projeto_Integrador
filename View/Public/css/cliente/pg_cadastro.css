@@ -189,12 +189,6 @@
   justify-content: center;
   align-items: center;
 }
-/* .g-recaptcha{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px auto;
-} */
 
 @media (max-width: 768px) {
   .form-colunas-cadastro {

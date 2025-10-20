@@ -1,4 +1,4 @@
-<?php
+<?php 
 include '../../model/DB/conexao.php';
 
 $popup_titulo = '';
@@ -7,7 +7,6 @@ $popup_tipo = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $id_produto   = (int)$_POST["id_produto"];
     $nome         = mysqli_real_escape_string($con, $_POST["nome"]);
     $valor        = mysqli_real_escape_string($con, $_POST['valor']);
     $quantidade   = mysqli_real_escape_string($con, $_POST['quantidade']);
@@ -19,9 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $categoria    = mysqli_real_escape_string($con, $_POST['categoria']);
     $subcategoria = mysqli_real_escape_string($con, $_POST['subcategoria']);
 
-    // Verifica se uma nova imagem foi enviada
-    $caminhoRelativo = null;
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+
         $nomeImagem = basename($_FILES['imagem']['name']);
         $caminhoTemp = $_FILES['imagem']['tmp_name'];
         $pastaUpload = '../../view/public/uploads/';
@@ -33,43 +31,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (move_uploaded_file($caminhoTemp, $caminhoFinal)) {
             $caminhoRelativo = 'uploads/' . $nomeUnico;
+
+            // 🔹 Agora incluindo o campo "idade" no INSERT
+            $query = "INSERT INTO produto 
+                (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria) 
+                VALUES 
+                ('$nome', '$valor', '$quantidade', '$caminhoRelativo', '$descricao', '$sexo', '$peso', '$idade', '$campeao', '$categoria', '$subcategoria')";
+
+            if (mysqli_query($con, $query)) {
+                $popup_titulo = "Produto cadastrado!";
+                $popup_mensagem = "O produto foi adicionado com sucesso.";
+                $popup_tipo = "sucesso";
+            } else {
+                $popup_titulo = "Erro ao cadastrar!";
+                $popup_mensagem = "Não foi possível salvar o produto.";
+                $popup_tipo = "erro";
+            }
+
         } else {
             $popup_titulo = "Erro no upload!";
-            $popup_mensagem = "Não foi possível mover a imagem.";
+            $popup_mensagem = "Não foi possível mover a imagem para a pasta de destino.";
             $popup_tipo = "erro";
         }
-    }
 
-    // Monta a query de atualização
-    if ($popup_tipo !== "erro") {
-        $setParts = [
-            "prod_nome = '$nome'",
-            "valor = '$valor'",
-            "quant_estoque = '$quantidade'",
-            "descricao = '$descricao'",
-            "sexo = '$sexo'",
-            "peso = '$peso'",
-            "idade = '$idade'",
-            "campeao = '$campeao'",
-            "id_categoria = '$categoria'",
-            "id_subcategoria = '$subcategoria'"
-        ];
-
-        if ($caminhoRelativo) {
-            $setParts[] = "path_img = '$caminhoRelativo'";
-        }
-        $setQuery = implode(', ', $setParts);
-        $query = "UPDATE produto SET $setQuery WHERE id_produto = $id_produto";
-
-        if (mysqli_query($con, $query)) {
-            $popup_titulo = "Produto atualizado!";
-            $popup_mensagem = "As alterações foram salvas com sucesso.";
-            $popup_tipo = "sucesso";
-        } else {
-            $popup_titulo = "Erro ao atualizar!";
-            $popup_mensagem = "Não foi possível salvar as alterações.";
-            $popup_tipo = "erro";
-        }
+    } else {
+        $popup_titulo = "Imagem obrigatória!";
+        $popup_mensagem = "Você precisa enviar uma imagem para o produto.";
+        $popup_tipo = "erro";
     }
 }
 ?>
@@ -81,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h2><?= htmlspecialchars($popup_titulo, ENT_QUOTES, 'UTF-8') ?></h2>
         <p><?= nl2br(htmlspecialchars($popup_mensagem, ENT_QUOTES, 'UTF-8')) ?></p>
         <div class="botoes_popup_resultado">
-            <button onclick="location.href='../adm/catalogo_produtos.php'" class="botao_popup_cancelar fechar_popup_resultado">Fechar</button>
+            <button class="botao_popup_cancelar fechar_popup_resultado">Fechar</button>
         </div>
     </div>
 </div>

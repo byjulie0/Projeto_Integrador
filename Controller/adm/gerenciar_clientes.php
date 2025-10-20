@@ -50,7 +50,6 @@
                         <th class="header-cell-gerenciar-clientes">CPF</th>
                         <th class="header-cell-gerenciar-clientes">Data de cadastro</th>
                         <th class="header-exclude-gerenciar-clientes header-cell-gerenciar-clientes">Inativar</th>
-                        <th class="header-exclude-gerenciar-clientes header-cell-gerenciar-clientes">Status</th>
                     </tr>
 
                     <?php if (!empty($cliente)): ?>
@@ -68,7 +67,6 @@
                                     <i class="fa-solid <?= $c['user_ativo'] == 0 ? 'fa-toggle-on' : 'fa-toggle-off'; ?>"></i>
                                 </button>
                             </td>
-                            <td><?= htmlspecialchars($c['user_ativo']); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>
