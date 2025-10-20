@@ -1,5 +1,3 @@
-<!-- Arthur -->
-
 <?php
 include '../../Controller/utils/sessao_ativa.php';
 include 'menu_pg_inicial.php';
@@ -52,7 +50,7 @@ include 'menu_pg_inicial.php';
                     <div class="botoes-arthura">
                         <?php
                         $texto = "Visualizar meu dados";
-                        include 'botao_cliente.php';
+                        include 'botao_verde_cliente.php';
                         ?>
                         </a>
                         <a href="../cliente/logout.php">
