@@ -45,9 +45,5 @@
     </main>
     <?php include 'footer.php'; ?>
 </body>
-<<<<<<< HEAD
-</html>
-=======
 
 </html>
->>>>>>> cd885a5c4a6c18392fb60c8d1c908b0b579f3a2b

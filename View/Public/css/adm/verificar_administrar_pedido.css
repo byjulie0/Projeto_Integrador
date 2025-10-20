@@ -68,8 +68,6 @@
   
 }
 
-<<<<<<< HEAD
-=======
 /* Filtro de status */
 .first-container-atualizar-produtos {
   display: flex;
@@ -102,7 +100,6 @@
  
 }
 
->>>>>>> cd885a5c4a6c18392fb60c8d1c908b0b579f3a2b
 /* Linha divisória */
 .verificar_administrar_pedidos_sessao_divisao {
   width: 100%; 
@@ -150,8 +147,6 @@
   cursor: pointer;
   font-size: 16px;
 }
-<<<<<<< HEAD
-=======
 
 /* RESPONSIVIDADE */
 
@@ -252,4 +247,3 @@
     padding: 50px 100px;
   }
 }
->>>>>>> cd885a5c4a6c18392fb60c8d1c908b0b579f3a2b

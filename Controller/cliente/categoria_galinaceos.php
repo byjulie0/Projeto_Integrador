@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-<?php include 'menu_pg_inicial.php';?>
-=======
 <?php 
 include 'menu_pg_inicial.php';
 include '../utils/libras.php'
 ?>
->>>>>>> cd885a5c4a6c18392fb60c8d1c908b0b579f3a2b
 
 <!DOCTYPE html>
 <html lang="pt-BR">
