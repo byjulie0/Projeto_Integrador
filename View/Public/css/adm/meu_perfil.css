@@ -1,13 +1,5 @@
 @import url("../adm.css");
-.body-visualizar-dados {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-}
+
 .main-visualizar-dados {
     width: 100%;
     max-width: 900px;
@@ -30,10 +22,12 @@
     gap: 8px;
 }
 .visualizar-dados-card {
+    width: 100%;
     background: #fff;
     border-radius: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     padding: 30px;
+    align-items: center;
 }
 .visualizar-dados-header {
     display: flex;
@@ -58,7 +52,7 @@
     margin-top: 5px;
 }
 .visualizar-dados-geral-title {
-    font-size: 1.4rem;
+    font-size: 1rem;
     margin-bottom: 15px;
     color: var(--color-primary-1);
 }
@@ -67,8 +61,13 @@
     grid-template-columns: 1fr;
     gap: 12px;
 }
+
+  .visualizar-dados-grid span {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
   .visualizar-dados-grid p {
-    margin: 0;
     font-size: 1rem;
     color: #495057;
     display: flex;
@@ -112,6 +111,7 @@
     background-color: #f8d7da;
     color: #c0392b;
 }
+
 @media (max-width: 768px) {
     .visualizar-dados-header {
       flex-direction: column;
@@ -122,7 +122,40 @@
       margin-bottom: 10px;
     }
     .visualizar-dados-area-botoes {
-      flex-direction: column;
+      flex-direction: row;
       align-items: stretch;
+    }
+
+    .visualizar-dados-geral-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 510px) {
+    .visualizar-dados-area-botoes {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+}
+
+@media (max-width: 416px) {
+    .visualizar-dados-title{
+        font-size: 25px;
+    }
+
+    .visualizar-dados-nome-email h4{
+        font-size: 17px;
+    }
+
+    .visualizar-dados-grid p {
+        font-size: 14px;
+        color: #495057;
+        display: flex;
+        align-items: center;
+    }
+
+    .visualizar-dados-card {
+        padding: 10px;
     }
 }

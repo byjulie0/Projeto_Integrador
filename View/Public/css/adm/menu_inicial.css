@@ -161,6 +161,7 @@
     padding: 0;
     margin: 5px 0 0 0;
     list-style: none;
+    transition: opacity 0.3s ease 0s, visibility 0.3s ease 0.3s;
 }
 
 .submenu_adm li a {
@@ -183,6 +184,7 @@
 
 .dropdown_menu_adm:hover .submenu_adm {
     display: block;
+    transition-delay: 0s;
 }
 
 .nav-page-btns-pg-adm .submenu_adm {

@@ -1,25 +1,10 @@
 <?php
-include "conexão.php";
-$status = $_GET['status'] ?? 'ativos';
+$status = $_GET['status'] ?? null;
 
-
-if ($status === 'inativados') {
-    $query = "SELECT * FROM produto WHERE produto_ativo = 0";
+if ($status === 'inativos') {
+    $filtroStatus = "p.produto_ativo = 0";
+} elseif ($status === 'ativos') {
+    $filtroStatus = "p.produto_ativo = 1";
 } else {
-    $query = "SELECT * FROM produto WHERE produto_ativo = 1";
+    $filtroStatus = "";
 }
-
-$result = mysqli_query($con, $query);
-
-if (!$result) {
-    die("Erro na consulta: " . mysqli_error($con));
-}
-
-$produtos = [];
-
-while ($row = mysqli_fetch_assoc($result)) {
-    $produtos[] = $row;
-}
-
-
-?>

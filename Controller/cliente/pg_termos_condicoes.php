@@ -1,6 +1,7 @@
 <!-- JULIE -->
 <?php
 include 'menu_pg_inicial.php';
+include '../utils/libras.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +19,7 @@ include 'menu_pg_inicial.php';
         <div style="height: 50px;"></div>
         <div class="header-termos-container">
             <a class="setinha-termos-e-condicoes" href="#" onclick="window.history.back(); return false;">
-                <i class="fa-solid fa-chevron-left"></i>
+                <i class="bi bi-chevron-left"></i></i>
             </a>
             <h1 class="titulo-termos-e-condicoes">Termos e Condições</h1>
         </div>

@@ -121,3 +121,4 @@ describe notificacoes;
 describe item;
 describe pedido;
 describe produto;
+select * from cliente;
