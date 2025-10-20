@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../../view/public/css/adm/login.css">
     <script src="../../view/js/cliente/login_olho_ocultar_senha.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -26,7 +25,7 @@
 
             <div class="login_form_adm">
                 <h2>Login</h2>
-                <form class="form_login" action="../../Controller/utils/sessao_ativa_adm.php" method="POST" id="myForm">
+                <form class="form_login" action="../../Controller/utils/sessao_ativa_adm.php" method="POST">
                     <input type="email" name="email" placeholder="E-mail do ADM" class="input_login_adm1" required>
 
                     <div class="senha_container">
@@ -36,7 +35,6 @@
                             <i id="icone_senha" class="fa-solid fa-eye"></i>
                         </span>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6LdyqOUrAAAAAGCnu7xdDfJ4QovvUsJMRuOgUvOa"></div>
 
                     <div class="btn-submit-login-adm">
                         <?php
