@@ -21,7 +21,6 @@
 
             <div class="area_forms">
                 <div class="area-forms">
-                        include 'botao_cliente.php';
                    <form action="../../Controller/utils/alterar_senha.php" method="POST">
                         <p class="p_form_senha">Digite sua senha atual:</p>
                         <input type="password" name="senha_atual" class="form_senha_atual" required>
