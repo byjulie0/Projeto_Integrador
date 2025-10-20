@@ -2,7 +2,6 @@
 include '../utils/sessao_ativa.php';
 include '../utils/libras.php';
 include 'menu_pg_inicial.php';
-$id_cliente = $_SESSION["id_cliente"];
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +26,10 @@ $id_cliente = $_SESSION["id_cliente"];
                 <h1 class="cart_title">Carrinho</h1>
             </div>
 
-            <section class="product-cards-carrinho"><?php
+            <section class="product-cards-carrinho">
+
+                <?php
+                $id_cliente = $_SESSION["id_cliente"];
 
                 $sql = "SELECT c.id_carrinho, c.quantidade, p.prod_nome, p.path_img, p.descricao, p.valor FROM carrinho c JOIN produto p ON c.id_produto = p.id_produto WHERE c.id_cliente='$id_cliente'";
 
@@ -66,12 +68,12 @@ $id_cliente = $_SESSION["id_cliente"];
 
                             <div class="labels-respective-content-carrinho">
                                 <div class="change-quantity-carrinho">
-                                    <button class="change-quantity-btn-carrinho">-</button><!-- DIMINUIR  ITEM -->
+                                    <button class="change-quantity-btn-carrinho minus-btn"></button><!-- DIMINUIR  ITEM -->
 
                                     <span
                                         class="quantity-carrinho"><?php echo $itens['quantidade'] ?></span><!-- QUANTIDADE DO  ITEM -->
 
-                                    <button class="change-quantity-btn-carrinho">+</button><!-- AUMENTAR  ITEM -->
+                                    <button class="change-quantity-btn-carrinho plus-btn"></button><!-- AUMENTAR  ITEM -->
                                 </div>
                             </div>
 

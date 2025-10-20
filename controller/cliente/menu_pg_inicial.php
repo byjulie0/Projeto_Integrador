@@ -45,7 +45,7 @@
                     </ul>
                 </li>
                 <li><a href="categoria_campeoes.php" class="nav-item-pg-inicial">Campeões</a></li>
-                <li><a href="#" class="nav-item-pg-inicial">Nossa história</a></li>
+                <li><a href="#" class="nav-item-pg-inicial">Mais vendidos</a></li>
                 
                 <li class="search-mobile-item">
                     <div class="search-container-pg-inicial search-mobile">

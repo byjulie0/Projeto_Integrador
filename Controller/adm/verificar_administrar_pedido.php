@@ -36,22 +36,16 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
                                 <i class="bi bi-search"></i>
                             </button>
                         </form>
-
                         <div class="filtros_pedidos">
 
-                            <button class="filtro_todos"
-                                href="?<?= isset($_GET['pesquisa']) ? 'pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Todos</button>
-
-                            <button class="filtro_pendente"
-
-                                href="?status=pendente<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Pendente</button>
-
-                            <button class="filtro_concluido"
-
-                                href="?status=concluído<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Concluído</button>
-
-                            <button class="filtro_cancelados"
-                                href="?status=cancelado<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Cancelado</button>
+                            <a
+                                href="?status=pendente<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Pendente</a>
+                            <a
+                                href="?status=concluído<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Concluído</a>
+                            <a
+                                href="?status=cancelado<?= isset($_GET['pesquisa']) ? '&pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Cancelado</a>
+                            <a
+                                href="?<?= isset($_GET['pesquisa']) ? 'pesquisa=' . urlencode($_GET['pesquisa']) : '' ?>">Todos</a>
                         </div>
                     </div>
                 </div>

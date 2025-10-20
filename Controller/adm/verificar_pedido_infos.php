@@ -24,43 +24,52 @@
                 <span>ID do pedido: </span>
                 <!-- adicionar variável do id do pedido -->
             </div>
+            <div id="labels-pedido-informacoes-pedidos">
+                <div class="label-pedido-informacoes-pedidos">
+                    <span>Não enviado</span>
+                </div>
+            </div>
         </div>
         <div id="page-content-informacoes-pedidos">
             <div id="first-container-informacoes-pedidos">
                 <div class="product-card-informacoes-pedidos">
-                    <div class="product-card-informacoes-pedidos1">
-                        <div class="product-title">
-                            <span>Nome do produto</span>
-                        </div>
-                        <div class="minor-label-informacoes-pedidos">
-                            <span>
-                                Pendente
-                            </span>
-                        </div>
-                        <div class="product-informations-informacoes-pedidos">
-                            <div class="img-and-label-informacoes-pedidos">
-                                <img src="../..//View/Public/Imagens/Rectangle 195.png"     alt="">
-                                <div class="informations-informacoes-pedidos">
-                                    <span class="type-informacoes-pedidos">
-                                        Galináceo
-                                    </span>
-                                    <span class="name-informacoes-pedidos">
-                                        Galo Rhode Island
-                                    </span>
-                                    <span class="lote-informacoes-pedidos">
-                                        Macho
-                                    </span>
-                                    <span class="purchase-date-informacoes-pedidos">
-                                        Data do pedido:
-                                    </span>
-                                </div>
+                    <div class="product-title">
+                        <span>Nome do produto</span>
+                    </div>
+                    <div class="minor-label-informacoes-pedidos">
+                        <span>
+                            Não enviado
+                        </span>
+                    </div>
+                    <div class="product-informations-informacoes-pedidos">
+                        <div class="img-and-label-informacoes-pedidos">
+                            <img src="../..//View/Public/Imagens/Rectangle 195.png" alt="">
+                            <div class="informations-informacoes-pedidos">
+                                <span class="type-informacoes-pedidos">
+                                    Galináceo
+                                </span>
+                                <span class="name-informacoes-pedidos">
+                                    Galo Rhode Island
+                                </span>
+                                <span class="lote-informacoes-pedidos">
+                                    Macho | Lote
+                                </span>
+                                <span class="purchase-date-informacoes-pedidos">
+                                    Data do pedido:
+                                </span>
+                                <span class="preco-lote-informacoes-pedidos">
+                                    Valor do lote:
+                                </span>
                             </div>
-                            <div class="final-price-informacoes-pedidos">
-                                <p>Valor Total</p>
-                                <div class="price-informacoes-pedidos">
-                                    <div class="valor-final-informacoes-pedidos">
-                                        <span>R$2.850,00</span>
-                                    </div>
+                        </div>
+                        <div class="final-price-informacoes-pedidos">
+                            <span>Valor a ser pago:</span>
+                            <div class="price-informacoes-pedidos">
+                                <div class="parcelas-informacoes-pedidos">
+                                    <span>3x R$950,00</span>
+                                </div>
+                                <div class="valor-final-informacoes-pedidos">
+                                    <span>R$2.850,00</span>
                                 </div>
                             </div>
                         </div>
@@ -70,8 +79,9 @@
                             <button>Cancelar pedido</button>
                         </div>
                         <div class="right-buttons-informacoes-pedidos">
+                            <button class="register-payment-btn-informacoes-pedidos">Registrar pagamento</button>
                             <?php
-                            $texto = "Concluído";
+                            $texto = "Marcar como enviado";
                             include 'botao_verde_adm.php';
                             ?>
                         </div>
@@ -85,7 +95,7 @@
                     </span>
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-user"></i>
-                        <span class="client-data-type-informacoes-pedidos1">
+                        <span class="client-data-type-informacoes-pedidos">
                             Nome:
                         </span>
                         <span class="client-data-informacoes-pedidos">
@@ -95,7 +105,7 @@
 
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-lock"></i>
-                        <span class="client-data-type-informacoes-pedidos1">
+                        <span class="client-data-type-informacoes-pedidos">
                             CPF/CNPJ:
                         </span>
                         <span class="client-data-informacoes-pedidos">
@@ -105,7 +115,7 @@
 
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-envelope"></i>
-                        <span class="client-data-type-informacoes-pedidos1">
+                        <span class="client-data-type-informacoes-pedidos">
                             E-mail:
                         </span>
                         <span class="client-data-informacoes-pedidos">
@@ -115,12 +125,39 @@
 
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-phone"></i>
-                        <span class="client-data-type-informacoes-pedidos1">
+                        <span class="client-data-type-informacoes-pedidos">
                             Telefone:
                         </span>
                         <span class="client-data-informacoes-pedidos">
-                            +55 67 912345-6789
+                            +55 67 9 12345 - 6789
                         </span>
+                    </div>
+
+                    <div class="client-data-spans-informacoes-pedidos">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span class="client-data-type-informacoes-pedidos">
+                            Compras efetuadas pelo usuário:
+                        </span>
+                        <span class="client-data-informacoes-pedidos">
+                            1
+                        </span>
+                    </div>
+                </div>
+                <div class="delivery-adress-informacoes-pedidos">
+                    <span id="client-data-title-span-informacoes-pedidos">
+                        Endereço de entrega
+                    </span>
+                    <div class="client-data-spans-informacoes-pedidos">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="client-data-type-informacoes-pedidos">
+                            Destinatário:
+                        </span>
+                        <span class="client-data-informacoes-pedidos">
+                            John Rooster
+                        </span>
+                    </div>
+                    <div class="adress-informacoes-pedidos">
+                        Endereço
                     </div>
                 </div>
             </div>
