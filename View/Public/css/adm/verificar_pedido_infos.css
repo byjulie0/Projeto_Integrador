@@ -1,385 +1,413 @@
 @import url("../adm.css");
+
+/* ===========================
+   BASE - MOBILE FIRST
+   =========================== */
+
 #informacoes-pedidos {
-    gap: 25px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
-    background-size: cover;
-    padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #fff;
+  width: 100%;
+  padding: 20px;
 }
+
 #title-informacoes-pedidos {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
 #title-informacoes-pedidos h3 {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    color: var(--color-primary-1);
-    font-size: 24px;
+  color: var(--color-primary-1);
+  font-size: 20px;
+  margin: 0;
 }
-.bi-chevron-left{
+
+.bi-chevron-left {
+  font-size: 22px;
+  color: var(--color-primary-1);
+  font-size: 24px;
+}
+.bi-chevron-left {
   display: inline-flex;
   text-decoration: none;
   font-size: 25px;
   color: var(--color-primary-1);
 }
 .status-pendente {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeaa7;
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
 }
 
 .status-concluído {
-    background-color: #d1edff;
-    color: #0c5460;
-    border: 1px solid #bee5eb;
+  background-color: #d1edff;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
 }
 
 .status-cancelado {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
 
 .label-pedido-informacoes-pedidos {
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .info-item {
-    margin-bottom: 10px;
-    padding: 5px 0;
-    font-size: 16px;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  font-size: 16px;
 }
 
 .cancel-btn {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .cancel-btn:hover {
-    background-color: #c82333;
+  background-color: #c82333;
 }
 
 .buttons-area-informacoes-pedidos {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
 }
 
 .left-buttons-informacoes-pedidos {
-    text-align: left;
+  text-align: left;
 }
 #subtitle-informacoes-pedidos {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 #id-pedido-informacoes-pedidos {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
 }
 #id-pedido-informacoes-pedidos span {
-    font-size: 24px;
-    color: var(--color-fonte);
+  font-size: 17px;
+  color: var(--color-fonte);
 }
 #labels-pedido-informacoes-pedidos {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
 }
 .label-pedido-informacoes-pedidos {
-    align-items: center;
-    justify-content: center;
-    background-color: #fb666677;
-    padding: 5px 15px;
-    border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fb666677;
+  padding: 5px 15px;
+  border-radius: 5px;
 }
 .label-pedido-informacoes-pedidos span {
-    color: var(--warning-color);
-    font-size: 14px;
-    font-weight: 600;
+  color: var(--warning-color);
+  font-size: 14px;
+  font-weight: 600;
 }
+
+/* Conteúdo geral */
 #page-content-informacoes-pedidos {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
-#first-container-informacoes-pedidos {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-}
+
+/* CARD DO PRODUTO */
 .product-card-informacoes-pedidos {
-    border: 1px solid #20261e;
-    border-radius: 10px;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 25px;
-    display: flex;
-    flex-direction: column;
+  border: 1px solid #20261e;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 .product-title {
-    margin: 25px 0px 0px 45px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  margin: 25px 0px 0px 45px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
 .product-title span {
-    color: var(--color-fonte);
-    font-size: 18px;
-    font-weight: 600;
-    width: 50%;
+  color: var(--color-fonte);
+  font-size: 18px;
+  font-weight: 600;
+  width: 50%;
 }
+
 .minor-label-informacoes-pedidos {
-    align-items: center;
-    justify-content: center;
-    background-color: #fb666677;
-    padding: 5px 15px;
-    border-radius: 5px;
-    margin-left: 25px;
+  background-color: #fbdb6677;
+  padding: 4px 10px;
+  border-radius: 5px;
+  width: fit-content;
 }
+
 .minor-label-informacoes-pedidos span {
-    color: var(--warning-color);
-    font-size: 14px;
-    font-weight: 600;
+  color: #c09c19;
+  font-size: 13px;
+  font-weight: 600;
 }
 .product-informations-informacoes-pedidos {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 .product-image-container {
-    flex-shrink: 0;
-    width: 200px;
-    height: 200px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 2px solid #e9ecef;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; /* Remove espaço extra abaixo da imagem */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* Remove espaço extra abaixo da imagem */
 }
 
 /* Garantir que a imagem não fique piscando */
 .product-image[src=""] {
-    display: none;
+  display: none;
 }
 
 .img-and-label-informacoes-pedidos {
-    display: flex;
-    gap: 25px;
-    align-items: flex-start;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  margin-bottom: 20px;
 }
 
 .informations-informacoes-pedidos {
-    flex: 1;
+  flex: 1;
 }
+
 .informations-informacoes-pedidos {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 600;
+  text-align: center;
 }
-.type-informacoes-pedidos {
-    color: #20261eab;
-    font-size: 14px;
-    font-weight: 500;
-}
-.name-informacoes-pedidos {
-    color: var(--color-fonte);
-    font-size: 18px;
-    font-weight: 600;
-}
+
+.type-informacoes-pedidos,
 .lote-informacoes-pedidos {
-    color: #20261eab;
-    font-size: 14px;
-    font-weight: 500;
+  color: #20261eab;
+  font-size: 14px;
 }
+
+.name-informacoes-pedidos {
+  color: var(--color-fonte);
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .purchase-date-informacoes-pedidos {
-    color: var(--color-fonte);
-    font-size: 16px;
-    font-weight: 500;
+  color: var(--color-fonte);
+  font-size: 14px;
+  margin-top: 5px;
 }
-.preco-lote-informacoes-pedidos {
-    color: var(--color-fonte);
-    font-size: 16px;
-    font-weight: 600;
-}
+
+/* PREÇO FINAL */
 .final-price-informacoes-pedidos {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
-.final-price-informacoes-pedidos span {
-    color: #20261eab;
-    font-size: 14px;
-    font-weight: 500;
+
+.final-price-informacoes-pedidos p {
+  font-size: 15px;
+  font-weight: 600;
+  color: #20261eab;
 }
-.price-informacoes-pedidos {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-right: 25px;
+
+.valor-final-informacoes-pedidos {
+  border: 1px solid #20261e;
+  border-radius: 5px;
+  padding: 8px 12px;
 }
-.parcelas-informacoes-pedidos {
-    display: flex;
-    padding: 5px 15px;
-    border: 1px solid #20261e;
-    border-radius: 5px;
-}
-.parcelas-informacoes-pedidos span {
-    color: var(--color-fonte);
-    font-weight: 600;
-    font-size: 16px;
-}
+
 .valor-final-informacoes-pedidos span {
-    color: var(--color-fonte);
-    font-weight: 600;
-    font-size: 18px;
+  color: var(--color-fonte);
+  font-weight: 600;
+  font-size: 17px;
 }
+
+/* BOTÕES */
 .buttons-area-informacoes-pedidos {
-    background-color: #ebf4eb;
-    width: 100%;
-    display: flex;
+  background-color: #ebf4eb;
+  border-top: 1px solid #20261e;
+  border-radius: 0 0 10px 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.left-buttons-informacoes-pedidos button {
+  background: none;
+  border: none;
+  color: var(--warning-color);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.right-buttons-informacoes-pedidos {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.mark-as-sent-btn-informacoes-pedidos {
+  background-color: #2d8c37;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+/* DADOS DO CLIENTE */
+.client-data-card-informacoes-pedidos {
+  border: 1px solid #20261e;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#client-data-title-span-informacoes-pedidos {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-fonte);
+}
+
+.client-data-spans-informacoes-pedidos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.client-data-spans-informacoes-pedidos i {
+  color: #841313;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+
+/* 425px */
+@media (min-width: 425px) {
+  .img-and-label-informacoes-pedidos img {
+    width: 75%;
+  }
+}
+
+/* 768px */
+@media (min-width: 768px) {
+  #informacoes-pedidos {
+    padding: 40px 60px;
+  }
+
+  #page-content-informacoes-pedidos {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  #first-container-informacoes-pedidos {
+    width: 65%;
+  }
+
+  #second-container-informacoes-pedidos {
+    width: 33%;
+  }
+
+  .img-and-label-informacoes-pedidos {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 25px;
-    border-top: 1px solid #20261e;
-    border-radius: 0px 0px 10px 10px;
-}
-.left-buttons-informacoes-pedidos {
-    width: 35%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-}
-.left-buttons-informacoes-pedidos button {
-    background: none;
-    border: none;
-    color: var(--warning-color);
-    text-decoration: underline;
-    cursor: pointer;
-}
-.right-buttons-informacoes-pedidos {
-    width: 65%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 15px;
-}
-.register-payment-btn-informacoes-pedidos {
-    background: none;
-    border: none;
-    color: #20261e;
-    text-decoration: underline;
-    cursor: pointer;
-}
-.mark-as-sent-btn-informacoes-pedidos {
-    background: none;
-    background-color: #2d8c37;
-    border: none;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-}
-#second-container-informacoes-pedidos {
+  }
+
+  .img-and-label-informacoes-pedidos img {
     width: 40%;
-    display: flex;
-    flex-direction: column;
+  }
+
+  .informations-informacoes-pedidos {
     align-items: flex-start;
-    justify-content: flex-start;
-    gap: 25px;
-}
-.client-data-card-informacoes-pedidos {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border: 1px solid #20261e;
-    padding: 25px;
-    border-radius: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    color: #20261e;
-}
-#client-data-title-span-informacoes-pedidos {
-    color: var(--color-fonte);
-    font-size: 18px;
-    font-weight: 600;
-    padding-bottom: 10px;
-}
-.client-data-spans-informacoes-pedidos {
-    display: flex;
+    text-align: left;
+  }
+
+  .final-price-informacoes-pedidos {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .buttons-area-informacoes-pedidos {
     flex-direction: row;
-    gap: 8px;
-    flex-wrap: wrap;
-    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-start;
-    padding-bottom: 5px;
-}
-.client-data-spans-informacoes-pedidos i {
-    color: #841313;
-}
-.client-data-type-informacoes-pedidos {
-    font-weight: 500;
-}
-.delivery-adress-informacoes-pedidos {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border: 1px solid #20261e;
+  }
+
+  .client-data-card-informacoes-pedidos {
     padding: 25px;
-    border-radius: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
+  }
 }
-.adress-informacoes-pedidos {
-    font-weight: 500;
+
+/* 1024px - layout do print */
+@media (min-width: 1024px) {
+  #informacoes-pedidos {
+    padding: 60px 100px;
+  }
+
+  #title-informacoes-pedidos h3 {
+    font-size: 24px;
+  }
+
+  .img-and-label-informacoes-pedidos img {
+    width: 35%;
+    max-width: 240px;
+  }
+
+  .name-informacoes-pedidos {
+    font-size: 18px;
+  }
+
+  .valor-final-informacoes-pedidos span {
+    font-size: 18px;
+  }
 }
