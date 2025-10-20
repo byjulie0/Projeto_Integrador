@@ -3,6 +3,7 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
 ?>
 
 <?php include 'menu_inicial.php';?>
+<!-- include 'catalogo_adm_produtos_action.php' -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -33,9 +34,8 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                     <input type="text" id="searchInput" placeholder="Pesquisar" />
                     <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button> 
                 </div>
-                <a href="">Todos</a>
                 <a href="?status=ativos">Ativos</a>
-                <a href="?status=inativos">Inativados</a>
+                <a href="#">Inativados</a>
             </div>
             <hr class="break-line">
             <!-- ?status=inativados -->
@@ -67,11 +67,11 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                     </td>
 
                                     <td class="product-category-atualizar-produtos cell-atualizar-produto">
-                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['categoria'] ?? 'Ops! Está vazio') ?></span></div>
+                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['categoria'] ?? 'Sem categoria') ?></span></div>
                                     </td>
 
                                     <td class="qt-atualizar-produtos cell-atualizar-produto">
-                                        <?= htmlspecialchars($p['subcategoria'] ?? 'Ops! Também está vazio') ?>
+                                        <?= htmlspecialchars($p['subcategoria'] ?? 'Sem subcategoria') ?>
                                     </td>
                                     
                                     <td class="price-atualizar-produtos cell-atualizar-produto">

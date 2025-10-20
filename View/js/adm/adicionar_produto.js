@@ -131,3 +131,47 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarCamposAnimal();
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const inputImg = document.querySelector('input[name="imagem"]');
+    const previewImg = document.getElementById('preview-img');
+
+    inputImg.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const url = URL.createObjectURL(file);
+            previewImg.src = url;
+            previewImg.style.display = 'block';
+        } else {
+            previewImg.src = '';
+            previewImg.style.display = 'none';
+        }
+    });
+});
+
+const label = document.querySelector('.img_holder_button span');
+inputImg.addEventListener('change', function() {
+    if (this.files[0]) {
+        label.textContent = 'Trocar imagem';
+        
+    } else {
+        label.textContent = 'Selecione uma imagem';
+    }
+});
+
+const inputFile = document.querySelector('input[name="imagem"]');
+const previewImg = document.querySelector('.img_holder img');
+const btnLabel = document.querySelector('.img_holder_button');
+
+inputFile.addEventListener('change', () => {
+  if (inputFile.files && inputFile.files[0]) {
+    previewImg.src = URL.createObjectURL(inputFile.files[0]);
+    previewImg.style.display = 'block';
+    btnLabel.style.display = 'none'; 
+  } else {
+    previewImg.src = '';
+    previewImg.style.display = 'none';
+    btnLabel.style.display = 'flex';
+  }
+});
+
+
