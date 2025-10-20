@@ -1,3 +1,29 @@
+<?php 
+//session_start();
+require_once '../../model/DB/conexao.php';
+
+//echo "<pre>";
+//print_r($_SESSION);
+//echo "</pre>";
+
+
+if (!isset($_SESSION['id_cliente'])) {
+    header("Location: pg_favoritos.php");
+    exit;
+}
+
+$id_cliente = $_SESSION['id_cliente'];
+
+// Consulta para buscar os produtos favoritados do cliente
+$sql = "SELECT p.id_produto, p.nome, p.peso, p.raca, p.genealogia, p.idade, p.preco, p.imagem
+        FROM favorito f
+        JOIN produto p ON f.produto_id_produto = p.id_produto
+        WHERE f.cliente_id_cliente = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$id_cliente]);
+$favoritos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <?php include 'menu_pg_inicial.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
