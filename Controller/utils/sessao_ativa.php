@@ -38,7 +38,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("location: ../cliente/login.php");
     }
 }
-
-$_SESSION['id_cliente'] = $row['id_cliente'];
-
 ?>
