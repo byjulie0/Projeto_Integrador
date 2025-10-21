@@ -73,17 +73,13 @@
   background-color: var(--color-primary-3);
   box-shadow: 0 0 10px #4b914b;
 }
+
 .filtro_select:hover{
   box-shadow: 0 0 10px #4b914b;
   border: 1px solid #e0e0e0;
 }
-.filtro_select:focus{
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 0 10px #4b914b;
-}
 
-
-.filtro_select {
+.filtro_select option{
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -93,6 +89,10 @@
   background-size: 12px;
   padding-right: 28px;
 }
+option{
+  color: var(--color-primary-1);
+}
+
 
 .lotes_container {
   display: flex;
