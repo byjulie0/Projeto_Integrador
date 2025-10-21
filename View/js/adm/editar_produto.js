@@ -2,12 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const catSel = document.getElementById('categoria');
     const subSel = document.getElementById('subcategoria');
 
-    // Dados passados pelo PHP
     const subMap = window.subMapData || {};
     const produtoCategoria = window.produtoCategoria || null;
     const produtoSubcategoria = window.produtoSubcategoria || null;
 
-    // Campos relacionados a animais (desabilitados para "Produtos Gerais" = id 5)
     const camposAnimal = [
         document.querySelector('input[name="peso"]'),
         document.querySelector('input[name="idade"]'),
@@ -15,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('select[name="campeao"]')
     ];
 
-    // Função para atualizar o estado dos campos de animal
     function atualizarCamposAnimal(catId) {
         const desabilitar = (parseInt(catId) === 5);
         camposAnimal.forEach(campo => {
@@ -29,9 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Função para carregar subcategorias com base na categoria selecionada
     function carregarSubcategorias(catId) {
-        // Limpa as opções atuais
         subSel.innerHTML = '<option value="" selected disabled>Selecione uma subcategoria</option>';
 
         if (subMap[catId]) {
@@ -40,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 opt.value = sub.id_subcategoria;
                 opt.textContent = sub.subcat_nome;
 
-                // Seleciona a subcategoria atual do produto
                 if (parseInt(sub.id_subcategoria) === parseInt(produtoSubcategoria)) {
                     opt.selected = true;
                 }
@@ -53,22 +47,38 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Inicialização: carregar subcategorias e ajustar campos com base nos dados do produto
     if (produtoCategoria) {
-        // Define a categoria no select
         catSel.value = produtoCategoria;
 
-        // Carrega as subcategorias correspondentes
         carregarSubcategorias(produtoCategoria);
 
-        // Atualiza campos de animal
         atualizarCamposAnimal(produtoCategoria);
     }
 
-    // Evento de mudança na categoria
     catSel.addEventListener('change', () => {
         const catId = catSel.value;
         carregarSubcategorias(catId);
         atualizarCamposAnimal(catId);
     });
 });
+
+  const inputImagem = document.getElementById('inputImagem');
+  const previewImagem = document.getElementById('previewImagem');
+  const imgHolderButton = document.querySelector('.img_holder_button');
+
+  if (previewImagem && previewImagem.src && !previewImagem.src.includes('#') && previewImagem.style.display !== 'none') {
+    imgHolderButton.style.opacity = '0.4';
+  }
+
+  inputImagem.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        previewImagem.src = e.target.result;
+        previewImagem.style.display = 'block';
+        imgHolderButton.style.opacity = '0.4';
+      };
+      reader.readAsDataURL(file);
+    }
+  });

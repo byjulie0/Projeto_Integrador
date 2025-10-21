@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $categoria    = mysqli_real_escape_string($con, $_POST['categoria']);
     $subcategoria = mysqli_real_escape_string($con, $_POST['subcategoria']);
 
-    // Verifica se uma nova imagem foi enviada
     $caminhoRelativo = null;
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
         $nomeImagem = basename($_FILES['imagem']['name']);
@@ -40,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Monta a query de atualização
     if ($popup_tipo !== "erro") {
         $setParts = [
             "prod_nome = '$nome'",

@@ -145,7 +145,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                 </div>
             </aside>
             </section>
-
             <div class="add_product_submit_button">
                 <?php
                 $texto = "Avançar";
