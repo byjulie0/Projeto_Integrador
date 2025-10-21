@@ -111,10 +111,10 @@ if (!empty($caminho_imagem)) {
                             <span><?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?></span>
                         </div>
 
-                        <div class="minor-label-informacoes-pedidos">
-                            <span class="status-<?php echo strtolower($pedido_detalhes['status_pedido']); ?>">
-                                <?php echo htmlspecialchars($pedido_detalhes['status_pedido']); ?>
-                            </span>
+                        <div id="labels-pedido-informacoes-pedidos"> 
+                            <div class="label-pedido-informacoes-pedidos status-<?php echo strtolower($pedido_detalhes['status_pedido']); ?>"> 
+                                <span><?php echo htmlspecialchars($pedido_detalhes['status_pedido']); ?></span> 
+                            </div> 
                         </div>
 
                         <div class="product-informations-informacoes-pedidos">

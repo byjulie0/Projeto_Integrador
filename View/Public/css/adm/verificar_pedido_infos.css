@@ -58,23 +58,42 @@
   gap: 15px;
 }
 
-.product-title span {
-  color: var(--color-fonte);
-  font-size: 18px;
-  font-weight: 600;
+#labels-pedido-informacoes-pedidos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  margin-top: 10px;
 }
-
-.minor-label-informacoes-pedidos {
-  background-color: #fbdb6677;
-  padding: 4px 10px;
+.label-pedido-informacoes-pedidos {
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
   border-radius: 5px;
-  width: fit-content;
 }
 
-.minor-label-informacoes-pedidos span {
-  color: #c09c19;
-  font-size: 13px;
-  font-weight: 600;
+.status-pendente {
+  background-color: rgba(255, 193, 7, 0.2);
+  border: solid 1px var(--color-botao-op-Pendente);
+}
+.status-pendente span {
+  color: #ffc107;
+}
+.status-concluído,
+.status-concluido {
+  background-color: rgba(40, 167, 69, 0.2);
+  border: solid 1px var(--color-botao-op-Concluido);
+}
+.status-concluído span,
+.status-concluido span {
+  color: #28a745;
+}
+.status-cancelado {
+  background-color: rgba(220, 53, 69, 0.2);
+  border: solid 1px var(--color-botao-op-Cancelar);
+}
+.status-cancelado span {
+  color: #dc3545;
 }
 
 .img-and-label-informacoes-pedidos {
