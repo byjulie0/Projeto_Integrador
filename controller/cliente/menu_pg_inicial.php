@@ -28,7 +28,7 @@
 
             <ul class="nav-link-pg-inicial">
                 <li class="dropdown_menu_inicial">
-                    <a href="#" class="nav-item-pg-inicial">Categorias</a>
+                    <a href="#pg_inicial_categorias" class="nav-item-pg-inicial">Categorias</a>
                     <ul class="submenu_inicial">
                         <li><a href="categoria_bovinos.php">Bovinos</a></li>
                         <li><a href="categoria_equinos.php">Equinos</a></li>
@@ -38,7 +38,7 @@
                     </ul>
                 </li>
                 <li><a href="categoria_campeoes.php" class="nav-item-pg-inicial">Campeões</a></li>
-                <li><a href="#" class="nav-item-pg-inicial">Nossa história</a></li>
+                <li><a href="#section-nossa-historia" class="nav-item-pg-inicial">Nossa história</a></li>
             </ul>
 
             <div class="nav-page-btns-pg-inicial">
