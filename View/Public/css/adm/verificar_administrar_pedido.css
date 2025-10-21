@@ -81,11 +81,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.filtros_pedidos {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-}
 
 .first-container-atualizar-produtos {
   font-size: 14px;
@@ -95,38 +90,34 @@
 }
 .filtros_pedidos {
   display: flex;
+  text-align: justify;
   flex-wrap: wrap;
-  align-items: center;
   gap: 10px;
 }
-.filtros_pedidos a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.filtros_pedidos button{
   min-width: 110px;
   border-radius: 8px;
   border: solid 1px;
   transition: all 0.3s ease;
 }
-.filtros_pedidos a:hover {
+.filtros_pedidos button:hover{
   border-color: var(--color-primary-3);
   color: white;
   background-color: var(--color-primary-3);
   box-shadow: 0 0 10px #4b914b;
 }
-.filtros_pedidos a:focus {
+.filtros_pedidos button:focus{
   border-color: var(--color-primary-3);
   color: white;
   background-color: var(--color-primary-3);
   box-shadow: 0 0 10px #4b914b;
+
 }
-.filtro_todos,
-.filtro_pendente,
-.filtro_concluido,
-.filtro_cancelados {
+.filtro_todos,.filtro_pendente,.filtro_concluido,.filtro_cancelados{
   color: var(--color-primary-1);
   background-color: #ffff;
 }
+
 
 /* Linha divisória */
 .verificar_administrar_pedidos_sessao_divisao {
@@ -215,8 +206,9 @@
   .verificar_administrar_pedidos_content {
     padding: 20px 15px;
   }
-  .verificar_administrar_pedidos_sessao_bloco_info h1 {
-    font-size: 1.2rem;
+  .verificar_administrar_pedidos_sessao_bloco_info h1, .verificar_administrar_pedidos_sessao_seta_voltar{
+    margin-top: 10px;
+    font-size: 18px;
   }
   .verificar_administrar_pedidos_sessao_formulario_pesquisa {
     max-width: 100%;
@@ -227,6 +219,22 @@
   }
   .verificar_administrar_pedidos_sessao_pedidos {
     overflow-x: auto;
+  }
+  .verificar_administrar_pedidos_sessao_visualizar{
+    margin-top: 20px;
+  }
+  .filtros_pedidos {
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px ;
+  }
+  .filtros_pedidos button{
+    min-width: 70px;
+    gap: 5px;
+    font-size: 12px;
+  }
+  .verificar_administrar_pedidos_sessao_divisao{
+    display: none;
   }
 }
 
