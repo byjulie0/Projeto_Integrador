@@ -24,104 +24,13 @@
 .bi-chevron-left {
   font-size: 22px;
   color: var(--color-primary-1);
-  font-size: 24px;
-}
-.bi-chevron-left {
-  display: inline-flex;
   text-decoration: none;
-  font-size: 25px;
-  color: var(--color-primary-1);
-}
-.status-pendente {
-  background-color: #fff3cd;
-  color: #856404;
-  border: 1px solid #ffeaa7;
 }
 
-.status-concluído {
-  background-color: #d1edff;
-  color: #0c5460;
-  border: 1px solid #bee5eb;
-}
-
-.status-cancelado {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
-
-.label-pedido-informacoes-pedidos {
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.info-item {
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.cancel-btn {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.cancel-btn:hover {
-  background-color: #c82333;
-}
-
-.buttons-area-informacoes-pedidos {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #eee;
-}
-
-.left-buttons-informacoes-pedidos {
-  text-align: left;
-}
-#subtitle-informacoes-pedidos {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-#id-pedido-informacoes-pedidos {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 50%;
-}
 #id-pedido-informacoes-pedidos span {
   font-size: 17px;
   color: var(--color-fonte);
-}
-#labels-pedido-informacoes-pedidos {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 50%;
-  margin-top: 10px;
-
-}
-.label-pedido-informacoes-pedidos {
-  align-items: center;
-  justify-content: center;
-  background-color: #fb666677;
-  padding: 5px 15px;
-  border-radius: 5px;
-}
-.label-pedido-informacoes-pedidos span {
-  color: var(--warning-color);
-  font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 #page-content-informacoes-pedidos {
@@ -135,35 +44,24 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-}
-.product-title {
-  margin: 25px 0px 0px 45px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-    border: 1px solid #20261e;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .client-data-type-informacoes-pedidos1 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .product-card-informacoes-pedidos1 {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .product-title span {
   color: var(--color-fonte);
   font-size: 18px;
   font-weight: 600;
-  width: 50%;
 }
 
 .minor-label-informacoes-pedidos {
@@ -178,69 +76,28 @@
   font-size: 13px;
   font-weight: 600;
 }
-.product-informations-informacoes-pedidos {
-  display: flex;
-  margin-left: 45px;
-  flex-direction: column;
-  width: 100%;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-.product-image-container {
-  flex-shrink: 0;
-  width: 200px;
-  height: 200px;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 2px solid #e9ecef;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.product-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.product-image[src=""] {
-  display: none;
-}
-
 
 .img-and-label-informacoes-pedidos {
   display: flex;
-  gap: 25px;
-  align-items: flex-start;
-  margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    /* background-color: aqua */
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .img-and-label-informacoes-pedidos img {
-    width: 90%;
-    max-width: 260px;
-    border-radius: 5px;
+  width: 90%;
+  max-width: 260px;
+  border-radius: 5px;
 }
 
 .informations-informacoes-pedidos {
+  width: 100%;
   display: flex;
-  flex: 1;
   flex-direction: column;
   gap: 5px;
+  font-weight: 600;
   text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-weight: 600;
-    text-align: center;
-    /* background-color: green; */
+  /* background-color: green; */
 }
 
 .type-informacoes-pedidos,
@@ -260,35 +117,26 @@
   font-size: 14px;
   margin-top: 5px;
 }
-
-.product-total-informacoes-pedidos {
-  display: flex;
-  margin-left: 45px;
-  margin-top: 5px;
-  width: fit-content;
-  border: 1px solid #20261e;
-  border-radius: 5px;
-  padding: 8px 12px;
 .final-price-informacoes-pedidos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
 .final-price-informacoes-pedidos p {
-    font-size: 15px;
-    font-weight: 600;
-    color: #20261eab;
+  font-size: 15px;
+  font-weight: 600;
+  color: #20261eab;
 }
 
 .valor-final-informacoes-pedidos {
-    border: 1px solid #20261e;
-    border-radius: 5px;
-    padding: 8px 12px;
+  border: 1px solid #20261e;
+  border-radius: 5px;
+  padding: 8px 12px;
 }
 
-.product-total-informacoes-pedidos span {
+.valor-final-informacoes-pedidos span {
   color: var(--color-fonte);
   font-weight: 600;
   font-size: 17px;
@@ -359,46 +207,40 @@
 /* RESPONSIVIDADE */
 
 @media (min-width: 360px) {
-    .buttons-area-informacoes-pedidos {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
+  .buttons-area-informacoes-pedidos {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
-    .final-price-informacoes-pedidos {
-        margin-top: 20px;
-    }
-    
-    #title-informacoes-pedidos h3 {
-        font-size: 18px;
-    }
+  .final-price-informacoes-pedidos {
+    margin-top: 20px;
+  }
+
+  #title-informacoes-pedidos h3 {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 425px) {
   .img-and-label-informacoes-pedidos img {
     width: 75%;
   }
-}
 
-/* 768px */
-    .img-and-label-informacoes-pedidos img {
-        width: 75%;
-    }
+  .final-price-informacoes-pedidos {
+    margin-top: 20px;
+  }
 
-    .final-price-informacoes-pedidos {
-        margin-top: 20px;
-    }
+  .left-buttons-informacoes-pedidos {
+    width: 50%;
+  }
 
-    .left-buttons-informacoes-pedidos {
-        width: 50%;
-    }
+  .right-buttons-informacoes-pedidos {
+    width: 50%;
+  }
 
-    .right-buttons-informacoes-pedidos {
-        width: 50%;
-    }   
-
-    .buttons-area-informacoes-pedidos {
-        flex-direction: row;
-    }
+  .buttons-area-informacoes-pedidos {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 768px) {
@@ -407,32 +249,20 @@
   }
 
   #page-content-informacoes-pedidos {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
+    width: 100%;
   }
-    #page-content-informacoes-pedidos {
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 30px;
-        width: 100%;
-    }
 
   #first-container-informacoes-pedidos {
-    width: 65%;
+    width: 100%;
   }
-    #first-container-informacoes-pedidos {
-        width: 100%;
-    }
 
   #second-container-informacoes-pedidos {
-    width: 33%;
+    width: 100%;
   }
-    #second-container-informacoes-pedidos {
-        width: 100%;
-    }
 
   .img-and-label-informacoes-pedidos {
     flex-direction: row;
@@ -459,12 +289,6 @@
     justify-content: space-between;
     align-items: center;
   }
-    .buttons-area-informacoes-pedidos {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-    }
 
   .client-data-card-informacoes-pedidos {
     padding: 25px;
@@ -479,24 +303,21 @@
   #title-informacoes-pedidos h3 {
     font-size: 24px;
   }
-    #title-informacoes-pedidos h3 {
-        font-size: 24px;
-    }
 
-    #page-content-informacoes-pedidos {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 30px;
-    }
+  #page-content-informacoes-pedidos {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+  }
 
-    #first-container-informacoes-pedidos {
-        width: 63%;
-    }
+  #first-container-informacoes-pedidos {
+    width: 63%;
+  }
 
-    #second-container-informacoes-pedidos {
-        width: 37%;
-    }
+  #second-container-informacoes-pedidos {
+    width: 37%;
+  }
 
   .img-and-label-informacoes-pedidos img {
     width: 35%;
@@ -507,7 +328,7 @@
     font-size: 18px;
   }
 
-  .product-total-informacoes-pedidos span {
+  .valor-final-informacoes-pedidos span {
     font-size: 18px;
   }
 }

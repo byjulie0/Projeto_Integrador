@@ -1,4 +1,4 @@
-<?php
+<?php 
 include 'menu_inicial.php';
 
 $pedido_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -11,7 +11,6 @@ if ($pedido_id === 0) {
 include '../../model/DB/conexao.php';
 
 try {
-    // Query para pegar todos os itens do pedido
     $sql = "SELECT 
                 p.id_pedido,
                 p.data_pedido,
@@ -34,10 +33,8 @@ try {
     $stmt = $con->prepare($sql);
     $stmt->bind_param("i", $pedido_id);
     $stmt->execute();
-
     $resultado = $stmt->get_result();
 
-    // Pega todos os itens do pedido
     $itens_pedido = [];
     while ($row = $resultado->fetch_assoc()) {
         $itens_pedido[] = $row;
@@ -45,7 +42,6 @@ try {
 
     $stmt->close();
 
-    // Se não houver itens, o pedido não existe
     if (count($itens_pedido) === 0) {
         echo "<div style='padding: 20px; text-align: center;'>";
         echo "<h3>Pedido não encontrado</h3>";
@@ -57,10 +53,7 @@ try {
         exit;
     }
 
-    // Detalhes do pedido e cliente (pegando do primeiro item)
     $pedido_detalhes = $itens_pedido[0];
-
-    // Calcula o valor total do pedido
     $valor_total = 0;
     foreach ($itens_pedido as $item) {
         $valor_total += $item['valor_produto'] * $item['qtd_produto'];
@@ -85,106 +78,128 @@ if (!empty($caminho_imagem)) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido #<?php echo $pedido_detalhes['id_pedido']; ?></title>
+    <title>Verificar e administrar pedidos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../../view/public/css/adm/verificar_pedido_infos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+ 
 <body>
-<section id="informacoes-pedidos">
-    <div id="title-informacoes-pedidos">
-        <a href="verificar_administrar_pedido.php"><i class="bi bi-chevron-left"></i></a>
-        <h3>Verificar e administrar pedidos</h3>
-    </div>
-
-    <div id="subtitle-informacoes-pedidos">
-        <div id="id-pedido-informacoes-pedidos">
-            <span>ID do pedido: </span>
-            <strong>#<?php echo $pedido_detalhes['id_pedido']; ?></strong>
+    <section id="informacoes-pedidos">
+        <div id="title-informacoes-pedidos">
+            <a href="verificar_administrar_pedido.php"><i class="bi bi-chevron-left"></i></a>
+            <h3>Verificar e administrar pedidos</h3>
         </div>
-    </div>
 
-    <div id="page-content-informacoes-pedidos">
-        <div id="first-container-informacoes-pedidos">
-            <div class="product-card-informacoes-pedidos">
-                <div class="product-title">
-                    <span>Informações do Pedido</span>
-                    <div id="labels-pedido-informacoes-pedidos">
-                        <div class="label-pedido-informacoes-pedidos status-<?php echo strtolower($pedido_detalhes['status_pedido']); ?>">
-                            <span><?php echo htmlspecialchars($pedido_detalhes['status_pedido']); ?></span>
+        <div id="subtitle-informacoes-pedidos">
+            <div id="id-pedido-informacoes-pedidos">
+                <span>ID do pedido:</span>
+                <strong>#<?php echo $pedido_detalhes['id_pedido']; ?></strong>
+            </div>
+        </div>
+
+        <div id="page-content-informacoes-pedidos">
+            <div id="first-container-informacoes-pedidos">
+                <div class="product-card-informacoes-pedidos">
+                    <div class="product-card-informacoes-pedidos1">
+                        <div class="product-title">
+                            <span><?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?></span>
+                        </div>
+
+                        <div class="minor-label-informacoes-pedidos">
+                            <span class="status-<?php echo strtolower($pedido_detalhes['status_pedido']); ?>">
+                                <?php echo htmlspecialchars($pedido_detalhes['status_pedido']); ?>
+                            </span>
+                        </div>
+
+                        <div class="product-informations-informacoes-pedidos">
+                            <div class="img-and-label-informacoes-pedidos">
+                                <img src="<?php echo htmlspecialchars($imagem_produto); ?>" alt="<?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?>">
+                                <div class="informations-informacoes-pedidos">
+                                    <span class="type-informacoes-pedidos">
+                                        <?php echo htmlspecialchars($itens_pedido[0]['sexo_produto']); ?>
+                                    </span>
+                                    <span class="name-informacoes-pedidos">
+                                        <?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?>
+                                    </span>
+                                    <span class="lote-informacoes-pedidos">
+                                        Quantidade: <?php echo $itens_pedido[0]['qtd_produto']; ?>
+                                    </span>
+                                    <span class="purchase-date-informacoes-pedidos">
+                                        Data do pedido: <?php echo date('d/m/Y', strtotime($pedido_detalhes['data_pedido'])); ?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="final-price-informacoes-pedidos">
+                                <p>Valor Total</p>
+                                <div class="price-informacoes-pedidos">
+                                    <div class="valor-final-informacoes-pedidos">
+                                        <span>R$<?php echo number_format($valor_total, 2, ',', '.'); ?></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="product-informations-informacoes-pedidos">
-                    <?php foreach ($itens_pedido as $item): ?>
-                        <div class="img-and-label-informacoes-pedidos">
-                            <div class="product-image-container">
-                                <img src="<?php echo htmlspecialchars($imagem_produto); ?>"
-                                     alt="<?php echo htmlspecialchars($item['nome_produto']); ?>"
-                                     class="product-image"
-                                     onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200/007bff/ffffff?text=Imagem+Não+Encontrada'">
+                    <div class="buttons-area-informacoes-pedidos">
+                        <?php if ($pedido_detalhes['status_pedido'] === 'Pendente'): ?>
+                            <div class="left-buttons-informacoes-pedidos">
+                                <button class="cancel-btn" onclick="cancelarPedido(<?php echo $pedido_detalhes['id_pedido']; ?>)">Cancelar pedido</button>
                             </div>
-                            <div class="informations-informacoes-pedidos">
-                                <div class="info-item"> <?php echo htmlspecialchars($item['nome_produto']); ?></div>
-                                <div class="info-item"><strong>Sexo do Produto:</strong> <?php echo htmlspecialchars($item['sexo_produto']); ?></div>
-                                <div class="info-item"><strong>Quantidade:</strong> <?php echo $item['qtd_produto']; ?></div>
-                                <div class="info-item"><strong>Valor Unitário:</strong> R$ <?php echo number_format($item['valor_produto'], 2, ',', '.'); ?></div>
-                                <div class="info-item"><strong>Subtotal:</strong> R$ <?php echo number_format($item['valor_produto'] * $item['qtd_produto'], 2, ',', '.'); ?></div>
+                        <?php endif; ?>
+
+                        <?php if ($pedido_detalhes['status_pedido'] !== 'Concluído'): ?>
+                            <div class="right-buttons-informacoes-pedidos">
+                                <button>
+                                    <?php  
+                                    $texto = "Concluir";
+                                    include 'botao_verde_adm.php';
+                                    ?>
+                                </button>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
+            </div>
 
-                <div class="product-total-informacoes-pedidos">
-                    <strong>Valor Total:</strong> R$ <?php echo number_format($valor_total, 2, ',', '.'); ?>
-                </div>
+            <div id="second-container-informacoes-pedidos">
+                <div class="client-data-card-informacoes-pedidos">
+                    <span id="client-data-title-span-informacoes-pedidos">
+                        Dados do cliente
+                    </span>
 
-                <div class="buttons-area-informacoes-pedidos">
-                    <?php if ($pedido_detalhes['status_pedido'] === 'Pendente'): ?>
-                        <div class="left-buttons-informacoes-pedidos">
-                            <button class="cancel-btn" onclick="cancelarPedido(<?php echo $pedido_detalhes['id_pedido']; ?>)">Cancelar pedido</button>
-                        </div>
-                    <?php endif; ?>
+                    <div class="client-data-spans-informacoes-pedidos">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="client-data-type-informacoes-pedidos1">Nome:</span>
+                        <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['cliente_nome']); ?></span>
+                    </div>
+
+                    <div class="client-data-spans-informacoes-pedidos">
+                        <i class="fa-solid fa-lock"></i>
+                        <span class="client-data-type-informacoes-pedidos1">CPF/CNPJ:</span>
+                        <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['cpf_cnpj']); ?></span>
+                    </div>
+
+                    <div class="client-data-spans-informacoes-pedidos">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="client-data-type-informacoes-pedidos1">E-mail:</span>
+                        <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['email']); ?></span>
+                    </div>
+
+                    <div class="client-data-spans-informacoes-pedidos">
+                        <i class="fa-solid fa-phone"></i>
+                        <span class="client-data-type-informacoes-pedidos1">Telefone:</span>
+                        <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['telefone']); ?></span>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div id="second-container-informacoes-pedidos">
-            <div class="client-data-card-informacoes-pedidos">
-                <span id="client-data-title-span-informacoes-pedidos">Dados do Cliente</span>
-
-                <div class="client-data-spans-informacoes-pedidos">
-                    <i class="fa-solid fa-user"></i>
-                    <span class="client-data-type-informacoes-pedidos">Nome:</span>
-                    <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['cliente_nome']); ?></span>
-                </div>
-
-                <div class="client-data-spans-informacoes-pedidos">
-                    <i class="fa-solid fa-lock"></i>
-                    <span class="client-data-type-informacoes-pedidos">CPF/CNPJ:</span>
-                    <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['cpf_cnpj']); ?></span>
-                </div>
-
-                <div class="client-data-spans-informacoes-pedidos">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span class="client-data-type-informacoes-pedidos">E-mail:</span>
-                    <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['email'] ?? 'Não informado'); ?></span>
-                </div>
-
-                <div class="client-data-spans-informacoes-pedidos">
-                    <i class="fa-solid fa-phone"></i>
-                    <span class="client-data-type-informacoes-pedidos">Telefone:</span>
-                    <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['telefone'] ?? 'Não informado'); ?></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 <script>
 function cancelarPedido(pedidoId) {
