@@ -25,12 +25,6 @@
                 <a href="pg_inicial_cliente.php" class="logo-menu-title">John Rooster</a>
             </div>
 
-            <div class="search-container-pg-inicial search-desktop">
-                <input type="text" placeholder="O que deseja buscar?" id="busca" autocomplete="on"/>
-                <i class="bi bi-search"></i>
-                <div id="resultado_busca"></div>
-            </div>
-
             <ul class="nav-link-pg-inicial">
                 <li class="dropdown_menu_inicial">
                     <a href="#" class="nav-item-pg-inicial">Categorias</a>
@@ -44,14 +38,6 @@
                 </li>
                 <li><a href="categoria_campeoes.php" class="nav-item-pg-inicial">Campeões</a></li>
                 <li><a href="#" class="nav-item-pg-inicial">Nossa história</a></li>
-                
-                <li class="search-mobile-item">
-                    <div class="search-container-pg-inicial search-mobile">
-                        <input type="text" placeholder="O que deseja buscar?" id="busca-mobile" autocomplete="on"/>
-                        <i class="bi bi-search"></i>
-                        <div id="resultado_busca_mobile"></div>
-                    </div>
-                </li>
             </ul>
 
             <div class="nav-page-btns-pg-inicial">

@@ -373,8 +373,8 @@
 }
 .form_rede_senha input {
   width: 100%;
-  max-width: 600px;
-  height: 35px;
+  max-width: 500px;
+  height: 40px;
   border: none;
   outline: none;
   border-radius: 2px;
