@@ -37,7 +37,7 @@
                         <li><a href="categoria_produtos.php">Produtos gerais</a></li>
                     </ul>
                 </li>
-                <li><a href="categoria_campeoes.php" class="nav-item-pg-inicial">Campeões</a></li>
+                <li><a href="#campeoes" class="nav-item-pg-inicial">Campeões</a></li>
                 <li><a href="#section-nossa-historia" class="nav-item-pg-inicial">Nossa história</a></li>
             </ul>
 
