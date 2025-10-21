@@ -15,7 +15,7 @@ if ($inativos === 0) {
 
 if (!empty($busca)) {
     $busca_esc = $con->real_escape_string($busca);
-    $where[] = "(cliente_nome LIKE '%$busca_esc%' OR cpf_cnpj LIKE '%$busca_esc%')";
+    $where[] = "(cliente_nome LIKE '$busca_esc%' OR cpf_cnpj LIKE '%$busca_esc%')";
 }
 
 if (count($where) > 0) {
