@@ -148,7 +148,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
             <div class="add_product_submit_button">
                 <?php
                 $texto = "Avançar";
-                include 'botao_adm.php';
+                include 'botao_verde_adm.php';
                 ?>
             </div>
         </form>
