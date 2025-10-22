@@ -1,7 +1,12 @@
-<?php include 'menu_inicial.php'; ?>
+<?php
+// include '../utils/sessao_ativa_adm.php';
+include '../utils/sessao_ativa_adm.php';
+include 'menu_inicial.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,28 +56,15 @@
                 <a href="meu_perfil_editar.php">
                     <?php
                         $texto = "Salvar";
-                        include '../cliente/botao_cliente.php';
+                        include 'botao_verde_adm.php';
                     ?>
                 </a>
                 <a href="login.php">
-                    <?php include 'botao_logout.php'; ?>
+                    <?php include 'botao_logout_adm.php'; ?>
                 </a>
             </div>
 
         </div>
-    </div>
-    
-    <div class="visualizar-dados-area-botoes">
-        <a href="meu_perfil_editar.php">
-            <?php
-            $texto = "Editar meus dados";
-            include '../cliente/botao_verde_cliente.php';
-            ?>
-        </a>
-        <a href="login.php">
-            <?php 
-            include '../cliente/botao_logout.php';?>
-        </a>
     </div>
 </div>
 </main>
