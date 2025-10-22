@@ -30,11 +30,11 @@
                 <li class="dropdown_menu_inicial">
                     <a href="#pg_inicial_categorias" class="nav-item-pg-inicial">Categorias</a>
                     <ul class="submenu_inicial">
-                        <li><a href="categoria_bovinos.php">Bovinos</a></li>
-                        <li><a href="categoria_equinos.php">Equinos</a></li>
-                        <li><a href="categoria_galinaceos.php">Galináceos</a></li>
-                        <li><a href="categoria_campeoes.php">Campeões</a></li>
-                        <li><a href="categoria_produtos.php">Produtos gerais</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=1">Bovinos</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=2">Equinos</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=3">Galináceos</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=4">Campeões</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=5">Produtos gerais</a></li>
                     </ul>
                 </li>
                 <li><a href="#campeoes" class="nav-item-pg-inicial">Campeões</a></li>

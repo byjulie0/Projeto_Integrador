@@ -48,7 +48,7 @@
                     ?>
                 </a>
                 <a href="login.php">
-                    <?php include 'botao_logout.php'; ?>
+                    <?php include 'botao_logout_adm.php'; ?>
                 </a>
             </div>
 

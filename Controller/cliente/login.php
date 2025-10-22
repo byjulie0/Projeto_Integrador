@@ -2,9 +2,10 @@
 include 'menu_login.php';
 include '../utils/libras.php'
 
-?>
+  ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,11 +44,12 @@ include '../utils/libras.php'
           <div class="btn-submit-login">
             <?php
             $texto = "Login";
-            include 'botao_verde_cliente.php';
+            include '../cliente/botao_verde_cliente.php';
             ?>
           </div>
 
-          <?php if (isset($erro)) echo '<p style="color:red;">' . $erro . '</p>'; ?>
+          <?php if (isset($erro))
+            echo '<p style="color:red;">' . $erro . '</p>'; ?>
 
           <div class="info-login">
             <a href="recuperar_senha_login1.php" class="esqueci_senha_login">Esqueci minha senha</a>
