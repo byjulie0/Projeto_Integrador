@@ -11,8 +11,6 @@
         <a href="detalhes_produto.php">
             <img src="<?php echo $imagem; ?>" alt="Imagem do Animal">
             <div class="info-grid">
-                <p>Nome:</p>
-                <p><?= $nome ?></p>
                 <p>Peso:</p>
                 <p><?php echo $peso; ?></p>
                 <p>Raça:</p>

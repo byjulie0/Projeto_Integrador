@@ -67,12 +67,19 @@
   color: var(--color-primary-1);
 }
 
-.filtro_btn:hover, .filtro_select:hover {
-  background: #f7f7f7;
-  border-color: #ccc;
+.filtro_btn:hover {
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
 }
 
-.filtro_select {
+.filtro_select:hover{
+  box-shadow: 0 0 10px #4b914b;
+  border: 1px solid #e0e0e0;
+}
+
+.filtro_select option{
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -82,6 +89,10 @@
   background-size: 12px;
   padding-right: 28px;
 }
+option{
+  color: var(--color-primary-1);
+}
+
 
 .lotes_container {
   display: flex;
