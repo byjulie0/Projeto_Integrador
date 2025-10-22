@@ -39,7 +39,7 @@
             <p>Idade:</p><p><?= $idade ?></p>
             <p class="preco">R$ <?= $preco ?></p>
         </div>
-        <div class="stars-pag-fav"><a href="#">★ Favorito</a></div>
+        <div class="stars-pag-fav"><a href="#"><i class="fa-solid fa-heart"></i></a></div>
     </a>
 </div>
 
