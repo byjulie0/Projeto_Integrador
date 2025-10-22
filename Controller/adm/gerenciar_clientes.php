@@ -72,7 +72,7 @@
                                         <i class="fa-solid <?= $c['user_ativo'] == 0 ? 'fa-toggle-on' : 'fa-toggle-off'; ?>"></i>
                                     </button>
                                 </td>
-                                <td><?= htmlspecialchars($c['user_ativo']); ?></td>
+                                <td><?= $c['user_ativo'] == 1 ? 'Ativo' : 'Inativo'; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
