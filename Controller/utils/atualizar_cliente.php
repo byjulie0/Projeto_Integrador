@@ -12,23 +12,23 @@ $cliente_nome = $_POST['cliente_nome'];
 $email        = $_POST['email'];
 $telefone     = $_POST['telefone'];
 $data_nasc    = date(format: 'Y-m-d', timestamp: strtotime(datetime: str_replace(search: '/', replace: '-', subject: $_POST['data_nasc'])));
-$endereco     = $_POST['endereco'];
+// $endereco     = $_POST['endereco'];
 
-$partes         = explode(separator: ',', string: $endereco);
-$rua            = trim(string: $partes[0]);
-$numero_bairro  = explode(separator: '-', string: $partes[1]);
-$numero         = trim(string: $numero_bairro[0]);
-$bairro         = isset($numero_bairro[1]) ? trim(string: $numero_bairro[1]) : '';
+// $partes         = explode(separator: ',', string: $endereco);
+// $rua            = trim(string: $partes[0]);
+// $numero_bairro  = explode(separator: '-', string: $partes[1]);
+// $numero         = trim(string: $numero_bairro[0]);
+// $bairro         = isset($numero_bairro[1]) ? trim(string: $numero_bairro[1]) : '';
 
 $stmt = $con->prepare(query: "UPDATE cliente 
-                       SET cliente_nome=?, email=?, telefone=?, data_nasc=?, cep=? 
+                       SET cliente_nome=?, email=?, telefone=?, data_nasc=?
                        WHERE id_cliente=?");
 
 if (!$stmt) {
     die("Erro ao preparar atualização de cliente: " . $con->error);
 }
 
-$stmt->bind_param("ssssi", $cliente_nome, $email, $telefone, $data_nasc, $endereco, $id_cliente);
+$stmt->bind_param("ssssi", $cliente_nome, $email, $telefone, $data_nasc, $id_cliente);
 
 if (!$stmt->execute()) {
     die("Erro ao atualizar cliente: " . $stmt->error);
