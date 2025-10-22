@@ -49,7 +49,7 @@ try {
 
 
     $mail->isHTML(true);
-    $mail->Subject = 'Sua senha temporária';
+    $mail->Subject = 'Sua senha temporaria';
     $mail->Body = "
         <h2>Recuperação de Acesso</h2>
         <p>Uma nova senha temporária foi gerada para sua conta:</p>
