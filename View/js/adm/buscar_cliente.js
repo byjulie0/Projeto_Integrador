@@ -6,14 +6,16 @@ $(document).ready(function () {
 
         $.post("toggle_cliente.php", { id_cliente: id }, function (res) {
             if (res.success) {
-                if (res.novo_status == 0) {
-                    btn.attr("aria-pressed", "true").html('<i class="fa-solid fa-toggle-on"></i>');
-                } else {
-                    btn.attr("aria-pressed", "false").html('<i class="fa-solid fa-toggle-off"></i>');
-                }
+            if (res.novo_status == 0) {
+              btn.attr("aria-pressed", "true").html('<i class="fa-solid fa-toggle-on"></i>');
+              btn.closest('tr').find('td:last').text('Inativo');
             } else {
-                alert("Erro ao atualizar status!");
+              btn.attr("aria-pressed", "false").html('<i class="fa-solid fa-toggle-off"></i>');
+              btn.closest('tr').find('td:last').text('Ativo');
             }
+          } else {
+            alert("Erro ao atualizar status!");
+          }
         }, "json");
     });
 
@@ -41,9 +43,10 @@ $('#campo-busca').on('input', function () {
                   <i class="fa-solid ${c.user_ativo == 0 ? 'fa-toggle-on' : 'fa-toggle-off'}"></i>
                 </button>
               </td>
-              <td>${c.user_ativo}</td>
+              <td>${c.user_ativo == 0 ? 'Inativo' : 'Ativo'}</td>
             </tr>
           `;
+
         });
       } else {
         html = `<tr><td colspan="5" style="text-align:center;">Nenhum cliente encontrado.</td></tr>`;
@@ -73,19 +76,20 @@ $('#btn-inativos').click(function(e) {
 
             if (clientes.length) {
                 clientes.forEach(c => {
-                    html += `
-                        <tr>
-                            <td><input type="checkbox" name="cliente[]" value="${c.id_cliente}" class="cliente-checkbox"></td>
-                            <td>${c.cliente_nome}</td>
-                            <td>${c.cpf_cnpj}</td>
-                            <td>${new Date(c.data_nasc).toLocaleDateString('pt-BR')}</td>
-                            <td>
-                                <button type="button" class="icon-toggle-btn" data-id="${c.id_cliente}" aria-pressed="${c.user_ativo == 0 ? 'true' : 'false'}">
-                                    <i class="fa-solid ${c.user_ativo == 0 ? 'fa-toggle-on' : 'fa-toggle-off'}"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    `;
+                   html += `
+                    <tr>
+                      <td><input type="checkbox" name="cliente[]" value="${c.id_cliente}" class="cliente-checkbox"></td>
+                      <td>${c.cliente_nome}</td>
+                      <td>${c.cpf_cnpj}</td>
+                      <td>${new Date(c.data_nasc).toLocaleDateString('pt-BR')}</td>
+                      <td>
+                        <button type="button" class="icon-toggle-btn" data-id="${c.id_cliente}" aria-pressed="${c.user_ativo == 0 ? 'true' : 'false'}">
+                          <i class="fa-solid ${c.user_ativo == 0 ? 'fa-toggle-on' : 'fa-toggle-off'}"></i>
+                        </button>
+                      </td>
+                      <td>${c.user_ativo == 0 ? 'Inativo' : 'Ativo'}</td>
+                    </tr>
+                  `;
                 });
             } else {
                 html = `<tr><td colspan="5" style="text-align:center;">Nenhum cliente encontrado.</td></tr>`;
