@@ -131,47 +131,32 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarCamposAnimal();
     });
 });
-document.addEventListener('DOMContentLoaded', () => {
-    const inputImg = document.querySelector('input[name="imagem"]');
-    const previewImg = document.getElementById('preview-img');
 
-    inputImg.addEventListener('change', function() {
-        const file = this.files[0];
-        if (file) {
-            const url = URL.createObjectURL(file);
-            previewImg.src = url;
-            previewImg.style.display = 'block';
-        } else {
-            previewImg.src = '';
-            previewImg.style.display = 'none';
-        }
-    });
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const inputImg = document.getElementById("inputImagem");
+  const preview = document.getElementById("previewImagem");
+  const label = document.querySelector(".img_holder_button");
 
-const label = document.querySelector('.img_holder_button span');
-inputImg.addEventListener('change', function() {
-    if (this.files[0]) {
-        label.textContent = 'Trocar imagem';
-        
+  inputImg.addEventListener("change", function() {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        preview.src = e.target.result;
+        preview.style.display = "block";
+        label.textContent = "Trocar imagem";
+        label.style.opacity = "0.5";
+      };
+      reader.readAsDataURL(file);
     } else {
-        label.textContent = 'Selecione uma imagem';
+      preview.src = "";
+      preview.style.display = "none";
+      label.textContent = "Selecionar uma imagem";
+      label.style.opacity = "1";
     }
+  });
 });
 
-const inputFile = document.querySelector('input[name="imagem"]');
-const previewImg = document.querySelector('.img_holder img');
-const btnLabel = document.querySelector('.img_holder_button');
 
-inputFile.addEventListener('change', () => {
-  if (inputFile.files && inputFile.files[0]) {
-    previewImg.src = URL.createObjectURL(inputFile.files[0]);
-    previewImg.style.display = 'block';
-    btnLabel.style.display = 'none'; 
-  } else {
-    previewImg.src = '';
-    previewImg.style.display = 'none';
-    btnLabel.style.display = 'flex';
-  }
-});
 
 
