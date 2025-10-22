@@ -55,7 +55,7 @@
   color: var(--color-primary-1);
 }
 .p_form_senha{
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding-top: 1rem;
     color: var(--color-primary-1);
 }
@@ -161,6 +161,11 @@
     .espaco_forms_senha{
       width: 75%;
     }
+
+    .div_confirmacao {
+      margin-top: 20px;
+      flex-direction: column-reverse;
+    }
 }
 @media (max-width: 425px) {
     #section_formulario_senha {
@@ -184,7 +189,7 @@
     }
   
     .div_confirmacao {
-      flex-direction: column;
+      flex-direction: column-reverse;
       gap: 1rem;
       height: auto;
       align-items: center;
@@ -193,7 +198,7 @@
     .esqueceu_senha,
     .salvar_nova_senha {
       width: 100%;
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   
     .salvar_nova_senha {
