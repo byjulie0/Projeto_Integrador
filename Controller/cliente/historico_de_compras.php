@@ -1,46 +1,4 @@
-
-<?php 
-session_start();
-include 'menu_pg_inicial.php'; 
-
-
-
-// Verifica se o cliente está logado
-if (!isset($_SESSION['id_cliente'])) {
-    // Se não estiver logado, redireciona para a página de login
-    header('Location: login.php');
-    exit;
-}
-
-$id_cliente = $_SESSION['id_cliente']; // pega o id do cliente logado
-?>
-
-<?php
-include 'C:\xampp\htdocs\Projeto_Integrador\model\DB\conexao.php'; // Ajuste o caminho conforme seu projeto
-?>
-<?php
-$sql = "
-SELECT
-    p.id_pedido,
-    p.data_pedido,
-    p.status_pedido,
-    COUNT(i.id_item) AS total_itens,
-    SUM(i.qtd_produto * pr.valor) AS valor_total
-FROM pedido p
-LEFT JOIN item i ON p.id_pedido = i.pedido_id_pedido
-LEFT JOIN produto pr ON i.produto_id_produto = pr.id_produto
-WHERE p.id_cliente = ?
-GROUP BY p.id_pedido
-ORDER BY p.data_pedido DESC
-";
-
-$stmt = $con->prepare($sql);
-$stmt->bind_param("i", $id_cliente);
-$stmt->execute();
-$result = $stmt->get_result();
-?>
-
-
+<?php include 'menu_pg_inicial.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -63,36 +21,34 @@ $result = $stmt->get_result();
         
         <div class="area_historico_compras">
 
-    <?php while ($pedido = $result->fetch_assoc()): ?>
-        <div class="pedido_header">
-            <div class="div_data_pedido_pc">
-                <p class="data_pedido_pc">Data do Pedido: <?= date('d/m/Y', strtotime($pedido['data_pedido'])) ?></p>
-            </div>
-            <div class="botao_cancelar">
-                <?php
-                    if ($pedido['status_pedido'] == 'Pendente') {
+            <div class="pedido_header">
+                <div class="div_data_pedido_pc">
+                    <p class="data_pedido_pc">Data do Pedido:</p>
+                </div>
+                <div class="botao_cancelar">
+                    <?php
                         $texto = "Cancelar";
                         include 'botao_vermelho_cliente.php';
-                    }
-                ?>
+                    ?>
+                </div>
             </div>
+            
+            <div class="atributos_pedido_mobile">
+                <div class="div_data_pedido_mobile">
+                    <p class="data_pedido_mobile">Data do Pedido:</p>
+                </div>
+                <div class="pedido_detalhes">
+                    <p class="codigo_pedido">Código do pedido<span>:</span> </p>
+
+                    <p class="total_itens">Total de itens<span>:</span> </p>
+
+                    <p class="valor_pedido">Valor do pedido<span>:</span> </p>
+
+                    <p class="status_pedido">Status do pedido<span>:</span> </p>
+                </div>
+            </div>
+
         </div>
-
-        <div class="atributos_pedido_mobile">
-            <div class="div_data_pedido_mobile">
-                <p class="data_pedido_mobile">Data do Pedido: <?= date('d/m/Y', strtotime($pedido['data_pedido'])) ?></p>
-            </div>
-            <div class="pedido_detalhes">
-                <p class="codigo_pedido">Código do pedido<span>:</span> <?= $pedido['id_pedido'] ?></p>
-                <p class="total_itens">Total de itens<span>:</span> <?= $pedido['total_itens'] ?></p>
-                <p class="valor_pedido">Valor do pedido<span>:</span> R$ <?= number_format($pedido['valor_total'], 2, ',', '.') ?></p>
-                <p class="status_pedido">Status do pedido<span>:</span> <?= $pedido['status_pedido'] ?></p>
-            </div>
-        
-    <?php endwhile; ?>
-
-</div>
-
     </div>
 
 <?php include 'footer_cliente.php'; ?>

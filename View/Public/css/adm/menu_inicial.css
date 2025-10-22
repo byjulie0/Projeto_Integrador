@@ -159,9 +159,8 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     z-index: 1000;
     padding: 0;
-    margin: 5px 0 0 0;
+    margin: 10px 0 0 0;
     list-style: none;
-    transition: opacity 0.3s ease 0s, visibility 0.3s ease 0.3s;
 }
 
 .submenu_adm li a {
@@ -182,9 +181,20 @@
     background-color: var(--hover-bg);
 }
 
+/* SOLUÇÃO: Criar uma área invisível entre o menu e submenu */
 .dropdown_menu_adm:hover .submenu_adm {
     display: block;
-    transition-delay: 0s;
+}
+
+/* Área invisível para facilitar a transição do mouse */
+.dropdown_menu_adm .submenu_adm::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: transparent;
 }
 
 .nav-page-btns-pg-adm .submenu_adm {
@@ -274,6 +284,25 @@
         font-size: 1.3rem;
         margin-bottom: 0;
     }
+
+    .submenu_adm {
+        position: static;
+        display: none;
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        width: 100%;
+    }
+
+    .dropdown_menu_adm:hover .submenu_adm,
+    .dropdown_menu_adm.mobile-active .submenu_adm {
+        display: block;
+    }
+
+    /* Remove a área de ponte no mobile */
+    .dropdown_menu_adm .submenu_adm::before {
+        display: none;
+    }
 }
 
 @media (max-width: 425px) {
@@ -349,6 +378,10 @@
         left: 0;
         width: 100%;
         z-index: 1000;
+    }
+
+    .submenu_adm {
+        width: 130px;
     }
 }
 

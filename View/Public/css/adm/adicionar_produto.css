@@ -244,6 +244,10 @@ input[type="image"] {
     width: 90%;
     margin-bottom: 10%;
   }
+
+  .add_product_submit_button {
+    margin-top: 30px;
+  }
 }
 @media (min-width: 390px) and (max-width: 767px) {
   .img_holder {
@@ -252,6 +256,10 @@ input[type="image"] {
   
   .product_title_info {
     font-size: 17px;
+  }
+
+  .add_product_submit_button {
+    margin-top: 30px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {

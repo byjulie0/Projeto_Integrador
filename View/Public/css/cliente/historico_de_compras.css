@@ -62,6 +62,7 @@
 .div_data_pedido_pc {
   width: auto;
   flex-grow: 1;
+  color: var(--color-primary-1);
 }
 
 .div_data_pedido_mobile {
@@ -135,7 +136,7 @@
   .data_pedido_mobile {
     width: auto;
     flex-grow: 1;
-    color: black;
+    color: var(--color-primary-1);
     padding: 10px 15px ;
     font-weight: 600;
     font-size: 1rem;

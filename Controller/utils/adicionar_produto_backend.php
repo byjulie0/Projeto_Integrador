@@ -68,11 +68,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h2><?= htmlspecialchars($popup_titulo, ENT_QUOTES, 'UTF-8') ?></h2>
         <p><?= nl2br(htmlspecialchars($popup_mensagem, ENT_QUOTES, 'UTF-8')) ?></p>
         <div class="botoes_popup_resultado">
-            <button href="../adm/catalogo_produtos.php" class="botao_popup_cancelar fechar_popup_resultado">Fechar</button>
+            <button class="botao_popup_cancelar fechar_popup_resultado">Fechar</button>
         </div>
     </div>
 </div>
 
-<link rel="stylesheet" href="../../view/public/css/adm/pop_up_resultado.css">
+<link rel="stylesheet" href="../../view/public/css/cliente/pop_up_resultado.css">
 <script src="../../view/public/js/pop_up_resultado.js"></script>
 <?php endif; ?>
