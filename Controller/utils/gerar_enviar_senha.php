@@ -15,11 +15,13 @@ $stmt_test->execute();
 $stmt_test->store_result();
 $num_linhas = $stmt_test->num_rows;
 
+$senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
 if ($num_linhas > 0) {
 
 
     $stmt_adm = $con->prepare("UPDATE adm SET senha = ? WHERE email = ?");
-    $stmt_adm->bind_param("ss", $novaSenha, $emailUsuario);
+    $stmt_adm->bind_param("ss", $senha_hash, $emailUsuario);
     $stmt_adm->execute();
 
 
@@ -27,7 +29,7 @@ if ($num_linhas > 0) {
 
 
     $stmt_cli = $con->prepare("UPDATE cliente SET senha = ? WHERE email = ?");
-    $stmt_cli->bind_param("ss", $novaSenha, $emailUsuario);
+    $stmt_cli->bind_param("ss", $senha_hash, $emailUsuario);
     $stmt_cli->execute();
 
 
