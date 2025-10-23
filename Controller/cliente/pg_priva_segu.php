@@ -36,11 +36,7 @@ include '../utils/libras.php';
             <div class="term-pes">
                 <span class="term-title-pes">1. Introdução</span>
                 <p class="term-text-pes">
-                    Esta Política de Privacidade e Segurança descreve como coletamos, utilizamos e protegemos os dados
-                    pessoais dos usuários que acessam e utilizam nosso site de venda de animais e produtos
-                    agropecuários. Nosso compromisso é garantir a proteção, confidencialidade e integridade das
-                    informações, em total conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018
-                    – LGPD).
+                    Esta Política de Privacidade e Segurança descreve como coletamos, utilizamos e protegemos os dados pessoais dos usuários que acessam e utilizam nosso site de venda de animais e produtos agropecuários. Nosso compromisso é garantir a proteção, confidencialidade e integridade das informações, em total conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 LGPD).
                 </p>
             </div>
 
@@ -56,8 +52,7 @@ include '../utils/libras.php';
                     <li>Histórico de compras: registros das transações realizadas em nosso site.</li>
                 </ul>
                 <p class="term-text-pes">
-                    Todos os dados são coletados mediante consentimento e utilizados apenas para finalidades legítimas e
-                    previamente informadas.
+                    Todos os dados são coletados mediante consentimento e utilizados apenas para finalidades legítimas e previamente informadas.
                 </p>
             </div>
 
@@ -79,8 +74,7 @@ include '../utils/libras.php';
             <div class="term-pes">
                 <span class="term-title-pes">4. Armazenamento e Segurança das Informações</span>
                 <p class="term-text-pes">
-                    Adotamos medidas de segurança técnicas e administrativas para proteger seus dados contra acessos não
-                    autorizados, perdas, destruição ou alterações indevidas. Entre essas medidas estão:
+                    Adotamos medidas de segurança técnicas e administrativas para proteger seus dados contra acessos não autorizados, perdas, destruição ou alterações indevidas. Entre essas medidas estão:
                 </p>
                 <ul class="term-text-pes">
                     <li>Uso de criptografia em dados sensíveis e transações financeiras.</li>
@@ -94,23 +88,20 @@ include '../utils/libras.php';
             <div class="term-pes">
                 <span class="term-title-pes">5. Compartilhamento de Dados</span>
                 <p class="term-text-pes">
-                    Não vendemos ou alugamos seus dados pessoais. O compartilhamento de informações ocorre apenas em
-                    casos necessários, como:
+                    Não vendemos ou alugamos seus dados pessoais. O compartilhamento de informações ocorre apenas em casos necessários, como:
                 </p>
                 <ul class="term-text-pes">
                     <li>Com empresas de logística, para entrega dos produtos.</li>
                     <li>Com instituições financeiras, para processamento de pagamentos.</li>
                     <li>Com autoridades públicas, quando exigido por lei.</li>
-                    <li>Com prestadores de serviço de hospedagem e tecnologia, que seguem padrões rigorosos de segurança
-                        e confidencialidade.</li>
+                    <li>Com prestadores de serviço de hospedagem e tecnologia, que seguem padrões rigorosos de segurança e confidencialidade.</li>
                 </ul>
             </div>
 
             <div class="term-pes">
                 <span class="term-title-pes">6. Registro de Histórico</span>
                 <p class="term-text-pes">
-                    Mantemos registros completos e seguros das transações de compra realizadas no site, com o objetivo
-                    de assegurar transparência, auditoria, e cumprimento de obrigações legais e fiscais.
+                    Mantemos registros completos e seguros das transações de compra realizadas no site, com o objetivo de assegurar transparência, auditoria, e cumprimento de obrigações legais e fiscais.
                 </p>
             </div>
 
@@ -127,16 +118,14 @@ include '../utils/libras.php';
                     <li>Solicitar a portabilidade de dados para outro fornecedor de serviço.</li>
                 </ul>
                 <p class="term-text-pes">
-                    Para exercer seus direitos, entre em contato conosco através do canal de atendimento informado nesta
-                    página.
+                    Para exercer seus direitos, entre em contato conosco através do canal de atendimento informado nesta página.
                 </p>
             </div>
 
             <div class="term-pes">
                 <span class="term-title-pes">8. Uso de Cookies</span>
                 <p class="term-text-pes">
-                    Utilizamos cookies e tecnologias semelhantes para melhorar a navegação, analisar o tráfego e
-                    personalizar sua experiência no site. Você pode gerenciar suas preferências diretamente nas
+                    Utilizamos cookies e tecnologias semelhantes para melhorar a navegação, analisar o tráfego e personalizar sua experiência no site. Você pode gerenciar suas preferências diretamente nas
                     configurações do navegador.
                 </p>
             </div>
@@ -144,33 +133,28 @@ include '../utils/libras.php';
             <div class="term-pes">
                 <span class="term-title-pes">9. Retenção e Exclusão de Dados</span>
                 <p class="term-text-pes">
-                    Os dados pessoais serão mantidos apenas pelo tempo necessário para cumprir as finalidades informadas
-                    ou exigências legais. Após esse período, serão anonimizados ou excluídos de forma segura.
+                    Os dados pessoais serão mantidos apenas pelo tempo necessário para cumprir as finalidades informadas ou exigências legais. Após esse período, serão anonimizados ou excluídos de forma segura.
                 </p>
             </div>
 
             <div class="term-pes">
                 <span class="term-title-pes">10. Alterações na Política</span>
                 <p class="term-text-pes">
-                    Esta política pode ser atualizada periodicamente para refletir mudanças em nossas práticas ou
-                    exigências legais. Recomendamos revisar esta página regularmente para estar ciente das atualizações.
+                    Esta política pode ser atualizada periodicamente para refletir mudanças em nossas práticas ou exigências legais. Recomendamos revisar esta página regularmente para estar ciente das atualizações.
                 </p>
             </div>
 
             <div class="term-pes">
                 <span class="term-title-pes">11. Contato e Encarregado de Dados</span>
                 <p class="term-text-pes">
-                    Caso tenha dúvidas, solicitações ou queira exercer seus direitos previstos na LGPD, entre em contato
-                    com nosso Encarregado de Proteção de Dados (DPO) pelo e-mail:<br>
-                    <strong>privacidade@johnrooster.com.br</strong>
+                    Caso tenha dúvidas, solicitações ou queira exercer seus direitos previstos na LGPD, entre em contato com nosso Encarregado de Proteção de Dados (DPO) pelo e-mail:<br> <strong>privacidade@johnrooster.com.br</strong>
                 </p>
             </div>
 
             <div class="term-pes">
                 <span class="term-title-pes">12. Vigência</span>
                 <p class="term-text-pes">
-                    Esta Política de Privacidade e Segurança entra em vigor na data de sua publicação e permanecerá
-                    válida até que seja substituída por uma nova versão.
+                    Esta Política de Privacidade e Segurança entra em vigor na data de sua publicação e permanecerá válida até que seja substituída por uma nova versão.
                 </p>
                 <p class="term-text-pes"><strong>Última atualização:</strong> 14/10/2025</p>
             </div>
