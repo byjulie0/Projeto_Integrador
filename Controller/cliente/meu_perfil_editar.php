@@ -15,9 +15,9 @@ include 'menu_pg_inicial.php';
  
 <body>
 
-    <!-- php if (isset($_GET['atualizado'])): ?>
+    <?php if (isset($_GET['atualizado'])): ?>
         <div class="alert-success">Seus dados foram atualizados com sucesso!</div>
-    php endif; ?> -->
+    <?php endif; ?>
     
     <main class="client-edit-main">
         <div class="client-edit-container">
@@ -37,29 +37,29 @@ include 'menu_pg_inicial.php';
                         <div class="client-edit-field-group">
                             <label for="cliente_nome" class="client-edit-label">Nome:</label>
                             
-                            <input type="text" name="cliente_nome" class="client-edit-input">
+                            <input type="text" name="cliente_nome" class="client-edit-input" value="<?= htmlspecialchars($_SESSION['cliente_nome']); ?>">
                         </div>
  
                         <div class="client-edit-field-group">
-                            <label for="telefone" class="client-edit-label">Telefone:</label>
-                            <input type="tel" name="telefone" class="client-edit-input">
+                            <label for="telefone" class="client-edit-label" >Telefone:</label>
+                            <input type="tel" name="telefone" class="client-edit-input" value="<?= htmlspecialchars($_SESSION['telefone']); ?>">
                         </div>
  
                         <div class="client-edit-field-group">
                             <label for="email" class="client-edit-label">E-mail:</label>
-                            <input type="email" name="email" class="client-edit-input">
+                            <input type="email" name="email" class="client-edit-input" value="<?= htmlspecialchars($_SESSION['email']); ?>">
                         </div>
                     </div>
  
                     <div class="client-edit-column">
                         <div class="client-edit-field-group">
-                            <label for="endereco" class="client-edit-label">Endereço:</label>
-                            <input type="text" name="endereco" class="client-edit-input">
+                            <label for="endereco" class="client-edit-label">Cep:</label>
+                            <input type="text" name="endereco" class="client-edit-input" value="<?= htmlspecialchars($_SESSION['cep']); ?>">
                         </div>
  
                         <div class="client-edit-field-group">
                             <label for="data_nasc" class="client-edit-label">Data de nascimento:</label>
-                            <input type="text" name="data_nasc" class="client-edit-input">
+                            <input type="text" name="data_nasc" class="client-edit-input" value="<?= date('d/m/Y', strtotime($_SESSION['data_nasc'])); ?>">
                         </div>
                     </div>
                 </div>

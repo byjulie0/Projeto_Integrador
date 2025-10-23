@@ -29,15 +29,14 @@ $id_cliente = $_SESSION["id_cliente"];
 
             <section class="product-cards-carrinho">
                 <?php
-                $sql = "SELECT c.id_carrinho, c.quantidade, p.prod_nome, p.path_img, p.descricao, p.valor 
-                        FROM carrinho c 
-                        JOIN produto p ON c.id_produto = p.id_produto 
+                $sql = "SELECT c.id_carrinho, c.quantidade, p.prod_nome, p.path_img, p.descricao, p.valor
+                        FROM carrinho c
+                        JOIN produto p ON c.id_produto = p.id_produto
                         WHERE c.id_cliente='$id_cliente'";
-
                 $result = $con->query($sql);
                 $totalGeral = 0;
                 $totalItems = 0;
-
+                
                 if ($result && $result->num_rows > 0) {
                     while ($itens = $result->fetch_assoc()) {
                         $total = $itens['valor'] * $itens['quantidade'];
@@ -46,18 +45,21 @@ $id_cliente = $_SESSION["id_cliente"];
                         ?>
                         <div class="product-card-carrinho" data-price="<?php echo $itens['valor']; ?>"
                             data-id="<?php echo $itens['id_carrinho']; ?>">
+
                             <div class="product-title-area-carrinho">
                                 <div class="delete-item-btn-area-carrinho">
-                                    <button class="delete-item-carrinho"
-                                        data-id="<?php echo $itens['id_carrinho']; ?>">Excluir</button>
+                                    <button class="delete-item-carrinho" href="remove_carrinho.php?id=<?php echo $itens['id_carrinho'];?>">Excluir</button>
+                                    <!-- <a href="remover_carrinho.php?id=<php echo $row['id']; ?>">Remover</a> -->
                                 </div>
                             </div>
+
                             <hr class="separation-line-carrinho">
 
                             <div class="product-carrinho">
                                 <div class="non-labeled-content-carrinho">
                                     <img src="../../View/Public/<?php echo $itens['path_img']; ?>"
                                         alt="<?php echo $itens['prod_nome']; ?>" class="product-img-carrinho">
+
                                     <div class="title-and-description-carrinho">
                                         <span class="product-name-carrinho"><?php echo $itens['prod_nome']; ?></span>
                                         <span class="product-description-carrinho"><?php echo $itens['descricao']; ?></span>
@@ -115,9 +117,7 @@ $id_cliente = $_SESSION["id_cliente"];
         </section>
     </div>
 
-    <?php
-    include 'footer_cliente.php';
-    ?>
+    <?php include 'footer_cliente.php';?>
 </body>
 
 </html>

@@ -52,18 +52,31 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 
             <section class="add_product_area">
                 <article class="add_product_image">
-                    <div class="img_holder">
-                        <?php if (!empty($produto['path_img'])): ?>
-                            <img src="../../view/public/<?= htmlspecialchars($produto['path_img']) ?>" alt="Imagem do produto" style="max-width:100%; height:auto; margin-bottom:10px;">
-                        <?php endif; ?>
-                        <label class="img_holder_button">
-                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                            <span>Trocar imagem</span>
-                            <input type="file" class="input_product_info" accept="image/*" name="imagem" style="display:none;">
-                        </label>
-                        <p style="font-size:0.8rem; color:#666;">(Deixe em branco para manter a imagem atual)</p>
-                    </div>
-                </article>
+  <div class="img_holder">
+    <?php
+      $imagemProduto = !empty($produto['path_img'])
+        ? '../../view/public/' . htmlspecialchars($produto['path_img'])
+        : '';
+    ?>
+    
+    <img 
+      id="previewImagem" 
+      src="<?php echo $imagemProduto; ?>" 
+      alt="Imagem do produto"
+      style="<?php echo !empty($imagemProduto) ? '' : 'display:none;'; ?>"
+    >
+
+    <label class="img_holder_button">
+      <i class="fa-solid fa-arrow-up-from-bracket"></i>
+      <span>Trocar imagem</span>
+      <input type="file" id="inputImagem" class="input_product_info" accept="image/*" name="imagem">
+    </label>
+  </div>
+  <p style="font-size:0.8rem; color:#666; text-align:center;">
+    (Deixe em branco para manter a imagem atual)
+  </p>
+</article>
+
 
                 <aside class="add_product_details">
                     <div class="product_details_collumn">
@@ -155,7 +168,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
             <div class="add_product_submit_button">
                 <?php
                 $texto = "Salvar Alterações";
-                include 'botao_adm.php';
+                include 'botao_verde_adm.php';
                 ?>
             </div>
         </form>
