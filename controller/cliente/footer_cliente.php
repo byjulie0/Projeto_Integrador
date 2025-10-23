@@ -64,6 +64,10 @@
                 <a href="pg_favoritos.php">Produtos Favoritados</a>
             </div>
         </div>
+
+        <div class="footer_cli_item">
+            <p class="copyright">© 2025 John Rooster. Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body>
 
