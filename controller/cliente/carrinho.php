@@ -33,11 +33,10 @@ $id_cliente = $_SESSION["id_cliente"];
                         FROM carrinho c
                         JOIN produto p ON c.id_produto = p.id_produto
                         WHERE c.id_cliente='$id_cliente'";
-
                 $result = $con->query($sql);
                 $totalGeral = 0;
                 $totalItems = 0;
-
+                
                 if ($result && $result->num_rows > 0) {
                     while ($itens = $result->fetch_assoc()) {
                         $total = $itens['valor'] * $itens['quantidade'];
@@ -49,7 +48,7 @@ $id_cliente = $_SESSION["id_cliente"];
 
                             <div class="product-title-area-carrinho">
                                 <div class="delete-item-btn-area-carrinho">
-                                    <button class="delete-item-carrinho" data-id="<?php echo $itens['id_carrinho']; ?>">Excluir</button>
+                                    <button class="delete-item-carrinho" href="remove_carrinho.php?id=<?php echo $itens['id_carrinho'];?>">Excluir</button>
                                     <!-- <a href="remover_carrinho.php?id=<php echo $row['id']; ?>">Remover</a> -->
                                 </div>
                             </div>
