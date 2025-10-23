@@ -62,7 +62,7 @@
     color: var(--color-detalhes-16);
     margin-top: 20px;
     width: 100%;
-    grid-column: span 5;  /* Faz com que ocupe toda a largura da grid */
+    grid-column: span 5;
 }
 
 @media (max-width: 767px) {
