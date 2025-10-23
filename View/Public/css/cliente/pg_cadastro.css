@@ -18,7 +18,7 @@
 
 .area-form-cadastro{
   justify-content: center;
-  width: 100%;
+  width: 75%;
   height: auto;
   flex-direction: column;
   margin: 100px;
@@ -254,6 +254,20 @@
   }
 }
 
+@media (max-width: 500px) {
+  .form-coluna-inferior, .form-coluna-superior {
+    width: 100%;
+  }
+
+  .btn-submit-cadastro {
+    flex-direction: column;
+  }
+
+  .g-recaptcha{
+    width: 100%;
+  }
+}
+
 @media (max-width: 365px) {
   .area-form-cadastro {
     width: 85%;
@@ -271,4 +285,5 @@
   .area-termos-privacidade-cadastro {
     margin-top: 20px;
   }
+  
 }
