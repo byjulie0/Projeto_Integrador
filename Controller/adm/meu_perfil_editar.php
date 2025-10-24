@@ -52,15 +52,7 @@ include 'menu_inicial.php';
                 </div>
             </div>
 
-            <div class="visualizar-dados-geral">
-                <h3 class="visualizar-dados-geral-title">Meus Dados</h3>
-                <div class="visualizar-dados-grid">
-                    <p><span>Nome: </span> Administrador Jonh Rooster</p>
-                    <p><span>Telefone: </span>+55 67 91234-5678</p>
-                    <p><span>E-mail: </span>jonhrooster@gmail.com</p>
-                    <p><span>CNPJ: </span>12.345.678/0001-95</p>
-                </div>
-            </div>
+          
 
             <div class="visualizar-dados-area-botoes">
                 <a href="meu_perfil_editar.php">
