@@ -1,6 +1,5 @@
 <?php
-// include '../utils/sessao_ativa_adm.php';
-include '../utils/sessao_ativa_adm.php';
+include '../utils/autenticado_adm.php';
 include 'menu_inicial.php';
 
 ?>

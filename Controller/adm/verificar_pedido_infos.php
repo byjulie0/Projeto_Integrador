@@ -1,4 +1,7 @@
-<?php include 'menu_inicial.php';?>
+<?php
+include '../utils/autenticado_adm.php';
+include 'menu_inicial.php';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
