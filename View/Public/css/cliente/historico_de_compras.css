@@ -19,7 +19,7 @@
 
 .title_historico_compras {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   margin-bottom: 15px;
   color: var(--color-primary-1);
@@ -27,10 +27,17 @@
 
 .arrow_compras {
   font-size: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .titulo_historico_compras {
   font-size: 30px;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
 }
 
 .area_historico_compras {
@@ -104,6 +111,16 @@
 @media screen and (max-width: 360px) {
   .container_historico_compras{
     align-items: center;
+  }
+  .title_historico_compras{
+    justify-content: left;
+    padding-right: 25px;
+  }
+  .arrow_compras{
+    font-size: 20px;
+  }
+  .titulo_historico_compras{
+    font-size: 15px;
   }
 
   .area_historico_compras {

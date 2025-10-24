@@ -72,7 +72,12 @@ include 'menu_pg_inicial.php';
                     <a href="formulario_altera_senha.php">
                         <button type="button" class="client-edit-password-btn">Alterar senha</button>
                     </a>
-                    <button type="submit" class="client-edit-password-btn">Salvar</button>
+                    <button type="submit" class="client-edit-password-btn">
+                        <?php
+                        $texto = "Salvar";
+                        include 'botao_verde_cliente.php';
+                        ?>
+                    </button>
                 </div>
             </form>
         </div>
