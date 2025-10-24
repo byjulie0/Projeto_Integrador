@@ -24,7 +24,7 @@ include 'menu_inicial.php';
                 <h1 class="client-edit-title">Editar meus dados</h1>
             </div>
 
-            <form class="client-edit-form">
+            <form class="client-edit-form" method="POST" action="../utils/atualizar_adm.php">
                 <div class="client-edit-grid">
                     <div class="client-edit-column">
                         <div class="client-edit-field-group">
