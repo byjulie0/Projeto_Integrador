@@ -12,7 +12,7 @@ include 'menu_inicial.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil - Visualizar Dados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../view/public/css/adm/meu_perfil.css">
+    <link rel="stylesheet" href="../../view/public/css/adm/meu_perfil_editar.css">
 </head>
 <body>
     <main class="client-edit-main">
