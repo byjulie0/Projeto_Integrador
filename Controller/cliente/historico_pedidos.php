@@ -1,4 +1,7 @@
-<?php include 'menu_pg_inicial.php'; ?>
+<?php
+include '../utils/autenticado.php';
+include 'menu_pg_inicial.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -28,7 +31,7 @@
                 <div class="botao_cancelar">
                     <?php
                         $texto = "Cancelar";
-                        include 'botao_cancelar.php';
+                        include 'botao_vermelho_cliente.php';
                     ?>
                 </div>
             </div>

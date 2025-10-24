@@ -1,5 +1,6 @@
 <?php
 include '../../model/DB/conexao.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = mysqli_real_escape_string($con, $_POST['email']);
@@ -60,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (password_verify($password, $retorno['senha'])) {
         
-        session_start();
         $_SESSION["id_cliente"] = $retorno['id_cliente'];
         $_SESSION["cliente_nome"] = $retorno['cliente_nome'];
         $_SESSION["email"] = $retorno['email'];

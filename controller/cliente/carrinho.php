@@ -1,12 +1,7 @@
 <?php
-include '../utils/sessao_ativa.php';
+include '../utils/autenticado.php';
 include '../utils/libras.php';
 include 'menu_pg_inicial.php';
-if (!isset(($_SESSION['id_cliente']))){
-    header("Location: login.php");
-    exit;
-}
-$id_cliente = $_SESSION["id_cliente"];
 ?>
 
 <!DOCTYPE html>
