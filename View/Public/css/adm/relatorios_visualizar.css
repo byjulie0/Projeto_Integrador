@@ -21,12 +21,13 @@
 
 .verificar_administrar_pedidos_sessao_seta_voltar {
   font-size: 1.2rem;
-  color: #333;
+  color: var(--color-primary-1);
   margin-right: 10px;
   text-decoration: none;
 }
 
 .relatorios_header h1 {
+  color: var(--color-primary-1);
   font-size: 1.6rem;
   margin-bottom: 8px;
   display: inline-block;
@@ -163,11 +164,14 @@
     align-items: center;
     position: relative;
   }
+  
+  .relatorios_header h1{
+    font-size: 1.3rem;
+  }
 
   .verificar_administrar_pedidos_sessao_seta_voltar {
     position: relative;
-    align-self: flex-start;
-    margin-bottom: 8px;
+    align-self: center;
     left: 0;
     top: 0;
   }
