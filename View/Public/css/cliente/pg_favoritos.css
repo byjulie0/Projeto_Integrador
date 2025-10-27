@@ -66,11 +66,12 @@
 
 @media (max-width: 360px) {
   .seta_titulo_pg_favoritos{
-    padding-left: 15px;
+    padding-left: 20px;
     margin-top: 5%;
   }
 
   .h2_pg_favoritos, .btn_voltar_favoritos i {
     font-size: 1.5rem;
   }
+ 
 }
