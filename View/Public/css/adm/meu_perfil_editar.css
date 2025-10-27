@@ -178,6 +178,13 @@
     .client-edit-title,.bi-chevron-left {
         font-size: 22px;
     }
+    .client-edit-grid {
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+    }
+    .client-edit-column {
+        flex-direction: column;
+    }
   
     .client-edit-input {
         padding: 0.625rem 0.75rem;
