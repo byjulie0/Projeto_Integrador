@@ -12,17 +12,17 @@
         <div class="categoria_area_cards_pg_inicial">
 
             <div class="categoria_cards_pg_inicial ">
-                <a href="categoria_galinaceos.php" class="card_categoria_pg_inicial card_galinha_pg_inicial_categorias">
-                </a>
-            </div>
-
-            <div class="categoria_cards_pg_inicial ">
                 <a href="categoria_bovinos.php" class="card_categoria_pg_inicial card_boi_pg_inicial_categorias">
                 </a>
             </div>
 
             <div class="categoria_cards_pg_inicial">
                 <a href="categoria_equinos.php" class="card_categoria_pg_inicial card_cavalo_pg_inicial_categorias">
+                </a>
+            </div>
+
+            <div class="categoria_cards_pg_inicial ">
+                <a href="categoria_galinaceos.php" class="card_categoria_pg_inicial card_galinha_pg_inicial_categorias">
                 </a>
             </div>
 

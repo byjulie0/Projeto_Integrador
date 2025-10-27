@@ -17,6 +17,10 @@
   flex-direction: column;
 }
 
+/* .qt-atualizar-produtos{
+  color: red;
+} */
+
 #title-atualizar-produtos {
   width: 100%;
   display: flex;
