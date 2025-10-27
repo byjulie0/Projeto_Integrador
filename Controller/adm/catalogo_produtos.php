@@ -32,9 +32,12 @@ include 'menu_inicial.php';
                     <input type="text" id="searchInput" placeholder="Pesquisar" />
                     <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button> 
                 </div>
-                <a href="?status=todos" class="catalogo_produtos_botao_todos">Todos</a>
-                <a href="?status=ativos" class="catalogo_produtos_botao_ativos">Ativos</a>
-                <a href="?status=inativos" class="catalogo_produtos_botao_inativos">Inativados</a>
+                <form method="get" action="catalogo_produtos.php" class="botoes_filtros_produtos">
+                    <button type="submit" name="status" value="todos" class="catalogo_produtos_botao_todos">Todos</button>
+                    <button type="submit" name="status" value="ativos" class="catalogo_produtos_botao_ativos">Ativos</button>
+                    <button type="submit" name="status" value="inativos" class="catalogo_produtos_botao_inativos">Inativados</button>
+                </form>
+
             </div>
             <hr class="break-line">
             <!-- ?status=inativados -->
