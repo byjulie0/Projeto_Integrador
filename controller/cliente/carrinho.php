@@ -107,11 +107,15 @@ include 'menu_pg_inicial.php';
                 <hr class="separation-line-carrinho">
 
                 <?php
-                if ($totalItems > 0) {
+                if ($totalItems > 0) { ?>
+                    <a href="../utils/gerar_pedido.php">
+                    <?php
                     $texto = "Fechar Pedido";
                     include 'botao_verde_cliente.php';
-                }
-                ?>
+                    ?>
+                    </a>
+                <?php }?>
+                
             </div>
         </section>
     </div>
