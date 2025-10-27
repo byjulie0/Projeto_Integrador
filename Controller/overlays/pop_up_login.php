@@ -11,7 +11,6 @@
 <body>
     <div id="popup_login" class="login_popup">
         <div class="area_login_popup">
-            <span class="fechar_login_popup">&times;</span>
             <h2 class="h2_popup_login">Login necessário!</h2>
             <p>Você precisa estar logado para acessar esta funcionalidade.</p>
             <p>Deseja fazer o login?</p>
@@ -22,8 +21,7 @@
                     include '../cliente/botao_verde_cliente.php';
                     ?>
                 </a>
-                <a>
-                <!-- <a href="#" onclick="window.history.back(); return false;> -->
+                <a href="#" onclick="window.history.back(); return false;">
                     <?php 
                     $texto = "Não"; 
                     include '../cliente/botao_vermelho_cliente.php'; 
