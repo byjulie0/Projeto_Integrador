@@ -24,19 +24,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .img_login {
   max-width: 330px;
   width: 100%;
   padding: 2%;
-  margin: 0 auto;
 }
 .text_login_adm {
   margin: 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--color-primary-1);
-  font-weight: bold;
+  font-weight: 600;
   padding: 10px;
+  text-align: center;
 }
 .login_form_adm {
   width: 45%;
@@ -50,6 +51,7 @@
   font-size: 2rem;
   line-height: 1.875rem;
   text-align: center;
+  margin-top: 10px;
   margin-bottom: 100px;
   color: var(--color-primary-1);
 }
@@ -60,21 +62,7 @@
   flex-direction: column;
   align-items: center;
 }
-.button_adm {
-  margin: 30px 0;
-  gap: 10px;
-  display: flex;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-botao-op-Concluido);
-  color: var(--color-icones);
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+
 .login_form_adm a {
   color: var(--color-primary-5);
   font-size: 15px;
@@ -117,6 +105,10 @@
   color: #000000;
   box-sizing: border-box;
 }
+
+.input_login_adm1::placeholder, .input_login_adm2::placeholder {
+  font-size: 0.8rem;
+}
 .input_login_adm2 {
   padding: 10px;
   margin: 19px 0;
@@ -137,13 +129,20 @@
   color: #000000;
   box-sizing: border-box;
 }
-@media (min-width: 1024px) {
-  .img_login {
-    align-self: flex-start;
-    margin-left: 0;
-    padding-left: 0;
-  }
+
+.btn-submit-login-adm {
+  margin-top: 20px;
 }
+
+.info-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
 @media (max-width: 480px) {
   .login_form_adm h2 {
     font-size: 1.375rem;
@@ -159,8 +158,17 @@
   .button_adm {
     font-size: 14px;
   }
+
+  .input_login_adm2{
+    margin-left: 0px;
+  }
+
+  .toggle_senha {
+    margin-right: 10px;
+  }
+
 }
-@media (max-width: 768px) {
+@media (max-width: 768px){
   .container_geral_login_adm {
     margin: 8% 0;
     min-height: auto;
@@ -178,7 +186,6 @@
   .info_login_adm,
   .login_form_adm {
     width: 100%;
-    padding: 10px;
   }
 
   .form_login {
@@ -192,14 +199,31 @@
   }
 
   .input_login_adm1,
-  .input_login_adm2,
-  .senha_container {
+  .input_login_adm2 {
     width: 100%;
+    padding: 10px;
   }
 
+  .senha_container {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .toggle_senha {
+    margin-right: 20px;
+  }
   .text_login_adm {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     text-align: center;
     padding: 5px;
+  }
+
+  .info-login {
+    margin-top: 10px;
+  }
+
+  .login_form_adm h2 {
+    margin: 50px;
   }
 }

@@ -5,8 +5,10 @@
     padding: 2% 30%;
 }
 .main-meu-perfil-senha{
-    margin-top: 2%;
-    margin-bottom: 5%;
+    margin: 60px;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 .visualizar-dados-title {
     font-size: 2rem;
@@ -24,10 +26,11 @@
     align-items: center;
 }
 .wrapper-arthura {
-    width: 90%;
-    max-width: 40%;
+    max-width: 50%;
     min-width: 300px;
-    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 .card-arthura {
     background: #fff;
@@ -102,7 +105,7 @@
 .botoes-arthura {
     display: flex;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 30px;
     justify-content: center;
 }
 
@@ -138,56 +141,155 @@
     color: #c0392b;
 }
 
+@media (max-width: 1024px) {
+    .wrapper-arthura {
+        margin: auto;
+        max-width: 60%;
+    }
+    .header-arthura {
+        width: 80%;
+        padding: 20px;
+        justify-content: center;
+    }
+    .visualizar-dados-title {
+        width: 50%;
+    }
+}
+
 @media (max-width: 768px) {
-    .botoes-arthura {
+    .main-meu-perfil-senha {
+        justify-content: center;
+    }
+    .wrapper-arthura {
+        margin: 20px;
+        width: 100%;
+        align-items: center;
+        justify-self: center;
+    }
+    .card-arthura {
+        padding: 20px;
+    }
+    .visualizar-dados-title {
+        font-size: 1.8rem;
+        display: flex;
+        justify-content: flex-start;
+        width: 70%;;
+    }
+    .header-arthura {
+        padding: 4% 8%;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .profile-arthura {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 1rem;
     }
-}
-@media (max-width: 360px) {
-    .visualizar-dados-title{
-        font-size: 1.5rem;
-        justify-content: flex-start; 
-        text-align: left;
-    }
-    .header-arthura {
-        padding: 3% 11%;              
-        justify-content: flex-start; 
-    }
-    .wrapper-arthura{
-        width: 100%;
-        align-items: center;
-        justify-content: center; 
-    }
-    .profile-arthura{
-        width: 100%;
-       align-items: center;
-       justify-content: end;
-       margin-left: 7px;
-
-    }
-    .botoes-arthura{
+    .botoes-arthura {
+        flex-direction: column;
         width: 100%;
         align-items: center;
         justify-content: center;
         margin-top: 15px;
     }
-    .section-text-arthura,.form-botoes-arthura{
-        margin-top: 5px;
+    .view-button-arthura,
+    .logout-button-arthura {
+        width: 100%;
+        margin-bottom: 10px;
     }
-    .section-title-arthura{
+    .section-text-arthura,
+    .form-botoes-arthura {
+        margin-top: 8px;
+    }
+    .section-title-arthura {
         margin-bottom: 10px;
     }
 }
 
-@media (max-width: 1024px){
-    .botoes-arthura{
-        padding: 10px;
+@media (max-width: 435px) {
+    .visualizar-dados-title {
+        font-size: 1.6rem;
+        width: 100%;
+    }
+    .header-arthura {
+        padding: 4% 6%;
+        width: 100%;
+    }
+    .wrapper-arthura {
+        margin: 10px;
+        width: 100%;
+    }
+    .profile-arthura {
+        width: 100%;
         align-items: center;
         justify-content: center;
+        gap: 1rem;
     }
-    .card-arthura{
-        padding: 40px;
+    .botoes-arthura {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .view-button-arthura,
+    .logout-button-arthura {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    .section-text-arthura,
+    .form-botoes-arthura {
+        margin-top: 8px;
+    }
+    .section-title-arthura {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .visualizar-dados-title {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    .header-arthura {
+        padding: 3% 5%;
+    }
+    .wrapper-arthura {
+        width: 100%;
+        margin: 10px;
+    }
+    .profile-arthura {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .botoes-arthura {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 12px;
+    }
+    .view-button-arthura,
+    .logout-button-arthura {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+    .section-text-arthura,
+    .form-botoes-arthura {
+        font-size: 0.85rem;
+        margin-top: 8px;
+    }
+    .section-title-arthura {
+        margin-bottom: 8px;
+    }
+    .user-name-arthura {
+        font-size: 1rem;
+    }
+    .user-email-arthura {
+        font-size: 0.85rem;
     }
 }

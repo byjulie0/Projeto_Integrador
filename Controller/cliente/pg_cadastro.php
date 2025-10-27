@@ -64,11 +64,11 @@ include 'menu_cadastro.php';
                     <div class="btn-submit-cadastro">
                         <?php
                         $texto = "Cadastrar";
-                        include 'botao_cliente.php';
+                        include 'botao_verde_cliente.php';
                         ?>
                         <?php
                         $texto = "Cancelar";
-                        include 'botao_cancelar.php';
+                        include 'botao_vermelho_cliente.php';
                         ?>
                     </div>
 
