@@ -61,6 +61,9 @@
                 <a href="#">Geral</a>
             </div>
         </div>
+        <div class="footer_adm_item">
+            <p class="copyright">© 2025 John Rooster. Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body>
 

@@ -4,27 +4,23 @@ include '../utils/sessao_ativa_adm.php';
 include 'menu_inicial.php';
 
 ?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Perfil - Visualizar Dados</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../view/public/css/adm/meu_perfil.css">
+    <title>Editar Meus Dados</title>
+    <link rel="stylesheet" href="../../View/Public/css/adm/meu_perfil_editar.css">
 </head>
 <body>
     <main class="client-edit-main">
         <div class="client-edit-container">
-            <div class="client-edit-header">
-                <button class="client-edit-back-btn">
-                    <a href="meu_perfil_senha.php" class="client-edit-back-link"><i class="bi bi-chevron-left"></i></a>
-                </button>
-                <h1 class="client-edit-title">Editar meus dados</h1>
-            </div>
 
             <form class="client-edit-form">
+                <div class="client-edit-header">
+                    <h1 class="client-edit-title"><i class="bi bi-chevron-left"></i>Editar meus dados</h1>
+                </div>
+
                 <div class="client-edit-grid">
                     <div class="client-edit-column">
                         <div class="client-edit-field-group">
@@ -50,26 +46,20 @@ include 'menu_inicial.php';
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="visualizar-dados-area-botoes">
-                <a href="meu_perfil_editar.php">
+                <div class="client-edit-actions">
+                    <a href="formulario_altera_senha.php">
+                        <button type="button" class="client-edit-password-btn">Alterar senha</button>
+                    </a>
                     <?php
                         $texto = "Salvar";
                         include 'botao_verde_adm.php';
                     ?>
-                </a>
-                <a href="login.php">
-                    <?php include 'botao_logout_adm.php'; ?>
-                </a>
-            </div>
-
+                </div>
+            </form>
         </div>
-    </div>
-</div>
-</main>
+    </main>
 </body>
-
 </html>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php' ?>

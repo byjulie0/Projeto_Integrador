@@ -10,12 +10,13 @@
 </head>
 
 <body class="body_pg_carrossel_campeoes">
-    <div class="carrossel_campeoes_cor">
-        <h1 class="pg_campeoes" id="campeoes">Campeões do Mês</h1>
+    <section id="campeoes">
+        <div class="carrossel_campeoes_cor">
+            <h1 class="pg_campeoes" id="campeoes">Campeões do Mês</h1>
 
-        <div class="carrossel_campeoes">
+            <div class="carrossel_campeoes">
 
-            <div class="arrow_campeoes" id="arrow-esquerda3">&#10094;</div>
+                <div class="arrow_campeoes" id="arrow-esquerda3">&#10094;</div>
 
             <a href="detalhes_produto.php">
                 <div class="cards_campeoes" id="carrossel-cards3">
@@ -71,17 +72,18 @@
                         $idade = $item['idade'];
                         $preco = $item['preco'];
 
-                        echo '<a href="detalhes_produto.php">';
-                            include 'card_carrossel.php';
-                        echo '</a>';
-                    }
-                    ?>
-                </div>
-            </a>
+                            echo '<a href="detalhes_produto.php">';
+                                include 'card_carrossel.php';
+                            echo '</a>';
+                        }
+                        ?>
+                    </div>
+                </a>
 
-            <div class="arrow_campeoes" id="arrow-direita3">&#10095;</div>
+                <div class="arrow_campeoes" id="arrow-direita3">&#10095;</div>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 
 </html>
