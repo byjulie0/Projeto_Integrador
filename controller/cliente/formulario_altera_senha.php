@@ -1,4 +1,7 @@
-<?php include 'menu_pg_inicial.php'?>
+<?php
+include '../utils/autenticado.php';
+include 'menu_pg_inicial.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 

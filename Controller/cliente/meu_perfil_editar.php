@@ -1,6 +1,5 @@
-
 <?php
-include '../../Controller/utils/sessao_ativa.php';
+include '../utils/autenticado.php';
 include 'menu_pg_inicial.php';
 ?>
  
@@ -10,7 +9,7 @@ include 'menu_pg_inicial.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Meus Dados</title>
-    <link rel="stylesheet" href="../../View/Public/css/cliente/meu_perfil_editar.css">
+    <link rel="stylesheet" href="../../View\Public\css\adm\meu_perfil_editar.css">
 </head>
  
 <body>

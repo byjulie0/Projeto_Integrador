@@ -1,5 +1,5 @@
 <?php
-    include '../utils/sessao_ativa_adm.php';
+include '../utils/autenticado_adm.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

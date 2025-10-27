@@ -1,4 +1,7 @@
-<?php include 'menu_inicial.php'; ?>
+<?php
+include '../utils/autenticado_adm.php';
+include 'menu_inicial.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -47,7 +50,7 @@
                     include 'botao_verde_adm.php';
                     ?>
                 </a>
-                <a href="login.php">
+                <a href="logout_adm.php">
                     <?php include 'botao_logout_adm.php'; ?>
                 </a>
             </div>

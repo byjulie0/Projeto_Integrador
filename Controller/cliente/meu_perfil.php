@@ -1,5 +1,5 @@
 <?php
-include '../utils/sessao_ativa.php';
+include '../utils/autenticado.php';
 include '../utils/libras.php';
 include 'menu_pg_inicial.php';
 ?>
@@ -76,7 +76,7 @@ include 'menu_pg_inicial.php';
           ?>
         </a>
         <a href="/Projeto_Integrador/controller/cliente/logout.php">
-          <a href="../cliente/logout.php">
+          <a href="logout.php">
             <?php include 'botao_logout.php'; ?>
           </a>
         </a>
