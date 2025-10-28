@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (move_uploaded_file($caminhoTemp, $caminhoFinal)) {
             $caminhoRelativo = 'uploads/' . $nomeUnico;
 
+            // 🔹 Agora incluindo o campo "idade" no INSERT
             $query = "INSERT INTO produto 
                 (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria) 
                 VALUES 

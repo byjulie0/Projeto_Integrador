@@ -15,6 +15,7 @@ include 'menu_inicial.php'; ?>
 
 <body class="verificar_administrar_pedidos_body">
     <main class="verificar_administrar_pedidos_content">
+        <!-- Cabeçalho da página -->
         <section class="verificar_administrar_pedidos_sessao_identificar">
             <div class="verificar_administrar_pedidos_sessao_bloco">
                 <div class="verificar_administrar_pedidos_sessao_bloco_info">
@@ -136,7 +137,6 @@ include 'menu_inicial.php'; ?>
         </div>
     </main>
 </body>
-
 </html>
 
 <?php include 'footer.php'; ?>

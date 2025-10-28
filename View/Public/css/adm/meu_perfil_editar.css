@@ -9,6 +9,14 @@
     margin: 0 auto;
     width: 100%;
 }
+.client-edit-form {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    padding: 2.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
 .client-edit-header {
     display: flex;
     align-items: center;

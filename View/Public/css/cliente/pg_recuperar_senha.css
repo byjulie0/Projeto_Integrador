@@ -75,6 +75,15 @@
   color: #000000;
   box-sizing: border-box;
 }
+@media (max-width: 360px){
+  .botoes_div{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+    
+  }
+}
+
 .esqueci_senha_card_email_formulario input::placeholder {
   font-size: 13px;
   color: var(--color-primary-1);
