@@ -45,7 +45,7 @@ function validarCNPJ($cnpj) {
 
 //Recaptcha
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../../Controller/cliente/pg_cadastro.php?error=metodo');
+    header('Location: ../cliente/pg_cadastro.php?error=metodo');
     exit;
 }
 $recaptcha_secret = getenv('RECAPTCHA_SECRET') ?: '6LdyqOUrAAAAAF1olqup_tnkbPYxEHydWJkhAgHO';
@@ -75,7 +75,7 @@ $verification = json_decode($response, true);
 if (isset($verification['success']) && $verification['success'] === true) {
     echo '<script>mostrarPopup("sucesso", "Sucesso na validação do reCAPTCHA !");</script>';
 }else{
-    header('Location: ../../Controller/cliente/pg_cadastro.php?error=recaptcha_failed');
+    header('Location: ../cliente/pg_cadastro.php?error=recaptcha_failed');
     echo '<script>mostrarPopup("erro", "Validação reCAPTCHA falhou!");</script>';
     exit;
 

@@ -1,6 +1,6 @@
 <?php
+include '../utils/autenticado_adm.php';
 include 'menu_inicial.php';
-include '../../model/DB/conexao.php';
 
 $sqlCat = "SELECT id_categoria, cat_nome FROM categoria";
 $resCat = mysqli_query($con, $sqlCat);

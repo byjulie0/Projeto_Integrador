@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . "/../../model/DB/conexao.php");
+include '../utils/autenticado_adm.php';
 require_once(__DIR__ . "/catalogo_adm_produtos_action.php");
 
 $sql = "SELECT

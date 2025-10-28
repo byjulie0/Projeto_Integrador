@@ -2,7 +2,7 @@
 include 'sessao_ativa.php';
 
 if (!isset($_SESSION['id_cliente'])) {
-    header("Location: ../cliente/detalhes_produto.php");
+    header("Location: ../cliente/detalhes_produto.php?error=nao_fez_login");
     exit;
 }
 
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $id_cliente = $_SESSION['id_cliente'] ?? null;
     
     if (!$id_cliente || !$id_produto) {
-        header("Location: ../cliente/detalhes_produto.php?erro=dados_incompletos");
+        header("Location: ../cliente/detalhes_produto.php?error=dados_incompletos");
         exit;
     }
 

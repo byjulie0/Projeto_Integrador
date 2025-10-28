@@ -1,6 +1,6 @@
 <?php
+include '../utils/autenticado_adm.php';
 include 'menu_inicial.php';
-include '../utils/sessao_ativa_adm.php';
 
 if (!isset($_SESSION['id_adm'])) {
     die(include '../overlays/pop_up_login.php');
