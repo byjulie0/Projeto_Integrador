@@ -60,10 +60,6 @@ include 'menu_inicial.php';
                         <?php if (!empty($produtos)): ?>
                             <?php foreach ($produtos as $p): ?>
                                 <tr>
-
-
-
-
                                     <td class="product-name-atualizar-produtos cell-atualizar-produto">
                                         <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['produto']) ?></span></div>
                                     </td>
@@ -90,8 +86,6 @@ include 'menu_inicial.php';
                                             <input type="hidden" name="id_produto" value="<?= $p['id_produto'] ?>">
                                             <input type="hidden" name="status_atual" value="<?= $p['produto_ativo'] ?>">
 
-                                            
-
                                             <?php 
                                             $icone = $p['produto_ativo'] ? 'fa-toggle-off' : 'fa-toggle-on';
                                             $ariaPressed = $p['produto_ativo'] ? 'false' : 'true';
@@ -107,10 +101,7 @@ include 'menu_inicial.php';
                                     
                                     <td class="qt-atualizar-produtos">
                                         <?= isset($p['produto_ativo']) ? ($p['produto_ativo'] ? 'Ativo' : 'Inativo') : 'Ops! Também está vazio' ?>
-                                    </td>
-
-
-                                    
+                                    </td> 
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
