@@ -1,0 +1,232 @@
+@import url("../cliente.css");
+
+.main-visualizar-dados {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-bottom: 5%;
+  margin-top: 2%;
+}
+
+.visualizar-dados-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-1);
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+.visualizar-dados-title:hover {
+  color: #45a049;
+}
+
+.a-style {
+  text-decoration: none;
+  color: var(--color-primary-1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.visualizar-dados-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+}
+
+.visualizar-dados-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.visualizar-dados-img-perfil {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-primary-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.avatar-icon {
+  width: 60%;
+  height: 60%;
+  fill: white;
+}
+
+.visualizar-dados-nome {
+  font-size: 1.6rem;
+  color: var(--color-primary-1);
+  margin: 0;
+}
+
+.visualizar-dados-email {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+.visualizar-dados-geral-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--color-primary-1);
+}
+
+.visualizar-dados-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.visualizar-dados-grid p {
+  margin: 0;
+  font-size: 1rem;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.visualizar-dados-grid i {
+  color: var(--color-primary-1);
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.visualizar-dados-area-botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.visualizar-dados-editar{
+  border: none;
+  border-radius: 0.5rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.visualizar-dados-editar:hover {
+  background-color: var(--color-primary-7);
+  color: var(--color-botao-op-Concluido);
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+.visualizar-dados-img-perfil{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-primary-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.avatar-icon {
+  width: 60%;
+  height: 60%;
+  fill: white;
+}
+
+/* Tablets e telas médias */
+@media (max-width: 768px) {
+  .visualizar-dados-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .visualizar-dados-nome-email {
+    margin-top: 10px;
+  }
+
+  .visualizar-dados-grid {
+    grid-template-columns: 1fr; /* força 1 coluna */
+  }
+
+  /* .visualizar-dados-area-botoes {
+    flex-direction: column;
+    align-items: stretch;
+  } */
+}
+
+/* Celulares médios */
+@media (max-width: 480px) {
+  .main-visualizar-dados {
+    padding: 20px;
+  }
+
+  .visualizar-dados-title {
+    font-size: 1.5rem;
+  }
+
+  .visualizar-dados-nome {
+    font-size: 1.2rem;
+  }
+
+  .visualizar-dados-email {
+    font-size: 0.9rem;
+  }
+
+  .visualizar-dados-card {
+    padding: 20px;
+  }
+
+  .visualizar-dados-grid p {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column; /* label em cima, valor embaixo */
+    align-items: flex-start;
+  }
+
+  .visualizar-dados-grid strong {
+    margin-bottom: 2px;
+  }
+
+  .visualizar-dados-area-botoes a {
+    width: 90%; /* botões não colam na lateral */
+    margin: 0 auto;
+  }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+  .visualizar-dados-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .visualizar-dados-title {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 6px;
+  }
+  .visualizar-dados-geral-title {
+    font-size: 1.2rem;
+  }
+
+  .visualizar-dados-area-botoes {
+    gap: 10px;
+    padding: 5% 10%;
+    display: flex;
+  }
+
+  .visualizar-dados-editar {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}

@@ -1,0 +1,254 @@
+@import url("../cliente.css");
+#section_formulario_senha{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    width: 50%;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 0.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 75px;
+    margin-bottom: 80px;
+}
+  .espaco_forms_senha{
+    display: grid;
+    grid-template-rows: 15% 75%;
+}
+.title_div{
+  display: flex;
+  align-items: center;   
+  gap: 8px;            
+  justify-content: flex-start;
+  margin-top: 0;
+  margin-bottom: 10px;
+
+}
+.setinha_forms_mudar_senha{
+  font-size: 2rem;   
+  font-weight: 700;
+  color: var(--color-primary-1);
+  text-align: left;
+}
+.titulo_forms_senha {
+  font-size: 1.6rem;
+  color: var(--color-primary-1);
+  margin: 0;            
+  font-weight: bold;     
+}
+.area_forms{
+  justify-content: center;
+  align-items: end;
+  gap: 16px;
+}
+.area_forms input{
+    width: 30rem;
+    padding: 0.5rem;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+.titulo_forms_senha{
+  color: var(--color-primary-1);
+}
+.p_form_senha{
+    font-size: 1rem;
+    padding-top: 1rem;
+    color: var(--color-primary-1);
+}
+.div_confirmacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap; 
+  width: 100%;
+  margin-top: 15px;
+}
+
+.form_senha_atual,.form_nova_senha,.form_confirma_senha{
+  padding: 0.875rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  background-color: #f8f9fa;
+  transition: all 0.2s;
+  width: 100%;
+}
+.form_senha_atual:focus,.form_nova_senha:focus,.form_confirma_senha:focus{
+  outline: none;
+  border-color: #4CAF50;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.esqueceu_senha {
+  background: none;
+  border: none;
+  color: #4CAF50;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.5rem 0;
+  flex-shrink: 0;
+  width: auto !important;
+  margin: 0; 
+}
+.esqueceu_senha:hover {
+  color: #45a049;
+}
+.salvar_nova_senha {
+  background-color: var(--color-botao-op-Concluido);
+  height: 2rem;
+  color: var(--color-icones);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: auto !important; 
+  padding: 0.5rem 1rem; 
+}
+
+@media (max-width: 1024px) {
+    #section_formulario_senha {
+      width: 80%;
+    }
+  
+    .area_forms input {
+      width: 100%;
+    }
+  
+    .esqueceu_senha,
+    .salvar_nova_senha {
+      width: 100%;
+    }
+    .form_senha_atual,.form_nova_senha,.form_confirma_senha{
+      width: 100%;
+    }
+    .espaco_forms_senha{
+      width: 75%;
+    }
+}
+@media (max-width: 768px) {
+    #section_formulario_senha {
+      width: 85%;
+    }
+  
+    .area_forms input {
+      width: 100%;
+    }
+  
+    .title_div {
+      font-size: 1.5rem;
+      gap: 10px;
+    }
+  
+    .p_form_senha {
+      font-size: 1.1rem;
+    }
+    .esqueceu_senha,
+    .salvar_nova_senha {
+      width: 100%;
+      text-align: center;
+    }
+    .form_senha_atual,.form_nova_senha,.form_confirma_senha{
+      width: 100%;
+    }
+    .espaco_forms_senha{
+      width: 75%;
+    }
+
+    .div_confirmacao {
+      margin-top: 20px;
+      flex-direction: column-reverse;
+    }
+}
+@media (max-width: 425px) {
+    #section_formulario_senha {
+      width: 92%;
+      height: auto;
+      padding: 20px 0;
+    }
+  
+    .area_forms input {
+      width: 100%;
+    }
+  
+    .title_div {
+      font-size: 1.1rem;
+      gap: 8px;
+      height: auto;
+    }
+  
+    .p_form_senha {
+      font-size: 1rem;
+    }
+  
+    .div_confirmacao {
+      flex-direction: column-reverse;
+      gap: 1rem;
+      height: auto;
+      align-items: center;
+    }
+  
+    .esqueceu_senha,
+    .salvar_nova_senha {
+      width: 100%;
+      font-size: 0.8rem;
+    }
+  
+    .salvar_nova_senha {
+      width: 8rem;
+      height: 2rem;
+      font-size: 0.9rem;
+      padding: 0;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .salvar_nova_senha {
+      width: 7.5rem;
+      height: 2rem;
+      font-size: 0.85rem;
+    }
+  }
+  
+@media (max-width: 360px) {
+  .salvar_nova_senha {
+    width: 7rem;
+    height: 1.9rem;
+    font-size: 0.8rem;
+  }
+  .div_confirmacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+  }
+  .area_forms input {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .title_div {
+    display: flex;
+    align-items: center; 
+    gap: 8px;              
+    justify-content: flex-start;
+    margin-right: 15px;
+  }
+  .setinha_forms_mudar_senha {
+    font-size: 24px;
+    margin: 0;  
+  }
+  .titulo_forms_senha {
+    font-size: 23px;
+    margin: 0;  /
+  }
+
+}

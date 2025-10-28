@@ -1,0 +1,322 @@
+@import url("../adm.css");
+@import url("toogle.css");
+#gerenciar-clientes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 100px;
+}
+
+#page-title-gerenciar-clientes {
+  padding-bottom: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#title-gerenciar-clientes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px
+}
+
+#title-gerenciar-clientes {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 15px;
+}
+
+#title-gerenciar-clientes h3{
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: var(--color-primary-1);
+  font-size: 24px;
+}
+.bi-chevron-left{
+  display: inline-flex;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--color-primary-1);
+}
+
+#subtitle-gerenciar-clientes span {
+  color: var(--color-primary-1);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#page-content-gerenciar-clientes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#search-bar-gerenciar-clientes {
+  display: flex;
+  align-items: center;
+  background-color: none;
+  border-radius: 50px;
+  border: 0.5px solid var(--color-primary-1);
+  padding: 5px 15px;
+  gap: 10px;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.first-container-gerenciar-clientes {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.first-container-gerenciar-clientes a{
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--warning-color);
+}
+
+#search-bar-gerenciar-clientes input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  width: 100%;
+  color: var(--color-primary-1);
+}
+#search-bar-gerenciar-clientes input::placeholder {
+  color: var(--color-primary-1);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+#search-bar-gerenciar-clientes button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#search-bar-gerenciar-clientes
+ button .fa-solid {
+  color: var(--color-primary-1);
+  font-size: 16px;
+}
+
+#break-line{
+  width: 100%;
+  display: flex;
+  height: 0.5px;
+  background-color: var(--color-primary-1);
+  margin: 25px 0px;
+}
+
+#table-space-gerenciar-clientes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+#table-space-gerenciar-clientes table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+
+#table-space-gerenciar-clientes table th {
+  width: 100%;
+  background-color: #E5E7E5;
+
+}
+
+#table-space-gerenciar-clientes table .select-all-label-gerenciar-clientes {
+  width: 10%;
+  border-radius: 10px 0px 0px 10px;
+}
+
+
+.header-exclude-gerenciar-clientes {
+  border-radius: 0px 10px 10px 0px;
+}
+
+
+#table-space-gerenciar-clientes table .select-all-label-gerenciar-clientes {
+  width: 10%;
+}
+
+#table-space-gerenciar-clientes table td {
+  width: 14.2857142857%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-primary-1);
+}
+
+#table-space-gerenciar-clientes table td .fa-pen-to-square {
+  color: var(--color-primary-3);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#table-space-gerenciar-clientes table td .fa-trash {
+  color: var(--warning-color);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#table-space-gerenciar-clientes table th {
+  width: 14.2857142857%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-primary-1);
+}
+
+.select-all-label-gerenciar-clientes button {
+  border: none;
+  background-color: none;
+  background: none;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: underline;
+  color: var(--color-primary-1);
+}
+
+#table-space-gerenciar-clientes th, #table-space-gerenciar-clientes td {
+  padding: 10px;
+}
+
+.cliente-gerenciar-clientes {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 15px 0px;
+}
+
+.cliente-gerenciar-clientes img {
+  width: 50%;
+  border-radius: 5px;
+}
+.cliente-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--color-primary-1);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 8px;
+    position: relative;
+    vertical-align: middle;
+}
+.cliente-checkbox:checked {
+    background-color: var(--color-primary-3);
+    border-color: var(--color-primary-3);
+}
+.cliente-checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.cpf-name-gerenciar-clientes span {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  #gerenciar-clientes {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  #gerenciar-clientes {
+    padding: 30px 20px;
+  }
+
+  #title-gerenciar-clientes {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  #title-gerenciar-clientes h3 {
+    font-size: 18px;
+  }
+
+  #subtitle-gerenciar-clientes span {
+    font-size: 14px;
+  }
+
+  .first-container-gerenciar-clientes {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #search-bar-gerenciar-clientes {
+    width: 100%;
+    max-width: 100%;
+    padding: 5px 10px;
+  }
+
+  #search-bar-gerenciar-clientes input {
+    font-size: 13px;
+  }
+
+  #search-bar-gerenciar-clientes input::placeholder {
+    font-size: 13px;
+  }
+
+  #search-bar-gerenciar-clientes button .fa-solid {
+    font-size: 14px;
+  }
+
+  #table-space-gerenciar-clientes {
+    overflow-x: auto;
+  }
+
+  #table-space-gerenciar-clientes table {
+    min-width: 700px;
+  }
+
+  #table-space-gerenciar-clientes table th, #table-space-gerenciar-clientes table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .cliente-gerenciar-clientes {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cliente-gerenciar-clientes img {
+    width: 80%;
+  }
+
+  .cpf-name-gerenciar-clientes span {
+    font-size: 14px;
+  }
+
+  .select-all-label-gerenciar-clientes button {
+    font-size: 12px;
+  }
+}

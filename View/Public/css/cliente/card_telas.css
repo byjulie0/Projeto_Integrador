@@ -1,0 +1,69 @@
+@import url("../cliente.css");
+
+.lote-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+    width: 260px;
+    max-width: 100%;
+}
+
+.lote-card:hover {
+    transform: translateY(-5px);
+}
+
+.lote-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+    text-align: right;
+}
+
+.info-grid p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.info-grid p:nth-child(odd) {
+    font-weight: bold;
+    text-align: left;
+}
+
+.preco {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2a7f40;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+    .lote-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .lote-card img {
+        height: 150px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .lote-card img {
+        height: 200px;
+    }
+}

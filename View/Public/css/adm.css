@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+:root {
+  --color-primary-1: #40513b;
+  --color-primary-2: #557153;
+  --color-primary-3: #4b914b;
+  --color-primary-4: #798645;
+  --color-primary-5: #609966;
+  --color-primary-6: #729762;
+  --color-primary-7: #edf1d6;
+  --color-primary-8: #e7f0dc;
+  --color-detalhes-9: #2278f4;
+  --color-botao-op-Cancelar: #db2828;
+  --color-botao-op-Pendente: #dba928;
+  --color-botao-op-Concluido: #2d8c37;
+  --color-fonte: #20261e;
+  --color-icones: #edf3eb;
+  --color-detalhes-15: #f7f9ff;
+  --color-detalhes-16: #e7f0dc;
+  --color-detalhes-17: #29b5a8;
+  --text-color: #20261e;
+  --border-color: #e5e7eb;
+  --warning-color: #ff4444;
+  --input-bg: #f9fafb;
+  --spacing-unit: 1rem;
+  --border-radius: 8px;
+  --color-background: #f0f0f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-background);
+}

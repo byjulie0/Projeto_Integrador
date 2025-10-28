@@ -1,0 +1,132 @@
+.relatorios_container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: var(--color-primary-2);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* Cabeçalho */
+.relatorios_header {
+  margin-bottom: 25px;
+  position: relative;
+  margin-top: 35px;
+  max-width: 100%;
+  width: 85%;
+  color: var(--color-primary-1);
+}
+
+.verificar_administrar_pedidos_sessao_seta_voltar {
+  font-size: 1.2rem;
+  color: #333;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.relatorios_header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.verificar_administrar_pedidos_sessao_mini_titulos_1 {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #555;
+}
+
+.verificar_administrar_pedidos_sessao_titulo_destaque {
+  font-weight: 600;
+  color: var(--color-fonte);
+}
+
+.verificar_administrar_pedidos_sessao_periodo_bloco {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+
+.verificar_administrar_pedidos_sessao_mini_titulos_2 {
+  font-size: 0.9rem;
+  color: var(--color-primary-1);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.verificar_administrar_pedidos_sessao_periodo_linha {
+  border: none;
+  border-bottom: 1px solid #bbb;
+  margin-top: 5px;
+  color: var(--color-primary-1);
+}
+
+/* Cards do topo */
+.relatorios_cards_topo {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  margin-left: 15%;
+}
+.card_topo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #e7f0e8;
+  padding: 12px;
+  gap: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: justify;
+  font-weight: bold;
+}
+.fa-bag-shopping,
+.fa-cart-plus,
+.fa-users {
+  display: flex;
+  background-color: #d1e2cd;
+  padding: 10px;
+  border-radius: 100%;
+}
+/* Conteúdo principal */
+.relatorios_main {
+  display: grid;
+  grid-template-columns: 55% 40%;
+  gap: 20px;
+}
+
+/* Card estatísticas */
+.card_estatisticas {
+  background: #e7f0e8;
+  padding: 15px;
+  border-radius: 12px;
+  grid-column: span 3; 
+}
+.card_estatisticas h3 {
+  margin-bottom: 10px;
+}
+
+/* Card atividades */
+.card_atividades {
+  background: #e7f0e8;
+  padding: 15px;
+  border-radius: 12px;
+}
+.card_atividades h3 {
+  margin-bottom: 10px;
+}
+.btn_imprimir {
+  margin-top: 15px;
+  padding: 8px 12px;
+  background: var(--color-botao-op-Concluido);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn_imprimir:hover {
+  background: var(--color-primary-6);
+}

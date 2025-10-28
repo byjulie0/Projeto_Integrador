@@ -1,0 +1,88 @@
+@import url("../cliente.css");
+
+#section-nossa-historia {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 80px;
+  margin-top: 20px;
+}
+
+.parte1-nossa-historia {
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px 0 0 50px;
+  overflow: hidden;
+}
+
+.parte2-nossa-historia {
+  width: 50%;
+  overflow: hidden;
+}
+
+.img-nosssa-historia {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0 50px 10px 0;
+}
+
+.titulo-nossa-historia {
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 2rem;
+  color: #40513B;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.nossa_historia {
+  text-align: left;
+}
+
+.texto-nossa-historia {
+  padding: 10px;
+  margin: 10px;
+  font-size: 20px;
+  color: #40513B;
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  #section-nossa-historia {
+    flex-direction: column;
+    padding: 40px;
+  }
+  .parte1-nossa-historia {
+    width: 100%;
+    border-radius: 10px 50px 0 0;
+  } 
+
+  .texto-nossa-historia {
+    font-size: 1.1rem;
+  }
+
+  .titulo-nossa-historia {
+    font-size: 1.8rem;
+  }
+
+  .parte2-nossa-historia {
+    width: 50%;
+  } 
+
+  .img-nosssa-historia {
+    border-radius: 0 0 10px 50px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .texto-nossa-historia {
+    font-size: 1rem;
+  }
+}
+

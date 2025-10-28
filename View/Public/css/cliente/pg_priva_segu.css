@@ -1,0 +1,212 @@
+@import url("../cliente.css");
+.whole-page-content-pes {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--color-primary-bg, #fff);
+  box-sizing: border-box;
+  flex: 1;
+}
+
+
+.page-title-pes {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.go-back-pes {
+  color: var(--color-primary-1);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.go-back-pes i {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.go-back-pes:hover i {
+  color: var(--color-primary-2);
+}
+
+.title-area-pes {
+  width: auto;
+  margin-top: 0;
+}
+
+.title-pes {
+  color: var(--color-primary-1);
+  font-size: 24px;
+  text-align: left;
+  margin: 0;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.terms-pes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.term-pes {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: justify;
+}
+
+.term-title-pes {
+  color: var(--color-primary-1);
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.term-text-pes {
+  color: var(--color-primary-1);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.term-pes ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+/* Tablets grandes e laptops pequenos (1025px a 1440px) */
+@media (max-width: 1440px) {
+  .whole-page-content-pes {
+    padding: 40px 80px;
+  }
+  .title-pes {
+    font-size: 23px;
+  }
+}
+
+/* Tablets médios (até 1024px) */
+@media (max-width: 1024px) {
+  .whole-page-content-pes {
+    padding: 40px 60px;
+  }
+
+  .page-title-pes {
+    gap: 12px;
+  }
+
+  .title-pes {
+    font-size: 22px;
+  }
+
+  .go-back-pes i {
+    font-size: 22px;
+  }
+
+  .term-text-pes {
+    font-size: 15px;
+  }
+}
+
+/* Tablets pequenos e celulares grandes (até 768px) */
+@media (max-width: 768px) {
+  .whole-page-content-pes {
+    padding: 30px 25px;
+  }
+
+  .page-title-pes {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .title-pes {
+    font-size: 20px;
+    white-space: normal;
+  }
+
+  .go-back-pes i {
+    font-size: 20px;
+  }
+
+  .term-title-pes {
+    font-size: 17px;
+  }
+
+  .term-text-pes {
+    font-size: 15px;
+  }
+}
+
+/* Celulares médios (até 480px) */
+@media (max-width: 480px) {
+  .whole-page-content-pes {
+    padding: 25px 18px;
+  }
+
+  .page-title-pes {
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+
+  .title-pes {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .term-title-pes {
+    font-size: 16px;
+  }
+
+  .term-text-pes {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .term-pes ul {
+    margin-left: 15px;
+  }
+}
+
+/* Celulares pequenos (até 360px) */
+@media (max-width: 360px) {
+  .whole-page-content-pes {
+    padding: 20px 15px;
+  }
+
+  .page-title-pes {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .title-pes {
+    font-size: 16px;
+  }
+
+  .term-title-pes {
+    font-size: 15px;
+  }
+
+  .term-text-pes {
+    font-size: 13px;
+    word-break: break-word;
+  }
+}
+/* ================================
+   FIM - PRIVACIDADE E SEGURANÇA
+===================================*/
