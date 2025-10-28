@@ -363,3 +363,140 @@ input[type="image"] {
     font-size: 1.1rem;
   }
 }
+
+/* === CARROSSEL DE IMAGENS === */
+/* CARROSSEL */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f9f9f9;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    position: absolute;
+    top: 0; left: 0;
+}
+
+.carousel-img.active {
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev { left: 12px; }
+.next { right: 12px; }
+
+.carousel-placeholder {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #aaa;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* MINIATURAS */
+.mini-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.mini-box {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    background: #f8f9fa;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.mini-box:hover {
+    border-color: var(--color-botao-op-Concluido);
+}
+
+.plus-sign {
+    font-size: 28px;
+    color: #aaa;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.mini-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    border-radius: 8px;
+}
+
+.mini-box.filled .mini-img {
+    display: block;
+}
+
+.mini-box.filled .plus-sign {
+    display: none;
+}
+
+.mini-box.active {
+    border-color: var(--color-botao-op-Concluido);
+    box-shadow: 0 0 8px rgba(61, 106, 63, 0.4);
+}
+
+.remove-mini {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #dc3545;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 11px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.mini-box.filled .remove-mini {
+    opacity: 1;
+}
+
+.remove-mini:hover {
+    background: #c82333;
+}

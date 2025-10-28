@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const categorySelect = document.getElementById('categories');
     const subcategorySelects = document.querySelectorAll('.subcategory-select');
@@ -158,5 +159,90 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// === CARROSSEL SIMPLIFICADO COM MINIATURAS CLEAN ===
+document.addEventListener("DOMContentLoaded", () => {
+    const carouselImgs = document.querySelectorAll('.carousel-img');
+    const miniBoxes = document.querySelectorAll('.mini-box');
+    const miniImgs = document.querySelectorAll('.mini-img');
+    const inputs = document.querySelectorAll('input[name="imagens[]"]');
+    const removes = document.querySelectorAll('.remove-mini');
+    const placeholder = document.querySelector('.carousel-placeholder');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+
+    let currentIndex = 0;
+    const imagens = [null, null, null, null];
+
+    function atualizar() {
+        carouselImgs.forEach((img, i) => {
+            img.classList.toggle('active', i === currentIndex && imagens[i]);
+        });
+        miniBoxes.forEach((box, i) => {
+            box.classList.toggle('active', i === currentIndex);
+            box.classList.toggle('filled', !!imagens[i]);
+        });
+        placeholder.style.display = imagens[currentIndex] ? 'none' : 'block';
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === 3;
+    }
+
+    function mostrar(i) {
+        if (imagens[i]) {
+            currentIndex = i;
+            atualizar();
+        }
+    }
+
+    prevBtn.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; atualizar(); } });
+    nextBtn.addEventListener('click', () => { if (currentIndex < 3) { currentIndex++; atualizar(); } });
+
+    // Clicar no mini-box
+    // ANTES:
+// box.addEventListener('click', () => { ... inputs[i].click(); });
+
+// AGORA:
+miniBoxes.forEach((box, i) => {
+    box.addEventListener('click', (e) => {
+        if (e.target.classList.contains('remove-mini')) return;
+        if (!imagens[i]) {
+            inputs[i].click(); // abre seletor
+        } else {
+            mostrar(i); // mostra no carrossel
+        }
+    });
+});
+
+    inputs.forEach((input, i) => {
+        input.addEventListener('change', function() {
+            const file = this.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                imagens[i] = e.target.result;
+                carouselImgs[i].src = e.target.result;
+                miniImgs[i].src = e.target.result;
+                removes[i].classList.remove('d-none');
+                if (!imagens.some(img => img)) currentIndex = i;
+                atualizar();
+            };
+            reader.readAsDataURL(file);
+        });
+    });
+
+    removes.forEach((btn, i) => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            imagens[i] = null;
+            carouselImgs[i].src = '';
+            miniImgs[i].src = '';
+            inputs[i].value = '';
+            removes[i].classList.add('d-none');
+            if (currentIndex === i) currentIndex = imagens.findIndex(img => img) ?? 0;
+            atualizar();
+        });
+    });
+
+    atualizar();
+});
 
 
