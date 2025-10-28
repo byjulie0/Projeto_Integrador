@@ -1,5 +1,5 @@
 <?php
-include '../utils/sessao_ativa.php';
+include '../utils/autenticado.php';
 include '../utils/libras.php';
 include 'menu_pg_inicial.php';
 ?>
@@ -31,8 +31,24 @@ include 'menu_pg_inicial.php';
             <path
               d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
           </svg>
-        </div>
+        </div>cliente_nome
 
+        $row = mysqli_num_rows($result);
+
+        if ($row > 0) {
+            $retorno = mysqli_fetch_assoc($result);
+            $_SESSION["cliente_nome"]=$retorno["cliente_nome"];
+            $_SESSION["email"]=$retorno["email"];
+            $_SESSION["data_nasc"]=$retorno["data_nasc"];
+            $_SESSION["cliente_nome"]=$retorno["cliente_nome"];
+
+        } else {
+            echo 'Login invalido';
+            header("location: ../cliente/login.php");
+            exit();
+        }
+
+        ?>
         <div class="visualizar-dados-nome-email">
           <h4 class="visualizar-dados-nome"><?= htmlspecialchars($_SESSION['cliente_nome']); ?></h4>
           <h5 class="visualizar-dados-email"><?= htmlspecialchars($_SESSION['email']); ?></h5>
@@ -56,7 +72,7 @@ include 'menu_pg_inicial.php';
           ?>
         </a>
         <a href="/Projeto_Integrador/controller/cliente/logout.php">
-          <a href="../cliente/logout.php">
+          <a href="logout.php">
             <?php include 'botao_logout.php'; ?>
           </a>
         </a>

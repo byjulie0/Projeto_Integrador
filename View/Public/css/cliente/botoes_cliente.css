@@ -23,11 +23,11 @@
 }
 
 .botao_vermelho_cliente {
-    background-color: red;  
+    background-color: red;
 }
 
 .logout-confirm {
-    background-color: red;  
+    background-color: red;
 }
 
 @media (max-width: 1024px){
@@ -35,3 +35,4 @@
         width: 190px;
     }
 }
+

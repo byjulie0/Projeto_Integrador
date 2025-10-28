@@ -1,8 +1,7 @@
 @import url("../adm.css");
-
 .main-visualizar-dados {
     width: 100%;
-    padding: 30px 40px;
+    padding: 30px;
     display: flex;
     justify-content: center;
 }
@@ -27,7 +26,6 @@
     border-radius: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     padding: 30px;
-    align-items: center;
 }
 .visualizar-dados-header {
     display: flex;
@@ -54,22 +52,18 @@
     margin-top: 5px;
 }
 .visualizar-dados-geral-title {
-    font-size: 1rem;
+    font-size: 1.4rem;
     margin-bottom: 15px;
     color: var(--color-primary-1);
 }
   .visualizar-dados-grid {
+    font-weight: 600;
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
 }
-
-  .visualizar-dados-grid span {
-    font-weight: 600;
-    margin-right: 5px;
-}
-
   .visualizar-dados-grid p {
+    margin: 0;
     font-size: 1rem;
     color: #495057;
     display: flex;
@@ -129,7 +123,7 @@
       margin-bottom: 10px;
     }
     .visualizar-dados-area-botoes {
-      flex-direction: row;
+      flex-direction: column;
       align-items: stretch;
     }
 

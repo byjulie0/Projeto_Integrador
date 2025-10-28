@@ -1,8 +1,6 @@
 <?php
-require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
-?>
-
-<?php include 'menu_inicial.php'; ?>
+include '../utils/listar_pedidos_adm.php';
+include 'menu_inicial.php'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,6 +15,7 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
 
 <body class="verificar_administrar_pedidos_body">
     <main class="verificar_administrar_pedidos_content">
+        <!-- Cabeçalho da página -->
         <section class="verificar_administrar_pedidos_sessao_identificar">
             <div class="verificar_administrar_pedidos_sessao_bloco">
                 <div class="verificar_administrar_pedidos_sessao_bloco_info">
@@ -138,7 +137,6 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
         </div>
     </main>
 </body>
-
 </html>
 
 <?php include 'footer.php'; ?>

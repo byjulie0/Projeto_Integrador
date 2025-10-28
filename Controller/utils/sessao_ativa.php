@@ -1,20 +1,20 @@
 <?php
-session_start();
 include '../../model/DB/conexao.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = mysqli_real_escape_string($con, $_POST['email']);
-    $password = mysqli_real_escape_string($con,$_POST['password']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
 
     //Recaptcha
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        header('Location: ../cliente/login.php?error=metodo');
+        header('Location: ../cliente/login.php?error=nao_fez_login');
         exit;
     }
     $recaptcha_secret = getenv('RECAPTCHA_SECRET') ?: '6LdyqOUrAAAAAF1olqup_tnkbPYxEHydWJkhAgHO';
     $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
-    if (empty($recaptcha_response)){
+    if (empty($recaptcha_response)) {
         header('Location: ../cliente/login.php?error=recaptcha_missing');
         exit;
 
@@ -22,11 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
     $data = [
-        'secret'   => $recaptcha_secret,
+        'secret' => $recaptcha_secret,
         'response' => $recaptcha_response,
         'remoteip' => $_SERVER['REMOTE_ADDR']
     ];
-        
+
     $ch = curl_init($verifyUrl);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
@@ -37,16 +37,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($verification['success']) && $verification['success'] === true) {
         echo '<script>mostrarPopup("sucesso", "Sucesso na validação do reCAPTCHA !");</script>';
-    }else{
-        header('Location: ../../Controller/cliente/pg_cadastro.php?error=recaptcha_failed');
-        echo '<script>mostrarPopup("erro", "Validação reCAPTCHA falhou!");</script>';
+    } else {
+        header('Location: ../cliente/pg_cadastro.php?error=recaptcha_failed');
+        // echo '<script>mostrarPopup("erro", "Validação reCAPTCHA falhou!");</script>';
         exit;
 
     }
     //recaptcha
 
     $query = "SELECT id_cliente, cliente_nome, email, senha, cpf_cnpj, data_nasc, telefone, user_ativo FROM cliente WHERE email = '{$email}' ";
-
 
     $result = mysqli_query($con, $query);
 
@@ -55,14 +54,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($row > 0) {
         $retorno = mysqli_fetch_assoc($result);
     } else {
-        echo 'Login invalido';
-        header("location: ../cliente/login.php");
+        header("location: ../cliente/login.php?error=usuario_nao_encontrado");
         exit();
     }
 
- 
-    if (password_verify($password, $retorno['senha'])) {
 
+    if (password_verify($password, $retorno['senha'])) {
+        
         $_SESSION["id_cliente"] = $retorno['id_cliente'];
         $_SESSION["cliente_nome"] = $retorno['cliente_nome'];
         $_SESSION["email"] = $retorno['email'];
@@ -74,8 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("location: ../cliente/pg_inicial_cliente.php");
         exit();
     } else {
-        echo 'Login invalido';
-        header("location: ../cliente/login.php");
+        header("location: ../cliente/login.php?error=login_errado");
     }
 }
 

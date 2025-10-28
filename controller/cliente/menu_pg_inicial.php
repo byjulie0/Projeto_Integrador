@@ -10,8 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../view/public/css/cliente/menu_pg_inicial.css">
     <script defer src="../../view/js/cliente/menu-pg-inicial.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+    <script defer src="../../view/js/cliente/pg_busca.js"></script>
 </head>
 
 <body>
@@ -28,17 +27,17 @@
 
             <ul class="nav-link-pg-inicial">
                 <li class="dropdown_menu_inicial">
-                    <a href="#" class="nav-item-pg-inicial">Categorias</a>
+                    <a href="#pg_inicial_categorias" class="nav-item-pg-inicial">Categorias</a>
                     <ul class="submenu_inicial">
-                        <li><a href="categoria_bovinos.php">Bovinos</a></li>
-                        <li><a href="categoria_equinos.php">Equinos</a></li>
-                        <li><a href="categoria_galinaceos.php">Galináceos</a></li>
-                        <li><a href="categoria_campeoes.php">Campeões</a></li>
-                        <li><a href="categoria_produtos.php">Produtos gerais</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=1">Bovinos</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=2">Equinos</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=3">Galináceos</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=4">Campeões</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=5">Produtos gerais</a></li>
                     </ul>
                 </li>
-                <li><a href="categoria_campeoes.php" class="nav-item-pg-inicial">Campeões</a></li>
-                <li><a href="#" class="nav-item-pg-inicial">Nossa história</a></li>
+                <li><a href="#campeoes" class="nav-item-pg-inicial">Campeões</a></li>
+                <li><a href="#section-nossa-historia" class="nav-item-pg-inicial">Nossa história</a></li>
             </ul>
 
             <div class="nav-page-btns-pg-inicial">

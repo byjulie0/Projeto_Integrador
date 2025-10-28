@@ -1,9 +1,9 @@
 <?php
-include '../../model/DB/conexao.php'; 
+include '../utils/autenticado_adm.php';
 
 try {
     // Consulta SQL unindo pedidos e cliente
-    $sql = "SELECT 
+    $sql = "SELECT
                 p.id_pedido,
                 p.data_pedido,
                 p.status_pedido,
@@ -24,7 +24,7 @@ try {
     }
 
 } catch (Exception $e) {
-    echo 'Erro ao listar pedidos: ' . $e->getMessage();
+    // echo 'Erro ao listar pedidos: ' . $e->getMessage();
     $pedidos = [];
 }
 ?>

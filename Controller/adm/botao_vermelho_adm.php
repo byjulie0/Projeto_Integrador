@@ -9,6 +9,7 @@
 <body>
     <button type="submit" class="generate_report_product_button botao_vermelho_adm">
         <?= $texto ?>
-    </button>
+    </button> 
+     
 </body>
 </html>

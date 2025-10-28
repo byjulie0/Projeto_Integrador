@@ -1,17 +1,14 @@
 @import url("../adm.css");
-
 .client-edit-main {
     padding: 2.5rem 1rem;
     min-height: calc(100vh - 70px);
     background-color: #f5f5f5;
 }
-
 .client-edit-container {
     max-width: 1000px;
     margin: 0 auto;
     width: 100%;
 }
-
 .client-edit-form {
     background-color: #fff;
     border-radius: 0.75rem;
@@ -26,45 +23,50 @@
     gap: 1rem;
     margin-bottom: 2.5rem;
 }
-
+.client-edit-back-btn {
+    background: none;
+    border: none;
+    padding: 0;
+}
 .client-edit-title {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-primary-1);
     word-break: break-word;
 }
-
-.bi-chevron-left {
+.bi-chevron-left{
     font-size: 1.5rem;
-    color: var(--color-primary-1);
+    color: var(--color-primary-1)
 }
-
+.client-edit-form {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    padding: 2.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
 .client-edit-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
     margin-bottom: 1.875rem;
 }
-
 .client-edit-column {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     min-width: 0;
 }
-
 .client-edit-field-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-
 .client-edit-label {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-primary-1);
 }
-
 .client-edit-input {
     padding: 0.875rem 1rem;
     border: 1px solid #ddd;
@@ -74,14 +76,12 @@
     transition: all 0.2s;
     width: 100%;
 }
-
 .client-edit-input:focus {
     outline: none;
     border-color: #4CAF50;
     background-color: #fff;
     box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
 }
-
 .client-edit-warning {
     background-color: #fff3cd;
     border: 1px solid #ffeaa7;
@@ -92,7 +92,6 @@
     line-height: 1.5;
     margin-bottom: 1.875rem;
 }
-
 .client-edit-actions {
     display: flex;
     justify-content: space-between;
@@ -100,7 +99,6 @@
     gap: 1.25rem;
     flex-wrap: wrap;
 }
-
 .client-edit-password-btn {
     background: none;
     border: none;
@@ -112,13 +110,9 @@
     padding: 0.5rem 0;
     flex-shrink: 0;
 }
-
 .client-edit-password-btn:hover {
     color: #45a049;
 }
-
-/* RESPONSIVIDADE */
-
 @media (max-width: 1024px) {
     .client-edit-form {
         padding: 2rem;
@@ -128,15 +122,19 @@
         gap: 2rem;
     }
 }
-
-@media (max-width: 500px) {
+@media (max-width: 480px) {
     .client-edit-main {
-        padding: 2rem 1rem;
+        padding: 1rem 0.5rem;
     }
 
     .client-edit-header {
         margin-bottom: 1.25rem;
         gap: 0.75rem;
+    }
+
+    .client-edit-back-btn svg {
+        width: 20px;
+        height: 20px;
     }
 
     .client-edit-title {
@@ -149,7 +147,6 @@
     }
 
     .client-edit-grid {
-        grid-template-columns: 1fr;
         gap: 1.25rem;
         margin-bottom: 1.5rem;
     }
@@ -177,7 +174,6 @@
         font-size: 0.8125rem;
     }
 }
-
 @media (max-width: 360px) {
     .client-edit-main {
         padding: 0.875rem 0.375rem;

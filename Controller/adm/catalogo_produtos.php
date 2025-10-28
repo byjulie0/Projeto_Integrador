@@ -1,8 +1,7 @@
 <?php
-require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
+include '../utils/listar_produtos_adm.php';
+include 'menu_inicial.php';
 ?>
-
-<?php include 'menu_inicial.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -33,9 +32,9 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                     <input type="text" id="searchInput" placeholder="Pesquisar" />
                     <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button> 
                 </div>
-                <a href="">Todos</a>
-                <a href="?status=ativos">Ativos</a>
-                <a href="?status=inativos">Inativados</a>
+                <a href="?status=todos" class="catalogo_produtos_botao_todos">Todos</a>
+                <a href="?status=ativos" class="catalogo_produtos_botao_ativos">Ativos</a>
+                <a href="?status=inativos" class="catalogo_produtos_botao_inativos">Inativados</a>
             </div>
             <hr class="break-line">
             <!-- ?status=inativados -->
@@ -91,8 +90,8 @@ require_once(__DIR__ . "/../utils/listar_produtos_adm.php");
                                             
 
                                             <?php 
-                                            $icone = $p['produto_ativo'] ? 'fa-toggle-on' : 'fa-toggle-off';
-                                            $ariaPressed = $p['produto_ativo'] ? 'true' : 'false';
+                                            $icone = $p['produto_ativo'] ? 'fa-toggle-off' : 'fa-toggle-on';
+                                            $ariaPressed = $p['produto_ativo'] ? 'false' : 'true';
                                             ?>
 
                                             <button type="submit" name="toggle_produto"

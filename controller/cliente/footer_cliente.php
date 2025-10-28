@@ -60,9 +60,13 @@
                 <h3>Meu perfil</h3>
                 <hr>
                 <a href="carrinho.php">Carrinho de compras</a>
-                <a href="#">Histórico de Compras</a>
+                <a href="historico_de_compras.php">Histórico de Compras</a>
                 <a href="pg_favoritos.php">Produtos Favoritados</a>
             </div>
+        </div>
+
+        <div class="footer_cli_item">
+            <p class="copyright">© 2025 John Rooster. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>
