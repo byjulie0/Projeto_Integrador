@@ -21,11 +21,12 @@
 
 .verificar_administrar_pedidos_sessao_seta_voltar {
   font-size: 1.2rem;
-  color: #333;
+  color: var(--color-primary-1);
   margin-right: 10px;
   text-decoration: none;
 }
 .relatorios_header h1 {
+  color: var(--color-primary-1);
   font-size: 1.6rem;
   margin-bottom: 8px;
   display: inline-block;
@@ -129,4 +130,184 @@
 }
 .btn_imprimir:hover {
   background: var(--color-primary-6);
+}
+.grafico-container {
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+/* === MOBILE PEQUENO === */
+/* Telas 360x800 e 390x844 */
+@media (max-width: 430px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .relatorios_container {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .relatorios_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .relatorios_header h1{
+    font-size: 1.3rem;
+  }
+
+  .verificar_administrar_pedidos_sessao_seta_voltar {
+    position: relative;
+    align-self: center;
+    left: 0;
+    top: 0;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    position: relative;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .verificar_administrar_pedidos_sessao_mini_titulos_1 {
+    text-align: center;
+    margin-top: 5px;
+  }
+  .verificar_administrar_pedidos_sessao_titulo_destaque {
+    display: block;
+  }
+
+  .relatorios_cards_topo {
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .relatorios_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card_topo,
+  .card_estatisticas,
+  .card_atividades {
+    width: 95%;
+  }
+
+  .card_topo {
+    font-size: 13px;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .card_estatisticas h3,
+  .card_atividades h3 {
+    text-align: center;
+  }
+
+  .grafico-container,
+  #graficoEstatisticas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 250px;
+  }
+}
+
+/* 768px a 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .relatorios_header {
+    width: 90%;
+    text-align: center;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    position: static;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .relatorios_cards_topo {
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .relatorios_main {
+    grid-template-columns: 1fr;
+  }
+
+  .grafico-container {
+    max-width: 90%;
+    height: 280px;
+  }
+}
+
+/* 1024px a 1199px */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .relatorios_header {
+    width: 85%;
+    text-align: center;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .relatorios_cards_topo {
+    width: 85%;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+  }
+
+  .grafico-container {
+    max-width: 80%;
+    height: 300px;
+  }
+}
+
+/* 1440 x 900 */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .relatorios_cards_topo {
+    width: 80%;
+    margin-left: 10%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .relatorios_main {
+    grid-template-columns: 55% 40%;
+  }
+
+  .grafico-container {
+    max-width: 85%;
+    height: 350px;
+  }
+}
+
+/* 1920x1080+ */
+@media (min-width: 1440px) {
+  .relatorios_cards_topo {
+    width: 75%;
+    margin-left: 10%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .relatorios_main {
+    grid-template-columns: 55% 40%;
+  }
+
+  .grafico-container {
+    max-width: 600px;
+    height: 350px;
+  }
 }
