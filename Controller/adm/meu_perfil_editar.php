@@ -1,6 +1,17 @@
 <?php
-// include '../utils/sessao_ativa_adm.php';
-include '../utils/sessao_ativa_adm.php';
+include '../utils/autenticado_adm.php';
+
+$sql = "SELECT * FROM adm WHERE id_adm = ?";
+$query = $con->prepare($sql);
+$query->bind_param("i", $_SESSION['id_adm']);
+$query->execute();
+$resultado = $query->get_result();
+$adm_atual = $resultado->fetch_assoc();
+
+if (!$adm_atual) {
+  die("Cliente não encontrado!");
+}
+
 include 'menu_inicial.php';
 
 ?>
@@ -26,30 +37,30 @@ include 'menu_inicial.php';
                     <div class="client-edit-column">
                         <div class="client-edit-field-group">
                             <label for="client-name" class="client-edit-label">Nome:</label>
-                            <input type="text" id="client-name" class="client-edit-input" placeholder="Administrador Jonh Rooster">
+                            <input type="text" id="client-name" class="client-edit-input" placeholder="<?= htmlspecialchars($adm_atual['adm_nome']); ?>">
                         </div>
                         
                         <div class="client-edit-field-group">
                             <label for="client-email" class="client-edit-label">E-mail:</label>
-                            <input type="email" id="client-email" class="client-edit-input" placeholder="jonhrooster@gmail.com">
+                            <input type="email" id="client-email" class="client-edit-input" placeholder="<?= htmlspecialchars($adm_atual['email']); ?>">
                         </div>
                     </div>
                     
                     <div class="client-edit-column">
                         <div class="client-edit-field-group">
                             <label for="client-phone" class="client-edit-label">Telefone:</label>
-                            <input type="tel" id="client-phone" class="client-edit-input" placeholder="+55 67 91234-5678">
+                            <input type="tel" id="client-phone" class="client-edit-input" placeholder="<?= htmlspecialchars($adm_atual['telefone']); ?>">
                         </div>
-                        
+
                         <div class="client-edit-field-group">
                             <label for="client-cnpj" class="client-edit-label">CNPJ:</label>
-                            <input type="text" id="client-cnpj" class="client-edit-input" placeholder="12.345.678/0001-95" readonly>
+                            <input type="text" id="client-cnpj" class="client-edit-input" placeholder="<?= htmlspecialchars($adm_atual['cnpj']); ?>" readonly>
                         </div>
                     </div>
                 </div>
 
                 <div class="client-edit-actions">
-                    <a href="formulario_altera_senha.php">
+                    <a href="../cliente/formulario_altera_senha.php">
                         <button type="button" class="client-edit-password-btn">Alterar senha</button>
                     </a>
                     <?php

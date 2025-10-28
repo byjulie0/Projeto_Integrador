@@ -1,5 +1,17 @@
 <?php
 include '../utils/autenticado_adm.php';
+
+$sql = "SELECT * FROM adm WHERE id_adm = ?";
+$query = $con->prepare($sql);
+$query->bind_param("i", $_SESSION['id_adm']);
+$query->execute();
+$resultado = $query->get_result();
+$adm_atual = $resultado->fetch_assoc();
+
+if (!$adm_atual) {
+  die("Cliente não encontrado!");
+}
+
 include 'menu_inicial.php';
 ?>
 <!DOCTYPE html>
@@ -28,18 +40,18 @@ include 'menu_inicial.php';
                     <i class="bi bi-person-circle"></i>
                 </div>
                 <div class="visualizar-dados-nome-email">
-                    <h4 class="visualizar-dados-nome">Administrador Jonh Rooster</h4>
-                    <h5 class="visualizar-dados-email">jonhrooster@gmail.com</h5>
+                    <h4 class="visualizar-dados-nome"><?= htmlspecialchars($adm_atual['adm_nome']); ?></h4>
+                    <h5 class="visualizar-dados-email"><?= htmlspecialchars($adm_atual['email']); ?></h5>
                 </div>
             </div>
 
             <div class="visualizar-dados-geral">
                 <h3 class="visualizar-dados-geral-title">Meus Dados</h3>
                 <div class="visualizar-dados-grid">
-                    <p><span>Nome: </span> Administrador Jonh Rooster</p>
-                    <p><span>Telefone: </span>+55 67 91234-5678</p>
-                    <p><span>E-mail: </span>jonhrooster@gmail.com</p>
-                    <p><span>CNPJ: </span>12.345.678/0001-95</p>
+                    <p><span>Nome: </span><?= htmlspecialchars($adm_atual['adm_nome']); ?></p>
+                    <p><span>Telefone: </span><?= htmlspecialchars($adm_atual['adm_nome']); ?></p>
+                    <p><span>E-mail: </span><?= htmlspecialchars($adm_atual['email']); ?></p>
+                    <p><span>CNPJ: </span><?= htmlspecialchars($adm_atual['cnpj']); ?></p>
                 </div>
             </div>
 
