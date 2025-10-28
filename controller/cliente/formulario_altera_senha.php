@@ -34,7 +34,7 @@ include 'menu_pg_inicial.php'
                         <p class="p_form_senha">Confirme sua nova senha:</p>
                         <input type="password" name="confirmar_senha" class="form_confirma_senha" required>
                         <div class="div_confirmacao">
-                            <a href="recuperar_senha_login1.php" class="esqueceu_senha">Esqueceu a senha?</a>
+                            <a href="recuperar_senha.php" class="esqueceu_senha">Esqueceu a senha?</a>
                             <?php
                                 $texto = "Salvar Senha";
                                 include 'botao_verde_cliente.php';

@@ -52,11 +52,6 @@ include 'menu_pg_inicial.php';
  
                     <div class="client-edit-column">
                         <div class="client-edit-field-group">
-                            <label for="endereco" class="client-edit-label">Cep:</label>
-                            <input type="text" name="endereco" class="client-edit-input" value="<?= htmlspecialchars($_SESSION['cep']); ?>">
-                        </div>
- 
-                        <div class="client-edit-field-group">
                             <label for="data_nasc" class="client-edit-label">Data de nascimento:</label>
                             <input type="text" name="data_nasc" class="client-edit-input" value="<?= date('d/m/Y', strtotime($_SESSION['data_nasc'])); ?>">
                         </div>

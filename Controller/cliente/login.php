@@ -52,7 +52,7 @@ include '../utils/libras.php'
             echo '<p style="color:red;">' . $erro . '</p>'; ?>
 
           <div class="info-login">
-            <a href="recuperar_senha_login1.php" class="esqueci_senha_login">Esqueci minha senha</a>
+            <a href="recuperar_senha.php" class="esqueci_senha_login">Esqueci minha senha</a>
             <div class="texto1-span">Não tem conta? <a href="pg_cadastro.php">Cadastre-se</a></div>
             <a class="login-adm" href="../adm/login.php">Área administrativa</a>
           </div>
