@@ -36,7 +36,6 @@ include 'menu_pg_inicial.php';
 
         </div>
     </header>
-    <?php include 'footer_cliente.php'; ?>
 </body>
 
 </html>
