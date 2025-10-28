@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="../../view/public/css/cliente/card_favoritos.css">
 </head>
 <body>
-    <div class="lote-card">
+    <!--<div class="lote-card">
         <a href="detalhes_produto.php">
             <img src="<?php echo $imagem; ?>" alt="Imagem do Animal">
             <div class="info-grid">
-                <p>Nome:</p>
-                <p><?= $nome ?></p>
                 <p>Peso:</p>
                 <p><?php echo $peso; ?></p>
                 <p>Raça:</p>
@@ -26,7 +24,23 @@
             <div class="botao-pag-fav"></div>
             <div class="stars-pag-fav"><a href="#">★ Favorito</a></div>
         </a>
-    </div>
+    </div>-->
+
+    <div class="lote-card">
+    <a href="detalhes_produto.php?id=<?= $id ?>">
+        <img src="<?= $imagem ?>" alt="Imagem do Animal">
+        <div class="info-grid">
+            <p>Nome:</p><p><?= $nome ?></p>
+            <p>Peso:</p><p><?= $peso ?></p>
+            <p>Raça:</p><p><?= $raca ?></p>
+            <p>Genealogia:</p><p><?= $genealogia ?></p>
+            <p>Idade:</p><p><?= $idade ?></p>
+            <p class="preco">R$ <?= $preco ?></p>
+        </div>
+        <div class="stars-pag-fav"><a href="#"><i class="fa-solid fa-heart"></i></a></div>
+    </a>
+</div>
+
 </body>
 </html>
 

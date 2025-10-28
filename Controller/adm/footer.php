@@ -43,11 +43,6 @@
                     <a href="https://www.instagram.com/senac_ms/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://api.whatsapp.com/send?phone=556799492638"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
-                <div id="tab4" class="footer_adm_item">
-                    <h3>Sobre a Empresa</h3>
-                    <hr>
-                    <a href="nossa_historia.php">Nossa História</a>
-                </div>
             </div>
 
             <div id="tab3_adm_footer" class="footer_adm_item">
@@ -65,6 +60,9 @@
                 <a href="#">Gerenciamento de vendas</a>
                 <a href="#">Geral</a>
             </div>
+        </div>
+        <div class="footer_adm_item">
+            <p class="copyright">© 2025 John Rooster. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>

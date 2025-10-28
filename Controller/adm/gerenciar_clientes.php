@@ -1,6 +1,7 @@
-
-<?php include 'menu_inicial.php';?>
-<?php include '../../Controller/utils/listar_clientes.php'?>
+<?php
+include '../utils/listar_clientes.php';
+include 'menu_inicial.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

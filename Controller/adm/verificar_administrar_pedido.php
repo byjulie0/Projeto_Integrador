@@ -1,8 +1,6 @@
 <?php
-require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
-?>
-
-<?php include 'menu_inicial.php'; ?>
+include '../utils/listar_pedidos_adm.php';
+include 'menu_inicial.php'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

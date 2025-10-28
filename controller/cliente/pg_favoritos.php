@@ -1,6 +1,10 @@
-<?php include 'menu_pg_inicial.php'; ?>
+<?php
+include '../utils/autenticado.php';
+include 'menu_pg_inicial.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Página Favoritos</title>
@@ -9,6 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../view/public/css/cliente/pg_favoritos.css">
 </head>
+
 <body>
     <div class="seta_titulo_pg_favoritos">
         <a class="btn_voltar_favoritos" href="#" onclick="window.history.back(); return false;">
@@ -42,5 +47,6 @@
         </div>
     </div>
 </body>
+
 </html>
 <?php include 'footer_cliente.php'; ?>

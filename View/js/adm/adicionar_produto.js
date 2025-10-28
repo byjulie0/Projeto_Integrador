@@ -131,3 +131,32 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarCamposAnimal();
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const inputImg = document.getElementById("inputImagem");
+  const preview = document.getElementById("previewImagem");
+  const label = document.querySelector(".img_holder_button");
+
+  inputImg.addEventListener("change", function() {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        preview.src = e.target.result;
+        preview.style.display = "block";
+        label.textContent = "Trocar imagem";
+        label.style.opacity = "0.5";
+      };
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "";
+      preview.style.display = "none";
+      label.textContent = "Selecionar uma imagem";
+      label.style.opacity = "1";
+    }
+  });
+});
+
+
+
+

@@ -3,7 +3,6 @@
     padding: 2.5rem 1rem;
     min-height: calc(100vh - 70px);
     background-color: #f5f5f5;
-    max-width: 100%;
 }
 .client-edit-container {
     max-width: 1000px;

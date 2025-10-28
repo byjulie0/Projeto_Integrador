@@ -1,4 +1,7 @@
-<?php include 'menu_pg_inicial.php'; ?>
+<?php
+include '../utils/autenticado.php';
+include 'menu_pg_inicial.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,8 +16,8 @@
     <div class="container_historico_compras">
 
         <div class="title_historico_compras">
-            <a href="#" onclick="window.history.back(); return false" class="arrow_compras">
-                <i class="bi bi-chevron-left"></i>
+            <a href="#" onclick="window.history.back(); return false;" class="arrow_compras">
+                <i class="fa-solid fa-chevron-left"></i>
             </a>
             <h1 class="titulo_historico_compras">Histórico de Compras</h1>
         </div>

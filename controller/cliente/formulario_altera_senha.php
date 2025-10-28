@@ -1,4 +1,7 @@
-<?php include 'menu_pg_inicial.php'?>
+<?php
+include '../utils/autenticado.php';
+include 'menu_pg_inicial.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,20 +24,25 @@
 
             <div class="area_forms">
                 <div class="area-forms">
-                    <p class="p_form_senha">Digite sua senha atual:</p>
-                    <input type="password" class="form_senha_atual">
-                    <p class="p_form_senha">Digite sua nova senha:</p>
-                    <input type="password" class="form_nova_senha">
-                    <p class="p_form_senha">Confirme sua nova senha:</p>
-                    <input type="password" class="form_confirma_senha">
+                   <form action="../../Controller/utils/alterar_senha.php" method="POST">
+                        <p class="p_form_senha">Digite sua senha atual:</p>
+                        <input type="password" name="senha_atual" class="form_senha_atual" required>
+
+                        <p class="p_form_senha">Digite sua nova senha:</p>
+                        <input type="password" name="nova_senha" class="form_nova_senha" required>
+
+                        <p class="p_form_senha">Confirme sua nova senha:</p>
+                        <input type="password" name="confirmar_senha" class="form_confirma_senha" required>
+                        <div class="div_confirmacao">
+                            <a href="recuperar_senha_login1.php" class="esqueceu_senha">Esqueceu a senha?</a>
+                            <?php
+                                $texto = "Salvar Senha";
+                                include 'botao_verde_cliente.php';
+                            ?>
+                        </div>
+                    </form>
                 </div>
-                <div class="div_confirmacao">
-                    <a href="recuperar_senha_login1.php" class="esqueceu_senha">Esqueceu a senha?</a>
-                    <?php
-                        $texto = "Salvar Senha";
-                        include 'botao_verde_cliente.php';
-                    ?>
-                </div>
+           
             </div>
 
             

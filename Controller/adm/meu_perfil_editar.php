@@ -1,4 +1,9 @@
-<?php include 'menu_inicial.php';?>
+<?php
+// include '../utils/sessao_ativa_adm.php';
+include '../utils/sessao_ativa_adm.php';
+include 'menu_inicial.php';
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,6 +16,7 @@
     <main class="client-edit-main">
         <div class="client-edit-container">
 
+            <form class="client-edit-form" method="POST" action="../utils/atualizar_adm.php">
             <form class="client-edit-form">
                 <div class="client-edit-header">
                     <h1 class="client-edit-title"><i class="bi bi-chevron-left"></i>Editar meus dados</h1>

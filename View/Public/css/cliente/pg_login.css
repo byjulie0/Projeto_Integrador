@@ -36,6 +36,13 @@
   text-align: center;
 }
 
+.container-img-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .img_login {
   max-height: 330px;
   max-width: 100%;
@@ -197,11 +204,6 @@
     width: 90%;
   }
 
-  .login_form_vinycius h2 {
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-
   .info_login_vinycius,
   .login_form_vinycius {
     width: 100%;
@@ -226,10 +228,6 @@
   .text_login_vinycius {
     font-size: 16px;
     text-align: center;
-  }
-
-  .btn-submit-login{
-    margin-top: 25px;
   }
 }
 

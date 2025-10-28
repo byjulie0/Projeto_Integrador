@@ -65,15 +65,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php if (!empty($popup_titulo)): ?>
 <div id="popup_resultado" class="popup_resultado" style="display:flex;">
     <div class="area_popup_resultado <?= $popup_tipo ?>">
-        <span class="fechar_popup_resultado">&times;</span>
         <h2><?= htmlspecialchars($popup_titulo, ENT_QUOTES, 'UTF-8') ?></h2>
         <p><?= nl2br(htmlspecialchars($popup_mensagem, ENT_QUOTES, 'UTF-8')) ?></p>
         <div class="botoes_popup_resultado">
-            <button class="botao_popup_cancelar fechar_popup_resultado">Fechar</button>
+            <button onclick="location.href='../adm/catalogo_produtos.php'" class="botao_popup_cancelar fechar_popup_resultado">fechar</button>
         </div>
     </div>
 </div>
 
-<link rel="stylesheet" href="../../view/public/css/cliente/pop_up_resultado.css">
+<link rel="stylesheet" href="../../view/public/css/adm/pop_up_resultado.css">
 <script src="../../view/public/js/pop_up_resultado.js"></script>
 <?php endif; ?>
