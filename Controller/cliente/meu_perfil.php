@@ -1,6 +1,9 @@
 <?php
 include '../utils/autenticado.php';
-
+if ($usuario_nao_logado) {
+  include '../overlays/pop_up_login.php';
+  exit;
+}
 $sql = "SELECT * FROM cliente WHERE id_cliente = ?";
 $query = $con->prepare($sql);
 $query->bind_param("i", $_SESSION['id_cliente']);
@@ -67,7 +70,7 @@ include 'menu_pg_inicial.php';
           include 'botao_verde_cliente.php';
           ?>
         </a>
-        
+
         <a href="logout.php">
           <?php include 'botao_logout.php'; ?>
         </a>

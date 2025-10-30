@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $usuarioLogado = isset($_SESSION['id_cliente']);
 ?>
 
@@ -56,6 +58,7 @@ $usuarioLogado = isset($_SESSION['id_cliente']);
                     <ul class="submenu_inicial">
                         <?php if($usuarioLogado): ?>
                             <li><a href="meu_perfil.php">Meus dados</a></li>
+                            <li><a href="historico_pedidos.php">Meus pedidos</a></li>
                             <li><a href="pg_favoritos.php">Favoritos</a></li>
                             <li><a href="logout.php">Sair</a></li>
                         <?php else: ?>

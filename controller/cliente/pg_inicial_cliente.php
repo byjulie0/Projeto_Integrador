@@ -1,4 +1,5 @@
 <?php
+include '../utils/autenticado.php';
 include '../utils/libras.php';
 ?>
 
@@ -22,6 +23,3 @@ include '../utils/libras.php';
     ?>
 </body>
 </html>
-
-
-
