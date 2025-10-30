@@ -1,5 +1,5 @@
 <?php
-session_start();
+include '../utils/verificar_sessao.php';
 $usuarioLogado = isset($_SESSION['id_cliente']);
 ?>
 
@@ -54,7 +54,7 @@ $usuarioLogado = isset($_SESSION['id_cliente']);
                         </span>
                     </a>
                     <ul class="submenu_inicial">
-                        <?php if($usuarioLogado): ?>
+                        <?php if ($usuarioLogado): ?>
                             <li><a href="meu_perfil.php">Meus dados</a></li>
                             <li><a href="pg_favoritos.php">Favoritos</a></li>
                             <li><a href="logout.php">Sair</a></li>
