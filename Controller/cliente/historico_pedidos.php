@@ -1,5 +1,5 @@
 <?php
-include '../utils/autenticado.php';
+// include '../utils/autenticado.php';
 include 'menu_pg_inicial.php';
 ?>
 <!DOCTYPE html>
