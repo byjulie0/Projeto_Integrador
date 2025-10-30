@@ -26,8 +26,8 @@ try {
                 i.qtd_produto
             FROM pedido p
             INNER JOIN cliente c ON p.id_cliente = c.id_cliente
-            INNER JOIN item i ON p.id_pedido = i.pedido_id_pedido
-            INNER JOIN produto pr ON i.produto_id_produto = pr.id_produto
+            INNER JOIN item i ON p.id_pedido = i.id_pedido
+            INNER JOIN produto pr ON i.id_produto = pr.id_produto
             WHERE p.id_pedido = ?";
 
     $stmt = $con->prepare($sql);
@@ -155,12 +155,7 @@ if (!empty($caminho_imagem)) {
 
                         <?php if ($pedido_detalhes['status_pedido'] !== 'Concluído'): ?>
                             <div class="right-buttons-informacoes-pedidos">
-                                <button>
-                                    <?php  
-                                    $texto = "Concluir";
-                                    include 'botao_verde_adm.php';
-                                    ?>
-                                </button>
+                                <button class="concluir-btn" onclick="concluirPedido(<?php echo $pedido_detalhes['id_pedido']; ?>)">Concluir pedido</button>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -204,10 +199,17 @@ if (!empty($caminho_imagem)) {
 <script>
 function cancelarPedido(pedidoId) {
     if (confirm('Tem certeza que deseja cancelar este pedido?')) {
-        window.location.href = 'acao_cancelar_pedido.php?id=' + pedidoId;
+        window.location.href = '../utils/acao_cancelar_pedido.php?id=' + pedidoId;
+    }
+}
+
+function concluirPedido(pedidoId) {
+    if (confirm('Confirmar conclusão deste pedido?')) {
+        window.location.href = '../utils/acao_concluir_pedido.php?id=' + pedidoId;
     }
 }
 </script>
+
 </body>
 </html>
 
