@@ -7,49 +7,51 @@ $popup_tipo = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    // Validação e sanitização
     $nome         = trim($_POST['nome'] ?? '');
     $valor        = floatval($_POST['valor'] ?? 0);
     $quantidade   = intval($_POST['quantidade'] ?? 0);
     $descricao    = trim($_POST['descricao'] ?? '');
-    $sexo         = $_POST['sexo'] ?? '';
+    $sexo         = $_POST['sexo'] ?? ''; // CORRIGIDO
     $peso         = floatval($_POST['peso'] ?? 0);
-    $idade        = $_POST['idade'] ?? '';
-    $campeao      = $_POST['campeao'] ?? '';
+    $idade        = $_POST['idade'] ?? null;
+    $campeao      = strtolower($_POST['campeao'] ?? '') === 'sim' ? 1 : 0; // CORRIGIDO
     $categoria    = intval($_POST['categoria'] ?? 0);
     $subcategoria = intval($_POST['subcategoria'] ?? 0);
 
-    if (empty($nome) || $valor <= 0 || $quantidade < 0 || $categoria <= 0) {
+    // Validação básica
+    if (empty($nome) || $valor <= 0 || $quantidade < 0 || $categoria <= 0 || $subcategoria <= 0 || empty($sexo)) {
         $popup_titulo = "Erro!";
-        $popup_mensagem = "Preencha todos os campos obrigatórios.";
+        $popup_mensagem = "Preencha todos os campos obrigatórios corretamente.";
         $popup_tipo = "erro";
     } else {
 
-        $imagens_nomes = [null, null, null, null];
         $pastaUpload = '../../view/public/uploads/';
-        $uploadOk = false;
-
         if (!is_dir($pastaUpload)) mkdir($pastaUpload, 0777, true);
 
         $allowed = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+        $imagens_nomes = array_fill(0, 4, null);
+        $uploadOk = false;
 
-        // Recebe os 4 arquivos (mesmo vazios)
-        $files = $_FILES['imagens'] ?? [];
-        for ($i = 0; $i < 4; $i++) {
-            if (
-                isset($files['error'][$i]) &&
-                $files['error'][$i] === UPLOAD_ERR_OK &&
-                !empty($files['name'][$i])
-            ) {
-                $file_tmp = $files['tmp_name'][$i];
-                $file_name = $files['name'][$i];
-                $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if (isset($_FILES['imagens']) && is_array($_FILES['imagens']['name'])) {
+            for ($i = 0; $i < 4; $i++) {
+                if (
+                    isset($_FILES['imagens']['error'][$i]) &&
+                    $_FILES['imagens']['error'][$i] === UPLOAD_ERR_OK &&
+                    !empty($_FILES['imagens']['name'][$i])
+                ) {
+                    $file_tmp = $_FILES['imagens']['tmp_name'][$i];
+                    $file_name = $_FILES['imagens']['name'][$i];
+                    $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
 
-                if (in_array($ext, $allowed) && filesize($file_tmp) <= 5 * 1024 * 1024) {
-                    $novo_nome = 'img' . ($i + 1) . '.' . $ext;
-                    $destino = $pastaUpload . $novo_nome;
-                   if (move_uploaded_file($file_tmp, $destino)) {
-                          $imagens_nomes[$i] = 'uploads/' . $novo_nome;  // novo_nome = img1.jpg, img2.jpg...
-                           $uploadOk = true;
+                    if (in_array($ext, $allowed) && $_FILES['imagens']['size'][$i] <= 5 * 1024 * 1024) {
+                        $novo_nome = "img" . ($i + 1) . "_" . time() . ".$ext"; // Nome único
+                        $destino = $pastaUpload . $novo_nome;
+
+                        if (move_uploaded_file($file_tmp, $destino)) {
+                            $imagens_nomes[$i] = 'uploads/' . $novo_nome;
+                            $uploadOk = true;
+                        }
                     }
                 }
             }
@@ -60,28 +62,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $popup_mensagem = "Adicione pelo menos uma imagem.";
             $popup_tipo = "erro";
         } else {
-            // SALVA NO CAMPO path_img COMO JSON
-            $imagens_json = mysqli_real_escape_string($con, json_encode($imagens_nomes, JSON_UNESCAPED_UNICODE));
+            // Usa prepared statement (SEGURANÇA)
+            $imagens_json = json_encode($imagens_nomes, JSON_UNESCAPED_UNICODE);
 
-            $sql = "INSERT INTO produto 
-                    (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria)
-                    VALUES 
-                    ('$nome', '$valor', '$quantidade', '$imagens_json', '$descricao', '$sexo', '$peso', '$idade', '$campeao', '$categoria', '$subcategoria')";
+            $stmt = $con->prepare("INSERT INTO produto 
+                (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-            if (mysqli_query($con, $sql)) {
+            $stmt->bind_param(
+                "sdisssdssii",
+                $nome, $valor, $quantidade, $imagens_json, $descricao, $sexo, $peso, $idade, $campeao, $categoria, $subcategoria
+            );
+
+            if ($stmt->execute()) {
                 $popup_titulo = "Sucesso!";
-                $popup_mensagem = "Produto cadastrado com imagens!";
+                $popup_mensagem = "Produto cadastrado com sucesso!";
                 $popup_tipo = "sucesso";
             } else {
                 $popup_titulo = "Erro no banco!";
-                $popup_mensagem = "Erro: " . mysqli_error($con);
+                $popup_mensagem = "Erro: " . $stmt->error;
                 $popup_tipo = "erro";
             }
+            $stmt->close();
         }
     }
 }
 ?>
 
+<!-- Popup de resultado -->
 <?php if (!empty($popup_titulo)): ?>
 <div id="popup_resultado" class="popup_resultado" style="display:flex;">
     <div class="area_popup_resultado <?= $popup_tipo ?>">

@@ -37,36 +37,31 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 
         <form action="../utils/adicionar_produto_backend.php" method="POST" enctype="multipart/form-data">
             <section class="add_product_area">
-                <article class="add_product_image">
-                    <p class="product_title_info_img">Imagens do produto (máx. 4)<span class="mandatory_space">*</span></p>
+                <!-- IMAGENS DO PRODUTO -->
+<!-- IMAGENS DO PRODUTO -->
+<article class="add_product_image">
+    <p class="product_title_info_img">Imagens do produto (máx. 4)<span class="mandatory_space">*</span></p>
 
-                    <!-- CARROSSEL GRANDE -->
-                    <div class="carousel-container">
-                        <button type="button" class="carousel-btn prev">
-                            <i class="bi bi-chevron-left"></i>
-                        </button>
-                        <button type="button" class="carousel-btn next">
-                            <i class="bi bi-chevron-right"></i>
-                        </button>
-                        <div class="carousel-placeholder">Clique em um quadrado para adicionar</div>
-                        <?php for ($i = 0; $i < 4; $i++): ?>
-                            <img src="" alt="" class="carousel-img" id="carouselImg<?= $i ?>">
-                        <?php endfor; ?>
-                    </div>
+    <!-- CARROSSEL GRANDE -->
+    <div class="carousel-container">
+        <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+        <button type="button" class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+        <div class="carousel-placeholder" id="carouselPlaceholder">Clique em um quadrado para adicionar</div>
+        <img src="" alt="" class="carousel-img" id="mainPreview" style="display: none;">
+    </div>
 
-                    <!-- MINIATURAS (CORRETAS) -->
-                    <div class="mini-container">
-                        <?php for ($i = 0; $i < 4; $i++): ?>
-                            <div class="mini-box" data-index="<?= $i ?>">
-                                <img src="" alt="" class="mini-img" id="miniImg<?= $i ?>">
-                                <button type="button" class="remove-mini d-none" id="del<?= $i ?>">X</button>
-                                <span class="plus-sign">+</span>
-                                <!-- INPUT ESCONDIDO DENTRO DO QUADRADO -->
-                                <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden" id="input<?= $i ?>">
-                            </div>
-                        <?php endfor; ?>
-                    </div>
-                </article>
+    <!-- MINI QUADRADOS -->
+    <div class="mini-container">
+        <?php for ($i = 0; $i < 4; $i++): ?>
+            <div class="mini-box" data-index="<?= $i ?>">
+                <img src="" alt="" class="mini-img" id="miniImg<?= $i ?>" style="display: none;">
+                <span class="plus-sign" id="plus<?= $i ?>">+</span>
+                <button type="button" class="remove-mini" id="remove<?= $i ?>" style="display: none;">X</button>
+                <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden" id="input<?= $i ?>">
+            </div>
+        <?php endfor; ?>
+    </div>
+</article>
 
                 <aside class="add_product_details">
                     <div class="product_details_collumn">
@@ -154,5 +149,121 @@ while ($r = mysqli_fetch_assoc($resSub)) {
         window.subMapData = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
     </script>
     <?php include 'footer.php'; ?>
+    <script>
+    const subMapData = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
+    let currentSlide = 0;
+    const previews = [];
+
+    // Inicializa os inputs
+    document.querySelectorAll('.file-input-hidden').forEach((input, index) => {
+        input.addEventListener('change', () => handleFileSelect(input, index));
+    });
+
+    // Clique nos mini-boxes
+    document.querySelectorAll('.mini-box').forEach(box => {
+        box.addEventListener('click', () => {
+            const index = box.dataset.index;
+            document.getElementById(`input${index}`).click();
+        });
+    });
+
+    // Remover imagem
+    document.querySelectorAll('.remove-mini').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const index = btn.id.replace('remove', '');
+            clearImage(index);
+        });
+    });
+
+    function handleFileSelect(input, index) {
+        const file = input.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const imgData = e.target.result;
+
+            // Salva preview
+            previews[index] = imgData;
+
+            // Mostra no mini
+            const miniImg = document.getElementById(`miniImg${index}`);
+            const plus = document.getElementById(`plus${index}`);
+            const remove = document.getElementById(`remove${index}`);
+
+            miniImg.src = imgData;
+            miniImg.style.display = 'block';
+            plus.style.display = 'none';
+            remove.style.display = 'block';
+
+            // Atualiza carrossel
+            updateCarousel();
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function clearImage(index) {
+        // Limpa tudo
+        const input = document.getElementById(`input${index}`);
+        input.value = ''; // Limpa o input
+
+        const miniImg = document.getElementById(`miniImg${index}`);
+        const plus = document.getElementById(`plus${index}`);
+        const remove = document.getElementById(`remove${index}`);
+
+        miniImg.src = '';
+        miniImg.style.display = 'none';
+        plus.style.display = 'block';
+        remove.style.display = 'none';
+
+        delete previews[index];
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        const mainImg = document.getElementById('mainPreview');
+        const placeholder = document.getElementById('carouselPlaceholder');
+
+        const filledPreviews = previews.filter(p => p);
+        if (filledPreviews.length === 0) {
+            mainImg.style.display = 'none';
+            placeholder.style.display = 'block';
+            return;
+        }
+
+        // Mostra a imagem atual
+        const imgSrc = filledPreviews[currentSlide] || filledPreviews[0];
+        mainImg.src = imgSrc;
+        mainImg.style.display = 'block';
+        placeholder.style.display = 'none';
+    }
+
+    function changeSlide(direction) {
+        const filled = previews.filter(p => p);
+        if (filled.length === 0) return;
+
+        currentSlide = (currentSlide + direction + filled.length) % filled.length;
+        updateCarousel();
+    }
+
+    // Preenche subcategorias
+    document.getElementById('categoria').addEventListener('change', function() {
+        const catId = this.value;
+        const subSelect = document.getElementById('subcategoria');
+        subSelect.innerHTML = '<option value="" selected disabled>Selecione uma subcategoria</option>';
+        subSelect.disabled = true;
+
+        if (subMapData[catId]) {
+            subMapData[catId].forEach(sub => {
+                const opt = document.createElement('option');
+                opt.value = sub.id_subcategoria;
+                opt.textContent = sub.subcat_nome;
+                subSelect.appendChild(opt);
+            });
+            subSelect.disabled = false;
+        }
+    });
+</script>
 </body>
 </html>
