@@ -4,7 +4,7 @@ include '../../model/DB/conexao.php';
 $pedido_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if ($pedido_id === 0) {
-    echo "<script>alert('ID do pedido inválido!'); window.location.href='verificar_administrar_pedido.php';</script>";
+    echo "<script>alert('ID do pedido inválido!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
     exit;
 }
 
@@ -33,7 +33,7 @@ try {
     }
 
     $con->commit();
-    echo "<script>alert('Pedido cancelado com sucesso!'); window.location.href='verificar_administrar_pedido.php';</script>";
+    echo "<script>alert('Pedido cancelado com sucesso!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
 } catch (Exception $e) {
     $con->rollback();
     echo "<script>alert('Erro ao cancelar pedido: " . addslashes($e->getMessage()) . "'); window.history.back();</script>";
