@@ -1,8 +1,3 @@
-<?php
-include '../utils/verificar_sessao.php';
-$usuarioLogado = isset($_SESSION['id_cliente']);
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -49,19 +44,12 @@ $usuarioLogado = isset($_SESSION['id_cliente']);
                 <div class="dropdown_menu_inicial">
                     <a href="#" class="nav-btns-pg-inicial" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person"></i>
-                        <span class="nav-text-pg-inicial">
-                            <?php echo $usuarioLogado ? 'Perfil' : 'Conta'; ?>
-                        </span>
+                        <span class="nav-text-pg-inicial">Perfil</span>
                     </a>
                     <ul class="submenu_inicial">
-                        <?php if ($usuarioLogado): ?>
                             <li><a href="meu_perfil.php">Meus dados</a></li>
                             <li><a href="pg_favoritos.php">Favoritos</a></li>
-                            <li><a href="logout.php">Sair</a></li>
-                        <?php else: ?>
-                            <li><a href="login.php">Login</a></li>
-                            <li><a href="pg_cadastro.php">Cadastrar</a></li>
-                        <?php endif; ?>
+                            <li><a href="login.php">Login - Iniciar sessão</a></li>
                     </ul>
                 </div>
                 <a href="pg_notificacao.php" class="nav-btns-pg-inicial">
