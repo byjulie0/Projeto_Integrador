@@ -43,7 +43,7 @@ $usuarioLogado = isset($_SESSION['id_cliente']);
                         <li><a href="categoria_produtos.php?id_categoria=5">Produtos gerais</a></li>
                     </ul>
                 </li>
-                <li><a href="#campeoes" class="nav-item-pg-inicial">Campeões</a></li>
+                <li><a href="categoria_produtos.php?id_categoria=4" class="nav-item-pg-inicial">Campeões</a></li>
                 <li><a href="#section-nossa-historia" class="nav-item-pg-inicial">Nossa história</a></li>
             </ul>
 
