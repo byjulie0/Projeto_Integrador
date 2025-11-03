@@ -1,5 +1,9 @@
 <?php
 include '../utils/autenticado.php';
+if ($usuario_nao_logado) {
+  include '../overlays/pop_up_login.php';
+  exit;
+}
 include 'menu_pg_inicial.php';
 require_once '../../model/DB/conexao.php';
 
