@@ -37,12 +37,9 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 
         <form action="../utils/adicionar_produto_backend.php" method="POST" enctype="multipart/form-data">
             <section class="add_product_area">
-                <!-- IMAGENS DO PRODUTO -->
-<!-- IMAGENS DO PRODUTO -->
 <article class="add_product_image">
-    <p class="product_title_info_img">Imagens do produto (máx. 4)<span class="mandatory_space">*</span></p>
+    <p class="product_title_info_img">Imagens do produto (máx.4)<span class="mandatory_space">*</span></p>
 
-    <!-- CARROSSEL GRANDE -->
     <div class="carousel-container">
         <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
         <button type="button" class="carousel-btn next" onclick="changeSlide(1)">❯</button>
@@ -50,15 +47,19 @@ while ($r = mysqli_fetch_assoc($resSub)) {
         <img src="" alt="" class="carousel-img" id="mainPreview" style="display: none;">
     </div>
 
-    <!-- MINI QUADRADOS -->
     <div class="mini-container">
         <?php for ($i = 0; $i < 4; $i++): ?>
-            <div class="mini-box" data-index="<?= $i ?>">
+            <label class="custom-file-upload" for="input<?= $i ?>">
+            <div class="upload-box" id="box<?= $i ?>">
                 <img src="" alt="" class="mini-img" id="miniImg<?= $i ?>" style="display: none;">
-                <span class="plus-sign" id="plus<?= $i ?>">+</span>
-                <button type="button" class="remove-mini" id="remove<?= $i ?>" style="display: none;">X</button>
-                <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden" id="input<?= $i ?>">
+                <div class="upload-content" id="content<?= $i ?>">
+                    <i class="bi bi-camera-fill"></i>
+                    <span>Adicionar</span>
+                </div>
+                <button type="button" class="remove-mini" id="remove<?= $i ?>" style="display: none;">×</button>
             </div>
+                <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden" id="input<?= $i ?>">
+            </label>
         <?php endfor; ?>
     </div>
 </article>
@@ -154,20 +155,19 @@ while ($r = mysqli_fetch_assoc($resSub)) {
     let currentSlide = 0;
     const previews = [];
 
-    // Inicializa os inputs
     document.querySelectorAll('.file-input-hidden').forEach((input, index) => {
         input.addEventListener('change', () => handleFileSelect(input, index));
     });
-
-    // Clique nos mini-boxes
-    document.querySelectorAll('.mini-box').forEach(box => {
-        box.addEventListener('click', () => {
-            const index = box.dataset.index;
-            document.getElementById(`input${index}`).click();
+    
+    document.querySelectorAll('.custom-file-upload').forEach(label => {
+    label.addEventListener('click', (e) => {
+        if (e.target.classList.contains('remove-mini')) {
+            e.preventDefault();
+            return;
+        }
         });
     });
 
-    // Remover imagem
     document.querySelectorAll('.remove-mini').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -177,49 +177,45 @@ while ($r = mysqli_fetch_assoc($resSub)) {
     });
 
     function handleFileSelect(input, index) {
-        const file = input.files[0];
-        if (!file) return;
+    const file = input.files[0];
+    if (!file) return;
 
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const imgData = e.target.result;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const imgData = e.target.result;
+        previews[index] = imgData;
 
-            // Salva preview
-            previews[index] = imgData;
-
-            // Mostra no mini
-            const miniImg = document.getElementById(`miniImg${index}`);
-            const plus = document.getElementById(`plus${index}`);
-            const remove = document.getElementById(`remove${index}`);
-
-            miniImg.src = imgData;
-            miniImg.style.display = 'block';
-            plus.style.display = 'none';
-            remove.style.display = 'block';
-
-            // Atualiza carrossel
-            updateCarousel();
-        };
-        reader.readAsDataURL(file);
-    }
-
-    function clearImage(index) {
-        // Limpa tudo
-        const input = document.getElementById(`input${index}`);
-        input.value = ''; // Limpa o input
-
+        // Atualiza visual
         const miniImg = document.getElementById(`miniImg${index}`);
-        const plus = document.getElementById(`plus${index}`);
+        const content = document.getElementById(`content${index}`);
         const remove = document.getElementById(`remove${index}`);
 
-        miniImg.src = '';
-        miniImg.style.display = 'none';
-        plus.style.display = 'block';
-        remove.style.display = 'none';
+        miniImg.src = imgData;
+        miniImg.style.display = 'block';
+        content.style.display = 'none';
+        remove.style.display = 'flex';
 
-        delete previews[index];
         updateCarousel();
-    }
+    };
+    reader.readAsDataURL(file);
+}
+
+   function clearImage(index) {
+    const input = document.getElementById(`input${index}`);
+    input.value = '';
+
+    const miniImg = document.getElementById(`miniImg${index}`);
+    const content = document.getElementById(`content${index}`);
+    const remove = document.getElementById(`remove${index}`);
+
+    miniImg.src = '';
+    miniImg.style.display = 'none';
+    content.style.display = 'flex';
+    remove.style.display = 'none';
+
+    previews[index] = null;
+    updateCarousel();
+}
 
     function updateCarousel() {
         const mainImg = document.getElementById('mainPreview');
@@ -232,7 +228,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
             return;
         }
 
-        // Mostra a imagem atual
         const imgSrc = filledPreviews[currentSlide] || filledPreviews[0];
         mainImg.src = imgSrc;
         mainImg.style.display = 'block';
@@ -247,7 +242,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
         updateCarousel();
     }
 
-    // Preenche subcategorias
     document.getElementById('categoria').addEventListener('change', function() {
         const catId = this.value;
         const subSelect = document.getElementById('subcategoria');
