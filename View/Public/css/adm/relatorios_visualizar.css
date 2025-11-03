@@ -7,9 +7,9 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 25px;
-  max-width: 100%;
 }
 
+/* Cabeçalho */
 .relatorios_header {
   margin-bottom: 25px;
   position: relative;
@@ -21,17 +21,16 @@
 
 .verificar_administrar_pedidos_sessao_seta_voltar {
   font-size: 1.2rem;
-  color: #333;
+  color: var(--color-primary-1);
   margin-right: 10px;
   text-decoration: none;
 }
-
 .relatorios_header h1 {
+  color: var(--color-primary-1);
   font-size: 1.6rem;
   margin-bottom: 8px;
   display: inline-block;
 }
-
 .verificar_administrar_pedidos_sessao_mini_titulos_1 {
   font-size: 0.95rem;
   font-weight: 400;
@@ -64,6 +63,7 @@
   color: var(--color-primary-1);
 }
 
+/* Cards do topo */
 .relatorios_cards_topo {
   width: 75%;
   display: grid;
@@ -72,12 +72,11 @@
   justify-content: center;
   margin-left: 15%;
 }
-
 .card_topo {
   flex: 1;
   display: flex;
   align-items: center;
-  background: #d2efd5;
+  background: #e7f0e8;
   padding: 12px;
   gap: 10px;
   border-radius: 12px;
@@ -85,45 +84,41 @@
   text-align: justify;
   font-weight: bold;
 }
-
 .fa-bag-shopping,
 .fa-cart-plus,
 .fa-users {
   display: flex;
-  background-color: #ddf3df;
+  background-color: #d1e2cd;
   padding: 10px;
   border-radius: 100%;
 }
-
+/* Conteúdo principal */
 .relatorios_main {
   display: grid;
   grid-template-columns: 55% 40%;
   gap: 20px;
 }
 
+/* Card estatísticas */
 .card_estatisticas {
-  background: #ddf3df;
+  background: #e7f0e8;
   padding: 15px;
   border-radius: 12px;
-  grid-column: span 3;
+  grid-column: span 3; 
 }
-
 .card_estatisticas h3 {
   margin-bottom: 10px;
 }
 
+/* Card atividades */
 .card_atividades {
-  background: #ddf3df;
+  background: #e7f0e8;
   padding: 15px;
   border-radius: 12px;
-  height: 180px;  
-  align-items: center;
 }
-
 .card_atividades h3 {
   margin-bottom: 10px;
 }
-
 .btn_imprimir {
   margin-top: 15px;
   padding: 8px 12px;
@@ -133,11 +128,9 @@
   border-radius: 8px;
   cursor: pointer;
 }
-
 .btn_imprimir:hover {
   background: var(--color-primary-6);
 }
-
 .grafico-container {
   width: 100%;
   max-width: 600px;
@@ -145,9 +138,9 @@
   margin: 0 auto;
 }
 
-/* === MOBILE === */
-
-@media (max-width: 480px) {
+/* === MOBILE PEQUENO === */
+/* Telas 360x800 e 390x844 */
+@media (max-width: 430px) {
   html,
   body {
     overflow-x: hidden;
@@ -164,11 +157,14 @@
     align-items: center;
     position: relative;
   }
+  
+  .relatorios_header h1{
+    font-size: 1.3rem;
+  }
 
   .verificar_administrar_pedidos_sessao_seta_voltar {
     position: relative;
-    align-self: flex-start;
-    margin-bottom: 8px;
+    align-self: center;
     left: 0;
     top: 0;
   }
@@ -192,7 +188,6 @@
     margin: 0 auto;
     grid-template-columns: 1fr;
     gap: 10px;
-    margin-left: 200px;
   }
 
   .relatorios_main {
@@ -228,12 +223,22 @@
   }
 }
 
-/* === MOBILE MÉDIO a GRANDE === */
-/* 768px - 1199px */
-@media (min-width: 768px) and (max-width: 1199px) {
+/* 768px a 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .relatorios_header {
+    width: 90%;
+    text-align: center;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    position: static;
+    margin-top: 10px;
+    text-align: center;
+  }
+
   .relatorios_cards_topo {
-    width: 85%;
-    margin-left: 0;
+    width: 90%;
+    margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -241,7 +246,16 @@
     grid-template-columns: 1fr;
   }
 
+  .grafico-container {
+    max-width: 90%;
+    height: 280px;
+  }
+}
+
+/* 1024px a 1199px */
+@media (min-width: 1024px) and (max-width: 1199px) {
   .relatorios_header {
+    width: 85%;
     text-align: center;
   }
 
@@ -250,21 +264,23 @@
     margin-top: 10px;
   }
 
-  .card_topo {
-    justify-content: center;
+  .relatorios_cards_topo {
+    width: 85%;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
   }
+
   .grafico-container {
-    height: 300px;
     max-width: 80%;
+    height: 300px;
   }
 }
 
-/* === TABLET === */
-/* Tela média: 1440x900 | grande: 1920x1080 */
+/* 1440 x 900 */
 @media (min-width: 1200px) and (max-width: 1439px) {
   .relatorios_cards_topo {
     width: 80%;
-    margin-left: 15%;
+    margin-left: 10%;
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -272,12 +288,13 @@
     grid-template-columns: 55% 40%;
   }
 
-  .relatorios_header h1 {
-    font-size: 1.8rem;
+  .grafico-container {
+    max-width: 85%;
+    height: 350px;
   }
 }
 
-/* === DESKTOP (1440px a 1920px+) === */
+/* 1920x1080+ */
 @media (min-width: 1440px) {
   .relatorios_cards_topo {
     width: 75%;
@@ -289,17 +306,8 @@
     grid-template-columns: 55% 40%;
   }
 
-  .relatorios_header h1 {
-    font-size: 2rem;
-  }
-
-  .card_topo {
-    font-size: 15px;
+  .grafico-container {
+    max-width: 600px;
+    height: 350px;
   }
 }
-
-
-
-
-
-

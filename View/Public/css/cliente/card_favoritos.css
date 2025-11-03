@@ -67,3 +67,8 @@
         height: 200px;
     }
 }
+@media (max-width: 360px) {
+    .lote-card {
+        width: 80%;
+    }
+}

@@ -11,9 +11,6 @@
     <img src="<?= $imagem ?>" alt="Imagem do produto" />
 
     <div class="card_info_grid">
-      <p>Nome:</p>
-      <p><?= $nome ?></p>
-
       <p>Peso:</p>
       <p><?= $peso ?></p>
 

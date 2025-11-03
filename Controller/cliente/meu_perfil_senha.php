@@ -1,6 +1,10 @@
 <?php
+include '../utils/autenticado.php';
+if ($usuario_nao_logado) {
+  include '../overlays/pop_up_login.php';
+  exit;
+}
 include 'menu_pg_inicial.php';
-include '../../Controller/utils/sessao_ativa.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -31,13 +35,12 @@ include '../../Controller/utils/sessao_ativa.php';
                         </svg>
                     </div>
                     <div class="user-info-arthura">
-                        <div class="user-name-arthura">Fulano da Silva Soares</div>
-                        <div class="user-email-arthura">sample123@gmail.com</div>
+                        <div class="user-name-arthura"><?= htmlspecialchars($_SESSION['cliente_nome']); ?></div>
+                        <div class="user-email-arthura"><?= htmlspecialchars($_SESSION['email']); ?></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Card de segurança -->
             <div class="card-arthura">
                 <div class="section-title-arthura">Meus dados</div>
                 <div class="section-text-arthura">

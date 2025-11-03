@@ -43,28 +43,26 @@
                     <a href="https://www.instagram.com/senac_ms/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://api.whatsapp.com/send?phone=556799492638"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
-                <div id="tab4" class="footer_adm_item">
-                    <h3>Sobre a Empresa</h3>
-                    <hr>
-                    <a href="nossa_historia.php">Nossa História</a>
-                </div>
             </div>
 
             <div id="tab3_adm_footer" class="footer_adm_item">
                 <h3>Termos</h3>
                 <hr>
-                <a href="termos_e_condicoes.php">Termos e Condições</a>
-                <a href="privacidade_e_seguranca.php">Privacidade e Segurança</a>
+                <a href="#">Termos e Condições</a>
+                <a href="#">Privacidade e Segurança</a>
             </div>
 
             <div id="tab6_adm_footer" class="footer_adm_item">
                 <h3>Funções Administrativas</h3>
                 <hr>
-                <a href="#">Gerenciamento de Produtos</a>
-                <a href="#">Gerenciamento de Clientes</a>
-                <a href="#">Gerenciamento de vendas</a>
-                <a href="#">Geral</a>
+                <a href="catalogo_produtos.php">Gerenciamento de Produtos</a>
+                <a href="gerenciar_clientes.php">Gerenciamento de Clientes</a>
+                <a href="verificar_administrar_pedido.php">Gerenciamento de vendas</a>
+                <a href="relatorios_visualizar.php">Geral</a>
             </div>
+        </div>
+        <div class="footer_adm_item">
+            <p class="copyright">© 2025 John Rooster. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>

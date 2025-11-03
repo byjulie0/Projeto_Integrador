@@ -20,7 +20,7 @@ include '../utils/libras.php'
             <a class="btn_voltar" href="#" onclick="window.history.back(); return false;">
                 <i class="bi bi-chevron-left"></i>
             </a>
-            <h2 class="h2_categoria_campeoes">Campeoes</h2>
+            <h2 class="h2_categoria_campeoes">Campeões</h2>
         </div>
 
         <div class="filtros_categoria_campeoes">

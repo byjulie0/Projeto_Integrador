@@ -10,12 +10,13 @@
 </head>
 
 <body class="body_pg_carrossel_campeoes">
-    <div class="carrossel_campeoes_cor">
-        <h1 class="pg_campeoes" id="campeoes">Campeões do Mês</h1>
+    <section id="campeoes">
+        <div class="carrossel_campeoes_cor">
+            <h1 class="pg_campeoes" id="campeoes">Campeões do Mês</h1>
 
-        <div class="carrossel_campeoes">
+            <div class="carrossel_campeoes">
 
-            <div class="arrow_campeoes" id="arrow-esquerda3">&#10094;</div>
+                <div class="arrow_campeoes" id="arrow-esquerda3">&#10094;</div>
 
             <a href="detalhes_produto.php">
                 <div class="cards_campeoes" id="carrossel-cards3">
@@ -23,7 +24,6 @@
                     $campeos = [
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "420 kg",
                             "raca" => "Árabe",
                             "genealogia" => "PO",
@@ -32,7 +32,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "550 kg",
                             "raca" => "Mustang",
                             "genealogia" => "PO",
@@ -41,7 +40,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/img_slider_pg_inicial/puro_sangue_slider_pg_inicial.jpg",
-                            "nome" => "Cavalo",
                             "peso" => "544 kg",
                             "raca" => "Puro Sangue",
                             "genealogia" => "PO",
@@ -50,7 +48,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/nelore3.jpg",
-                            "nome" => "Boi",
                             "peso" => "442 kg",
                             "raca" => "Nelore",
                             "genealogia" => "PO",
@@ -59,7 +56,6 @@
                         ],
                         [
                             "imagem" => "../../view/public/imagens/rhode-island-red-rooster.jpg",
-                            "nome" => "Galo",
                             "peso" => "3,9 kg",
                             "raca" => "Rhode Island",
                             "genealogia" => "PO",
@@ -70,24 +66,24 @@
 
                     foreach ($campeos as $item) {
                         $imagem = $item['imagem'];
-                        $nome = $item['nome'];
                         $peso = $item['peso'];
                         $raca = $item['raca'];
                         $genealogia = $item['genealogia'];
                         $idade = $item['idade'];
                         $preco = $item['preco'];
 
-                        echo '<a href="detalhes_produto.php">';
-                            include 'card_carrossel.php';
-                        echo '</a>';
-                    }
-                    ?>
-                </div>
-            </a>
+                            echo '<a href="detalhes_produto.php">';
+                                include 'card_carrossel.php';
+                            echo '</a>';
+                        }
+                        ?>
+                    </div>
+                </a>
 
-            <div class="arrow_campeoes" id="arrow-direita3">&#10095;</div>
+                <div class="arrow_campeoes" id="arrow-direita3">&#10095;</div>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 
 </html>
