@@ -12,6 +12,9 @@
   margin-bottom: 5%;
 }
 
+.red-heart{
+    color: red;
+}
 .lotes-wrapper {
   display: flex;
   width: 100%;
