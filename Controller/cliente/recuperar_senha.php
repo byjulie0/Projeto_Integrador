@@ -25,12 +25,12 @@ include 'menu_recuperar_senha.php';
                         <input type="email" name="esqueci_senha_card_email_digitar" placeholder="E-mail" required>
                         <div class="botoes_div">
                             <?php
-                            $texto = "Enviar"; 
+                            $texto = "Enviar";
                             include 'botao_verde_cliente.php';
                             ?>
                             <a href="#" onclick="window.history.back(); return false;">
                             <?php
-                            $texto = "Cancelar"; 
+                            $texto = "Cancelar";
                             include 'botao_vermelho_cliente.php';
                             ?>
                             </a>
