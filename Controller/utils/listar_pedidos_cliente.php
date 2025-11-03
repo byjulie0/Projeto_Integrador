@@ -1,11 +1,15 @@
 <?php
-$sql = "SELECT
-        id_pedido,
-        data_pedido,
-        status,
-        qtd
-        FROM pedido
-        ORDER BY data_pedido DESC";
+include "../../model/DB/conexao.php";
+
+$sql = "SELECT pedido.data_pedido, 
+        pedido.id_pedido, 
+        item.qtd_produto, 
+        produto.valor, 
+        pedido.status_pedido 
+        FROM pedido 
+        inner join item on item.pedido_id_pedido = pedido.id_pedido 
+        inner join produto on item.produto_id_produto = produto.id_produto
+        ORDER BY data_pedido DESC;";
 
 $resultado = $con->query($sql);
 

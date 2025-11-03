@@ -1,5 +1,6 @@
 <?php
 // include '../utils/autenticado.php';
+include '../utils/listar_pedidos_cliente.php';
 include 'menu_pg_inicial.php';
 ?>
 <!DOCTYPE html>
@@ -23,7 +24,8 @@ include 'menu_pg_inicial.php';
         </div>
         
         <div class="area_historico_compras">
-
+        <?php if (!empty($pedidos)): ?>
+            <?php foreach ($pedidos as $pedido): ?>
             <div class="pedido_header">
                 <div class="div_data_pedido_pc">
                     <p class="data_pedido_pc">Data do Pedido:</p>
@@ -38,19 +40,20 @@ include 'menu_pg_inicial.php';
             
             <div class="atributos_pedido_mobile">
                 <div class="div_data_pedido_mobile">
-                    <p class="data_pedido_mobile">Data do Pedido:</p>
+                    <p class="data_pedido_mobile">Data do Pedido:<span><?= htmlspecialchars($pedido['data_pedido'])?></span> </p>
                 </div>
                 <div class="pedido_detalhes">
-                    <p class="codigo_pedido">Código do pedido<span>:</span> </p>
+                    <p class="codigo_pedido">Código do pedido:<span><?= htmlspecialchars($pedido['id_pedido'])?></span> </p>
 
-                    <p class="total_itens">Total de itens<span>:</span> </p>
+                    <p class="total_itens">Total de itens:<span><?= htmlspecialchars($pedido['qtd_produto'])?></span> </p>
 
-                    <p class="valor_pedido">Valor do pedido<span>:</span> </p>
+                    <p class="valor_pedido">Valor do pedido:<span><?= htmlspecialchars($pedido['valor'])?></span> </p>
 
-                    <p class="status_pedido">Status do pedido<span>:</span> </p>
+                    <p class="status_pedido">Status do pedido:<span><?= htmlspecialchars($pedido['status_pedido'])?></span> </p>
                 </div>
             </div>
-
+            <?php endforeach; ?>
+        <?php endif ?>
         </div>
     </div>
 
