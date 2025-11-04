@@ -89,7 +89,7 @@ try {
 
     <div id="subtitle-informacoes-pedidos">
         <div id="id-pedido-informacoes-pedidos">
-            <span>ID do pedido:</span>
+            <span>Código do pedido:</span>
             <strong>#<?php echo $pedido_detalhes['id_pedido']; ?></strong>
         </div>
         <div id="labels-pedido-informacoes-pedidos">
@@ -146,7 +146,7 @@ try {
                 <p>Valor Total do Pedido</p>
                 <div class="price-informacoes-pedidos">
                     <div class="valor-final-informacoes-pedidos">
-                        <span>R$<?php echo number_format($valor_total, 2, ',', '.'); ?></span>
+                        <span class="span_preco_final">R$<?php echo number_format($valor_total, 2, ',', '.'); ?></span>
                     </div>
                 </div>
             </div>
