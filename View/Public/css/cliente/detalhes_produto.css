@@ -76,7 +76,7 @@
 .preco-detalhes-produto {
     font-size: 24px;
     font-weight: bold;
-    color: var(--color-primary-3);
+    color: #2a7f40;
     margin: 15px 0 10px;
   }
 .botao-carrinho-detalhes-produto,.botao-comprar-detalhes-produto {
