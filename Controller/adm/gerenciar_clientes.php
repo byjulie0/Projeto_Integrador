@@ -34,7 +34,11 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </form>
-            <a href="#" id="btn-inativos">Inativados</a>
+            <form method="get" action="gerenciar_clientes.php" class="botoes_filtros_clientes">
+                    <button type="submit" name="status" value="todos" class="gerenciar_clientes_botao_todos">Todos</button>
+                    <button type="submit" name="status" value="ativos" class="gerenciar_clientes_botao_ativos">Ativos</button>
+                    <button type="submit" name="status" value="inativos" class="gerenciar_clientes_botao_inativos">Inativados</button>
+            </form>
 
         </div>
 
@@ -52,7 +56,7 @@
                             <th class="header-cell-gerenciar-clientes">CPF</th>
                             <th class="header-cell-gerenciar-clientes">Data de cadastro</th>
                             <th class="header-exclude-gerenciar-clientes header-cell-gerenciar-clientes">Inativar</th>
-                            <th class="header-exclude-gerenciar-clientes header-cell-gerenciar-clientes">Status</th>
+                            <th class="header-cell-gerenciar-clientes">Status</th>
                         </tr>
                     </thead>
                     <tbody>
