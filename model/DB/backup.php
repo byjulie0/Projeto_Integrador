@@ -1,8 +1,11 @@
 <?php
-$host = "127.0.0.1";  // Ou "localhost"
-$usuario = "root";  // Usuário MySQL
-$senha = "";  // Senha do MySQL, deixe vazio se não houver senha
-$bd = "teste";  // Nome do banco de dados
+$host= "192.168.22.9";
+// $host= "localhost";
+$usuario = "turma143p1";
+// $usuario = "root";
+$senha = "sucesso@143";
+// $senha = "";
+$bd = "143p1";
 
 // Caminho completo para o mysqldump.exe (ajuste conforme o local no seu sistema)
 $mysqldumpPath = "C:\\xampp\\mysql\\bin\\mysqldump.exe";  // Caminho completo no XAMPP
@@ -11,7 +14,7 @@ $mysqldumpPath = "C:\\xampp\\mysql\\bin\\mysqldump.exe";  // Caminho completo no
 $backupFile = __DIR__ . '\\backup_' . $bd . '_' . date('Y-m-d_H-i-s') . '.sql';
 
 // Comando mysqldump
-$command = "{$mysqldumpPath} -h {$host} -u {$usuario} --single-transaction {$bd} > {$backupFile} 2>&1";
+$command = "{$mysqldumpPath} -h {$host} -u {$usuario} -p{$senha} --single-transaction {$bd} > {$backupFile} 2>&1";
 
 // Exibir o comando para depuração
 echo "Comando executado: " . $command . "<br>";
