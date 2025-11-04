@@ -41,8 +41,10 @@ while ($r = mysqli_fetch_assoc($resSub)) {
     <p class="product_title_info_img">Imagens do produto (máx.4)<span class="mandatory_space">*</span></p>
 
     <div class="carousel-container">
-        <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
-        <button type="button" class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+        <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)"><i class="bi bi-chevron-left"></i>
+        </button>
+        <button type="button" class="carousel-btn next" onclick="changeSlide(1)"><i class="bi bi-chevron-right"></i>
+        </button>
         <div class="carousel-placeholder" id="carouselPlaceholder">Clique em um quadrado para adicionar</div>
         <img src="" alt="" class="carousel-img" id="mainPreview" style="display: none;">
     </div>
@@ -53,10 +55,12 @@ while ($r = mysqli_fetch_assoc($resSub)) {
             <div class="upload-box" id="box<?= $i ?>">
                 <img src="" alt="" class="mini-img" id="miniImg<?= $i ?>" style="display: none;">
                 <div class="upload-content" id="content<?= $i ?>">
-                    <i class="bi bi-camera-fill"></i>
+                    <i class="bi bi-camera"></i>
                     <span>Adicionar</span>
                 </div>
-                <button type="button" class="remove-mini" id="remove<?= $i ?>" style="display: none;">×</button>
+                <button type="button" class="remove-mini" id="remove<?= $i ?>" style="display: none;">
+                    <i class="bi bi-x"></i>
+                </button>
             </div>
                 <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden" id="input<?= $i ?>">
             </label>
