@@ -7,7 +7,7 @@ try {
     }
 
     $sql = "
-        SELECT 
+        SELECT
             p.id_pedido,
             p.data_pedido,
             p.status_pedido,

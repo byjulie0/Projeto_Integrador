@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'menu_inicial.php';
 
 $pedido_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -11,7 +11,7 @@ if ($pedido_id === 0) {
 include '../../model/DB/conexao.php';
 
 try {
-    $sql = "SELECT 
+    $sql = "SELECT
                 p.id_pedido,
                 p.data_pedido,
                 p.status_pedido,
@@ -66,11 +66,7 @@ try {
 
 $caminho_imagem = $pedido_detalhes['imagem_produto'] ?? '';
 if (!empty($caminho_imagem)) {
-    if (strpos($caminho_imagem, '/') === 0 || strpos($caminho_imagem, '../') === 0 || strpos($caminho_imagem, './') === 0) {
-        $imagem_produto = $caminho_imagem;
-    } else {
-        $imagem_produto = '../../view/public/Imagens/' . $caminho_imagem;
-    }
+   $imagem_produto = '../../view/public/uploads/' . $caminho_imagem;
 } else {
     $imagem_produto = 'https://via.placeholder.com/200x200/007bff/ffffff?text=Sem+Imagem';
 }
@@ -111,10 +107,10 @@ if (!empty($caminho_imagem)) {
                             <span><?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?></span>
                         </div>
 
-                        <div id="labels-pedido-informacoes-pedidos"> 
-                            <div class="label-pedido-informacoes-pedidos status-<?php echo strtolower($pedido_detalhes['status_pedido']); ?>"> 
-                                <span><?php echo htmlspecialchars($pedido_detalhes['status_pedido']); ?></span> 
-                            </div> 
+                        <div id="labels-pedido-informacoes-pedidos">
+                            <div class="label-pedido-informacoes-pedidos status-<?php echo strtolower($pedido_detalhes['status_pedido']); ?>">
+                                <span><?php echo htmlspecialchars($pedido_detalhes['status_pedido']); ?></span>
+                            </div>
                         </div>
 
                         <div class="product-informations-informacoes-pedidos">
