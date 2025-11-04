@@ -1,6 +1,6 @@
 <?php
+include '../utils/autenticado_adm.php';
 include 'menu_inicial.php';
-include '../../model/DB/conexao.php';
 
 $sqlCat = "SELECT id_categoria, cat_nome FROM categoria";
 $resCat = mysqli_query($con, $sqlCat);
@@ -26,7 +26,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
     <script defer src="../../view/js/adm/adicionar_produto.js"></script>
 </head>
 <body class="body_add_product">
-
     <div class="area_add_product">
         <div class="title_page_add_product">
             <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
@@ -39,13 +38,12 @@ while ($r = mysqli_fetch_assoc($resSub)) {
             <section class="add_product_area">
                 <article class="add_product_image">
                     <div class="img_holder">
-                        <label class="img_holder_button">
-                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                            <span>Selecione uma imagem</span>
-                            <input type="file" class="input_product_info" accept="image/*" name="imagem" required style="display:none;">
-                        </label>
+                        <input type="file" name="imagem" id="inputImagem" accept="image/*" required>
+                        <label for="inputImagem" class="img_holder_button">Selecionar uma imagem</label>
+                        <img id="previewImagem" alt="Prévia da imagem">
                     </div>
                 </article>
+
 
                 <aside class="add_product_details">
                     <div class="product_details_collumn">
@@ -147,7 +145,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                 </div>
             </aside>
             </section>
-
             <div class="add_product_submit_button">
                 <?php
                 $texto = "Avançar";

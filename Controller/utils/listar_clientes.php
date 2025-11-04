@@ -1,6 +1,5 @@
 <?php
-
-include '../../model/DB/conexao.php';
+include '../utils/autenticado_adm.php';
 
 $sql = "SELECT id_cliente, cliente_nome, cpf_cnpj, data_nasc, user_ativo FROM cliente";
 $result = $con->query($sql);

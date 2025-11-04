@@ -1,5 +1,20 @@
 <?php
-include '../utils/sessao_ativa.php';
+include '../utils/autenticado.php';
+if ($usuario_nao_logado) {
+  include '../overlays/pop_up_login.php';
+  exit;
+}
+$sql = "SELECT * FROM cliente WHERE id_cliente = ?";
+$query = $con->prepare($sql);
+$query->bind_param("i", $_SESSION['id_cliente']);
+$query->execute();
+$resultado = $query->get_result();
+$cliente_atual = $resultado->fetch_assoc();
+
+if (!$cliente_atual) {
+  die("Cliente não encontrado!");
+}
+
 include '../utils/libras.php';
 include 'menu_pg_inicial.php';
 ?>
@@ -32,19 +47,19 @@ include 'menu_pg_inicial.php';
               d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
           </svg>
         </div>
-
         <div class="visualizar-dados-nome-email">
-          <h4 class="visualizar-dados-nome"><?= htmlspecialchars($_SESSION['cliente_nome']); ?></h4>
-          <h5 class="visualizar-dados-email"><?= htmlspecialchars($_SESSION['email']); ?></h5>
+          <h4 class="visualizar-dados-nome"><?= htmlspecialchars($cliente_atual['cliente_nome']); ?></h4>
+          <h5 class="visualizar-dados-email"><?= htmlspecialchars($cliente_atual['email']); ?></h5>
         </div>
       </div>
 
       <div class="visualizar-dados-geral">
         <h3 class="visualizar-dados-geral-title">Meus Dados</h3>
         <div class="visualizar-dados-grid">
-          <p><strong>Nome: </strong> <?= htmlspecialchars($_SESSION['cliente_nome']); ?></p>
-          <p><strong>E-mail: </strong> <?= htmlspecialchars($_SESSION['email']); ?></p>
-          <p><strong>Data de Nascimento: </strong> <?= date('d/m/Y', strtotime($_SESSION['data_nasc'])); ?></p>
+          <p><strong>Nome: </strong> <?= htmlspecialchars($cliente_atual['cliente_nome']); ?></p>
+          <p><strong>E-mail: </strong> <?= htmlspecialchars($cliente_atual['email']); ?></p>
+          <p><strong>Telefone: </strong> <?= htmlspecialchars($cliente_atual['telefone']); ?></p>
+          <p><strong>Data de Nascimento: </strong> <?= date('d/m/Y', strtotime($cliente_atual['data_nasc'])); ?></p>
         </div>
       </div>
 
@@ -55,10 +70,9 @@ include 'menu_pg_inicial.php';
           include 'botao_verde_cliente.php';
           ?>
         </a>
-        <a href="/Projeto_Integrador/controller/cliente/logout.php">
-          <a href="../cliente/logout.php">
-            <?php include 'botao_logout.php'; ?>
-          </a>
+
+        <a href="logout.php">
+          <?php include 'botao_logout.php'; ?>
         </a>
 
       </div>

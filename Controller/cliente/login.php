@@ -1,10 +1,10 @@
 <?php
 include 'menu_login.php';
 include '../utils/libras.php'
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@ include '../utils/libras.php'
 
 <body>
   <main class="container_geral_login">
-    
+
     <div class="login_box_vinycius">
       <div class="info_login_vinycius">
         <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
@@ -29,11 +29,12 @@ include '../utils/libras.php'
 
       <div class="login_form_vinycius">
         <h2>Login</h2>
-        <form class="form_login" action="../utils/sessao_ativa.php" method="POST"  id="myForm">
+        <form class="form_login" action="../utils/sessao_ativa.php" method="POST" id="myForm">
 
           <input type="text" name="email" placeholder="E-mail" class="input_login_vinycius1" required>
           <div class="senha_container">
-            <input type="password" name="password" id="senha" placeholder="Senha" class="input_login_vinycius2" required>
+            <input type="password" name="password" id="senha" placeholder="Senha" class="input_login_vinycius2"
+              required>
             <span class="toggle_senha" onclick="toggleSenha()">
               <i id="icone_senha" class="fa-solid fa-eye"></i>
             </span>
@@ -43,14 +44,15 @@ include '../utils/libras.php'
           <div class="btn-submit-login">
             <?php
             $texto = "Login";
-            include 'botao_verde_cliente.php';
+            include '../cliente/botao_verde_cliente.php';
             ?>
           </div>
 
-          <?php if (isset($erro)) echo '<p style="color:red;">' . $erro . '</p>'; ?>
+          <?php if (isset($erro))
+            echo '<p style="color:red;">' . $erro . '</p>'; ?>
 
           <div class="info-login">
-            <a href="recuperar_senha_login1.php" class="esqueci_senha_login">Esqueci minha senha</a>
+            <a href="recuperar_senha.php" class="esqueci_senha_login">Esqueci minha senha</a>
             <div class="texto1-span">Não tem conta? <a href="pg_cadastro.php">Cadastre-se</a></div>
             <a class="login-adm" href="../adm/login.php">Área administrativa</a>
           </div>
@@ -61,4 +63,5 @@ include '../utils/libras.php'
   </main>
   <?php include 'footer_cliente.php'; ?>
 </body>
-</html>  
+
+</html>

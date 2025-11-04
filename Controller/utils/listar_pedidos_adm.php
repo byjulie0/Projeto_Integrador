@@ -1,5 +1,5 @@
 <?php
-include '../../model/DB/conexao.php'; 
+include '../../model/DB/conexao.php';
 
 try {
     if (!isset($con)) {
@@ -37,3 +37,4 @@ try {
     $pedidos = [];
 }
 ?>
+

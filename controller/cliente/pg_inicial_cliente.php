@@ -1,5 +1,5 @@
-
 <?php
+include '../utils/autenticado.php';
 include '../utils/libras.php';
 ?>
 
@@ -18,10 +18,8 @@ include '../utils/libras.php';
     include 'categorias_pg_inicial.php';
     include 'campeoes.php';
     include 'talvez_voce_goste.php';
+    include 'pg_nossa_historia.php';
     include 'footer_cliente.php';
     ?>
 </body>
 </html>
-
-
-

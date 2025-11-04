@@ -16,10 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $stmt = $con->prepare("SELECT senha FROM cliente WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $query = $con->prepare("SELECT senha FROM cliente WHERE email = ?");
+    $query->bind_param("s", $email);
+    $query->execute();
+    $result = $query->get_result();
 
     if ($result->num_rows === 1) {
         $row = $result->fetch_assoc();
@@ -37,5 +37,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 }
-$stmt->close();
+$query->close();
 ?>

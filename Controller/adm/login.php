@@ -47,13 +47,14 @@
                 </form>
 
                 <div class="info-login">
-                    <a href="../cliente/recuperar_senha_login1.php" class="esqueci_senha_login">Esqueci minha senha</a>
+                    <a href="../cliente/recuperar_senha.php" class="esqueci_senha_login">Esqueci minha senha</a>
                     <a href="../cliente/login.php" class="area-cliente">Área do cliente</a>
                 </div>
             </div>
         </div>
     </main>
     <?php include 'footer.php'; ?>
+
 </body>
 
 </html>

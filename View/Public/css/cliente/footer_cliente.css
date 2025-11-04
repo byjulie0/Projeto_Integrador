@@ -56,6 +56,15 @@
     margin-bottom: 15px;
 }
 
+.footer_cli_item .copyright {
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-detalhes-16);
+    margin-top: 20px;
+    width: 100%;
+    grid-column: span 5;
+}
+
 @media (max-width: 767px) {
     .grid_container_footer {
       grid-template-columns: 1fr;
@@ -70,6 +79,10 @@
     #tab2 a {
       font-size: 20px;
       margin-right: 12px;
+    }
+
+    .footer_cli_item .copyright {
+        font-size: 12px;
     }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
