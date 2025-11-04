@@ -7,6 +7,7 @@
   justify-content: center;
   width: 100%;
   padding: 50px 100px;
+  background-color: #fff;
 }
 
 #page-title-gerenciar-clientes {
@@ -138,17 +139,10 @@
 #table-space-gerenciar-clientes table th {
   width: 100%;
   background-color: #E5E7E5;
-
 }
 
 #table-space-gerenciar-clientes table .select-all-label-gerenciar-clientes {
   width: 10%;
-  border-radius: 10px 0px 0px 10px;
-}
-
-
-.header-exclude-gerenciar-clientes {
-  border-radius: 0px 10px 10px 0px;
 }
 
 
@@ -319,4 +313,42 @@
   .select-all-label-gerenciar-clientes button {
     font-size: 12px;
   }
+}
+
+.botoes_filtros_clientes{
+  display: flex;
+  text-align: justify;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.botoes_filtros_clientes button{
+  color: var(--color-primary-1);
+  background-color: #fff;
+  padding: 4px;
+  min-width: 110px;
+  border-radius: 8px;
+  border: solid 1px;
+  transition: all 0.3s ease;
+}
+.botoes_filtros_clientes button:hover{
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
+}
+.botoes_filtros_clientes button:focus{
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
+
+}
+.gerenciar_clientes_botao_todos{
+    left: 65%;
+}
+.gerenciar_clientes_botao_ativos{
+    left: 75%;
+}
+.gerenciar_clientes_botao_inativos{
+    left: 85%;
 }
