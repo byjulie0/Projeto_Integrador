@@ -1,5 +1,4 @@
 <?php
-include '../utils/sessao_ativa.php';
 include '../utils/categoria_busca.php';
 include 'menu_pg_inicial.php';
 ?>

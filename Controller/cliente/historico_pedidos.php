@@ -1,4 +1,11 @@
-<?php include 'menu_pg_inicial.php'; ?>
+<?php
+include '../utils/autenticado.php';
+if ($usuario_nao_logado) {
+  include '../overlays/pop_up_login.php';
+  exit;
+}
+include 'menu_pg_inicial.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -28,7 +35,7 @@
                 <div class="botao_cancelar">
                     <?php
                         $texto = "Cancelar";
-                        include 'botao_cancelar.php';
+                        include 'botao_vermelho_cliente.php';
                     ?>
                 </div>
             </div>

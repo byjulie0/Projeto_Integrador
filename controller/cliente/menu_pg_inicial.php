@@ -1,3 +1,10 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$usuarioLogado = isset($_SESSION['id_cliente']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,15 +32,9 @@
                 <a href="pg_inicial_cliente.php" class="logo-menu-title">John Rooster</a>
             </div>
 
-            <div class="search-container-pg-inicial search-desktop">
-                <input type="text" placeholder="O que deseja buscar?" id="busca" autocomplete="on"/>
-                <i class="bi bi-search"></i>
-                <div id="resultado_busca"></div>
-            </div>
-
             <ul class="nav-link-pg-inicial">
                 <li class="dropdown_menu_inicial">
-                    <a href="#" class="nav-item-pg-inicial">Categorias</a>
+                    <a href="#pg_inicial_categorias" class="nav-item-pg-inicial">Categorias</a>
                     <ul class="submenu_inicial">
                         <li><a href="categoria_produtos.php?id_categoria=1">Bovinos</a></li>
                         <li><a href="categoria_produtos.php?id_categoria=2">Equinos</a></li>
@@ -42,28 +43,28 @@
                         <li><a href="categoria_produtos.php?id_categoria=5">Produtos gerais</a></li>
                     </ul>
                 </li>
-                <li><a href="categoria_campeoes.php" class="nav-item-pg-inicial">Campeões</a></li>
-                <li><a href="#" class="nav-item-pg-inicial">Nossa história</a></li>
-                
-                <li class="search-mobile-item">
-                    <div class="search-container-pg-inicial search-mobile">
-                        <input type="text" placeholder="O que deseja buscar?" id="busca-mobile" autocomplete="on"/>
-                        <i class="bi bi-search"></i>
-                        <div id="resultado_busca_mobile"></div>
-                    </div>
-                </li>
+                <li><a href="categoria_produtos.php?id_categoria=4" class="nav-item-pg-inicial">Campeões</a></li>
+                <li><a href="#section-nossa-historia" class="nav-item-pg-inicial">Nossa história</a></li>
             </ul>
 
             <div class="nav-page-btns-pg-inicial">
                 <div class="dropdown_menu_inicial">
                     <a href="#" class="nav-btns-pg-inicial" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person"></i>
-                        <span class="nav-text-pg-inicial">Perfil</span>
+                        <span class="nav-text-pg-inicial">
+                            <?php echo $usuarioLogado ? 'Perfil' : 'Conta'; ?>
+                        </span>
                     </a>
                     <ul class="submenu_inicial">
-                        <li><a href="meu_perfil.php">Meus dados</a></li>
-                        <li><a href="pg_favoritos.php">Favoritos</a></li>
-                        <li><a href="login.php">Login - Usuário sem sessão</a></li>
+                        <?php if($usuarioLogado): ?>
+                            <li><a href="meu_perfil.php">Meus dados</a></li>
+                            <li><a href="historico_pedidos.php">Meus pedidos</a></li>
+                            <li><a href="pg_favoritos.php">Favoritos</a></li>
+                            <li><a href="logout.php">Sair</a></li>
+                        <?php else: ?>
+                            <li><a href="login.php">Login</a></li>
+                            <li><a href="pg_cadastro.php">Cadastrar</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <a href="pg_notificacao.php" class="nav-btns-pg-inicial">

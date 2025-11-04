@@ -2,20 +2,21 @@
 include '../../model/DB/conexao.php';
 
 $busca = isset($_POST['busca']) ? $con->real_escape_string($_POST['busca']) : '';
-$inativos = isset($_POST['inativos']) ? (int)$_POST['inativos'] : 0;
+$inativos = isset($_POST['inativos']) ? (int)$_POST['inativos'] : -1;
 
 $sql = "SELECT id_cliente, cliente_nome, cpf_cnpj, data_nasc, user_ativo FROM cliente";
 
 $where = [];
 
 if ($inativos === 0) {
-    $where[] = "user_ativo = 1";
+    $where[] = "user_ativo = 1"; 
+} elseif ($inativos === 1) {
+    $where[] = "user_ativo = 0"; 
 }
-
 
 if (!empty($busca)) {
     $busca_esc = $con->real_escape_string($busca);
-    $where[] = "(cliente_nome LIKE '%$busca_esc%' OR cpf_cnpj LIKE '%$busca_esc%')";
+    $where[] = "(cliente_nome LIKE '$busca_esc%' OR cpf_cnpj LIKE '%$busca_esc%')";
 }
 
 if (count($where) > 0) {

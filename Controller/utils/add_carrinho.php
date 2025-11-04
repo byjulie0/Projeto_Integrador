@@ -2,7 +2,7 @@
 include 'sessao_ativa.php';
 
 if (!isset($_SESSION['id_cliente'])) {
-    header("Location: ../cliente/detalhes_produto.php");
+    header("Location: ../cliente/detalhes_produto.php?error=nao_fez_login");
     exit;
 }
 
@@ -11,28 +11,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $id_cliente = $_SESSION['id_cliente'] ?? null;
     
     if (!$id_cliente || !$id_produto) {
-        header("Location: ../cliente/detalhes_produto.php?erro=dados_incompletos");
+        header("Location: ../cliente/detalhes_produto.php?error=dados_incompletos");
         exit;
     }
 
-    // Verifica se o produto já está no carrinho
-    $check_query = "SELECT * FROM carrinho WHERE id_cliente = ? AND id_produto = ?";
-    $check_query = $con->prepare($check_query);
+    $sql_check = "SELECT * FROM carrinho WHERE id_cliente = ? AND id_produto = ?";
+    $check_query = $con->prepare($sql_check);
     $check_query->bind_param("ii", $id_cliente, $id_produto);
     $check_query->execute();
     $check_result = $check_query->get_result();
     
     if ($check_result->num_rows > 0) {
-        // Atualiza quantidade se já existe
-        $update_query = "UPDATE carrinho SET quantidade = quantidade + 1 WHERE id_cliente = ? AND id_produto = ?";
-        $update_query = $con->prepare($update_query);
+        $sql_update = "UPDATE carrinho SET quantidade = quantidade + 1 WHERE id_cliente = ? AND id_produto = ?";
+        $update_query = $con->prepare($sql_update);
         $update_query->bind_param("ii", $id_cliente, $id_produto);
         $update_query->execute();
         $update_query->close();
     } else {
-        // Insere novo item no carrinho
-        $insert_query = "INSERT INTO carrinho (id_produto, quantidade, selecionado, id_cliente) VALUES (?, 1, 1, ?)";
-        $insert_query = $con->prepare($insert_query);
+        $sql_insert = "INSERT INTO carrinho (id_produto, quantidade, selecionado, id_cliente) VALUES (?, 1, 1, ?)";
+        $insert_query = $con->prepare($sql_insert);
         $insert_query->bind_param("ii", $id_produto, $id_cliente);
         $insert_query->execute();
         $insert_query->close();

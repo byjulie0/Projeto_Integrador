@@ -1,12 +1,11 @@
 <?php
-
 session_start();
 
-$_SESSION = array();
+if (isset($_SESSION['id_cliente'])) {
+    $_SESSION = array();
+    session_destroy();
+}
 
-session_destroy();
-
-header("Location: /Projeto_Integrador/controller/cliente/login.php");
-
+header("Location: login.php");
 exit();
 ?>

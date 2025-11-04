@@ -182,21 +182,20 @@
         padding: 1rem;
     }
 
-    .client-edit-title {
-        font-size: 1rem;
-    }
-
-    .client-edit-input {
-        padding: 0.625rem 0.75rem;
-        font-size: 0.75rem;
-    }
-
-    .client-edit-column {
-        flex-direction: column;
+    .client-edit-title,.bi-chevron-left {
+        font-size: 22px;
     }
     .client-edit-grid {
         grid-template-columns: 1fr; 
         gap: 1rem;
+    }
+    .client-edit-column {
+        flex-direction: column;
+    }
+  
+    .client-edit-input {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.75rem;
     }
     .client-edit-title-titulo{
         font-size: 24px;

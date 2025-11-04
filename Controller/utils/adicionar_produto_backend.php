@@ -65,9 +65,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Usa prepared statement (SEGURANÇA)
             $imagens_json = json_encode($imagens_nomes, JSON_UNESCAPED_UNICODE);
 
-            $stmt = $con->prepare("INSERT INTO produto 
-                (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            // 🔹 Agora incluindo o campo "idade" no INSERT
+            $query = "INSERT INTO produto 
+                (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria) 
+                VALUES 
+                ('$nome', '$valor', '$quantidade', '$caminhoRelativo', '$descricao', '$sexo', '$peso', '$idade', '$campeao', '$categoria', '$subcategoria')";
 
             $stmt->bind_param(
                 "sdisssdssii",

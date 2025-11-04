@@ -1,4 +1,7 @@
-<?php session_start(); include 'menu_cadastro.php';?>
+<?php
+session_start();
+include 'menu_cadastro.php';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,8 +12,10 @@
     <title>John Rooster - Cadastro</title>
     <script defer src="../../view/js/cliente/cadastro.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente/pg_cadastro.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../../view/js/pop_up.js">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -21,29 +26,35 @@
             <h2 class="titulo-form-cadastro">Cadastrar</h2>
             <div class="area-geral-form-cadastro">
                 <form action="../utils/realiza_cadastro.php" method="POST" class="form-cadastro" id="myForm">
-                    
-                    <div class="form-colunas-cadastro">     
+
+                    <div class="form-colunas-cadastro">
                         <div class="form-coluna-superior">
-                            <input type="text" name="nome" placeholder="Nome Completo*" class="input-form-cadastro" required>
+                            <input type="text" name="nome" placeholder="Nome Completo*" class="input-form-cadastro"
+                                required>
                         </div>
 
                         <div class="form-coluna-inferior">
                             <div class="coluna-esquerda-cadastro">
-                                <input type="text" name="cpf_cnpj" required placeholder="CPF/CNPJ*" class="input-form-cadastro">
-                                
-                                <input type="email" name="email" required class="input-form-cadastro" placeholder="Email*">
+                                <input type="text" name="cpf_cnpj" required placeholder="CPF/CNPJ*"
+                                    class="input-form-cadastro">
+
+                                <input type="email" name="email" required class="input-form-cadastro"
+                                    placeholder="Email*">
                                 <span class="span-required" id="emailError">Use o padrão email@empresa.com.br</span>
-                                
-                                <input type="date" name="data_nascimento" required class="input-form-cadastro" required placeholder="Data de Nascimento*">
+
+                                <input type="date" name="data_nascimento" required class="input-form-cadastro" required
+                                    placeholder="Data de Nascimento*">
                             </div>
 
                             <div class="coluna-direita-cadastro">
-                                <input type="text" name="telefone" required class="input-form-cadastro" placeholder="Telefone">
-                                
+                                <input type="text" name="telefone" required class="input-form-cadastro"
+                                    placeholder="Telefone">
+
                                 <input type="password" name="senha" class="input-form-cadastro" placeholder="Senha*">
                                 <span class="span-required" id="senhaLengthError"></span>
 
-                                <input type="password" name="senha-confirmar" placeholder="Confirmar Senha*" class="input-form-cadastro" required>
+                                <input type="password" name="senha-confirmar" placeholder="Confirmar Senha*"
+                                    class="input-form-cadastro" required>
                                 <span class="span-required" id="senhaConfirmError"></span>
                             </div>
                         </div>
@@ -53,39 +64,39 @@
                     <div class="btn-submit-cadastro">
                         <?php
                         $texto = "Cadastrar";
-                        include 'botao_cliente.php';
+                        include 'botao_verde_cliente.php';
                         ?>
                         <?php
                         $texto = "Cancelar";
-                        include 'botao_cancelar.php';
+                        include 'botao_vermelho_cliente.php';
                         ?>
                     </div>
 
 
 
-                 
 
 
 
 
-                    </form> 
 
-                    
-                    <script>
-                        document.getElementById('myForm').addEventListener('submit', function(e){
+                </form>
+
+
+                <script>
+                    document.getElementById('myForm').addEventListener('submit', function (e) {
                         var response = grecaptcha.getResponse();
                         if (response.length === 0) {
                             e.preventDefault();
                             alert('Por favor, marque o reCAPTCHA antes de enviar o formulário.');
                         }
-                        });
-                    </script>
-                    
-              
-           
-                   
-              
-              
+                    });
+                </script>
+
+
+
+
+
+
             </div>
 
             <p class="area-termos-privacidade-cadastro">

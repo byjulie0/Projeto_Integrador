@@ -1,8 +1,11 @@
 <?php
-include '../utils/sessao_ativa.php';
+include '../utils/autenticado.php';
+if ($usuario_nao_logado) {
+  include '../overlays/pop_up_login.php';
+  exit;
+}
 include '../utils/libras.php';
 include 'menu_pg_inicial.php';
-$id_cliente = $_SESSION["id_cliente"];
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +19,7 @@ $id_cliente = $_SESSION["id_cliente"];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="../../view/js/cliente/carrinho.js"></script>
+    <!-- <script defer src="../../view/js/cliente/carrinho.js"></script> -->
 </head>
 
 <body>
@@ -32,7 +35,7 @@ $id_cliente = $_SESSION["id_cliente"];
                 $sql = "SELECT c.id_carrinho, c.quantidade, p.prod_nome, p.path_img, p.descricao, p.valor
                         FROM carrinho c
                         JOIN produto p ON c.id_produto = p.id_produto
-                        WHERE c.id_cliente='$id_cliente'";
+                        WHERE c.id_cliente='$id_cliente' AND p.produto_ativo = 1";
                 $result = $con->query($sql);
                 $totalGeral = 0;
                 $totalItems = 0;
@@ -48,8 +51,7 @@ $id_cliente = $_SESSION["id_cliente"];
 
                             <div class="product-title-area-carrinho">
                                 <div class="delete-item-btn-area-carrinho">
-                                    <button class="delete-item-carrinho" href="remove_carrinho.php?id=<?php echo $itens['id_carrinho'];?>">Excluir</button>
-                                    <!-- <a href="remover_carrinho.php?id=<php echo $row['id']; ?>">Remover</a> -->
+                                    <a href="../utils/remove_carrinho.php?id_carrinho=<?php echo $itens['id_carrinho'];?>">Excluir</a>
                                 </div>
                             </div>
 
@@ -68,11 +70,12 @@ $id_cliente = $_SESSION["id_cliente"];
 
                                 <div class="labels-respective-content-carrinho">
                                     <div class="change-quantity-carrinho">
-                                        <button class="change-quantity-btn-carrinho diminuir-btn"
-                                            data-id="<?php echo $itens['id_carrinho']; ?>">-</button>
+                                        <a class="change-quantity-btn-carrinho diminuir-btn"
+                                            href="../utils/diminuir_carrinho.php?id_carrinho=<?php echo $itens['id_carrinho']; ?>">-</a>
+
                                         <span class="quantity-carrinho"><?php echo $itens['quantidade']; ?></span>
-                                        <button class="change-quantity-btn-carrinho aumentar-btn"
-                                            data-id="<?php echo $itens['id_carrinho']; ?>">+</button>
+
+                                        <a class="change-quantity-btn-carrinho aumentar-btn" href="../utils/aumentar_carrinho.php?id_carrinho=<?php echo $itens['id_carrinho']; ?>">+</a>
                                     </div>
                                 </div>
 
@@ -108,11 +111,15 @@ $id_cliente = $_SESSION["id_cliente"];
                 <hr class="separation-line-carrinho">
 
                 <?php
-                if ($totalItems > 0) {
+                if ($totalItems > 0) { ?>
+                    <a href="../utils/gerar_pedido.php">
+                    <?php
                     $texto = "Fechar Pedido";
                     include 'botao_verde_cliente.php';
-                }
-                ?>
+                    ?>
+                    </a>
+                <?php }?>
+                
             </div>
         </section>
     </div>
