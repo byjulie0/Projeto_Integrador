@@ -1,15 +1,17 @@
 <?php
 include "../../model/DB/conexao.php";
 
-$sql = "SELECT pedido.data_pedido, 
-        pedido.id_pedido, 
-        item.qtd_produto, 
-        produto.valor, 
-        pedido.status_pedido 
-        FROM pedido 
-        inner join item on item.pedido_id_pedido = pedido.id_pedido 
-        inner join produto on item.produto_id_produto = produto.id_produto
-        ORDER BY data_pedido DESC;";
+$sql = "SELECT 
+        pedido.id_pedido,
+        pedido.data_pedido,
+        pedido.status_pedido,
+        SUM(item.qtd_produto * produto.valor) AS valor_total,
+        SUM(item.qtd_produto) AS total_itens
+        FROM pedido
+        INNER JOIN item ON item.id_pedido = pedido.id_pedido
+        INNER JOIN produto ON item.id_produto = produto.id_produto
+        GROUP BY pedido.id_pedido
+        ORDER BY pedido.data_pedido DESC;";
 
 $resultado = $con->query($sql);
 
