@@ -1,2 +1,0 @@
-'mysqldump' n∆o Ç reconhecido como um comando interno
-ou externo, um programa oper†vel ou um arquivo em lotes.
