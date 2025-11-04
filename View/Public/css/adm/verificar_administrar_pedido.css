@@ -120,6 +120,9 @@
   color: var(--color-primary-1);
   background-color: #ffff;
 }
+.bi-search{
+  color: var(--color-primary-3);
+}
 
 
 /* Linha divisória */

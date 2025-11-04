@@ -49,9 +49,6 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="select-all-label-gerenciar-clientes">
-                                <button>Selecionar tudo</button>
-                            </th>
                             <th class="header-cliente-name-gerenciar-clientes header-cell-gerenciar-clientes">Nome do cliente</th>
                             <th class="header-cell-gerenciar-clientes">CPF</th>
                             <th class="header-cell-gerenciar-clientes">Data de cadastro</th>
@@ -64,7 +61,6 @@
                         <?php if (!empty($cliente)): ?>
                             <?php foreach ($cliente as $c): ?>
                                 <tr>
-                                    <td><input type="checkbox" name="cliente[]" value="<?= $c['id_cliente']; ?>" class="cliente-checkbox"></td>
                                     <td><?= htmlspecialchars($c['cliente_nome']); ?></td>
                                     <td><?= htmlspecialchars($c['cpf_cnpj']); ?></td>
                                     <td><?= date("d/m/Y", strtotime($c['data_nasc'])); ?></td>
