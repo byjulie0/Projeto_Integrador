@@ -20,7 +20,7 @@ include '../utils/libras.php'
 
     <div class="login_box_vinycius">
       <div class="info_login_vinycius">
-        <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
+         <a href="pg_inicial_cliente.php"><img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo" ></a>
         <p class="text_login_vinycius">
           Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo
           com qualidade e confiança para o seu negócio.
