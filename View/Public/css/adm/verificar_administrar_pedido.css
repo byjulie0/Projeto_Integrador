@@ -94,19 +94,22 @@
   flex-wrap: wrap;
   gap: 10px;
 }
-.filtros_pedidos button{
+.filtros_pedidos a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 110px;
   border-radius: 8px;
   border: solid 1px;
   transition: all 0.3s ease;
 }
-.filtros_pedidos button:hover{
+.filtros_pedidos a:hover{
   border-color: var(--color-primary-3);
   color: white;
   background-color: var(--color-primary-3);
   box-shadow: 0 0 10px #4b914b;
 }
-.filtros_pedidos button:focus{
+.filtros_pedidos a:focus{
   border-color: var(--color-primary-3);
   color: white;
   background-color: var(--color-primary-3);

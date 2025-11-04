@@ -79,7 +79,6 @@ if (!empty($caminho_imagem)) {
 <!DOCTYPE html>
 <html lang="pt-br">
  
- 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,32 +89,25 @@ if (!empty($caminho_imagem)) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
  
- 
 <body>
     <section id="informacoes-pedidos">
         <div id="title-informacoes-pedidos">
             <a href="verificar_administrar_pedido.php"><i class="bi bi-chevron-left"></i></a>
-            <a href="verificar_administrar_pedido.php"><i class="bi bi-chevron-left"></i></a>
             <h3>Verificar e administrar pedidos</h3>
         </div>
-
 
         <div id="subtitle-informacoes-pedidos">
             <div id="id-pedido-informacoes-pedidos">
                 <span>ID do pedido:</span>
                 <strong>#<?php echo $pedido_detalhes['id_pedido']; ?></strong>
-                <span>ID do pedido:</span>
-                <strong>#<?php echo $pedido_detalhes['id_pedido']; ?></strong>
             </div>
         </div>
-
 
         <div id="page-content-informacoes-pedidos">
             <div id="first-container-informacoes-pedidos">
                 <div class="product-card-informacoes-pedidos">
                     <div class="product-card-informacoes-pedidos1">
                         <div class="product-title">
-                            <span><?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?></span>
                             <span><?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?></span>
                         </div>
 
@@ -125,26 +117,20 @@ if (!empty($caminho_imagem)) {
                             </div> 
                         </div>
 
-
                         <div class="product-informations-informacoes-pedidos">
                             <div class="img-and-label-informacoes-pedidos">
-                                <img src="<?php echo htmlspecialchars($imagem_produto); ?>" alt="<?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?>">
                                 <img src="<?php echo htmlspecialchars($imagem_produto); ?>" alt="<?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?>">
                                 <div class="informations-informacoes-pedidos">
                                     <span class="type-informacoes-pedidos">
                                         <?php echo htmlspecialchars($itens_pedido[0]['sexo_produto']); ?>
-                                        <?php echo htmlspecialchars($itens_pedido[0]['sexo_produto']); ?>
                                     </span>
                                     <span class="name-informacoes-pedidos">
-                                        <?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?>
                                         <?php echo htmlspecialchars($itens_pedido[0]['nome_produto']); ?>
                                     </span>
                                     <span class="lote-informacoes-pedidos">
                                         Quantidade: <?php echo $itens_pedido[0]['qtd_produto']; ?>
-                                        Quantidade: <?php echo $itens_pedido[0]['qtd_produto']; ?>
                                     </span>
                                     <span class="purchase-date-informacoes-pedidos">
-                                        Data do pedido: <?php echo date('d/m/Y', strtotime($pedido_detalhes['data_pedido'])); ?>
                                         Data do pedido: <?php echo date('d/m/Y', strtotime($pedido_detalhes['data_pedido'])); ?>
                                     </span>
                                 </div>
@@ -154,26 +140,13 @@ if (!empty($caminho_imagem)) {
                                 <div class="price-informacoes-pedidos">
                                     <div class="valor-final-informacoes-pedidos">
                                         <span>R$<?php echo number_format($valor_total, 2, ',', '.'); ?></span>
-                                        <span>R$<?php echo number_format($valor_total, 2, ',', '.'); ?></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
                     <div class="buttons-area-informacoes-pedidos">
-                        <?php if ($pedido_detalhes['status_pedido'] === 'Pendente'): ?>
-                            <div class="left-buttons-informacoes-pedidos">
-                                <button class="cancel-btn" onclick="cancelarPedido(<?php echo $pedido_detalhes['id_pedido']; ?>)">Cancelar pedido</button>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if ($pedido_detalhes['status_pedido'] !== 'Concluído'): ?>
-                            <div class="right-buttons-informacoes-pedidos">
-                                <button class="concluir-btn" onclick="concluirPedido(<?php echo $pedido_detalhes['id_pedido']; ?>)">Concluir pedido</button>
-                            </div>
-                        <?php endif; ?>
                         <?php if ($pedido_detalhes['status_pedido'] === 'Pendente'): ?>
                             <div class="left-buttons-informacoes-pedidos">
                                 <button class="cancel-btn" onclick="cancelarPedido(<?php echo $pedido_detalhes['id_pedido']; ?>)">Cancelar pedido</button>
@@ -189,18 +162,14 @@ if (!empty($caminho_imagem)) {
                 </div>
             </div>
 
-
             <div id="second-container-informacoes-pedidos">
                 <div class="client-data-card-informacoes-pedidos">
                     <span id="client-data-title-span-informacoes-pedidos">
                         Dados do cliente
                     </span>
 
-
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-user"></i>
-                        <span class="client-data-type-informacoes-pedidos1">Nome:</span>
-                        <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['cliente_nome']); ?></span>
                         <span class="client-data-type-informacoes-pedidos1">Nome:</span>
                         <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['cliente_nome']); ?></span>
                     </div>
@@ -209,22 +178,16 @@ if (!empty($caminho_imagem)) {
                         <i class="fa-solid fa-lock"></i>
                         <span class="client-data-type-informacoes-pedidos1">CPF/CNPJ:</span>
                         <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['cpf_cnpj']); ?></span>
-                        <span class="client-data-type-informacoes-pedidos1">CPF/CNPJ:</span>
-                        <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['cpf_cnpj']); ?></span>
                     </div>
 
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-envelope"></i>
                         <span class="client-data-type-informacoes-pedidos1">E-mail:</span>
                         <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['email']); ?></span>
-                        <span class="client-data-type-informacoes-pedidos1">E-mail:</span>
-                        <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['email']); ?></span>
                     </div>
 
                     <div class="client-data-spans-informacoes-pedidos">
                         <i class="fa-solid fa-phone"></i>
-                        <span class="client-data-type-informacoes-pedidos1">Telefone:</span>
-                        <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['telefone']); ?></span>
                         <span class="client-data-type-informacoes-pedidos1">Telefone:</span>
                         <span class="client-data-informacoes-pedidos"><?php echo htmlspecialchars($pedido_detalhes['telefone']); ?></span>
                     </div>
@@ -247,23 +210,7 @@ function concluirPedido(pedidoId) {
 }
 </script>
 
-
-<script>
-function cancelarPedido(pedidoId) {
-    if (confirm('Tem certeza que deseja cancelar este pedido?')) {
-        window.location.href = '../utils/acao_cancelar_pedido.php?id=' + pedidoId;
-    }
-}
-
-function concluirPedido(pedidoId) {
-    if (confirm('Confirmar conclusão deste pedido?')) {
-        window.location.href = '../utils/acao_concluir_pedido.php?id=' + pedidoId;
-    }
-}
-</script>
-
 </body>
 </html>
 
-<?php include 'footer.php'; ?>
 <?php include 'footer.php'; ?>
