@@ -40,11 +40,19 @@
 }
 
 .product-card-informacoes-pedidos {
-  border: 1px solid #20261e;
+  border: none;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+#first-container-informacoes-pedidos {
+  border: 1px solid #20261e;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .client-data-type-informacoes-pedidos1 {
@@ -137,6 +145,7 @@
   margin-top: 5px;
 }
 .final-price-informacoes-pedidos {
+  padding-right: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
