@@ -1,4 +1,6 @@
 <?php
+
+use Vtiful\Kernel\Format;
 // include '../utils/autenticado.php';
 include '../utils/listar_pedidos_cliente.php';
 include 'menu_pg_inicial.php';
@@ -29,7 +31,10 @@ include 'menu_pg_inicial.php';
             <div class="area_historico_compras">
                 <div class="pedido_header">
                     <div class="div_data_pedido_pc">
-                        <p>Data: <?= $pedido['data_pedido'] ?></p>
+                        <p>
+                            Data:
+                            <strong> <?= (new DateTime($pedido['data_pedido']))->format('d/m/y') ?></strong>
+                        </p>
                     </div>
                     <div class="botao_cancelar">
                         <?php
@@ -44,7 +49,7 @@ include 'menu_pg_inicial.php';
                         <p class="data_pedido_mobile">Data do Pedido:<span><?= htmlspecialchars($pedido['data_pedido'])?></span> </p>
                     </div>
                     <div class="pedido_detalhes">
-                        <p class="codigo_pedido">Código: <?= $pedido['id_pedido'] ?></p>
+                        <p class="codigo_pedido">Pedido: <?= $pedido['id_pedido'] ?></p>
                         <p class="total_itens">Total de Itens: <?= $pedido['total_itens'] ?></p>
                         <p class="valor_pedido">Valor Total: R$ <?= number_format($pedido['valor_total'], 2, ',', '.') ?></p>
                         <p class="status_pedido"><?= $pedido['status_pedido'] ?></p>
