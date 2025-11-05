@@ -34,8 +34,11 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </form>
-            <a href="#" id="btn-inativos">Inativados</a>
-
+            <form method="get" action="gerenciar_clientes.php" class="botoes_filtros_clientes">
+                    <button type="submit" name="status" value="todos" class="gerenciar_clientes_botao_todos">Todos</button>
+                    <button type="submit" name="status" value="ativos" class="gerenciar_clientes_botao_ativos">Ativos</button>
+                    <button type="submit" name="status" value="inativos" class="gerenciar_clientes_botao_inativos">Inativados</button>
+            </form>
         </div>
 
         <div id="break-line"></div>
@@ -45,14 +48,11 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="select-all-label-gerenciar-clientes">
-                                <button>Selecionar tudo</button>
-                            </th>
                             <th class="header-cliente-name-gerenciar-clientes header-cell-gerenciar-clientes">Nome do cliente</th>
                             <th class="header-cell-gerenciar-clientes">CPF</th>
                             <th class="header-cell-gerenciar-clientes">Data de cadastro</th>
                             <th class="header-exclude-gerenciar-clientes header-cell-gerenciar-clientes">Inativar</th>
-                            <th class="header-exclude-gerenciar-clientes header-cell-gerenciar-clientes">Status</th>
+                            <th class="header-cell-gerenciar-clientes">Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,7 +60,6 @@
                         <?php if (!empty($cliente)): ?>
                             <?php foreach ($cliente as $c): ?>
                                 <tr>
-                                    <td><input type="checkbox" name="cliente[]" value="<?= $c['id_cliente']; ?>" class="cliente-checkbox"></td>
                                     <td><?= htmlspecialchars($c['cliente_nome']); ?></td>
                                     <td><?= htmlspecialchars($c['cpf_cnpj']); ?></td>
                                     <td><?= date("d/m/Y", strtotime($c['data_nasc'])); ?></td>

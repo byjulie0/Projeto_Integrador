@@ -84,9 +84,6 @@ input[type="checkbox"] {
   color: #20261E;
 }
 
-[data-price],span{
-  color:#2a7f40 ;
-}
 
 .product-cards-carrinho{
   display: flex;
@@ -261,8 +258,9 @@ input[type="checkbox"] {
   color: #20261E;
   padding: 0px 5px;
 }
-
-
+[data-price],.product-total-price {
+  color: #2a7f40;
+}
 .delete-item-carrinho:hover,
 .move-items-to-favorites-carrinho:hover {
   opacity: 0.8;

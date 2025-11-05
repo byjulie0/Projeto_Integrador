@@ -1,5 +1,9 @@
 <?php
 include '../utils/autenticado.php';
+if ($usuario_nao_logado) {
+  include '../overlays/pop_up_login.php';
+  exit;
+}
 include '../utils/libras.php';
 include 'menu_pg_inicial.php';
 ?>
@@ -76,10 +80,7 @@ include 'menu_pg_inicial.php';
                                 </div>
 
                                 <div class="labels-respective-content-carrinho">
-                                    <span class="total-price">
-                                        R$: <span
-                                            class="product-total-price"><?php echo number_format($total, 2, ',', '.'); ?></span>
-                                    </span>
+                                    <span class="product-total-price" data-price="<?php echo $total; ?>"><?php echo number_format($total, 2, ',', '.'); ?></span>
                                 </div>
                             </div>
                         </div>

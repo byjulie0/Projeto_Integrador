@@ -29,7 +29,7 @@
 
 #id-pedido-informacoes-pedidos span {
   font-size: 17px;
-  color: var(--color-fonte);
+  color: var(--color-primary-1);
   font-weight: 500;
 }
 
@@ -40,15 +40,24 @@
 }
 
 .product-card-informacoes-pedidos {
-  border: 1px solid #20261e;
+  border: none;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
+#first-container-informacoes-pedidos {
+  border: 1px solid #20261e;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
 .client-data-type-informacoes-pedidos1 {
   font-weight: 600;
+  color: var(--color-primary-1);
 }
 
 .product-card-informacoes-pedidos1 {
@@ -108,7 +117,9 @@
   max-width: 260px;
   border-radius: 5px;
 }
-
+.price-item{
+  color: var(--color-primary-1);
+}
 .informations-informacoes-pedidos {
   width: 100%;
   display: flex;
@@ -121,22 +132,23 @@
 
 .type-informacoes-pedidos,
 .lote-informacoes-pedidos {
-  color: #20261eab;
+  color: var(--color-primary-1);
   font-size: 14px;
 }
 
 .name-informacoes-pedidos {
-  color: var(--color-fonte);
+  color: var(--color-primary-1);
   font-size: 18px;
   font-weight: 600;
 }
 
 .purchase-date-informacoes-pedidos {
-  color: var(--color-fonte);
+  color: var(--color-primary-1);
   font-size: 14px;
   margin-top: 5px;
 }
 .final-price-informacoes-pedidos {
+  padding-right: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,7 +168,7 @@
 }
 
 .valor-final-informacoes-pedidos span {
-  color: var(--color-fonte);
+  color: #2a7f40;
   font-weight: 600;
   font-size: 17px;
 }

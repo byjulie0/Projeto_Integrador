@@ -37,7 +37,6 @@ include 'menu_inicial.php';
                     <button type="submit" name="status" value="ativos" class="catalogo_produtos_botao_ativos">Ativos</button>
                     <button type="submit" name="status" value="inativos" class="catalogo_produtos_botao_inativos">Inativados</button>
                 </form>
-
             </div>
             <hr class="break-line">
             <!-- ?status=inativados -->

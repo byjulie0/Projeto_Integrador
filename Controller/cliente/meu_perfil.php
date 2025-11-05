@@ -33,7 +33,7 @@ include 'menu_pg_inicial.php';
 <body class="body-visualizar-dados">
   <main class="main-visualizar-dados">
     <h2 class="visualizar-dados-title">
-      <a class="a-style" href="meu_perfil_senha.php">
+      <a class="a-style" href="#" onclick="window.history.back(); return false;">
         <i class="bi bi-chevron-left"></i> Meu Perfil
       </a>
     </h2>
