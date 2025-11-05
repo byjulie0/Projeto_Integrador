@@ -81,7 +81,9 @@
 .first-container-gerenciar-clientes a{
   font-size: 14px;
   font-weight: 400;
-  color: var(--warning-color);
+  color: var(--color-primary-1);
+  position: absolute;
+  text-decoration: none;
 }
 
 #search-bar-gerenciar-clientes input {
@@ -109,7 +111,34 @@
   color: var(--color-primary-1);
   font-size: 16px;
 }
+.botoes_filtros_clientes{
+  display: flex;
+  text-align: justify;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.botoes_filtros_clientes button{
+  color: var(--color-primary-1);
+  background-color: #fff;
+  padding: 4px;
+  min-width: 110px;
+  border-radius: 8px;
+  border: solid 1px;
+  transition: all 0.3s ease;
+}
+.botoes_filtros_clientes button:hover{
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
+}
+.botoes_filtros_clientes button:focus{
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
 
+}
 #break-line{
   width: 100%;
   display: flex;
@@ -137,6 +166,9 @@
 #table-space-gerenciar-clientes table th {
   width: 100%;
   background-color: #E5E7E5;
+}
+.header-cell-gerenciar-clientes{
+  font-weight: 500;
 }
 
 #table-space-gerenciar-clientes table .select-all-label-gerenciar-clientes {
@@ -286,42 +318,4 @@
   .select-all-label-gerenciar-clientes button {
     font-size: 12px;
   }
-}
-
-.botoes_filtros_clientes{
-  display: flex;
-  text-align: justify;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.botoes_filtros_clientes button{
-  color: var(--color-primary-1);
-  background-color: #fff;
-  padding: 4px;
-  min-width: 110px;
-  border-radius: 8px;
-  border: solid 1px;
-  transition: all 0.3s ease;
-}
-.botoes_filtros_clientes button:hover{
-  border-color: var(--color-primary-3);
-  color: white;
-  background-color: var(--color-primary-3);
-  box-shadow: 0 0 10px #4b914b;
-}
-.botoes_filtros_clientes button:focus{
-  border-color: var(--color-primary-3);
-  color: white;
-  background-color: var(--color-primary-3);
-  box-shadow: 0 0 10px #4b914b;
-
-}
-.gerenciar_clientes_botao_todos{
-    left: 65%;
-}
-.gerenciar_clientes_botao_ativos{
-    left: 75%;
-}
-.gerenciar_clientes_botao_inativos{
-    left: 85%;
 }

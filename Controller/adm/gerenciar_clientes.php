@@ -39,7 +39,6 @@
                     <button type="submit" name="status" value="ativos" class="gerenciar_clientes_botao_ativos">Ativos</button>
                     <button type="submit" name="status" value="inativos" class="gerenciar_clientes_botao_inativos">Inativados</button>
             </form>
-
         </div>
 
         <div id="break-line"></div>
