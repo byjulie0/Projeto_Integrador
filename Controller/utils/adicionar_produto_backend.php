@@ -7,19 +7,17 @@ $popup_tipo = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // Validação e sanitização
     $nome         = trim($_POST['nome'] ?? '');
     $valor        = floatval($_POST['valor'] ?? 0);
     $quantidade   = intval($_POST['quantidade'] ?? 0);
     $descricao    = trim($_POST['descricao'] ?? '');
-    $sexo         = $_POST['sexo'] ?? ''; // CORRIGIDO
+    $sexo         = $_POST['sexo'] ?? '';
     $peso         = floatval($_POST['peso'] ?? 0);
     $idade        = $_POST['idade'] ?? null;
-    $campeao      = strtolower($_POST['campeao'] ?? '') === 'sim' ? 1 : 0; // CORRIGIDO
+    $campeao      = strtolower($_POST['campeao'] ?? '') === 'sim' ? 1 : 0;
     $categoria    = intval($_POST['categoria'] ?? 0);
     $subcategoria = intval($_POST['subcategoria'] ?? 0);
 
-    // Validação básica
     if (empty($nome) || $valor <= 0 || $quantidade < 0 || $categoria <= 0 || $subcategoria <= 0 || empty($sexo)) {
         $popup_titulo = "Erro!";
         $popup_mensagem = "Preencha todos os campos obrigatórios corretamente.";
@@ -45,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
 
                     if (in_array($ext, $allowed) && $_FILES['imagens']['size'][$i] <= 5 * 1024 * 1024) {
-                        $novo_nome = "img" . ($i + 1) . "_" . time() . ".$ext"; // Nome único
+                        $novo_nome = "img" . ($i + 1) . "_" . time() . ".$ext";
                         $destino = $pastaUpload . $novo_nome;
 
                         if (move_uploaded_file($file_tmp, $destino)) {
@@ -62,14 +60,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $popup_mensagem = "Adicione pelo menos uma imagem.";
             $popup_tipo = "erro";
         } else {
-            // Usa prepared statement (SEGURANÇA)
             $imagens_json = json_encode($imagens_nomes, JSON_UNESCAPED_UNICODE);
 
-            // 🔹 Agora incluindo o campo "idade" no INSERT
-            $query = "INSERT INTO produto 
-                (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria) 
-                VALUES 
-                ('$nome', '$valor', '$quantidade', '$caminhoRelativo', '$descricao', '$sexo', '$peso', '$idade', '$campeao', '$categoria', '$subcategoria')";
+            $stmt = $con->prepare("INSERT INTO produto 
+                (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             $stmt->bind_param(
                 "sdisssdssii",
@@ -91,7 +86,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!-- Popup de resultado -->
 <?php if (!empty($popup_titulo)): ?>
 <div id="popup_resultado" class="popup_resultado" style="display:flex;">
     <div class="area_popup_resultado <?= $popup_tipo ?>">
