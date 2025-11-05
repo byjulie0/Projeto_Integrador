@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campeões</title>
+    <title>Premiados</title>
     <script defer src="../../view/js/cliente/campeoes.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente/carrosseis_inicial.css">
 </head>
@@ -12,7 +12,7 @@
 <body class="body_pg_carrossel_campeoes">
     <section id="campeoes">
         <div class="carrossel_campeoes_cor">
-            <h1 class="pg_campeoes" id="campeoes">Premiados</h1>
+            <h1 class="pg_campeoes" id="campeoes">Animais premiados</h1>
 
             <div class="carrossel_campeoes">
 
