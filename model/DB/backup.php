@@ -30,3 +30,4 @@ if ($return !== 0) {
     echo "Backup realizado com sucesso: " . $backupFile . "<br>";
 }
 ?>
+direcionar para página  
