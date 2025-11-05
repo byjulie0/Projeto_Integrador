@@ -198,9 +198,10 @@
         font-size: 0.75rem;
     }
     .client-edit-title-titulo{
-        font-size: 24px;
+        font-size: 20px;
         margin-top: 2%;
         margin-bottom: 0;
+        color: var(--color-primary-1);
     }
 }
 @media (max-width: 768px) {
