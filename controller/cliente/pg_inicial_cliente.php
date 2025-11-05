@@ -16,7 +16,7 @@ include '../utils/libras.php';
     include 'menu_pg_inicial.php';
     include 'carrossel_pg_inicial.php';
     include 'categorias_pg_inicial.php';
-    include 'campeoes.php';
+    include 'premiados.php';
     include 'talvez_voce_goste.php';
     include 'pg_nossa_historia.php';
     include 'footer_cliente.php';
