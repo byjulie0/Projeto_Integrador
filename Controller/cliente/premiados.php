@@ -12,7 +12,7 @@
 <body class="body_pg_carrossel_campeoes">
     <section id="campeoes">
         <div class="carrossel_campeoes_cor">
-            <h1 class="pg_campeoes" id="campeoes">Campeões do Mês</h1>
+            <h1 class="pg_campeoes" id="campeoes">Premiados</h1>
 
             <div class="carrossel_campeoes">
 
