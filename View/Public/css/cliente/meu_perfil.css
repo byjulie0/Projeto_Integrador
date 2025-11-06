@@ -219,14 +219,16 @@
     font-size: 1.2rem;
   }
 
-  .visualizar-dados-area-botoes {
-    gap: 10px;
-    padding: 5% 10%;
-    display: flex;
+  .visualizar-dados-area-botoes  {
+    flex-direction: column;
+  }
+  .visualizar-dados-area-botoes a {
+    margin-left: 45px;
   }
 
   .visualizar-dados-editar {
     font-size: 0.9rem;
     padding: 8px 15px;
   }
+ 
 }
