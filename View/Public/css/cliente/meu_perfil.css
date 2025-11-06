@@ -144,6 +144,10 @@
 
 /* Tablets e telas médias */
 @media (max-width: 768px) {
+  .main-visualizar-dados {
+    padding: 50px;
+  }
+
   .visualizar-dados-header {
     flex-direction: column;
     align-items: center;
@@ -154,14 +158,14 @@
     margin-top: 10px;
   }
 
-  .visualizar-dados-grid {
+  /* .visualizar-dados-grid {
     grid-template-columns: 1fr; /* força 1 coluna */
-  }
+  /* } */
 
-  /* .visualizar-dados-area-botoes {
+  .visualizar-dados-area-botoes {
     flex-direction: column;
     align-items: stretch;
-  } */
+  }
 }
 
 /* Celulares médios */
