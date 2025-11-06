@@ -1,10 +1,4 @@
 @import url("../cliente.css");
-.body-detalhes-produto {
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-}
 .main-detalhes-produto {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -104,7 +98,7 @@
 .titulo-produto-detalhes-produto {
     font-size: 1.8rem;
     padding: 20px 5%;
-    margin: 0;
+    margin-top: 10px;
     color: var(--color-primary-1);
 }
 .titulo-produto-detalhes-produto i {

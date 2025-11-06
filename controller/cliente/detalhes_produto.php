@@ -19,6 +19,7 @@ include 'menu_pg_inicial.php';
     <!-- <script>var usuarioLogado = <php echo isset($_SESSION['id_cliente']) ? 'true' : 'false'; ?>;</script> -->
     <h2 class="titulo-produto-detalhes-produto">
         <a href="#" onclick="window.history.back(); return false"><i class="bi bi-chevron-left"></i></a>
+        <?php echo htmlspecialchars($produto['prod_nome']);?>
     </h2>
     <main class="main-detalhes-produto">
 
