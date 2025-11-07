@@ -1,7 +1,5 @@
 <?php
-
-use Vtiful\Kernel\Format;
-// include '../utils/autenticado.php';
+include '../utils/autenticado.php';
 include '../utils/listar_pedidos_cliente.php';
 include 'menu_pg_inicial.php';
 ?>
