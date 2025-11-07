@@ -55,6 +55,15 @@
   margin-right: 15px;
   margin-bottom: 15px;
 }
+
+.footer_adm_item .copyright {
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-detalhes-16);
+    margin-top: 20px;
+    width: 100%;
+    grid-column: span 5;
+}
 @media (max-width: 767px) {
   .grid_container_footer_adm {
     grid-template-columns: 1fr;

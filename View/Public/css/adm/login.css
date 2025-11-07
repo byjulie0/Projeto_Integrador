@@ -24,19 +24,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .img_login {
   max-width: 330px;
   width: 100%;
   padding: 2%;
-  margin: 0 auto;
 }
 .text_login_adm {
   margin: 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--color-primary-1);
-  font-weight: bold;
+  font-weight: 600;
   padding: 10px;
+  text-align: center;
 }
 .login_form_adm {
   width: 45%;
@@ -50,6 +51,7 @@
   font-size: 2rem;
   line-height: 1.875rem;
   text-align: center;
+  margin-top: 10px;
   margin-bottom: 100px;
   color: var(--color-primary-1);
 }
@@ -60,21 +62,7 @@
   flex-direction: column;
   align-items: center;
 }
-.button_adm {
-  margin: 30px 0;
-  gap: 10px;
-  display: flex;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-botao-op-Concluido);
-  color: var(--color-icones);
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+
 .login_form_adm a {
   color: var(--color-primary-5);
   font-size: 15px;
@@ -137,13 +125,11 @@
   color: #000000;
   box-sizing: border-box;
 }
-@media (min-width: 1024px) {
-  .img_login {
-    align-self: flex-start;
-    margin-left: 0;
-    padding-left: 0;
-  }
+
+.btn-submit-login-adm {
+  margin-top: 20px;
 }
+
 @media (max-width: 480px) {
   .login_form_adm h2 {
     font-size: 1.375rem;
