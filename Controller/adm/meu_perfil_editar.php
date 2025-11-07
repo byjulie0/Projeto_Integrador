@@ -73,3 +73,6 @@ include 'menu_inicial.php';
 </html>
 
 <?php include 'footer.php'; ?>
+
+
+
