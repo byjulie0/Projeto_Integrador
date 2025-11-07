@@ -120,21 +120,6 @@
       height: 120px;
     }
 }
-@media (max-width: 360px)  {
-    .categoria_cards_pg_inicial {
-      width: 100px;
-      height: 90px;
-    }
-    .categoria_title_pg_inicial{
-        font-size: 20px;
-        padding-right: 0;
-        margin-left: 30%;
-    }
-    #pg_inicial_categorias{
-       margin-top: 5%;
-
-    }
-}
 @media (min-width: 1920px) {
     .categoria_cards_pg_inicial {
       height: 180px;
