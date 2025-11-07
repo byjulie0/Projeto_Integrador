@@ -59,6 +59,8 @@ mysqli_close($con);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script defer src="../../View/js/adm/relatorios_visualizar_adm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 
     
     <style>
@@ -167,17 +169,149 @@ mysqli_close($con);
     /* Ajuste do gráfico de barra */
     .grafico-barra {
         flex: 1;  
-        max-width: 45%; 
+        max-width: 100%; 
         background-color: #dbf3d4ff; 
     }
 
     /* Ajuste do gráfico de linha */
     .grafico-linha {
         flex: 1;  
-        max-width: 45%; 
+        max-width: 100%; 
         background-color: #dbf3d4ff; 
         
     }
+    /*-------------------------------------RESPONSIVIDADE -MOBILE DESKTOP ---------------------------------*/
+    /* Responsividade para desktop e mobile */
+
+/* Para dispositivos com telas grandes (desktop) */
+@media (min-width: 1024px) {
+    /* Grid para os cards no topo */
+    .relatorios_cards_topo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);  /* 3 colunas */
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Ajuste do gráfico */
+    .grafico-container {
+        max-width: 500px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    /* Ajuste para os gráficos de barra e linha */
+    .grafico-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .grafico-barra, .grafico-linha {
+        flex: 1;
+        max-width: 100%;
+    }
+}
+
+/* Para dispositivos menores (tablet, mobile) */
+@media (max-width: 1023px) {
+    /* Ajuste para o layout de cards */
+    .relatorios_cards_topo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;  /* 2 colunas para dispositivos menores */
+        gap: 15px;
+    }
+
+    /* Ajuste de tamanho dos gráficos */
+    .grafico-container {
+        max-width: 100%;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    .grafico-row {
+        flex-direction: column; /* Exibe gráficos de barra e linha em coluna */
+        margin-top: 20px;
+    }
+
+    .grafico-barra, .grafico-linha {
+        max-width: 100%;
+        margin-bottom: 20px;  /* Espaçamento entre os gráficos */
+    }
+
+    /* Ajuste do título e texto da sessão */
+    .relatorios_header h1 {
+        font-size: 22px;
+        margin-left: 20px;
+    }
+
+    .relatorios_header h3 {
+        font-size: 16px;
+    }
+
+    .relatorios_header {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Ajuste dos cards (Produtos, Pedidos, Usuários) */
+    .card_topo {
+        padding: 10px;
+        background-color: #dfefd1ff;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+    }
+
+    /* Card de Estatísticas */
+    .card_estatisticas {
+        background-color: #dbf3d4ff;
+        padding: 10px;
+    }
+
+    /* Ajuste do botão de imprimir */
+    .btn_imprimir {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 600px) {
+    /* Ajuste da grid para os cards (1 coluna em dispositivos móveis) */
+    .relatorios_cards_topo {
+        grid-template-columns: 1fr;  /* 1 coluna para mobile */
+    }
+
+    /* Reduzindo o tamanho do gráfico */
+    .grafico-container {
+        max-width: 100%;
+        height: 200px; /* Menor altura para gráficos em telas pequenas */
+    }
+
+    /* Ajuste da fonte */
+    .relatorios_header h1 {
+        font-size: 18px;
+    }
+
+    .relatorios_header h3 {
+        font-size: 14px;
+    }
+
+    /* Ajuste dos cards de informações */
+    .card_topo {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    /* Melhorando a exibição do período de data */
+    .verificar_administrar_pedidos_sessao_periodo_bloco {
+        padding: 10px;
+    }
+}
+
 </style>
 
     </style>
@@ -233,25 +367,32 @@ mysqli_close($con);
                 <canvas id="graficoEstatisticas"></canvas>
             </div>
         </div>
-    </div>
-
-    <!-- Contêiner para os gráficos de barra e linha -->
+        <!-- Contêiner para os gráficos de barra e linha -->
     <div class="grafico-row">
         <!-- Gráfico de Barra -->
         <div class="grafico-container grafico-barra">
             <canvas id="graficoBarraEstatisticas"></canvas>
         </div>
 
-        <!-- Gráfico de Linha -->
+        
+    </div>
+
+    <div class="grafico-row">
+                <!-- Gráfico de Linha -->
         <div class="grafico-container grafico-linha">
             <canvas id="graficoLinhaPedidos"></canvas>
         </div>
     </div>
 
+    </div>
+
+   
+
     <div class="card_atividades">
         <h3>Atividades recentes:</h3>
         <p>Mostrar últimos 10 pedidos e informações importantes relacionados</p>
-        <button class="btn_imprimir">📄 Imprimir Tabelas</button>
+        <button class="btn_imprimir" id="btnGerarPDF">📄 Imprimir Relatório em PDF</button>
+
     </div>
 </div>
 
@@ -279,6 +420,35 @@ $(document).ready(function() {
         });
     });
 });
+</script>
+<script>
+    // Quando o botão for clicado, gera o PDF
+    document.getElementById('btnGerarPDF').addEventListener('click', function() {
+        // Criando uma instância do jsPDF
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        // Captura os gráficos como imagens base64
+        var graficoEstatisticasImg = document.getElementById('graficoEstatisticas').toDataURL('image/png');
+        var graficoBarraImg = document.getElementById('graficoBarraEstatisticas').toDataURL('image/png');
+        var graficoLinhaImg = document.getElementById('graficoLinhaPedidos').toDataURL('image/png');
+
+        // Adicionando o título ao PDF
+        doc.text("Relatório de Pedidos", 10, 10);
+        
+        // Adicionando os gráficos ao PDF
+        doc.addImage(graficoEstatisticasImg, 'PNG', 10, 20, 180, 90); // Gráfico de Estatísticas (Pizza)
+        doc.addImage(graficoBarraImg, 'PNG', 10, 120, 180, 90); // Gráfico de Barra
+        doc.addImage(graficoLinhaImg, 'PNG', 10, 220, 180, 90); // Gráfico de Linha
+
+        // Adicionando mais conteúdo, como número de pedidos, produtos, usuários, etc.
+        doc.text("Número de Pedidos: <?php echo $numero_pedidos; ?>", 10, 310);
+        doc.text("Número de Produtos: <?php echo $numero_produtos; ?>", 10, 320);
+        doc.text("Número de Usuários: <?php echo $numero_usuarios; ?>", 10, 330);
+
+        // Gerando o PDF e permitindo o download
+        doc.save('relatorio_pedidos_com_graficos.pdf');
+    });
 </script>
 
 
