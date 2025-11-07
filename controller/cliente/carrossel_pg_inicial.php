@@ -24,7 +24,8 @@
         <img src="../../view/public/imagens/img_carrossel_pg_inicial/cavlos_carrosel.png" class="d-block w-100"
           alt="Slide 1">
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="texto_carrossel">Seja bem-vindo ao nosso site!</h5>
+          <h5 class="texto_carrossel">Seja bem-vindo(a)
+            <?php if($usuarioLogado) echo $_SESSION["cliente_nome"]; else echo "ao nosso site!";?></h5>
           <p>Somos um negócio familiar, com anos de experiência no ramo de vendas de animais pecuários, acumulando
             clientes ao redor de todo o mundo. Temos certeza de que aqui você achará exatamento o(s) animal(is) que
             procura!</p>
@@ -34,7 +35,8 @@
         <img src="../../view/public/imagens/img_carrossel_pg_inicial/galo_carrosel.png" class="d-block w-100"
           alt="Slide 2">
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="texto_carrossel">Seja bem-vindo ao nosso site!</h5>
+            <h5 class="texto_carrossel">Seja bem-vindo(a)
+            <?php if($usuarioLogado) echo $_SESSION["cliente_nome"]; else echo "ao nosso site!";?></h5>
           <p>Somos um negócio familiar, com anos de experiência no ramo de vendas de animais pecuários, acumulando
             clientes ao redor de todo o mundo. Temos certeza de que aqui você achará exatamento o(s) animal(is) que
             procura!</p>
@@ -44,7 +46,8 @@
         <img src="../../view/public/imagens/img_carrossel_pg_inicial/img_carrossel_pecuaria.svg" class="d-block w-100"
           alt="Slide 3">
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="texto_carrossel">Seja bem-vindo ao nosso site!</h5>
+            <h5 class="texto_carrossel">Seja bem-vindo(a)
+            <?php if($usuarioLogado) echo $_SESSION["cliente_nome"]; else echo "ao nosso site!";?></h5>
           <p>Somos um negócio familiar, com anos de experiência no ramo de vendas de animais pecuários, acumulando
             clientes ao redor de todo o mundo. Temos certeza de que aqui você achará exatamento o(s) animal(is) que
             procura!</p>
