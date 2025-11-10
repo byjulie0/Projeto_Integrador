@@ -27,14 +27,14 @@ include 'menu_pg_inicial.php';
     // Exibir pop-up de erro se houver
     if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'erro' && isset($_SESSION['popup_message'])) {
         $texto = $_SESSION['popup_message'];
-        include 'pop_up_erro.php';
+        include '../overlays/pop_up_erro.php';
         unset($_SESSION['popup_type']);
         unset($_SESSION['popup_message']);
     }
     
     if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'sucesso' && isset($_SESSION['popup_message'])) {
         $texto = $_SESSION['popup_message'];
-        include 'pop_up_sucesso.php';
+        include '../overlays/pop_up_sucesso.php';
         unset($_SESSION['popup_type']);
         unset($_SESSION['popup_message']);
     }
