@@ -1,6 +1,5 @@
 <?php
 include "../../model/DB/conexao.php";
-session_start();
 
 $id_cliente = $_SESSION['id_cliente'];
 
@@ -13,8 +12,8 @@ $sql = "SELECT
         FROM pedido
         INNER JOIN item ON item.id_pedido = pedido.id_pedido
         INNER JOIN produto ON item.id_produto = produto.id_produto
+        WHERE pedido.id_cliente = ?
         GROUP BY pedido.id_pedido
-        WHERE pedido.cliente_id_cliente = ?
         ORDER BY pedido.data_pedido DESC;";
 
 $stmt = $con->prepare($sql);
