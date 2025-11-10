@@ -82,23 +82,33 @@ body {
     position: absolute;
     text-decoration: none;
 }
-.catalogo_produtos_botao_todos{
-    left: 65%;
+.botoes_filtros_produtos{
+  display: flex;
+  text-align: justify;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.catalogo_produtos_botao_ativos{
-    left: 75%;
+.botoes_filtros_produtos button{
+  color: var(--color-primary-1);
+  background-color: #fff;
+  padding: 4px;
+  min-width: 110px;
+  border-radius: 8px;
+  border: solid 1px;
+  transition: all 0.3s ease;
 }
-.catalogo_produtos_botao_inativos{
-    left: 85%;
+.botoes_filtros_produtos button:hover{
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
 }
-.catalogo_produtos_botao_todos:hover{
-    color: rgb(130, 136, 141);
-}
-.catalogo_produtos_botao_ativos:hover{
-    color: #28a745;
-}
-.catalogo_produtos_botao_inativos:hover{
-    color: #dc3545;
+.botoes_filtros_produtos button:focus{
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
+
 }
 #search-bar-atualizar-produtos input {
     border: none;
@@ -217,6 +227,12 @@ body {
 .category-name-atualizar-produtos span {
     font-weight: 600;
     color: var(--color-primary-3);
+}
+.product-category-atualizar-produtos{
+  display: flex;
+}
+.category-name-atualizar-produtos{
+  flex: 1;
 }
 
 /* RESPONSIVIDADE */

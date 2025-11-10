@@ -1,9 +1,9 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 include 'sessao_ativa.php';
 
-if (!isset(($_SESSION['id_cliente']))){
-    header("Location: ../cliente/login.php?error=nao_fez_login");
-    exit;
-}
-$id_cliente = $_SESSION["id_cliente"];
+$usuario_nao_logado = !isset($_SESSION['id_cliente']);
+$id_cliente = isset($_SESSION["id_cliente"]) ? $_SESSION["id_cliente"] : null;
 ?>

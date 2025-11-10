@@ -1,3 +1,10 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$usuarioLogado = isset($_SESSION['id_cliente']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -32,11 +39,11 @@
                         <li><a href="categoria_produtos.php?id_categoria=1">Bovinos</a></li>
                         <li><a href="categoria_produtos.php?id_categoria=2">Equinos</a></li>
                         <li><a href="categoria_produtos.php?id_categoria=3">Galináceos</a></li>
-                        <li><a href="categoria_produtos.php?id_categoria=4">Campeões</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=4">Premiados</a></li>
                         <li><a href="categoria_produtos.php?id_categoria=5">Produtos gerais</a></li>
                     </ul>
                 </li>
-                <li><a href="#campeoes" class="nav-item-pg-inicial">Campeões</a></li>
+                <li><a href="categoria_produtos.php?id_categoria=4" class="nav-item-pg-inicial">Premiados</a></li>
                 <li><a href="#section-nossa-historia" class="nav-item-pg-inicial">Nossa história</a></li>
             </ul>
 
@@ -44,12 +51,20 @@
                 <div class="dropdown_menu_inicial">
                     <a href="#" class="nav-btns-pg-inicial" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person"></i>
-                        <span class="nav-text-pg-inicial">Perfil</span>
+                        <span class="nav-text-pg-inicial">
+                            <?php echo $usuarioLogado ? 'Perfil' : 'Conta'; ?>
+                        </span>
                     </a>
                     <ul class="submenu_inicial">
-                        <li><a href="meu_perfil.php">Meus dados</a></li>
-                        <li><a href="pg_favoritos.php">Favoritos</a></li>
-                        <li><a href="login.php">Login - Usuário sem sessão</a></li>
+                        <?php if($usuarioLogado): ?>
+                            <li><a href="meu_perfil.php">Meus dados</a></li>
+                            <li><a href="historico_pedidos.php">Meus pedidos</a></li>
+                            <li><a href="pg_favoritos.php">Favoritos</a></li>
+                            <li><a href="logout.php">Sair</a></li>
+                        <?php else: ?>
+                            <li><a href="login.php">Login</a></li>
+                            <li><a href="pg_cadastro.php">Cadastrar</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <a href="pg_notificacao.php" class="nav-btns-pg-inicial">

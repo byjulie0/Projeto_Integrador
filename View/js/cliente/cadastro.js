@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             senhaLengthError.textContent = `A senha deve ter pelo menos ${senhaMinLength} caracteres.`;
             senhaLengthError.style.display = 'block';
-            senhaConfirmError.style.display = 'none'; 
+            senhaConfirmError.style.display = 'none';
             return false;
         }
     }
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     emailInput.addEventListener('input', emailValidate);
     senhaInput.addEventListener('input', () => {
         senhaValidate();
-        confirmarSenhaValidate(); 
+        confirmarSenhaValidate();
     });
     confirmarSenhaInput.addEventListener('input', confirmarSenhaValidate);
 

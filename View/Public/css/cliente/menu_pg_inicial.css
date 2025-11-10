@@ -181,12 +181,10 @@
     background-color: var(--hover-bg);
 }
 
-/* SOLUÇÃO SIMPLES: Aumentar a área de hover */
 .dropdown_menu_inicial:hover .submenu_inicial {
   display: block;
 }
 
-/* Criar uma área invisível entre o menu e submenu */
 .dropdown_menu_inicial .submenu_inicial::before {
   content: '';
   position: absolute;

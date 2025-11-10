@@ -1,5 +1,9 @@
 <?php
 include '../utils/autenticado.php';
+if ($usuario_nao_logado) {
+  include '../overlays/pop_up_login.php';
+  exit;
+}
 
 $sql = "SELECT * FROM cliente WHERE id_cliente = ?";
 $query = $con->prepare($sql);

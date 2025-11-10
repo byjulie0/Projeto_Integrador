@@ -32,9 +32,11 @@ include 'menu_inicial.php';
                     <input type="text" id="searchInput" placeholder="Pesquisar" />
                     <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button> 
                 </div>
-                <a href="?status=todos" class="catalogo_produtos_botao_todos">Todos</a>
-                <a href="?status=ativos" class="catalogo_produtos_botao_ativos">Ativos</a>
-                <a href="?status=inativos" class="catalogo_produtos_botao_inativos">Inativados</a>
+                <form method="get" action="catalogo_produtos.php" class="botoes_filtros_produtos">
+                    <button type="submit" name="status" value="todos" class="catalogo_produtos_botao_todos">Todos</button>
+                    <button type="submit" name="status" value="ativos" class="catalogo_produtos_botao_ativos">Ativos</button>
+                    <button type="submit" name="status" value="inativos" class="catalogo_produtos_botao_inativos">Inativados</button>
+                </form>
             </div>
             <hr class="break-line">
             <!-- ?status=inativados -->
@@ -57,10 +59,6 @@ include 'menu_inicial.php';
                         <?php if (!empty($produtos)): ?>
                             <?php foreach ($produtos as $p): ?>
                                 <tr>
-
-
-
-
                                     <td class="product-name-atualizar-produtos cell-atualizar-produto">
                                         <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['produto']) ?></span></div>
                                     </td>
@@ -87,8 +85,6 @@ include 'menu_inicial.php';
                                             <input type="hidden" name="id_produto" value="<?= $p['id_produto'] ?>">
                                             <input type="hidden" name="status_atual" value="<?= $p['produto_ativo'] ?>">
 
-                                            
-
                                             <?php 
                                             $icone = $p['produto_ativo'] ? 'fa-toggle-off' : 'fa-toggle-on';
                                             $ariaPressed = $p['produto_ativo'] ? 'false' : 'true';
@@ -104,10 +100,7 @@ include 'menu_inicial.php';
                                     
                                     <td class="qt-atualizar-produtos">
                                         <?= isset($p['produto_ativo']) ? ($p['produto_ativo'] ? 'Ativo' : 'Inativo') : 'Ops! Também está vazio' ?>
-                                    </td>
-
-
-                                    
+                                    </td> 
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
