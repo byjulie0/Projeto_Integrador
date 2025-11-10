@@ -14,7 +14,8 @@ $sql = "SELECT
         INNER JOIN produto ON item.id_produto = produto.id_produto
         WHERE pedido.id_cliente = ?
         GROUP BY pedido.id_pedido
-        ORDER BY pedido.data_pedido DESC;";
+        ORDER BY pedido.data_pedido DESC, 
+        FIELD(pedido.status_pedido, 'Concluído', 'Pendente', 'Cancelado');";
 
 $stmt = $con->prepare($sql);
 $stmt->bind_param("i", $id_cliente);
