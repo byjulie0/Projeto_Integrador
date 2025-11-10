@@ -13,6 +13,7 @@ include 'menu_pg_inicial.php';
     <link rel="stylesheet" href="../../view/public/css/cliente/detalhes_produto.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../../View/js/cliente/popup_login.js" defer></script>
 </head>
 <body class="body-detalhes-produto">
@@ -36,6 +37,8 @@ include 'menu_pg_inicial.php';
                 <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Imagem Principal">
                 <!-- <img src="<php echo $produto['path_img']; ?>"
                     alt="Imagem Principal de <php echo htmlspecialchars($produto['prod_nome']); ?>"> -->
+                        <!-- Botão de Favoritar -->
+
                 <h3 class="informacao">Informações</h3>
                 <p><?php echo $produto['descricao'] ? htmlspecialchars($produto['descricao']) : 'Descrição não disponível.'; ?>
                 </p>
@@ -58,10 +61,15 @@ include 'menu_pg_inicial.php';
                     <?php endif; ?>
                     <?php endif; ?>
                 </section>
+                <button id="btnFavoritar" 
+                        data-produto="<?php echo $produto['id_produto']; ?>" 
+                        class="botao-favorito">
+                    <i id="iconeFavorito" class="fa fa-heart-o"></i> <!-- coração vazio -->
+                </button>
                 <p class="preco-detalhes-produto">R$ <?php echo $valor_formatado; ?></p>
                 <form id="formCarrinho" action="add_carrinho.php" method="GET">
                     <!-- <input type="hidden" name="id_produto" value="<php echo $produto['id_produto']; ?>"> -->
-                    <a type="button" class="botao-carrinho-detalhes-produto" href="../utils/add_carrinho.php?id_produto=<?php echo $produto['id_produto']; ?>">Adicionar ao carrinho</a>
+                    <a class="botao-carrinho-detalhes-produto" href="../utils/add_carrinho.php?id_produto=<?php echo $produto['id_produto']; ?>">Adicionar ao carrinho</a>
                 </form>
                 <div class="div_info_prod">
                     <p class="informacoes-detalhes-produto">Vendido pela empresa <span>John Rooster</span></p>

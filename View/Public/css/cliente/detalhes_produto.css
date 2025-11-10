@@ -95,6 +95,16 @@
     background-color: #4eaa4e;
 }
 
+.botao-favorito {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+.botao-favorito:hover {
+    transform: scale(1.1);
+}
+
 .titulo-produto-detalhes-produto {
     font-size: 1.8rem;
     padding: 20px 5%;
