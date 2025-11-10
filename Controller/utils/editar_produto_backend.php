@@ -1,4 +1,5 @@
 <?php
+include 'gerar_nnotificacao.php';
 include '../../model/DB/conexao.php';
 
 $popup_titulo = '';
@@ -18,6 +19,63 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $campeao      = mysqli_real_escape_string($con, $_POST['campeao']);
     $categoria    = mysqli_real_escape_string($con, $_POST['categoria']);
     $subcategoria = mysqli_real_escape_string($con, $_POST['subcategoria']);
+
+
+
+
+
+
+
+
+
+
+
+    // criar notificação inicio
+
+    $sql= "SELECT quant_estoque,prod_nome,path_img FROM produto WHERE id_produto = $id_produto";
+    $qtd_inicial=$con->query($sql);
+
+    $sql_encontrar_cliente="SELECT cliente_id_cliente FROM carrinho WHERE produto_id_produto = $id_produto";
+    $qtd_cliente=$con->query($sql_encontrar_cliente);
+    $clientes=[];
+
+    if ($qtd_cliente && $qtd_cliente->num_rows > 0){
+
+        
+
+         while ($cliente_row = $qtd_cliente->fetch_assoc()) { 
+        $clientes[] = $cliente_row['cliente_id_cliente'];}
+
+    }
+
+    if ($qtd_inicial && $qtd_inicial->num_rows > 0) {
+        $row = $qtd_inicial->fetch_assoc();
+        $quant_estoque_inicial = $row['quant_estoque'];
+        $img_produto = $row['path_img'];
+        $nome_produto = $row['prod_nome'];
+    }
+
+    if ($quant_estoque_inicial == 0 && $quantidade > 0){
+        foreach($clientes as $x){
+            $usuario_id= $x;
+            $produto_id= $id_produto;
+            $mensagem="Cliente, a {$nome_produto} que você estava de olho voltou ao estoque, dê uma olhada!";
+            $categoria="Produtos";
+            $imagem=$img_produto;
+            if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria, $imagem)) {
+                echo "Notificação enviada com sucesso!";
+        } 
+            else {
+                echo "Erro ao enviar notificação.";
+        }
+
+    }
+
+
+    }
+    // criar notificação fim
+
+
 
     $caminhoRelativo = null;
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
