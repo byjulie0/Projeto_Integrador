@@ -58,8 +58,11 @@ include 'menu_pg_inicial.php';
 
 
             <div class="imagem-grande-detalhes-produto">
-                <img id="imagem-principal" src="../../View/Public/<?php echo htmlspecialchars($imagemPrincipal); ?>" alt="Imagem principal do produto">
-            </div>
+                <img id="imagem-principal" class="imagem-principal"
+                    src="../../View/Public/<?php echo htmlspecialchars($imagemPrincipal); ?>"
+                    alt="Imagem principal do produto">
+                </div>
+
         </div>
 
          <div class="info-produto-detalhes-produto">
