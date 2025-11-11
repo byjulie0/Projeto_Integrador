@@ -56,8 +56,7 @@
 .miniaturas-detalhes-produto img:hover {
   border: 2px solid var(--color-primary-3);
 }
-  border: 2px solid var(--color-primary-3);
-}
+
 .imagem-grande-detalhes-produto {
   display: flex;
   justify-content: center;
