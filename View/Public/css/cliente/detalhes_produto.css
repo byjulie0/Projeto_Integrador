@@ -109,6 +109,10 @@
 .botao-comprar-detalhes-produto:hover {
   background-color: #3a7a3a;
 }
+.botao-favorito:hover {
+    transform: scale(1.1);
+}
+
 .titulo-produto-detalhes-produto {
   font-size: 1.8rem;
   padding: 20px 5%;
