@@ -34,7 +34,6 @@ $('#campo-busca').on('input', function () {
         clientes.forEach(c => {
           html += `
             <tr>
-              <td><input type="checkbox" name="cliente[]" value="${c.id_cliente}" class="cliente-checkbox"></td>
               <td>${c.cliente_nome}</td>
               <td>${c.cpf_cnpj}</td>
               <td>${new Date(c.data_nasc).toLocaleDateString('pt-BR')}</td>
@@ -78,7 +77,6 @@ $('#btn-inativos').click(function(e) {
                 clientes.forEach(c => {
                    html += `
                     <tr>
-                      <td><input type="checkbox" name="cliente[]" value="${c.id_cliente}" class="cliente-checkbox"></td>
                       <td>${c.cliente_nome}</td>
                       <td>${c.cpf_cnpj}</td>
                       <td>${new Date(c.data_nasc).toLocaleDateString('pt-BR')}</td>
