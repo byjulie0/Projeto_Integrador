@@ -87,7 +87,7 @@
     background-image: url('../../Imagens/img_pg_inicial_categorias/produtos.png');
 }
 .card_campeao_pg_inicial_categorias:hover {
-    background-image: url('../../Imagens/img_pg_inicial_categorias/campeoes.png');
+    background-image: url('../../Imagens/img_pg_inicial_categorias/premiados.png');
 }
 @media (max-width: 768px) {
     .categoria_area_cards_pg_inicial {
