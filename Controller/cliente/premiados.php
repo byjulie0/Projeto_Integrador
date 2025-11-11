@@ -15,75 +15,62 @@
             <h1 class="pg_campeoes" id="campeoes">Animais premiados</h1>
 
             <div class="carrossel_campeoes">
-
                 <div class="arrow_campeoes" id="arrow-esquerda3">&#10094;</div>
 
-            <a href="detalhes_produto.php">
                 <div class="cards_campeoes" id="carrossel-cards3">
                     <?php
-                    $campeos = [
-                        [
-                            "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
-                            "peso" => "420 kg",
-                            "raca" => "Árabe",
-                            "genealogia" => "PO",
-                            "idade" => "1 ano",
-                            "preco" => "2.000 000,00"
-                        ],
-                        [
-                            "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "peso" => "550 kg",
-                            "raca" => "Mustang",
-                            "genealogia" => "PO",
-                            "idade" => "28 meses",
-                            "preco" => "12.000,00"
-                        ],
-                        [
-                            "imagem" => "../../view/public/imagens/img_slider_pg_inicial/puro_sangue_slider_pg_inicial.jpg",
-                            "peso" => "544 kg",
-                            "raca" => "Puro Sangue",
-                            "genealogia" => "PO",
-                            "idade" => "28 meses",
-                            "preco" => "18.000,00"
-                        ],
-                        [
-                            "imagem" => "../../view/public/imagens/nelore3.jpg",
-                            "peso" => "442 kg",
-                            "raca" => "Nelore",
-                            "genealogia" => "PO",
-                            "idade" => "1 ano",
-                            "preco" => "4.900,00"
-                        ],
-                        [
-                            "imagem" => "../../view/public/imagens/rhode-island-red-rooster.jpg",
-                            "peso" => "3,9 kg",
-                            "raca" => "Rhode Island",
-                            "genealogia" => "PO",
-                            "idade" => "1 ano",
-                            "preco" => "1.500,00"
-                        ]
-                    ];
+                    include_once '../../model/DB/conexao.php';
+                    $sql = "SELECT id_produto, prod_nome, valor, path_img, peso, idade, descricao 
+                            FROM produto 
+                            WHERE campeao = 1 AND produto_ativo = 1";
+                    $resultado = $con->query($sql);
 
-                    foreach ($campeos as $item) {
-                        $imagem = $item['imagem'];
-                        $peso = $item['peso'];
-                        $raca = $item['raca'];
-                        $genealogia = $item['genealogia'];
-                        $idade = $item['idade'];
-                        $preco = $item['preco'];
+                    if ($resultado && $resultado->num_rows > 0) {
+                        while ($row = $resultado->fetch_assoc()) {
+                            $id_produto = $row['id_produto'];
+                            $raca = htmlspecialchars($row['prod_nome']);
+                            $peso = number_format($row['peso'], 2, ',', '.') . " kg";
+                            $idade = date('Y', strtotime($row['idade'])) < 2000 ? "Não informada" : date('d/m/Y', strtotime($row['idade']));
+                            $preco = number_format($row['valor'], 2, ',', '.');
+                            $descricao = htmlspecialchars($row['descricao']);
 
-                            echo '<a href="detalhes_produto.php">';
-                                include 'card_carrossel.php';
+                            
+                            $imagem = '../../View/Public/imagens/default-thumbnail.jpg'; 
+                            if (!empty($row['path_img'])) {
+                                $path = trim(string: $row['path_img']);
+                                
+                                if ($path[0] === '[') {
+                                    
+                                    $listaImagens = json_decode($path, true);
+                                    if (is_array($listaImagens) && !empty($listaImagens[0])) {
+                                        $imagem = '../../View/Public/' . trim(str_replace('\\', '', $listaImagens[0]));
+                                    }
+                                } elseif (str_contains($path, ',')) {
+                                    
+                                    $partes = explode(',', $path);
+                                    $primeira = trim(str_replace('\\', '', $partes[0]));
+                                    $imagem = '../../View/Public/' . $primeira;
+                                } else {
+                                    
+                                    $imagem = '../../View/Public/' . str_replace('\\', '', $path);
+                                }
+                            }
+                            
+                            echo '<a href="detalhes_produto.php?id=' . $id_produto . '">';
+                            include 'card_carrossel.php';
                             echo '</a>';
                         }
-                        ?>
-                    </div>
-                </a>
+                    } else {
+                        echo '<p style="text-align:center;">Nenhum produto premiado encontrado.</p>';
+                    }
+
+                    $con->close();
+                    ?>
+                </div>
 
                 <div class="arrow_campeoes" id="arrow-direita3">&#10095;</div>
             </div>
         </div>
     </section>
 </body>
-
 </html>
