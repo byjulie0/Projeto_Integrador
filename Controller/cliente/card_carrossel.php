@@ -20,8 +20,6 @@ $id_produto = isset($id_produto) ? $id_produto : '';
     <p>Raça:</p>
     <p><?= htmlspecialchars($raca, ENT_QUOTES, 'UTF-8') ?></p>
 
-    <p>Genealogia:</p>
-    <p><?= htmlspecialchars($genealogia, ENT_QUOTES, 'UTF-8') ?></p>
 
     <p>Idade:</p>
     <p>
