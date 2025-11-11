@@ -7,6 +7,7 @@
   justify-content: center;
   width: 100%;
   padding: 50px 100px;
+  background-color: #fff;
 }
 
 #page-title-gerenciar-clientes {
@@ -61,7 +62,6 @@
 #search-bar-gerenciar-clientes {
   display: flex;
   align-items: center;
-  background-color: none;
   border-radius: 50px;
   border: 0.5px solid var(--color-primary-1);
   padding: 5px 15px;
@@ -81,7 +81,9 @@
 .first-container-gerenciar-clientes a{
   font-size: 14px;
   font-weight: 400;
-  color: var(--warning-color);
+  color: var(--color-primary-1);
+  position: absolute;
+  text-decoration: none;
 }
 
 #search-bar-gerenciar-clientes input {
@@ -95,7 +97,6 @@
 #search-bar-gerenciar-clientes input::placeholder {
   color: var(--color-primary-1);
   font-weight: 500;
-  font-size: 14px;
 }
 
 #search-bar-gerenciar-clientes button {
@@ -110,7 +111,34 @@
   color: var(--color-primary-1);
   font-size: 16px;
 }
+.botoes_filtros_clientes{
+  display: flex;
+  text-align: justify;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.botoes_filtros_clientes button{
+  color: var(--color-primary-1);
+  background-color: #fff;
+  padding: 4px;
+  min-width: 110px;
+  border-radius: 8px;
+  border: solid 1px;
+  transition: all 0.3s ease;
+}
+.botoes_filtros_clientes button:hover{
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
+}
+.botoes_filtros_clientes button:focus{
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
 
+}
 #break-line{
   width: 100%;
   display: flex;
@@ -138,17 +166,13 @@
 #table-space-gerenciar-clientes table th {
   width: 100%;
   background-color: #E5E7E5;
-
+}
+.header-cell-gerenciar-clientes{
+  font-weight: 500;
 }
 
 #table-space-gerenciar-clientes table .select-all-label-gerenciar-clientes {
   width: 10%;
-  border-radius: 10px 0px 0px 10px;
-}
-
-
-.header-exclude-gerenciar-clientes {
-  border-radius: 0px 10px 10px 0px;
 }
 
 
@@ -212,32 +236,7 @@
   width: 50%;
   border-radius: 5px;
 }
-.cliente-checkbox {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--color-primary-1);
-    border-radius: 3px;
-    outline: none;
-    cursor: pointer;
-    margin-right: 8px;
-    position: relative;
-    vertical-align: middle;
-}
-.cliente-checkbox:checked {
-    background-color: var(--color-primary-3);
-    border-color: var(--color-primary-3);
-}
-.cliente-checkbox:checked::after {
-    content: "✓";
-    position: absolute;
-    color: white;
-    font-size: 12px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 .cpf-name-gerenciar-clientes span {
   font-weight: 600;
 }

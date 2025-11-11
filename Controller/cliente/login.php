@@ -8,7 +8,7 @@ include '../utils/libras.php'
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - John Rooster</title>
+  <title>Login - John Rooster </title>
   <link rel="stylesheet" href="../../view/public/css/cliente/pg_login.css">
   <script src="../../view/js/cliente/login_olho_ocultar_senha.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -20,7 +20,7 @@ include '../utils/libras.php'
 
     <div class="login_box_vinycius">
       <div class="info_login_vinycius">
-        <img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo">
+         <a href="pg_inicial_cliente.php"><img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo" ></a>
         <p class="text_login_vinycius">
           Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo
           com qualidade e confiança para o seu negócio.

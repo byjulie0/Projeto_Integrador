@@ -110,15 +110,6 @@ body {
   box-shadow: 0 0 10px #4b914b;
 
 }
-.catalogo_produtos_botao_todos{
-    left: 65%;
-}
-.catalogo_produtos_botao_ativos{
-    left: 75%;
-}
-.catalogo_produtos_botao_inativos{
-    left: 85%;
-}
 #search-bar-atualizar-produtos input {
     border: none;
     outline: none;

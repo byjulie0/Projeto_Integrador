@@ -12,7 +12,7 @@
             <div class="logo_menu_login">
                 <img src="../../View/Public/Imagens/img_logofabrica.png" alt="Logo John Rooster">
             </div>
-            <h2 class="titulo_menu_login">John Rooster - Login</h2>   
+            <a href="pg_inicial_cliente.php" class="titulo_menu_login">John Rooster - Login</a>   
         </div>
     </nav>
 </body>

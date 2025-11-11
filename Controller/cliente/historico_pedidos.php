@@ -1,6 +1,10 @@
 <?php
 include '../utils/autenticado.php';
 include '../utils/listar_pedidos_cliente.php';
+if ($usuario_nao_logado) {
+  include '../overlays/pop_up_login.php';
+  exit;
+}
 include 'menu_pg_inicial.php';
 ?>
 <!DOCTYPE html>

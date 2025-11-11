@@ -2,10 +2,10 @@
 session_start();
 require_once '../../model/DB/conexao.php';
 
-if (!isset($_SESSION['id_cliente'])) {
-    header("Location: login.php");
-    exit;
-}
+// if (!isset($_SESSION['id_cliente'])) {
+//     header("Location: login.php");
+//     exit;
+// }
 
 $id_cliente = $_SESSION['id_cliente'];
 // $id_produto = $_POST['id_produto'] ?? null;

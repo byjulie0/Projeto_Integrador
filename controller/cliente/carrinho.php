@@ -1,5 +1,9 @@
 <?php
 include '../utils/autenticado.php';
+if ($usuario_nao_logado) {
+  include '../overlays/pop_up_login.php';
+  exit;
+}
 include '../utils/libras.php';
 include 'menu_pg_inicial.php';
 ?>
@@ -19,6 +23,24 @@ include 'menu_pg_inicial.php';
 </head>
 
 <body>
+    <?php
+    // Exibir pop-up de erro se houver
+    if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'erro' && isset($_SESSION['popup_message'])) {
+        $texto = $_SESSION['popup_message'];
+        include '../overlays/pop_up_erro.php';
+        unset($_SESSION['popup_type']);
+        unset($_SESSION['popup_message']);
+    }
+    
+    if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'sucesso' && isset($_SESSION['popup_message'])) {
+        $texto = $_SESSION['popup_message'];
+        include '../overlays/pop_up_sucesso.php';
+        unset($_SESSION['popup_type']);
+        unset($_SESSION['popup_message']);
+    }
+
+    ?>
+
     <div class="main_cart_area">
         <div class="product_area_cart">
             <div class="area_seta_titulo">
@@ -76,10 +98,7 @@ include 'menu_pg_inicial.php';
                                 </div>
 
                                 <div class="labels-respective-content-carrinho">
-                                    <span class="total-price">
-                                        R$: <span
-                                            class="product-total-price"><?php echo number_format($total, 2, ',', '.'); ?></span>
-                                    </span>
+                                    <span class="product-total-price" data-price="<?php echo $total; ?>"><?php echo number_format($total, 2, ',', '.'); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -119,6 +138,16 @@ include 'menu_pg_inicial.php';
             </div>
         </section>
     </div>
+
+    <!-- Script para redirecionar após sucesso do pedido -->
+    <script>
+        <?php if (isset($_GET['pedido_sucesso']) && $_GET['pedido_sucesso'] == 1): ?>
+            // Aguarda 3 segundos e redireciona para limpar carrinho e ir ao histórico
+            setTimeout(function() {
+                window.location.href = '../utils/limpar_carrinho.php';
+            }, 3000);
+        <?php endif; ?>
+    </script>
 
     <?php include 'footer_cliente.php';?>
 </body>

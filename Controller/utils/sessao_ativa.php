@@ -1,6 +1,9 @@
 <?php
 include '../../model/DB/conexao.php';
-session_start();
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = mysqli_real_escape_string($con, $_POST['email']);
