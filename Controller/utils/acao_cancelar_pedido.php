@@ -18,6 +18,33 @@ try {
     $stmt->bind_param("i", $pedido_id);
     $stmt->execute();
 
+    // criar  notificação inicio
+    
+    $sql= "SELECT id_cliente FROM pedido WHERE id_pedido = ?";
+
+    $stmt->bind_param("i", $pedido_id);
+    $stmt->execute();
+    $cliente_id_not=$stmt->get_result();
+
+
+    if ($cliente_id_not && $cliente_id_not->num_rows > 0){
+
+        $row = $cliente_id_not->fetch_assoc();
+        $usuario_id= $row['id_cliente'];
+        $produto_id= $pedido_id;
+        $mensagem="Cliente, o seu pedido de Número: #{$pedido_id} foi cancelado!";
+        $categoria="Pedidos";
+
+        if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
+            echo "Notificação enviada com sucesso!";
+        } 
+        else {
+            echo "Erro ao enviar notificação.";
+        }
+    }
+
+    // criar  notificação fim
+
     // Devolve estoque dos produtos relacionados a esse pedido
     $sql_itens = "SELECT id_produto, qtd_produto FROM item WHERE id_pedido = ?";
     $stmt2 = $con->prepare($sql_itens);
