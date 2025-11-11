@@ -12,6 +12,7 @@ include 'menu_pg_inicial.php';
     <link rel="stylesheet" href="../../view/public/css/cliente/detalhes_produto.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="body-detalhes-produto">
@@ -19,6 +20,13 @@ include 'menu_pg_inicial.php';
     <h2 class="titulo-produto-detalhes-produto">
         <a href="#" onclick="window.history.back(); return false"><i class="bi bi-chevron-left"></i></a>
         <?php echo htmlspecialchars($produto['prod_nome']); ?>
+        
+        <a href="../utils/favoritar.php?id_produto=<?php echo $produto['id_produto']; ?>" 
+                class="botao-favorito"
+                style="text-decoration: none;">
+                <i class="fa <?php echo $favoritado ? 'fa-heart' : 'fa-heart-o'; ?>" 
+                    style="color: <?php echo $favoritado ? 'red' : 'inherit'; ?>; font-size:24px;"></i>
+        </a>
     </h2>
 
     <main class="main-detalhes-produto">
@@ -80,6 +88,7 @@ include 'menu_pg_inicial.php';
             </section>
             
             <section class="sub-descricao-detalhes-produto">
+                
                 <?php if ($produto['id_categoria'] != 5): ?>
                     <p><strong>Peso: </strong><?php echo $peso_formatado; ?></p>
                     <p><strong>Data de nascimento: </strong><?php echo $produto['idade']; ?></p>

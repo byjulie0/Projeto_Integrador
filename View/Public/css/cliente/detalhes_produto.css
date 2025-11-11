@@ -47,12 +47,28 @@
   margin: 0 auto;            
 }
 
+.titulo-produto-detalhes-produto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo-produto-detalhes-produto .botao-favorito {
+    margin-left: auto;
+}
+
+.titulo-produto-detalhes-produto .botao-favorito:hover i {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
 /* Informações do produto (lado direito) */
 .info-produto-detalhes-produto {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .estrelas-detalhes-produto {
   font-size: 18px;
   color: gold;
