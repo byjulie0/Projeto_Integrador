@@ -31,30 +31,6 @@ include 'menu_pg_inicial.php';
         <div class="filtros_container_categoria_produtos">
             <span class="filtros_titulo">Filtrar por:</span>
 
-            <?php if ($id_categoria == 5): ?>
-                <!-- Filtros específicos para Produtos Gerais -->
-                <button class="filtro_btn <?php echo $filtro == 'racao_suplementos' ? 'active' : ''; ?>"
-                    onclick="filtrar('racao_suplementos')">
-                    Rações e Suplementos
-                </button>
-                <button class="filtro_btn <?php echo $filtro == 'medicamentos' ? 'active' : ''; ?>"
-                    onclick="filtrar('medicamentos')">
-                    Medicamentos
-                </button>
-                <button class="filtro_btn <?php echo $filtro == 'higiene_cuidado' ? 'active' : ''; ?>"
-                    onclick="filtrar('higiene_cuidado')">
-                    Higiene e Cuidado
-                </button>
-                <button class="filtro_btn <?php echo $filtro == 'equipamentos' ? 'active' : ''; ?>"
-                    onclick="filtrar('equipamentos')">
-                    Equipamentos
-                </button>
-                <button class="filtro_btn <?php echo $filtro == 'suplementos_nutricionais' ? 'active' : ''; ?>"
-                    onclick="filtrar('suplementos_nutricionais')">
-                    Suplementos Nutricionais
-                </button>
-            <?php else: ?>
-                <!-- Filtros por subcategoria para outras categorias -->
                 <button class="filtro_btn <?php echo $filtro == '' ? 'active' : ''; ?>" onclick="filtrar('')">
                     Todos
                 </button>
@@ -64,7 +40,6 @@ include 'menu_pg_inicial.php';
                         <?php echo htmlspecialchars($sub['subcat_nome']); ?>
                     </button>
                 <?php endforeach; ?>
-            <?php endif; ?>
 
             <span class="filtros_titulo" style="margin-left: 20px;">Ordenar por:</span>
             <select class="filtro_select" onchange="filtrar(this.value)">
@@ -135,22 +110,6 @@ include 'menu_pg_inicial.php';
 <?php
 function obterNomeFiltro($filtro, $id_categoria)
 {
-    // Mapeamento para Produtos Gerais
-    if ($id_categoria == 5) {
-        $nomes = [
-            'racao_suplementos' => 'Rações e Suplementos',
-            'medicamentos' => 'Medicamentos Veterinários',
-            'higiene_cuidado' => 'Produtos de Higiene e Cuidado',
-            'equipamentos' => 'Equipamentos e Utensílios',
-            'suplementos_nutricionais' => 'Suplementos Nutricionais',
-            'menor_preco' => 'Menor Preço',
-            'maior_preco' => 'Maior Preço',
-            'preco' => 'Padrão'
-        ];
-        return $nomes[$filtro] ?? ucfirst(str_replace('_', ' ', $filtro));
-    }
-
-    // Para outras categorias, buscar nome da subcategoria
     if (is_numeric($filtro)) {
         global $con;
         $sub_query = $con->query("SELECT subcat_nome FROM subcategoria WHERE id_subcategoria = $filtro");

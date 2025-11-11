@@ -23,7 +23,7 @@ include 'menu_pg_inicial.php';
 
     <main class="main-detalhes-produto">
 
-        <?php 
+        <?php
         $listaImagens = [];
 
         if (!empty($produto['path_img'])) {
