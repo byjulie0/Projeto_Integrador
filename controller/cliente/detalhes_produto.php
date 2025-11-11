@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../utils/detalhes_prod.php';
 include 'menu_pg_inicial.php';
 ?>
@@ -44,8 +44,8 @@ include 'menu_pg_inicial.php';
         }, $listaImagens);
 
         // Define imagem principal
-        $imagemPrincipal = !empty($listaImagens[0]) 
-            ? $listaImagens[0] 
+        $imagemPrincipal = !empty($listaImagens[0])
+            ? $listaImagens[0]
             : 'view/public/imagens/default-thumbnail.jpg';
         ?>
 

@@ -23,7 +23,7 @@ function buscarProdutosAleatorios($con, $limite = 10) {
             LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
             LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria
             WHERE p.produto_ativo = 1
-            ORDER BY RAND() 
+            ORDER BY RAND()
             LIMIT $limite";
 
     $result = $con->query($sql);

@@ -91,26 +91,6 @@ switch ($id_categoria) {
         }
         break;
 
-    case 4:
-        switch ($filtro) {
-            case '18':
-                $sql .= " AND p.id_subcategoria = 18";
-                break;
-            case '19':
-                $sql .= " AND p.id_subcategoria = 19";
-                break;
-            case '20':
-                $sql .= " AND p.id_subcategoria = 20";
-                break;
-            case '21':
-                $sql .= " AND p.id_subcategoria = 21";
-                break;
-            case '22':
-                $sql .= " AND p.id_subcategoria = 22";
-                break;
-        }
-        break;
-
     case 5:
         switch ($filtro) {
             case 'racao_suplementos':

@@ -76,7 +76,7 @@ include 'menu_pg_inicial.php';
             <?php endif; ?>
         </div>
 
-        <button class="nav_button next" onclick="navegarLotes(1)">❯</button>
+        <button class="nav_button next" onclick="navegarLotes(1)">></button>
     </div>
 
     <script>
