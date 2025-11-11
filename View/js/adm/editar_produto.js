@@ -11,20 +11,25 @@ function initEditProduct() {
     produtoCategoria = window.produtoCategoria || 0;
     produtoSubcategoria = window.produtoSubcategoria || 0;
 
-    // Carrega imagens do PHP
+    // === CARREGA IMAGENS DO BANCO (PRIMEIRA NO CENTRO) ===
+    let hasImage = false;
     for (let i = 0; i < 4; i++) {
-        const miniImg = document.getElementById(`miniImg${i}`);
-        if (miniImg && miniImg.src && !miniImg.src.includes('blob:')) {
-            previews[i] = miniImg.src;
+        const img = document.getElementById(`miniImg${i}`);
+        if (img && img.src && img.src.includes('/img/produtos/')) {
+            previews[i] = img.src;
+            if (!hasImage) {
+                currentSlide = i; // Define a primeira imagem como inicial
+                hasImage = true;
+            }
         }
     }
 
     setupImageUploader();
     setupCategoryHandler();
-    updateCarousel();
+    updateCarousel(); // Mostra a primeira imagem do banco
 }
 
-// === UPLOADER + REMOVER + TROCA ===
+// === UPLOADER ===
 function setupImageUploader() {
     const inputs = document.querySelectorAll('.file-input-hidden');
     const miniImgs = document.querySelectorAll('.mini-img');
@@ -43,6 +48,11 @@ function setupImageUploader() {
                 contents[i].style.display = 'none';
                 removeBtns[i].style.display = 'flex';
                 document.getElementById(`manter${i}`).value = '0';
+
+                // Se for a primeira imagem adicionada, centraliza
+                if (previews.filter(p => p).length === 1) {
+                    currentSlide = i;
+                }
                 updateCarousel();
             };
             reader.readAsDataURL(file);
@@ -58,26 +68,34 @@ function setupImageUploader() {
             contents[i].style.display = 'flex';
             btn.style.display = 'none';
             document.getElementById(`del${i}`).value = '1';
+
+            // Recalcula currentSlide após remoção
+            const filled = previews.map((p, j) => p ? j : -1).filter(j => j !== -1);
+            if (filled.length === 0) {
+                currentSlide = 0;
+            } else if (currentSlide >= filled.length) {
+                currentSlide = filled.length - 1;
+            }
             updateCarousel();
         });
     });
 
-    document.querySelectorAll('.custom-file-upload'). Patent.forEach((label, i) => {
+    document.querySelectorAll('.custom-file-upload').forEach((label, i) => {
         label.addEventListener('click', (e) => {
             if (e.target.classList.contains('remove-mini')) return;
             if (!previews[i]) {
                 inputs[i].click();
             } else {
-                showSlide(i);
+                showSlide(i); // Mostra no centro
             }
         });
     });
 }
 
-// === CARROSSEL ===
+// === CARROSSEL (COM PRIMEIRA IMAGEM NO CENTRO) ===
 window.changeSlide = (dir) => {
     const filled = previews.filter(p => p);
-    if (filled.length === 0) return;
+    if (filled.length <= 1) return;
     currentSlide = (currentSlide + dir + filled.length) % filled.length;
     updateCarousel();
 };
@@ -90,26 +108,28 @@ function showSlide(i) {
 
 function updateCarousel() {
     const filled = previews.filter(p => p);
-    const mainImg = document.getElementById('mainPreview');
+    const main = document.getElementById('mainPreview');
     const placeholder = document.getElementById('carouselPlaceholder');
 
     if (filled.length === 0) {
-        mainImg.style.display = 'none';
+        main.style.display = 'none';
         placeholder.style.display = 'block';
         return;
     }
-    mainImg.src = filled[currentSlide];
-    mainImg.style.display = 'block';
+
+    main.src = filled[currentSlide];
+    main.style.display = 'block';
     placeholder.style.display = 'none';
 }
 
+// === SUBCATEGORIA ===
 function setupCategoryHandler() {
     const catSel = document.getElementById('categoria');
     const subSel = document.getElementById('subcategoria');
     if (!catSel || !subSel) return;
 
     function loadSub() {
-        const catId = catSel.value;
+        const catId = parseInt(catSel.value);
         subSel.innerHTML = '<option value="">Selecione</option>';
         subSel.disabled = true;
 
@@ -118,17 +138,19 @@ function setupCategoryHandler() {
                 const opt = document.createElement('option');
                 opt.value = sub.id_subcategoria;
                 opt.textContent = sub.subcat_nome;
-                if (parseInt(sub.id_subcategoria) === produtoSubcategoria) {
-                    opt.selected = true;
-                }
+                if (parseInt(sub.id_subcategoria) === produtoSubcategoria) opt.selected = true;
                 subSel.appendChild(opt);
             });
             subSel.disabled = false;
         }
     }
 
+    if (produtoCategoria) {
+        catSel.value = produtoCategoria;
+        loadSub();
+    }
+
     catSel.addEventListener('change', loadSub);
-    loadSub();
 }
 
 window.initEditProduct = initEditProduct;

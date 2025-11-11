@@ -56,9 +56,11 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                     <p class="product_title_info_img">Imagens do produto (máx. 4)<span class="mandatory_space">*</span></p>
 
                     <div class="carousel-container">
-                        <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)"><i class="bi bi-chevron-left"></i>
+                        <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)">
+                            <i class="bi bi-chevron-left"></i>
                         </button>
-                        <button type="button" class="carousel-btn next" onclick="changeSlide(1)"><i class="bi bi-chevron-right"></i>
+                        <button type="button" class="carousel-btn next" onclick="changeSlide(1)">
+                            <i class="bi bi-chevron-right"></i>
                         </button>
                         <div class="carousel-placeholder" id="carouselPlaceholder">Clique em um quadrado para adicionar</div>
                         <img src="" alt="" class="carousel-img" id="mainPreview" style="display: none;">
@@ -66,49 +68,48 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 
                     <div class="mini-container">
                         <?php for ($i = 0; $i < 4; $i++): ?>
-                            <?php $imgPath = $imagensSalvas[$i] ?? null; ?>
-                            <label class="custom-file-upload" for="input<?= $i ?>">
-                                <div class="upload-box" id="box<?= $i ?>">
-                                    <img src="<?= $imgPath ? '../../view/public/' . $imgPath : '' ?>" 
-                                         alt="" class="mini-img" id="miniImg<?= $i ?>" 
-                                         style="<?= $imgPath ? 'display:block;' : 'display:none;' ?>">
-                                    <div class="upload-content" id="content<?= $i ?>" 
-                                         style="<?= $imgPath ? 'display:none;' : 'display:flex;' ?>">
-                                        <i class="bi bi-camera-fill"></i>
-                                        <span>Adicionar</span>
-                                    </div>
-                                    <button type="button" class="remove-mini" id="remove<?= $i ?>" 
-                                            style="<?= $imgPath ? 'display:flex;' : 'display:none;' ?>">X</button>
-                                    <input type="hidden" name="manter_imagem[<?= $i ?>]" id="manter<?= $i ?>" value="<?= $imgPath ? '1' : '0' ?>">
-                                    <input type="hidden" name="remover_imagem[<?= $i ?>]" id="del<?= $i ?>" value="0">
-                                </div>
-                                <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden" id="input<?= $i ?>">
-                            </label>
-                        <?php endfor; ?>
+    <?php $imgPath = $imagensSalvas[$i] ?? null; ?>
+    <label class="custom-file-upload" for="input<?= $i ?>">
+        <div class="upload-box" id="box<?= $i ?>">
+            <img src="<?= $imgPath ? '../../view/public/' . $imgPath : '' ?>" 
+                 alt="" class="mini-img" id="miniImg<?= $i ?>" 
+                 style="<?= $imgPath ? 'display:block;' : 'display:none;' ?>">
+            <div class="upload-content" id="content<?= $i ?>" 
+                 style="<?= $imgPath ? 'display:none;' : 'display:flex;' ?>">
+                <i class="bi bi-camera-fill"></i>
+                <span>Adicionar</span>
+            </div>
+            <button type="button" class="remove-mini" id="remove<?= $i ?>" 
+                    style="<?= $imgPath ? 'display:flex;' : 'display:none;' ?>">X</button>
+            <input type="hidden" name="manter_imagem[<?= $i ?>]" id="manter<?= $i ?>" value="<?= $imgPath ? '1' : '0' ?>">
+            <input type="hidden" name="remover_imagem[<?= $i ?>]" id="del<?= $i ?>" value="0">
+        </div>
+        <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden" id="input<?= $i ?>">
+    </label>
+<?php endfor; ?>
                     </div>
                 </article>
 
-                <!-- === DETALHES === -->
                 <aside class="add_product_details">
                     <div class="product_details_collumn">
                         <article class="input_product_name">
                             <p class="product_title_info">Nome do produto<span class="mandatory_space">*</span></p>
-                            <input type="text" name="nome" value="<?= htmlspecialchars($produto['prod_nome']) ?>" required>
+                            <input type="text" name="nome" class="input_product_info" value="<?= htmlspecialchars($produto['prod_nome']) ?>" required>
                         </article>
 
                         <article class="input_product_price">
                             <p class="product_title_info">Valor<span class="mandatory_space">*</span></p>
-                            <input type="number" name="valor" value="<?= $produto['valor'] ?>" required min="0.01" step="0.01">
+                            <input type="number" name="valor" class="input_product_info" value="<?= $produto['valor'] ?>" required min="0.01" step="0.01">
                         </article>
 
                         <article class="input_product_quantity">
                             <p class="product_title_info">Quantidade<span class="mandatory_space">*</span></p>
-                            <input type="number" name="quantidade" value="<?= $produto['quant_estoque'] ?>" required min="0">
+                            <input type="number" name="quantidade" class="input_product_info" value="<?= $produto['quant_estoque'] ?>" required min="0">
                         </article>
 
                         <article class="input_product_subcategory">
                             <p class="product_title_info">Categoria<span class="mandatory_space">*</span></p>
-                            <select name="categoria" id="categoria" required>
+                            <select name="categoria" id="categoria" class="product_info_select" required>
                                 <option value="">Selecione</option>
                                 <?php foreach ($categorias as $cat): ?>
                                     <option value="<?= $cat['id_categoria'] ?>" <?= $cat['id_categoria'] == $produto['id_categoria'] ? 'selected' : '' ?>>
@@ -120,7 +121,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 
                         <article class="input_product_subcategory">
                             <p class="product_title_info">Subcategoria<span class="mandatory_space">*</span></p>
-                            <select name="subcategoria" id="subcategoria" required>
+                            <select name="subcategoria" id="subcategoria" class="product_info_select" required>
                                 <option value="">Selecione</option>
                             </select>
                         </article>
@@ -129,22 +130,22 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                     <div class="product_details_collumn">
                         <article class="input_product_quantity">
                             <p class="product_title_info">Descrição<span class="mandatory_space">*</span></p>
-                            <textarea name="descricao" required><?= htmlspecialchars($produto['descricao']) ?></textarea>
+                            <textarea name="descricao" class="input_product_info" required><?= htmlspecialchars($produto['descricao']) ?></textarea>
                         </article>
 
                         <article class="input_product_quantity">
                             <p class="product_title_info">Peso<span class="mandatory_space">*</span></p>
-                            <input type="number" name="peso" value="<?= $produto['peso'] ?>" min="0" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
+                            <input type="number" name="peso" class="input_product_info" value="<?= $produto['peso'] ?>" min="0" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
                         </article>
 
                         <article class="input_product_quantity">
                             <p class="product_title_info">Idade<span class="mandatory_space">*</span></p>
-                            <input type="date" name="idade" value="<?= $produto['idade'] ?>" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
+                            <input type="date" name="idade" class="input_product_info" value="<?= $produto['idade'] ?>" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
                         </article>
 
                         <article class="input_product_category">
                             <p class="product_title_info">Sexo<span class="mandatory_space">*</span></p>
-                            <select name="sexo" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
+                            <select name="sexo" class="product_info_select" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
                                 <option value="M" <?= $produto['sexo'] == 'M' ? 'selected' : '' ?>>Macho</option>
                                 <option value="F" <?= $produto['sexo'] == 'F' ? 'selected' : '' ?>>Fêmea</option>
                                 <option value="Não se aplica" <?= $produto['sexo'] == 'Não se aplica' ? 'selected' : '' ?>>Não se aplica</option>
@@ -153,7 +154,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 
                         <article class="input_product_champion">
                             <p class="product_title_info">Campeão?<span class="mandatory_space">*</span></p>
-                            <select name="campeao" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
+                            <select name="campeao" class="product_info_select" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
                                 <option value="sim" <?= $produto['campeao'] == 'sim' ? 'selected' : '' ?>>Sim</option>
                                 <option value="nao" <?= $produto['campeao'] == 'nao' ? 'selected' : '' ?>>Não</option>
                             </select>
