@@ -9,13 +9,12 @@ function validarCPF($cpf) {
     if (strlen($cpf) != 11) return false;
     if (preg_match('/(\d)\1{10}/', $cpf)) return false;
 
-    // Calcula o dígito verificador
     for ($t = 9; $t < 11; $t++) {
         for ($d = 0, $c = 0; $c < $t; $c++) {
             $d += $cpf[$c] * (($t + 1) - $c);
         }
         $d = ((10 * $d) % 11) % 10;
-        if ($cpf[$c] != $d) return false;// Compara com o dígito do CPF
+        if ($cpf[$c] != $d) return false;
     }
     return true;
 }
@@ -36,25 +35,55 @@ function validarCNPJ($cnpj) {
             $peso--;
             if ($peso < 2) $peso = 9;
         }
-        $digito = ($soma % 11 < 2) ? 0 : 11 - ($soma % 11); //Calcula dígito verificador
+        $digito = ($soma % 11 < 2) ? 0 : 11 - ($soma % 11);
         if ($cnpj[12 + $i] != $digito) return false;
     }
     return true;
 }
 
+function validarEmail($email) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return false;
+    }
+    
+    // Verifica se tem domínio válido (não aceita .co sem mais nada, etc)
+    $dominiosInvalidos = ['.co', '.c', '.om'];
+    foreach ($dominiosInvalidos as $dominio) {
+        if (substr($email, -strlen($dominio)) === $dominio) {
+            return false;
+        }
+    }
+    
+    // Verifica se o domínio tem pelo menos 2 caracteres após o último ponto
+    $partes = explode('@', $email);
+    if (count($partes) === 2) {
+        $dominio = $partes[1];
+        $ultimoPonto = strrpos($dominio, '.');
+        if ($ultimoPonto !== false) {
+            $extensao = substr($dominio, $ultimoPonto + 1);
+            if (strlen($extensao) < 2) {
+                return false;
+            }
+        }
+    }
+    
+    return true;
+}
 
-//Recaptcha
+// Recaptcha
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../cliente/pg_cadastro.php?error=metodo');
     exit;
 }
+
 $recaptcha_secret = getenv('RECAPTCHA_SECRET') ?: '6LdyqOUrAAAAAF1olqup_tnkbPYxEHydWJkhAgHO';
 $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
 if (empty($recaptcha_response)){
-    header('Location: ../../Controller/cliente/pg_cadastro.php?error=recaptcha_missing');
+    $_SESSION['popup_type'] = 'erro';
+    $_SESSION['popup_message'] = 'Por favor, marque o reCAPTCHA antes de enviar o formulário.';
+    header('Location: ../cliente/pg_cadastro.php');
     exit;
-
 }
 
 $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
@@ -72,17 +101,12 @@ $response = curl_exec($ch);
 curl_close($ch);
 $verification = json_decode($response, true);
 
-if (isset($verification['success']) && $verification['success'] === true) {
-    echo '<script>mostrarPopup("sucesso", "Sucesso na validação do reCAPTCHA !");</script>';
-}else{
-    header('Location: ../cliente/pg_cadastro.php?error=recaptcha_failed');
-    echo '<script>mostrarPopup("erro", "Validação reCAPTCHA falhou!");</script>';
+if (!isset($verification['success']) || $verification['success'] !== true) {
+    $_SESSION['popup_type'] = 'erro';
+    $_SESSION['popup_message'] = 'Validação reCAPTCHA falhou! Por favor, tente novamente.';
+    header('Location: ../cliente/pg_cadastro.php');
     exit;
-
 }
-
-//recaptcha
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -95,42 +119,106 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha           = $_POST['senha'] ?? '';
     $senha_confirmar = $_POST['senha-confirmar'] ?? '';
 
+    // Salvar dados do formulário na sessão para recarregar
+    $_SESSION['form_data'] = [
+        'nome' => $nome,
+        'cpf_cnpj' => $_POST['cpf_cnpj'],
+        'email' => $email,
+        'data_nascimento' => $data_nasc,
+        'telefone' => $telefone
+    ];
+
+    // Validação de email
+    if (!validarEmail($email)) {
+        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['popup_message'] = 'Email inválido! Use o padrão: email@empresa.com.br';
+        header('Location: ../cliente/pg_cadastro.php');
+        exit;
+    }
+
+    // Verifica se email já existe
+    $query_email = "SELECT email FROM cliente WHERE email = '$email'";
+    $result_email = mysqli_query($con, $query_email);
+    if (mysqli_num_rows($result_email) > 0) {
+        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['popup_message'] = 'Este email já está cadastrado! Por favor, use outro email.';
+        header('Location: ../cliente/pg_cadastro.php');
+        exit;
+    }
+
+    // Validação de senha
     if ($senha !== $senha_confirmar) {
-        die("Erro: As senhas não coincidem.");
+        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['popup_message'] = 'As senhas não coincidem. Por favor, verifique e tente novamente.';
+        header('Location: ../cliente/pg_cadastro.php');
+        exit;
     }
 
     if (strlen($senha) < 6) {
-        die("Erro: A senha precisa ter no mínimo 6 caracteres.");
+        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['popup_message'] = 'A senha precisa ter no mínimo 6 caracteres.';
+        header('Location: ../cliente/pg_cadastro.php');
+        exit;
     }
 
+    // Validação de data de nascimento
     $nascimento = DateTime::createFromFormat('Y-m-d', $data_nasc);
     if (!$nascimento) {
-        die("Erro: Data de nascimento inválida.");
+        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['popup_message'] = 'Data de nascimento inválida.';
+        header('Location: ../cliente/pg_cadastro.php');
+        exit;
     }
 
     $hoje = new DateTime();
     $idade = $hoje->diff($nascimento)->y;
     if ($idade < 18) {
-        die("Erro: Você precisa ter pelo menos 18 anos para se cadastrar.");
+        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['popup_message'] = 'Você precisa ter pelo menos 18 anos para se cadastrar.';
+        header('Location: ../cliente/pg_cadastro.php');
+        exit;
     }
 
     $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
+    // Validação de CPF/CNPJ
     $cpf_cnpj = preg_replace('/\D/', '', $cpf_cnpj);
 
     if (strlen($cpf_cnpj) === 11) {
         if (!validarCPF($cpf_cnpj)) {
-            die("Erro: CPF inválido.");
+            $_SESSION['popup_type'] = 'erro';
+            $_SESSION['popup_message'] = 'CPF inválido! Por favor, verifique o número digitado.';
+            header('Location: ../cliente/pg_cadastro.php');
+            exit;
         }
     } elseif (strlen($cpf_cnpj) === 14) {
         if (!validarCNPJ($cpf_cnpj)) {
-            die("Erro: CNPJ inválido.");
+            $_SESSION['popup_type'] = 'erro';
+            $_SESSION['popup_message'] = 'CNPJ inválido! Por favor, verifique o número digitado.';
+            header('Location: ../cliente/pg_cadastro.php');
+            exit;
         }
     } else {
-        die("Erro: CPF deve ter 11 dígitos ou CNPJ deve ter 14 dígitos.");
+        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['popup_message'] = 'CPF deve ter 11 dígitos ou CNPJ deve ter 14 dígitos.';
+        header('Location: ../cliente/pg_cadastro.php');
+        exit;
     }
 
+    // Verifica se CPF/CNPJ já existe
+    $query_cpf = "SELECT cpf_cnpj FROM cliente WHERE cpf_cnpj = '$cpf_cnpj'";
+    $result_cpf = mysqli_query($con, $query_cpf);
+    if (mysqli_num_rows($result_cpf) > 0) {
+        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['popup_message'] = 'Este CPF/CNPJ já está cadastrado!';
+        header('Location: ../cliente/pg_cadastro.php');
+        exit;
+    }
 
+    // Se chegou aqui, limpa os dados do formulário
+    unset($_SESSION['form_data']);
+
+    // Inserção no banco
     $query_insert = "
         INSERT INTO cliente (
             cliente_nome, email, senha, cpf_cnpj, data_nasc, telefone
@@ -142,15 +230,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result_insert = mysqli_query($con, $query_insert);
 
     if (!$result_insert) {
-        echo '<script>mostrarPopup("erro", "Falha ao realizar cadastro!");</script>';
-        header('Location: ../../Controller/cliente/pg_cadastro.php?error');
-        die("Erro ao cadastrar: ");
+        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['popup_message'] = 'Falha ao realizar cadastro! Por favor, tente novamente.';
+        header('Location: ../cliente/pg_cadastro.php');
+        exit;
     }
 
-    $_SESSION['mensagem_sucesso'] = "Usuário cadastrado com sucesso!";
+    // Sucesso!
+    $_SESSION['popup_type'] = 'sucesso';
+    $_SESSION['popup_message'] = 'Cadastro realizado com sucesso! Você será redirecionado para o login.';
     $con->close();
-    echo '<script>mostrarPopup("erro", "Cadastro realizado com sucesso!");</script>';
-    header("Location: ../../Controller/cliente/login.php");
+    header("Location: ../cliente/pg_cadastro.php?success=1");
     exit();
 }
 ?>

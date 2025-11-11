@@ -14,7 +14,7 @@ include 'menu_inicial.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
     <link rel="stylesheet" href="../../view/public/css/adm/toogle.css">
-    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> 
     <script defer src="../../view/js/adm/toogle.js"></script>
     <script defer src="../../view/js/adm/buscar_produto.js"></script>
 </head>
@@ -37,6 +37,7 @@ include 'menu_inicial.php';
                     <button type="submit" name="status" value="ativos" class="catalogo_produtos_botao_ativos">Ativos</button>
                     <button type="submit" name="status" value="inativos" class="catalogo_produtos_botao_inativos">Inativados</button>
                 </form>
+
             </div>
             <hr class="break-line">
             <!-- ?status=inativados -->

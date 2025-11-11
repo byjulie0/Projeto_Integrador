@@ -9,7 +9,7 @@
     <script src="../../view/js/cliente/botao_cancelar.js"></script>
 </head>
 <body>
-    <button type="button" class="generate_report_product_button botao_vermelho_cliente">
+    <button type="reset" class="generate_report_product_button botao_vermelho_cliente">
         <?= $texto ?>
     </button>
 </body>

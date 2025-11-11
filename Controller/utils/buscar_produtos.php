@@ -1,9 +1,14 @@
 <?php
 include '../../model/DB/conexao.php';
 
+if (isset($_GET['status'])) {
+    echo 'Status: ' . $_GET['status'];  
+} else {
+    echo 'Status não definido';
+}
 
 $busca = isset($_POST['busca']) ? trim($_POST['busca']) : '';
-$inativos = isset($_POST['inativos']) ? (int)$_POST['inativos'] : 0;
+$status = isset($_GET['status']) ? $_GET['status'] : 'todos';
 
 
 $sql = "SELECT
@@ -21,9 +26,9 @@ $sql = "SELECT
 $where = [];
 
 
-if ($inativos === 1) {
+if ($status === 1) {
     $where[] = "p.produto_ativo = 1"; 
-} elseif ($inativos === 2) {
+} elseif ($status === 2) {
     $where[] = "p.produto_ativo = 0"; 
 }
 
