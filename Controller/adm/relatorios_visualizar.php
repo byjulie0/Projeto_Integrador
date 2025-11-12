@@ -5,7 +5,8 @@ include '../../model/DB/conexao.php';
 
 // intervalo de datas dinâmico (vindo do GET ou valores padrão)
 $data_inicio = isset($_GET['data_inicio']) ? $_GET['data_inicio'] : date('Y-m-01'); // primeiro dia do mês atual
-$data_fim    = isset($_GET['data_fim']) ? $_GET['data_fim'] : date('Y-m-t');       
+$data_fim = isset($_GET['data_fim']) ? $_GET['data_fim'] : date('Y-m-t'); // último dia do mês
+       
 // quantidade de pedidos por data 
 $query_pedidos_por_data = "SELECT DATE(data_pedido) AS data_pedido, COUNT(id_pedido) AS numero_pedidos
                            FROM pedido
@@ -39,6 +40,19 @@ $result_estatisticas = mysqli_query($con, $query_estatisticas);
 $estatisticas = [];
 while ($row = mysqli_fetch_assoc($result_estatisticas)) {
     $estatisticas[$row['status_pedido']] = $row['Numero_De_Pedidos'];
+}
+
+// Buscar os 10 pedidos mais recentes
+$query_ultimos_pedidos = "
+     select p.id_pedido, p.id_cliente, p.status_pedido, p.data_pedido, pr.valor from item as i left join pedido as p on i.id_pedido = p.id_pedido left join produto as pr on pr.id_produto = i.id_produto 
+	ORDER BY data_pedido DESC 
+    LIMIT 10;
+";
+$result_ultimos_pedidos = mysqli_query($con, $query_ultimos_pedidos);
+
+$ultimos_pedidos = [];
+while ($row = mysqli_fetch_assoc($result_ultimos_pedidos)) {
+    $ultimos_pedidos[] = $row;
 }
 
 
@@ -311,10 +325,34 @@ mysqli_close($con);
         padding: 10px;
     }
 }
+/*------------------------------------------tabela de pedidos ---------------------------------------------*/
+.tabela-pedidos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.tabela-pedidos th {
+    background-color: #dbf3d4ff;
+    color: #333;
+    padding: 8px;
+    text-align: right;
+}
+
+.tabela-pedidos td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tabela-pedidos tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
 </style>
 
-    </style>
+    
 </head>
 
 <body>
@@ -341,21 +379,21 @@ mysqli_close($con);
     <div class="relatorios_cards_topo">
         <!-- Card de Produtos -->
         <div class="card_topo">
-            <i class="fa-solid fa-bag-shopping"></i>Produtos <br> cadastrados: 
+            <i class="fa-solid fa-bag-shopping"></i>    Produtos <br> cadastrados: 
             <b><?php echo $numero_produtos; ?></b> 
             <i class="fa-solid fa-chevron-right"></i>
         </div>
 
         <!-- Card de Pedidos -->
         <div class="card_topo">
-            <i class="fa-solid fa-cart-plus"></i>Pedidos <br> gerados: 
+            <i class="fa-solid fa-cart-plus"></i>    Pedidos <br> gerados: 
             <b><?php echo $numero_pedidos; ?></b>
             <i class="fa-solid fa-chevron-right"></i>
         </div>
 
         <!-- Card de Usuários -->
         <div class="card_topo">
-            <i class="fa-solid fa-users"></i>Usuários <br> cadastrados: 
+            <i class="fa-solid fa-users"></i>    Usuários <br> cadastrados: 
             <b><?php echo $numero_usuarios; ?></b>
             <i class="fa-solid fa-chevron-right"></i>
         </div>
@@ -389,8 +427,36 @@ mysqli_close($con);
    
 
     <div class="card_atividades">
-        <h3>Atividades recentes:</h3>
-        <p>Mostrar últimos 10 pedidos e informações importantes relacionados</p>
+        <h3>Atividades recentes: 77777</h3>
+        <p>Últimos 10 pedidos registrados:</p>
+
+<table class="tabela-pedidos">
+    <thead>
+        <tr>
+            <th>ID Pedido</th>
+            <th>ID Cliente</th>
+            <th>Status</th>
+            <th>Data</th>
+            <th>Valor Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php if (!empty($ultimos_pedidos)): ?>
+            <?php foreach ($ultimos_pedidos as $pedido): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($pedido['id_pedido']); ?></td>
+                    <td><?php echo htmlspecialchars($pedido['id_cliente']); ?></td>
+                    <td><?php echo htmlspecialchars($pedido['status_pedido']); ?></td>
+                    <td><?php echo date('d/m/Y H:i', strtotime($pedido['data_pedido'])); ?></td>
+                    <td>R$ <?php echo number_format($pedido['valor'], 2, ',', '.'); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr><td colspan="5">Nenhum pedido encontrado.</td></tr>
+        <?php endif; ?>
+    </tbody>
+</table>
+
         <button class="btn_imprimir" id="btnGerarPDF">📄 Imprimir Relatório em PDF</button>
 
     </div>
@@ -400,7 +466,7 @@ mysqli_close($con);
 
     <?php include "footer.php"; ?>
 
-     <script>
+     <!-- <script>
 $(document).ready(function() {
     // Quando o usuário clicar em "Mudar período"
     $("#abrirCalendario").click(function() {
@@ -420,7 +486,44 @@ $(document).ready(function() {
         });
     });
 });
-</script>
+</script> -->
+<script>
+
+    
+$(document).ready(function() {
+    // Inicializa os datepickers de início e fim
+    $("#dataInicio").datepicker({
+        dateFormat: "yy-mm-dd",
+        onSelect: function(selectedDate) {
+            $("#dataFim").datepicker("option", "minDate", selectedDate);
+        }
+    });
+
+    $("#dataFim").datepicker({
+        dateFormat: "yy-mm-dd",
+        onSelect: function(selectedDate) {
+            $("#dataInicio").datepicker("option", "maxDate", selectedDate);
+
+            let inicio = $("#dataInicio").val();
+            let fim = $("#dataFim").val();
+
+            if (inicio && fim) {
+                // Atualiza o texto exibido
+                $("#dataEscolhida").text(inicio + " - " + fim);
+                // Recarrega a página com as datas no GET
+                window.location.href = `relatorios_visualizar.php?data_inicio=${inicio}&data_fim=${fim}`;
+            }
+        }
+    });
+
+    // Quando clicar em "Mudar período", mostra os inputs
+    $("#abrirCalendario").click(function() {
+        $("#dataInicio, #dataFim").show().focus();
+    });
+});
+
+    </script>
+
 <script>
     // Quando o botão for clicado, gera o PDF
     document.getElementById('btnGerarPDF').addEventListener('click', function() {
