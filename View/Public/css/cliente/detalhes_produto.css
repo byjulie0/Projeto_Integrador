@@ -228,3 +228,21 @@ h2{
       font-size: 18px;
     }
 }
+@media (max-width: 360px) {
+  .informacao h3{
+    order: 6;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .miniaturas-detalhes-produto{
+    order: 1;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
+
+}
