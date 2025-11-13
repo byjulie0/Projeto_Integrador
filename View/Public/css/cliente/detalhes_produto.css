@@ -53,14 +53,34 @@
     gap: 10px;
 }
 
-.titulo-produto-detalhes-produto .botao-favorito {
-    margin-left: auto;
+.area-favorito {
+  position: relative; /* garante que o botão fique dentro da área */
+  display: inline-block;
 }
 
-.titulo-produto-detalhes-produto .botao-favorito:hover i {
-    transform: scale(1.1);
-    transition: transform 0.2s;
+.btn-favorito {
+  /* background: none; */
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
 }
+
+.btn-favorito i {
+  color: #aaa;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.fa-regular::after i {
+  transform: scale(1.2);
+  background-color: red;
+}
+
+
+
 
 /* Informações do produto (lado direito) */
 .info-produto-detalhes-produto {

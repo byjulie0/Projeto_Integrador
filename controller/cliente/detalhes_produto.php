@@ -1,7 +1,31 @@
 <?php 
 include '../utils/detalhes_prod.php';
 include 'menu_pg_inicial.php';
+include '../../model/DB/conexao.php';
+
+$id_cliente = $_SESSION['id_cliente'] ?? null;
+$id_produto = $_GET['id_produto'] ?? null;
+
+// Define valor padrão
+$ja_favoritado = false;
+
+// Verifica se o produto já está favoritado por este cliente
+if ($id_cliente && $id_produto) {
+    $sql = "SELECT 1 FROM favorito WHERE id_cliente = ? AND id_produto = ?";
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param("ii", $id_cliente, $id_produto);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $ja_favoritado = true;
+    }
+
+    $stmt->close();
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,6 +37,8 @@ include 'menu_pg_inicial.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <Tracking Prevention blocked access to storage for https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css>
+
 </head>
 
 <body class="body-detalhes-produto">
@@ -20,14 +46,10 @@ include 'menu_pg_inicial.php';
     <h2 class="titulo-produto-detalhes-produto">
         <a href="#" onclick="window.history.back(); return false"><i class="bi bi-chevron-left"></i></a>
         <?php echo htmlspecialchars($produto['prod_nome']); ?>
-        
-        <a href="../utils/favoritar.php?id_produto=<?php echo $produto['id_produto']; ?>" 
-                class="botao-favorito"
-                style="text-decoration: none;">
-                <i class="fa <?php echo $favoritado ? 'fa-heart' : 'fa-heart-o'; ?>" 
-                    style="color: <?php echo $favoritado ? 'red' : 'inherit'; ?>; font-size:24px;"></i>
-        </a>
     </h2>
+
+
+
 
     <main class="main-detalhes-produto">
 
@@ -67,11 +89,17 @@ include 'menu_pg_inicial.php';
 
             <div class="imagem-grande-detalhes-produto">
                 <img id="imagem-principal" src="../../View/Public/<?php echo htmlspecialchars($imagemPrincipal); ?>" alt="Imagem principal do produto">
+                
             </div>
         </div>
 
          <div class="info-produto-detalhes-produto">
-
+            <!-- Botão de Favorito -->
+            <div class="area-favorito">
+            <button class="btn-favorito" data-id="<?= $id_produto ?>" data-favorito="<?= $ja_favoritado ? 'true' : 'false' ?>">
+            <i class="fa<?= $ja_favoritado ? 's' : 'r' ?> fa-heart <?= $ja_favoritado ? 'favoritado' : '' ?>"></i>
+            </button>
+            </div>
             <p class="informacoes-detalhes-produto">Vendido pela empresa <span>John Rooster</span></p>
             <p class="informacoes-detalhes-produto">Entregue por <span>John Rooster</span></p>
             <p class="informacoes-detalhes-produto">A John Rooster se compromete a oferecer apenas os melhores animais e itens do mercado.</p>
@@ -111,6 +139,10 @@ include 'menu_pg_inicial.php';
             });
         });
     </script>
+
+<script src="../../utils/favoritar.js"></script>
+
+
 
 </body>
 
