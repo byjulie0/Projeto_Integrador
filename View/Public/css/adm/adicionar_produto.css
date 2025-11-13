@@ -261,10 +261,6 @@ input[type="image"] {
     width: 90%;
     margin-bottom: 10%;
   }
-  .mini-img{
-    width: 50%;
-    
-  }
 }
 @media (min-width: 390px) and (max-width: 767px) {
   .img_holder {
