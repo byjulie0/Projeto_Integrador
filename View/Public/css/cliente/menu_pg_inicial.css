@@ -145,6 +145,7 @@
 
 .dropdown_menu_inicial {
   position: relative;
+  background-color: var(--menu-bg);
 }
 
 .submenu_inicial {
@@ -152,8 +153,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: white;
-  border: 1px solid #ddd;
+  background: var(--menu-bg);
+  border: 1px solid var(--menu-bg);
   border-radius: 8px;
   width: 200px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -168,7 +169,7 @@
   padding: 12px 16px;
   color: var(--color-primary);
   text-decoration: none;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--menu-bg);
   transition: all 0.3s ease;
   font-size: 0.85rem;
 }
@@ -232,7 +233,7 @@
       display: none;
       flex-direction: column;
       width: 100%;
-      background-color: white;
+      background-color: var(--menu-bg);
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       border-radius: 0 0 8px 8px;
       position: absolute;
@@ -284,22 +285,47 @@
     }
 
     .submenu_inicial {
-      width: 175px;
-      position: static;
+      width: 200px;
+      position: absolute;
       display: none;
-      box-shadow: none;
-      border: none;
-      margin: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: 1px solid #ddd;
+      margin: 5px 0 0 0;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 100%;
     }
 
-    .dropdown_menu_inicial:hover .submenu_inicial,
-    .dropdown_menu_inicial.mobile-active .submenu_inicial {
-      display: block;
+    .dropdown_menu_inicial {
+      position: relative;
     }
 
-    /* Remove a área de ponte no mobile */
+    .dropdown_menu_inicial.mobile-dropdown-active .submenu_inicial {
+      display: block !important;
+    }
+
+    .dropdown_menu_inicial:hover .submenu_inicial {
+      display: none;
+    }
+
+    .nav-link-pg-inicial .dropdown_menu_inicial > .nav-item-pg-inicial::after {
+      font-size: 0.7rem;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-link-pg-inicial .dropdown_menu_inicial.mobile-dropdown-active > .nav-item-pg-inicial::after {
+      transform: rotate(180deg);
+    }
+
     .dropdown_menu_inicial .submenu_inicial::before {
       display: none;
+    }
+
+    .nav-page-btns-pg-inicial .dropdown_menu_inicial .submenu_inicial {
+      right: 0;
+      left: auto;
+      transform: none;
     }
 }
 
@@ -379,7 +405,7 @@
     }
 
     .submenu_inicial {
-      width: 130px;
+      width: 180px;
     }
 }
 
@@ -412,5 +438,9 @@
     
     .nav-btns-pg-inicial .bi {
         font-size: 1.1rem;
+    }
+
+    .submenu_inicial {
+      width: 160px;
     }
 }
