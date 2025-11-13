@@ -36,7 +36,7 @@ $id_produto = isset($id_produto) ? $id_produto : '';
                 if ($anos >= 1) {
                     echo $anos . " ano" . ($anos > 1 ? "s" : "");
                 } else {
-                    echo $meses . " mês" . ($meses != 1 ? "es" : "");
+                    echo $meses . "" . ($meses == 1 ? " mês" : " meses");
                 }
             } catch (Exception $e) {
                 echo "Data inválida";
