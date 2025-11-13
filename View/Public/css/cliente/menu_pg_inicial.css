@@ -139,8 +139,8 @@
 }
 
 .menu-toggle:hover {
-    background-color: var(--hover-bg);
-    transform: scale(1.05);
+  background-color: var(--hover-bg);
+  transform: scale(1.05);
 }
 
 .dropdown_menu_inicial {
