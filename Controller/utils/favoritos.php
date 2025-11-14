@@ -1,15 +1,4 @@
 <?php
-session_start();
-require_once '../../model/DB/conexao.php';
-
-// if (!isset($_SESSION['id_cliente'])) {
-//     header("Location: login.php");
-//     exit;
-// }
-
-$id_cliente = $_SESSION['id_cliente'];
-// $id_produto = $_POST['id_produto'] ?? null;
-
 if ($id_cliente ){
     // Verifica se o produto já está nos favoritos
     $sql = "select * from favorito join produto on produto_id_produto = id_produto join cliente on cliente_id_cliente = id_cliente join subcategoria on subcategoria.id_subcategoria = produto.id_subcategoria where cliente_id_cliente = {$id_cliente};";

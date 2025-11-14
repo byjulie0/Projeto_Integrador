@@ -1,34 +1,17 @@
-<?php 
+<?php
 include '../utils/detalhes_prod.php';
 include 'menu_pg_inicial.php';
-include '../../model/DB/conexao.php';
 
 $id_cliente = $_SESSION['id_cliente'] ?? null;
 $id_produto = $_GET['id_produto'] ?? null;
 
-// Define valor padrão
-$ja_favoritado = false;
-
-// Verifica se o produto já está favoritado por este cliente
-if ($id_cliente && $id_produto) {
-    $sql = "SELECT 1 FROM favorito WHERE id_cliente = ? AND id_produto = ?";
-    $stmt = $con->prepare($sql);
-    $stmt->bind_param("ii", $id_cliente, $id_produto);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $ja_favoritado = true;
-    }
-
-    $stmt->close();
-}
 ?>
 
 
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +20,7 @@ if ($id_cliente && $id_produto) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <Tracking Prevention blocked access to storage for https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css>
+    <script src="../../View/js/cliente/favoritar.js"></script>
 
 </head>
 
@@ -53,7 +36,7 @@ if ($id_cliente && $id_produto) {
 
     <main class="main-detalhes-produto">
 
-        <?php 
+        <?php
         $listaImagens = [];
 
         if (!empty($produto['path_img'])) {
@@ -69,13 +52,13 @@ if ($id_cliente && $id_produto) {
         }
 
         // Remove espaços e barras invertidas extras
-        $listaImagens = array_map(function($img) {
+        $listaImagens = array_map(function ($img) {
             return trim(str_replace('\\', '', $img));
         }, $listaImagens);
 
         // Define imagem principal
-        $imagemPrincipal = !empty($listaImagens[0]) 
-            ? $listaImagens[0] 
+        $imagemPrincipal = !empty($listaImagens[0])
+            ? $listaImagens[0]
             : 'view/public/imagens/default-thumbnail.jpg';
         ?>
 
@@ -88,35 +71,42 @@ if ($id_cliente && $id_produto) {
 
 
             <div class="imagem-grande-detalhes-produto">
-                <img id="imagem-principal" src="../../View/Public/<?php echo htmlspecialchars($imagemPrincipal); ?>" alt="Imagem principal do produto">
-                
+                <img id="imagem-principal" src="../../View/Public/<?php echo htmlspecialchars($imagemPrincipal); ?>"
+                    alt="Imagem principal do produto">
+
             </div>
         </div>
 
-         <div class="info-produto-detalhes-produto">
+        <div class="info-produto-detalhes-produto">
             <!-- Botão de Favorito -->
             <div class="area-favorito">
-            <button class="btn-favorito" data-id="<?= $id_produto ?>" data-favorito="<?= $ja_favoritado ? 'true' : 'false' ?>">
-            <i class="fa<?= $ja_favoritado ? 's' : 'r' ?> fa-heart <?= $ja_favoritado ? 'favoritado' : '' ?>"></i>
-            </button>
+                <a class="btn-favorito" href="../utils/favoritar.php?id_produto=<?php echo $produto['id_produto']; ?>" data-id="<?= $id_produto ?>"
+                    data-favorito="<?= $ja_favoritado ? 'true' : 'false' ?>">
+                    <i
+                        class="fa<?= $ja_favoritado ? 's' : 'r' ?> fa-heart <?= $ja_favoritado ? 'favoritado' : '' ?>"></i>
+                </a>
             </div>
             <p class="informacoes-detalhes-produto">Vendido pela empresa <span>John Rooster</span></p>
             <p class="informacoes-detalhes-produto">Entregue por <span>John Rooster</span></p>
-            <p class="informacoes-detalhes-produto">A John Rooster se compromete a oferecer apenas os melhores animais e itens do mercado.</p>
+            <p class="informacoes-detalhes-produto">A John Rooster se compromete a oferecer apenas os melhores animais e
+                itens do mercado.</p>
 
             <p class="preco-detalhes-produto">R$ <?php echo $valor_formatado; ?></p>
 
             <form id="formCarrinho" action="add_carrinho.php" method="GET">
-                <a type="button" class="botao-carrinho-detalhes-produto" href="../utils/add_carrinho.php?id_produto=<?php echo $produto['id_produto']; ?>">Adicionar ao carrinho</a>
+                <a type="button" class="botao-carrinho-detalhes-produto"
+                    href="../utils/add_carrinho.php?id_produto=<?php echo $produto['id_produto']; ?>">Adicionar ao
+                    carrinho</a>
             </form>
 
             <section class="descricao-detalhes-produto">
                 <h3>Informações</h3>
-                <p><?php echo $produto['descricao'] ? htmlspecialchars($produto['descricao']) : 'Descrição não disponível.'; ?></p>
+                <p><?php echo $produto['descricao'] ? htmlspecialchars($produto['descricao']) : 'Descrição não disponível.'; ?>
+                </p>
             </section>
-            
+
             <section class="sub-descricao-detalhes-produto">
-                
+
                 <?php if ($produto['id_categoria'] != 5): ?>
                     <p><strong>Peso: </strong><?php echo $peso_formatado; ?></p>
                     <p><strong>Data de nascimento: </strong><?php echo $produto['idade']; ?></p>
@@ -140,11 +130,11 @@ if ($id_cliente && $id_produto) {
         });
     </script>
 
-<script src="../../utils/favoritar.js"></script>
 
 
 
 </body>
 
 <?php include 'footer_cliente.php'; ?>
+
 </html>

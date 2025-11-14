@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const idProduto = botao.dataset.id;
 
       try {
-        const response = await fetch('../utils/favoritar.php', {
+        const response = await fetch('../../../Controller/utils/favoritar.php', {
 
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
           icone.style.color = '';
         } else if (result.status === 'nao_logado') {
           // redireciona pra login se não estiver logado
-          window.location.href = '../cliente/login.php';
+          window.location.href = '../../../Controller/cliente/login.php';
         }
       } catch (error) {
         console.error('Erro ao favoritar:', error);
