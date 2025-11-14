@@ -1,14 +1,16 @@
 @import url("../cliente.css");
-.header-arthura {
-    display: flex;
-    align-items: center;
-    padding: 2% 30%;
-}
+
 .main-meu-perfil-senha{
     margin: 60px;
     max-width: 100%;
     align-items: center;
     justify-content: center;
+}
+.header-arthura {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 1% 25%;
 }
 .visualizar-dados-title {
     font-size: 2rem;
