@@ -5,11 +5,10 @@ if ($usuario_nao_logado) {
   exit;
 }
 include 'menu_pg_inicial.php';
-require_once '../../model/DB/conexao.php';
 
-$query= "select * from favorito join produto on favorito.produto_id_produto = produto.id_produto  join subcategoria on produto.id_subcategoria = subcategoria.id_subcategoria;";
+
+$query= "select * from favorito join produto on favorito.id_produto = produto.id_produto  join subcategoria on produto.id_subcategoria = subcategoria.id_subcategoria;";
 $result = mysqli_query($con,$query);
-
 
 ?>
 <!DOCTYPE html>
@@ -36,21 +35,12 @@ $result = mysqli_query($con,$query);
         <div class="lotes-wrapper">
             <div class="lotes_container_pg_favoritos" id="lotesContainerFavoritos">
                 <?php
-
-                // $favoritos = [
-                //     ["imagem" => "../../view/public/imagens/images.jpg", "peso" => "380 kg", "raca" => "Percheron", "genealogia" => "PO", "idade" => "24 meses", "preco" => "5.200,00"],
-                //     ["imagem" => "../../view/public/imagens/galo-pag-fav.jpg", "peso" => "3.5 kg", "raca" => "Índio", "genealogia" => "PO", "idade" => "12 meses", "preco" => "600,00"],
-                //     ["imagem" => "../../view/public/imagens/bovino-pag-fav.jpg", "peso" => "450 kg", "raca" => "Angus", "genealogia" => "PO", "idade" => "30 meses", "preco" => "6.000,00"],
-                //     ["imagem" => "../../view/public/imagens/bovino-pag-fav.jpg", "peso" => "450 kg", "raca" => "Angus", "genealogia" => "PO", "idade" => "30 meses", "preco" => "6.000,00"]
-                // ];
-
                 while ($item = mysqli_fetch_array($result)) {
                    $imagem = $item['path_img'];
                     $nome = $item['prod_nome'];
-                    $id = $item['id'];
+                    $id_produto = $item['id_produto'];
                     $peso = $item['peso'];
                     $raca = $item['subcat_nome'];
-                    // echo $genealogia = $item['genealogia'];
                     $idade = $item['idade'];
                     $preco = $item['valor'];
                     include 'card_favoritos.php';
