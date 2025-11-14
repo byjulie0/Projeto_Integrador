@@ -1,313 +1,292 @@
-.relatorios_container {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  color: var(--color-primary-2);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-/* Cabeçalho */
-.relatorios_header {
-  margin-bottom: 25px;
-  position: relative;
-  margin-top: 35px;
-  max-width: 100%;
-  width: 85%;
-  color: var(--color-primary-1);
-}
-
-.verificar_administrar_pedidos_sessao_seta_voltar {
-  font-size: 1.2rem;
-  color: var(--color-primary-1);
-  margin-right: 10px;
-  text-decoration: none;
-}
-.relatorios_header h1 {
-  color: var(--color-primary-1);
-  font-size: 1.6rem;
-  margin-bottom: 8px;
-  display: inline-block;
-}
-.verificar_administrar_pedidos_sessao_mini_titulos_1 {
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: #555;
-}
-
-.verificar_administrar_pedidos_sessao_titulo_destaque {
-  font-weight: 600;
-  color: var(--color-fonte);
-}
-
-.verificar_administrar_pedidos_sessao_periodo_bloco {
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: right;
-}
-
-.verificar_administrar_pedidos_sessao_mini_titulos_2 {
-  font-size: 0.9rem;
-  color: var(--color-primary-1);
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.verificar_administrar_pedidos_sessao_periodo_linha {
-  border: none;
-  border-bottom: 1px solid #bbb;
-  margin-top: 5px;
-  color: var(--color-primary-1);
-}
-
-/* Cards do topo */
-.relatorios_cards_topo {
-  width: 75%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
-  gap: 15px;
-  justify-content: center;
-  margin-left: 15%;
-}
-.card_topo {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  background: #e7f0e8;
-  padding: 12px;
-  gap: 10px;
-  border-radius: 12px;
-  font-size: 14px;
-  text-align: justify;
-  font-weight: bold;
-}
-.fa-bag-shopping,
-.fa-cart-plus,
-.fa-users {
-  display: flex;
-  background-color: #d1e2cd;
-  padding: 10px;
-  border-radius: 100%;
-}
-/* Conteúdo principal */
-.relatorios_main {
-  display: grid;
-  grid-template-columns: 55% 40%;
-  gap: 20px;
-}
-
-/* Card estatísticas */
-.card_estatisticas {
-  background: #e7f0e8;
-  padding: 15px;
-  border-radius: 12px;
-  grid-column: span 3; 
-}
-.card_estatisticas h3 {
-  margin-bottom: 10px;
-}
-
-/* Card atividades */
-.card_atividades {
-  background: #e7f0e8;
-  padding: 15px;
-  border-radius: 12px;
-}
-.card_atividades h3 {
-  margin-bottom: 10px;
-}
-.btn_imprimir {
-  margin-top: 15px;
-  padding: 8px 12px;
-  background: var(--color-botao-op-Concluido);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.btn_imprimir:hover {
-  background: var(--color-primary-6);
-}
+@import url(../adm.css);
+/* Ajustando o contêiner do gráfico */
 .grafico-container {
   width: 100%;
-  max-width: 600px;
-  height: 350px;
+  max-width: 400px;
+  height: 300px;
   margin: 0 auto;
 }
 
-/* === MOBILE PEQUENO === */
-/* Telas 360x800 e 390x844 */
-@media (max-width: 430px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
-  .relatorios_container {
-    padding: 10px;
-    width: 100%;
-  }
-
-  .relatorios_header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-  
-  .relatorios_header h1{
-    font-size: 1.3rem;
-  }
-
-  .verificar_administrar_pedidos_sessao_seta_voltar {
-    position: relative;
-    align-self: center;
-    left: 0;
-    top: 0;
-  }
-
-  .verificar_administrar_pedidos_sessao_periodo_bloco {
-    position: relative;
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  .verificar_administrar_pedidos_sessao_mini_titulos_1 {
-    text-align: center;
-    margin-top: 5px;
-  }
-  .verificar_administrar_pedidos_sessao_titulo_destaque {
-    display: block;
-  }
-
-  .relatorios_cards_topo {
-    width: 100%;
-    margin: 0 auto;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .relatorios_main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card_topo,
-  .card_estatisticas,
-  .card_atividades {
-    width: 95%;
-  }
-
-  .card_topo {
-    font-size: 13px;
-    padding: 10px;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: wrap;
-  }
-
-  .card_estatisticas h3,
-  .card_atividades h3 {
-    text-align: center;
-  }
-
-  .grafico-container,
-  #graficoEstatisticas {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 250px;
-  }
+/* Ajuste de estilo para os cards (produtos, pedidos, usuários) */
+.relatorios_cards_topo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Cria 3 colunas */
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
-/* 768px a 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .relatorios_header {
-    width: 90%;
-    text-align: center;
-  }
-
-  .verificar_administrar_pedidos_sessao_periodo_bloco {
-    position: static;
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  .relatorios_cards_topo {
-    width: 90%;
-    margin: 0 auto;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .relatorios_main {
-    grid-template-columns: 1fr;
-  }
-
-  .grafico-container {
-    max-width: 90%;
-    height: 280px;
-  }
+/* Ajuste no tamanho dos cards */
+.card_topo {
+  padding: 20px;
+  background-color: #dfefd1ff;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 1024px a 1199px */
-@media (min-width: 1024px) and (max-width: 1199px) {
-  .relatorios_header {
-    width: 85%;
-    text-align: center;
-  }
+/* Título do gráfico de estatísticas */
+.card_estatisticas h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-  .verificar_administrar_pedidos_sessao_periodo_bloco {
-    position: static;
-    margin-top: 10px;
-  }
+/* Ajuste de espaçamento e alinhamento */
+.relatorios_main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 
+/* Estilos para o cabeçalho */
+.relatorios_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/*----------------------------------------------------- colocar o visualizar a esquerda da tela */
+.relatorios_header h1 {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+/* Personalização da linha de seleção do período */
+.verificar_administrar_pedidos_sessao_periodo_linha {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+/* Estilo geral para o corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+/* Ajustando a área de "Atividades recentes" */
+.card_atividades {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* seta de retorno */
+.verificar_administrar_pedidos_sessao_seta_voltar {
+  position: absolute;
+  top: 110px;
+  left: 10px;
+}
+
+/* card de estatistica par alteração de cor */
+.card_estatisticas {
+  background-color: #dbf3d4ff;
+}
+
+/* Manter o estilo do gráfico de pizza como está */
+.grafico-container {
+
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/* Estilo do contêiner para os gráficos de barra e linha */
+.grafico-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+
+}
+
+/* Ajuste do gráfico de barra */
+.grafico-barra {
+  flex: 1;
+  max-width: 100%;
+  background-color: #dbf3d4ff;
+}
+
+/* Ajuste do gráfico de linha */
+.grafico-linha {
+  flex: 1;
+  max-width: 100%;
+  background-color: #dbf3d4ff;
+
+}
+
+/*-------------------------------------RESPONSIVIDADE -MOBILE DESKTOP ---------------------------------*/
+/* Responsividade para desktop e mobile */
+
+/* Para dispositivos com telas grandes (desktop) */
+@media (min-width: 1024px) {
+
+  /* Grid para os cards no topo */
   .relatorios_cards_topo {
-    width: 85%;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 colunas */
+    gap: 20px;
+    margin-bottom: 20px;
   }
 
+  /* Ajuste do gráfico */
   .grafico-container {
-    max-width: 80%;
+    max-width: 500px;
     height: 300px;
+    margin: 0 auto;
+  }
+
+  /* Ajuste para os gráficos de barra e linha */
+  .grafico-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .grafico-barra,
+  .grafico-linha {
+    flex: 1;
+    max-width: 100%;
   }
 }
 
-/* 1440 x 900 */
-@media (min-width: 1200px) and (max-width: 1439px) {
+/* Para dispositivos menores (tablet, mobile) */
+@media (max-width: 1023px) {
+
+  /* Ajuste para o layout de cards */
   .relatorios_cards_topo {
-    width: 80%;
-    margin-left: 10%;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 colunas para dispositivos menores */
+    gap: 15px;
   }
 
-  .relatorios_main {
-    grid-template-columns: 55% 40%;
-  }
-
+  /* Ajuste de tamanho dos gráficos */
   .grafico-container {
-    max-width: 85%;
-    height: 350px;
+    max-width: 100%;
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  .grafico-row {
+    flex-direction: column;
+    /* Exibe gráficos de barra e linha em coluna */
+    margin-top: 20px;
+  }
+
+  .grafico-barra,
+  .grafico-linha {
+    max-width: 100%;
+    margin-bottom: 20px;
+    /* Espaçamento entre os gráficos */
+  }
+
+  /* Ajuste do título e texto da sessão */
+  .relatorios_header h1 {
+    font-size: 22px;
+    margin-left: 20px;
+  }
+
+  .relatorios_header h3 {
+    font-size: 16px;
+  }
+
+  .relatorios_header {
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Ajuste dos cards (Produtos, Pedidos, Usuários) */
+  .card_topo {
+    padding: 10px;
+    background-color: #dfefd1ff;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+  }
+
+  /* Card de Estatísticas */
+  .card_estatisticas {
+    background-color: #dbf3d4ff;
+    padding: 10px;
+  }
+
+  /* Ajuste do botão de imprimir */
+  .btn_imprimir {
+    font-size: 14px;
+    padding: 10px 20px;
   }
 }
 
-/* 1920x1080+ */
-@media (min-width: 1440px) {
+/* Para dispositivos móveis */
+@media (max-width: 600px) {
+
+  /* Ajuste da grid para os cards (1 coluna em dispositivos móveis) */
   .relatorios_cards_topo {
-    width: 75%;
-    margin-left: 10%;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    /* 1 coluna para mobile */
   }
 
-  .relatorios_main {
-    grid-template-columns: 55% 40%;
-  }
-
+  /* Reduzindo o tamanho do gráfico */
   .grafico-container {
-    max-width: 600px;
-    height: 350px;
+    max-width: 100%;
+    height: 200px;
+    /* Menor altura para gráficos em telas pequenas */
   }
+
+  /* Ajuste da fonte */
+  .relatorios_header h1 {
+    font-size: 18px;
+  }
+
+  .relatorios_header h3 {
+    font-size: 14px;
+  }
+
+  /* Ajuste dos cards de informações */
+  .card_topo {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  /* Melhorando a exibição do período de data */
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    padding: 10px;
+  }
+}
+
+/*------------------------------------------tabela de pedidos ---------------------------------------------*/
+.tabela-pedidos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.tabela-pedidos th {
+  background-color: #dbf3d4ff;
+  color: #333;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabela-pedidos td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  align-items: center;
+}
+
+.tabela-pedidos tr:nth-child(even) {
+  background-color: #f9f9f9;
 }

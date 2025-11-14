@@ -66,292 +66,15 @@ mysqli_close($con);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios</title>
-    <link rel="stylesheet" href="../../public/css/adm/relatorios_visualizar.css">
+    
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="../../View/public/css/adm/relatorios_visualizar.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script defer src="../../View/js/adm/relatorios_visualizar_adm.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-
-    
-    <style>
-        /* Ajustando o contêiner do gráfico */
-        .grafico-container {
-            width: 100%;
-            max-width: 400px; 
-            height: 300px;     
-            margin: 0 auto;    
-        }
-
-        /* Ajuste de estilo para os cards (produtos, pedidos, usuários) */
-        .relatorios_cards_topo {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);  /* Cria 3 colunas */
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        /* Ajuste no tamanho dos cards */
-        .card_topo {
-            padding: 20px;
-            background-color: #dfefd1ff;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Título do gráfico de estatísticas */
-        .card_estatisticas h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        /* Ajuste de espaçamento e alinhamento */
-        .relatorios_main {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        /* Estilos para o cabeçalho */
-        .relatorios_header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        /*----------------------------------------------------- colocar o visualizar a esquerda da tela */
-        .relatorios_header h1{
-            display:flex;
-            align-items: center;
-            margin-left: 50px;
-        }
-        /* Personalização da linha de seleção do período */
-        .verificar_administrar_pedidos_sessao_periodo_linha {
-            width: 100%;
-            border: 1px solid #ccc;
-        }
-
-        /* Estilo geral para o corpo da página */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
-        }
-
-        /* Ajustando a área de "Atividades recentes" */
-        .card_atividades {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        /* seta de retorno */
-        .verificar_administrar_pedidos_sessao_seta_voltar {
-            position: absolute;
-            top: 110px;
-            left: 10px;
-}
-/* card de estatistica par alteração de cor */
-        .card_estatisticas{
-            background-color: #dbf3d4ff;
-        }
-        <style>
-    /* Manter o estilo do gráfico de pizza como está */
-    .grafico-container {
-    
-        width: 100%;
-        max-width: 500px; 
-        height: 300px;     
-        margin: 0 auto;   
-    }
-
-    /* Estilo do contêiner para os gráficos de barra e linha */
-    .grafico-row {
-        display: flex;  
-        justify-content: space-between;  
-        gap: 20px;  
-        margin-top: 20px;
-        
-    }
-
-    /* Ajuste do gráfico de barra */
-    .grafico-barra {
-        flex: 1;  
-        max-width: 100%; 
-        background-color: #dbf3d4ff; 
-    }
-
-    /* Ajuste do gráfico de linha */
-    .grafico-linha {
-        flex: 1;  
-        max-width: 100%; 
-        background-color: #dbf3d4ff; 
-        
-    }
-    /*-------------------------------------RESPONSIVIDADE -MOBILE DESKTOP ---------------------------------*/
-    /* Responsividade para desktop e mobile */
-
-/* Para dispositivos com telas grandes (desktop) */
-@media (min-width: 1024px) {
-    /* Grid para os cards no topo */
-    .relatorios_cards_topo {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);  /* 3 colunas */
-        gap: 20px;
-        margin-bottom: 20px;
-    }
-
-    /* Ajuste do gráfico */
-    .grafico-container {
-        max-width: 500px;
-        height: 300px;
-        margin: 0 auto;
-    }
-
-    /* Ajuste para os gráficos de barra e linha */
-    .grafico-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .grafico-barra, .grafico-linha {
-        flex: 1;
-        max-width: 100%;
-    }
-}
-
-/* Para dispositivos menores (tablet, mobile) */
-@media (max-width: 1023px) {
-    /* Ajuste para o layout de cards */
-    .relatorios_cards_topo {
-        display: grid;
-        grid-template-columns: 1fr 1fr;  /* 2 colunas para dispositivos menores */
-        gap: 15px;
-    }
-
-    /* Ajuste de tamanho dos gráficos */
-    .grafico-container {
-        max-width: 100%;
-        height: 250px;
-        margin: 0 auto;
-    }
-
-    .grafico-row {
-        flex-direction: column; /* Exibe gráficos de barra e linha em coluna */
-        margin-top: 20px;
-    }
-
-    .grafico-barra, .grafico-linha {
-        max-width: 100%;
-        margin-bottom: 20px;  /* Espaçamento entre os gráficos */
-    }
-
-    /* Ajuste do título e texto da sessão */
-    .relatorios_header h1 {
-        font-size: 22px;
-        margin-left: 20px;
-    }
-
-    .relatorios_header h3 {
-        font-size: 16px;
-    }
-
-    .relatorios_header {
-        padding: 10px;
-        text-align: center;
-    }
-
-    /* Ajuste dos cards (Produtos, Pedidos, Usuários) */
-    .card_topo {
-        padding: 10px;
-        background-color: #dfefd1ff;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 14px;
-    }
-
-    /* Card de Estatísticas */
-    .card_estatisticas {
-        background-color: #dbf3d4ff;
-        padding: 10px;
-    }
-
-    /* Ajuste do botão de imprimir */
-    .btn_imprimir {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-}
-
-/* Para dispositivos móveis */
-@media (max-width: 600px) {
-    /* Ajuste da grid para os cards (1 coluna em dispositivos móveis) */
-    .relatorios_cards_topo {
-        grid-template-columns: 1fr;  /* 1 coluna para mobile */
-    }
-
-    /* Reduzindo o tamanho do gráfico */
-    .grafico-container {
-        max-width: 100%;
-        height: 200px; /* Menor altura para gráficos em telas pequenas */
-    }
-
-    /* Ajuste da fonte */
-    .relatorios_header h1 {
-        font-size: 18px;
-    }
-
-    .relatorios_header h3 {
-        font-size: 14px;
-    }
-
-    /* Ajuste dos cards de informações */
-    .card_topo {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    /* Melhorando a exibição do período de data */
-    .verificar_administrar_pedidos_sessao_periodo_bloco {
-        padding: 10px;
-    }
-}
-/*------------------------------------------tabela de pedidos ---------------------------------------------*/
-.tabela-pedidos {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 14px;
-    background-color: #fff;
-}
-
-.tabela-pedidos th {
-    background-color: #dbf3d4ff;
-    color: #333;
-    padding: 8px;
-    text-align: right;
-}
-
-.tabela-pedidos td {
-    border-bottom: 1px solid #ddd;
-    padding: 8px;
-}
-
-.tabela-pedidos tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-</style>
-
     
 </head>
 
@@ -433,8 +156,8 @@ mysqli_close($con);
 <table class="tabela-pedidos">
     <thead>
         <tr>
-            <th>ID Pedido</th>
-            <th>ID Cliente</th>
+            <th>Cod Pedido</th>
+            <th>Cod Cliente</th>
             <th>Status</th>
             <th>Data</th>
             <th>Valor Total</th>
@@ -466,30 +189,9 @@ mysqli_close($con);
 
     <?php include "footer.php"; ?>
 
-     <!-- <script>
-$(document).ready(function() {
-    // Quando o usuário clicar em "Mudar período"
-    $("#abrirCalendario").click(function() {
-        // Exibe os dois campos ocultos e ativa o calendário jQuery UI
-        $("#dataInicio, #dataFim").show().datepicker({
-            dateFormat: "yy-mm-dd",
-            onSelect: function() {
-                let inicio = $("#dataInicio").val();
-                let fim = $("#dataFim").val();
 
-                // Mostra o intervalo escolhido no texto da tela
-                $("#dataEscolhida").text(inicio + " - " + fim);
-
-                // Recarrega a página com as datas escolhidas (enviando via GET)
-                window.location.href = `relatorios_visualizar.php?data_inicio=${inicio}&data_fim=${fim}`;
-            }
-        });
-    });
-});
-</script> -->
 <script>
-
-    
+   
 $(document).ready(function() {
     // Inicializa os datepickers de início e fim
     $("#dataInicio").datepicker({
@@ -552,10 +254,10 @@ $(document).ready(function() {
         // Gerando o PDF e permitindo o download
         doc.save('relatorio_pedidos_com_graficos.pdf');
     });
-</script>
+<!-- </script>
 
 
-    <script>
+    <script> -->
         // Gerar gráfico de pizza com os dados de status dos pedidos
         var estatisticas = <?php echo json_encode($estatisticas); ?>;
         var ctx = document.getElementById('graficoEstatisticas').getContext('2d');
