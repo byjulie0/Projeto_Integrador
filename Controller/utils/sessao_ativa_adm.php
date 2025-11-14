@@ -66,7 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: ../adm/pg_inicial_adm.php");
         exit();
     } else {
+        $_SESSION['erro'] = 1;
+        // include '../overlays/pop_up_erro.php';
         header("Location: ../adm/login.php?error=senha_invalida");
+
+
         exit();
     }
 }

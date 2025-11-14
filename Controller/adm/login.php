@@ -23,7 +23,13 @@
                     com qualidade e confiança para o seu negócio.
                 </p>
             </div>
+    <?php 
+    
+        // include '../overlays/pop_up_erro.php';
+ 
 
+
+    ?>
             <div class="login_form_adm">
                 <h2>Login</h2>
                 <form class="form_login" action="../../Controller/utils/sessao_ativa_adm.php" method="POST" id="myForm">
@@ -53,7 +59,15 @@
             </div>
         </div>
     </main>
-    <?php include 'footer.php'; ?>
+    
+    <?php 
+    
+ 
+
+    include 'footer.php'; 
+
+    ?>
+    
 
 </body>
 
