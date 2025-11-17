@@ -385,3 +385,200 @@ input[type="image"] {
   display: block;
 }
 
+/* Ajustes para o carrossel e miniaturas */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px; /* Ajuste o tamanho do carrossel conforme o design */
+    height: 350px;
+    margin: 10px auto;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    background: #fafafa;
+    overflow: hidden;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: none; /* Inicialmente escondido */
+}
+
+.carousel-img.active {
+    display: block; /* Exibe a imagem ativa */
+}
+
+.carousel-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #aaa;
+    font-size: 14px;
+    text-align: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Estilos das miniaturas */
+.mini-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.upload-box {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f0f0f0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    background: #f7f7f7;
+    border-color: #4CAF50;
+}
+
+.mini-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.upload-content {
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+}
+
+.upload-content i {
+    font-size: 18px;
+}
+
+.remove-mini {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgba(255, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+.remove-mini:hover {
+    background: #c82333;
+}
+
+/* Para os inputs de arquivos ficarem invisíveis, mas clicáveis */
+.file-input-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Estilos gerais */
+.product_title_info_img {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product_title_info {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Ajuste no layout de form */
+.add_product_area {
+    margin-top: 3%;
+    padding-left: 5rem;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 20px;
+}
+
+.add_product_submit_button {
+    margin-bottom: 4rem;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_product_button {
+    gap: 10px;
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-botao-op-Concluido);
+    color: var(--color-icones);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.add_product_button:hover {
+    background-color: #3d6a3f;
+}
+
+@media (max-width: 767px) {
+    .add_product_area {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+        height: 200px;
+    }
+
+    .upload-box {
+        width: 60px;
+        height: 60px;
+    }
+
+    .mini-container {
+        justify-content: space-around;
+    }
+}

@@ -27,20 +27,20 @@ $subMap = [];
 while ($r = mysqli_fetch_assoc($resSub)) {
     $subMap[$r['id_categoria']][] = $r;
 }
-?>
 
+$imgs = json_decode($produto['path_img'], true);
+if (!is_array($imgs)) $imgs = [null, null, null, null];
+while (count($imgs) < 4) $imgs[] = null;
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <title>Editar Produto</title>
     <link rel="stylesheet" href="../../view/public/css/adm/editar_produto.css">
     <script defer src="../../view/js/adm/editar_produto.js"></script>
 </head>
-
 <body class="body_add_product">
-
     <div class="area_add_product">
         <div class="title_page_add_product">
             <a href="#" onclick="window.history.back(); return false;" class="arrow_add_product">
@@ -49,33 +49,43 @@ while ($r = mysqli_fetch_assoc($resSub)) {
             <h1 class="tile_add_product">Editar Produto</h1>
         </div>
 
-        <form action="../utils/editar_produto_backend.php" method="POST" enctype="multipart/form-data">
+        <form action="../utils/editar_produto_backend.php" method="POST" enctype="multipart/form-data" id="formEditarProduto">
             <input type="hidden" name="id_produto" value="<?= $produto['id_produto'] ?>">
 
             <section class="add_product_area">
                 <article class="add_product_image">
-                    <div class="img_holder">
-                        <?php
-                        $imagemProduto = !empty($produto['path_img'])
-                            ? '../../view/public/' . htmlspecialchars($produto['path_img'])
-                            : '';
-                        ?>
+                    <p class="product_title_info_img">Imagens do produto (máx.4)</p>
+                    <div class="carousel-container">
+                        <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)"><i class="bi bi-chevron-left"></i></button>
+                        <button type="button" class="carousel-btn next" onclick="changeSlide(1)"><i class="bi bi-chevron-right"></i></button>
 
-                        <img id="previewImagem" src="<?php echo $imagemProduto; ?>" alt="Imagem do produto"
-                            style="<?php echo !empty($imagemProduto) ? '' : 'display:none;'; ?>">
-
-                        <label class="img_holder_button">
-                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                            <span>Trocar imagem</span>
-                            <input type="file" id="inputImagem" class="input_product_info" accept="image/*"
-                                name="imagem">
-                        </label>
+                        <div class="carousel-placeholder" id="carouselPlaceholder">Nenhuma imagem</div>
+                        <img src="" alt="" class="carousel-img" id="mainPreview" style="display:none;">
                     </div>
+                    <div class="mini-container" id="miniContainer">
+                        <?php for ($i = 0; $i < 4; $i++):
+                            $src = $imgs[$i] ? '../../view/public/' . $imgs[$i] : '';
+                        ?>
+                            <label class="custom-file-upload mini-label" data-index="<?= $i ?>">
+                                <div class="upload-box" id="box<?= $i ?>">
+                                    <img src="<?= $src ?>" alt="" class="mini-img" id="miniImg<?= $i ?>" style="<?= $src ? '' : 'display:none;' ?>">
+                                    <div class="upload-content" id="content<?= $i ?>" style="<?= $src ? 'display:none;' : '' ?>">
+                                        <i class="bi bi-camera"></i>
+                                        <span>Adicionar</span>
+                                    </div>
+                                    <button type="button" class="remove-mini" id="remove<?= $i ?>" style="<?= $src ? '' : 'display:none;' ?>"> <i class="bi bi-x"></i> </button>
+                                </div>
+                                <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden" id="input<?= $i ?>">
+                                <input type="hidden" name="remove_img[<?= $i ?>]" id="remove_input_<?= $i ?>" value="0">
+                                <input type="hidden" name="old_img[<?= $i ?>]" value="<?= htmlspecialchars($imgs[$i] ?? '', ENT_QUOTES) ?>">
+                            </label>
+                        <?php endfor; ?>
+                    </div>
+
                     <p style="font-size:0.8rem; color:#666; text-align:center;">
-                        (Deixe em branco para manter a imagem atual)
+                        Clique em um quadrado para trocar. Se quiser remover, clique no X.
                     </p>
                 </article>
-
 
                 <aside class="add_product_details">
                     <div class="product_details_collumn">
@@ -133,8 +143,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                         <article class="input_product_quantity">
                             <p class="product_title_info">Descrição<span class="mandatory_space">*</span></p>
                             <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição..."
-                                class="input_product_info product_details"
-                                required><?= htmlspecialchars($produto['descricao']) ?></textarea>
+                                class="input_product_info product_details" required><?= htmlspecialchars($produto['descricao']) ?></textarea>
                         </article>
 
                         <article class="input_product_quantity">
@@ -187,8 +196,9 @@ while ($r = mysqli_fetch_assoc($resSub)) {
         window.subMapData = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
         window.produtoCategoria = <?= (int) $produto['id_categoria']; ?>;
         window.produtoSubcategoria = <?= (int) $produto['id_subcategoria']; ?>;
+        window.produtoImgs = <?= json_encode($imgs, JSON_UNESCAPED_UNICODE); ?>;
     </script>
+
     <?php include 'footer.php'; ?>
 </body>
-
 </html>
