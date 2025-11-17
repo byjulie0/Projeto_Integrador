@@ -385,39 +385,30 @@ input[type="image"] {
   display: block;
 }
 
-/* Ajustes para o carrossel e miniaturas */
+/* Carrossel ajustado para o tamanho do "Adicionar Produto" */
 .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 350px; /* Ajuste o tamanho do carrossel conforme o design */
-    height: 350px;
-    margin: 10px auto;
+    height: 200px;  /* Ajustado para o mesmo tamanho que o "Adicionar Produto" */
+    margin: 20px auto;
     border: 2px dashed #ccc;
-    border-radius: 10px;
-    background: #fafafa;
+    border-radius: 12px;
     overflow: hidden;
+    background: #f9f9f9;
 }
 
 .carousel-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    display: none; /* Inicialmente escondido */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .carousel-img.active {
-    display: block; /* Exibe a imagem ativa */
-}
-
-.carousel-placeholder {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #aaa;
-    font-size: 14px;
-    text-align: center;
+    display: block;
 }
 
 .carousel-btn {
@@ -427,10 +418,10 @@ input[type="image"] {
     background: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     z-index: 10;
     display: flex;
@@ -438,10 +429,20 @@ input[type="image"] {
     justify-content: center;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 12px; }
+.next { right: 12px; }
 
-/* Estilos das miniaturas */
+.carousel-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #aaa;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* Ajuste nas miniaturas para ficar consistente com o carrossel */
 .mini-container {
     display: flex;
     gap: 10px;
@@ -452,12 +453,12 @@ input[type="image"] {
 
 .upload-box {
     position: relative;
-    width: 75px;
+    width: 75px;  /* Ajustado para tamanho mais equilibrado */
     height: 75px;
     border: 2px dashed #ccc;
     border-radius: 12px;
     overflow: hidden;
-    background: #f0f0f0;
+    background: #f9f9f9;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -478,7 +479,9 @@ input[type="image"] {
 }
 
 .upload-content {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #666;
     font-size: 12px;
 }
@@ -491,7 +494,7 @@ input[type="image"] {
     position: absolute;
     top: 2px;
     right: 2px;
-    background: rgba(255, 0, 0, 0.7);
+    background: rgba(255,0,0,0.7);
     color: white;
     border: none;
     width: 18px;
@@ -499,75 +502,68 @@ input[type="image"] {
     font-size: 12px;
     border-radius: 50%;
     cursor: pointer;
-    display: none;
+    display: none; /* Visível apenas quando houver uma imagem */
 }
 
 .remove-mini:hover {
     background: #c82333;
 }
 
-/* Para os inputs de arquivos ficarem invisíveis, mas clicáveis */
+/* Personalização para os inputs de arquivos invisíveis */
 .file-input-hidden {
     position: absolute;
     left: -9999px;
 }
 
-/* Estilos gerais */
-.product_title_info_img {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+/* Ajustes no hover e conteúdo */
+.upload-box:hover {
+    background: #f0fff0;
+    border-color: #4CAF50;
+}
+
+.upload-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-}
-
-.product_title_info {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-/* Ajuste no layout de form */
-.add_product_area {
-    margin-top: 3%;
-    padding-left: 5rem;
-    display: grid;
-    grid-template-columns: 25% 75%;
-    gap: 20px;
-}
-
-.add_product_submit_button {
-    margin-bottom: 4rem;
-    margin-top: 5%;
-    display: flex;
     justify-content: center;
-    align-items: center;
+    color: #666;
+    font-size: 11px;
+    pointer-events: none;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
 }
 
-.add_product_button {
-    gap: 10px;
-    display: flex;
-    width: 300px;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-botao-op-Concluido);
-    color: var(--color-icones);
-    padding: 5px 10px;
-    border-radius: 5px;
+.upload-content i {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.remove-mini {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(220,53,69,0.9);
+    color: white;
     border: none;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.add_product_button:hover {
-    background-color: #3d6a3f;
+.remove-mini:hover {
+    background: #c82333;
 }
 
+/* Responsividade ajustada */
 @media (max-width: 767px) {
-    .add_product_area {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        grid-template-columns: 1fr;
-        margin: 0;
-    }
-
     .carousel-container {
         max-width: 100%;
         height: 200px;

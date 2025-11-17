@@ -116,3 +116,49 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Atualiza o carrossel ao trocar a imagem principal
+function changeSlide(dir) {
+    const filled = previews.filter(p => p);
+    if (filled.length === 0) return;
+    currentSlide = (currentSlide + dir + filled.length) % filled.length;
+    updateCarousel();
+}
+
+function showSlide(i) {
+    const filled = previews.map((p, j) => p ? j : -1).filter(j => j !== -1);
+    currentSlide = filled.indexOf(i);
+    updateCarousel();
+}
+
+function updateCarousel() {
+    const filled = previews.filter(p => p);
+    if (filled.length === 0) {
+        mainImg.style.display = 'none';
+        placeholder.style.display = 'block';
+        return;
+    }
+    const imgSrc = filled[currentSlide] || filled[0];
+    mainImg.src = imgSrc;
+    mainImg.style.display = 'block';
+    placeholder.style.display = 'none';
+}
+
+// Remover a imagem ao clicar no botão "X"
+document.querySelectorAll('.remove-mini').forEach((btn, i) => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        clearImage(i);
+    });
+});
+
+// Limpar a imagem no quadradinho, ao clicar no "X"
+function clearImage(i) {
+    inputs[i].value = '';
+    miniImgs[i].src = '';
+    miniImgs[i].style.display = 'none';
+    contents[i].style.display = 'flex';
+    removes[i].style.display = 'none';
+    previews[i] = null;
+    updateCarousel();
+}
