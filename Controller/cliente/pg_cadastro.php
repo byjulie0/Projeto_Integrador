@@ -108,6 +108,9 @@ include 'menu_cadastro.php';
 
     <script>
         <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+
+            
+
             setTimeout(function() {
                 window.location.href = 'login.php';
             }, 3000);
