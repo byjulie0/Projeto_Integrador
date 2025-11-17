@@ -24,9 +24,11 @@
                 <p><?= $idade ?></p>
                 <p class="preco">R$ <?= $preco ?></p>
             </div>
-            <div class="stars-pag-fav"><a href="../utils/favoritar.php?id_produto=<?php echo $id_produto; ?>">
-
-                    <i class="fa-solid fa-heart red-heart"></i></a></div>
+            <div class="stars-pag-fav">
+                <a href="../utils/favoritar.php?id_produto=<?php echo $id_produto; ?>">
+                    <i class="fa-solid fa-heart red-heart"></i>
+                </a>
+            </div>
         </a>
     </div>
 

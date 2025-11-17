@@ -74,9 +74,8 @@ $id_produto = $_GET['id_produto'] ?? null;
                 <h2><?php echo htmlspecialchars($produto['prod_nome']); ?></h2>
 
                 <div class="area-favorito">
-                <a class="btn-favorito" href="../utils/favoritar.php?id_produto=<?php echo $produto['id_produto']; ?>" data-id="<?= $id_produto ?>"
-                    data-favorito="<?= $ja_favoritado ? 'true' : 'false' ?>">
-                    <i class="fa<?= $ja_favoritado ? 's' : 'r' ?> fa-heart <?= $ja_favoritado ? 'favoritado' : '' ?>"></i>
+                <a class="btn-favorito" href="../utils/favoritar.php?id_produto=<?php echo $produto['id_produto']; ?>">
+                    <i class="fa-solid fa-heart red-heart"></i>
                 </a>
                 </div>
 
