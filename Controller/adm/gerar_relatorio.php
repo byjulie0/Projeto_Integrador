@@ -1,4 +1,7 @@
-<?php include 'menu_inicial.php';?>
+<?php
+include '../utils/autenticado_adm.php';
+include 'menu_inicial.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -43,7 +46,7 @@
         <div class="generate_report_submit_button">
             <?php
             $texto = "Gerar";
-            include 'botao_adm.php';
+            include 'botao_verde_adm.php';
             ?>
         </div>
     </div>

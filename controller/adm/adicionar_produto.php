@@ -1,6 +1,6 @@
 <?php
+include '../utils/autenticado_adm.php';
 include 'menu_inicial.php';
-include '../../model/DB/conexao.php';
 
 $sqlCat = "SELECT id_categoria, cat_nome FROM categoria";
 $resCat = mysqli_query($con, $sqlCat);
@@ -23,6 +23,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
     <meta charset="UTF-8">
     <title>Adicionar Produto</title>
     <link rel="stylesheet" href="../../view/public/css/adm/adicionar_produto.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script defer src="../../view/js/adm/adicionar_produto.js"></script>
 </head>
 <body class="body_add_product">
@@ -36,18 +37,39 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 
         <form action="../utils/adicionar_produto_backend.php" method="POST" enctype="multipart/form-data">
             <section class="add_product_area">
-                <article class="add_product_image">
-                    <div class="img_holder">
-                        <input type="file" name="imagem" id="inputImagem" accept="image/*" required>
-                        <label for="inputImagem" class="img_holder_button">Selecionar uma imagem</label>
-                        <img id="previewImagem" alt="Prévia da imagem">
-                    </div>
-                </article>
+<article class="add_product_image">
+    <p class="product_title_info_img">Imagens do produto (máx.4)<span class="mandatory_space">*</span></p>
 
+    <div class="carousel-container">
+        <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)"><i class="bi bi-chevron-left"></i>
+        </button>
+        <button type="button" class="carousel-btn next" onclick="changeSlide(1)"><i class="bi bi-chevron-right"></i>
+        </button>
+        <div class="carousel-placeholder" id="carouselPlaceholder">Clique em um quadrado para adicionar</div>
+        <img src="" alt="" class="carousel-img" id="mainPreview" style="display: none;">
+    </div>
+
+    <div class="mini-container">
+        <?php for ($i = 0; $i < 4; $i++): ?>
+            <label class="custom-file-upload" for="input<?= $i ?>">
+            <div class="upload-box" id="box<?= $i ?>">
+                <img src="" alt="" class="mini-img" id="miniImg<?= $i ?>" style="display: none;">
+                <div class="upload-content" id="content<?= $i ?>">
+                    <i class="bi bi-camera"></i>
+                    <span>Adicionar</span>
+                </div>
+                <button type="button" class="remove-mini" id="remove<?= $i ?>" style="display: none;">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+                <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden" id="input<?= $i ?>">
+            </label>
+        <?php endfor; ?>
+    </div>
+</article>
 
                 <aside class="add_product_details">
                     <div class="product_details_collumn">
-
                         <article class="input_product_name">
                             <p class="product_title_info">Insira o nome do produto<span class="mandatory_space">*</span></p>
                             <input type="text" class="input_product_info" placeholder="Nome do produto" name="nome" required>
@@ -79,72 +101,46 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                                 <option value="" selected disabled>Selecione uma subcategoria</option>
                             </select>
                         </article>
-
                     </div>
 
                     <div class="product_details_collumn">
-
                         <article class="input_product_quantity">
                             <p class="product_title_info">Insira a descrição do produto<span class="mandatory_space">*</span></p>
-                            <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição..." class="input_product_info product_details" required></textarea>
+                            <textarea id="descricao" name="descricao" placeholder="Descrição..." class="input_product_info product_details" required></textarea>
                         </article>
 
                         <article class="input_product_quantity">
                             <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
-                            <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso" required min="0" disabled>
+                            <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso" required min="0">
                         </article>
 
                         <article class="input_product_quantity">
                             <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
-                            <input type="date" class="input_product_info" name="idade" required disabled>
+                            <input type="date" class="input_product_info" name="idade" required>
                         </article>
 
                         <article class="input_product_category">
                             <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
-                            <select class="product_info_select" name="sexo" required disabled>
+                            <select class="product_info_select" name="sexo" required>
                                 <option value="" selected disabled>Selecione uma opção</option>
-                                <option value="M">Macho</option>
-                                <option value="F">Fêmea</option>
+                                <option value="Macho">Macho</option>
+                                <option value="Fêmea">Fêmea</option>
                                 <option value="Não se aplica">Não se aplica (Produto)</option>
                             </select>
                         </article>
 
                         <article class="input_product_champion">
                             <p class="product_title_info">Categoria é um campeão?<span class="mandatory_space">*</span></p>
-                            <select id="is_champion" class="product_info_select" name="campeao" required disabled>
+                            <select class="product_info_select" name="campeao" required>
                                 <option value="" selected disabled>Selecione uma opção</option>
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
                             </select>
                         </article>
-
                     </div>
                 </aside>
-                        
-                        <script>
-                            const subMap = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
-                            const catSel = document.getElementById('categoria');
-                            const subSel = document.getElementById('subcategoria');
-                            
-                            catSel.addEventListener('change', () => {
-                                const catId = catSel.value;
-                                subSel.innerHTML = '<option value="" selected disabled>Selecione uma subcategoria</option>';
-                                if (subMap[catId]) {
-                            subMap[catId].forEach(sub => {
-                                const opt = document.createElement('option');
-                                opt.value = sub.id_subcategoria;
-                                opt.textContent = sub.subcat_nome;
-                                subSel.appendChild(opt);
-                            });
-                            subSel.disabled = false;
-                        } else {
-                            subSel.disabled = true;
-                        }
-                    });
-                    </script>
-                </div>
-            </aside>
             </section>
+
             <div class="add_product_submit_button">
                 <?php
                 $texto = "Avançar";
@@ -154,9 +150,10 @@ while ($r = mysqli_fetch_assoc($resSub)) {
         </form>
     </div>
 
-   <script>
+    <?php include 'footer.php'; ?>
+
+<script>
     window.subMapData = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
-   </script>
-<?php include 'footer.php'; ?>
+</script>
 </body>
 </html>

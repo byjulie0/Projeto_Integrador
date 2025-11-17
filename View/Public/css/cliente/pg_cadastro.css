@@ -1,14 +1,13 @@
-
 .span-required {
   font-size: 0.8rem;
   color: red;
-  display: none;   
+  display: none;
   top: 65%;
   position: absolute;
   margin-top: 5px
 }
 
-.body-cadastro{
+.body-cadastro {
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -16,9 +15,9 @@
   flex-direction: column;
 }
 
-.area-form-cadastro{
+.area-form-cadastro {
   justify-content: center;
-  width: 100%;
+  width: 75%;
   height: auto;
   flex-direction: column;
   margin: 100px;
@@ -29,14 +28,14 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.titulo-form-cadastro{
+.titulo-form-cadastro {
   font-size: 2rem;
   margin-bottom: 2%;
   color: var(--color-primary-1);
   font-weight: 600;
 }
 
-.form-cadastro{
+.form-cadastro {
   width: 100%;
   display: flex;
   margin-top: 2%;
@@ -45,14 +44,14 @@
   justify-content: center;
 }
 
-.area-geral-form-cadastro{
+.area-geral-form-cadastro {
   width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.input-form-cadastro{
+.input-form-cadastro {
   width: 22.563rem;
   height: 2.938rem;
   padding: 7px;
@@ -72,7 +71,7 @@
   box-sizing: border-box;
 }
 
-.input-form-cadastro::placeholder{
+.input-form-cadastro::placeholder {
   color: var(--color-primary-1);
   font-weight: 500;
   font-size: 0.8rem;
@@ -92,7 +91,7 @@
   color: var(--color-primary-1);
 }
 
-.btn-submit-cadastro{
+.btn-submit-cadastro {
   display: flex;
   width: 100%;
   align-items: center;
@@ -101,7 +100,7 @@
   gap: 15px;
 }
 
-.input-submit-form-cadastro{
+.input-submit-form-cadastro {
   margin-top: 10px;
   font-weight: 600;
   gap: 10px;
@@ -119,7 +118,7 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.area-termos-privacidade-cadastro{
+.area-termos-privacidade-cadastro {
   margin-top: 5%;
   font-size: 0.9rem;
   width: 50%;
@@ -128,7 +127,7 @@
   font-weight: 600;
 }
 
-.area-login-cadastro{
+.area-login-cadastro {
   width: 50%;
   align-items: center;
   text-align: center;
@@ -136,12 +135,12 @@
   font-size: 0.9rem;
 }
 
-.login-cadastro{
+.login-cadastro {
   text-decoration: none;
   color: var(--color-primary-5);
 }
 
-.main-cadastro{
+.main-cadastro {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,7 +148,7 @@
   width: 100%;
 }
 
-.icon-voltar-cadastro{
+.icon-voltar-cadastro {
   text-decoration: none;
   position: absolute;
   left: 20px;
@@ -177,30 +176,32 @@
   flex: 1;
 }
 
-.form-coluna-inferior{
+.form-coluna-inferior {
   display: flex;
   gap: 20px;
   margin-bottom: 15px;
 }
 
-.form-coluna-superior{
+.form-coluna-superior {
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-/* .g-recaptcha{
+
+.g-recaptcha {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px auto;
-} */
+  padding: 20px;
+}
 
 @media (max-width: 768px) {
   .form-colunas-cadastro {
     width: 80%;
     margin-bottom: 25px;
   }
+
   .area-form-cadastro {
     flex-direction: column;
     height: auto;
@@ -208,31 +209,31 @@
     margin: 10%;
     width: 90%;
   }
-  
+
   .titulo-form-cadastro {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 1.5rem;
   }
-  
+
   .form-coluna-inferior {
     flex-direction: column;
   }
 
-  .form-coluna-superior{
+  .form-coluna-superior {
     transform: translateY(-10px);
   }
-  
+
   .coluna-esquerda-cadastro,
   .coluna-direita-cadastro {
     max-width: 100%;
   }
-  
+
   .input-form-cadastro {
     width: 100%;
     height: 40px;
   }
-  
+
   .icon-voltar-cadastro {
     position: fixed;
     top: 20px;
@@ -240,17 +241,33 @@
     margin: 0;
     font-size: 1.3rem;
   }
-  
+
   .area-termos-privacidade-cadastro,
   .area-login-cadastro {
     width: 100%;
     font-size: 0.8rem;
   }
-  
+
   .input-submit-form-cadastro {
     width: 200px;
     padding: 8px;
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .form-coluna-inferior,
+  .form-coluna-superior {
+    width: 100%;
+  }
+
+  .btn-submit-cadastro {
+    flex-direction: column;
+  }
+
+  .g-recaptcha {
+    width: 100%;
   }
 }
 
@@ -271,4 +288,5 @@
   .area-termos-privacidade-cadastro {
     margin-top: 20px;
   }
+
 }

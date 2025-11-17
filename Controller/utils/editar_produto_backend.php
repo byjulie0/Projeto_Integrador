@@ -1,5 +1,5 @@
 <?php
-include 'gerar_nnotificacao.php';
+include 'gerar_notificacao.php';
 include '../../model/DB/conexao.php';
 
 $popup_titulo = '';
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql= "SELECT quant_estoque,prod_nome,path_img FROM produto WHERE id_produto = $id_produto";
     $qtd_inicial=$con->query($sql);
 
-    $sql_encontrar_cliente="SELECT cliente_id_cliente FROM carrinho WHERE produto_id_produto = $id_produto";
+    $sql_encontrar_cliente="SELECT id_cliente FROM carrinho WHERE id_produto = $id_produto";
     $qtd_cliente=$con->query($sql_encontrar_cliente);
     $clientes=[];
 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
 
          while ($cliente_row = $qtd_cliente->fetch_assoc()) { 
-        $clientes[] = $cliente_row['cliente_id_cliente'];}
+        $clientes[] = $cliente_row['id_cliente'];}
 
     }
 
@@ -61,8 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $produto_id= $id_produto;
             $mensagem="Cliente, a {$nome_produto} que você estava de olho voltou ao estoque, dê uma olhada!";
             $categoria="Produtos";
-            $imagem=$img_produto;
-            if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria, $imagem)) {
+            if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
                 echo "Notificação enviada com sucesso!";
         } 
             else {

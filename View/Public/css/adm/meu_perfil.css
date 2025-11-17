@@ -1,16 +1,7 @@
 @import url("../adm.css");
-.body-visualizar-dados {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-}
 .main-visualizar-dados {
     width: 100%;
-    padding: 30px 40px;
+    padding: 30px;
     display: flex;
     justify-content: center;
 }
@@ -66,6 +57,7 @@
     color: var(--color-primary-1);
 }
   .visualizar-dados-grid {
+    font-weight: 600;
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;

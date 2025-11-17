@@ -1,132 +1,292 @@
-.relatorios_container {
+@import url(../adm.css);
+/* Ajustando o contêiner do gráfico */
+.grafico-container {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/* Ajuste de estilo para os cards (produtos, pedidos, usuários) */
+.relatorios_cards_topo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Cria 3 colunas */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Ajuste no tamanho dos cards */
+.card_topo {
   padding: 20px;
-  font-family: Arial, sans-serif;
-  color: var(--color-primary-2);
+  background-color: #dfefd1ff;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do gráfico de estatísticas */
+.card_estatisticas h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Ajuste de espaçamento e alinhamento */
+.relatorios_main {
+  padding: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Estilos para o cabeçalho */
+.relatorios_header {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-/* Cabeçalho */
-.relatorios_header {
-  margin-bottom: 25px;
-  position: relative;
-  margin-top: 35px;
-  max-width: 100%;
-  width: 85%;
-  color: var(--color-primary-1);
-}
-
-.verificar_administrar_pedidos_sessao_seta_voltar {
-  font-size: 1.2rem;
-  color: #333;
-  margin-right: 10px;
-  text-decoration: none;
-}
+/*----------------------------------------------------- colocar o visualizar a esquerda da tela */
 .relatorios_header h1 {
-  font-size: 1.6rem;
-  margin-bottom: 8px;
-  display: inline-block;
-}
-.verificar_administrar_pedidos_sessao_mini_titulos_1 {
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: #555;
-}
-
-.verificar_administrar_pedidos_sessao_titulo_destaque {
-  font-weight: 600;
-  color: var(--color-fonte);
-}
-
-.verificar_administrar_pedidos_sessao_periodo_bloco {
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: right;
-}
-
-.verificar_administrar_pedidos_sessao_mini_titulos_2 {
-  font-size: 0.9rem;
-  color: var(--color-primary-1);
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.verificar_administrar_pedidos_sessao_periodo_linha {
-  border: none;
-  border-bottom: 1px solid #bbb;
-  margin-top: 5px;
-  color: var(--color-primary-1);
-}
-
-/* Cards do topo */
-.relatorios_cards_topo {
-  width: 75%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
-  gap: 15px;
-  justify-content: center;
-  margin-left: 15%;
-}
-.card_topo {
-  flex: 1;
   display: flex;
   align-items: center;
-  background: #e7f0e8;
-  padding: 12px;
-  gap: 10px;
-  border-radius: 12px;
-  font-size: 14px;
-  text-align: justify;
-  font-weight: bold;
-}
-.fa-bag-shopping,
-.fa-cart-plus,
-.fa-users {
-  display: flex;
-  background-color: #d1e2cd;
-  padding: 10px;
-  border-radius: 100%;
-}
-/* Conteúdo principal */
-.relatorios_main {
-  display: grid;
-  grid-template-columns: 55% 40%;
-  gap: 20px;
+  margin-left: 50px;
 }
 
-/* Card estatísticas */
-.card_estatisticas {
-  background: #e7f0e8;
-  padding: 15px;
-  border-radius: 12px;
-  grid-column: span 3; 
-}
-.card_estatisticas h3 {
-  margin-bottom: 10px;
+/* Personalização da linha de seleção do período */
+.verificar_administrar_pedidos_sessao_periodo_linha {
+  width: 100%;
+  border: 1px solid #ccc;
 }
 
-/* Card atividades */
+/* Estilo geral para o corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+/* Ajustando a área de "Atividades recentes" */
 .card_atividades {
-  background: #e7f0e8;
+  background-color: #fff;
   padding: 15px;
-  border-radius: 12px;
-}
-.card_atividades h3 {
-  margin-bottom: 10px;
-}
-.btn_imprimir {
-  margin-top: 15px;
-  padding: 8px 12px;
-  background: var(--color-botao-op-Concluido);
-  color: #fff;
-  border: none;
   border-radius: 8px;
-  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
-.btn_imprimir:hover {
-  background: var(--color-primary-6);
+
+/* seta de retorno */
+.verificar_administrar_pedidos_sessao_seta_voltar {
+  position: absolute;
+  top: 110px;
+  left: 10px;
+}
+
+/* card de estatistica par alteração de cor */
+.card_estatisticas {
+  background-color: #dbf3d4ff;
+}
+
+/* Manter o estilo do gráfico de pizza como está */
+.grafico-container {
+
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/* Estilo do contêiner para os gráficos de barra e linha */
+.grafico-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+
+}
+
+/* Ajuste do gráfico de barra */
+.grafico-barra {
+  flex: 1;
+  max-width: 100%;
+  background-color: #dbf3d4ff;
+}
+
+/* Ajuste do gráfico de linha */
+.grafico-linha {
+  flex: 1;
+  max-width: 100%;
+  background-color: #dbf3d4ff;
+
+}
+
+/*-------------------------------------RESPONSIVIDADE -MOBILE DESKTOP ---------------------------------*/
+/* Responsividade para desktop e mobile */
+
+/* Para dispositivos com telas grandes (desktop) */
+@media (min-width: 1024px) {
+
+  /* Grid para os cards no topo */
+  .relatorios_cards_topo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 colunas */
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Ajuste do gráfico */
+  .grafico-container {
+    max-width: 500px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  /* Ajuste para os gráficos de barra e linha */
+  .grafico-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .grafico-barra,
+  .grafico-linha {
+    flex: 1;
+    max-width: 100%;
+  }
+}
+
+/* Para dispositivos menores (tablet, mobile) */
+@media (max-width: 1023px) {
+
+  /* Ajuste para o layout de cards */
+  .relatorios_cards_topo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 colunas para dispositivos menores */
+    gap: 15px;
+  }
+
+  /* Ajuste de tamanho dos gráficos */
+  .grafico-container {
+    max-width: 100%;
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  .grafico-row {
+    flex-direction: column;
+    /* Exibe gráficos de barra e linha em coluna */
+    margin-top: 20px;
+  }
+
+  .grafico-barra,
+  .grafico-linha {
+    max-width: 100%;
+    margin-bottom: 20px;
+    /* Espaçamento entre os gráficos */
+  }
+
+  /* Ajuste do título e texto da sessão */
+  .relatorios_header h1 {
+    font-size: 22px;
+    margin-left: 20px;
+  }
+
+  .relatorios_header h3 {
+    font-size: 16px;
+  }
+
+  .relatorios_header {
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Ajuste dos cards (Produtos, Pedidos, Usuários) */
+  .card_topo {
+    padding: 10px;
+    background-color: #dfefd1ff;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+  }
+
+  /* Card de Estatísticas */
+  .card_estatisticas {
+    background-color: #dbf3d4ff;
+    padding: 10px;
+  }
+
+  /* Ajuste do botão de imprimir */
+  .btn_imprimir {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 600px) {
+
+  /* Ajuste da grid para os cards (1 coluna em dispositivos móveis) */
+  .relatorios_cards_topo {
+    grid-template-columns: 1fr;
+    /* 1 coluna para mobile */
+  }
+
+  /* Reduzindo o tamanho do gráfico */
+  .grafico-container {
+    max-width: 100%;
+    height: 200px;
+    /* Menor altura para gráficos em telas pequenas */
+  }
+
+  /* Ajuste da fonte */
+  .relatorios_header h1 {
+    font-size: 18px;
+  }
+
+  .relatorios_header h3 {
+    font-size: 14px;
+  }
+
+  /* Ajuste dos cards de informações */
+  .card_topo {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  /* Melhorando a exibição do período de data */
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    padding: 10px;
+  }
+}
+
+/*------------------------------------------tabela de pedidos ---------------------------------------------*/
+.tabela-pedidos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.tabela-pedidos th {
+  background-color: #dbf3d4ff;
+  color: #333;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabela-pedidos td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  align-items: center;
+}
+
+.tabela-pedidos tr:nth-child(even) {
+  background-color: #f9f9f9;
 }

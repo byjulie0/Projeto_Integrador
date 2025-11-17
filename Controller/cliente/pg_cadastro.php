@@ -1,4 +1,7 @@
-<?php session_start(); include 'menu_cadastro.php';?>
+<?php
+session_start();
+include 'menu_cadastro.php';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,41 +12,69 @@
     <title>John Rooster - Cadastro</title>
     <script defer src="../../view/js/cliente/cadastro.js"></script>
     <link rel="stylesheet" href="../../view/public/css/cliente/pg_cadastro.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../../view/js/pop_up.js">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="body-cadastro">
+    <?php
+    // Exibir pop-up de erro se houver
+    if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'erro' && isset($_SESSION['popup_message'])) {
+        $texto = $_SESSION['popup_message'];
+        include '../overlays/pop_up_erro.php';
+        unset($_SESSION['popup_type']);
+        unset($_SESSION['popup_message']);
+    }
+    
+    // Exibir pop-up de sucesso se houver
+    if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'sucesso' && isset($_SESSION['popup_message'])) {
+        $texto = $_SESSION['popup_message'];
+        include '../overlays/pop_up_sucesso.php';
+        unset($_SESSION['popup_type']);
+        unset($_SESSION['popup_message']);
+        unset($_SESSION['form_data']);
+    }
+    ?>
+
     <main class="main-cadastro">
         <div class="area-form-cadastro">
             <h2 class="titulo-form-cadastro">Cadastrar</h2>
             <div class="area-geral-form-cadastro">
                 <form action="../utils/realiza_cadastro.php" method="POST" class="form-cadastro" id="myForm">
-                    
-                    <div class="form-colunas-cadastro">     
+
+                    <div class="form-colunas-cadastro">
                         <div class="form-coluna-superior">
-                            <input type="text" name="nome" placeholder="Nome Completo*" class="input-form-cadastro" required>
+                            <input type="text" name="nome" placeholder="Nome Completo*" class="input-form-cadastro"
+                                value="<?php echo isset($_SESSION['form_data']['nome']) ? htmlspecialchars($_SESSION['form_data']['nome']) : ''; ?>"
+                                required>
                         </div>
 
                         <div class="form-coluna-inferior">
                             <div class="coluna-esquerda-cadastro">
-                                <input type="text" name="cpf_cnpj" required placeholder="CPF/CNPJ*" class="input-form-cadastro">
-                                
-                                <input type="email" name="email" required class="input-form-cadastro" placeholder="Email*">
+                                <input type="text" name="cpf_cnpj" required placeholder="CPF/CNPJ*"
+                                    class="input-form-cadastro" id="cpfCnpj"
+                                    value="<?php echo isset($_SESSION['form_data']['cpf_cnpj']) ? htmlspecialchars($_SESSION['form_data']['cpf_cnpj']) : ''; ?>">
+
+                                <input type="email" name="email" required class="input-form-cadastro"
+                                    placeholder="Email*" id="emailInput"
+                                    value="<?php echo isset($_SESSION['form_data']['email']) ? htmlspecialchars($_SESSION['form_data']['email']) : ''; ?>">
                                 <span class="span-required" id="emailError">Use o padrão email@empresa.com.br</span>
-                                
-                                <input type="date" name="data_nascimento" required class="input-form-cadastro" required placeholder="Data de Nascimento*">
+
+                                <input type="date" name="data_nascimento" required class="input-form-cadastro"
+                                    placeholder="Data de Nascimento*" id="dataNasc"
+                                    value="<?php echo isset($_SESSION['form_data']['data_nascimento']) ? htmlspecialchars($_SESSION['form_data']['data_nascimento']) : ''; ?>">
                             </div>
 
                             <div class="coluna-direita-cadastro">
-                                <input type="text" name="telefone" required class="input-form-cadastro" placeholder="Telefone">
-                                
-                                <input type="password" name="senha" class="input-form-cadastro" placeholder="Senha*">
+                                <input type="text" name="telefone" required class="input-form-cadastro"
+                                    placeholder="Telefone"
+                                    value="<?php echo isset($_SESSION['form_data']['telefone']) ? htmlspecialchars($_SESSION['form_data']['telefone']) : ''; ?>">
+
+                                <input type="password" name="senha" class="input-form-cadastro" placeholder="Senha*"
+                                    id="senhaInput" required>
                                 <span class="span-required" id="senhaLengthError"></span>
 
-                                <input type="password" name="senha-confirmar" placeholder="Confirmar Senha*" class="input-form-cadastro" required>
+                                <input type="password" name="senha-confirmar" placeholder="Confirmar Senha*"
+                                    class="input-form-cadastro" required id="senhaConfirmar">
                                 <span class="span-required" id="senhaConfirmError"></span>
                             </div>
                         </div>
@@ -52,40 +83,15 @@
 
                     <div class="btn-submit-cadastro">
                         <?php
-                        $texto = "Cadastrar";
-                        include 'botao_cliente.php';
+                            $texto = "Cadastrar";
+                            include 'botao_verde_cliente.php';
                         ?>
                         <?php
-                        $texto = "Cancelar";
-                        include 'botao_cancelar.php';
+                            $texto = "Cancelar";
+                            include 'botao_vermelho_cliente.php';
                         ?>
                     </div>
-
-
-
-                 
-
-
-
-
-                    </form> 
-
-                    
-                    <script>
-                        document.getElementById('myForm').addEventListener('submit', function(e){
-                        var response = grecaptcha.getResponse();
-                        if (response.length === 0) {
-                            e.preventDefault();
-                            alert('Por favor, marque o reCAPTCHA antes de enviar o formulário.');
-                        }
-                        });
-                    </script>
-                    
-              
-           
-                   
-              
-              
+                </form>
             </div>
 
             <p class="area-termos-privacidade-cadastro">
@@ -99,8 +105,16 @@
 
         </div>
     </main>
-</body>
 
+    <script>
+        <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+            setTimeout(function() {
+                window.location.href = 'login.php';
+            }, 3000);
+        <?php endif; ?>
+    </script>
+
+</body>
 </html>
 
 <?php include 'footer_cliente.php'; ?>

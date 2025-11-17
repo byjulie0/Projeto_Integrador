@@ -45,6 +45,7 @@
                     <ul class="submenu_adm">
                         <li><a href="meu_perfil.php">Meus dados</a></li>
                         <li><a href="redefinir_senha.php">Redefinir senha</a></li>
+                        <li><a href="#" onclick="mostrarAlerta(event)">Fazer backup</a></li>
                     </ul>
                 </div>
                 <a href="pg_notificacao.php" class="nav-btns-pg-adm">
@@ -57,6 +58,12 @@
                 </a>
             </div>
         </div>
+        <script>
+            function mostrarAlerta(event) {
+            event.preventDefault();
+            alert('Backup iniciado! Aguarde alguns instantes...');
+            }
+        </script>
     </section>
 </body>
 

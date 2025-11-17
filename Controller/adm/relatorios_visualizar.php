@@ -1,4 +1,64 @@
-<?php include "menu_inicial.php"; ?>
+
+<?php 
+include "menu_inicial.php"; 
+include '../../model/DB/conexao.php';  
+
+// intervalo de datas dinâmico (vindo do GET ou valores padrão)
+$data_inicio = isset($_GET['data_inicio']) ? $_GET['data_inicio'] : date('Y-m-01'); // primeiro dia do mês atual
+$data_fim = isset($_GET['data_fim']) ? $_GET['data_fim'] : date('Y-m-t'); // último dia do mês
+       
+// quantidade de pedidos por data 
+$query_pedidos_por_data = "SELECT DATE(data_pedido) AS data_pedido, COUNT(id_pedido) AS numero_pedidos
+                           FROM pedido
+                           WHERE data_pedido BETWEEN '$data_inicio' AND '$data_fim'
+                           GROUP BY DATE(data_pedido)
+                           ORDER BY DATE(data_pedido)";
+$result_pedidos_por_data = mysqli_query($con, $query_pedidos_por_data);
+$pedidos_por_data = [];
+while ($row = mysqli_fetch_assoc($result_pedidos_por_data)) {
+    $pedidos_por_data[] = [
+        'data_pedido' => $row['data_pedido'],
+        'numero_pedidos' => $row['numero_pedidos']
+    ];
+}
+
+// Consultas SQllllll
+$query_pedidos = "SELECT COUNT(id_pedido) AS Numero_De_Pedidos FROM pedido WHERE data_pedido BETWEEN '$data_inicio' AND '$data_fim'";
+$result_pedidos = mysqli_query($con, $query_pedidos);
+$numero_pedidos = mysqli_fetch_assoc($result_pedidos)['Numero_De_Pedidos'];
+
+$query_produtos = "SELECT COUNT(id_produto) AS Numero_De_Produtos FROM produto WHERE produto_ativo = 1";
+$result_produtos = mysqli_query($con, $query_produtos);
+$numero_produtos = mysqli_fetch_assoc($result_produtos)['Numero_De_Produtos'];
+
+$query_usuarios = "SELECT COUNT(id_cliente) AS Numero_De_Usuarios FROM cliente WHERE user_ativo = 1";
+$result_usuarios = mysqli_query($con, $query_usuarios);
+$numero_usuarios = mysqli_fetch_assoc($result_usuarios)['Numero_De_Usuarios'];
+
+$query_estatisticas = "SELECT status_pedido, COUNT(id_pedido) AS Numero_De_Pedidos FROM pedido WHERE data_pedido BETWEEN '$data_inicio' AND '$data_fim' GROUP BY status_pedido";
+$result_estatisticas = mysqli_query($con, $query_estatisticas);
+$estatisticas = [];
+while ($row = mysqli_fetch_assoc($result_estatisticas)) {
+    $estatisticas[$row['status_pedido']] = $row['Numero_De_Pedidos'];
+}
+
+// Buscar os 10 pedidos mais recentes
+$query_ultimos_pedidos = "
+     select p.id_pedido, p.id_cliente, p.status_pedido, p.data_pedido, pr.valor from item as i left join pedido as p on i.id_pedido = p.id_pedido left join produto as pr on pr.id_produto = i.id_produto 
+	ORDER BY data_pedido DESC 
+    LIMIT 10;
+";
+$result_ultimos_pedidos = mysqli_query($con, $query_ultimos_pedidos);
+
+$ultimos_pedidos = [];
+while ($row = mysqli_fetch_assoc($result_ultimos_pedidos)) {
+    $ultimos_pedidos[] = $row;
+}
+
+
+mysqli_close($con);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,58 +66,318 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios</title>
-    <link rel="stylesheet" href="../../view/public/css/adm/relatorios_visualizar.css">
+    
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="../../View/public/css/adm/relatorios_visualizar.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script defer src="../../View/js/adm/relatorios_visualizar_adm.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
 </head>
 
 <body>
     <div class="relatorios_container">
 
-        <!-- Cabeçalho -->
-        <div class="relatorios_header"> <a href="#" onclick="window.history.back(); return false;"
-                class="verificar_administrar_pedidos_sessao_seta_voltar"> <i class="bi bi-chevron-left"></i> </a>
+    
+        <div class="relatorios_header"> 
+            <a href="#" onclick="window.history.back(); return false;" class="verificar_administrar_pedidos_sessao_seta_voltar"> 
+                <i class="bi bi-chevron-left"></i> 
+            </a>
             <h1>Visualizar relatórios</h1>
             <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período:
-                <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida">XX/XX/XXXX -
-                    YY/YY/YYYY</span>
+                <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida"><?php echo $data_inicio . ' - ' . $data_fim; ?></span>
             </h3>
-            <div class="verificar_administrar_pedidos_sessao_periodo_bloco"> <span
-                    class="verificar_administrar_pedidos_sessao_mini_titulos_2" id="abrirCalendario">Mudar
-                    período</span> <input type="text" id="dataInicio" style="display: none;"> <input type="text"
-                    id="dataFim" style="display: none;">
+            <div class="verificar_administrar_pedidos_sessao_periodo_bloco">
+                <span class="verificar_administrar_pedidos_sessao_mini_titulos_2" id="abrirCalendario">Mudar período</span>
+                <input type="text" id="dataInicio" style="display: none;" value="<?php echo $data_inicio; ?>">
+                <input type="text" id="dataFim" style="display: none;" value="<?php echo $data_fim; ?>">
                 <hr class="verificar_administrar_pedidos_sessao_periodo_linha">
             </div>
         </div>
 
         <div class="relatorios_main">
-            <div class="relatorios_cards_topo">
-                <div class="card_topo"><i class="fa-solid fa-bag-shopping"></i>Produtos <br> cadastrados: <b>51</b> <i
-                        class="fa-solid fa-chevron-right"></i></div>
-                <div class="card_topo"><i class="fa-solid fa-cart-plus"></i>Pedidos <br> gerados: <b>0</b><i
-                        class="fa-solid fa-chevron-right"></i></div>
-                <div class="card_topo"><i class="fa-solid fa-users"></i>Usuários <br> cadastrados: <b>0</b><i
-                        class="fa-solid fa-chevron-right"></i></div>
-                <div class="card_estatisticas">
-                    <h3>Estatísticas</h3>
-                    <canvas id="graficoEstatisticas"></canvas>
-                </div>
-            </div>
-            <div class="card_atividades">
-                <h3>Atividades recentes:</h3>
-                <p>Mostrar últimos 10 pedidos e informações importantes relacionados</p>
-                <button class="btn_imprimir">📄 Imprimir Tabelas</button>
+    <div class="relatorios_cards_topo">
+        <!-- Card de Produtos -->
+        <div class="card_topo">
+            <i class="fa-solid fa-bag-shopping"></i>    Produtos <br> cadastrados: 
+            <b><?php echo $numero_produtos; ?></b> 
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <!-- Card de Pedidos -->
+        <div class="card_topo">
+            <i class="fa-solid fa-cart-plus"></i>    Pedidos <br> gerados: 
+            <b><?php echo $numero_pedidos; ?></b>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <!-- Card de Usuários -->
+        <div class="card_topo">
+            <i class="fa-solid fa-users"></i>    Usuários <br> cadastrados: 
+            <b><?php echo $numero_usuarios; ?></b>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <!-- Gráfico de Estatísticas -->
+        <div class="card_estatisticas">
+            <h3>Estatísticas</h3>
+            <div class="grafico-container">
+                <canvas id="graficoEstatisticas"></canvas>
             </div>
         </div>
+        <!-- Contêiner para os gráficos de barra e linha -->
+    <div class="grafico-row">
+        <!-- Gráfico de Barra -->
+        <div class="grafico-container grafico-barra">
+            <canvas id="graficoBarraEstatisticas"></canvas>
+        </div>
+
+        
+    </div>
+
+    <div class="grafico-row">
+                <!-- Gráfico de Linha -->
+        <div class="grafico-container grafico-linha">
+            <canvas id="graficoLinhaPedidos"></canvas>
+        </div>
+    </div>
+
+    </div>
+
+   
+
+    <div class="card_atividades">
+        <h3>Atividades recentes: 77777</h3>
+        <p>Últimos 10 pedidos registrados:</p>
+
+<table class="tabela-pedidos">
+    <thead>
+        <tr>
+            <th>Cod Pedido</th>
+            <th>Cod Cliente</th>
+            <th>Status</th>
+            <th>Data</th>
+            <th>Valor Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php if (!empty($ultimos_pedidos)): ?>
+            <?php foreach ($ultimos_pedidos as $pedido): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($pedido['id_pedido']); ?></td>
+                    <td><?php echo htmlspecialchars($pedido['id_cliente']); ?></td>
+                    <td><?php echo htmlspecialchars($pedido['status_pedido']); ?></td>
+                    <td><?php echo date('d/m/Y H:i', strtotime($pedido['data_pedido'])); ?></td>
+                    <td>R$ <?php echo number_format($pedido['valor'], 2, ',', '.'); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr><td colspan="5">Nenhum pedido encontrado.</td></tr>
+        <?php endif; ?>
+    </tbody>
+</table>
+
+        <button class="btn_imprimir" id="btnGerarPDF">📄 Imprimir Relatório em PDF</button>
+
+    </div>
+</div>
+
     </div>
 
     <?php include "footer.php"; ?>
 
+
+<script>
+   
+$(document).ready(function() {
+    // Inicializa os datepickers de início e fim
+    $("#dataInicio").datepicker({
+        dateFormat: "yy-mm-dd",
+        onSelect: function(selectedDate) {
+            $("#dataFim").datepicker("option", "minDate", selectedDate);
+        }
+    });
+
+    $("#dataFim").datepicker({
+        dateFormat: "yy-mm-dd",
+        onSelect: function(selectedDate) {
+            $("#dataInicio").datepicker("option", "maxDate", selectedDate);
+
+            let inicio = $("#dataInicio").val();
+            let fim = $("#dataFim").val();
+
+            if (inicio && fim) {
+                // Atualiza o texto exibido
+                $("#dataEscolhida").text(inicio + " - " + fim);
+                // Recarrega a página com as datas no GET
+                window.location.href = `relatorios_visualizar.php?data_inicio=${inicio}&data_fim=${fim}`;
+            }
+        }
+    });
+
+    // Quando clicar em "Mudar período", mostra os inputs
+    $("#abrirCalendario").click(function() {
+        $("#dataInicio, #dataFim").show().focus();
+    });
+});
+
+    </script>
+
+<script>
+    // Quando o botão for clicado, gera o PDF
+    document.getElementById('btnGerarPDF').addEventListener('click', function() {
+        // Criando uma instância do jsPDF
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        // Captura os gráficos como imagens base64
+        var graficoEstatisticasImg = document.getElementById('graficoEstatisticas').toDataURL('image/png');
+        var graficoBarraImg = document.getElementById('graficoBarraEstatisticas').toDataURL('image/png');
+        var graficoLinhaImg = document.getElementById('graficoLinhaPedidos').toDataURL('image/png');
+
+        // Adicionando o título ao PDF
+        doc.text("Relatório de Pedidos", 10, 10);
+        
+        // Adicionando os gráficos ao PDF
+        doc.addImage(graficoEstatisticasImg, 'PNG', 10, 20, 180, 90); // Gráfico de Estatísticas (Pizza)
+        doc.addImage(graficoBarraImg, 'PNG', 10, 120, 180, 90); // Gráfico de Barra
+        doc.addImage(graficoLinhaImg, 'PNG', 10, 220, 180, 90); // Gráfico de Linha
+
+        // Adicionando mais conteúdo, como número de pedidos, produtos, usuários, etc.
+        doc.text("Número de Pedidos: <?php echo $numero_pedidos; ?>", 10, 310);
+        doc.text("Número de Produtos: <?php echo $numero_produtos; ?>", 10, 320);
+        doc.text("Número de Usuários: <?php echo $numero_usuarios; ?>", 10, 330);
+
+        // Gerando o PDF e permitindo o download
+        doc.save('relatorio_pedidos_com_graficos.pdf');
+    });
+<!-- </script>
+
+
+    <script> -->
+        // Gerar gráfico de pizza com os dados de status dos pedidos
+        var estatisticas = <?php echo json_encode($estatisticas); ?>;
+        var ctx = document.getElementById('graficoEstatisticas').getContext('2d');
+        var grafico = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Pendente', 'Concluído', 'Cancelado'],
+                datasets: [{
+                    data: [
+                        estatisticas['Pendente'] || 0,
+                        estatisticas['Concluído'] || 0,
+                        estatisticas['Cancelado'] || 0
+                    ],
+                    backgroundColor: ['#ffcc00', '#4caf50', '#f44336'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + ' pedidos';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        );
+ // Gerar gráfico de barra para a distribuição dos pedidos por status
+var ctxBarra = document.getElementById('graficoBarraEstatisticas').getContext('2d');
+var graficoBarra = new Chart(ctxBarra, {
+    type: 'bar',
+    data: {
+        labels: ['Pendente', 'Concluído', 'Cancelado'],
+        datasets: [{
+            label: 'Número de Pedidos',
+            data: [
+                estatisticas['Pendente'] || 0,
+                estatisticas['Concluído'] || 0,
+                estatisticas['Cancelado'] || 0
+            ],
+            backgroundColor: ['#ffcc00', '#4caf50', '#f44336'],
+            borderColor: ['#ffcc00', '#4caf50', '#f44336'],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(tooltipItem) {
+                        return tooltipItem.label + ': ' + tooltipItem.raw + ' pedidos';
+                    }
+                }
+            }
+        }
+    }
+});
+
+    // Gerar gráfico de linha para a variação de pedidos ao longo do tempo
+    var pedidosPorData = <?php echo json_encode($pedidos_por_data); ?>; 
+    var ctxLinha = document.getElementById('graficoLinhaPedidos').getContext('2d');
+    var graficoLinha = new Chart(ctxLinha, {
+        type: 'line',
+        data: {
+            labels: pedidosPorData.map(function(item) { return item.data_pedido; }), 
+            datasets: [{
+                label: 'Número de Pedidos',
+                data: pedidosPorData.map(function(item) { return item.numero_pedidos; }), // Número de pedidos no eixo Y
+                fill: false,
+                borderColor: '#007bff',
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw + ' pedidos';
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    type: 'category',
+                    title: {
+                        display: true,
+                        text: 'Data'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Número de Pedidos'
+                    }
+                }
+            }
+        }
+    });
+    </script>
 </body>
 
 </html>

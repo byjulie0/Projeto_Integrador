@@ -19,6 +19,9 @@
     border-radius: 5px;
     margin-bottom: 10px;
 }
+.red-heart{
+    color: red;
+}
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -65,5 +68,10 @@
 @media (min-width: 1920px) {
     .lote-card img {
         height: 200px;
+    }
+}
+@media (max-width: 360px) {
+    .lote-card {
+        width: 80%;
     }
 }

@@ -220,6 +220,24 @@ input[type="image"] {
     margin-bottom: 10%;
   }
 }
+@media (max-width: 360px){
+  .title_page_edit_product{
+    font-size: 15px;
+  }
+  .img_holder_button {
+    width: 80%;
+    font-size: 12px;
+    gap: 10px;   
+  }
+  .img_holder{
+    height: 280px;
+    width: 100%;
+  }
+  .area_add_product{
+    width: 90%;
+    margin-bottom: 10%;
+  }
+}
 @media (min-width: 390px) and (max-width: 767px) {
   .img_holder {
     height: 220px;

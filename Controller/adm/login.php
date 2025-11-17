@@ -23,7 +23,13 @@
                     com qualidade e confiança para o seu negócio.
                 </p>
             </div>
+    <?php 
+    
+        // include '../overlays/pop_up_erro.php';
+ 
 
+
+    ?>
             <div class="login_form_adm">
                 <h2>Login</h2>
                 <form class="form_login" action="../../Controller/utils/sessao_ativa_adm.php" method="POST" id="myForm">
@@ -47,13 +53,21 @@
                 </form>
 
                 <div class="info-login">
-                    <a href="../cliente/recuperar_senha_login1.php" class="esqueci_senha_login">Esqueci minha senha</a>
+                    <a href="../cliente/recuperar_senha.php" class="esqueci_senha_login">Esqueci minha senha</a>
                     <a href="../cliente/login.php" class="area-cliente">Área do cliente</a>
                 </div>
             </div>
         </div>
     </main>
-    <?php include 'footer.php'; ?>
+    
+    <?php 
+    
+ 
+
+    include 'footer.php'; 
+
+    ?>
+    
 
 </body>
 

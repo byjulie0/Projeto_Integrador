@@ -1,7 +1,7 @@
 @import url("../adm.css");
 
 /* Conteúdo principal */
-.verificar_administrar_pedidos_body{
+.verificar_administrar_pedidos_body {
   background-color: #fff;
 }
 .verificar_administrar_pedidos_content {
@@ -10,11 +10,7 @@
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding: 100px;
-}
-
-.verificar_administrar_pedidos_sessao_identificar {
-  width: 100%;
+  padding: 50px 100px;
 }
 
 .verificar_administrar_pedidos_sessao_identificar {
@@ -92,25 +88,28 @@
   margin-right: 10px;
   margin-top: 5px;
 }
-.filtros_pedidos{
+.filtros_pedidos {
   display: flex;
   text-align: justify;
   flex-wrap: wrap;
   gap: 10px;
 }
-.filtros_pedidos button{
+.filtros_pedidos a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 110px;
   border-radius: 8px;
   border: solid 1px;
   transition: all 0.3s ease;
 }
-.filtros_pedidos button:hover{
+.filtros_pedidos a:hover{
   border-color: var(--color-primary-3);
   color: white;
   background-color: var(--color-primary-3);
   box-shadow: 0 0 10px #4b914b;
 }
-.filtros_pedidos button:focus{
+.filtros_pedidos a:focus{
   border-color: var(--color-primary-3);
   color: white;
   background-color: var(--color-primary-3);
@@ -120,6 +119,9 @@
 .filtro_todos,.filtro_pendente,.filtro_concluido,.filtro_cancelados{
   color: var(--color-primary-1);
   background-color: #ffff;
+}
+.bi-search{
+  color: var(--color-primary-3);
 }
 
 
