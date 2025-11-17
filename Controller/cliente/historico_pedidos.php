@@ -1,5 +1,6 @@
 <?php
 include '../utils/autenticado.php';
+include '../utils/listar_pedidos_cliente.php';
 if ($usuario_nao_logado) {
   include '../overlays/pop_up_login.php';
   exit;
@@ -26,36 +27,40 @@ include 'menu_pg_inicial.php';
             <h1 class="titulo_historico_compras">Histórico de Compras</h1>
         </div>
         
-        <div class="area_historico_compras">
-
-            <div class="pedido_header">
-                <div class="div_data_pedido_pc">
-                    <p class="data_pedido_pc">Data do Pedido:</p>
+        <div class="divisao_pedidos_bloco">
+        <?php if (!empty($pedidos)): ?>
+            <?php foreach ($pedidos as $pedido): ?>            
+            <div class="area_historico_compras">
+                <div class="pedido_header">
+                    <div class="div_data_pedido_pc">
+                        <p>
+                            Data:
+                            <strong> <?= (new DateTime($pedido['data_pedido']))->format('d/m/y') ?></strong>
+                        </p>
+                    </div>
+                    <div class="botao_cancelar">
+                        <?php
+                            $texto = "Cancelar";
+                            include 'botao_vermelho_cliente.php';
+                        ?>
+                    </div>
                 </div>
-                <div class="botao_cancelar">
-                    <?php
-                        $texto = "Cancelar";
-                        include 'botao_vermelho_cliente.php';
-                    ?>
+                
+                <div class="atributos_pedido_mobile">
+                    <div class="div_data_pedido_mobile">
+                        <p class="data_pedido_mobile">Data do Pedido:<span><?= htmlspecialchars($pedido['data_pedido'])?></span> </p>
+                    </div>
+                    <div class="pedido_detalhes">
+                        <p class="codigo_pedido">Pedido: <?= $pedido['id_pedido'] ?></p>
+                        <p class="total_itens">Total de Itens: <?= $pedido['total_itens'] ?></p>
+                        <p class="valor_pedido">Valor Total: R$ <?= number_format($pedido['valor_total'], 2, ',', '.') ?></p>
+                        <p class="status_pedido"><?= $pedido['status_pedido'] ?></p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="atributos_pedido_mobile">
-                <div class="div_data_pedido_mobile">
-                    <p class="data_pedido_mobile">Data do Pedido:</p>
-                </div>
-                <div class="pedido_detalhes">
-                    <p class="codigo_pedido">Código do pedido<span>:</span> </p>
-
-                    <p class="total_itens">Total de itens<span>:</span> </p>
-
-                    <p class="valor_pedido">Valor do pedido<span>:</span> </p>
-
-                    <p class="status_pedido">Status do pedido<span>:</span> </p>
-                </div>
-            </div>
-
-        </div>
+            <?php endforeach; ?>
+        <?php endif ?>
+        </div> 
     </div>
 
 <?php include 'footer_cliente.php'; ?>
