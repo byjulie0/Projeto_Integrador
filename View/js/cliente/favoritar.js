@@ -1,28 +1,36 @@
-{/* <script>
-document.getElementById('btnFavoritar').addEventListener('click', function() {
-    const id_produto = this.dataset.produto;
+document.addEventListener('DOMContentLoaded', () => {
+  const botoes = document.querySelectorAll('.btn-favorito');
 
-    fetch('../utils/favoritar.php', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: 'id_produto=' + id_produto
-    })
-    .then(res => res.json())
-    .then(data => {
-        const icone = document.getElementById('iconeFavorito');
+  botoes.forEach(botao => {
+    botao.addEventListener('click', async () => {
+      const idProduto = botao.dataset.id;
 
-        if (data.status === 'added') {
-            icone.classList.remove('fa-heart-o');
-            icone.classList.add('fa-heart');
-            icone.style.color = 'red';
-        } else if (data.status === 'removed') {
-            icone.classList.remove('fa-heart');
-            icone.classList.add('fa-heart-o');
-            icone.style.color = '';
-        } else if (data.status === 'error') {
-            alert('Você precisa estar logado para favoritar produtos!');
+      try {
+        const response = await fetch('../../../Controller/utils/favoritar.php', {
+
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `id_produto=${idProduto}`
+        });
+
+        const result = await response.json();
+        const icone = botao.querySelector('i');
+
+        if (result.status === 'adicionado') {
+          icone.classList.remove('fa-regular');
+          icone.classList.add('fa-solid');
+          icone.style.color = 'red';
+        } else if (result.status === 'removido') {
+          icone.classList.remove('fa-solid');
+          icone.classList.add('fa-regular');
+          icone.style.color = '';
+        } else if (result.status === 'nao_logado') {
+          // redireciona pra login se não estiver logado
+          window.location.href = '../../../Controller/cliente/login.php';
         }
-    })
-    .catch(() => alert('Erro ao processar o favorito.'));
+      } catch (error) {
+        console.error('Erro ao favoritar:', error);
+      }
+    });
+  });
 });
-</script> */}

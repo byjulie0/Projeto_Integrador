@@ -1,48 +1,54 @@
 <?php
-include 'sessao_ativa.php';
 
-if (!isset($_SESSION['id_cliente'])) {
-    echo json_encode(['status' => 'error', 'message' => 'nao_fez_login']);
+include '../utils/autenticado.php';
+if ($usuario_nao_logado) {
+    include '../overlays/pop_up_login.php';
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $id_produto = $_POST['id_produto'] ?? null;
+    $id_produto = $_GET['id_produto'] ?? null;
     $id_cliente = $_SESSION['id_cliente'] ?? null;
-    
-    if (!$id_cliente || !$id_produto) {
-        echo json_encode(['status' => 'error', 'message' => 'dados_incompletos']);
-        exit;
+
+    $ja_favoritado = false;
+
+    // Verifica se o produto já está favoritado por este cliente
+    if ($id_cliente && $id_produto) {
+        $sql = "SELECT 1 FROM favorito WHERE id_cliente = ? AND id_produto = ? LIMIT 1";
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param("ii", $id_cliente, $id_produto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows > 0) {
+            $ja_favoritado = true;
+        }
+
+        $stmt->close();
     }
 
-    // Verifica se já é favorito
-    $sql_check = "SELECT * FROM favoritos WHERE id_cliente = ? AND id_produto = ?";
-    $check_query = $con->prepare($sql_check);
-    $check_query->bind_param("ii", $id_cliente, $id_produto);
-    $check_query->execute();
-    $check_result = $check_query->get_result();
-    
-    if ($check_result->num_rows > 0) {
-        // Já está favoritado → remove
-        $sql_delete = "DELETE FROM favoritos WHERE id_cliente = ? AND id_produto = ?";
-        $delete_query = $con->prepare($sql_delete);
-        $delete_query->bind_param("ii", $id_cliente, $id_produto);
-        $delete_query->execute();
-        $delete_query->close();
 
-        echo json_encode(['status' => 'removed']);
+    if (!$ja_favoritado) {
+        // adiciona
+        $sql = "INSERT INTO favorito (id_cliente, id_produto) VALUES (?, ?)";
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param('ii', $id_cliente, $id_produto);
+        $stmt->execute();
+        $stmt->close();
+        //echo "FAVORITOU!";
+     
+
     } else {
-        // Ainda não → adiciona
-        $sql_insert = "INSERT INTO favoritos (id_produto, id_cliente) VALUES (?, ?)";
-        $insert_query = $con->prepare($sql_insert);
-        $insert_query->bind_param("ii", $id_produto, $id_cliente);
-        $insert_query->execute();
-        $insert_query->close();
-
-        echo json_encode(['status' => 'added']);
+        $sql = "DELETE FROM favorito WHERE id_cliente = ? AND id_produto = ?";
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param('ii', $id_cliente, $id_produto);
+        $stmt->execute();
+        $stmt->close();
+       // echo "DESFAVORITOU!";
+    
     }
 
-    $check_query->close();
+    header("Location: ../cliente/pg_favoritos.php");
     exit;
 }
 

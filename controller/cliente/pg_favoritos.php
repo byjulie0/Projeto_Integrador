@@ -5,11 +5,10 @@ if ($usuario_nao_logado) {
   exit;
 }
 include 'menu_pg_inicial.php';
-require_once '../../model/DB/conexao.php';
 
-$query= "select * from favorito join produto on favorito.produto_id_produto = produto.id_produto  join subcategoria on produto.id_subcategoria = subcategoria.id_subcategoria;";
+
+$query= "select * from favorito join produto on favorito.id_produto = produto.id_produto  join subcategoria on produto.id_subcategoria = subcategoria.id_subcategoria;";
 $result = mysqli_query($con,$query);
-
 
 ?>
 <!DOCTYPE html>
@@ -39,10 +38,9 @@ $result = mysqli_query($con,$query);
                 while ($item = mysqli_fetch_array($result)) {
                    $imagem = $item['path_img'];
                     $nome = $item['prod_nome'];
-                    $id = $item['id'];
+                    $id_produto = $item['id_produto'];
                     $peso = $item['peso'];
                     $raca = $item['subcat_nome'];
-                    // echo $genealogia = $item['genealogia'];
                     $idade = $item['idade'];
                     $preco = $item['valor'];
                     include 'card_favoritos.php';

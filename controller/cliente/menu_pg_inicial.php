@@ -41,7 +41,7 @@ $exibirNossaHistoria = ($paginaAtual === 'pg_inicial_cliente.php');
                         <li><a href="categoria_produtos.php?id_categoria=1">Bovinos</a></li>
                         <li><a href="categoria_produtos.php?id_categoria=2">Equinos</a></li>
                         <li><a href="categoria_produtos.php?id_categoria=3">Galináceos</a></li>
-                        <li><a href="categoria_produtos.php?id_categoria=5">Produtos gerais</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=4">Produtos gerais</a></li>
                     </ul>
                 </li>
                 <li><a href="categoria_produtos.php?id_categoria=4" class="nav-item-pg-inicial">Premiados</a></li>

@@ -67,9 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             $stmt->bind_param(
-                "sdisssdssii",
+                "sdisssdsiii",
                 $nome, $valor, $quantidade, $imagens_json, $descricao, $sexo, $peso, $idade, $campeao, $categoria, $subcategoria
             );
+
 
             if ($stmt->execute()) {
                 $popup_titulo = "Sucesso!";
