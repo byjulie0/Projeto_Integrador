@@ -123,8 +123,8 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                             <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
                             <select class="product_info_select" name="sexo" required>
                                 <option value="" selected disabled>Selecione uma opção</option>
-                                <option value="M">Macho</option>
-                                <option value="F">Fêmea</option>
+                                <option value="Macho">Macho</option>
+                                <option value="Fêmea">Fêmea</option>
                                 <option value="Não se aplica">Não se aplica (Produto)</option>
                             </select>
                         </article>
