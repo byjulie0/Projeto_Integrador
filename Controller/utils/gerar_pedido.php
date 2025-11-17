@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'gerar_notificacao.php';
 include 'autenticado.php';
 
 $sql = "SELECT c.id_carrinho, c.quantidade, p.id_produto, p.prod_nome, p.path_img, p.descricao, p.valor
@@ -34,6 +35,7 @@ if ($result && $result->num_rows > 0) {
             $query_item->execute();
             $query_item->close();
         }
+        
 
         // Commit da transação
         $con->commit();
@@ -44,6 +46,26 @@ if ($result && $result->num_rows > 0) {
         // Salva mensagem de sucesso na sessão
         $_SESSION['popup_type'] = 'sucesso';
         $_SESSION['popup_message'] = 'Pedido criado com sucesso! Número do pedido: #' . $id_pedido;
+
+
+        // criar  notificação inicio
+
+            $usuario_id= $id_cliente;
+            $produto_id= $pedido_id;
+            $mensagem="Pedido criado com sucesso! Número do pedido: #{$pedido_id}";
+            $categoria="Pedidos";
+
+            if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
+                echo "Notificação enviada com sucesso!";
+            } 
+            else {
+                echo "Erro ao enviar notificação.";
+            }
+            
+        // criar  notificação fim
+
+
+
         
         // Redireciona de volta para o carrinho para mostrar o pop-up
         header("Location: ../cliente/carrinho.php?pedido_sucesso=1");
