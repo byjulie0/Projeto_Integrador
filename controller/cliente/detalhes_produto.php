@@ -47,13 +47,21 @@ $id_produto = $_GET['id_produto'] ?? null;
 
         $imagemPrincipal = !empty($listaImagens[0])
             ? $listaImagens[0]
-            : 'view/public/imagens/default-thumbnail.jpg';
+            : '../../View/public/imagens/default-thumbnail.jpg';
         ?>
 
         <div class="galeria-detalhes-produto">
             <div class="miniaturas-detalhes-produto">
                 <?php foreach ($imagens as $img): ?>
-                    <img src="../../View/Public/<?php echo htmlspecialchars($img); ?>" alt="Miniatura">
+
+                    <?php if ($img): ?>
+                        <img src="../../View/Public/<?php echo htmlspecialchars($img); ?>" alt="Miniatura">
+                    <?php else:
+                        $img = 'imagens/default-thumbnail.jpg'; ?>
+                        <img src="../../View/Public/<?php echo htmlspecialchars($img);  ?>" alt="Miniatura">
+
+                    <?php endif?>
+
                 <?php endforeach; ?>
             </div>
 
