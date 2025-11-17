@@ -9,7 +9,7 @@ include 'menu_pg_inicial.php';
 
 $id_cliente = $_SESSION['id_cliente'];
 
-$sql = "SELECT tipo, mensagemtexto, data_recebida
+$sql = "SELECT categoria, mensagemtexto, data_recebida
         FROM notificacoes
         WHERE id_cliente = $id_cliente
         ORDER BY data_recebida DESC";
@@ -52,7 +52,7 @@ $result->close();
                     <div class="notification">
                         <div class="notification_info">
                             <p class="notification_date">
-                                <?= date("d/m/Y", strtotime($n["data_recebida"])) ?> - <?= htmlspecialchars($n["tipo"]) ?>
+                                <?= date("d/m/Y", strtotime($n["data_recebida"])) ?> - <?= htmlspecialchars($n["categoria"]) ?>
                             </p>
                             <p class="notification_text"><?= htmlspecialchars($n["mensagemtexto"]) ?></p>
                         </div>

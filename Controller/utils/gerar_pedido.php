@@ -51,7 +51,7 @@ if ($result && $result->num_rows > 0) {
         // criar  notificação inicio
 
             $usuario_id= $id_cliente;
-            $produto_id= $pedido_id;
+            $produto_id= $id_pedido;
             $mensagem="Pedido criado com sucesso! Número do pedido: #{$pedido_id}";
             $categoria="Pedidos";
 
