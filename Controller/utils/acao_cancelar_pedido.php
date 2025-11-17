@@ -1,5 +1,7 @@
 <?php
 include '../../model/DB/conexao.php';
+include 'gerar_notificacao.php';
+
 
 $pedido_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 

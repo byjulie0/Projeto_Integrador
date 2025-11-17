@@ -1,5 +1,5 @@
 <?php
-include 'gerar_nnotificacao.php';
+include 'gerar_notificacao.php';
 include '../../model/DB/conexao.php';
 
 $popup_titulo = '';

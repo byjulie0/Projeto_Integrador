@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'gerar_notificacao.php';
 include 'autenticado.php';
 
 $sql = "SELECT c.id_carrinho, c.quantidade, p.id_produto, p.prod_nome, p.path_img, p.descricao, p.valor
