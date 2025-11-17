@@ -9,9 +9,12 @@
     <script src="../../view/js/cliente/botao_cancelar.js"></script>
 </head>
 <body>
-    <button type="reset" class="generate_report_product_button botao_vermelho_cliente">
-        <?= $texto ?>
-    </button>
+    <form action="../utils/cancelar_pedido_cliente.php" method="POST">
+        <input type="hidden" name="id_pedido" value="<?= $pedido['id_pedido'] ?>">
+        <button type="submit" class="generate_report_product_button botao_vermelho_cliente">
+            <?= $texto ?>
+        </button>
+    </form>
 </body>
 </html>
 
