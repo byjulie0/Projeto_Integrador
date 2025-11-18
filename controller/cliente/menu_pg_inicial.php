@@ -3,6 +3,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 $usuarioLogado = isset($_SESSION['id_cliente']);
+$paginaAtual = basename($_SERVER['PHP_SELF']);
+$exibirNossaHistoria = ($paginaAtual === 'pg_inicial_cliente.php');
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +41,13 @@ $usuarioLogado = isset($_SESSION['id_cliente']);
                         <li><a href="categoria_produtos.php?id_categoria=1">Bovinos</a></li>
                         <li><a href="categoria_produtos.php?id_categoria=2">Equinos</a></li>
                         <li><a href="categoria_produtos.php?id_categoria=3">Galináceos</a></li>
-                        <li><a href="categoria_produtos.php?id_categoria=4">Premiados</a></li>
-                        <li><a href="categoria_produtos.php?id_categoria=5">Produtos gerais</a></li>
+                        <li><a href="categoria_produtos.php?id_categoria=4">Produtos gerais</a></li>
                     </ul>
                 </li>
                 <li><a href="categoria_produtos.php?id_categoria=4" class="nav-item-pg-inicial">Premiados</a></li>
+                <?php if($exibirNossaHistoria): ?>
                 <li><a href="#section-nossa-historia" class="nav-item-pg-inicial">Nossa história</a></li>
+                <?php endif; ?>
             </ul>
 
             <div class="nav-page-btns-pg-inicial">

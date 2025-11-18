@@ -1,9 +1,8 @@
 <?php
-include 'sessao_ativa.php';
-
-if (!isset($_SESSION['id_cliente'])) {
-    header("Location: ../cliente/detalhes_produto.php?error=nao_fez_login");
-    exit;
+include '../utils/autenticado.php';
+if ($usuario_nao_logado) {
+    include '../overlays/pop_up_login.php';
+  exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
