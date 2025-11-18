@@ -15,7 +15,7 @@
             <p>Você precisa estar logado para acessar esta funcionalidade.</p>
             <p>Deseja fazer o login?</p>
             <div class="botoes_popup_login">
-                <a href="login.php">
+                <a href="../cliente/login.php">
                     <?php
                     $texto = "Fazer Login";
                     include '../cliente/botao_verde_cliente.php';
