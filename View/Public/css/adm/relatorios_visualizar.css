@@ -9,18 +9,26 @@
 
 .relatorios_header {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 30px;
-  position: relative;
-  padding: 0 15px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px
 }
 
 .relatorios_header h1 {
-  margin: 0 0 10px 0;
-  font-size: 28px;
-  color: #2c3e50;
+  margin: 10px 0 10px 0;
+  font-size: 25px;
+  color: var( --color-primary-1);
 }
+/* Seta de voltar */
+.verificar_administrar_pedidos_sessao_seta_voltar {
+  font-size: 24px;
+  color: var(--color-primary-1);
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+
 
 /* Grid principal reorganizado */
 .relatorios_main {
@@ -65,10 +73,8 @@
 }
 
 .card_topo i.fa-chevron-right {
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
-  color: #666;
+  /* bottom: 15px; */
+  color: var(--color-primary-1);
   font-size: 14px;
 }
 
@@ -191,49 +197,35 @@
   margin-bottom: 20px;
 }
 
-/* Seta de voltar */
-.verificar_administrar_pedidos_sessao_seta_voltar {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  font-size: 24px;
-  color: #2c3e50;
-  text-decoration: none;
-  padding: 5px;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-}
-
-.verificar_administrar_pedidos_sessao_seta_voltar:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
 
 /* Período de datas */
 .verificar_administrar_pedidos_sessao_mini_titulos_1 {
   margin: 5px 0 15px 0;
-  color: #555;
+  color: var(--color-primary-1);
   font-weight: normal;
+  font-size: 18px;
 }
 
 .verificar_administrar_pedidos_sessao_titulo_destaque {
   font-weight: bold;
-  color: #2c3e50;
+  color: var( --color-fonte);
 }
 
 .verificar_administrar_pedidos_sessao_periodo_bloco {
+  flex-direction: column;
   margin-top: 10px;
   width: 100%;
 }
 
 .verificar_administrar_pedidos_sessao_mini_titulos_2 {
-  color: #3498db;
+  color: var(--color-primary-1);
   cursor: pointer;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .verificar_administrar_pedidos_sessao_mini_titulos_2:hover {
-  color: #2980b9;
+  color: var(--color-primary-1);
   text-decoration: underline;
 }
 
@@ -245,24 +237,12 @@
 
 /* Botão de imprimir */
 .btn_imprimir {
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+  align-items: center;
+  justify-content: center;
+  align-items: ce;
+  margin-top: 3%;
 }
 
-.btn_imprimir:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
-  background: linear-gradient(135deg, #2980b9, #2471a3);
-}
 
 /* Tabela de pedidos */
 .tabela-pedidos {

@@ -87,10 +87,10 @@ mysqli_close($con);
                 <i class="bi bi-chevron-left"></i> 
             </a>
             <h1>Visualizar relatórios</h1>
-            <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período:
-                <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida"><?php echo date('d/m/Y', strtotime($data_inicio)) . ' - ' . date('d/m/Y', strtotime($data_fim)); ?></span>
-            </h3>
             <div class="verificar_administrar_pedidos_sessao_periodo_bloco">
+                <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período:
+                     <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida"><?php echo date('d/m/Y', strtotime($data_inicio)) . ' - ' . date('d/m/Y', strtotime($data_fim)); ?></span>
+                </h3>
                 <span class="verificar_administrar_pedidos_sessao_mini_titulos_2" id="abrirCalendario">Mudar período</span>
                 <input type="text" id="dataInicio" style="display: none;" value="<?php echo $data_inicio; ?>">
                 <input type="text" id="dataFim" style="display: none;" value="<?php echo $data_fim; ?>">
@@ -104,21 +104,21 @@ mysqli_close($con);
         <div class="card_topo">
             <i class="fa-solid fa-bag-shopping"></i>    Produtos <br> cadastrados: 
             <b><?php echo $numero_produtos; ?></b> 
-            <i class="fa-solid fa-chevron-right"></i>
+            <!-- <i class="fa-solid fa-chevron-right"></i> -->
         </div>
 
         <!-- Card de Pedidos -->
         <div class="card_topo">
             <i class="fa-solid fa-cart-plus"></i>    Pedidos <br> gerados: 
             <b><?php echo $numero_pedidos; ?></b>
-            <i class="fa-solid fa-chevron-right"></i>
+            <!-- <i class="fa-solid fa-chevron-right"></i> -->
         </div>
 
         <!-- Card de Usuários -->
         <div class="card_topo">
             <i class="fa-solid fa-users"></i>    Usuários <br> cadastrados: 
             <b><?php echo $numero_usuarios; ?></b>
-            <i class="fa-solid fa-chevron-right"></i>
+            <!-- <i class="fa-solid fa-chevron-right"></i> -->
         </div>
 
         <!-- Gráfico de Estatísticas -->
@@ -180,7 +180,12 @@ mysqli_close($con);
     </tbody>
 </table>
 
-        <button class="btn_imprimir" id="btnGerarPDF">📄 Imprimir Relatório em PDF</button>
+        <div class="btn_imprimir" id="btnGerarPDF">
+            <?php
+            $texto = "Imprimir Relátorio";
+            include 'botao_verde_adm.php';
+            ?>
+        </div>
 
     </div>
 </div>
