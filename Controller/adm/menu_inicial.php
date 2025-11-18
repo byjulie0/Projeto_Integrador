@@ -62,6 +62,7 @@
             function mostrarAlerta(event) {
             event.preventDefault();
             alert('Backup iniciado! Aguarde alguns instantes...');
+            window.location.href = "../../model/DB/backup.php";
             }
         </script>
     </section>
