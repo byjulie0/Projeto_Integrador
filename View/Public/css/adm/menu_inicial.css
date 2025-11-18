@@ -181,12 +181,10 @@
     background-color: var(--hover-bg);
 }
 
-/* SOLUÇÃO: Criar uma área invisível entre o menu e submenu */
 .dropdown_menu_adm:hover .submenu_adm {
     display: block;
 }
 
-/* Área invisível para facilitar a transição do mouse */
 .dropdown_menu_adm .submenu_adm::before {
     content: '';
     position: absolute;
@@ -202,7 +200,6 @@
     right: 0;
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .menu-pg-adm {
         padding: 8px 4%;
@@ -269,7 +266,7 @@
     
     .nav-link-pg-adm.mobile-active li:last-child .nav-item-pg-adm {
         border-bottom: none;
-    } 
+    }
 
     .nav-text-pg-adm {
         display: none;
@@ -286,22 +283,32 @@
     }
 
     .submenu_adm {
-        position: static;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        min-width: 200px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding: 0;
+        margin: 10px 0 0 0;
+        list-style: none;
         display: none;
-        box-shadow: none;
-        border: none;
-        margin: 0;
-        width: 100%;
     }
 
-    .dropdown_menu_adm:hover .submenu_adm,
-    .dropdown_menu_adm.mobile-active .submenu_adm {
-        display: block;
+    .nav-page-btns-pg-adm .submenu_adm {
+        left: auto;
+        right: 0;
     }
 
-    /* Remove a área de ponte no mobile */
     .dropdown_menu_adm .submenu_adm::before {
         display: none;
+    }
+
+    .submenu_adm.mobile-active {
+        display: block !important;
     }
 }
 
@@ -381,38 +388,10 @@
     }
 
     .submenu_adm {
-        width: 130px;
+        min-width: 180px;
     }
-}
 
-@media (max-width: 360px) {
-    .menu-pg-adm {
-        padding: 5px 2%;
-    }
-    
-    .logo-menu-img {
-        width: 40px;
-    }
-    
-    .logo-menu-title {
-        font-size: 0.9rem;
-    }
-    
-    .menu-toggle {
-        padding: 6px 8px;
-        font-size: 1.2rem;
-    }
-    
-    .nav-page-btns-pg-adm {
-        gap: 5px;
-    }
-    
-    .nav-btns-pg-adm {
-        min-width: 40px;
-        padding: 4px 5px;
-    }
-    
-    .nav-btns-pg-adm .bi {
-        font-size: 1.1rem;
+    .nav-page-btns-pg-adm .submenu_adm {
+        min-width: 160px;
     }
 }

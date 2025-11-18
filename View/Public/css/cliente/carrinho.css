@@ -121,21 +121,12 @@ input[type="checkbox"] {
   color: var(--color-primary-1);
 }
 
-.delete-item-btn-area-carrinho{
+.delete-item-btn-area-carrinho a{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-}
-
-.delete-item-carrinho{
-  background: none;
-  border: none;
-  font: inherit;
-  font-size: 12px;
-  color: darkred;
-  font-weight: 600;
-  text-decoration: underline;
+  color: var( --color-botao-op-Cancelar);
 }
 
 .separation-line-carrinho{
@@ -221,7 +212,7 @@ input[type="checkbox"] {
 
 .checkout-btns-carrinho{
   width: 90%;
-  height: 30%;
+  height: 50%;
   display: flex;
   flex-direction: row;
   margin-top: 50px;

@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
     icon.classList.remove("fa-xmark");
     icon.classList.add("fa-bars");
     menuToggle.setAttribute("aria-label", "Abrir menu");
+    
+    if (isMobile()) {
+      document.querySelectorAll('.dropdown_menu_inicial').forEach(dropdown => {
+        dropdown.classList.remove('mobile-dropdown-active');
+      });
+    }
   };
 
   const toggleMenu = () => {
@@ -54,6 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener("resize", () => {
     if (!isMobile()) {
       closeMenu();
+      document.querySelectorAll('.dropdown_menu_inicial').forEach(dropdown => {
+        dropdown.classList.remove('mobile-dropdown-active');
+      });
     }
   });
 
@@ -64,10 +73,41 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.querySelectorAll('.dropdown_menu_inicial').forEach(dropdown => {
-    dropdown.addEventListener('click', (e) => {
+    const link = dropdown.querySelector('.nav-item-pg-inicial, .nav-btns-pg-inicial');
+    
+    if (link) {
+      link.addEventListener('click', (e) => {
+        if (isMobile()) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          document.querySelectorAll('.dropdown_menu_inicial').forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('mobile-dropdown-active');
+            }
+          });
+          
+          dropdown.classList.toggle('mobile-dropdown-active');
+        }
+      });
+    }
+  });
+
+  document.querySelectorAll('.submenu_inicial a').forEach(link => {
+    link.addEventListener('click', () => {
       if (isMobile()) {
-        e.stopPropagation();
+        closeMenu();
       }
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (isMobile() && navLinks.classList.contains("mobile-active")) {
+      if (e.target.closest('.nav-link-pg-inicial') && !e.target.closest('.dropdown_menu_inicial')) {
+        document.querySelectorAll('.dropdown_menu_inicial').forEach(dropdown => {
+          dropdown.classList.remove('mobile-dropdown-active');
+        });
+      }
+    }
   });
 });
