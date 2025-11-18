@@ -20,9 +20,8 @@ $id_produto = $_GET['id_produto'] ?? null;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../../View/js/cliente/favoritar.js"></script>
 </head>
-
 <body class="body-detalhes-produto">
-
+    <!-- <script>var usuarioLogado = <php echo isset($_SESSION['id_cliente']) ? 'true' : 'false'; ?>;</script> -->
     <h2 class="titulo-produto-detalhes-produto">
         <a href="#" onclick="window.history.back(); return false"><i class="bi bi-chevron-left"></i></a>
     </h2>
@@ -73,7 +72,6 @@ $id_produto = $_GET['id_produto'] ?? null;
                 <p><?php echo $produto['descricao'] ? htmlspecialchars($produto['descricao']) : 'Descrição não disponível.'; ?>
                 </p>
             </div>
-
         </div>
 
         <div class="info-produto-detalhes-produto">
@@ -119,7 +117,7 @@ $id_produto = $_GET['id_produto'] ?? null;
                 </div>
 
             </section>
-        </div>
+        </div> 
     </main>
         <script>
         // Troca a imagem principal ao clicar na miniatura
