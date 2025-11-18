@@ -14,9 +14,9 @@ include '../utils/autenticado_adm.php';
 <body class="body_pg_inicial_cliente">
     <?php
     include 'menu_inicial.php';
-    include '../cliente/carrossel_pg_inicial.php';
+    include 'carrossel_pg_inicial_adm.php';
     include '../cliente/categorias_pg_inicial.php';
-    include '../cliente/campeoes.php';
+    include '../cliente/premiados.php';
     include 'footer.php';
     ?>
 </body>

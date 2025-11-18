@@ -9,10 +9,10 @@ include '../utils/libras.php'
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - John Rooster </title>
-  <link rel="stylesheet" href="../../view/public/css/cliente/pg_login.css">
   <script src="../../view/js/cliente/login_olho_ocultar_senha.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" href="../../view/public/css/cliente/pg_login.css">
 </head>
 
 <body>
@@ -39,7 +39,7 @@ include '../utils/libras.php'
               <i id="icone_senha" class="fa-solid fa-eye"></i>
             </span>
           </div>
-          <div class="g-recaptcha" data-sitekey="6LdyqOUrAAAAAGCnu7xdDfJ4QovvUsJMRuOgUvOa"></div>
+          <div class="g-recaptcha" data-sitekey="6LdyqOUrAAAAAGCnu7xdDfJ4QovvUsJMRuOgUvOa" ></div>
 
           <div class="btn-submit-login">
             <?php
