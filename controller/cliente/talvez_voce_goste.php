@@ -16,68 +16,29 @@
         <div class="carrossel_talvez_goste">
             <div class="arrow_talvez_goste" id="arrow-esquerda2">&#10094;</div>
 
-            <a href="detalhes_produto.php">
+            <a href="detalhes_produto.php?id_produto=<?php echo $item['id_produto']; ?>">
                 <div class="cards_talvez_goste" id="carrossel-cards2">
-                    <?php
-                    $talvez_voce_goste = [
-                        [
-                            "imagem" => "../../view/public/imagens/img_slider_pg_inicial/cavalo_arabe_slider_pg_inicial.jpg",
-                            "peso" => "380 kg",
-                            "raca" => "Árabe",
-                            "genealogia" => "PO",
-                            "idade" => "24 meses",
-                            "preco" => "5.200,00"
-                        ],
-                        [
-                            "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "peso" => "420 kg",
-                            "raca" => "Mustang",
-                            "genealogia" => "PO",
-                            "idade" => "28 meses",
-                            "preco" => "5.800,00"
-                        ],
-                        [
-                            "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "peso" => "420 kg",
-                            "raca" => "Mustang",
-                            "genealogia" => "PO",
-                            "idade" => "28 meses",
-                            "preco" => "5.800,00"
-                        ],
-                        [
-                            "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "peso" => "420 kg",
-                            "raca" => "Mustang",
-                            "genealogia" => "PO",
-                            "idade" => "28 meses",
-                            "preco" => "5.800,00"
-                        ],
-                        [
-                            "imagem" => "../../view/public/imagens/img_slider_pg_inicial/mustang_slider_pg_inicial.jpg",
-                            "peso" => "420 kg",
-                            "raca" => "Mustang",
-                            "genealogia" => "PO",
-                            "idade" => "28 meses",
-                            "preco" => "5.800,00"
-                        ]
-                    ];
+                <?php
+                        include '../utils/talvez_sort.php';
 
-                    foreach ($talvez_voce_goste as $item) {
-                        $imagem = $item['imagem'];
-                        $peso = $item['peso'];
-                        $raca = $item['raca'];
-                        $genealogia = $item['genealogia'];
-                        $idade = $item['idade'];
-                        $preco = $item['preco'];
+                        $talvez_voce_goste = getProdutosAleatorios(5);
 
-                        echo '<a href="detalhes_produto.php">';
-                        include 'card_carrossel.php';
-                        echo '</a>';
-                    }
+                        foreach ($talvez_voce_goste as $item) {
+                            $imagem = $item['imagem'];
+                            $peso = $item['peso'] . " kg";
+                            $raca = $item['prod_nome'];
+                            $genealogia = ""; 
+                            $idade = $item['idade'];
+                            $preco = number_format($item['valor'], 2, ',', '.');
+
+                           
+                            echo '<a href="detalhes_produto.php?id_produto=' . $item['id_produto'] . '">';
+                            include 'card_carrossel.php';
+                            echo '</a>';
+                        }
                     ?>
                 </div>
             </a>
-
             <div class="arrow_talvez_goste" id="arrow-direita2">&#10095;</div>
         </div>
     </div>
