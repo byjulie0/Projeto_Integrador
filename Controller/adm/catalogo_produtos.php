@@ -53,6 +53,7 @@ include 'menu_inicial.php';
                                 <th class="header-cell-atualizar-produto">Editar</th>
                                 <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
                                 <th class="header-cell-atualizar-produto">Status</th>
+                                <th class="header-cell-atualizar-produto">Estoque</th>
 
                             </tr>
                         </thead> 
@@ -102,6 +103,10 @@ include 'menu_inicial.php';
                                     <td class="qt-atualizar-produtos">
                                         <?= isset($p['produto_ativo']) ? ($p['produto_ativo'] ? 'Ativo' : 'Inativo') : 'Ops! Também está vazio' ?>
                                     </td> 
+
+                                     <td class="price-atualizar-produtos cell-atualizar-produto">
+                                        <?= $p['quant_estoque'] ?>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
