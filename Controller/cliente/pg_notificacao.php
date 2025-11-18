@@ -40,7 +40,7 @@ $result->close();
 <body>
     <div class="title_area_notifications">
         <div class="area_notifications">
-            <a href="#" class="notification_arrow">
+            <a href="#" onclick="window.history.back(); return false;" class="notification_arrow">
                 <i class="bi bi-chevron-left"></i>
             </a>
             <h1 class="notification_title">Notificações</h1>

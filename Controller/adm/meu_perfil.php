@@ -30,7 +30,7 @@ include 'menu_inicial.php';
         <div class="visualizar-dados-card">
 
             <h2 class="visualizar-dados-title">
-                <a class="a-style" href="meu_perfil_senha.php">
+                <a class="a-style" href="#" onclick="window.history.back(); return false;">
                     <i class="bi bi-chevron-left"></i> Meu Perfil
                 </a>
             </h2>

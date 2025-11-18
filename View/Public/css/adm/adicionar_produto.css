@@ -470,7 +470,7 @@ input[type="image"] {
     justify-content: center;
 }
 
-.carousel-container {
+/* .carousel-container {
     position: relative;
     width: 300px;
     height: 300px;
@@ -479,7 +479,7 @@ input[type="image"] {
     border-radius: 12px;
     overflow: hidden;
     background: #fafafa;
-}
+} */
 
 .carousel-img {
     width: 100%;
@@ -551,10 +551,6 @@ input[type="image"] {
     top: 0;
     left: 0;
 }
-
-
-
-
 
 .upload-content {
     display: flex;
