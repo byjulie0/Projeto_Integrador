@@ -6,7 +6,7 @@ include 'autenticado.php';
 $sql = "SELECT c.id_carrinho, c.quantidade, p.id_produto, p.prod_nome, p.path_img, p.descricao, p.valor
         FROM carrinho c
         JOIN produto p ON c.id_produto = p.id_produto
-        WHERE c.id_cliente='$id_cliente' AND p.produto_ativo = 1";
+        WHERE c.id_cliente='$id_cliente' AND p.produto_ativo = 1 AND p.quant_estoque != 0";
 
 $result = $con->query($sql);
 
@@ -48,16 +48,16 @@ if ($result && $result->num_rows > 0) {
         $_SESSION['popup_message'] = 'Pedido criado com sucesso! Número do pedido: #' . $id_pedido;
 
 
-        // criar  notificação inicio
+        // criar notificação inicio
 
             $usuario_id= $id_cliente;
             $produto_id= $id_pedido;
-            $mensagem="Pedido criado com sucesso! Número do pedido: #{$pedido_id}";
+            $mensagem="Pedido criado com sucesso! Número do pedido: #{$id_pedido}";
             $categoria="Pedidos";
 
             if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
                 echo "Notificação enviada com sucesso!";
-            } 
+            }
             else {
                 echo "Erro ao enviar notificação.";
             }
