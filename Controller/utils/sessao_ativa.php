@@ -9,18 +9,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    //Recaptcha
+    // Recaptcha
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         header('Location: ../cliente/login.php?error=nao_fez_login');
         exit;
     }
+
     $recaptcha_secret = getenv('RECAPTCHA_SECRET') ?: '6LdyqOUrAAAAAF1olqup_tnkbPYxEHydWJkhAgHO';
     $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
     if (empty($recaptcha_response)) {
         header('Location: ../cliente/login.php?error=recaptcha_missing');
         exit;
-
     }
 
     $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
@@ -38,32 +38,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     curl_close($ch);
     $verification = json_decode($response, true);
 
-    if (isset($verification['success']) && $verification['success'] === true) {
-        echo '<script>mostrarPopup("sucesso", "Sucesso na validação do reCAPTCHA !");</script>';
-    } else {
-        header('Location: ../cliente/pg_cadastro.php?error=recaptcha_failed');
-        // echo '<script>mostrarPopup("erro", "Validação reCAPTCHA falhou!");</script>';
+    if (!(isset($verification['success']) && $verification['success'] === true)) {
+        header('Location: ../cliente/login.php?error=recaptcha_failed');
         exit;
-
     }
-    //recaptcha
 
-    $query = "SELECT id_cliente, cliente_nome, email, senha, cpf_cnpj, data_nasc, telefone, user_ativo FROM cliente WHERE email = '{$email}' ";
+    // Buscar cliente
+    $query = "SELECT id_cliente, cliente_nome, email, senha, cpf_cnpj, data_nasc, telefone, user_ativo 
+              FROM cliente 
+              WHERE email = '{$email}'";
 
     $result = mysqli_query($con, $query);
 
-    $row = mysqli_num_rows($result);
-
-    if ($row > 0) {
-        $retorno = mysqli_fetch_assoc($result);
-    } else {
+    if (mysqli_num_rows($result) === 0) {
         header("location: ../cliente/login.php?error=usuario_nao_encontrado");
         exit();
     }
 
+    $retorno = mysqli_fetch_assoc($result);
 
+    // 🔥 BLOQUEAR LOGIN SE O USUÁRIO ESTIVER INATIVO
+    if ($retorno['user_ativo'] == 0) {
+        header("location: ../cliente/login.php?error=usuario_inativo");
+        exit();
+    }
+
+    // Verificar senha
     if (password_verify($password, $retorno['senha'])) {
-        
+
         $_SESSION["id_cliente"] = $retorno['id_cliente'];
         $_SESSION["cliente_nome"] = $retorno['cliente_nome'];
         $_SESSION["email"] = $retorno['email'];
@@ -76,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } else {
         header("location: ../cliente/login.php?error=login_errado");
+        exit();
     }
 }
-
 ?>
