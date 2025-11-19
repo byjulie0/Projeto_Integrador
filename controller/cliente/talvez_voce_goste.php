@@ -27,7 +27,6 @@
                             $imagem = $item['imagem'];
                             $peso = $item['peso'] . " kg";
                             $raca = $item['prod_nome'];
-                            $genealogia = ""; 
                             $idade = $item['idade'];
                             $preco = number_format($item['valor'], 2, ',', '.');
 
