@@ -88,13 +88,14 @@
   font-size: 13px;
   color: var(--color-primary-1);
 }
-.div_botao{
+
+.botoes_div{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-top: 25px;
 }
+
 @media (max-width: 1250px) {
     .esqueci_senha_card_email_seta_voltar{
       top: -35px;

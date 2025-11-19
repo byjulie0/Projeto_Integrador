@@ -9,11 +9,31 @@
 </head>
 
 <body>
+<?php
+$listaImagens = [];
 
+if (!empty($row['path_img'])) {
+    $path = trim($row['path_img']);
+
+    if ($path[0] === '[') {
+        $listaImagens = json_decode($path, true);
+    } else {
+        $listaImagens = explode(',', $path);
+    }
+}
+
+$listaImagens = array_map(function ($img) {
+    return trim(str_replace('\\', '', $img));
+}, $listaImagens);
+
+$imagem = !empty($listaImagens[0])
+    ? $listaImagens[0]
+    : 'imagens/default-thumbnail.jpg';
+?>
 
     <div class="lote-card">
         <a href="detalhes_produto.php?id_produto=<?= $id_produto ?>">
-            <img src="<?= $imagem ?>" alt="Imagem do Animal">
+            <img id="imagem-principal" src="../../View/Public/<?php echo htmlspecialchars($imagem) ?>" alt="<?php echo $nome; ?>">
             <div class="info-grid">
                 <p><?= $nome ?></p><br>
                 <p>Peso:</p>
@@ -24,9 +44,11 @@
                 <p><?= $idade ?></p>
                 <p class="preco">R$ <?= $preco ?></p>
             </div>
-            <div class="stars-pag-fav"><a href="../utils/favoritar.php?id_produto=<?php echo $id_produto; ?>">
-
-                    <i class="fa-solid fa-heart red-heart"></i></a></div>
+            <div class="stars-pag-fav">
+                <a href="../utils/favoritar.php?id_produto=<?php echo $id_produto; ?>">
+                    <i class="fa-solid fa-heart red-heart"></i>
+                </a>
+            </div>
         </a>
     </div>
 

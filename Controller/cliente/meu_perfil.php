@@ -74,8 +74,8 @@ include 'menu_pg_inicial.php';
         <a href="logout.php">
           <?php include 'botao_logout.php'; ?>
         </a>
-
       </div>
+      
     </div>
   </main>
 </body>

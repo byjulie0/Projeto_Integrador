@@ -88,7 +88,7 @@ mysqli_close($con);
             </a>
             <h1>Visualizar relatórios</h1>
             <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período:
-                <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida"><?php echo $data_inicio . ' - ' . $data_fim; ?></span>
+                <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida"><?php echo date('d/m/Y', strtotime($data_inicio)) . ' - ' . date('d/m/Y', strtotime($data_fim)); ?></span>
             </h3>
             <div class="verificar_administrar_pedidos_sessao_periodo_bloco">
                 <span class="verificar_administrar_pedidos_sessao_mini_titulos_2" id="abrirCalendario">Mudar período</span>
@@ -190,74 +190,25 @@ mysqli_close($con);
     <?php include "footer.php"; ?>
 
 
-<script>
-   
-$(document).ready(function() {
-    // Inicializa os datepickers de início e fim
-    $("#dataInicio").datepicker({
-        dateFormat: "yy-mm-dd",
-        onSelect: function(selectedDate) {
-            $("#dataFim").datepicker("option", "minDate", selectedDate);
-        }
-    });
-
-    $("#dataFim").datepicker({
-        dateFormat: "yy-mm-dd",
-        onSelect: function(selectedDate) {
-            $("#dataInicio").datepicker("option", "maxDate", selectedDate);
-
-            let inicio = $("#dataInicio").val();
-            let fim = $("#dataFim").val();
-
-            if (inicio && fim) {
-                // Atualiza o texto exibido
-                $("#dataEscolhida").text(inicio + " - " + fim);
-                // Recarrega a página com as datas no GET
-                window.location.href = `relatorios_visualizar.php?data_inicio=${inicio}&data_fim=${fim}`;
+    <script>
+        // Configuração unificada para todos os gráficos
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw + '   pedidos';
+                        }
+                    }
+                }
             }
-        }
-    });
-
-    // Quando clicar em "Mudar período", mostra os inputs
-    $("#abrirCalendario").click(function() {
-        $("#dataInicio, #dataFim").show().focus();
-    });
-});
-
-    </script>
-
-<script>
-    // Quando o botão for clicado, gera o PDF
-    document.getElementById('btnGerarPDF').addEventListener('click', function() {
-        // Criando uma instância do jsPDF
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        
-        // Captura os gráficos como imagens base64
-        var graficoEstatisticasImg = document.getElementById('graficoEstatisticas').toDataURL('image/png');
-        var graficoBarraImg = document.getElementById('graficoBarraEstatisticas').toDataURL('image/png');
-        var graficoLinhaImg = document.getElementById('graficoLinhaPedidos').toDataURL('image/png');
-
-        // Adicionando o título ao PDF
-        doc.text("Relatório de Pedidos", 10, 10);
-        
-        // Adicionando os gráficos ao PDF
-        doc.addImage(graficoEstatisticasImg, 'PNG', 10, 20, 180, 90); // Gráfico de Estatísticas (Pizza)
-        doc.addImage(graficoBarraImg, 'PNG', 10, 120, 180, 90); // Gráfico de Barra
-        doc.addImage(graficoLinhaImg, 'PNG', 10, 220, 180, 90); // Gráfico de Linha
-
-        // Adicionando mais conteúdo, como número de pedidos, produtos, usuários, etc.
-        doc.text("Número de Pedidos: <?php echo $numero_pedidos; ?>", 10, 310);
-        doc.text("Número de Produtos: <?php echo $numero_produtos; ?>", 10, 320);
-        doc.text("Número de Usuários: <?php echo $numero_usuarios; ?>", 10, 330);
-
-        // Gerando o PDF e permitindo o download
-        doc.save('relatorio_pedidos_com_graficos.pdf');
-    });
-<!-- </script>
-
-
-    <script> -->
+        };
+    
         // Gerar gráfico de pizza com os dados de status dos pedidos
         var estatisticas = <?php echo json_encode($estatisticas); ?>;
         var ctx = document.getElementById('graficoEstatisticas').getContext('2d');
@@ -275,108 +226,104 @@ $(document).ready(function() {
                 }]
             },
             options: {
-                responsive: true,
+                ...chartOptions,
                 plugins: {
+                    ...chartOptions.plugins,
                     legend: {
-                        position: 'top',
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    
+        // Gerar gráfico de barra para a distribuição dos pedidos por status
+        var ctxBarra = document.getElementById('graficoBarraEstatisticas').getContext   ('2d');
+        var graficoBarra = new Chart(ctxBarra, {
+            type: 'bar',
+            data: {
+                labels: ['Pendente', 'Concluído', 'Cancelado'],
+                datasets: [{
+                    label: 'Número de Pedidos',
+                    data: [
+                        estatisticas['Pendente'] || 0,
+                        estatisticas['Concluído'] || 0,
+                        estatisticas['Cancelado'] || 0
+                    ],
+                    backgroundColor: ['#ffcc00', '#4caf50', '#f44336'],
+                    borderColor: ['#ffcc00', '#4caf50', '#f44336'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Número de Pedidos'
+                        }
                     },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return tooltipItem.label + ': ' + tooltipItem.raw + ' pedidos';
-                            }
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Status do Pedido'
                         }
                     }
                 }
             }
-        }
-        );
- // Gerar gráfico de barra para a distribuição dos pedidos por status
-var ctxBarra = document.getElementById('graficoBarraEstatisticas').getContext('2d');
-var graficoBarra = new Chart(ctxBarra, {
-    type: 'bar',
-    data: {
-        labels: ['Pendente', 'Concluído', 'Cancelado'],
-        datasets: [{
-            label: 'Número de Pedidos',
-            data: [
-                estatisticas['Pendente'] || 0,
-                estatisticas['Concluído'] || 0,
-                estatisticas['Cancelado'] || 0
-            ],
-            backgroundColor: ['#ffcc00', '#4caf50', '#f44336'],
-            borderColor: ['#ffcc00', '#4caf50', '#f44336'],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        },
-        plugins: {
-            legend: {
-                position: 'top',
+        });
+    
+        // Gerar gráfico de linha para a variação de pedidos ao longo do tempo
+        var pedidosPorData = <?php echo json_encode($pedidos_por_data); ?>; 
+        var ctxLinha = document.getElementById('graficoLinhaPedidos').getContext('2d');
+        var graficoLinha = new Chart(ctxLinha, {
+            type: 'line',
+            data: {
+                labels: pedidosPorData.map(function(item) { 
+                    // Formata a data para DD/MM
+                    const date = new Date(item.data_pedido);
+                    return date.getDate().toString().padStart(2, '0') + '/' + (date.    getMonth() + 1).toString().padStart(2, '0');
+                }), 
+                datasets: [{
+                    label: 'Número de Pedidos',
+                    data: pedidosPorData.map(function(item) { return item.  numero_pedidos; }),
+                    fill: false,
+                    borderColor: '#007bff',
+                    backgroundColor: '#007bff',
+                    tension: 0.1,
+                    pointBackgroundColor: '#007bff',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 4
+                }]
             },
-            tooltip: {
-                callbacks: {
-                    label: function(tooltipItem) {
-                        return tooltipItem.label + ': ' + tooltipItem.raw + ' pedidos';
-                    }
-                }
-            }
-        }
-    }
-});
-
-    // Gerar gráfico de linha para a variação de pedidos ao longo do tempo
-    var pedidosPorData = <?php echo json_encode($pedidos_por_data); ?>; 
-    var ctxLinha = document.getElementById('graficoLinhaPedidos').getContext('2d');
-    var graficoLinha = new Chart(ctxLinha, {
-        type: 'line',
-        data: {
-            labels: pedidosPorData.map(function(item) { return item.data_pedido; }), 
-            datasets: [{
-                label: 'Número de Pedidos',
-                data: pedidosPorData.map(function(item) { return item.numero_pedidos; }), // Número de pedidos no eixo Y
-                fill: false,
-                borderColor: '#007bff',
-                tension: 0.1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(tooltipItem) {
-                            return tooltipItem.label + ': ' + tooltipItem.raw + ' pedidos';
+            options: {
+                ...chartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Número de Pedidos'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Data'
                         }
                     }
                 }
-            },
-            scales: {
-                x: {
-                    type: 'category',
-                    title: {
-                        display: true,
-                        text: 'Data'
-                    }
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: 'Número de Pedidos'
-                    }
-                }
             }
-        }
-    });
+        });
+    
+        // Forçar redimensionamento dos gráficos quando a janela for redimensionada
+        window.addEventListener('resize', function() {
+            grafico.resize();
+            graficoBarra.resize();
+            graficoLinha.resize();
+        });
     </script>
 </body>
 
