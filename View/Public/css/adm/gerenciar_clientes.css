@@ -159,7 +159,12 @@
 #table-space-gerenciar-clientes table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: auto;
+  min-width: 800px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-primary-1);
 }
 
 
@@ -171,14 +176,10 @@
   font-weight: 500;
 }
 
-#table-space-gerenciar-clientes table .select-all-label-gerenciar-clientes {
+.select-all-label-gerenciar-clientes {
   width: 10%;
 }
 
-
-#table-space-gerenciar-clientes table .select-all-label-gerenciar-clientes {
-  width: 10%;
-}
 
 #table-space-gerenciar-clientes table td {
   width: 14.2857142857%;
