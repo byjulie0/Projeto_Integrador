@@ -1,6 +1,5 @@
 @import url(../adm.css);
 
-/* Layout principal melhorado */
 .relatorios_container {
   padding: 20px;
   max-width: 1400px;
@@ -20,7 +19,6 @@
   font-size: 25px;
   color: var( --color-primary-1);
 }
-/* Seta de voltar */
 .verificar_administrar_pedidos_sessao_seta_voltar {
   font-size: 24px;
   color: var(--color-primary-1);
@@ -30,14 +28,12 @@
 
 
 
-/* Grid principal reorganizado */
 .relatorios_main {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-/* Cards do topo - layout melhorado */
 .relatorios_cards_topo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -73,7 +69,6 @@
 }
 
 .card_topo i.fa-chevron-right {
-  /* bottom: 15px; */
   color: var(--color-primary-1);
   font-size: 14px;
 }
@@ -85,7 +80,6 @@
   display: block;
 }
 
-/* Card de estatísticas - MESMO TAMANHO PARA TODOS */
 .card_estatisticas {
   background: linear-gradient(135deg, #dbf3d4ff, #c5e8b7);
   border-radius: 12px;
@@ -108,7 +102,6 @@
   width: 100%;
 }
 
-/* Contêineres de gráfico - TAMANHO UNIFICADO */
 .grafico-container {
   width: 100%;
   height: 300px;
@@ -125,14 +118,12 @@
   height: auto !important;
 }
 
-/* Container específico para gráfico de pizza */
 #graficoEstatisticas {
   max-width: 280px !important;
   max-height: 280px !important;
   margin: 0 auto;
 }
 
-/* Linha de gráficos - MESMO TAMANHO */
 .grafico-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -161,23 +152,20 @@
   width: 100%;
 }
 
-/* AJUSTE CRÍTICO: Gráficos de barra e linha com MESMA LARGURA do gráfico de pizza */
 #graficoBarraEstatisticas,
 #graficoLinhaPedidos {
-  max-width: 280px !important; /* MESMA LARGURA DO GRÁFICO DE PIZZA */
+  max-width: 280px !important;
   max-height: 280px !important;
-  width: 280px !important; /* LARGURA FIXA IGUAL AO DE PIZZA */
+  width: 280px !important;
   height: 280px !important;
 }
 
-/* Ajuste específico para os containers dos gráficos de barra e linha */
 .grafico-barra .grafico-container,
 .grafico-linha .grafico-container {
-  width: 2320x !important; /* FORÇA A MESMA LARGURA */
+  width: 2320x !important;
   max-width: 280px !important;
 }
 
-/* Card de atividades recentes */
 .card_atividades {
   background: white;
   padding: 25px;
@@ -198,7 +186,6 @@
 }
 
 
-/* Período de datas */
 .verificar_administrar_pedidos_sessao_mini_titulos_1 {
   margin: 5px 0 15px 0;
   color: var(--color-primary-1);
@@ -235,7 +222,6 @@
   margin-top: 5px;
 }
 
-/* Botão de imprimir */
 .btn_imprimir {
   align-items: center;
   justify-content: center;
@@ -244,7 +230,6 @@
 }
 
 
-/* Tabela de pedidos */
 .tabela-pedidos {
   width: 100%;
   border-collapse: collapse;
@@ -279,7 +264,6 @@
   background-color: #edf7e7;
 }
 
-/* Inputs de data */
 #dataInicio, #dataFim {
   display: none;
   margin-top: 10px;
@@ -289,8 +273,7 @@
   width: 150px;
 }
 
-/* ------------------------------------- RESPONSIVIDADE ---------------------------------*/
-/* Tablets */
+/* RESPONSIVIDADE */
 @media (max-width: 1024px) {
   .relatorios_cards_topo {
     grid-template-columns: 1fr 1fr;
@@ -310,7 +293,6 @@
     height: 350px;
   }
   
-  /* Ajuste para tablets */
   #graficoEstatisticas,
   #graficoBarraEstatisticas,
   #graficoLinhaPedidos {
@@ -327,7 +309,6 @@
   }
 }
 
-/* Dispositivos móveis */
 @media (max-width: 768px) {
   .relatorios_container {
     padding: 15px;
@@ -361,7 +342,6 @@
     padding: 15px;
   }
   
-  /* Ajuste para mobile */
   #graficoEstatisticas,
   #graficoBarraEstatisticas,
   #graficoLinhaPedidos {
@@ -392,7 +372,6 @@
   }
 }
 
-/* Telas muito pequenas */
 @media (max-width: 480px) {
   .relatorios_header {
     padding: 0 10px;
@@ -417,7 +396,6 @@
     height: 280px;
   }
   
-  /* Ajuste para telas muito pequenas */
   #graficoEstatisticas,
   #graficoBarraEstatisticas,
   #graficoLinhaPedidos {
