@@ -1,23 +1,21 @@
 <?php
-session_start();
+include "autenticado.php";
 include "../../model/DB/conexao.php";
 
 if (!isset($_GET['id'])) {
-    header("Location: pedidos_cliente.php");
+    header("Location: ../cliente/historico_pedidos.php");
     exit;
 }
 
 $id_pedido = intval($_GET['id']);
 
-// 1. Buscar todos os itens do pedido
-$sqlItens = "SELECT produto_id_produto, qtd_produto 
+$sqlItens = "SELECT id_produto, qtd_produto 
              FROM item 
-             WHERE pedido_id_pedido = $id_pedido";
+             WHERE id_pedido = $id_pedido";
 $resultItens = $con->query($sqlItens);
 
-// 2. Para cada item → devolver estoque
 while ($item = $resultItens->fetch_assoc()) {
-    $id_produto = $item['produto_id_produto'];
+    $id_produto = $item['id_produto'];
     $quantidade = $item['qtd_produto'];
 
     $sqlUpdateEstoque = "UPDATE produto 
@@ -26,14 +24,12 @@ while ($item = $resultItens->fetch_assoc()) {
     $con->query($sqlUpdateEstoque);
 }
 
-// 3. Atualizar status do pedido para Cancelado
 $sqlCancel = "UPDATE pedido 
               SET status_pedido = 'Cancelado'
               WHERE id_pedido = $id_pedido";
 $con->query($sqlCancel);
 
-// 4. Redirecionar de volta para a lista
-header("Location: pedidos_cliente.php?cancelado=1");
+header("Location: ../cliente/historico_pedidos.php?cancelado=1");
 exit;
 
 ?>

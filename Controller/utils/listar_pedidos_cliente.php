@@ -1,4 +1,5 @@
 <?php
+include "autenticado.php";
 include "../../model/DB/conexao.php";
 
 $id_cliente = $_SESSION['id_cliente'];
