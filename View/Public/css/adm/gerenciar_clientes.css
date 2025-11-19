@@ -1,5 +1,6 @@
 @import url("../adm.css");
 @import url("toogle.css");
+
 #gerenciar-clientes {
   display: flex;
   flex-direction: column;
@@ -23,24 +24,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 25px
+  gap: 25px;
 }
 
-#title-gerenciar-clientes {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  gap: 15px;
-}
-
-#title-gerenciar-clientes h3{
+#title-gerenciar-clientes h3 {
   margin: 0;
   padding: 0;
   display: inline-block;
   color: var(--color-primary-1);
   font-size: 24px;
 }
-.bi-chevron-left{
+
+.bi-chevron-left {
   display: inline-flex;
   text-decoration: none;
   font-size: 25px;
@@ -78,7 +73,7 @@
   align-items: flex-end;
 }
 
-.first-container-gerenciar-clientes a{
+.first-container-gerenciar-clientes a {
   font-size: 14px;
   font-weight: 400;
   color: var(--color-primary-1);
@@ -94,6 +89,7 @@
   width: 100%;
   color: var(--color-primary-1);
 }
+
 #search-bar-gerenciar-clientes input::placeholder {
   color: var(--color-primary-1);
   font-weight: 500;
@@ -106,18 +102,19 @@
   padding: 0;
 }
 
-#search-bar-gerenciar-clientes
- button .fa-solid {
+#search-bar-gerenciar-clientes button .fa-solid {
   color: var(--color-primary-1);
   font-size: 16px;
 }
-.botoes_filtros_clientes{
+
+.botoes_filtros_clientes {
   display: flex;
   text-align: justify;
   flex-wrap: wrap;
   gap: 10px;
 }
-.botoes_filtros_clientes button{
+
+.botoes_filtros_clientes button {
   color: var(--color-primary-1);
   background-color: #fff;
   padding: 4px;
@@ -126,20 +123,22 @@
   border: solid 1px;
   transition: all 0.3s ease;
 }
-.botoes_filtros_clientes button:hover{
-  border-color: var(--color-primary-3);
-  color: white;
-  background-color: var(--color-primary-3);
-  box-shadow: 0 0 10px #4b914b;
-}
-.botoes_filtros_clientes button:focus{
-  border-color: var(--color-primary-3);
-  color: white;
-  background-color: var(--color-primary-3);
-  box-shadow: 0 0 10px #4b914b;
 
+.botoes_filtros_clientes button:hover {
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
 }
-#break-line{
+
+.botoes_filtros_clientes button:focus {
+  border-color: var(--color-primary-3);
+  color: white;
+  background-color: var(--color-primary-3);
+  box-shadow: 0 0 10px #4b914b;
+}
+
+#break-line {
   width: 100%;
   display: flex;
   height: 0.5px;
@@ -150,101 +149,111 @@
 #table-space-gerenciar-clientes {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
+/* ============= ESTILO DA TABELA PADRONIZADO ============= */
 
-#table-space-gerenciar-clientes table {
+/* Tabela de clientes */
+.tabela-clientes {
   width: 100%;
   border-collapse: collapse;
-  table-layout: auto;
-  min-width: 800px;
-  text-align: center;
+  margin-top: 15px;
   font-size: 14px;
-  font-weight: 400;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho da tabela */
+.tabela-clientes th {
+  background: linear-gradient(135deg, #dbf3d4ff, #c5e8b7);
+  color: #2c3e50;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #b8d9a3;
+}
+
+/* Células da tabela */
+.tabela-clientes td {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 15px;
+  text-align: left;
   color: var(--color-primary-1);
 }
 
-
-#table-space-gerenciar-clientes table th {
-  width: 100%;
-  background-color: #E5E7E5;
-}
-.header-cell-gerenciar-clientes{
-  font-weight: 500;
+/* Linhas alternadas */
+.tabela-clientes tbody tr:nth-child(even) {
+  background-color: #f8fdf5;
 }
 
-.select-all-label-gerenciar-clientes {
-  width: 10%;
+.tabela-clientes tbody tr:nth-child(odd) {
+  background-color: #ffffff;
 }
 
+/* Hover nas linhas */
+.tabela-clientes tbody tr:hover {
+  background-color: #edf7e7;
+}
 
-#table-space-gerenciar-clientes table td {
-  width: 14.2857142857%;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
+/* Botão de toggle */
+.icon-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 20px;
+  color: var(--color-primary-3);
+  transition: color 0.3s ease;
+}
+
+.icon-toggle-btn:hover {
   color: var(--color-primary-1);
 }
 
-#table-space-gerenciar-clientes table td .fa-pen-to-square {
+.icon-toggle-btn i {
+  font-size: 20px;
+}
+
+/* Ícones de ação */
+.tabela-clientes td .fa-pen-to-square {
   color: var(--color-primary-3);
   cursor: pointer;
   font-size: 16px;
+  transition: color 0.3s ease;
 }
 
-#table-space-gerenciar-clientes table td .fa-trash {
+.tabela-clientes td .fa-pen-to-square:hover {
+  color: var(--color-primary-1);
+}
+
+.tabela-clientes td .fa-trash {
   color: var(--warning-color);
   cursor: pointer;
   font-size: 16px;
+  transition: color 0.3s ease;
 }
 
-#table-space-gerenciar-clientes table th {
-  width: 14.2857142857%;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--color-primary-1);
+.tabela-clientes td .fa-trash:hover {
+  opacity: 0.8;
 }
 
-.select-all-label-gerenciar-clientes button {
-  border: none;
-  background-color: none;
-  background: none;
-  cursor: pointer;
-  font-size: 12px;
-  text-decoration: underline;
-  color: var(--color-primary-1);
-}
-
-#table-space-gerenciar-clientes th, #table-space-gerenciar-clientes td {
-  padding: 10px;
-}
-
-.cliente-gerenciar-clientes {
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  padding: 15px 0px;
-}
-
-.cliente-gerenciar-clientes img {
-  width: 50%;
-  border-radius: 5px;
-}
-
-.cpf-name-gerenciar-clientes span {
-  font-weight: 600;
-}
+/* ================================= RESPONSIVIDADE ================================= */
 
 @media (max-width: 768px) {
   #gerenciar-clientes {
     padding: 50px;
+  }
+
+  .tabela-clientes {
+    font-size: 13px;
+  }
+
+  .tabela-clientes th,
+  .tabela-clientes td {
+    padding: 10px 12px;
   }
 }
 
@@ -294,29 +303,44 @@
     overflow-x: auto;
   }
 
-  #table-space-gerenciar-clientes table {
+  .tabela-clientes {
     min-width: 700px;
+    font-size: 12px;
+    display: block;
+    overflow-x: auto;
   }
 
-  #table-space-gerenciar-clientes table th, #table-space-gerenciar-clientes table td {
+  .tabela-clientes th,
+  .tabela-clientes td {
     font-size: 12px;
     padding: 8px;
   }
 
-  .cliente-gerenciar-clientes {
-    flex-direction: column;
-    gap: 8px;
+  .icon-toggle-btn i {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #gerenciar-clientes {
+    padding: 20px 15px;
   }
 
-  .cliente-gerenciar-clientes img {
-    width: 80%;
+  #title-gerenciar-clientes h3 {
+    font-size: 16px;
   }
 
-  .cpf-name-gerenciar-clientes span {
-    font-size: 14px;
-  }
-
-  .select-all-label-gerenciar-clientes button {
+  .botoes_filtros_clientes button {
+    min-width: 80px;
     font-size: 12px;
+  }
+
+  .tabela-clientes {
+    font-size: 11px;
+  }
+
+  .tabela-clientes th,
+  .tabela-clientes td {
+    padding: 6px 8px;
   }
 }

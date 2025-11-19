@@ -40,7 +40,7 @@
 /* Cards do topo - layout melhorado */
 .relatorios_cards_topo {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-bottom: 10px;
 }
@@ -85,106 +85,59 @@
   display: block;
 }
 
-.card_estatisticas,
-.grafico-barra,
-.grafico-linha {
+/* Card de estatísticas - MESMO TAMANHO PARA TODOS */
+.card_estatisticas {
   background: linear-gradient(135deg, #dbf3d4ff, #c5e8b7);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border: 1px solid #b8d9a3;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 400px;
   justify-content: flex-start;
-  
-  /* TAMANHO FIXO E PADRONIZADO */
-  height: 450px;
-  min-height: 450px;
-  max-height: 450px;
 }
 
-/* Títulos dos gráficos padronizados */
-.card_estatisticas h3,
-.grafico-barra h3,
-.grafico-linha h3 {
+.card_estatisticas h3 {
   font-size: 18px;
-  font-weight: 600;
-  margin: 0 0 20px 0;
-  padding: 0;
+  margin-bottom: 15px;
   color: #2c3e50;
   text-align: center;
   width: 100%;
 }
 
-/* Container do gráfico - TAMANHO PADRONIZADO */
+/* Contêineres de gráfico - TAMANHO UNIFICADO */
 .grafico-container {
   width: 100%;
-  height: 350px; /* Altura fixa para o container */
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  margin: 0 auto;
 }
 
-/* TODOS os canvas com o MESMO TAMANHO */
-#graficoEstatisticas,
-#graficoBarraEstatisticas,
-#graficoLinhaPedidos {
-  max-width: 100% !important;
-  max-height: 100% !important;
-  width: 100% !important;
-  height: 100% !important;
+.grafico-container canvas {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto !important;
+  height: auto !important;
 }
 
-/* Remove as linhas antigas que forçavam tamanhos diferentes */
-.grafico-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colunas para os gráficos de baixo */
-  gap: 20px;
-  margin-top: 20px;
+/* Container específico para gráfico de pizza */
+#graficoEstatisticas {
+  max-width: 280px !important;
+  max-height: 280px !important;
+  margin: 0 auto;
 }
-
-/* Remove limitações de largura anteriores */
-.grafico-barra .grafico-container,
-.grafico-linha .grafico-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  height: 350px !important;
-}
-
 
 /* Linha de gráficos - MESMO TAMANHO */
-/* SOLUÇÃO COMPLETA - Linha de gráficos alinhados */
 .grafico-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais aos cards do topo */
-  gap: 20px; /* Mesmo gap dos cards do topo */
+  grid-template-columns: 1fr 1fr;
+  gap: px;
   margin-top: 20px;
-}
-
-/* Se tiver apenas 1 gráfico, ele ocupa todas as 3 colunas */
-.grafico-row > *:only-child {
-  grid-column: 1 / -1; /* Ocupa todas as colunas */
-}
-
-/* Se tiver 2 gráficos, cada um ocupa proporcionalmente */
-.grafico-row > *:first-child:nth-last-child(2),
-.grafico-row > *:first-child:nth-last-child(2) ~ * {
-  grid-column: span 1.5; /* Cada um ocupa 1.5 colunas */
-}
-
-.grafico-barra, .grafico-linha {
-  background: linear-gradient(135deg, #dbf3d4ff, #c5e8b7);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid #b8d9a3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: 400px;
 }
 
 .grafico-barra, .grafico-linha {

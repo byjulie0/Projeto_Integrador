@@ -102,46 +102,50 @@ mysqli_close($con);
     <div class="relatorios_cards_topo">
         <!-- Card de Produtos -->
         <div class="card_topo">
-            <i class="fa-solid fa-bag-shopping"></i> Produtos <br> cadastrados: 
-            <b><?php echo $numero_produtos; ?></b>
+            <i class="fa-solid fa-bag-shopping"></i>    Produtos <br> cadastrados: 
+            <b><?php echo $numero_produtos; ?></b> 
+            <!-- <i class="fa-solid fa-chevron-right"></i> -->
         </div>
 
         <!-- Card de Pedidos -->
         <div class="card_topo">
-            <i class="fa-solid fa-cart-plus"></i> Pedidos <br> gerados: 
+            <i class="fa-solid fa-cart-plus"></i>    Pedidos <br> gerados: 
             <b><?php echo $numero_pedidos; ?></b>
+            <!-- <i class="fa-solid fa-chevron-right"></i> -->
         </div>
 
         <!-- Card de Usuários -->
         <div class="card_topo">
-            <i class="fa-solid fa-users"></i> Usuários <br> cadastrados: 
+            <i class="fa-solid fa-users"></i>    Usuários <br> cadastrados: 
             <b><?php echo $numero_usuarios; ?></b>
+            <!-- <i class="fa-solid fa-chevron-right"></i> -->
         </div>
 
-        <!-- Gráfico de Pizza - Estatísticas -->
+        <!-- Gráfico de Estatísticas -->
         <div class="card_estatisticas">
             <h3>Estatísticas</h3>
             <div class="grafico-container">
                 <canvas id="graficoEstatisticas"></canvas>
             </div>
         </div>
-
+        <!-- Contêiner para os gráficos de barra e linha -->
+    <div class="grafico-row">
         <!-- Gráfico de Barra -->
-        <div class="grafico-barra">
-            <h3>Número de Pedidos</h3>
-            <div class="grafico-container">
-                <canvas id="graficoBarraEstatisticas"></canvas>
-            </div>
+        <div class="grafico-container grafico-barra">
+            <canvas id="graficoBarraEstatisticas"></canvas>
+        </div>
+
+        
     </div>
 
-    <!-- Gráfico de Linha -->
-    <div class="grafico-linha">
-        <h3>Número de Pedidos</h3>
-        <div class="grafico-container">
+    <div class="grafico-row">
+                <!-- Gráfico de Linha -->
+        <div class="grafico-container grafico-linha">
             <canvas id="graficoLinhaPedidos"></canvas>
         </div>
     </div>
-</div>
+
+    </div>
 
    
 
