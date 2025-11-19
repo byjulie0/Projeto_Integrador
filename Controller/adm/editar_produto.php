@@ -54,7 +54,7 @@ while (count($imgs) < 4) $imgs[] = null;
 
             <section class="add_product_area">
                 <article class="add_product_image">
-                    <p class="product_title_info_img">Imagens do produto (máx.4)</p>
+                    <p class="product_title_info_img">Imagens do produto (máx.4)<span class="mandatory_space">*</p>
                     <div class="carousel-container">
                         <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)"><i class="bi bi-chevron-left"></i></button>
                         <button type="button" class="carousel-btn next" onclick="changeSlide(1)"><i class="bi bi-chevron-right"></i></button>
@@ -81,10 +81,6 @@ while (count($imgs) < 4) $imgs[] = null;
                             </label>
                         <?php endfor; ?>
                     </div>
-
-                    <p style="font-size:0.8rem; color:#666; text-align:center;">
-                        Clique em um quadrado para trocar. Se quiser remover, clique no X.
-                    </p>
                 </article>
 
                 <aside class="add_product_details">
