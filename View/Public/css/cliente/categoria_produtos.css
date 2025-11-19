@@ -197,10 +197,11 @@ option{
  
 }
 
-@media (max-width: 359px) {
+@media (max-width: 360px) {
   .filtros_categoria_produtos {
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px 10px;
   }
   
   .filtro_btn, .filtro_select {

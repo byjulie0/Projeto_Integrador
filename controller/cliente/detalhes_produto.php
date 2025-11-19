@@ -20,9 +20,8 @@ $id_produto = $_GET['id_produto'] ?? null;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../../View/js/cliente/favoritar.js"></script>
 </head>
-
 <body class="body-detalhes-produto">
-
+    <!-- <script>var usuarioLogado = <php echo isset($_SESSION['id_cliente']) ? 'true' : 'false'; ?>;</script> -->
     <h2 class="titulo-produto-detalhes-produto">
         <a href="#" onclick="window.history.back(); return false"><i class="bi bi-chevron-left"></i></a>
     </h2>
@@ -47,13 +46,21 @@ $id_produto = $_GET['id_produto'] ?? null;
 
         $imagemPrincipal = !empty($listaImagens[0])
             ? $listaImagens[0]
-            : 'view/public/imagens/default-thumbnail.jpg';
+            : '../../View/public/imagens/default-thumbnail.jpg';
         ?>
 
         <div class="galeria-detalhes-produto">
             <div class="miniaturas-detalhes-produto">
                 <?php foreach ($imagens as $img): ?>
-                    <img src="../../View/Public/<?php echo htmlspecialchars($img); ?>" alt="Miniatura">
+
+                    <?php if ($img): ?>
+                        <img src="../../View/Public/<?php echo htmlspecialchars($img); ?>" alt="Miniatura">
+                    <?php else:
+                        $img = 'imagens/default-thumbnail.jpg'; ?>
+                        <img src="../../View/Public/<?php echo htmlspecialchars($img);  ?>" alt="Miniatura">
+
+                    <?php endif?>
+
                 <?php endforeach; ?>
             </div>
 
@@ -65,7 +72,6 @@ $id_produto = $_GET['id_produto'] ?? null;
                 <p><?php echo $produto['descricao'] ? htmlspecialchars($produto['descricao']) : 'Descrição não disponível.'; ?>
                 </p>
             </div>
-
         </div>
 
         <div class="info-produto-detalhes-produto">
@@ -111,7 +117,7 @@ $id_produto = $_GET['id_produto'] ?? null;
                 </div>
 
             </section>
-        </div>
+        </div> 
     </main>
         <script>
         // Troca a imagem principal ao clicar na miniatura

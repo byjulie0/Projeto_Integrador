@@ -8,14 +8,38 @@
 </head>
 <?php
 $id_prod = $row['id_produto'];
-$imagem = $row['path_img'];
+$listaImagens = [];
+
+if (!empty($row['path_img'])) {
+    $path = trim($row['path_img']);
+
+    if ($path[0] === '[') {
+        $listaImagens = json_decode($path, true);
+    } else {
+        $listaImagens = explode(',', $path);
+    }
+}
+
+$listaImagens = array_map(function ($img) {
+    return trim(str_replace('\\', '', $img));
+}, $listaImagens);
+
+$imagem = !empty($listaImagens[0])
+    ? $listaImagens[0]
+    : 'view/public/imagens/default-thumbnail.jpg';
+if (!$imagem):
+    $imagem = 'imagens/default-thumbnail.jpg';
+endif;
 $nome = $row['prod_nome'];
 $valor = number_format($row['valor'], 2, ',', '.');
 ?>
 <body>
     <div class="lote-card">
         <a href="detalhes_produto.php?id_produto=<?php echo $id_prod; ?>">
-            <img src="../../View/Public/<?php echo $imagem; ?>" alt="<?php echo $nome; ?>">
+
+            <img id="imagem-principal" src="../../View/Public/<?php echo htmlspecialchars($imagem); ?>"
+                alt="<?php echo $nome; ?>">
+            
             <div class="info-grid">
                 <p>Nome:</p>
                 <p><?php echo $nome; ?></p>

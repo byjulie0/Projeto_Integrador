@@ -247,3 +247,8 @@
 .arrow_campeoes {
   z-index: 2; 
 }
+@media (max-width: 360px) {
+  .cards_campeoes{
+    
+  }
+}

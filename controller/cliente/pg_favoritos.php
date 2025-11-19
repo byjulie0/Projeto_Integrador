@@ -49,14 +49,13 @@ $result = $stmt->get_result();
         <div class="lotes-wrapper">
             <div class="lotes_container_pg_favoritos" id="lotesContainerFavoritos">
                 <?php
-                while ($item = $result->fetch_assoc()) {
-                    $imagem = $item['path_img'];
-                    $nome = $item['prod_nome'];
-                    $id_produto = $item['id_produto'];
-                    $peso = $item['peso'];
-                    $raca = $item['subcat_nome'];
-                    $idade = $item['idade'];
-                    $preco = $item['valor'];
+                while ($row = $result->fetch_assoc()) {
+                    $nome = $row['prod_nome'];
+                    $id_produto = $row['id_produto'];
+                    $peso = $row['peso'];
+                    $raca = $row['subcat_nome'];
+                    $idade = $row['idade'];
+                    $preco = $row['valor'];
                     include 'card_favoritos.php';
                 }
                 $stmt->close();

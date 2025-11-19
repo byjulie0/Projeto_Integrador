@@ -26,7 +26,7 @@ include 'menu_pg_inicial.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Meus Dados</title>
-    <link rel="stylesheet" href="../../View\Public\css\adm\meu_perfil_editar.css">
+    <link rel="stylesheet" href="../../view/public/css/cliente/meu_perfil_editar.css">
 </head>
 
 <body>
@@ -40,11 +40,8 @@ include 'menu_pg_inicial.php';
             <form class="client-edit-form" method="POST" action="../utils/atualizar_cliente.php">
 
                 <div class="client-edit-header">
-                    <h1 class="client-edit-title-titulo">
-                        <a href="#"><i class="bi bi-chevron-left"
-                                onclick="window.history.back(); return false;"></i></a>
-                        Editar meus dados
-                    </h1>
+                    <a href="#"><i class="bi bi-chevron-left"onclick="window.history.back(); return false;"></i></a>
+                    <h1 class="client-edit-title-titulo">Editar meus dados</h1>
                 </div>
 
                 <input type="hidden" name="id_cliente" value="<?= $id_cliente ?>">

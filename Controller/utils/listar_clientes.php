@@ -1,5 +1,14 @@
 <?php
-include '../utils/autenticado_adm.php';
+include '../../model/DB/conexao.php';
+$status = isset($_GET['status']) ? $_GET['status'] : 'todos';
+
+$where = [];
+
+if ($status === 'ativos') {
+    $where[] = "user_ativo = 1";
+} elseif ($status === 'inativos') {
+    $where[] = "user_ativo = 0";
+}
 
 $status = isset($_GET['status']) ? $_GET['status'] : 'todos';
 
