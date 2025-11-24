@@ -69,11 +69,61 @@ if ($result && $result->num_rows > 0) {
             $sql_estoque = "UPDATE produto SET quant_estoque = quant_estoque - ? WHERE id_produto = ?";
             $stmt_estoque = $con->prepare($sql_estoque);
             $stmt_estoque->bind_param("ii", $item['quantidade'], $item['id_produto']);
+
             
             if (!$stmt_estoque->execute()) {
                 throw new Exception("Erro ao atualizar estoque: " . $stmt_estoque->error);
             }
-            $stmt_estoque->close();
+
+            $id_verif_prod = $item['id_produto'];
+            $sql_verif_estoq = "SELECT quant_estoque,sexo FROM produto WHERE id_produto = $id_verif_prod";
+            $qtd_estoque= $con->query($sql_verif_estoq);
+
+            // notificação adm baixo estoque inicio
+            if($qtd_estoque['quant_estoque'] > 0 && $qtd_estoque['quant_estoque'] <= 5 && $qtd_estoque['sexo'] == "Não se aplica" || $qtd_estoque['sexo'] == null){
+
+                $produto_id= $id_verif_prod;
+                $nome_produto = $item['prod_nome'];
+                $mensagem="O estoque do produto: {$nome_produto} ,possui {$item['quant_estoque']} unidades restantes, reposição necessaria!";
+                $categoria="Estoque";
+                $notificacao_adm_sucesso = Criar_notificacao_adm($con, $produto_id, $mensagem, $categoria);
+        
+                if ($notificacao_adm_sucesso) {
+                    error_log("Notificação para o ADM criada com sucesso!");
+                } else {
+                    error_log("Falha ao criar notificação para o ADM");
+                }
+
+            }
+            // notificação adm baixo estoque fim
+            elseif ($qtd_estoque['quant_estoque'] == 0){
+
+                $sql_inativo = "UPDATE produto SET produto_ativo = 0 WHERE id_produto = ?";
+                $query_inativo = $con->prepare($sql_inativo);
+                $query_inativo->bind_param("i",$id_prod);
+
+                //notificação adm inativo inicio
+
+                $produto_id= $id_verif_prod;
+                $nome_produto = $item['prod_nome'];
+                $mensagem="O estoque do produto: {$nome_produto} ,chegou a zero e foi desativado!";
+                $categoria="Estoque";
+
+                $notificacao_adm_sucesso = Criar_notificacao_adm($con, $produto_id, $mensagem, $categoria);
+        
+                if ($notificacao_adm_sucesso) {
+                    error_log("Notificação para o ADM criada com sucesso!");
+                } else {
+                    error_log("Falha ao criar notificação para o ADM");
+                }
+
+                //notificação adm inativo fim
+
+                if (!$query_inativo->execute()) {
+                    throw new Exception("Erro ao inativar produto: " . $query_inativo->error);}
+
+
+            $stmt_estoque->close();}
         }
 
         // Limpa carrinho
