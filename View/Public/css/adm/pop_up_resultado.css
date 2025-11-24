@@ -21,9 +21,10 @@
   text-align: center;
 }
 
+
 /* Título de acordo com tipo */
-.area_popup_resultado.sucesso h2 { color: #2d8c37; } /* verde sucesso */
-.area_popup_resultado.erro h2 { color: #e63946; } /* vermelho erro */
+.area_popup_resultado,.sucesso h1 { color: #2d8c37; } /* verde sucesso */
+.area_popup_resultado,.erro h1 { color: #e63946; } /* vermelho erro */
 
 /* Botão de fechar (X) */
 .fechar_popup_resultado {
@@ -32,16 +33,16 @@
   right: 15px;
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: #ff0000;
   cursor: pointer;
   background: transparent;
   border: none;
   transition: color 0.3s ease;
 }
 
-.fechar_popup_resultado:hover {
+/* .fechar_popup_resultado:hover {
   color: #ff0000;
-}
+} */
 
 /* Área dos botões */
 .botoes_popup_resultado {
