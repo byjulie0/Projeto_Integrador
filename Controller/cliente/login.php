@@ -17,19 +17,19 @@ include '../utils/libras.php'
 
 <body>
 
-    <?php
+    <!-- <?php
     // Exibir pop-up de erro se houver
       if (isset($_GET['error'])) {
 
         echo '<script> alert("OI") </script>';
 
-          $texto = $_SESSION['popup_message'];
+          // $texto = $_SESSION['popup_message'];
           include '../overlays/pop_up_erro.php';
           unset($_SESSION['popup_type']);
           unset($_SESSION['popup_message']);
       }
 
-    ?>
+    ?> -->
   <main class="container_geral_login">
 
     <div class="login_box_vinycius">

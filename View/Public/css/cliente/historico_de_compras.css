@@ -107,6 +107,14 @@
   color: transparent;
 }
 
+.botao_vermelho{
+  background-color: var(--color-botao-op-Cancelar);
+  color: var(--color-icones);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
 /* RESPONSIVIDADE */
 @media screen and (max-width: 360px) {
   .container_historico_compras{
