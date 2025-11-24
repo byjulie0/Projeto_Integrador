@@ -13,7 +13,7 @@
         <h1 class="area_popup_resultado erro">Erro!</h1>
         <p class="texto_pop_up">
             <?php
-            $texto = "";
+            $texto = $texto;
             ?>
         </p>
         <button class="fechar_popup_resultado" onclick="window.history.back(); return false;">&times;</button>

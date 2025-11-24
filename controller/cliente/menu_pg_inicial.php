@@ -45,6 +45,7 @@ $exibirNossaHistoria = ($paginaAtual === 'pg_inicial_cliente.php');
                     </ul>
                 </li>
                 <li><a href="categoria_produtos.php?id_categoria=4" class="nav-item-pg-inicial">Premiados</a></li>
+                
                 <?php if($exibirNossaHistoria): ?>
                 <li><a href="#section-nossa-historia" class="nav-item-pg-inicial">Nossa história</a></li>
                 <?php endif; ?>

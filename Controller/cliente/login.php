@@ -16,6 +16,19 @@ include '../utils/libras.php'
 </head>
 
 <body>
+    <?php
+    // Exibir pop-up de erro se houver
+      if (isset($_GET['error'])) {
+
+        // echo '<script> alert("OI") </script>';
+
+          $texto = $_SESSION['popup_message'];
+          include '../overlays/pop_up_erro.php';
+          unset($_SESSION['popup_type']);
+          unset($_SESSION['popup_message']);
+      }
+
+    ?>
   <main class="container_geral_login">
 
     <div class="login_box_vinycius">
@@ -62,6 +75,48 @@ include '../utils/libras.php'
     </div>
   </main>
   <?php include 'footer_cliente.php'; ?>
+<<<<<<< HEAD
+
+
+
+=======
+  <div id="popup-inativo" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Conta desativada</h2>
+    <p>Sua conta está <strong>inativa</strong>. Por favor, entre em contato com o suporte para reativá-la.</p>
+    <div id="btn-fechar-popup" style="display:inline-block;">
+        <?php
+            $texto = "Entendi";
+            include 'botao_verde_cliente.php';
+        ?>
+    </div>
+  </div>
+</div>
+>>>>>>> 273eb6690581f0434a084585fd41bc0378498744
 </body>
 
 </html>
+<script>
+// Função para obter parâmetros da URL
+function getQueryParam(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const erro = getQueryParam("error");
+
+  if (erro === "usuario_inativo") {
+    const popup = document.getElementById("popup-inativo");
+    popup.style.display = "flex";
+
+    const btnFechar = document.getElementById("btn-fechar-popup");
+    btnFechar.addEventListener("click", function () {
+      popup.style.display = "none";
+
+      const cleanUrl = window.location.pathname;
+      window.history.replaceState(null, "", cleanUrl);
+    });
+  }
+});
+</script>
