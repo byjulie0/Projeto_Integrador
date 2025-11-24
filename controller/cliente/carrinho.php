@@ -164,6 +164,16 @@ include 'menu_pg_inicial.php';
         </section>
     </div>
 
+    <!-- Script para redirecionar após sucesso do pedido -->
+    <script>
+        <?php if (isset($_GET['pedido_sucesso']) && $_GET['pedido_sucesso'] == 1): ?>
+            // Aguarda 3 segundos e redireciona para limpar carrinho e ir ao histórico
+            setTimeout(function () {
+                window.location.href = '../utils/limpar_carrinho.php';
+            }, 3000);
+        <?php endif; ?>
+    </script>
+
     <?php include 'footer_cliente.php'; ?>
 </body>
 
