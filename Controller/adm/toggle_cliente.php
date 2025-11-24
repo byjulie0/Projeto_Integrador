@@ -1,8 +1,13 @@
 <?php
-include '../../model/DB/conexao.php';
+include __DIR__ . "/../../model/DB/conexao.php";
+
+if (!$con) {
+    echo json_encode(["success" => false, "erro" => "sem_conexao"]);
+    exit;
+}
 
 if (!isset($_POST['id_cliente'])) {
-    echo json_encode(["success" => false]);
+    echo json_encode(["success" => false, "erro" => "id_nao_enviado"]);
     exit;
 }
 
@@ -17,10 +22,9 @@ $stmt->fetch();
 $stmt->close();
 
 if (!isset($ativo)) {
-    echo json_encode(["success" => false]);
+    echo json_encode(["success" => false, "erro" => "cliente_nao_existe"]);
     exit;
 }
-
 
 $novoStatus = $ativo == 0 ? 1 : 0;
 
@@ -34,4 +38,3 @@ echo json_encode([
     "success" => $success,
     "novo_status" => $novoStatus
 ]);
-?>
