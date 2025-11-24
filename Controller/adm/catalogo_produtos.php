@@ -39,7 +39,7 @@ include 'menu_inicial.php';
                 </form>
 
             </div>
-            <hr class="break-line">
+            <!-- <hr class="break-line"> -->
             <!-- ?status=inativados -->
             <div id="table2-atualizar-produtos">
                 <div id="table-space-atualizar-produtos">
