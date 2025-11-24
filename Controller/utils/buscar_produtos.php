@@ -1,15 +1,8 @@
 <?php
 include '../../model/DB/conexao.php';
 
-if (isset($_GET['status'])) {
-    echo 'Status: ' . $_GET['status'];  
-} else {
-    echo 'Status não definido';
-}
-
 $busca = isset($_POST['busca']) ? trim($_POST['busca']) : '';
 $status = isset($_GET['status']) ? $_GET['status'] : 'todos';
-
 
 $sql = "SELECT
             p.id_produto,
@@ -17,19 +10,21 @@ $sql = "SELECT
             c.cat_nome AS categoria,
             s.subcat_nome AS subcategoria,
             p.valor AS preco,
-            p.produto_ativo
+            p.produto_ativo,
+            p.quant_estoque
         FROM produto p
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
         LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria";
 
-
 $where = [];
 
 
-if ($status === 1) {
-    $where[] = "p.produto_ativo = 1"; 
-} elseif ($status === 2) {
-    $where[] = "p.produto_ativo = 0"; 
+$status = isset($_GET['status']) ? $_GET['status'] : 'todos';
+
+if ($status === 'ativos') {
+    $where[] = "p.produto_ativo = 1";
+} elseif ($status === 'inativos') {
+    $where[] = "p.produto_ativo = 0";
 }
 
 
@@ -42,9 +37,7 @@ if (count($where) > 0) {
     $sql .= " WHERE " . implode(' AND ', $where);
 }
 
-
 $sql .= " ORDER BY p.prod_nome ASC";
-
 
 $result = $con->query($sql);
 
