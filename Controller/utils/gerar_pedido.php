@@ -96,14 +96,17 @@ if ($result && $result->num_rows > 0) {
 
             }
             // notificação adm baixo estoque fim
+
+
+            // trigger inativar produto
             elseif ($qtd_estoque['quant_estoque'] == 0){
 
                 $sql_inativo = "UPDATE produto SET produto_ativo = 0 WHERE id_produto = ?";
                 $query_inativo = $con->prepare($sql_inativo);
                 $query_inativo->bind_param("i",$id_prod);
 
-                //notificação adm inativo inicio
 
+                //notificação adm inativo inicio
                 $produto_id= $id_verif_prod;
                 $nome_produto = $item['prod_nome'];
                 $mensagem="O estoque do produto: {$nome_produto} ,chegou a zero e foi desativado!";
