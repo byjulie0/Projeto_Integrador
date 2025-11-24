@@ -26,36 +26,63 @@ include 'menu_inicial.php';
 <body>
     <main class="client-edit-main">
         <div class="client-edit-container">
-
             <form class="client-edit-form" method="POST" action="../utils/atualizar_adm.php">
-            <form class="client-edit-form">
                 <div class="client-edit-header">
                     <h1 class="client-edit-title"><a href="#" onclick="window.history.back(); return false;"><i class="bi bi-chevron-left"></a></i>Editar meus dados</h1>
                 </div>
 
                 <div class="client-edit-grid">
                     <div class="client-edit-column">
+
                         <div class="client-edit-field-group">
                             <label for="client-name" class="client-edit-label">Nome:</label>
-                            <input type="text" id="client-name" class="client-edit-input" placeholder="<?= htmlspecialchars($adm_atual['adm_nome']); ?>">
+                            <input 
+                                type="text" 
+                                id="client-name" 
+                                name="adm_nome"
+                                class="client-edit-input" 
+                                value="<?= htmlspecialchars($adm_atual['adm_nome']); ?>"
+                            >
                         </div>
-                        
+
                         <div class="client-edit-field-group">
                             <label for="client-email" class="client-edit-label">E-mail:</label>
-                            <input type="email" id="client-email" class="client-edit-input" placeholder="<?= htmlspecialchars($adm_atual['email']); ?>">
+                            <input 
+                                type="email" 
+                                id="client-email" 
+                                name="email"
+                                class="client-edit-input" 
+                                value="<?= htmlspecialchars($adm_atual['email']); ?>"
+                            >
                         </div>
+
                     </div>
-                    
+
                     <div class="client-edit-column">
+
                         <div class="client-edit-field-group">
                             <label for="client-phone" class="client-edit-label">Telefone:</label>
-                            <input type="tel" id="client-phone" class="client-edit-input" placeholder="<?= htmlspecialchars($adm_atual['telefone']); ?>">
+                            <input 
+                                type="tel" 
+                                id="client-phone" 
+                                name="telefone"
+                                class="client-edit-input" 
+                                value="<?= htmlspecialchars($adm_atual['telefone']); ?>"
+                            >
                         </div>
 
                         <div class="client-edit-field-group">
                             <label for="client-cnpj" class="client-edit-label">CNPJ:</label>
-                            <input type="text" id="client-cnpj" class="client-edit-input" placeholder="<?= htmlspecialchars($adm_atual['cnpj']); ?>" readonly>
+                            <input 
+                                type="text" 
+                                id="client-cnpj" 
+                                name="cnpj"
+                                class="client-edit-input" 
+                                value="<?= htmlspecialchars($adm_atual['cnpj']); ?>" 
+                                readonly
+                            >
                         </div>
+
                     </div>
                 </div>
 
@@ -63,12 +90,16 @@ include 'menu_inicial.php';
                     <a href="../cliente/formulario_altera_senha.php">
                         <button type="button" class="client-edit-password-btn">Alterar senha</button>
                     </a>
-                    <?php
-                        $texto = "Salvar";
-                        include 'botao_verde_adm.php';
+
+                    <?php 
+                        $texto = "Salvar"; 
+                        include 'botao_verde_adm.php'; 
                     ?>
                 </div>
+
+
             </form>
+
         </div>
     </main>
 </body>

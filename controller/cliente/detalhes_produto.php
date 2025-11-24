@@ -46,16 +46,22 @@ $id_produto = $_GET['id_produto'] ?? null;
 
         $imagemPrincipal = !empty($listaImagens[0])
             ? $listaImagens[0]
-            : 'view/public/imagens/default-thumbnail.jpg';
+            : '../../View/public/imagens/default-thumbnail.jpg';
         ?>
 
         <div class="galeria-detalhes-produto">
             <div class="miniaturas-detalhes-produto">
-                <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Miniatura 1">
-                <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Miniatura 2">
-                <img src="../../view/public/imagens/default-thumbnail.jpg" alt="Miniatura 3">
-                <!-- <img src="<php echo $produto['path_img']; ?>"
-                    alt="?php echo htmlspecialchars($produto['prod_nome']); ?>"> -->
+                <?php foreach ($imagens as $img): ?>
+
+                    <?php if ($img): ?>
+                        <img src="../../View/Public/<?php echo htmlspecialchars($img); ?>" alt="Miniatura">
+                    <?php else:
+                        $img = 'imagens/default-thumbnail.jpg'; ?>
+                        <img src="../../View/Public/<?php echo htmlspecialchars($img);  ?>" alt="Miniatura">
+
+                    <?php endif?>
+
+                <?php endforeach; ?>
             </div>
 
             <div class="imagem-grande-detalhes-produto">
@@ -74,9 +80,8 @@ $id_produto = $_GET['id_produto'] ?? null;
                 <h2><?php echo htmlspecialchars($produto['prod_nome']); ?></h2>
 
                 <div class="area-favorito">
-                <a class="btn-favorito" href="../utils/favoritar.php?id_produto=<?php echo $produto['id_produto']; ?>" data-id="<?= $id_produto ?>"
-                    data-favorito="<?= $ja_favoritado ? 'true' : 'false' ?>">
-                    <i class="fa<?= $ja_favoritado ? 's' : 'r' ?> fa-heart <?= $ja_favoritado ? 'favoritado' : '' ?>"></i>
+                <a class="btn-favorito" href="../utils/favoritar.php?id_produto=<?php echo $produto['id_produto']; ?>">
+                    <i class="fa-solid fa-heart red-heart"></i>
                 </a>
                 </div>
 

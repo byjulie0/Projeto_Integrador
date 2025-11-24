@@ -19,6 +19,7 @@ include 'menu_cadastro.php';
     <?php
     // Exibir pop-up de erro se houver
     if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'erro' && isset($_SESSION['popup_message'])) {
+
         $texto = $_SESSION['popup_message'];
         include '../overlays/pop_up_erro.php';
         unset($_SESSION['popup_type']);
@@ -108,6 +109,9 @@ include 'menu_cadastro.php';
 
     <script>
         <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+
+            
+
             setTimeout(function() {
                 window.location.href = 'login.php';
             }, 3000);

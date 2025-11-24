@@ -1,8 +1,8 @@
 <?php
 include '../utils/autenticado.php';
 if ($usuario_nao_logado) {
-  include '../overlays/pop_up_login.php';
-  exit;
+    include '../overlays/pop_up_login.php';
+    exit;
 }
 include '../utils/libras.php';
 include 'menu_pg_inicial.php';
@@ -19,7 +19,6 @@ include 'menu_pg_inicial.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <script defer src="../../view/js/cliente/carrinho.js"></script> -->
 </head>
 
 <body>
@@ -31,7 +30,7 @@ include 'menu_pg_inicial.php';
         unset($_SESSION['popup_type']);
         unset($_SESSION['popup_message']);
     }
-    
+
     if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'sucesso' && isset($_SESSION['popup_message'])) {
         $texto = $_SESSION['popup_message'];
         include '../overlays/pop_up_sucesso.php';
@@ -57,7 +56,7 @@ include 'menu_pg_inicial.php';
                 $result = $con->query($sql);
                 $totalGeral = 0;
                 $totalItems = 0;
-                
+
                 if ($result && $result->num_rows > 0) {
                     while ($itens = $result->fetch_assoc()) {
                         $total = $itens['valor'] * $itens['quantidade'];
@@ -69,7 +68,8 @@ include 'menu_pg_inicial.php';
 
                             <div class="product-title-area-carrinho">
                                 <div class="delete-item-btn-area-carrinho">
-                                    <a href="../utils/remove_carrinho.php?id_carrinho=<?php echo $itens['id_carrinho'];?>">Excluir</a>
+                                    <a
+                                        href="../utils/remove_carrinho.php?id_carrinho=<?php echo $itens['id_carrinho']; ?>">Excluir</a>
                                 </div>
                             </div>
 
@@ -77,7 +77,30 @@ include 'menu_pg_inicial.php';
 
                             <div class="product-carrinho">
                                 <div class="non-labeled-content-carrinho">
-                                    <img src="../../View/Public/<?php echo $itens['path_img']; ?>"
+                                    <!-- IMAGEM -->
+                                    <?php
+                                    $listaImagens = [];
+
+                                    if (!empty($itens['path_img'])) {
+                                        $path = trim($itens['path_img']);
+
+                                        if ($path[0] === '[') {
+                                            $listaImagens = json_decode($path, true);
+                                        } else {
+                                            $listaImagens = explode(',', $path);
+                                        }
+                                    }
+
+                                    $listaImagens = array_map(function ($img) {
+                                        return trim(str_replace('\\', '', $img));
+                                    }, $listaImagens);
+
+                                    $imagem = !empty($listaImagens[0])
+                                        ? $listaImagens[0]
+                                        : '../../View/public/imagens/default-thumbnail.jpg';
+                                    ?>
+                                    <!-- IMAGEM -->
+                                    <img src="../../View/Public/<?php echo htmlspecialchars($imagem); ?>"
                                         alt="<?php echo $itens['prod_nome']; ?>" class="product-img-carrinho">
 
                                     <div class="title-and-description-carrinho">
@@ -93,12 +116,14 @@ include 'menu_pg_inicial.php';
 
                                         <span class="quantity-carrinho"><?php echo $itens['quantidade']; ?></span>
 
-                                        <a class="change-quantity-btn-carrinho aumentar-btn" href="../utils/aumentar_carrinho.php?id_carrinho=<?php echo $itens['id_carrinho']; ?>">+</a>
+                                        <a class="change-quantity-btn-carrinho aumentar-btn"
+                                            href="../utils/aumentar_carrinho.php?id_carrinho=<?php echo $itens['id_carrinho']; ?>">+</a>
                                     </div>
                                 </div>
 
                                 <div class="labels-respective-content-carrinho">
-                                    <span class="product-total-price" data-price="<?php echo $total; ?>"><?php echo number_format($total, 2, ',', '.'); ?></span>
+                                    <span class="product-total-price"
+                                        data-price="<?php echo $total; ?>"><?php echo number_format($total, 2, ',', '.'); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -128,13 +153,13 @@ include 'menu_pg_inicial.php';
                 <?php
                 if ($totalItems > 0) { ?>
                     <a href="../utils/gerar_pedido.php">
-                    <?php
-                    $texto = "Fechar Pedido";
-                    include 'botao_verde_cliente.php';
-                    ?>
+                        <?php
+                        $texto = "Fechar Pedido";
+                        include 'botao_verde_cliente.php';
+                        ?>
                     </a>
-                <?php }?>
-                
+                <?php } ?>
+
             </div>
         </section>
     </div>
@@ -143,13 +168,13 @@ include 'menu_pg_inicial.php';
     <script>
         <?php if (isset($_GET['pedido_sucesso']) && $_GET['pedido_sucesso'] == 1): ?>
             // Aguarda 3 segundos e redireciona para limpar carrinho e ir ao histórico
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = '../utils/limpar_carrinho.php';
             }, 3000);
         <?php endif; ?>
     </script>
 
-    <?php include 'footer_cliente.php';?>
+    <?php include 'footer_cliente.php'; ?>
 </body>
 
 </html>

@@ -1,16 +1,30 @@
 <?php
 include '../utils/autenticado.php';
 if ($usuario_nao_logado) {
-  include '../overlays/pop_up_login.php';
-  exit;
+    include '../overlays/pop_up_login.php';
+    exit;
 }
 include 'menu_pg_inicial.php';
 
+$query = "SELECT
+            produto.id_produto,
+            produto.prod_nome,
+            produto.path_img,
+            produto.peso,
+            produto.idade,
+            produto.valor,
+            subcategoria.subcat_nome
+          FROM favorito
+          JOIN produto ON favorito.id_produto = produto.id_produto
+          JOIN subcategoria ON produto.id_subcategoria = subcategoria.id_subcategoria
+          WHERE favorito.id_cliente = ?";
 
-$query= "select * from favorito join produto on favorito.id_produto = produto.id_produto  join subcategoria on produto.id_subcategoria = subcategoria.id_subcategoria;";
-$result = mysqli_query($con,$query);
-
+$stmt = $con->prepare($query);
+$stmt->bind_param("i", $id_cliente);
+$stmt->execute();
+$result = $stmt->get_result();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -35,16 +49,16 @@ $result = mysqli_query($con,$query);
         <div class="lotes-wrapper">
             <div class="lotes_container_pg_favoritos" id="lotesContainerFavoritos">
                 <?php
-                while ($item = mysqli_fetch_array($result)) {
-                   $imagem = $item['path_img'];
-                    $nome = $item['prod_nome'];
-                    $id_produto = $item['id_produto'];
-                    $peso = $item['peso'];
-                    $raca = $item['subcat_nome'];
-                    $idade = $item['idade'];
-                    $preco = $item['valor'];
+                while ($row = $result->fetch_assoc()) {
+                    $nome = $row['prod_nome'];
+                    $id_produto = $row['id_produto'];
+                    $peso = $row['peso'];
+                    $raca = $row['subcat_nome'];
+                    $idade = $row['idade'];
+                    $preco = $row['valor'];
                     include 'card_favoritos.php';
                 }
+                $stmt->close();
                 ?>
             </div>
         </div>
