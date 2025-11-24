@@ -29,7 +29,7 @@ include 'menu_pg_inicial.php';
         
         <div class="divisao_pedidos_bloco">
         <?php if (!empty($pedidos)): ?>
-            <?php foreach ($pedidos as $pedido): ?>            
+            <?php foreach ($pedidos as $pedido): ?>
             <div class="area_historico_compras">
                 <div class="pedido_header">
                     <div class="div_data_pedido_pc">
@@ -60,7 +60,7 @@ include 'menu_pg_inicial.php';
             </div>
             <?php endforeach; ?>
         <?php endif ?>
-        </div> 
+        </div>
     </div>
 
 <?php include 'footer_cliente.php'; ?>

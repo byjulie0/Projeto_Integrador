@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../View/Public/css/adm/botoes_adm.css">
 </head>
 <body>
-    <button type="submit" class="generate_report_product_button botao_vermelho_adm">
+    <button type="reset" class="generate_report_product_button botao_vermelho_adm">
         <?= $texto ?>
     </button> 
      

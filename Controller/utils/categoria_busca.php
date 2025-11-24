@@ -20,7 +20,7 @@ $sql = "SELECT p.*, s.subcat_nome, c.cat_nome
         FROM produto p
         LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
-        WHERE p.id_categoria = $id_categoria AND p.produto_ativo = 1";
+        WHERE p.id_categoria = $id_categoria AND p.produto_ativo = 1 AND p.quant_estoque != 0";
 
 // Aplicar filtros específicos por categoria
 switch ($id_categoria) {

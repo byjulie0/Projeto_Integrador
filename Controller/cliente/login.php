@@ -1,7 +1,7 @@
 <?php
 include 'menu_login.php';
 include '../utils/libras.php'
-?>
+  ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,24 +16,22 @@ include '../utils/libras.php'
 </head>
 
 <body>
-    <?php
-    // Exibir pop-up de erro se houver
-      if (isset($_GET['error'])) {
+  <?php
+  // Exibir pop-up de erro se houver
+  if (isset($_GET['error'])) {
+    $texto = $_SESSION['popup_message'];
+    include '../overlays/pop_up_erro.php';
+    unset($_SESSION['popup_type']);
+    unset($_SESSION['popup_message']);
+  }
 
-        // echo '<script> alert("OI") </script>';
-
-          $texto = $_SESSION['popup_message'];
-          include '../overlays/pop_up_erro.php';
-          unset($_SESSION['popup_type']);
-          unset($_SESSION['popup_message']);
-      }
-
-    ?>
+  ?>
   <main class="container_geral_login">
 
     <div class="login_box_vinycius">
       <div class="info_login_vinycius">
-         <a href="pg_inicial_cliente.php"><img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo" ></a>
+        <a href="pg_inicial_cliente.php"><img class="img_login" src="../../view/public/imagens/logo_john_login.png"
+            alt="John Rooster Logo"></a>
         <p class="text_login_vinycius">
           Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo
           com qualidade e confiança para o seu negócio.
@@ -75,11 +73,7 @@ include '../utils/libras.php'
     </div>
   </main>
   <?php include 'footer_cliente.php'; ?>
-<<<<<<< HEAD
 
-
-
-=======
   <div id="popup-inativo" class="popup-overlay">
   <div class="popup-content">
     <h2>Conta desativada</h2>
@@ -92,7 +86,6 @@ include '../utils/libras.php'
     </div>
   </div>
 </div>
->>>>>>> 273eb6690581f0434a084585fd41bc0378498744
 </body>
 
 </html>

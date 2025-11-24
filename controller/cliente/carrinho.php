@@ -52,7 +52,7 @@ include 'menu_pg_inicial.php';
                 $sql = "SELECT c.id_carrinho, c.quantidade, p.prod_nome, p.path_img, p.descricao, p.valor
                         FROM carrinho c
                         JOIN produto p ON c.id_produto = p.id_produto
-                        WHERE c.id_cliente='$id_cliente' AND p.produto_ativo = 1";
+                        WHERE c.id_cliente='$id_cliente' AND p.produto_ativo = 1 AND p.quant_estoque != 0";
                 $result = $con->query($sql);
                 $totalGeral = 0;
                 $totalItems = 0;
