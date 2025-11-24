@@ -1,15 +1,7 @@
-
-
-
-
-
-
-
-
 @import url("../cliente.css");
 
 .body-detalhes-produto {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: var(--text-color);
   margin: 0;
   padding: 0;
@@ -19,7 +11,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  padding: 40px 5%;
+  padding: 10px 5%;
   align-items: start;
 }
 
@@ -46,7 +38,8 @@
 }
 
 .miniaturas-detalhes-produto img:hover {
-    border: 2px solid var(--color-primary-3);}
+  border: 2px solid var(--color-primary-3);
+}
 .imagem-grande-detalhes-produto {
   flex: 1;
 }
@@ -61,10 +54,21 @@
 .titulo-produto-detalhes-produto {
   display: flex;
   align-items: center;
-  gap: 10px;
+  padding-left: 70px;
+  padding-top: 50px;
+}
+
+.titulo-produto-detalhes-produto p,
+a {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
 }
 
 .area-favorito {
+  display: flex;
+  width: 100%;
   position: relative;
   /* garante que o botão fique dentro da área */
   display: inline-block;
@@ -96,7 +100,6 @@
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-
 }
 
 .div_info_prod {
@@ -159,7 +162,6 @@
   background-color: #4eaa4e;
 }
 
-
 .titulo-produto-detalhes-produto i {
   margin-right: 10px;
   color: var(--color-primary-4);
@@ -181,7 +183,13 @@ h2 {
   font-weight: 600;
   margin-top: 5%;
 }
-
+.informacao2{
+  display: none;
+  font-size: 25px;
+  color: var(--color-primary-1);
+  font-weight: 600;
+  margin-top: 5%;
+}
 .sub-descricao-detalhes-produto {
   padding: 20px 1%;
   text-align: justify;
@@ -191,6 +199,13 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  .informacao,
+  .informacao + p {
+    display: none;
+  }
+  .informacao2{
+    display: block;
+  }
   .main-detalhes-produto {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -255,6 +270,13 @@ h2 {
     width: 65px;
     height: 65px;
   }
+  .informacao,
+  .informacao + p {
+    display: none;
+  }
+  .informacao2{
+    display: block;
+  }
 }
 
 @media (max-width: 375px) {
@@ -265,6 +287,13 @@ h2 {
 
   .titulo-produto-detalhes-produto {
     font-size: 1.4rem;
+  }
+  .informacao,
+  .informacao + p {
+    display: none;
+  }
+  .informacao2{
+    display: block;
   }
 }
 
@@ -277,12 +306,26 @@ h2 {
   .preco-detalhes-produto {
     font-size: 20px;
   }
+  .informacao,
+  .informacao + p {
+    display: none;
+  }
+  .informacao2{
+    display: block;
+  }
 }
 
 @media (max-width: 320px) {
   .miniaturas-detalhes-produto img {
     width: 50px;
     height: 50px;
+  }
+  .informacao,
+  .informacao + p {
+    display: none;
+  }
+  .informacao2{
+    display: block;
   }
 
   .botao-carrinho-detalhes-produto,
