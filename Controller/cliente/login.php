@@ -23,7 +23,7 @@ include '../utils/libras.php'
 
         echo '<script> alert("OI") </script>';
 
-          $texto = $_SESSION['popup_message'];
+          // $texto = $_SESSION['popup_message'];
           include '../overlays/pop_up_erro.php';
           unset($_SESSION['popup_type']);
           unset($_SESSION['popup_message']);
