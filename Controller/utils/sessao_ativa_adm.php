@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION["telefone"] = $retorno['telefone'];
         $_SESSION["cnpj"] = $retorno['cnpj'];
         $_SESSION["funcao"] = $retorno['funcao'];
-        header("Location: ../adm/pg_inicial_adm.php");
+        header("Location: ../adm/relatorios_visualizar.php");
         exit();
     } else {
         $_SESSION['erro'] = 1;
