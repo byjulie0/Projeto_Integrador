@@ -2,7 +2,7 @@
 include '../../model/DB/conexao.php';
 
 if (isset($_GET['status'])) {
-    echo 'Status: ' . $_GET['status'];  
+    echo 'Status: ' . $_GET['status'];
 } else {
     echo 'Status não definido';
 }
@@ -27,9 +27,9 @@ $where = [];
 
 
 if ($status === 1) {
-    $where[] = "p.produto_ativo = 1"; 
+    $where[] = "p.produto_ativo = 1";
 } elseif ($status === 2) {
-    $where[] = "p.produto_ativo = 0"; 
+    $where[] = "p.produto_ativo = 0";
 }
 
 
