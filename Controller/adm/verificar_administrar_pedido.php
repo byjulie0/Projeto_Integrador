@@ -50,7 +50,7 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
                     </div>
                 </div>
             </div>
-            <hr class="verificar_administrar_pedidos_sessao_divisao">
+            <!-- <hr class="verificar_administrar_pedidos_sessao_divisao"> -->
         </section>
 
         <div class="verificar_administrar_pedidos_sessao_visualizar">

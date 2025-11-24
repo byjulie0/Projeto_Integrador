@@ -149,7 +149,7 @@
 .tabela-pedidos {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-top: 30px;
   font-size: 14px;
   background-color: #fff;
   border-radius: 8px;
@@ -158,10 +158,10 @@
 }
 
 .tabela-pedidos th {
-  background: linear-gradient(135deg, #dbf3d4ff, #c5e8b7);
+  background-color: #c5e8b7;
   color: #2c3e50;
   padding: 12px 15px;
-  text-align: left;
+  text-align: center;
   font-weight: 600;
   border-bottom: 2px solid #b8d9a3;
 }
@@ -169,11 +169,12 @@
 .tabela-pedidos td {
   border-bottom: 1px solid #e0e0e0;
   padding: 12px 15px;
-  text-align: left;
+  text-align: center;
+  color: var(--color-primary-1);
 }
 
 .tabela-pedidos tr:nth-child(even) {
-  background-color: #f8fdf5;
+    background-color: #f1f6f1;
 }
 
 .tabela-pedidos tr:hover {
