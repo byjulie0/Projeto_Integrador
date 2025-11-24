@@ -39,10 +39,11 @@ include 'menu_pg_inicial.php';
                         </p>
                     </div>
                     <div class="botao_cancelar">
-                    <a href="../utils/cancelar_pedido_cliente.php?id=<?= $pedido['id_pedido'] ?>" class="botao_vermelho">
-                        Cancelar Pedido
-                    </a>
-
+                        <?php if ($pedido['status_pedido'] != 'Cancelado'): ?>
+                            <a href="../utils/cancelar_pedido_cliente.php?id=<?= $pedido['id_pedido'] ?>" class="botao_vermelho">
+                                Cancelar Pedido
+                            </a>
+                        <?php endif; ?>
                     </div>
                 </div>
                 
