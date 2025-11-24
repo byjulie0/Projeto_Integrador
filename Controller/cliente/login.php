@@ -1,7 +1,7 @@
 <?php
 include 'menu_login.php';
 include '../utils/libras.php'
-?>
+  ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,25 +16,22 @@ include '../utils/libras.php'
 </head>
 
 <body>
+  <?php
+  // Exibir pop-up de erro se houver
+  if (isset($_GET['error'])) {
+    $texto = $_SESSION['popup_message'];
+    include '../overlays/pop_up_erro.php';
+    unset($_SESSION['popup_type']);
+    unset($_SESSION['popup_message']);
+  }
 
-    <?php
-    // Exibir pop-up de erro se houver
-      if (isset($_GET['error'])) {
-
-        echo '<script> alert("OI") </script>';
-
-          $texto = $_SESSION['popup_message'];
-          include '../overlays/pop_up_erro.php';
-          unset($_SESSION['popup_type']);
-          unset($_SESSION['popup_message']);
-      }
-
-    ?>
+  ?>
   <main class="container_geral_login">
 
     <div class="login_box_vinycius">
       <div class="info_login_vinycius">
-         <a href="pg_inicial_cliente.php"><img class="img_login" src="../../view/public/imagens/logo_john_login.png" alt="John Rooster Logo" ></a>
+        <a href="pg_inicial_cliente.php"><img class="img_login" src="../../view/public/imagens/logo_john_login.png"
+            alt="John Rooster Logo"></a>
         <p class="text_login_vinycius">
           Aqui você encontra bovinos, galináceos, equinos e diversos produtos para o ramo agropecuário, tudo
           com qualidade e confiança para o seu negócio.
@@ -53,7 +50,7 @@ include '../utils/libras.php'
               <i id="icone_senha" class="fa-solid fa-eye"></i>
             </span>
           </div>
-          <div class="g-recaptcha" data-sitekey="6LdyqOUrAAAAAGCnu7xdDfJ4QovvUsJMRuOgUvOa" ></div>
+          <div class="g-recaptcha" data-sitekey="6LdyqOUrAAAAAGCnu7xdDfJ4QovvUsJMRuOgUvOa"></div>
 
           <div class="btn-submit-login">
             <?php
@@ -76,42 +73,43 @@ include '../utils/libras.php'
     </div>
   </main>
   <?php include 'footer_cliente.php'; ?>
+
   <div id="popup-inativo" class="popup-overlay">
-  <div class="popup-content">
-    <h2>Conta desativada</h2>
-    <p>Sua conta está <strong>inativa</strong>. Por favor, entre em contato com o suporte para reativá-la.</p>
-    <div id="btn-fechar-popup" style="display:inline-block;">
+    <div class="popup-content">
+      <h2>Conta desativada</h2>
+      <p>Sua conta está <strong>inativa</strong>. Por favor, entre em contato com o suporte para reativá-la.</p>
+      <div id="btn-fechar-popup" style="display:inline-block;">
         <?php
-            $texto = "Entendi";
-            include 'botao_verde_cliente.php';
+        $texto = "Entendi";
+        include 'botao_verde_cliente.php';
         ?>
+      </div>
     </div>
   </div>
-</div>
 </body>
 
 </html>
 <script>
-// Função para obter parâmetros da URL
-function getQueryParam(name) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(name);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const erro = getQueryParam("error");
-
-  if (erro === "usuario_inativo") {
-    const popup = document.getElementById("popup-inativo");
-    popup.style.display = "flex";
-
-    const btnFechar = document.getElementById("btn-fechar-popup");
-    btnFechar.addEventListener("click", function () {
-      popup.style.display = "none";
-
-      const cleanUrl = window.location.pathname;
-      window.history.replaceState(null, "", cleanUrl);
-    });
+  // Função para obter parâmetros da URL
+  function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
   }
-});
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const erro = getQueryParam("error");
+
+    if (erro === "usuario_inativo") {
+      const popup = document.getElementById("popup-inativo");
+      popup.style.display = "flex";
+
+      const btnFechar = document.getElementById("btn-fechar-popup");
+      btnFechar.addEventListener("click", function () {
+        popup.style.display = "none";
+
+        const cleanUrl = window.location.pathname;
+        window.history.replaceState(null, "", cleanUrl);
+      });
+    }
+  });
 </script>

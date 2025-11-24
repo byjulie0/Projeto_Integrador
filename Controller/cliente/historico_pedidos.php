@@ -29,7 +29,7 @@ include 'menu_pg_inicial.php';
         
         <div class="divisao_pedidos_bloco">
         <?php if (!empty($pedidos)): ?>
-            <?php foreach ($pedidos as $pedido): ?>            
+            <?php foreach ($pedidos as $pedido): ?>
             <div class="area_historico_compras">
                 <div class="pedido_header">
                     <div class="div_data_pedido_pc">
@@ -39,10 +39,10 @@ include 'menu_pg_inicial.php';
                         </p>
                     </div>
                     <div class="botao_cancelar">
-                        <?php
-                            $texto = "Cancelar";
-                            include 'botao_vermelho_cliente.php';
-                        ?>
+                    <a href="../utils/cancelar_pedido_cliente.php?id=<?= $pedido['id_pedido'] ?>" class="botao_vermelho">
+                        Cancelar Pedido
+                    </a>
+
                     </div>
                 </div>
                 
