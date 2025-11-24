@@ -17,7 +17,7 @@ include '../utils/libras.php'
 
 <body>
 
-    <?php
+    <!-- <?php
     // Exibir pop-up de erro se houver
       if (isset($_GET['error'])) {
 
@@ -29,7 +29,7 @@ include '../utils/libras.php'
           unset($_SESSION['popup_message']);
       }
 
-    ?>
+    ?> -->
   <main class="container_geral_login">
 
     <div class="login_box_vinycius">
