@@ -1,16 +1,4 @@
 @import url("../adm.css");
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    box-sizing: border-box;
-}
-  
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}  
   
 #atualizar-produtos {
     background-color: #fff;
@@ -156,7 +144,7 @@ body {
 #table-space-atualizar-produtos table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
+    margin-top: 30px;
     font-size: 14px;
     background-color: #fff;
     border-radius: 8px;

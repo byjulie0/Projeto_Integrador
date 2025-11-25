@@ -49,7 +49,7 @@
                         <tr>
                             <th>Nome do cliente</th>
                             <th>CPF</th>
-                            <th>Data de cadastro</th>
+                            <th>Data de Nascimento</th>
                             <th>Inativar</th>
                             <th>Status</th>
                         </tr>

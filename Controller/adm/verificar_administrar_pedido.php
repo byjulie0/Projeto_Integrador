@@ -25,7 +25,7 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
                             class="verificar_administrar_pedidos_sessao_seta_voltar">
                             <i class="bi bi-chevron-left"></i>
                         </a>
-                        <h1>Verificar e administrar pedidos</h1>
+                        <h3>Verificar e administrar pedidos</h3>
                     </div>
 
                     <div class="first-container-atualizar-produtos">
