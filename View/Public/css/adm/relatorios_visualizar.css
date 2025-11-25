@@ -14,11 +14,6 @@
   justify-content: flex-start;
   gap: 25px
 }
-.titulo_seta{
-  display: flex;
-  flex-direction: row;
-
-}
 
 .relatorios_header h1 {
   margin: 10px 0 10px 0;
@@ -33,16 +28,12 @@
   border-radius: 50%;
 }
 
-
-
-/* Grid principal reorganizado */
 .relatorios_main {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-/* Cards do topo - layout melhorado */
 .relatorios_cards_topo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -52,7 +43,7 @@
 
 .card_topo {
   padding: 20px;
-  background: linear-gradient(135deg, #dfefd1ff, #c8e4b8);
+  background: #dbf3d4ff;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -78,7 +69,6 @@
 }
 
 .card_topo i.fa-chevron-right {
-  /* bottom: 15px; */
   color: var(--color-primary-1);
   font-size: 14px;
 }
@@ -90,9 +80,8 @@
   display: block;
 }
 
-/* Card de estatísticas - MESMO TAMANHO PARA TODOS */
 .card_estatisticas {
-  background: linear-gradient(135deg, #dbf3d4ff, #c5e8b7);
+  background: #dbf3d4ff;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -113,7 +102,6 @@
   width: 100%;
 }
 
-/* Contêineres de gráfico - TAMANHO UNIFICADO */
 .grafico-container {
   width: 100%;
   height: 300px;
@@ -130,14 +118,12 @@
   height: auto !important;
 }
 
-/* Container específico para gráfico de pizza */
 #graficoEstatisticas {
   max-width: 280px !important;
   max-height: 280px !important;
   margin: 0 auto;
 }
 
-/* Linha de gráficos - MESMO TAMANHO */
 .grafico-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -146,7 +132,7 @@
 }
 
 .grafico-barra, .grafico-linha {
-  background: linear-gradient(135deg, #dbf3d4ff, #c5e8b7);
+  background: #dbf3d4ff;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -167,23 +153,20 @@
   width: 100%;
 }
 
-/* AJUSTE CRÍTICO: Gráficos de barra e linha com MESMA LARGURA do gráfico de pizza */
 #graficoBarraEstatisticas,
 #graficoLinhaPedidos {
-  max-width: 280px !important; /* MESMA LARGURA DO GRÁFICO DE PIZZA */
+  max-width: 280px !important;
   max-height: 280px !important;
-  width: 280px !important; /* LARGURA FIXA IGUAL AO DE PIZZA */
+  width: 280px !important;
   height: 280px !important;
 }
 
-/* Ajuste específico para os containers dos gráficos de barra e linha */
 .grafico-barra .grafico-container,
 .grafico-linha .grafico-container {
-  width: 2320x !important; /* FORÇA A MESMA LARGURA */
+  width: 2320x !important;
   max-width: 280px !important;
 }
 
-/* Card de atividades recentes */
 .card_atividades {
   width: 90%;
   max-width: 1400px; 
