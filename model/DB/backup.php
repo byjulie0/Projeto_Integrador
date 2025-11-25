@@ -20,5 +20,5 @@ exec($command, $output, $return);
 ob_end_clean(); // Remove qualquer eco/print que tenha ocorrido
 
 // Redirecionar de volta para o painel do ADM
-header("Location: ../../controller/adm/pg_inicial_adm.php");
+header("Location: ../../controller/adm/relatorios_visualizar.php");
 exit;
