@@ -8,17 +8,17 @@
     <script defer src="../../view/js/adm/pop_up.js"></script>
 </head>
 <body>
-<div class="popup_resultado" style="display: flex;">
-    <div class="area_popup_resultado">
-        <h1 class="area_popup_resultado erro">Erro!</h1>
-        <p class="texto_pop_up">
-            <?php
-            $texto = $texto;
-            ?>
-        </p>
-        <button class="fechar_popup_resultado" onclick="window.history.back(); return false;">&times;</button>
-        <p><?= $texto ?></p>
+    <div class="popup_resultado" style="display: flex;">
+        <div class="area_popup_resultado">
+            <h1 class="area_popup_resultado erro">Erro!</h1>
+            <p class="texto_pop_up">
+                <?php
+                $texto = $texto;
+                ?>
+            </p>
+            <button class="fechar_popup_resultado" onclick="window.history.back(); return false;">&times;</button>
+            <p><?= $texto ?></p>
+        </div>
     </div>
-</div>
 </body>
 </html>
