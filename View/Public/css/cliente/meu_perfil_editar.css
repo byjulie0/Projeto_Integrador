@@ -9,13 +9,14 @@
     margin: 0 auto;
     width: 100%;
 }
-.client-edit-headerr {
+.client-edit-header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 2.5rem;
     color: var(--color-primary-1);
+    gap: 10px;
 }
 .bi-chevron-left{
     font-size: 30px;
@@ -30,7 +31,6 @@
     font-weight: 700;
     display: flex;
     color: var(--color-primary-1);
-    margin: 0 0 20px 0;
     text-align: left;
 
 }
