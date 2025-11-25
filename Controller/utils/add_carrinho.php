@@ -1,57 +1,71 @@
 <?php
 include '../utils/autenticado.php';
+
 if ($usuario_nao_logado) {
     include '../overlays/pop_up_login.php';
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
     $id_produto = $_GET['id_produto'] ?? null;
     $id_cliente = $_SESSION['id_cliente'] ?? null;
 
-    $sql_estoque = "SELECT quant_estoque FROM produto WHERE id_produto = ?";
-    $estoque_query = $con->prepare($sql_estoque);
-    $estoque_query->bind_param("i", $id_produto);
-    $estoque_query->execute();
-    $estoque_result = $estoque_query->get_result();
-    $estoque_data = $estoque_result->fetch_assoc();
-    $quantidade_em_estoque = $estoque_data['quant_estoque'] ?? 0;
-    $estoque_query->close();
+    $sql = "SELECT quant_estoque FROM produto WHERE id_produto = ?";
+    $query = $con->prepare($sql);
+    $query->bind_param("i", $id_produto);
+    $query->execute();
 
-    $sql_check_carrinho = "SELECT quantidade FROM carrinho WHERE id_cliente = ? AND id_produto = ?";
-    $check_carrinho_query = $con->prepare($sql_check_carrinho);
-    $check_carrinho_query->bind_param("ii", $id_cliente, $id_produto);
-    $check_carrinho_query->execute();
-    $check_carrinho_result = $check_carrinho_query->get_result();
+    $result = $query->get_result();
+    $result = $result->fetch_assoc();
+    $estoque_atual = $result['quant_estoque'] ?? 0;
+    $query->close();
 
-    if ($check_carrinho_result->num_rows > 0) {
-        $carrinho_data = $check_carrinho_result->fetch_assoc();
-        $quantidade_no_carrinho = $carrinho_data['quantidade'];
-        $check_carrinho_query->close();
-        // 2 é para quando a pessoa quer adicionar o produto mais 1 vez no carrinho, mas aquele produto já está com o limite maximo
-        if (($quantidade_no_carrinho + 1) > $quantidade_em_estoque) {
-            header("Location: ../cliente/detalhes_produto.php?id_produto=" . $id_produto . "&erro_estoque=2");
-            exit;
-        }
+    // Consulta para ver se existe o item no carrinho
+    $sql = "SELECT quantidade FROM carrinho WHERE id_cliente = ? AND id_produto = ?";
+    $query = $con->prepare($sql);
+    $query->bind_param("ii", $id_cliente, $id_produto);
+    $query->execute();
+    $result = $query->get_result();
 
-        $sql_update = "UPDATE carrinho SET quantidade = quantidade + 1 WHERE id_cliente = ? AND id_produto = ?";
-        $update_query = $con->prepare($sql_update);
-        $update_query->bind_param("ii", $id_cliente, $id_produto);
-        $update_query->execute();
-        $update_query->close();
+    // Se existe o item, adiciona + 1
+    if ($result->num_rows > 0) {
 
-    } else {
-        if ($quantidade_em_estoque < 1) {
-            // 1 é para quando a pessoa quer adicionar um item que aparece nos favoritos mas o estoque acabou
+        $result = $result->fetch_assoc();
+        $qtde_cart = $result['quantidade'];
+        $query->close();
+
+        // 1 é para quando a pessoa quer adicionar o produto mais 1 vez no carrinho
+        //  mas aquele produto já está com o limite maximo
+        if (($qtde_cart + 1) > $estoque_atual) {
+
             header("Location: ../cliente/detalhes_produto.php?id_produto=" . $id_produto . "&erro_estoque=1");
             exit;
         }
 
-        $sql_insert = "INSERT INTO carrinho (id_produto, quantidade, selecionado, id_cliente) VALUES (?, 1, 1, ?)";
-        $insert_query = $con->prepare($sql_insert);
-        $insert_query->bind_param("ii", $id_produto, $id_cliente);
-        $insert_query->execute();
-        $insert_query->close();
+        // Se ainda tem como adicionar, adiciona
+        $sql = "UPDATE carrinho SET quantidade = quantidade + 1 WHERE id_cliente = ? AND id_produto = ?";
+        $query = $con->prepare($sql_update);
+        $query->bind_param("ii", $id_cliente, $id_produto);
+        $query->execute();
+        $query->close();
+
+    } else {
+
+        // 2 é para quando a pessoa quer adicionar um item que aparece nos favoritos
+        //  mas o estoque acabou
+        if ($estoque_atual < 1) {
+
+            header("Location: ../cliente/detalhes_produto.php?id_produto=" . $id_produto . "&erro_estoque=2");
+            exit;
+        }
+
+        // Se o produto não está no carrinho e ele tem estoque, adiciona ao carrinho
+        $sql = "INSERT INTO carrinho (id_produto, quantidade, selecionado, id_cliente) VALUES (?, 1, 1, ?)";
+        $query = $con->prepare($sql_insert);
+        $query->bind_param("ii", $id_produto, $id_cliente);
+        $query->execute();
+        $query->close();
     }
 
     header("Location: ../cliente/carrinho.php");

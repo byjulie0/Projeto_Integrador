@@ -4,17 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PopUp Login</title>
-    <link rel="stylesheet" href="../../View/Public/css/cliente/pop_up_login.css">
+    <title>PopUp Estoque</title>
+    <link rel="stylesheet" href="../../view/public/css/adm/pop_up_resultado.css">
 </head>
 
 <body>
-    <div id="popup_login" class="login_popup">
-        <div class="area_login_popup">
-            <h2 class="h2_popup_login"><?php echo $titulo; ?><a href="#" onclick="window.history.back(); return false">X</a></h2>
-            <p><?php echo $mensagem; ?></p>
+    <div class="popup_resultado" style="display: flex;">
+        <div class="area_popup_resultado">
+            <h2 class="area_popup_resultado"><?php echo $titulo; ?>
+            <p class="texto_pop_up">
+                <?php echo htmlspecialchars($mensagem); ?>
+            </p>
+            <button class="fechar_popup_resultado" onclick="window.history.back(); return false;">&times;</button>
         </div>
     </div>
+    </div>
 </body>
-Não foi possivel adicionar ao carrinho!
 </html>

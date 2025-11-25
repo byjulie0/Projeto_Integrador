@@ -12,36 +12,34 @@ if ($pedido_id === 0) {
 
 try {
     $sql = "UPDATE pedido SET status_pedido = 'Concluído' WHERE id_pedido = ?";
-    $stmt = $con->prepare($sql);
-    $stmt->bind_param("i", $pedido_id);
-    $stmt->execute();
+    $query = $con->prepare($sql);
+    $query->bind_param("i", $pedido_id);
+    $query->execute();
 
-    // criar  notificação inicio
-    
-    $sql= "SELECT id_cliente FROM pedido WHERE id_pedido = ?";
+    // // criar  notificação inicio
+    // $sql= "SELECT id_cliente FROM pedido WHERE id_pedido = ?";
 
-    $stmt->bind_param("i", $pedido_id);
-    $stmt->execute();
-    $cliente_id_not=$stmt->get_result();
+    // $query->bind_param("i", $pedido_id);
+    // $query->execute();
+    // $cliente_id_not=$query->get_result();
 
 
-    if ($cliente_id_not && $cliente_id_not->num_rows > 0){
+    // if ($cliente_id_not && $cliente_id_not->num_rows > 0){
 
-        $row = $cliente_id_not->fetch_assoc();
-        $usuario_id= $row['id_cliente'];
-        $produto_id= $pedido_id;
-        $mensagem="Cliente, o seu pedido de Número: #{$pedido_id} foi concluido!";
-        $categoria="Pedidos";
+    //     $row = $cliente_id_not->fetch_assoc();
+    //     $usuario_id= $row['id_cliente'];
+    //     $produto_id= $pedido_id;
+    //     $mensagem="Cliente, o seu pedido de Número: #{$pedido_id} foi concluido!";
+    //     $categoria="Pedidos";
 
-        if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
-            echo "Notificação enviada com sucesso!";
-        } 
-        else {
-            echo "Erro ao enviar notificação.";
-        }
-    }
-
-    // criar  notificação fim
+    //     if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
+    //         echo "Notificação enviada com sucesso!";
+    //     }
+    //     else {
+    //         echo "Erro ao enviar notificação.";
+    //     }
+    // }
+    // // criar  notificação fim
 
     echo "<script>alert('Pedido concluído com sucesso!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
 } catch (Exception $e) {

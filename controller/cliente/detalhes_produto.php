@@ -1,15 +1,21 @@
 <?php
+
+// Pop up para erro ao adicionar no carrinho
 if (isset($_GET['erro_estoque']) && $_GET['erro_estoque'] == 1) {
+
+    $titulo = 'Não foi possivel adicionar ao carrinho!';
+    $mensagem = 'Este item está já no seu carrinho com a quantidade máxima.';
+    include '../overlays/pop_up_estoque.php';
+    
+} else if (isset($_GET['erro_estoque']) && $_GET['erro_estoque'] == 2) {
+
     $titulo = 'Não foi possivel adicionar ao carrinho!';
     $mensagem = 'Este item está indisponivel no site.';
     include '../overlays/pop_up_estoque.php';
-} else if (isset($_GET['erro_estoque']) && $_GET['erro_estoque'] == 2) {
-    $titulo = 'Não foi possivel atualizar o carrinho!';
-    $mensagem = 'Este item está no carrinho com a quantidade máxima.';
-    include '../overlays/pop_up_estoque.php';
-}
-include '../utils/detalhes_prod.php';
 
+}
+
+include '../utils/detalhes_prod.php';
 include 'menu_pg_inicial.php';
 
 $id_cliente = $_SESSION['id_cliente'] ?? null;

@@ -9,17 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    // Recaptcha
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        header('Location: ../cliente/login.php?error=nao_fez_login');
-        exit;
-    }
-
     $recaptcha_secret = getenv('RECAPTCHA_SECRET') ?: '6LdyqOUrAAAAAF1olqup_tnkbPYxEHydWJkhAgHO';
     $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
     if (empty($recaptcha_response)) {
-        header('Location: ../cliente/login.php?error=recaptcha_missing');
+        header('Location: ../cliente/login.php?error=recaptcha esta faltando');
         exit;
     }
 
@@ -39,25 +33,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $verification = json_decode($response, true);
 
     if (!(isset($verification['success']) && $verification['success'] === true)) {
-        header('Location: ../cliente/login.php?error=recaptcha_failed');
+        header('Location: ../cliente/login.php?error=recaptcha falhou');
         exit;
     }
 
     // Buscar cliente
-    $query = "SELECT id_cliente, cliente_nome, email, senha, cpf_cnpj, data_nasc, telefone, user_ativo 
-              FROM cliente 
+    $query = "SELECT id_cliente, cliente_nome, email, senha, cpf_cnpj, data_nasc, telefone, user_ativo
+              FROM cliente
               WHERE email = '{$email}'";
 
     $result = mysqli_query($con, $query);
 
     if (mysqli_num_rows($result) === 0) {
-        header("location: ../cliente/login.php?error=usuario_nao_encontrado");
+        header("location: ../cliente/login.php?error=email ou senha errado");
         exit();
     }
 
     $retorno = mysqli_fetch_assoc($result);
 
-    // 🔥 BLOQUEAR LOGIN SE O USUÁRIO ESTIVER INATIVO
     if ($retorno['user_ativo'] == 0) {
         header("location: ../cliente/login.php?error=usuario_inativo");
         exit();
@@ -77,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("location: ../cliente/pg_inicial_cliente.php");
         exit();
     } else {
-        header("location: ../cliente/login.php?error=login_errado");
+        header("location: ../cliente/login.php?error=email ou senha errado");
         exit();
     }
 }
