@@ -150,6 +150,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 8px;
 }
 
 #table-space-atualizar-produtos th {
@@ -328,13 +329,18 @@
     }
 }
 
-@media screen and (min-width: 361px) and (max-width: 390px) {
+@media screen and (min-width: 360px) and (max-width: 390px) {
     #atualizar-produtos {
         padding: 25px 20px;
     }
 
     #title-atualizar-produtos h3 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+    }
+    .botoes_filtros_produtos{
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
     }
 
     #search-bar-atualizar-produtos {

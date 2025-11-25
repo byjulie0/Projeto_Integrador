@@ -20,7 +20,7 @@
 .verificar_administrar_pedidos_sessao_seta_voltar_div {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 21px;
   margin-bottom: 20px;
 }
 
@@ -204,10 +204,13 @@
     padding: 20px 15px;
   }
 
-  .verificar_administrar_pedidos_sessao_bloco_info h1,
+  .verificar_administrar_pedidos_sessao_bloco_info h3,
   .verificar_administrar_pedidos_sessao_seta_voltar {
     margin-top: 10px;
     font-size: 18px;
+  }
+  .verificar_administrar_pedidos_sessao_seta_voltar_div{
+    gap: 5px;
   }
 
   .verificar_administrar_pedidos_sessao_formulario_pesquisa {
