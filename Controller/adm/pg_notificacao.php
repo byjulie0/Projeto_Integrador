@@ -8,8 +8,8 @@ if (!isset($_SESSION['id_adm'])) {
 
 $id_adm = $_SESSION['id_adm'];
 
-$sql = "SELECT tipo, mensagemtexto, data_recebida
-        FROM notificacoes
+$sql = "SELECT tipo, mensagem, data_recebida
+        FROM notificacoes_adm
         WHERE id_adm = $id_adm
         ORDER BY data_recebida DESC";
 
@@ -55,7 +55,7 @@ $query->close();
                             <p class="notification_date">
                                 <?= date("d/m/Y", strtotime($n["data_recebida"])) ?> - <?= htmlspecialchars($n["tipo"]) ?>
                             </p>
-                            <p class="notification_text"><?= htmlspecialchars($n["mensagemtexto"]) ?></p>
+                            <p class="notification_text"><?= htmlspecialchars($n["mensagem"]) ?></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
