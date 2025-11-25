@@ -76,8 +76,6 @@ mysqli_close($con);
 
 <body>
     <div class="relatorios_container">
-
-    
         <div class="relatorios_header"> 
             <div class="verificar_administrar_pedidos_sessao_periodo_bloco">
                 <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período:
@@ -128,35 +126,36 @@ mysqli_close($con);
     <div class="card_atividades">
         <h3>Atividades recentes</h3>
         <p>Últimos 10 pedidos registrados:</p>
-
-        <table class="tabela-pedidos">
-            <thead>
-                <tr>
-                    <th>Cod Pedido</th>
-                    <th>Cod Cliente</th>
-                    <th>Status</th>
-                    <th>Data</th>
-                    <th>Valor Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if (!empty($ultimos_pedidos)): ?>
-                    <?php foreach ($ultimos_pedidos as $pedido): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($pedido['id_pedido']); ?></td>
-                            <td><?php echo htmlspecialchars($pedido['id_cliente']); ?></td>
-                            <td><?php echo htmlspecialchars($pedido['status_pedido']); ?></td>
-                            <td><?php echo date('d/m/Y H:i', strtotime($pedido['data_pedido'])); ?></td>
-                            <td>R$ <?php echo number_format($pedido['valor'], 2, ',', '.'); ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                <?php else: ?>
+        <div class="table-responsive">
+            <table class="tabela-pedidos">
+                <thead>
                     <tr>
-                        <td colspan="5">Nenhum pedido encontrado.</td>
+                        <th>Cod Pedido</th>
+                        <th>Cod Cliente</th>
+                        <th>Status</th>
+                        <th>Data</th>
+                        <th>Valor Total</th>
                     </tr>
-                <?php endif; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php if (!empty($ultimos_pedidos)): ?>
+                        <?php foreach ($ultimos_pedidos as $pedido): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($pedido['id_pedido']); ?></td>
+                                <td><?php echo htmlspecialchars($pedido['id_cliente']); ?></td>
+                                <td><?php echo htmlspecialchars($pedido['status_pedido']); ?></td>
+                                <td><?php echo date('d/m/Y H:i', strtotime($pedido['data_pedido'])); ?></td>
+                                <td>R$ <?php echo number_format($pedido['valor'], 2, ',', '.'); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="5">Nenhum pedido encontrado.</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
 
         <div class="btn_imprimir" id="btnGerarPDF">
             <?php
