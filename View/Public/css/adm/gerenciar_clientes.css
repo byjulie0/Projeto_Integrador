@@ -344,3 +344,20 @@
     padding: 6px 8px;
   }
 }
+
+@media (max-width: 480px) {
+  #search-bar-gerenciar-clientes{
+    width: 50%;
+    min-width: 140%;
+    padding: 5px 10px;
+    align-items: center;
+    justify-content: center;
+    
+  
+  }
+  .first-container-gerenciar-clientes{
+    flex-direction: column;
+    
+    gap: 25px;
+  }
+}
