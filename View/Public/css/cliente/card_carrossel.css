@@ -33,7 +33,7 @@
 }
 .card_info_grid p {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1em;
     white-space: nowrap
 }
 .card_info_grid p:nth-child(odd) {
