@@ -29,11 +29,12 @@
   color: var(--color-primary-1);
 }
 
-.verificar_administrar_pedidos_sessao_bloco_info h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-primary-1);
+.verificar_administrar_pedidos_sessao_bloco_info h3 {
+    margin: 0;
+    padding: 0;
+    color: var(--color-primary-1);
+    font-size: 24px;
+
 }
 
 .verificar_administrar_pedidos_sessao_formulario_pesquisa {
