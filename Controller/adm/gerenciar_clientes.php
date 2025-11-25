@@ -40,7 +40,7 @@
             </form>
         </div>
 
-        <div id="break-line"></div>
+        <!-- <div id="break-line"></div> -->
 
         <div id="table2-gerenciar-clientes">
             <div id="table-space-gerenciar-clientes">

@@ -9,10 +9,15 @@
 
 .relatorios_header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: 25px
+}
+.titulo_seta{
+  display: flex;
+  flex-direction: row;
+
 }
 
 .relatorios_header h1 {
@@ -151,6 +156,7 @@
   align-items: center;
   justify-content: flex-start;
   height: 400px;
+  margin-top: 10px;
 }
 
 .grafico-barra h3, .grafico-linha h3 {
@@ -179,31 +185,41 @@
 
 /* Card de atividades recentes */
 .card_atividades {
-  background: white;
+  width: 90%;
+  max-width: 1400px; 
+  background-color: white;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
+  margin: 10px auto 20px auto; 
+  display: block; 
+
 }
 
 .card_atividades h3 {
   font-size: 20px;
   margin-bottom: 5px;
-  color: #2c3e50;
+  color: var(--color-primary-1);
 }
 
 .card_atividades > p {
-  color: #666;
+  color: var(--color-primary-1);
   margin-bottom: 20px;
 }
-
+.btn_imprimir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3% auto 0 auto; /* Centraliza o botão horizontalmente */
+  width: fit-content; /* O botão ocupa apenas o espaço necessário */
+}
 
 /* Período de datas */
 .verificar_administrar_pedidos_sessao_mini_titulos_1 {
   margin: 5px 0 15px 0;
   color: var(--color-primary-1);
   font-weight: normal;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .verificar_administrar_pedidos_sessao_titulo_destaque {
@@ -222,6 +238,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: color 0.3s;
+  font-size: 15px;
 }
 
 .verificar_administrar_pedidos_sessao_mini_titulos_2:hover {
@@ -233,15 +250,9 @@
   width: 100%;
   border: 1px solid #ddd;
   margin-top: 5px;
+  margin-bottom: 3%;
 }
 
-/* Botão de imprimir */
-.btn_imprimir {
-  align-items: center;
-  justify-content: center;
-  align-items: ce;
-  margin-top: 3%;
-}
 
 
 /* Tabela de pedidos */
@@ -257,10 +268,10 @@
 }
 
 .tabela-pedidos th {
-  background: linear-gradient(135deg, #dbf3d4ff, #c5e8b7);
+  background-color: #c5e8b7;
   color: #2c3e50;
   padding: 12px 15px;
-  text-align: left;
+  text-align: center;
   font-weight: 600;
   border-bottom: 2px solid #b8d9a3;
 }
@@ -268,11 +279,12 @@
 .tabela-pedidos td {
   border-bottom: 1px solid #e0e0e0;
   padding: 12px 15px;
-  text-align: left;
+  text-align: center;
+  color: var(--color-primary-1);
 }
 
 .tabela-pedidos tr:nth-child(even) {
-  background-color: #f8fdf5;
+    background-color: #f1f6f1;
 }
 
 .tabela-pedidos tr:hover {

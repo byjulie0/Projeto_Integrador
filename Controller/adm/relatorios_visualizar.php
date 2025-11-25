@@ -83,10 +83,13 @@ mysqli_close($con);
 
     
         <div class="relatorios_header"> 
-            <a href="#" onclick="window.history.back(); return false;" class="verificar_administrar_pedidos_sessao_seta_voltar"> 
-                <i class="bi bi-chevron-left"></i> 
-            </a>
-            <h1>Visualizar relatórios</h1>
+            <!-- <div class="titulo_seta">
+                <a href="#" onclick="window.history.back(); return false;" class="verificar_administrar_pedidos_sessao_seta_voltar"> 
+                    <i class="bi bi-chevron-left"></i> 
+               </a>
+               <h1>Visualizar relatórios</h1>
+            </div> -->
+        
             <div class="verificar_administrar_pedidos_sessao_periodo_bloco">
                 <h3 class="verificar_administrar_pedidos_sessao_mini_titulos_1">Mostrando relatórios referentes ao período:
                      <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida"><?php echo date('d/m/Y', strtotime($data_inicio)) . ' - ' . date('d/m/Y', strtotime($data_fim)); ?></span>
@@ -99,101 +102,96 @@ mysqli_close($con);
         </div>
 
         <div class="relatorios_main">
-    <div class="relatorios_cards_topo">
-        <!-- Card de Produtos -->
-        <div class="card_topo">
-            <i class="fa-solid fa-bag-shopping"></i>    Produtos <br> cadastrados: 
-            <b><?php echo $numero_produtos; ?></b> 
-            <!-- <i class="fa-solid fa-chevron-right"></i> -->
-        </div>
+            <div class="relatorios_cards_topo">
+                <!-- Card de Produtos -->
+                <div class="card_topo">
+                    <i class="fa-solid fa-bag-shopping"></i> Produtos <br> cadastrados: 
+                    <b><?php echo $numero_produtos; ?></b>
+                </div>
 
-        <!-- Card de Pedidos -->
-        <div class="card_topo">
-            <i class="fa-solid fa-cart-plus"></i>    Pedidos <br> gerados: 
-            <b><?php echo $numero_pedidos; ?></b>
-            <!-- <i class="fa-solid fa-chevron-right"></i> -->
-        </div>
+                <!-- Card de Pedidos -->
+                <div class="card_topo">
+                    <i class="fa-solid fa-cart-plus"></i> Pedidos <br> gerados: 
+                    <b><?php echo $numero_pedidos; ?></b>
+                </div>
 
-        <!-- Card de Usuários -->
-        <div class="card_topo">
-            <i class="fa-solid fa-users"></i>    Usuários <br> cadastrados: 
-            <b><?php echo $numero_usuarios; ?></b>
-            <!-- <i class="fa-solid fa-chevron-right"></i> -->
-        </div>
+                <!-- Card de Usuários -->
+                <div class="card_topo">
+                    <i class="fa-solid fa-users"></i> Usuários <br> cadastrados: 
+                    <b><?php echo $numero_usuarios; ?></b>
+                </div>
 
-        <!-- Gráfico de Estatísticas -->
-        <div class="card_estatisticas">
-            <h3>Estatísticas</h3>
-            <div class="grafico-container">
-                <canvas id="graficoEstatisticas"></canvas>
+                <!-- Gráfico de Pizza - Estatísticas -->
+                <div class="card_estatisticas">
+                    <h3>Estatísticas</h3>
+                    <div class="grafico-container">
+                        <canvas id="graficoEstatisticas"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Barra -->
+                <div class="grafico-barra">
+                    <h3>Número de Pedidos por Status</h3>
+                    <div class="grafico-container">
+                        <canvas id="graficoBarraEstatisticas"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Linha -->
+                <div class="grafico-linha">
+                    <h3>Pedidos ao Longo do Tempo</h3>
+                    <div class="grafico-container">
+                        <canvas id="graficoLinhaPedidos"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Contêiner para os gráficos de barra e linha -->
-    <div class="grafico-row">
-        <!-- Gráfico de Barra -->
-        <div class="grafico-container grafico-barra">
-            <canvas id="graficoBarraEstatisticas"></canvas>
-        </div>
-
-        
     </div>
 
-    <div class="grafico-row">
-                <!-- Gráfico de Linha -->
-        <div class="grafico-container grafico-linha">
-            <canvas id="graficoLinhaPedidos"></canvas>
-        </div>
-    </div>
-
-    </div>
-
-   
-
+    <!-- Card de Atividades Recentes -->
     <div class="card_atividades">
-        <h3>Atividades recentes: 77777</h3>
+        <h3>Atividades recentes</h3>
         <p>Últimos 10 pedidos registrados:</p>
 
-<table class="tabela-pedidos">
-    <thead>
-        <tr>
-            <th>Cod Pedido</th>
-            <th>Cod Cliente</th>
-            <th>Status</th>
-            <th>Data</th>
-            <th>Valor Total</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php if (!empty($ultimos_pedidos)): ?>
-            <?php foreach ($ultimos_pedidos as $pedido): ?>
+        <table class="tabela-pedidos">
+            <thead>
                 <tr>
-                    <td><?php echo htmlspecialchars($pedido['id_pedido']); ?></td>
-                    <td><?php echo htmlspecialchars($pedido['id_cliente']); ?></td>
-                    <td><?php echo htmlspecialchars($pedido['status_pedido']); ?></td>
-                    <td><?php echo date('d/m/Y H:i', strtotime($pedido['data_pedido'])); ?></td>
-                    <td>R$ <?php echo number_format($pedido['valor'], 2, ',', '.'); ?></td>
+                    <th>Cod Pedido</th>
+                    <th>Cod Cliente</th>
+                    <th>Status</th>
+                    <th>Data</th>
+                    <th>Valor Total</th>
                 </tr>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <tr><td colspan="5">Nenhum pedido encontrado.</td></tr>
-        <?php endif; ?>
-    </tbody>
-</table>
+            </thead>
+            <tbody>
+                <?php if (!empty($ultimos_pedidos)): ?>
+                    <?php foreach ($ultimos_pedidos as $pedido): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($pedido['id_pedido']); ?></td>
+                            <td><?php echo htmlspecialchars($pedido['id_cliente']); ?></td>
+                            <td><?php echo htmlspecialchars($pedido['status_pedido']); ?></td>
+                            <td><?php echo date('d/m/Y H:i', strtotime($pedido['data_pedido'])); ?></td>
+                            <td>R$ <?php echo number_format($pedido['valor'], 2, ',', '.'); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="5">Nenhum pedido encontrado.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
 
         <div class="btn_imprimir" id="btnGerarPDF">
             <?php
-            $texto = "Imprimir Relátorio";
+            $texto = "Imprimir Relatório";
             include 'botao_verde_adm.php';
             ?>
         </div>
-
     </div>
-</div>
-
-    </div>
-
-    <?php include "footer.php"; ?>
-
+    <footer> 
+        <?php include "footer.php"; ?>
+    </footer>
 
     <script>
         // Configuração unificada para todos os gráficos
