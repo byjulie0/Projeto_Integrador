@@ -53,7 +53,7 @@
 @media (max-width: 768px) {
     .card_cliente {
         max-width: 90%;
-        height: 300px;
+        height: 250px;
     }
 
     .card_cliente img {
@@ -91,11 +91,11 @@
 
     .card_cliente img {
         width: 140px;
-        height: 100px;
+        /* height: 100px; */
     }
 
     .card_info_grid p {
-        font-size: 0.20em;
+        font-size: 0.8em;
     }
 
     .card_preco {
