@@ -85,7 +85,7 @@ $id_produto = $_GET['id_produto'] ?? null;
                 <section class="sub-descricao-detalhes-produto">
                     <?php if ($produto['id_categoria'] != 5): ?>
                         <p><strong>Peso: </strong><?php echo $peso_formatado; ?></p>
-                        <p><strong>Data de nascimento: </strong><?php echo $produto['idade']; ?></p>
+                        <p><strong>Data de nascimento: </strong><?php echo date('d/m/Y', strtotime($produto['idade'])); ?></p>
                         <p><strong>Tipo: </strong><?php echo $produto['subcat_nome'] ?? 'Não categorizado'; ?></span></p>
                         <?php if ($produto['campeao']): ?>
                             <p><strong>Status:</strong> <span class="badge bg-success">Animal Campeão</span></p>
