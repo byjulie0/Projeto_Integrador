@@ -1,6 +1,8 @@
 <?php
 include '../utils/listar_produtos_adm.php';
 include 'menu_inicial.php';
+include '../../Controller/utils/buscar_produtos.php';
+$produtos = listar_produtos(); 
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
