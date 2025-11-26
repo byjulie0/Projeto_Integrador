@@ -1,9 +1,13 @@
 @import url("../cliente.css");
+header{
+    background-color: var(--color-primary-bg, #fff);
+}
 .texto-termos-e-condicoes{
     max-width: 100%;
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 10%;
+    margin-top: 2%;
     font-family: 'poppins', sans-serif;
     color: var(--color-primary-1);
 }
@@ -47,13 +51,19 @@
     color: inherit;
 }
 @media (min-width: 360px) and (max-width: 391px) {
+    .titulo-termos-e-condicoes{
+        font-size: 22px;
+    }
     .sub-titulo-termos-e-condicoes{
       padding-top: 20px;
+      font-size: 18px;
     }
     .sub-titulo2-termos-e-condicoes{
       padding-top: 20px;
+      font-size: 15px;
     }
     .texto-termos-e-condicoes {
       padding: 20px 6%;
+      font-size: 15px;
     }
 }
