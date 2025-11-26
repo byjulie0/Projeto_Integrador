@@ -51,13 +51,19 @@ header{
     color: inherit;
 }
 @media (min-width: 360px) and (max-width: 391px) {
+    .titulo-termos-e-condicoes{
+        font-size: 22px;
+    }
     .sub-titulo-termos-e-condicoes{
       padding-top: 20px;
+      font-size: 18px;
     }
     .sub-titulo2-termos-e-condicoes{
       padding-top: 20px;
+      font-size: 15px;
     }
     .texto-termos-e-condicoes {
       padding: 20px 6%;
+      font-size: 15px;
     }
 }
