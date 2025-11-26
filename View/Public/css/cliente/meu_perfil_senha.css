@@ -253,9 +253,14 @@
     .visualizar-dados-title {
         font-size: 1.5rem;
         text-align: left;
+        justify-content: flex-start; /* Alinha à esquerda */
     }
+    
     .header-arthura {
-        padding: 3% 5%;
+        margin-right: 10px;
+        justify-content: flex-start; /* Força alinhamento à esquerda */
+        padding: 4% 6%;
+        width: 100%;
     }
     .wrapper-arthura {
         width: 100%;

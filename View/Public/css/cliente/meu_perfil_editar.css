@@ -195,10 +195,13 @@
         padding: 0.625rem 0.75rem;
         font-size: 0.75rem;
     }
-    .client-edit-title-titulo h1{
+    .client-edit-title-titulo {
         display: flex;
         color: var(--color-primary-1);
-        font-size: 1rem;
+        font-size: 22px;
+    }
+    .bi-chevron-left{
+        font-size: 22px;
     }
 }
 @media (max-width: 768px) {
