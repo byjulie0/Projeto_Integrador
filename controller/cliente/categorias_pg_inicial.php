@@ -27,12 +27,12 @@
             </div>
 
             <div class="categoria_cards_pg_inicial">
-                <a href="categoria_produtos.php?id_categoria=5" class="card_categoria_pg_inicial card_produtos_pg_inicial_categorias">
+                <a href="categoria_produtos.php?id_categoria=4" class="card_categoria_pg_inicial card_produtos_pg_inicial_categorias">
                 </a>
             </div>
 
             <div class="categoria_cards_pg_inicial">
-                <a href="categoria_produtos.php?id_categoria=4" class="card_categoria_pg_inicial card_campeao_pg_inicial_categorias">
+                <a href="#campeoes" class="card_categoria_pg_inicial card_campeao_pg_inicial_categorias">
                 </a>
             </div>
         </div>
