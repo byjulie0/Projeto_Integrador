@@ -1,5 +1,6 @@
 @import url("../cliente.css");
-header{
+
+.div_principal{
     background-color: var(--color-primary-bg, #fff);
 }
 .texto-termos-e-condicoes{
@@ -16,6 +17,7 @@ header{
     align-items: center;
     gap: 20px;
     padding: 20px 10% 0;
+    margin-top: 10px;
 }
 .section-termos-e-condicoes{
     color: var(--color-fonte);
@@ -65,5 +67,11 @@ header{
     .texto-termos-e-condicoes {
       padding: 20px 6%;
       font-size: 15px;
+    }
+    .header-termos-container{
+        justify-content: left;
+        padding-left: 20px;
+        gap: 5px;
+
     }
 }
