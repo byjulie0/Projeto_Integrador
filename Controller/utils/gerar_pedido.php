@@ -1,7 +1,6 @@
 <?php
 session_start();
 include 'autenticado.php';
-include 'gerar_notificacao.php';
 
 if ($usuario_nao_logado) {
     include '../overlays/pop_up_login.php';
@@ -22,21 +21,9 @@ if ($result->num_rows > 0) {
     try {
         $con->begin_transaction();
 
-        // Verifica estoque antes de criar pedido
-        $estoque_suficiente = true;
-        $produtos_sem_estoque = [];
         $itens_data = [];
-        
         while ($item = $result->fetch_assoc()) {
             $itens_data[] = $item;
-            if ($item['quantidade'] > $item['quant_estoque']) {
-                $estoque_suficiente = false;
-                $produtos_sem_estoque[] = $item['prod_nome'];
-            }
-        }
-        
-        if (!$estoque_suficiente) {
-            throw new Exception("Estoque insuficiente para: " . implode(", ", $produtos_sem_estoque));
         }
 
         // Cria pedido
@@ -51,8 +38,9 @@ if ($result->num_rows > 0) {
         $id_pedido = $query->insert_id;
         $query->close();
 
-        // Insere itens - A TRIGGER cuida do estoque automaticamente
+        // Insere itens e atualiza estoque
         foreach ($itens_data as $item) {
+            // Insere item no pedido
             $sql = "INSERT INTO item (id_pedido, id_produto, qtd_produto) VALUES (?, ?, ?)";
             $query = $con->prepare($sql);
             $query->bind_param("iii", $id_pedido, $item['id_produto'], $item['quantidade']);
@@ -61,6 +49,48 @@ if ($result->num_rows > 0) {
                 throw new Exception("Erro ao adicionar item ao pedido: " . $query->error);
             }
             $query->close();
+
+            // Atualiza estoque manualmente
+            $sql = "UPDATE produto SET quant_estoque = quant_estoque - ? WHERE id_produto = ?";
+            $query = $con->prepare($sql);
+            $query->bind_param("ii", $item['quantidade'], $item['id_produto']);
+            
+            if (!$query->execute()) {
+                throw new Exception("Erro ao atualizar estoque: " . $query->error);
+            }
+            $query->close();
+
+            // Verifica se estoque zerou e remove de carrinhos/favoritos
+            $sql = "SELECT quant_estoque FROM produto WHERE id_produto = ?";
+            $query = $con->prepare($sql);
+            $query->bind_param("i", $item['id_produto']);
+            $query->execute();
+            $stock_result = $query->get_result();
+            $stock_data = $stock_result->fetch_assoc();
+            $query->close();
+
+            if ($stock_data['quant_estoque'] <= 0) {
+                // Remove de todos os carrinhos
+                $sql = "DELETE FROM carrinho WHERE id_produto = ?";
+                $query = $con->prepare($sql);
+                $query->bind_param("i", $item['id_produto']);
+                $query->execute();
+                $query->close();
+
+                // Remove de favoritos
+                $sql = "DELETE FROM favorito WHERE id_produto = ?";
+                $query = $con->prepare($sql);
+                $query->bind_param("i", $item['id_produto']);
+                $query->execute();
+                $query->close();
+
+                // Inativa produto
+                $sql = "UPDATE produto SET produto_ativo = 0 WHERE id_produto = ?";
+                $query = $con->prepare($sql);
+                $query->bind_param("i", $item['id_produto']);
+                $query->execute();
+                $query->close();
+            }
         }
 
         // Limpa carrinho do cliente
@@ -74,20 +104,17 @@ if ($result->num_rows > 0) {
         $query->close();
 
         $con->commit();
-        header("Location: ../cliente/carrinho.php?sucess=gerou_pedido_limpou_carrinho");
+        header("Location: ../cliente/carrinho.php?sucess=1");
         exit;
 
     } catch (Exception $e) {
         $con->rollback();
-        header("Location: ../cliente/carrinho.php?error=nao_gerou_transacao");
+        error_log("ERRO PEDIDO: " . $e->getMessage());
+        header("Location: ../cliente/carrinho.php?error=" . urlencode($e->getMessage()));
         exit;
     }
 } else {
-    header("Location: ../cliente/carrinho.php?error=nao_retornou_row");
+    header("Location: ../cliente/carrinho.php?error=carrinho_vazio");
     exit;
 }
-
-// Fecha conexões
-if (isset($query)) $query->close();
-$con->close();
 ?>
