@@ -43,7 +43,9 @@ include 'menu_pg_inicial.php';
     <div class="main_cart_area">
         <div class="product_area_cart">
             <div class="area_seta_titulo">
-                <i class="bi bi-chevron-left"></i>
+                <a href="#" onclick="window.history.back(); return false;">
+                    <i class="bi bi-chevron-left"></i>
+                </a>
                 <h1 class="cart_title">Carrinho</h1>
             </div>
 
