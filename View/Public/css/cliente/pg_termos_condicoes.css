@@ -17,7 +17,11 @@
     align-items: center;
     gap: 20px;
     padding: 20px 10% 0;
-    margin-top: 10px;
+}
+.div-termos-titulo{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 .section-termos-e-condicoes{
     color: var(--color-fonte);

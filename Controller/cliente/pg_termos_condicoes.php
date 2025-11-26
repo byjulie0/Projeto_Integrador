@@ -19,10 +19,12 @@ include '../utils/libras.php';
         <div class="div_principal">
         
             <div class="header-termos-container">
-                <a class="setinha-termos-e-condicoes" href="#" onclick="window.history.back(); return false;">
-                    <i class="bi bi-chevron-left"></i>
-                </a>
-                <h1 class="titulo-termos-e-condicoes">Termos e Condições</h1>
+                <div class="div-termos-titulo">
+                    <a class="setinha-termos-e-condicoes" href="#" onclick="window.history.back(); return false;">
+                        <i class="bi bi-chevron-left"></i>
+                    </a>
+                    <h1 class="titulo-termos-e-condicoes">Termos e Condições</h1>
+                </div>
             </div>
             <main class="texto-termos-e-condicoes">
 
