@@ -48,8 +48,8 @@
             <div id="tab3_adm_footer" class="footer_adm_item">
                 <h3>Termos</h3>
                 <hr>
-                <a href="#">Termos e Condições</a>
-                <a href="#">Privacidade e Segurança</a>
+                <a href="../cliente/pg_termos_condicoes.php">Termos e Condições</a>
+                <a href="../cliente/pg_priva_segu.php">Privacidade e Segurança</a>
             </div>
 
             <div id="tab6_adm_footer" class="footer_adm_item">
@@ -58,7 +58,6 @@
                 <a href="catalogo_produtos.php">Gerenciamento de Produtos</a>
                 <a href="gerenciar_clientes.php">Gerenciamento de Clientes</a>
                 <a href="verificar_administrar_pedido.php">Gerenciamento de vendas</a>
-                <a href="relatorios_visualizar.php">Geral</a>
             </div>
         </div>
         <div class="footer_adm_item">
