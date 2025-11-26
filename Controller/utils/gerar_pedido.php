@@ -18,7 +18,7 @@ $query->bind_param("i", $id_cliente);
 $query->execute();
 $result = $query->get_result();
 
-if ($result && $result->num_rows > 0) {
+if ($result->num_rows > 0) {
     try {
         $con->begin_transaction();
 
@@ -74,16 +74,16 @@ if ($result && $result->num_rows > 0) {
         $query->close();
 
         $con->commit();
-        header("Location: ../cliente/carrinho.php");
+        header("Location: ../cliente/carrinho.php?sucess=gerou_pedido_limpou_carrinho");
         exit;
 
     } catch (Exception $e) {
         $con->rollback();
-        header("Location: ../cliente/carrinho.php");
+        header("Location: ../cliente/carrinho.php?error=nao_gerou_transacao");
         exit;
     }
 } else {
-    header("Location: ../cliente/carrinho.php");
+    header("Location: ../cliente/carrinho.php?error=nao_retornou_row");
     exit;
 }
 

@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         // Se o produto não está no carrinho e ele tem estoque, adiciona ao carrinho
         $sql = "INSERT INTO carrinho (id_produto, quantidade, selecionado, id_cliente) VALUES (?, 1, 1, ?)";
-        $query = $con->prepare($sql_insert);
+        $query = $con->prepare($sql);
         $query->bind_param("ii", $id_produto, $id_cliente);
         $query->execute();
         $query->close();

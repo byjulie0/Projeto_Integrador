@@ -16,31 +16,6 @@ try {
     $query->bind_param("i", $pedido_id);
     $query->execute();
 
-    // // criar  notificação inicio
-    // $sql= "SELECT id_cliente FROM pedido WHERE id_pedido = ?";
-
-    // $query->bind_param("i", $pedido_id);
-    // $query->execute();
-    // $cliente_id_not=$query->get_result();
-
-
-    // if ($cliente_id_not && $cliente_id_not->num_rows > 0){
-
-    //     $row = $cliente_id_not->fetch_assoc();
-    //     $usuario_id= $row['id_cliente'];
-    //     $produto_id= $pedido_id;
-    //     $mensagem="Cliente, o seu pedido de Número: #{$pedido_id} foi concluido!";
-    //     $categoria="Pedidos";
-
-    //     if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
-    //         echo "Notificação enviada com sucesso!";
-    //     }
-    //     else {
-    //         echo "Erro ao enviar notificação.";
-    //     }
-    // }
-    // // criar  notificação fim
-
     echo "<script>alert('Pedido concluído com sucesso!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
 } catch (Exception $e) {
     echo "<script>alert('Erro ao concluir pedido: " . addslashes($e->getMessage()) . "'); window.history.back();</script>";
