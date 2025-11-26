@@ -14,6 +14,7 @@ $sql = "SELECT
         INNER JOIN item ON item.id_pedido = pedido.id_pedido
         INNER JOIN produto ON item.id_produto = produto.id_produto
         WHERE pedido.id_cliente = ?
+        AND pedido.status_pedido != 'Cancelado'
         GROUP BY pedido.id_pedido
         ORDER BY pedido.data_pedido DESC, 
         FIELD(pedido.status_pedido, 'Concluído', 'Pendente', 'Cancelado');";

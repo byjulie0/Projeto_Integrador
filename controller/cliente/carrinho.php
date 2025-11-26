@@ -23,7 +23,6 @@ include 'menu_pg_inicial.php';
 
 <body>
     <?php
-    // Exibir pop-up de erro se houver
     if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'erro' && isset($_SESSION['popup_message'])) {
         $texto = $_SESSION['popup_message'];
         include '../overlays/pop_up_erro.php';
@@ -43,7 +42,8 @@ include 'menu_pg_inicial.php';
     <div class="main_cart_area">
         <div class="product_area_cart">
             <div class="area_seta_titulo">
-                <i class="bi bi-chevron-left"></i>
+                <a href="pg_inicial_cliente.php"><i class="bi bi-chevron-left"></i></a>
+                
                 <h1 class="cart_title">Carrinho</h1>
             </div>
 
@@ -77,7 +77,6 @@ include 'menu_pg_inicial.php';
 
                             <div class="product-carrinho">
                                 <div class="non-labeled-content-carrinho">
-                                    <!-- IMAGEM -->
                                     <?php
                                     $listaImagens = [];
 
@@ -99,7 +98,6 @@ include 'menu_pg_inicial.php';
                                         ? $listaImagens[0]
                                         : '../../View/public/imagens/default-thumbnail.jpg';
                                     ?>
-                                    <!-- IMAGEM -->
                                     <img src="../../View/Public/<?php echo htmlspecialchars($imagem); ?>"
                                         alt="<?php echo $itens['prod_nome']; ?>" class="product-img-carrinho">
 
@@ -164,10 +162,8 @@ include 'menu_pg_inicial.php';
         </section>
     </div>
 
-    <!-- Script para redirecionar após sucesso do pedido -->
     <script>
         <?php if (isset($_GET['pedido_sucesso']) && $_GET['pedido_sucesso'] == 1): ?>
-            // Aguarda 3 segundos e redireciona para limpar carrinho e ir ao histórico
             setTimeout(function () {
                 window.location.href = '../utils/limpar_carrinho.php';
             }, 3000);
