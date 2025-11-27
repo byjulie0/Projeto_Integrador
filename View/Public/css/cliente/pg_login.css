@@ -204,7 +204,7 @@
 .texto1-span a {
   color: var(--color-primary-5);
   text-decoration: none;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .texto1-span a:hover,
