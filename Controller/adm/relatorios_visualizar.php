@@ -84,7 +84,6 @@ mysqli_close($con);
                 <span class="verificar_administrar_pedidos_sessao_mini_titulos_2" id="abrirCalendario">Mudar período</span>
                 <input type="text" id="dataInicio" style="display: none;" value="<?php echo $data_inicio; ?>">
                 <input type="text" id="dataFim" style="display: none;" value="<?php echo $data_fim; ?>">
-                <hr class="verificar_administrar_pedidos_sessao_periodo_linha">
             </div>
         </div>
 
