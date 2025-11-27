@@ -20,7 +20,7 @@ include 'menu_pg_inicial.php';
                 <div class="foto_dev">
                     <img src="../../View/Public/Imagens/Imagem_dev/anna.jpeg" alt="Foto do Dev">
                 </div>
-                <h3 class="nome_dev">Anna Laura</h3>
+                <h3 class="nome_dev">Anna Laurah</h3>
                 <p class="funcao_dev">Front End</p>
                 <div class="social_dev">
                     <a href="https://github.com/annax08" target="_blank" target="_blank"><i class="fa-brands fa-github"></i></a>
