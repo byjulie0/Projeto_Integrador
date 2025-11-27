@@ -3,7 +3,7 @@ include '../../model/DB/conexao.php';
 include 'gerar_notificacao.php';
 
 
-$pedido_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$pedido_id = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
 
 if ($pedido_id === 0) {
     echo "<script>alert('ID do pedido inválido!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";

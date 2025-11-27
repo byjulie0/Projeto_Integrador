@@ -39,7 +39,7 @@ include 'menu_pg_inicial.php';
                         </p>
                     </div>
                     <div class="botao_cancelar">
-                    <a href="../utils/cancelar_pedido_cliente.php?id=<?= $pedido['id_pedido'] ?>" class="botao_vermelho">
+                    <a href="../utils/cancelar_pedido_cliente.php?id_pedido=<?= $pedido['id_pedido'] ?>" class="botao_vermelho">
                         Cancelar Pedido
                     </a>
 

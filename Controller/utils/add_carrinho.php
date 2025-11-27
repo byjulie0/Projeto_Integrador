@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         // Se ainda tem como adicionar, adiciona
         $sql = "UPDATE carrinho SET quantidade = quantidade + 1 WHERE id_cliente = ? AND id_produto = ?";
-        $query = $con->prepare($sql_update);
+        $query = $con->prepare($sql);
         $query->bind_param("ii", $id_cliente, $id_produto);
         $query->execute();
         $query->close();

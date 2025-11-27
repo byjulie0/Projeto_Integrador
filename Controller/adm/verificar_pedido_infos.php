@@ -158,7 +158,7 @@ try {
                     </div>
                 <?php endif; ?>
 
-                <?php if ($pedido_detalhes['status_pedido'] !== 'Concluído'): ?>
+                <?php if ($pedido_detalhes['status_pedido'] == 'Pendente'): ?>
                     <div class="right-buttons-informacoes-pedidos">
                         <button class="concluir-btn" onclick="concluirPedido(<?php echo $pedido_detalhes['id_pedido']; ?>)">Concluir pedido</button>
                     </div>
@@ -201,13 +201,13 @@ try {
 <script>
 function cancelarPedido(pedidoId) {
     if (confirm('Tem certeza que deseja cancelar este pedido?')) {
-        window.location.href = '../utils/acao_cancelar_pedido.php?id=' + pedidoId;
+        window.location.href = '../utils/acao_cancelar_pedido.php?id_pedido=' + pedidoId;
     }
 }
 
 function concluirPedido(pedidoId) {
     if (confirm('Confirmar conclusão deste pedido?')) {
-        window.location.href = '../utils/acao_concluir_pedido.php?id=' + pedidoId;
+        window.location.href = '../utils/acao_concluir_pedido.php?id_pedido=' + pedidoId;
     }
 }
 </script>
