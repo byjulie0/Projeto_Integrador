@@ -250,6 +250,11 @@
 }
 
 @media (max-width: 360px) {
+    .main-meu-perfil-senha{
+        width: 100%;
+        justify-content: center;
+        margin: 20px 0;
+    }
     .visualizar-dados-title {
         font-size: 1.5rem;
         text-align: left;
@@ -257,10 +262,8 @@
     }
     
     .header-arthura {
-        margin-right: 10px;
-        justify-content: flex-start; /* Força alinhamento à esquerda */
-        padding: 4% 6%;
-        width: 100%;
+        margin-left: 10px;
+        padding: 3% 5%;
     }
     .wrapper-arthura {
         width: 100%;

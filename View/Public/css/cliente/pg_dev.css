@@ -1,0 +1,83 @@
+@import url("../cliente.css");
+.header_dev {
+  display: flex;
+  justify-content: center;
+}
+.titulo_dev {
+  margin-top: 30px;
+  color: var(--color-primary-1);
+}
+.container_dev {
+  margin-bottom: 45px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cards_dev {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.card_dev {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card_dev h3 {
+  color: var(--color-primary-1);
+  margin-top: 10px;
+}
+.foto_dev {
+  width: 100%;
+}
+.card_dev img {
+  width: 150px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+.social_dev {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 22px;
+}
+
+.social_dev a {
+  color: #000;
+  transition: 0.3s;
+}
+
+.social_dev a:hover {
+  color: #0077b5;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .cards_dev {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards_dev {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .cards_dev {
+    grid-template-columns: 1fr;
+  }
+}
