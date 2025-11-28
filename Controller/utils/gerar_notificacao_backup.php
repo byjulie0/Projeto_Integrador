@@ -1,7 +1,7 @@
 <?php
 
 function Criar_notificacao($con, $id_cliente, $id_pedido, $mensagem, $tipo){
-    //sem ideia
+    
     error_log("Tentando criar notificação: Cliente: $id_cliente, Pedido: $id_pedido, Mensagem: $mensagem, Tipo: $tipo");
     
     $sql = "INSERT INTO notificacoes (id_cliente, id_pedido, mensagem, tipo) VALUES (?, ?, ?, ?)";
@@ -23,9 +23,7 @@ function Criar_notificacao($con, $id_cliente, $id_pedido, $mensagem, $tipo){
     }
 }
 
-function Criar_notificacao_adm($con, $id_produto, $mensagem, $tipo){
-    
-    $id_adm=1;
+function Criar_notificacao_adm($con, $id_adm, $id_produto, $mensagem, $tipo){
     
     error_log("Tentando criar notificação ADM: ADM: $id_adm, Pedido: $id_produto, Mensagem: $mensagem, Tipo: $tipo");
     

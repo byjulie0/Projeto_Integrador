@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'gerar_notificacao.php';
 include 'autenticado.php';
 
 if ($usuario_nao_logado) {
@@ -51,8 +50,8 @@ if ($result->num_rows > 0) {
             }
             $query->close();
 
-            // Atualiza estoque
-             $sql = "UPDATE produto SET quant_estoque = quant_estoque - ? WHERE id_produto = ?";
+            // Atualiza estoque manualmente
+            $sql = "UPDATE produto SET quant_estoque = quant_estoque - ? WHERE id_produto = ?";
             $query = $con->prepare($sql);
             $query->bind_param("ii", $item['quantidade'], $item['id_produto']);
             
@@ -69,7 +68,6 @@ if ($result->num_rows > 0) {
             $stock_result = $query->get_result();
             $stock_data = $stock_result->fetch_assoc();
             $query->close();
-            echo $stock_data['quant_estoque'];
 
             if ($stock_data['quant_estoque'] <= 0) {
                 // Remove de todos os carrinhos
@@ -92,50 +90,7 @@ if ($result->num_rows > 0) {
                 $query->bind_param("i", $item['id_produto']);
                 $query->execute();
                 $query->close();
-
-                //notificação adm inativo inicio
-                $produto_id= $item['id_produto'];
-                $nome_produto = $item['prod_nome'];
-                $mensagem="O estoque do produto: {$nome_produto} ,chegou a zero e foi desativado!";
-                $categoria="Estoque";
-
-                $notificacao_adm_sucesso = Criar_notificacao_adm($con, $produto_id, $mensagem, $categoria);
-        
-                if ($notificacao_adm_sucesso) {
-                    error_log("Notificação para o ADM criada com sucesso!");
-                } else {
-                    error_log("Falha ao criar notificação para o ADM");
-                }
-
-                //notificação adm inativo fim
-
-
-
             }
-            echo $stock_data['quant_estoque'];
-
-            $id_verif_prod = $item['id_produto'];
-            $sql_verif_estoq = "SELECT quant_estoque,sexo FROM produto WHERE id_produto = $id_verif_prod";
-            $qtd_estoque= $con->query($sql_verif_estoq);
-            $linhas=$qtd_estoque->fetch_assoc();
-
-            // notificação adm baixo estoque inicio
-            if($stock_data['quant_estoque'] > 0 && $stock_data['quant_estoque'] <= 5 && ($linhas['sexo'] == "Não se aplica" || $linhas['sexo'] == null)){
-
-                $produto_id= $id_verif_prod;
-                $nome_produto = $item['prod_nome'];
-                $mensagem="O estoque do produto: {$nome_produto} ,possui {$stock_data['quant_estoque']} unidades restantes, reposição necessaria!";
-                $categoria="Estoque";
-                $notificacao_adm_sucesso = Criar_notificacao_adm($con, $produto_id, $mensagem, $categoria);
-        
-                if ($notificacao_adm_sucesso) {
-                    error_log("Notificação para o ADM criada com sucesso!");
-                } else {
-                    error_log("Falha ao criar notificação para o ADM");
-                }
-
-            }
-            // notificação adm baixo estoque fim
         }
 
         // Limpa carrinho do cliente
