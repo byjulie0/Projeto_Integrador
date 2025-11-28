@@ -21,7 +21,7 @@
 
             <div class="logo-menu">
                 <img src="../../view/public/imagens/logo.png" alt="Logo John Rooster" class="logo-menu-img" />
-                <a href="pg_inicial_adm.php" class="logo-menu-title">John Rooster</a>
+                <a href="relatorios_visualizar.php" class="logo-menu-title">John Rooster</a>
             </div>
 
             <ul class="nav-link-pg-adm">
@@ -52,16 +52,13 @@
                     <i class="bi bi-bell"></i>
                     <span class="nav-text-pg-adm">Notificações</span>
                 </a>
-                <a href="relatorios_visualizar.php" class="nav-btns-pg-adm">
-                    <i class="bi bi-file-bar-graph"></i>
-                    <span class="nav-text-pg-adm">Geral</span>
-                </a>
             </div>
         </div>
         <script>
             function mostrarAlerta(event) {
             event.preventDefault();
             alert('Backup iniciado! Aguarde alguns instantes...');
+            window.location.href = "../../model/DB/backup.php";
             }
         </script>
     </section>

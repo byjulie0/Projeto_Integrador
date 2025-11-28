@@ -158,7 +158,7 @@ try {
                     </div>
                 <?php endif; ?>
 
-                <?php if ($pedido_detalhes['status_pedido'] == 'Pendente'): ?>
+                <?php if ($pedido_detalhes['status_pedido'] === 'Pendente'): ?>
                     <div class="right-buttons-informacoes-pedidos">
                         <button class="concluir-btn" onclick="concluirPedido(<?php echo $pedido_detalhes['id_pedido']; ?>)">Concluir pedido</button>
                     </div>

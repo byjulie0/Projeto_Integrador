@@ -38,14 +38,13 @@ $result = $stmt->get_result();
 </head>
 
 <body>
-    <div class="seta_titulo_pg_favoritos">
-        <a class="btn_voltar_favoritos" href="#" onclick="window.history.back(); return false;">
-            <i class="bi bi-chevron-left"></i>
-        </a>
+    <div class="container_pg_favoritos">
+        <div class="seta_titulo_pg_favoritos">
+            <a class="btn_voltar_favoritos" href="#" onclick="window.history.back(); return false;">
+                <i class="bi bi-chevron-left"></i>
+            </a>
         <h2 class="h2_pg_favoritos">Favoritos</h2>
     </div>
-
-    <div class="container_pg_favoritos">
         <div class="lotes-wrapper">
             <div class="lotes_container_pg_favoritos" id="lotesContainerFavoritos">
                 <?php

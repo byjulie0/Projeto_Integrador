@@ -73,7 +73,6 @@ include '../utils/libras.php'
     </div>
   </main>
   <?php include 'footer_cliente.php'; ?>
-
   <div id="popup-inativo" class="popup-overlay">
   <div class="popup-content">
     <h2>Conta desativada</h2>
