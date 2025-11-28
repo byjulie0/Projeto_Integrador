@@ -2,7 +2,7 @@
 include '../utils/listar_produtos_adm.php';
 include 'menu_inicial.php';
 include '../../Controller/utils/buscar_produtos.php';
-$produtos = listar_produtos(); 
+$produtos = listar_produtos();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,12 +16,13 @@ $produtos = listar_produtos();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../view/public/css/adm/catalogo_produtos.css">
     <link rel="stylesheet" href="../../view/public/css/adm/toogle.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script defer src="../../view/js/adm/toogle.js"></script>
     <script defer src="../../view/js/adm/buscar_produto.js"></script>
 </head>
+
 <body>
-     <section id="atualizar-produtos">
+    <section id="atualizar-produtos">
         <div id="page-title-atualizar-produtos">
             <div id="title-atualizar-produtos">
                 <a href="#" onclick="window.history.back(); return false;"><i class="bi bi-chevron-left"></i></a>
@@ -30,14 +31,17 @@ $produtos = listar_produtos();
         </div>
         <div id="page-content-atualizar-produtos">
             <div class="first-container-atualizar-produtos">
-                <div id="search-bar-atualizar-produtos"> 
+                <div id="search-bar-atualizar-produtos">
                     <input type="text" id="searchInput" placeholder="Pesquisar" />
-                    <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button> 
+                    <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <form method="get" action="catalogo_produtos.php" class="botoes_filtros_produtos">
-                    <button type="submit" name="status" value="todos" class="catalogo_produtos_botao_todos">Todos</button>
-                    <button type="submit" name="status" value="ativos" class="catalogo_produtos_botao_ativos">Ativos</button>
-                    <button type="submit" name="status" value="inativos" class="catalogo_produtos_botao_inativos">Inativados</button>
+                    <button type="submit" name="status" value="todos"
+                        class="catalogo_produtos_botao_todos">Todos</button>
+                    <button type="submit" name="status" value="ativos"
+                        class="catalogo_produtos_botao_ativos">Ativos</button>
+                    <button type="submit" name="status" value="inativos"
+                        class="catalogo_produtos_botao_inativos">Inativados</button>
                 </form>
 
             </div>
@@ -46,83 +50,88 @@ $produtos = listar_produtos();
             <div id="table2-atualizar-produtos">
                 <div id="table-space-atualizar-produtos">
                     <table>
-                       <thead>
+                        <thead>
                             <tr>
-                                <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto</th>
+                                <th class="header-product-name-atualizar-produtos header-cell-atualizar-produto">Produto
+                                </th>
+                                <th class="header-cell-atualizar-produto">Estoque</th>
                                 <th class="header-cell-atualizar-produto">Categoria</th>
                                 <th class="header-cell-atualizar-produto">Subcategoria</th>
                                 <th class="header-cell-atualizar-produto">Preço</th>
                                 <th class="header-cell-atualizar-produto">Editar</th>
-                                <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar</th>
+                                <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar
+                                </th>
                                 <th class="header-cell-atualizar-produto">Status</th>
-                                <th class="header-cell-atualizar-produto">Estoque</th>
 
                             </tr>
-                        </thead> 
+                        </thead>
                         <tbody>
-                        <?php if (!empty($produtos)): ?>
-                            <?php foreach ($produtos as $p): ?>
-                                <tr>
-                                    <td class="product-name-atualizar-produtos cell-atualizar-produto">
-                                        <div class="product-atualizar-produtos"><span><?= htmlspecialchars($p['produto']) ?></span></div>
-                                    </td>
+                            <?php if (!empty($produtos)): ?>
+                                <?php foreach ($produtos as $p): ?>
+                                    <tr>
+                                        <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                            <span><?= htmlspecialchars($p['produto']) ?></span>
+                                        </td>
 
-                                    <td class="product-category-atualizar-produtos cell-atualizar-produto">
-                                        <div class="category-name-atualizar-produtos"><span><?= htmlspecialchars($p['categoria'] ?? 'Ops! Está vazio') ?></span></div>
-                                    </td>
+                                        <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                            <?= $p['quant_estoque'] ?>
+                                        </td>
 
-                                    <td class="qt-atualizar-produtos cell-atualizar-produto">
-                                        <?= htmlspecialchars($p['subcategoria'] ?? 'Ops! Também está vazio') ?>
-                                    </td>
-                                    
-                                    <td class="price-atualizar-produtos cell-atualizar-produto">
-                                        R$ <?= number_format($p['preco'], 2, ',', '.') ?>
-                                    </td>
+                                        <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                            <span><?= htmlspecialchars($p['categoria'] ?? 'Ops! Está vazio') ?></span>
+                                        </td>
 
-                                    <td class="update-atualizar-produtos cell-atualizar-produto">
-                                        <a href="editar_produto.php?id=<?= $p['id_produto'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    </td>
-                                    
-                                    <td class="exclude-atualizar-produtos cell-atualizar-produto">
-                                        <form method="POST" action="toggle_adm_inativar.php" style="display:inline;">
-                                            
-                                            <input type="hidden" name="id_produto" value="<?= $p['id_produto'] ?>">
-                                            <input type="hidden" name="status_atual" value="<?= $p['produto_ativo'] ?>">
 
-                                            <?php 
-                                            $icone = $p['produto_ativo'] ? 'fa-toggle-off' : 'fa-toggle-on';
-                                            $ariaPressed = $p['produto_ativo'] ? 'false' : 'true';
-                                            ?>
+                                        <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                            <?= htmlspecialchars($p['subcategoria'] ?? 'Ops! Também está vazio') ?>
+                                        </td>
 
-                                            <button type="submit" name="toggle_produto"
-                                                    class="icon-toggle-btn"
+                                        <td class="qt-atualizar-produtos cell-atualizar-produto">
+                                            R$ <?= number_format($p['preco'], 2, ',', '.') ?>
+                                        </td>
+
+                                        <td class="update-atualizar-produtos cell-atualizar-produto">
+                                            <a href="editar_produto.php?id=<?= $p['id_produto'] ?>"><i
+                                                    class="fa-solid fa-pen-to-square"></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="exclude-atualizar-produtos cell-atualizar-produto">
+                                            <form method="POST" action="toggle_adm_inativar.php" style="display:inline;">
+
+                                                <input type="hidden" name="id_produto" value="<?= $p['id_produto'] ?>">
+                                                <input type="hidden" name="status_atual" value="<?= $p['produto_ativo'] ?>">
+
+                                                <?php
+                                                $icone = $p['produto_ativo'] ? 'fa-toggle-off' : 'fa-toggle-on';
+                                                $ariaPressed = $p['produto_ativo'] ? 'false' : 'true';
+                                                ?>
+
+                                                <button type="submit" name="toggle_produto" class="icon-toggle-btn"
                                                     aria-pressed="<?= $ariaPressed ?>">
-                                                <i class="fa-solid <?= $icone ?>"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                    
-                                    <td class="qt-atualizar-produtos">
-                                        <?= isset($p['produto_ativo']) ? ($p['produto_ativo'] ? 'Ativo' : 'Inativo') : 'Ops! Também está vazio' ?>
-                                    </td> 
+                                                    <i class="fa-solid <?= $icone ?>"></i>
+                                                </button>
+                                            </form>
+                                        </td>
 
-                                     <td class="price-atualizar-produtos cell-atualizar-produto">
-                                        <?= $p['quant_estoque'] ?>
-                                    </td>
+                                        <td class="qt-atualizar-produtos">
+                                            <?= isset($p['produto_ativo']) ? ($p['produto_ativo'] ? 'Ativo' : 'Inativo') : 'Ops! Também está vazio' ?>
+                                        </td>
+
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="7" style="text-align:center;">Nenhum produto cadastrado</td>
                                 </tr>
-                            <?php endforeach; ?>
-                        <?php else: ?>
-                            <tr>
-                                <td colspan="7" style="text-align:center;">Nenhum produto cadastrado</td>
-                            </tr>
-                        <?php endif; ?>
-                    </tbody>
+                            <?php endif; ?>
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </section>
 </body>
+
 </html>
 <?php include 'footer.php'; ?>
-
