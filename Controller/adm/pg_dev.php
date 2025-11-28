@@ -1,5 +1,5 @@
 <?php
-include 'menu_pg_inicial.php';
+include 'menu_inicial.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,7 @@ include 'menu_pg_inicial.php';
             </div>
             <div class="card_dev">
                 <div class="foto_dev">
-                    <img src="../../View/Public/Imagens/Imagem_dev/anna.jpeg" alt="Foto do Dev">
+                    <img src="../../View/Public/Imagens/Imagem_dev/arthur.jpg" alt="Foto do Dev">
                 </div>
                 <h3>Arthur Patriota</h3>
                 <p>BackEnd</p>
@@ -53,7 +53,7 @@ include 'menu_pg_inicial.php';
 
             <div class="card_dev">
                 <div class="foto_dev">
-                    <img src="../../View/Public/Imagens/Imagem_dev/anna.jpeg" alt="Foto do Dev">
+                    <img src="../../View/Public/Imagens/Imagem_dev/sem_foto.webp" alt="Foto do Dev">
                 </div>
                 <h3>Gabriel Oliveira</h3>
                 <p>BackEnd</p>
@@ -101,7 +101,7 @@ include 'menu_pg_inicial.php';
 
             <div class="card_dev">
                 <div class="foto_dev">
-                    <img src="../../View/Public/Imagens/Imagem_dev/anna.jpeg" alt="Foto do Dev">
+                    <img src="../../View/Public/Imagens/Imagem_dev/sem_foto.webp" alt="Foto do Dev">
                 </div>
                 <h3>Maria Helena Toledo</h3>
                 <p>FullStack</p>
@@ -125,7 +125,7 @@ include 'menu_pg_inicial.php';
 
             <div class="card_dev">
                 <div class="foto_dev">
-                    <img src="../../View/Public/Imagens/Imagem_dev/anna.jpeg" alt="Foto do Dev">
+                    <img src="../../View/Public/Imagens/Imagem_dev/sem_foto.webp" alt="Foto do Dev">
                 </div>
                 <h3>Matheus Nemer</h3>
                 <p>Back End</p>
@@ -137,7 +137,7 @@ include 'menu_pg_inicial.php';
 
             <div class="card_dev">
                 <div class="foto_dev">
-                    <img src="../../View/Public/Imagens/Imagem_dev/anna.jpeg" alt="Foto do Dev">
+                    <img src="../../View/Public/Imagens/Imagem_dev/valdir.jpeg" alt="Foto do Dev">
                 </div>
                 <h3>Valdir Ferreira</h3>
                 <p>FullStack</p>
@@ -149,7 +149,7 @@ include 'menu_pg_inicial.php';
 
             <div class="card_dev">
                 <div class="foto_dev">
-                    <img src="../../View/Public/Imagens/Imagem_dev/anna.jpeg" alt="Foto do Dev">
+                    <img src="../../View/Public/Imagens/Imagem_dev/Vinycius.jpg" alt="Foto do Dev">
                 </div>
                 <h3>Vinycius Henrique</h3>
                 <p>FullStack</p>
@@ -165,6 +165,3 @@ include 'menu_pg_inicial.php';
 </body>
 </html>
 
-<?php
-include 'footer_cliente.php';
-?>
