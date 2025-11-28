@@ -5,6 +5,9 @@ if (session_status() === PHP_SESSION_NONE) {
 $usuarioLogado = isset($_SESSION['id_cliente']);
 $paginaAtual = basename($_SERVER['PHP_SELF']);
 $exibirNossaHistoria = ($paginaAtual === 'pg_inicial_cliente.php');
+$exibirPremiados = ($paginaAtual === 'pg_inicial_cliente.php');
+$exibirCategorias = ($paginaAtual === 'pg_inicial_cliente.php');
+$exibirSubmenuHorizontal = !$exibirCategorias;
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +39,10 @@ $exibirNossaHistoria = ($paginaAtual === 'pg_inicial_cliente.php');
 
             <ul class="nav-link-pg-inicial">
                 <li class="dropdown_menu_inicial">
-                    <a href="#pg_inicial_categorias" class="nav-item-pg-inicial">Categorias</a>
+                    <?php if($exibirCategorias): ?>
+                    <li><a href="#pg_inicial_categorias" class="nav-item-pg-inicial">Categorias</a></li>
+                    <?php endif; ?>
+                  
                     <ul class="submenu_inicial">
                         <li><a href="categoria_produtos.php?id_categoria=1">Bovinos</a></li>
                         <li><a href="categoria_produtos.php?id_categoria=2">Equinos</a></li>
@@ -44,10 +50,20 @@ $exibirNossaHistoria = ($paginaAtual === 'pg_inicial_cliente.php');
                         <li><a href="categoria_produtos.php?id_categoria=4">Produtos gerais</a></li>
                     </ul>
                 </li>
-                <li><a href="#campeoes" class="nav-item-pg-inicial">Premiados</a></li>
+
+                <?php if($exibirSubmenuHorizontal): ?>
+                    <li><a href="categoria_produtos.php?id_categoria=1" class="nav-item-pg-inicial">Bovinos</a></li>
+                    <li><a href="categoria_produtos.php?id_categoria=2" class="nav-item-pg-inicial">Equinos</a></li>
+                    <li><a href="categoria_produtos.php?id_categoria=3" class="nav-item-pg-inicial">Galináceos</a></li>
+                    <li><a href="categoria_produtos.php?id_categoria=4" class="nav-item-pg-inicial">Produtos gerais</a></li>
+                <?php endif; ?>
                 
                 <?php if($exibirNossaHistoria): ?>
                 <li><a href="#section-nossa-historia" class="nav-item-pg-inicial">Nossa história</a></li>
+                <?php endif; ?>
+
+                <?php if($exibirPremiados): ?>
+                <li><a href="#campeoes" class="nav-item-pg-inicial">Premiados</a></li>
                 <?php endif; ?>
             </ul>
 
@@ -62,6 +78,7 @@ $exibirNossaHistoria = ($paginaAtual === 'pg_inicial_cliente.php');
                     <ul class="submenu_inicial">
                         <?php if($usuarioLogado): ?>
                             <li><a href="meu_perfil.php">Meus dados</a></li>
+                            <li><a href="formulario_altera_senha.php">Redefinir senha</a></li>
                             <li><a href="historico_pedidos.php">Meus pedidos</a></li>
                             <li><a href="pg_favoritos.php">Favoritos</a></li>
                             <li><a href="logout.php">Sair</a></li>

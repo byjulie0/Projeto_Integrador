@@ -54,6 +54,7 @@ include 'menu_pg_inicial.php';
                 </button>
             <?php endif; ?>
         </div>
+        
         <div class="lotes_geral">
             <?php if ($result->num_rows > 0): ?>
                 <?php while ($row = $result->fetch_assoc()): ?>
