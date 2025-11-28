@@ -35,7 +35,7 @@ include 'menu_pg_inicial.php';
                 <p>BackEnd</p>
                 <div class="social_dev">
                     <a href="https://github.com/thurjob" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/arthutpatriota" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
@@ -47,7 +47,7 @@ include 'menu_pg_inicial.php';
                 <p>FullStack</p>
                 <div class="social_dev">
                     <a href="https://github.com/Den09hub" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/denyel-nicolas-dos-santos-rodrigues" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@ include 'menu_pg_inicial.php';
                 <p>Front End</p>
                 <div class="social_dev">
                     <a href="https://github.com/isa-miho" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/isabella-sawamura" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
@@ -83,19 +83,19 @@ include 'menu_pg_inicial.php';
                 <p>PO</p>
                 <div class="social_dev">
                     <a href="https://github.com/byjulie0" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/julie-vieira-martins" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
             <div class="card_dev">
                 <div class="foto_dev">
-                    <img src="../../View/Public/Imagens/Imagem_dev/anna.jpeg" alt="Foto do Dev">
+                    <img src="../../View/Public/Imagens/Imagem_dev/lara.jpeg" alt="Foto do Dev">
                 </div>
                 <h3>Lara Santiago</h3>
                 <p>Scrum Master</p>
                 <div class="social_dev">
                     <a href="https://github.com/eridangs" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/lara-eridan-genes-santiago" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
@@ -107,19 +107,19 @@ include 'menu_pg_inicial.php';
                 <p>FullStack</p>
                 <div class="social_dev">
                     <a href="https://github.com/MariaH-Toledo" target="_blank" ><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/maria-helena-toledo" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
             <div class="card_dev">
                 <div class="foto_dev">
-                    <img src="../../View/Public/Imagens/Imagem_dev/anna.jpeg" alt="Foto do Dev">
+                    <img src="../../View/Public/Imagens/Imagem_dev/mariana.jpeg" alt="Foto do Dev">
                 </div>
                 <h3>Mariana Arantes</h3>
                 <p>Front End</p>
                 <div class="social_dev">
                     <a href="https://github.com/MariArantes4" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/mariana-arantes" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
@@ -143,7 +143,7 @@ include 'menu_pg_inicial.php';
                 <p>FullStack</p>
                 <div class="social_dev">
                     <a href="https://github.com/ValdirDEV143" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/valdir-nascimento-ferreira" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
@@ -155,7 +155,7 @@ include 'menu_pg_inicial.php';
                 <p>FullStack</p>
                 <div class="social_dev">
                     <a href="https://github.com/Viny533" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/vinycius-marques-henrique" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
