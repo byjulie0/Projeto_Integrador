@@ -1,6 +1,4 @@
-// Início do Calendário + Gráfico
 $(function () {
-    // ---------- Configuração do Datepicker ----------
     $.datepicker.regional['pt-BR'] = {
         closeText: 'Fechar',
         prevText: '&#x3C;Anterior',
@@ -22,7 +20,6 @@ $(function () {
     };
     $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
 
-    // Inicia os dois calendários
     $('#dataInicio').datepicker({
         onSelect: function (selectedDate) {
             $('#dataFim').datepicker('option', 'minDate', selectedDate);
@@ -37,19 +34,16 @@ $(function () {
         }
     });
 
-    // Botão "Mudar período"
     $('#abrirCalendario').on('click', function (e) {
         e.preventDefault();
         $('#dataInicio').datepicker('show');
     });
 
-    // Atualiza o texto na tela e recarrega a página com as novas datas
     function atualizarPeriodo() {
         var inicio = $('#dataInicio').val();
         var fim = $('#dataFim').val();
         
         if (inicio && fim) {
-            // Converte de dd/mm/yyyy para yyyy-mm-dd para a URL
             var inicioParts = inicio.split('/');
             var fimParts = fim.split('/');
             
@@ -58,17 +52,14 @@ $(function () {
             
             $('#dataEscolhida').text(inicio + ' - ' + fim);
             
-            // Recarrega a página com as novas datas
             window.location.href = `relatorio_visualizar.php?data_inicio=${inicioISO}&data_fim=${fimISO}`;
         }
     }
 
-    // Configura as datas iniciais nos datepickers
     var dataInicioISO = $('#dataInicio').val();
     var dataFimISO = $('#dataFim').val();
     
     if (dataInicioISO && dataFimISO) {
-        // Converte de yyyy-mm-dd para dd/mm/yyyy
         var inicioParts = dataInicioISO.split('-');
         var fimParts = dataFimISO.split('-');
         
@@ -77,7 +68,6 @@ $(function () {
     }
 });
 
-// Melhoria na geração de PDF
 document.addEventListener('DOMContentLoaded', function() {
     const btnGerarPDF = document.getElementById('btnGerarPDF');
     
@@ -89,31 +79,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function gerarPDF() {
-    // Criando uma instância do jsPDF
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     
-    // Adicionando o título ao PDF
     doc.setFontSize(20);
     doc.text("Relatório de Pedidos", 105, 15, { align: 'center' });
     
-    // Adicionando informações do período
     doc.setFontSize(12);
     doc.text(`Período: ${document.getElementById('dataEscolhida').textContent}`, 15, 25);
     
-    // Adicionando estatísticas
     doc.text("Estatísticas Gerais:", 15, 40);
     doc.text(`- Pedidos gerados: ${document.querySelectorAll('.card_topo b')[1].textContent}`, 20, 50);
     doc.text(`- Produtos cadastrados: ${document.querySelectorAll('.card_topo b')[0].textContent}`, 20, 58);
     doc.text(`- Usuários cadastrados: ${document.querySelectorAll('.card_topo b')[2].textContent}`, 20, 66);
     
-    // Captura os gráficos como imagens base64
     try {
         var graficoEstatisticasImg = document.getElementById('graficoEstatisticas').toDataURL('image/png');
         var graficoBarraImg = document.getElementById('graficoBarraEstatisticas').toDataURL('image/png');
         var graficoLinhaImg = document.getElementById('graficoLinhaPedidos').toDataURL('image/png');
         
-        // Adicionando os gráficos ao PDF
         doc.addPage();
         doc.text("Gráfico de Pizza - Status dos Pedidos", 15, 15);
         doc.addImage(graficoEstatisticasImg, 'PNG', 15, 20, 180, 90);
@@ -129,6 +113,5 @@ function gerarPDF() {
         console.error("Erro ao capturar gráficos:", e);
     }
     
-    // Gerando o PDF e permitindo o download
     doc.save('relatorio_pedidos_com_graficos.pdf');
 }

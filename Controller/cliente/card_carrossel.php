@@ -45,7 +45,7 @@ $id_produto = isset($id_produto) ? $id_produto : '';
             echo "Não informado";
         }
         ?>
-      </p>
+    </p>
   </div>
 
   <!-- Se quiser exibir o preço ou descrição dentro do card, descomente:

@@ -62,6 +62,13 @@
     grid-template-columns: 1fr;
     gap: 12px;
 }
+
+.visualizar-dados-grid span{
+    margin-right: 5px;
+    font-weight: bold;
+    color: #383d43;
+}
+
   .visualizar-dados-grid p {
     margin: 0;
     font-size: 1rem;

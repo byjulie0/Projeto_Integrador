@@ -1,5 +1,5 @@
 <?php
-include 'gerar_notificacao.php';
+// include 'gerar_notificacao.php';
 include '../../model/DB/conexao.php';
 
 $popup_titulo = '';
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$id_produto   = (int) ($_POST['id_produto'] ?? 0);
+$id_produto   = (int)($_POST['id_produto'] ?? 0);
 $nome         = trim($_POST['nome'] ?? '');
 $valor        = floatval($_POST['valor'] ?? 0);
 $quantidade   = intval($_POST['quantidade'] ?? 0);
@@ -35,42 +35,41 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
     $stmt->fetch();
     $stmt->close();
 
-    
-    // criar notificação inicio
-    $sql = "SELECT quant_estoque,prod_nome,path_img FROM produto WHERE id_produto = $id_produto";
-    $qtd_inicial = $con->query($sql);
+    // // criar notificação inicio
+    // $sql = "SELECT quant_estoque,prod_nome,path_img FROM produto WHERE id_produto = $id_produto";
+    // $qtd_inicial = $con->query($sql);
 
-    $sql_encontrar_cliente = "SELECT id_cliente FROM carrinho WHERE id_produto = $id_produto";
-    $qtd_cliente = $con->query($sql_encontrar_cliente);
-    $clientes = [];
+    // $sql_encontrar_cliente = "SELECT id_cliente FROM carrinho WHERE id_produto = $id_produto";
+    // $qtd_cliente = $con->query($sql_encontrar_cliente);
+    // $clientes = [];
 
-    if ($qtd_cliente && $qtd_cliente->num_rows > 0) {
-        while ($cliente_row = $qtd_cliente->fetch_assoc()) {
-            $clientes[] = $cliente_row['id_cliente'];
-        }
-    }
+    // if ($qtd_cliente && $qtd_cliente->num_rows > 0) {
+    //     while ($cliente_row = $qtd_cliente->fetch_assoc()) {
+    //         $clientes[] = $cliente_row['id_cliente'];
+    //     }
+    // }
 
-    if ($qtd_inicial && $qtd_inicial->num_rows > 0) {
-        $row = $qtd_inicial->fetch_assoc();
-        $quant_estoque_inicial = $row['quant_estoque'];
-        $img_produto = $row['path_img'];
-        $nome_produto = $row['prod_nome'];
-    }
+    // if ($qtd_inicial && $qtd_inicial->num_rows > 0) {
+    //     $row = $qtd_inicial->fetch_assoc();
+    //     $quant_estoque_inicial = $row['quant_estoque'];
+    //     $img_produto = $row['path_img'];
+    //     $nome_produto = $row['prod_nome'];
+    // }
 
-    if ($quant_estoque_inicial == 0 && $quantidade > 0) {
-        foreach ($clientes as $x) {
-            $usuario_id = $x;
-            $produto_id = $id_produto;
-            $mensagem = "Cliente, a {$nome_produto} que você estava de olho voltou ao estoque, dê uma olhada!";
-            $categoria = "Produtos";
-            if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
-                echo "Notificação enviada com sucesso!";
-            } else {
-                echo "Erro ao enviar notificação.";
-            }
-        }
-    }
-    // criar notificação fim
+    // if ($quant_estoque_inicial == 0 && $quantidade > 0) {
+    //     foreach ($clientes as $x) {
+    //         $usuario_id = $x;
+    //         $produto_id = $id_produto;
+    //         $mensagem = "Cliente, a {$nome_produto} que você estava de olho voltou ao estoque, dê uma olhada!";
+    //         $categoria = "Produtos";
+    //         if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
+    //             echo "Notificação enviada com sucesso!";
+    //         } else {
+    //             echo "Erro ao enviar notificação.";
+    //         }
+    //     }
+    // }
+    // // criar notificação fim
 
     $old_imgs = json_decode($path_img_db, true);
     if (!is_array($old_imgs))
@@ -206,6 +205,7 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
             </div>
         </div>
     </div>
-    <link rel="stylesheet" href="../../view/public/css/cliente/pop_up_resultado.css">
-    <script src="../../view/public/js/pop_up_resultado.js"></script>
+</div>
+<link rel="stylesheet" href="../../view/public/css/cliente/pop_up_resultado.css">
+<script src="../../view/public/js/pop_up_resultado.js"></script>
 <?php endif; ?>

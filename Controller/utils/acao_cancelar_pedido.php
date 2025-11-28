@@ -1,67 +1,44 @@
 <?php
 include '../../model/DB/conexao.php';
-include 'gerar_notificacao.php';
 
+$id_pedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
 
-$pedido_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-
-if ($pedido_id === 0) {
-    echo "<script>alert('ID do pedido inválido!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
+if ($id_pedido === 0) {
+    echo "<script>alert('ID do pedido inválido!');  window.history.back();</script>";
     exit;
 }
 
 try {
-    // Inicia transação
     $con->begin_transaction();
 
-    // Atualiza o status do pedido
-    $sql_update = "UPDATE pedido SET status_pedido = 'Cancelado' WHERE id_pedido = ?";
-    $stmt = $con->prepare($sql_update);
-    $stmt->bind_param("i", $pedido_id);
-    $stmt->execute();
-
-    // criar  notificação inicio
-    
-    $sql= "SELECT id_cliente FROM pedido WHERE id_pedido = ?";
-
-    $stmt->bind_param("i", $pedido_id);
-    $stmt->execute();
-    $cliente_id_not=$stmt->get_result();
-
-
-    if ($cliente_id_not && $cliente_id_not->num_rows > 0){
-
-        $row = $cliente_id_not->fetch_assoc();
-        $usuario_id= $row['id_cliente'];
-        $produto_id= $pedido_id;
-        $mensagem="Cliente, o seu pedido de Número: #{$pedido_id} foi cancelado!";
-        $categoria="Pedidos";
-
-        if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
-            echo "Notificação enviada com sucesso!";
-        } 
-        else {
-            echo "Erro ao enviar notificação.";
-        }
-    }
-
-    // criar  notificação fim
-
     // Devolve estoque dos produtos relacionados a esse pedido
-    $sql_itens = "SELECT id_produto, qtd_produto FROM item WHERE id_pedido = ?";
-    $stmt2 = $con->prepare($sql_itens);
-    $stmt2->bind_param("i", $pedido_id);
-    $stmt2->execute();
-    $result = $stmt2->get_result();
+    $sql = "SELECT id_produto, qtd_produto FROM item WHERE id_pedido = ?";
+    $query = $con->prepare($sql);
+    $query->bind_param("i", $id_pedido);
+    $query->execute();
+    $result = $query->get_result();
 
     while ($row = $result->fetch_assoc()) {
-        $updateEstoque = "UPDATE produto SET quant_estoque = quant_estoque + ? WHERE id_produto = ?";
-        $stmt3 = $con->prepare($updateEstoque);
-        $stmt3->bind_param("ii", $row['qtd_produto'], $row['id_produto']);
-        $stmt3->execute();
+        // Devolve o estoque
+        $sql = "UPDATE produto SET quant_estoque = quant_estoque + ? WHERE id_produto = ?";
+        $query = $con->prepare($sql);
+        $query->bind_param("ii", $row['qtd_produto'], $row['id_produto']);
+        $query->execute();
+        // Reativa o produto se o estoque ficou positivo
+        $sql = "UPDATE produto SET produto_ativo = 1 WHERE id_produto = ? AND quant_estoque > 0";
+        $query = $con->prepare($sql);
+        $query->bind_param("i", $row['id_produto']);
+        $query->execute();
     }
 
+    // Atualiza o status do pedido - A TRIGGER vai criar a notificação
+    $sql = "UPDATE pedido SET status_pedido = 'Cancelado' WHERE id_pedido = ?";
+    $query = $con->prepare($sql);
+    $query->bind_param("i", $id_pedido);
+    $query->execute();
+
     $con->commit();
+    // notifica adm:
     echo "<script>alert('Pedido cancelado com sucesso!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
 } catch (Exception $e) {
     $con->rollback();

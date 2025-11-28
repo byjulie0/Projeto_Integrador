@@ -16,6 +16,5 @@
         </p>
         <button class="fechar_popup_resultado" onclick="window.history.back(); return false;">&times;</button>
     </div>
-</div>
 </body>
 </html>

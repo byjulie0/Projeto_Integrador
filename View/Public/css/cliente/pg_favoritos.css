@@ -36,9 +36,9 @@
   align-items: center;
   justify-content: left;
   color: var(--color-primary-1);
-  padding-left: 5%;
+  /* padding-left: 5%; */
   gap: 10px;
-  margin-top:3%;
+  /* margin-top:3%; */
 }
 .h2_pg_favoritos {
   font-size: 2rem;

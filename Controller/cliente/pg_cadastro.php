@@ -97,8 +97,8 @@ include 'menu_cadastro.php';
 
             <p class="area-termos-privacidade-cadastro">
                 Ao se inscrever, você concorda com as políticas do John Rooster
-                <a href="termos_e_condicoes.php" class="login-cadastro">Termos de serviço</a> &
-                <a href="privacidade-e-seguranca.php" class="login-cadastro">Políticas de privacidade</a>
+                <a href="pg_termos_condicoes.php" class="login-cadastro">Termos de serviço</a> &
+                <a href="pg_priva_segu.php" class="login-cadastro">Políticas de privacidade</a>
             </p>
             <p class="area-login-cadastro">
                 Já tem uma conta? <a href="login.php" class="login-cadastro">Entre</a>

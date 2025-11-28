@@ -25,7 +25,7 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
                             class="verificar_administrar_pedidos_sessao_seta_voltar">
                             <i class="bi bi-chevron-left"></i>
                         </a>
-                        <h1>Verificar e administrar pedidos</h1>
+                        <h3>Verificar e administrar pedidos</h3>
                     </div>
 
                     <div class="first-container-atualizar-produtos">
@@ -50,66 +50,69 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
                     </div>
                 </div>
             </div>
-            <hr class="verificar_administrar_pedidos_sessao_divisao">
+            <!-- <hr class="verificar_administrar_pedidos_sessao_divisao"> -->
         </section>
 
         <div class="verificar_administrar_pedidos_sessao_visualizar">
-            <div class="table-container">
-                <div class="verificar_administrar_pedidos_sessao_pedidos">
-                    <table>
-                        <thead>
-                            <tr class="linha_cinza">
-                                <th>Pedido</th>
-                                <th>Abertura</th>
-                                <th>Status</th>
-                                <th>Cliente</th>
-                                <th>Preço</th>
-                                <th>CPJ/CPF</th>
-                                <th>Verificar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $pedidos = $pedidos ?? [];
-                            $status = $_GET['status'] ?? '';
-                            $pesquisa = $_GET['pesquisa'] ?? '';
+            <div class="verificar_administrar_pedidos_sessao_pedidos">
+                <table class="tabela-pedidos">
+                    <thead>
+                        <tr>
+                            <th>Pedido</th>
+                            <th>Abertura</th>
+                            <th>Status</th>
+                            <th>Cliente</th>
+                            <th>Preço</th>
+                            <th>CPJ/CPF</th>
+                            <th>Verificar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $pedidos = $pedidos ?? [];
+                        $status = $_GET['status'] ?? '';
+                        $pesquisa = $_GET['pesquisa'] ?? '';
 
-                            $pedidos_filtrados = [];
+                        $pedidos_filtrados = [];
 
-                            foreach ($pedidos as $pedido) {
-                                $matchStatus = !$status || strtolower($pedido['status_pedido']) === strtolower($status);
-                                $matchPesquisa = !$pesquisa || stripos($pedido['cliente_nome'], $pesquisa) !== false;
+                        foreach ($pedidos as $pedido) {
+                            $matchStatus = !$status || strtolower($pedido['status_pedido']) === strtolower($status);
+                            $matchPesquisa = !$pesquisa || stripos($pedido['cliente_nome'], $pesquisa) !== false;
 
-                                if ($matchStatus && $matchPesquisa) {
-                                    $pedidos_filtrados[] = $pedido;
-                                }
+                            if ($matchStatus && $matchPesquisa) {
+                                $pedidos_filtrados[] = $pedido;
                             }
+                        }
 
-                            if (!empty($pedidos_filtrados)):
-                                foreach ($pedidos_filtrados as $pedido):
-                                    ?>
-                                    <tr>
-                                        <td><?= htmlspecialchars($pedido['id_pedido']) ?></td>
-                                        <td><?= htmlspecialchars($pedido['data_pedido']) ?></td>
-                                        <td><?= htmlspecialchars($pedido['status_pedido']) ?></td>
-                                        <td><?= htmlspecialchars($pedido['cliente_nome']) ?></td>
-                                        <td>R$ <?= number_format($pedido['valor_pedido'] ?? 0, 2, ',', '.') ?></td>
-                                        <td><?= htmlspecialchars($pedido['cpf_cnpj']) ?></td>
-                                        <td>
-                                            <a href="verificar_pedido_infos.php?id=<?= $pedido['id_pedido'] ?>">
-                                                <i class="bi bi-search"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
+                        if (!empty($pedidos_filtrados)):
+                            foreach ($pedidos_filtrados as $pedido):
+                                ?>
                                 <tr>
-                                    <td colspan="7" style="text-align:center;">Nenhum pedido encontrado</td>
+                                    <td><?= htmlspecialchars($pedido['id_pedido']) ?></td>
+                                    <td>
+                                        <?php
+                                        $data_pedido = new DateTime($pedido['data_pedido']);
+                                        echo htmlspecialchars($data_pedido->format('d/m/Y H:i:s'));
+                                        ?>
+                                    </td>
+                                    <td><?= htmlspecialchars($pedido['status_pedido']) ?></td>
+                                    <td><?= htmlspecialchars($pedido['cliente_nome']) ?></td>
+                                    <td>R$ <?= number_format($pedido['valor_pedido'] ?? 0, 2, ',', '.') ?></td>
+                                    <td><?= htmlspecialchars($pedido['cpf_cnpj']) ?></td>
+                                    <td>
+                                        <a href="verificar_pedido_infos.php?id_pedido=<?= $pedido['id_pedido'] ?>">
+                                            <i class="bi bi-search"></i>
+                                        </a>
+                                    </td>
                                 </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="7" style="text-align:center;">Nenhum pedido encontrado</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>

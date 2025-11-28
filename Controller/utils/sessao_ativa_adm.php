@@ -3,20 +3,17 @@ include '../../model/DB/conexao.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
-    //Recaptcha
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        header('Location: ../adm/login.php?error=nao_fez_login');
-        exit;
-    }
+    
+    $email = mysqli_real_escape_string($con, trim($_POST['email']));
+    $password = trim($_POST['password']);
+
+    // --- Início Recaptcha ---
     $recaptcha_secret = getenv('RECAPTCHA_SECRET') ?: '6LdyqOUrAAAAAF1olqup_tnkbPYxEHydWJkhAgHO';
     $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
     if (empty($recaptcha_response)) {
-        header('Location: ../adm/login.php?error=recaptcha_missing');
+        header('Location: ../adm/login.php?error=recaptcha falhou');
         exit;
-
     }
 
     $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
@@ -34,43 +31,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     curl_close($ch);
     $verification = json_decode($response, true);
 
-    if (isset($verification['success']) && $verification['success'] === true) {
-        echo '<script>mostrarPopup("sucesso", "Sucesso na validação do reCAPTCHA !");</script>';
-    } else {
-        echo '<script>mostrarPopup("erro", "Validação reCAPTCHA falhou!");</script>';
+    if (!isset($verification['success']) || $verification['success'] !== true) {
+        header('Location: ../adm/login.php?error=recaptcha falhou');
         exit;
     }
-    //recaptcha
+    // --- Fim Recaptcha ---
 
-    $query = "SELECT id_adm, adm_nome, email, telefone, senha, cnpj, funcao FROM adm WHERE email = '{$email}' and funcao = 'ADM' ";
-
+    // Consulta SQL
+    $query = "SELECT id_adm, adm_nome, email, telefone, senha, cnpj, funcao FROM adm WHERE email = '{$email}' AND funcao = 'ADM'";
     $result = mysqli_query($con, $query);
 
-    $row = mysqli_num_rows($result);
+    // Verifica se encontrou o usuário
+    if ($result && mysqli_num_rows($result) > 0) {
+        $result = mysqli_fetch_assoc($result);
 
-    if ($row > 0) {
-        $retorno = mysqli_fetch_assoc($result);
+        // Verifica a senha
+        if ($password === $result['senha']) {
+            // Login com SUCESSO
+            $_SESSION["id_adm"] = $result['id_adm'];
+            $_SESSION["adm_nome"] = $result['adm_nome'];
+            $_SESSION["email"] = $result['email'];
+            $_SESSION["telefone"] = $result['telefone'];
+            $_SESSION["cnpj"] = $result['cnpj'];
+            $_SESSION["funcao"] = $result['funcao'];
+            
+            header("Location: ../adm/pg_inicial_adm.php");
+            exit();
+        } else {
+            // Senha incorreta
+            header("Location: ../adm/login.php?error=email ou senha errados");
+            exit();
+        }
     } else {
-        header("Location: ../adm/login.php");
-        exit();
-    }
-
-    if ($password === $retorno['senha']) {
-
-        $_SESSION["id_adm"] = $retorno['id_adm'];
-        $_SESSION["adm_nome"] = $retorno['adm_nome'];
-        $_SESSION["email"] = $retorno['email'];
-        $_SESSION["telefone"] = $retorno['telefone'];
-        $_SESSION["cnpj"] = $retorno['cnpj'];
-        $_SESSION["funcao"] = $retorno['funcao'];
-        header("Location: ../adm/pg_inicial_adm.php");
-        exit();
-    } else {
-        $_SESSION['erro'] = 1;
-        // include '../overlays/pop_up_erro.php';
-        header("Location: ../adm/login.php?error=senha_invalida");
-
-
+        // Usuário não encontrado no banco
+        header("Location: ../adm/login.php?error=email ou senha errados");
         exit();
     }
 }
