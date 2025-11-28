@@ -13,8 +13,8 @@
   align-items: center;
   justify-content: center;
   gap: 25px;
-  width: 30%;
   margin-bottom: 15px;
+  margin-top: 10px;
 }
 .verificar_administrar_pedidos_sessao_periodo_bloco{
   background-color: #ffff;

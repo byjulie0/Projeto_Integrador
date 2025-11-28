@@ -84,7 +84,7 @@ CREATE TABLE pedido (
 CREATE TABLE item (
     id_item INT PRIMARY KEY,
     pedido_id_pedido INT,
-    produto_id_produto INT,
+    produto_id_produto INT, 
     qtd_produto INT,
     FOREIGN KEY (pedido_id_pedido) REFERENCES pedido(id_pedido),
     FOREIGN KEY (produto_id_produto) REFERENCES produto(id_produto)

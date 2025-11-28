@@ -62,6 +62,7 @@ $exibirNossaHistoria = ($paginaAtual === 'pg_inicial_cliente.php');
                     <ul class="submenu_inicial">
                         <?php if($usuarioLogado): ?>
                             <li><a href="meu_perfil.php">Meus dados</a></li>
+                            <li><a href="formulario_altera_senha.php">Redefinir senha</a></li>
                             <li><a href="historico_pedidos.php">Meus pedidos</a></li>
                             <li><a href="pg_favoritos.php">Favoritos</a></li>
                             <li><a href="logout.php">Sair</a></li>

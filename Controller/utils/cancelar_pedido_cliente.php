@@ -1,35 +1,49 @@
 <?php
 include "autenticado.php";
-include "../../model/DB/conexao.php";
 
-if (!isset($_GET['id'])) {
-    header("Location: ../cliente/historico_pedidos.php");
+$id_pedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
+
+if ($id_pedido === 0) {
+    echo "<script>alert('ID do pedido inválido!');  window.history.back();</script>";
     exit;
 }
 
-$id_pedido = intval($_GET['id']);
+try {
+    $con->begin_transaction();
 
-$sqlItens = "SELECT id_produto, qtd_produto 
-             FROM item 
-             WHERE id_pedido = $id_pedido";
-$resultItens = $con->query($sqlItens);
+    // Devolve estoque dos produtos relacionados a esse pedido
+    $sql = "SELECT id_produto, qtd_produto FROM item WHERE id_pedido = ?";
+    $query = $con->prepare($sql);
+    $query->bind_param("i", $id_pedido);
+    $query->execute();
+    $result = $query->get_result();
 
-while ($item = $resultItens->fetch_assoc()) {
-    $id_produto = $item['id_produto'];
-    $quantidade = $item['qtd_produto'];
+    while ($row = $result->fetch_assoc()) {
+        // Devolve o estoque
+        $sql = "UPDATE produto SET quant_estoque = quant_estoque + ? WHERE id_produto = ?";
+        $query = $con->prepare($sql);
+        $query->bind_param("ii", $row['qtd_produto'], $row['id_produto']);
+        $query->execute();
 
-    $sqlUpdateEstoque = "UPDATE produto 
-                         SET quant_estoque = quant_estoque + $quantidade
-                         WHERE id_produto = $id_produto";
-    $con->query($sqlUpdateEstoque);
+        // Reativa o produto se o estoque ficou positivo
+        $sql = "UPDATE produto SET produto_ativo = 1 WHERE id_produto = ? AND quant_estoque > 0";
+        $query = $con->prepare($sql);
+        $query->bind_param("i", $row['id_produto']);
+        $query->execute();
+    }
+
+    // Atualiza o status do pedido - A TRIGGER vai criar a notificação
+    $sql = "UPDATE pedido SET status_pedido = 'Cancelado' WHERE id_pedido = ?";
+    $query = $con->prepare($sql);
+    $query->bind_param("i", $id_pedido);
+    $query->execute();
+
+    $con->commit();
+    header("Location: ../cliente/historico_pedidos.php?cancelado=1");
+    exit;
+} catch (Exception $e) {
+    $con->rollback();
+    echo "<script>alert('Erro ao cancelar pedido: " . addslashes($e->getMessage()) . "'); window.history.back();</script>";
+    exit;
 }
-
-$sqlCancel = "UPDATE pedido 
-              SET status_pedido = 'Cancelado'
-              WHERE id_pedido = $id_pedido";
-$con->query($sqlCancel);
-
-header("Location: ../cliente/historico_pedidos.php?cancelado=1");
-exit;
-
 ?>

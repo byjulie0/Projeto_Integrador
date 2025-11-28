@@ -201,13 +201,13 @@ try {
 <script>
 function cancelarPedido(pedidoId) {
     if (confirm('Tem certeza que deseja cancelar este pedido?')) {
-        window.location.href = '../utils/acao_cancelar_pedido.php?id=' + pedidoId;
+        window.location.href = '../utils/acao_cancelar_pedido.php?id_pedido=' + pedidoId;
     }
 }
 
 function concluirPedido(pedidoId) {
     if (confirm('Confirmar conclusão deste pedido?')) {
-        window.location.href = '../utils/acao_concluir_pedido.php?id=' + pedidoId;
+        window.location.href = '../utils/acao_concluir_pedido.php?id_pedido=' + pedidoId;
     }
 }
 </script>

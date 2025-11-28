@@ -8,7 +8,8 @@ $sql = "SELECT
             c.cat_nome AS categoria,
             s.subcat_nome AS subcategoria,
             p.valor AS preco,
-            p.produto_ativo
+            p.produto_ativo,
+            p.quant_estoque
         FROM produto p
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
         LEFT JOIN subcategoria s ON p.id_subcategoria = s.id_subcategoria";

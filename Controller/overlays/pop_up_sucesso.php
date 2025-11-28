@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pop Up Sucesso</title>
-    <link rel="stylesheet" href="./../../view/public/css/adm/pop_up.css">
-    <link rel="stylesheet" href="./../../view/js/pop_up.js">
+    <link rel="stylesheet" href="../../view/public/css/adm/pop_up_resultado.css">
     <script defer src="../../view/js/adm/pop_up.js"></script>
 </head>
 <body>
-<div id="popupSucesso" class="popup-overlay" style="display: flex;">
-    <div class="popup-box">
-        <h1>Sucesso!</h1>
-        <button class="popup-close" onclick="window.history.back(); return false;">&times;</button>
-        <p><?= $texto ?></p>
+<div class="popup_resultado" style="display: flex;">
+    <div class="area_popup_resultado">
+        <h1 class="area_popup_resultado sucesso">Sucesso!</h1>
+        <p class="texto_pop_up">
+            <?php echo htmlspecialchars($texto); ?>
+        </p>
+        <button class="fechar_popup_resultado" onclick="window.history.back(); return false;">&times;</button>
     </div>
 </div>
 </body>
