@@ -24,17 +24,33 @@
                         $talvez_voce_goste = getProdutosAleatorios(5);
 
                         foreach ($talvez_voce_goste as $item) {
-                            $imagem = $item['imagem'];
-                            $peso = $item['peso'] . " kg";
-                            $raca = $item['prod_nome'];
-                            $idade = $item['idade'];
-                            $preco = number_format($item['valor'], 2, ',', '.');
 
-                           
+                            $imagem = $item['imagem'];
+                            $preco  = number_format($item['valor'], 2, ',', '.');
+                        
+                            // Detecta automaticamente se é ANIMAL
+                            $isAnimal = !empty($item['idade']) && !empty($item['peso']);
+                        
+                            if ($isAnimal) {
+                                // ANIMAL
+                                $nome       = $item['prod_nome']; // Nome do animal (ou raça)
+                                $raca       = $item['prod_nome'];
+                                $peso       = $item['peso'] . " kg";
+                                $idade      = $item['idade'];
+                                $preco_exibir = ""; // animal não mostra preço
+                            } else {
+                                // PRODUTO
+                                $nome       = $item['prod_nome']; // Nome do produto
+                                $raca       = "";  // produto não tem raça
+                                $peso       = "";  // produto não tem peso
+                                $idade      = "";  // produto não tem idade
+                                $preco_exibir = "R$ " . $preco; // produto mostra preço
+                            }
+                        
                             echo '<a href="detalhes_produto.php?id_produto=' . $item['id_produto'] . '">';
                             include 'card_carrossel.php';
                             echo '</a>';
-                        }
+                        }                        
                     ?>
                 </div>
             </a>
