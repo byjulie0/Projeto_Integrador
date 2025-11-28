@@ -82,8 +82,8 @@ mysqli_close($con);
                      <span class="verificar_administrar_pedidos_sessao_titulo_destaque" id="dataEscolhida"><?php echo date('d/m/Y', strtotime($data_inicio)) . ' - ' . date('d/m/Y', strtotime($data_fim)); ?></span>
                 </h3>
                 <span class="verificar_administrar_pedidos_sessao_mini_titulos_2" id="abrirCalendario">Mudar período</span>
-                <input type="text" id="dataInicio" style="display: none;" value="<?php echo $data_inicio; ?>">
-                <input type="text" id="dataFim" style="display: none;" value="<?php echo $data_fim; ?>">
+                <input type="text" id="dataInicio" style="opacity: 0; position: absolute; left: -9999px;" value="<?php echo $data_inicio; ?>">
+                <input type="text" id="dataFim" style="opacity: 0; position: absolute; left: -9999px;" value="<?php echo $data_fim; ?>">
             </div>
         </div>
 

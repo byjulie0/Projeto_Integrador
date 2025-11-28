@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="footer_adm_item">
-            <p class="copyright">© 2025 John Rooster. Todos os direitos reservados.</p>
+            <a  href="pg_dev.php"class="copyright">© 2025 John Rooster. Todos os direitos reservados.</a>
         </div>
     </footer>
 </body>
