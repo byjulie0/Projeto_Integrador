@@ -17,18 +17,19 @@ include '../utils/libras.php'
 
 <body>
     <?php
-    // Exibir pop-up de erro se houver
-      if (isset($_GET['error'])) {
+session_start();
 
-        // echo '<script> alert("OI") </script>';
+if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
 
-          $texto = $_SESSION['popup_message'];
-          include '../overlays/pop_up_erro.php';
-          unset($_SESSION['popup_type']);
-          unset($_SESSION['popup_message']);
-      }
+    $texto = $_SESSION['popup_message'];
 
-    ?>
+    include '../overlays/pop_up_erro.php';
+
+    unset($_SESSION['popup_message']);
+}
+?>
+
+
   <main class="container_geral_login">
 
     <div class="login_box_vinycius">
@@ -75,11 +76,6 @@ include '../utils/libras.php'
     </div>
   </main>
   <?php include 'footer_cliente.php'; ?>
-<<<<<<< HEAD
-
-
-
-=======
   <div id="popup-inativo" class="popup-overlay">
   <div class="popup-content">
     <h2>Conta desativada</h2>
@@ -92,7 +88,6 @@ include '../utils/libras.php'
     </div>
   </div>
 </div>
->>>>>>> 273eb6690581f0434a084585fd41bc0378498744
 </body>
 
 </html>
