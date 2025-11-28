@@ -23,13 +23,12 @@ include 'menu_pg_inicial.php';
 
 <body>
     <?php
-    // // Exibir pop-up de erro se houver
-    // if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'erro' && isset($_SESSION['popup_message'])) {
-    //     $texto = $_SESSION['popup_message'];
-    //     include '../overlays/pop_up_erro.php';
-    //     unset($_SESSION['popup_type']);
-    //     unset($_SESSION['popup_message']);
-    // }
+    if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'erro' && isset($_SESSION['popup_message'])) {
+        $texto = $_SESSION['popup_message'];
+        include '../overlays/pop_up_erro.php';
+        unset($_SESSION['popup_type']);
+        unset($_SESSION['popup_message']);
+    }
 
     // if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'sucesso' && isset($_SESSION['popup_message'])) {
     //     $texto = $_SESSION['popup_message'];
@@ -79,7 +78,6 @@ include 'menu_pg_inicial.php';
 
                             <div class="product-carrinho">
                                 <div class="non-labeled-content-carrinho">
-                                    <!-- IMAGEM -->
                                     <?php
                                     $listaImagens = [];
 
@@ -101,7 +99,6 @@ include 'menu_pg_inicial.php';
                                         ? $listaImagens[0]
                                         : '../../View/public/imagens/default-thumbnail.jpg';
                                     ?>
-                                    <!-- IMAGEM -->
                                     <img src="../../View/Public/<?php echo htmlspecialchars($imagem); ?>"
                                         alt="<?php echo $itens['prod_nome']; ?>" class="product-img-carrinho">
 
@@ -166,10 +163,8 @@ include 'menu_pg_inicial.php';
         </section>
     </div>
 
-    <!-- Script para redirecionar após sucesso do pedido -->
     <script>
         <?php if (isset($_GET['pedido_sucesso']) && $_GET['pedido_sucesso'] == 1): ?>
-            // Aguarda 3 segundos e redireciona para limpar carrinho e ir ao histórico
             setTimeout(function () {
                 window.location.href = 'https://api.whatsapp.com/send?phone=556799492638';
             }, 3000);

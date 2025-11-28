@@ -41,7 +41,30 @@ $imagem = !empty($listaImagens[0])
                 <p>Raça:</p>
                 <p><?= $raca ?></p>
                 <p>Idade:</p>
-                <p><?= $idade ?></p>
+                <p>
+                    <?php
+                    if (!empty($idade)) {
+                        try {
+                            $dataNascimento = new DateTime($idade);
+                            $dataAtual = new DateTime();
+                            $diferenca = $dataAtual->diff($dataNascimento);
+                            
+                            $anos = $diferenca->y;
+                            $meses = $diferenca->m;
+                            
+                            if ($anos >= 1) {
+                                echo $anos . " ano" . ($anos > 1 ? "s" : "");
+                            } else {
+                                echo $meses . "" . ($meses == 1 ? " mês" : " meses");
+                            }
+                        } catch (Exception $e) {
+                            echo "Data inválida";
+                        }
+                    } else {
+                        echo "Não informado";
+                    }
+                    ?>
+                </p>
                 <p class="preco">R$ <?= $preco ?></p>
             </div>
             <div class="stars-pag-fav">
