@@ -44,7 +44,6 @@
                     </a>
                     <ul class="submenu_adm">
                         <li><a href="meu_perfil.php">Meus dados</a></li>
-                        <li><a href="formulario_alterar_senha_adm.php">Redefinir senha</a></li>
                         <li><a href="#" onclick="mostrarAlerta(event)">Fazer backup</a></li>
                     </ul>
                 </div>
