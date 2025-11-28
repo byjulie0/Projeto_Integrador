@@ -1,5 +1,39 @@
 <?php
+session_start();
 include '../../model/DB/conexao.php';
+
+function mensagemErro($codigo) {
+    $erros = [
+        "nome_vazio"            => "O nome do produto não pode ficar vazio.",
+        "valor_invalido"        => "O valor precisa ser maior que zero.",
+        "quantidade_invalida"   => "A quantidade deve ser zero ou maior.",
+        "categoria_invalida"    => "Selecione uma categoria válida.",
+        "subcategoria_invalida" => "Selecione uma subcategoria válida.",
+        "descricao_vazia"       => "A descrição é obrigatória.",
+
+        // ANIMAIS
+        "sexo_vazio"            => "Selecione o sexo do animal.",
+        "peso_invalido"         => "Informe o peso corretamente.",
+        "idade_invalida"        => "Informe a idade do animal.",
+        "campeao_indefinido"    => "Selecione se o animal é campeão.",
+
+        // IMAGENS
+        "sem_imagem"            => "Envie pelo menos uma imagem.",
+        "img_formato"           => "Formato inválido! Permitido: JPG, JPEG, PNG, GIF, WEBP.",
+        "img_tamanho"           => "Cada imagem deve ter até 5MB.",
+        "img_falha_upload"      => "Erro ao salvar a imagem. Tente novamente.",
+
+        // BANCO
+        "banco_erro"            => "Erro ao salvar no banco.",
+        "banco_conexao"         => "Falha de conexão com o banco.",
+
+        // GERAL
+        "dados_incompletos"     => "Preencha todos os campos obrigatórios.",
+        "erro_desconhecido"     => "Ocorreu um erro inesperado."
+    ];
+
+    return $erros[$codigo] ?? $erros["erro_desconhecido"];
+}
 
 $popup_titulo = '';
 $popup_mensagem = '';
@@ -11,90 +45,131 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $valor        = floatval($_POST['valor'] ?? 0);
     $quantidade   = intval($_POST['quantidade'] ?? 0);
     $descricao    = trim($_POST['descricao'] ?? '');
-    $sexo         = $_POST['sexo'] ?? '';
-    $peso         = floatval($_POST['peso'] ?? 0);
+    $sexo         = $_POST['sexo'] ?? null;
+    $peso         = $_POST['peso'] ?? null;
     $idade        = $_POST['idade'] ?? null;
     $campeao      = strtolower($_POST['campeao'] ?? '') === 'sim' ? 1 : 0;
     $categoria    = intval($_POST['categoria'] ?? 0);
     $subcategoria = intval($_POST['subcategoria'] ?? 0);
 
-    if (empty($nome) || $valor <= 0 || $quantidade < 0 || $categoria <= 0 || $subcategoria <= 0 || empty($sexo)) {
-        $popup_titulo = "Erro!";
-        $popup_mensagem = "Preencha todos os campos obrigatórios corretamente.";
-        $popup_tipo = "erro";
-    } else {
+    // 🔥 CATEGORIA 4 = Produto Geral (remove campos de animais)
+    if ($categoria == 4) {
+        $sexo = null;
+        $peso = null;
+        $idade = null;
+        $campeao = null;
+    }
 
-        $pastaUpload = '../../view/public/uploads/';
-        if (!is_dir($pastaUpload)) mkdir($pastaUpload, 0777, true);
+    // 🔥 VALIDAÇÃO
+    if (empty($nome))                   $erro = "nome_vazio";
+    elseif ($valor <= 0)               $erro = "valor_invalido";
+    elseif ($quantidade < 0)           $erro = "quantidade_invalida";
+    elseif ($categoria <= 0)           $erro = "categoria_invalida";
+    elseif ($subcategoria <= 0)        $erro = "subcategoria_invalida";
+    elseif (empty($descricao))         $erro = "descricao_vazia";
 
-        $allowed = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
-        $imagens_nomes = array_fill(0, 4, null);
-        $uploadOk = false;
+    // Só valida animal se NÃO for categoria 4
+    elseif ($categoria != 4 && empty($sexo))   $erro = "sexo_vazio";
+    elseif ($categoria != 4 && $peso <= 0)     $erro = "peso_invalido";
+    elseif ($categoria != 4 && empty($idade))  $erro = "idade_invalida";
 
-        if (isset($_FILES['imagens']) && is_array($_FILES['imagens']['name'])) {
-            for ($i = 0; $i < 4; $i++) {
-                if (
-                    isset($_FILES['imagens']['error'][$i]) &&
-                    $_FILES['imagens']['error'][$i] === UPLOAD_ERR_OK &&
-                    !empty($_FILES['imagens']['name'][$i])
-                ) {
-                    $file_tmp = $_FILES['imagens']['tmp_name'][$i];
-                    $file_name = $_FILES['imagens']['name'][$i];
-                    $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+    // Se houver erro → popup
+    if (isset($erro)) {
+        $_SESSION['popup_titulo'] = "Erro!";
+        $_SESSION['popup_mensagem'] = mensagemErro($erro);
+        $_SESSION['popup_tipo'] = "erro";
 
-                    if (in_array($ext, $allowed) && $_FILES['imagens']['size'][$i] <= 5 * 1024 * 1024) {
-                        $novo_nome = "img" . ($i + 1) . "_" . time() . ".$ext";
-                        $destino = $pastaUpload . $novo_nome;
+        header("Location: ../adm/adicionar_produto.php");
+        exit;
+    }
 
-                        if (move_uploaded_file($file_tmp, $destino)) {
-                            $imagens_nomes[$i] = 'uploads/' . $novo_nome;
-                            $uploadOk = true;
-                        }
-                    }
-                }
+    // ============================
+    //   UPLOAD DAS IMAGENS
+    // ============================
+    $pastaUpload = '../../view/public/uploads/';
+    if (!is_dir($pastaUpload)) mkdir($pastaUpload, 0777, true);
+
+    $allowed = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+    $imagens_nomes = array_fill(0, 4, null);
+    $uploadOk = false;
+
+    for ($i = 0; $i < 4; $i++) {
+
+        if (!empty($_FILES['imagens']['name'][$i])) {
+
+            $tmp  = $_FILES['imagens']['tmp_name'][$i];
+            $name = $_FILES['imagens']['name'][$i];
+            $ext  = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+            $size = $_FILES['imagens']['size'][$i];
+
+            if (!in_array($ext, $allowed)) {
+                $erro = "img_formato"; break;
             }
-        }
 
-        if (!$uploadOk) {
-            $popup_titulo = "Imagem obrigatória!";
-            $popup_mensagem = "Adicione pelo menos uma imagem.";
-            $popup_tipo = "erro";
-        } else {
-            $imagens_json = json_encode($imagens_nomes, JSON_UNESCAPED_UNICODE);
-
-            $stmt = $con->prepare("INSERT INTO produto 
-                (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-            $stmt->bind_param(
-                "sdisssdsiii",
-                $nome, $valor, $quantidade, $imagens_json, $descricao, $sexo, $peso, $idade, $campeao, $categoria, $subcategoria
-            );
-
-
-            if ($stmt->execute()) {
-                $popup_titulo = "Sucesso!";
-                $popup_mensagem = "Produto cadastrado com sucesso!";
-                $popup_tipo = "sucesso";
-            } else {
-                $popup_titulo = "Erro no banco!";
-                $popup_mensagem = "Erro: " . $stmt->error;
-                $popup_tipo = "erro";
+            if ($size > 5 * 1024 * 1024) {
+                $erro = "img_tamanho"; break;
             }
-            $stmt->close();
+
+            $novoNome = "img" . ($i + 1) . "_" . time() . "." . $ext;
+            $destino  = $pastaUpload . $novoNome;
+
+            if (!move_uploaded_file($tmp, $destino)) {
+                $erro = "img_falha_upload"; break;
+            }
+
+            $imagens_nomes[$i] = "uploads/" . $novoNome;
+            $uploadOk = true;
         }
     }
+
+    if (!$uploadOk) $erro = "sem_imagem";
+
+    if (isset($erro)) {
+        $_SESSION['popup_titulo'] = "Erro!";
+        $_SESSION['popup_mensagem'] = mensagemErro($erro);
+        $_SESSION['popup_tipo'] = "erro";
+
+        header("Location: ../adm/adicionar_produto.php");
+        exit;
+    }
+
+    // ============================
+    //   INSERIR NO BANCO
+    // ============================
+    $jsonImgs = json_encode($imagens_nomes, JSON_UNESCAPED_UNICODE);
+
+    $stmt = $con->prepare("INSERT INTO produto 
+        (prod_nome, valor, quant_estoque, path_img, descricao, sexo, peso, idade, campeao, id_categoria, id_subcategoria)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+    $stmt->bind_param(
+        "sdisssdsiii",
+        $nome,
+        $valor,
+        $quantidade,
+        $jsonImgs,
+        $descricao,
+        $sexo,
+        $peso,
+        $idade,
+        $campeao,
+        $categoria,
+        $subcategoria
+    );
+
+    if ($stmt->execute()) {
+        $_SESSION['popup_titulo'] = "Sucesso!";
+        $_SESSION['popup_mensagem'] = "Produto cadastrado com sucesso!";
+        $_SESSION['popup_tipo'] = "sucesso";
+    } else {
+        $_SESSION['popup_titulo'] = "Erro!";
+        $_SESSION['popup_mensagem'] = mensagemErro("banco_erro");
+        $_SESSION['popup_tipo'] = "erro";
+    }
+
+    $stmt->close();
+
+    header("Location: ../adm/adicionar_produto.php");
+    exit;
 }
 ?>
-
-<?php if (!empty($popup_titulo)): ?>
-<div id="popup_resultado" class="popup_resultado" style="display:flex;">
-    <div class="area_popup_resultado <?= $popup_tipo ?>">
-        <h2><?= htmlspecialchars($popup_titulo) ?></h2>
-        <p><?= nl2br(htmlspecialchars($popup_mensagem)) ?></p>
-        <button onclick="location.href='../adm/catalogo_produtos.php'" class="botao_popup_cancelar fechar_popup_resultado">Fechar</button>
-    </div>
-</div>
-<link rel="stylesheet" href="../../view/public/css/adm/pop_up_resultado.css">
-<script src="../../view/public/js/pop_up_resultado.js"></script>
-<?php endif; ?>

@@ -136,7 +136,7 @@ function setupCategorySubcategory() {
             subSelect.disabled = false;
         }
 
-        const desabilitar = (parseInt(catId) === 5);
+        const desabilitar = (parseInt(catId) === 4);
         camposAnimal.forEach(campo => {
             if (campo) {
                 campo.disabled = desabilitar;

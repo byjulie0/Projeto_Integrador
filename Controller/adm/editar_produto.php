@@ -142,38 +142,44 @@ while (count($imgs) < 4) $imgs[] = null;
                                 class="input_product_info product_details" required><?= htmlspecialchars($produto['descricao']) ?></textarea>
                         </article>
 
-                        <article class="input_product_quantity">
-                            <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
-                            <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso"
-                                value="<?= htmlspecialchars($produto['peso']) ?>" min="0" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
-                        </article>
+                        <!-- PESO -->
+<article class="input_product_quantity">
+    <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
+    <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso"
+        value="<?= htmlspecialchars($produto['peso']) ?>" min="0"
+        <?= $produto['id_categoria'] == 4 ? 'disabled' : '' ?>>
+</article>
 
-                        <article class="input_product_quantity">
-                            <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
-                            <input type="date" class="input_product_info" name="idade"
-                                value="<?= htmlspecialchars($produto['idade']) ?>" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
-                        </article>
+<!-- IDADE -->
+<article class="input_product_quantity">
+    <p class="product_title_info">Idade do animal<span class="mandatory_space">*</span></p>
+    <input type="date" class="input_product_info" name="idade"
+        value="<?= htmlspecialchars($produto['idade']) ?>"
+        <?= $produto['id_categoria'] == 4 ? 'disabled' : '' ?>>
+</article>
 
-                        <article class="input_product_category">
-                            <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
-                            <select class="product_info_select" name="sexo" <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
-                                <option value="" disabled>Selecione</option>
-                                <option value="M" <?= $produto['sexo'] == 'M' ? 'selected' : '' ?>>Macho</option>
-                                <option value="F" <?= $produto['sexo'] == 'F' ? 'selected' : '' ?>>Fêmea</option>
-                                <option value="Não se aplica" <?= $produto['sexo'] == 'Não se aplica' ? 'selected' : '' ?>>
-                                    Não se aplica (Produto)</option>
-                            </select>
-                        </article>
+<!-- SEXO -->
+<article class="input_product_category">
+    <p class="product_title_info">Sexo do animal<span class="mandatory_space">*</span></p>
+    <select class="product_info_select" name="sexo" <?= $produto['id_categoria'] == 4 ? 'disabled' : '' ?>>
+        <option value="" disabled>Selecione</option>
+        <option value="M" <?= $produto['sexo'] == 'M' ? 'selected' : '' ?>>Macho</option>
+        <option value="F" <?= $produto['sexo'] == 'F' ? 'selected' : '' ?>>Fêmea</option>
+        <option value="Não se aplica" <?= $produto['sexo'] == 'Não se aplica' ? 'selected' : '' ?>>Não se aplica (Produto)</option>
+    </select>
+</article>
 
-                        <article class="input_product_champion">
-                            <p class="product_title_info">É campeão?<span class="mandatory_space">*</span></p>
-                            <select id="is_champion" class="product_info_select" name="campeao"
-                                <?= $produto['id_categoria'] == 5 ? 'disabled' : '' ?>>
-                                <option value="" disabled>Selecione</option>
-                                <option value="sim" <?= $produto['campeao'] == 'sim' ? 'selected' : '' ?>>Sim</option>
-                                <option value="nao" <?= $produto['campeao'] == 'nao' ? 'selected' : '' ?>>Não</option>
-                            </select>
-                        </article>
+<!-- CAMPEÃO -->
+<article class="input_product_champion">
+    <p class="product_title_info">É campeão?<span class="mandatory_space">*</span></p>
+    <select id="is_champion" class="product_info_select" name="campeao"
+        <?= $produto['id_categoria'] == 4 ? 'disabled' : '' ?>>
+        <option value="" disabled>Selecione</option>
+        <option value="sim" <?= $produto['campeao'] == 'sim' ? 'selected' : '' ?>>Sim</option>
+        <option value="nao" <?= $produto['campeao'] == 'nao' ? 'selected' : '' ?>>Não</option>
+    </select>
+</article>
+
 
                     </div>
                 </aside>

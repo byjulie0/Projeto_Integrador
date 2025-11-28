@@ -162,3 +162,34 @@ function clearImage(i) {
     previews[i] = null;
     updateCarousel();
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const categoriaSelect = document.getElementById("categoria");
+
+    const campoPeso = document.querySelector('input[name="peso"]');
+    const campoIdade = document.querySelector('input[name="idade"]');
+    const campoSexo = document.querySelector('select[name="sexo"]');
+    const campoCampeao = document.querySelector('select[name="campeao"]');
+
+    function atualizarCamposAnimal() {
+        const idCategoria = parseInt(categoriaSelect.value);
+
+        if (idCategoria === 4) { 
+            campoPeso.disabled = true;
+            campoIdade.disabled = true;
+            campoSexo.disabled = true;
+            campoCampeao.disabled = true;
+        } else {
+            campoPeso.disabled = false;
+            campoIdade.disabled = false;
+            campoSexo.disabled = false;
+            campoCampeao.disabled = false;
+        }
+    }
+
+    atualizarCamposAnimal();
+    categoriaSelect.addEventListener("change", atualizarCamposAnimal);
+
+});
