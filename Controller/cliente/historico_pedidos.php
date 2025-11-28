@@ -42,7 +42,7 @@ include 'menu_pg_inicial.php';
                             </div>
                             <div class="botao_cancelar">
                                 <?php if ($pedido['status_pedido'] == 'Pendente'): ?>
-                                    <a href="../utils/cancelar_pedido_cliente.php?id=<?= $pedido['id_pedido'] ?>"
+                                    <a href="../utils/cancelar_pedido_cliente.php?id_pedido=<?= $pedido['id_pedido'] ?>"
                                         class="botao_vermelho">
                                         Cancelar Pedido
                                     </a>
