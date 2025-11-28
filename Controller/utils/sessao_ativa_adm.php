@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION["cnpj"] = $result['cnpj'];
             $_SESSION["funcao"] = $result['funcao'];
             
-            header("Location: ../adm/pg_inicial_adm.php");
+            header("Location: ../adm/relatorios_visualizar.php");
             exit();
         } else {
             // Senha incorreta

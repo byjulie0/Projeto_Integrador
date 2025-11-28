@@ -104,5 +104,3 @@ include 'menu_inicial.php';
     </main>
 </body>
 </html>
-
-<?php include 'footer.php' ?>

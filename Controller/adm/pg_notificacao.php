@@ -69,5 +69,3 @@ $query->close();
 </body>
 
 </html>
-
-<?php include 'footer.php'; ?>

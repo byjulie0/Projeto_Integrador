@@ -150,8 +150,6 @@ while ($r = mysqli_fetch_assoc($resSub)) {
         </form>
     </div>
 
-    <?php include 'footer.php'; ?>
-
 <script>
     window.subMapData = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
 </script>

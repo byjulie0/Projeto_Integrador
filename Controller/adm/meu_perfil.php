@@ -72,5 +72,3 @@ include 'menu_inicial.php';
 </body>
 
 </html>
-
-<?php include 'footer.php'; ?>

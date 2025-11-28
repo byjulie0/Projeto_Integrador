@@ -134,4 +134,3 @@ $produtos = listar_produtos();
 </body>
 
 </html>
-<?php include 'footer.php'; ?>

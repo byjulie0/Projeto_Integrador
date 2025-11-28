@@ -194,7 +194,5 @@ while (count($imgs) < 4) $imgs[] = null;
         window.produtoSubcategoria = <?= (int) $produto['id_subcategoria']; ?>;
         window.produtoImgs = <?= json_encode($imgs, JSON_UNESCAPED_UNICODE); ?>;
     </script>
-
-    <?php include 'footer.php'; ?>
 </body>
 </html>

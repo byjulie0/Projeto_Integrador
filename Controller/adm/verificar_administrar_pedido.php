@@ -119,5 +119,3 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
 </body>
 
 </html>
-
-<?php include 'footer.php'; ?>
