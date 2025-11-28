@@ -4,7 +4,7 @@ include '../../model/DB/conexao.php';
 $id_pedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
 
 if ($id_pedido === 0) {
-    echo "<script>alert('ID do pedido inválido!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
+    echo "<script>alert('ID do pedido inválido!');  window.history.back();</script>";
     exit;
 }
 
@@ -24,7 +24,6 @@ try {
         $query = $con->prepare($sql);
         $query->bind_param("ii", $row['qtd_produto'], $row['id_produto']);
         $query->execute();
-
         // Reativa o produto se o estoque ficou positivo
         $sql = "UPDATE produto SET produto_ativo = 1 WHERE id_produto = ? AND quant_estoque > 0";
         $query = $con->prepare($sql);
@@ -39,6 +38,7 @@ try {
     $query->execute();
 
     $con->commit();
+    // notifica adm:
     echo "<script>alert('Pedido cancelado com sucesso!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
 } catch (Exception $e) {
     $con->rollback();
