@@ -197,15 +197,14 @@ option{
  
 }
 
-@media (max-width: 360px) {
-  .filtros_categoria_produtos {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 10px;
+@media (max-width: 480px) {
+   .filtros_categoria_produtos {
+    gap: 8px;
+    padding: 10px;
   }
   
   .filtro_btn, .filtro_select {
-    width: 100%;
-    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.85rem;
   }
 }
