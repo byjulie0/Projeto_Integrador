@@ -53,6 +53,11 @@
                                 </td>
 
                                 <td class="qt-atualizar-produtos">${statusTexto}</td>
+                                
+                                <td class="price-atualizar-produtos cell-atualizar-produto">
+                                    ${p.quant_estoque}
+                                </td>
+                                        
                             </tr>
                         `;
                     });

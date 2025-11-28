@@ -25,6 +25,7 @@
 /* Título de acordo com tipo */
 .area_popup_resultado,.sucesso h1 { color: #2d8c37; } /* verde sucesso */
 .area_popup_resultado,.erro h1 { color: #e63946; } /* vermelho erro */
+.texto_pop_up { color: black; text-align: justify; } /* vermelho erro */
 
 /* Botão de fechar (X) */
 .fechar_popup_resultado {
@@ -69,8 +70,8 @@
 }
 
 /* Botão de erro (vermelho) */
-.botoes_popup_resultado .botao_erro {
-  background-color: #e63946;
+/* .botoes_popup_resultado .botao_erro {
+  background-color: magenta;
   border: none;
   color: white;
   padding: 12px 20px;
@@ -82,4 +83,4 @@
 
 .botoes_popup_resultado .botao_erro:hover {
   background-color: #c61f1f;
-}
+} */

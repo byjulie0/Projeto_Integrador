@@ -23,7 +23,6 @@ include 'menu_pg_inicial.php';
 
 <body>
     <?php
-    // Exibir pop-up de erro se houver
     if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'erro' && isset($_SESSION['popup_message'])) {
         $texto = $_SESSION['popup_message'];
         include '../overlays/pop_up_erro.php';
@@ -31,12 +30,12 @@ include 'menu_pg_inicial.php';
         unset($_SESSION['popup_message']);
     }
 
-    if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'sucesso' && isset($_SESSION['popup_message'])) {
-        $texto = $_SESSION['popup_message'];
-        include '../overlays/pop_up_sucesso.php';
-        unset($_SESSION['popup_type']);
-        unset($_SESSION['popup_message']);
-    }
+    // if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'sucesso' && isset($_SESSION['popup_message'])) {
+    //     $texto = $_SESSION['popup_message'];
+    //     include '../overlays/pop_up_sucesso.php';
+    //     unset($_SESSION['popup_type']);
+    //     unset($_SESSION['popup_message']);
+    // }
 
     ?>
 
@@ -54,7 +53,7 @@ include 'menu_pg_inicial.php';
                 $sql = "SELECT c.id_carrinho, c.quantidade, p.prod_nome, p.path_img, p.descricao, p.valor
                         FROM carrinho c
                         JOIN produto p ON c.id_produto = p.id_produto
-                        WHERE c.id_cliente='$id_cliente' AND p.produto_ativo = 1";
+                        WHERE c.id_cliente='$id_cliente'";
                 $result = $con->query($sql);
                 $totalGeral = 0;
                 $totalItems = 0;
@@ -79,7 +78,6 @@ include 'menu_pg_inicial.php';
 
                             <div class="product-carrinho">
                                 <div class="non-labeled-content-carrinho">
-                                    <!-- IMAGEM -->
                                     <?php
                                     $listaImagens = [];
 
@@ -101,7 +99,6 @@ include 'menu_pg_inicial.php';
                                         ? $listaImagens[0]
                                         : '../../View/public/imagens/default-thumbnail.jpg';
                                     ?>
-                                    <!-- IMAGEM -->
                                     <img src="../../View/Public/<?php echo htmlspecialchars($imagem); ?>"
                                         alt="<?php echo $itens['prod_nome']; ?>" class="product-img-carrinho">
 
@@ -166,12 +163,10 @@ include 'menu_pg_inicial.php';
         </section>
     </div>
 
-    <!-- Script para redirecionar após sucesso do pedido -->
     <script>
         <?php if (isset($_GET['pedido_sucesso']) && $_GET['pedido_sucesso'] == 1): ?>
-            // Aguarda 3 segundos e redireciona para limpar carrinho e ir ao histórico
             setTimeout(function () {
-                window.location.href = '../utils/limpar_carrinho.php';
+                window.location.href = 'https://api.whatsapp.com/send?phone=556799492638';
             }, 3000);
         <?php endif; ?>
     </script>
