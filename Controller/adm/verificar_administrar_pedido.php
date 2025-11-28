@@ -100,7 +100,7 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
                                     <td>R$ <?= number_format($pedido['valor_pedido'] ?? 0, 2, ',', '.') ?></td>
                                     <td><?= htmlspecialchars($pedido['cpf_cnpj']) ?></td>
                                     <td>
-                                        <a href="verificar_pedido_infos.php?id=<?= $pedido['id_pedido'] ?>">
+                                        <a href="verificar_pedido_infos.php?id_pedido=<?= $pedido['id_pedido'] ?>">
                                             <i class="bi bi-search"></i>
                                         </a>
                                     </td>
