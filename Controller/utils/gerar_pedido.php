@@ -8,10 +8,11 @@ if ($usuario_nao_logado) {
     exit;
 }
 
+// CORREÇÃO: Query corrigida com placeholder
 $sql = "SELECT c.id_carrinho, c.quantidade, p.id_produto, p.prod_nome, p.valor, p.quant_estoque
         FROM carrinho c
         JOIN produto p ON c.id_produto = p.id_produto
-        WHERE c.id_cliente = ? AND p.produto_ativo = 1";
+        WHERE c.id_cliente = ?";
 
 $query = $con->prepare($sql);
 $query->bind_param("i", $id_cliente);
@@ -52,7 +53,7 @@ if ($result->num_rows > 0) {
             $query->close();
 
             // Atualiza estoque
-             $sql = "UPDATE produto SET quant_estoque = quant_estoque - ? WHERE id_produto = ?";
+            $sql = "UPDATE produto SET quant_estoque = quant_estoque - ? WHERE id_produto = ?";
             $query = $con->prepare($sql);
             $query->bind_param("ii", $item['quantidade'], $item['id_produto']);
             
@@ -69,7 +70,6 @@ if ($result->num_rows > 0) {
             $stock_result = $query->get_result();
             $stock_data = $stock_result->fetch_assoc();
             $query->close();
-            echo $stock_data['quant_estoque'];
 
             if ($stock_data['quant_estoque'] <= 0) {
                 // Remove de todos os carrinhos
@@ -93,11 +93,11 @@ if ($result->num_rows > 0) {
                 $query->execute();
                 $query->close();
 
-                //notificação adm inativo inicio
-                $produto_id= $item['id_produto'];
+                // Notificação adm inativo
+                $produto_id = $item['id_produto'];
                 $nome_produto = $item['prod_nome'];
-                $mensagem="O estoque do produto: {$nome_produto} ,chegou a zero e foi desativado!";
-                $categoria="Estoque";
+                $mensagem = "O estoque do produto: {$nome_produto} ,chegou a zero e foi desativado!";
+                $categoria = "Estoque";
 
                 $notificacao_adm_sucesso = Criar_notificacao_adm($con, $produto_id, $mensagem, $categoria);
         
@@ -106,26 +106,25 @@ if ($result->num_rows > 0) {
                 } else {
                     error_log("Falha ao criar notificação para o ADM");
                 }
-
-                //notificação adm inativo fim
-
-
-
             }
-            echo $stock_data['quant_estoque'];
 
             $id_verif_prod = $item['id_produto'];
-            $sql_verif_estoq = "SELECT quant_estoque,sexo FROM produto WHERE id_produto = $id_verif_prod";
-            $qtd_estoque= $con->query($sql_verif_estoq);
-            $linhas=$qtd_estoque->fetch_assoc();
+            
+            // CORREÇÃO: Usar prepared statement aqui também
+            $sql_verif_estoq = "SELECT quant_estoque, sexo FROM produto WHERE id_produto = ?";
+            $query_verif = $con->prepare($sql_verif_estoq);
+            $query_verif->bind_param("i", $id_verif_prod);
+            $query_verif->execute();
+            $qtd_estoque = $query_verif->get_result();
+            $linhas = $qtd_estoque->fetch_assoc();
+            $query_verif->close();
 
-            // notificação adm baixo estoque inicio
+            // Notificação adm baixo estoque
             if($stock_data['quant_estoque'] > 0 && $stock_data['quant_estoque'] <= 5 && ($linhas['sexo'] == "Não se aplica" || $linhas['sexo'] == null)){
-
-                $produto_id= $id_verif_prod;
+                $produto_id = $id_verif_prod;
                 $nome_produto = $item['prod_nome'];
-                $mensagem="O estoque do produto: {$nome_produto} ,possui {$stock_data['quant_estoque']} unidades restantes, reposição necessaria!";
-                $categoria="Estoque";
+                $mensagem = "O estoque do produto: {$nome_produto} ,possui {$stock_data['quant_estoque']} unidades restantes, reposição necessaria!";
+                $categoria = "Estoque";
                 $notificacao_adm_sucesso = Criar_notificacao_adm($con, $produto_id, $mensagem, $categoria);
         
                 if ($notificacao_adm_sucesso) {
@@ -133,12 +132,10 @@ if ($result->num_rows > 0) {
                 } else {
                     error_log("Falha ao criar notificação para o ADM");
                 }
-
             }
-            // notificação adm baixo estoque fim
         }
 
-        // Limpa carrinho do cliente
+        // CORREÇÃO: Removida a duplicação - limpar carrinho apenas UMA vez
         $sql = "DELETE FROM carrinho WHERE id_cliente = ?";
         $query = $con->prepare($sql);
         $query->bind_param("i", $id_cliente);
@@ -147,19 +144,33 @@ if ($result->num_rows > 0) {
             throw new Exception("Erro ao limpar carrinho: " . $query->error);
         }
         $query->close();
-
+        
         $con->commit();
-        header("Location: ../cliente/carrinho.php?sucess=1");
+
+        // Salva mensagem de sucesso na sessão
+        $_SESSION['titulo'] = 'Seu pedido na JohnRooster foi criado!';
+        $_SESSION['popup_message'] = 'Clique no botão do WhatsApp e converse com um atendente mais detalhes. Você pode consultar a situação do seu pedido na página de histórico. Código do pedido: #' . $id_pedido ;
+
+        // MANTER o parâmetro sucess para identificar que é um pop-up de sucesso
+        header("Location: ../cliente/carrinho.php?error&sucess&t=" . time());
         exit;
 
     } catch (Exception $e) {
         $con->rollback();
-        error_log("ERRO PEDIDO: " . $e->getMessage());
-        header("Location: ../cliente/carrinho.php?error=" . urlencode($e->getMessage()));
+        
+        // Salva mensagem de erro na sessão
+        $_SESSION['titulo'] = 'Não foi possivel gerar pedido!';
+        $_SESSION['popup_message'] = 'Erro ao criar pedido: ' . $e->getMessage();
+        
+        header("Location: ../cliente/carrinho.php?error&t=" . time());
         exit;
     }
 } else {
-    header("Location: ../cliente/carrinho.php?error=carrinho_vazio");
+    // Carrinho vazio
+    $_SESSION['titulo'] = 'Seu carrinho está vazio!';
+    $_SESSION['popup_message'] = 'Adicione produtos antes de finalizar o pedido.';
+    
+    header("Location: ../cliente/carrinho.php?error&t=" . time());
     exit;
 }
 ?>

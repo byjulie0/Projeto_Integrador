@@ -1,7 +1,4 @@
 <?php
-// include 'gerar_notificacao.php';
-include '../../model/DB/conexao.php';
-
 $popup_titulo = '';
 $popup_mensagem = '';
 $popup_tipo = '';
@@ -22,54 +19,19 @@ $idade        = $_POST['idade'] ?? null;
 $campeao      = (isset($_POST['campeao']) && strtolower($_POST['campeao']) === 'sim') ? 1 : 0;
 $categoria    = intval($_POST['categoria'] ?? 0);
 $subcategoria = intval($_POST['subcategoria'] ?? 0);
+
 if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categoria <= 0 || $subcategoria <= 0) {
     $popup_titulo = "Erro!";
     $popup_mensagem = "Preencha todos os campos obrigatórios corretamente.";
     $popup_tipo = "erro";
 } else {
     $sql = "SELECT path_img FROM produto WHERE id_produto = ?";
-    $stmt = $con->prepare($sql);
-    $stmt->bind_param("i", $id_produto);
-    $stmt->execute();
-    $stmt->bind_result($path_img_db);
-    $stmt->fetch();
-    $stmt->close();
-
-    // // criar notificação inicio
-    // $sql = "SELECT quant_estoque,prod_nome,path_img FROM produto WHERE id_produto = $id_produto";
-    // $qtd_inicial = $con->query($sql);
-
-    // $sql_encontrar_cliente = "SELECT id_cliente FROM carrinho WHERE id_produto = $id_produto";
-    // $qtd_cliente = $con->query($sql_encontrar_cliente);
-    // $clientes = [];
-
-    // if ($qtd_cliente && $qtd_cliente->num_rows > 0) {
-    //     while ($cliente_row = $qtd_cliente->fetch_assoc()) {
-    //         $clientes[] = $cliente_row['id_cliente'];
-    //     }
-    // }
-
-    // if ($qtd_inicial && $qtd_inicial->num_rows > 0) {
-    //     $row = $qtd_inicial->fetch_assoc();
-    //     $quant_estoque_inicial = $row['quant_estoque'];
-    //     $img_produto = $row['path_img'];
-    //     $nome_produto = $row['prod_nome'];
-    // }
-
-    // if ($quant_estoque_inicial == 0 && $quantidade > 0) {
-    //     foreach ($clientes as $x) {
-    //         $usuario_id = $x;
-    //         $produto_id = $id_produto;
-    //         $mensagem = "Cliente, a {$nome_produto} que você estava de olho voltou ao estoque, dê uma olhada!";
-    //         $categoria = "Produtos";
-    //         if (Criar_notificacao($con, $usuario_id, $produto_id, $mensagem, $categoria)) {
-    //             echo "Notificação enviada com sucesso!";
-    //         } else {
-    //             echo "Erro ao enviar notificação.";
-    //         }
-    //     }
-    // }
-    // // criar notificação fim
+    $query = $con->prepare($sql);
+    $query->bind_param("i", $id_produto);
+    $query->execute();
+    $query->bind_result($path_img_db);
+    $query->fetch();
+    $query->close();
 
     $old_imgs = json_decode($path_img_db, true);
     if (!is_array($old_imgs))
@@ -156,14 +118,14 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
             id_subcategoria = ?
             WHERE id_produto = ?";
 
-        $stmt2 = $con->prepare($sqlUp);
-        if (!$stmt2) {
+        $query2 = $con->prepare($sqlUp);
+        if (!$query2) {
             $popup_titulo = "Erro no banco!";
             $popup_mensagem = "Prepare falhou: " . $con->error;
             $popup_tipo = "erro";
         } else {
             $idadeParam = $idade !== '' ? $idade : null;
-            $stmt2->bind_param(
+            $query2->bind_param(
                 "sdisssdsiiii",
                 $nome,
                 $valor,
@@ -179,16 +141,16 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
                 $id_produto
             );
 
-            if ($stmt2->execute()) {
+            if ($query2->execute()) {
                 $popup_titulo = "Produto atualizado!";
                 $popup_mensagem = "As alterações foram salvas com sucesso.";
                 $popup_tipo = "sucesso";
             } else {
                 $popup_titulo = "Erro ao atualizar!";
-                $popup_mensagem = "Não foi possível salvar as alterações: " . $stmt2->error;
+                $popup_mensagem = "Não foi possível salvar as alterações: " . $query2->error;
                 $popup_tipo = "erro";
             }
-            $stmt2->close();
+            $query2->close();
         }
     }
 }

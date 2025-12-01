@@ -1,0 +1,110 @@
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.area_popup {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mensagem_box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  padding: 10px 0;
+}
+
+.texto_pop_up {
+  color: black;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+/* Títulos */
+.titulo_pop_up {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Botão de fechar */
+.fechar_popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-botao-op-Cancelar);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+/* Media Queries para Mobile (≤ 480px) */
+@media screen and (max-width: 480px) {
+  .area_popup {
+    padding: 20px 15px; /* Reduz o padding */
+    max-width: 320px; /* Largura máxima menor */
+    width: 85%; /* Largura relativa um pouco menor */
+    margin: 20px; /* Garante margem nas laterais */
+  }
+  
+  .mensagem_box {
+    min-height: 50px; /* Altura mínima reduzida */
+    padding: 8px 0; /* Padding reduzido */
+  }
+  
+  .titulo_pop_up {
+    font-size: 1.4rem; /* Título um pouco menor */
+    margin-bottom: 12px; /* Espaço reduzido */
+  }
+  
+  .texto_pop_up {
+    font-size: 0.9rem; /* Texto um pouco menor */
+    line-height: 1.4; /* Melhor espaçamento para texto menor */
+  }
+  
+  .fechar_popup {
+    font-size: 20px; /* Botão X menor */
+    top: 8px;
+    right: 12px;
+  }
+}
+
+/* Media Query extra para telas muito pequenas (≤ 360px) */
+@media screen and (max-width: 360px) {
+  .area_popup {
+    padding: 15px 12px;
+    max-width: 280px;
+    width: 82%;
+  }
+  
+  .titulo_pop_up {
+    font-size: 1.3rem;
+  }
+  
+  .texto_pop_up {
+    font-size: 0.85rem;
+  }
+}

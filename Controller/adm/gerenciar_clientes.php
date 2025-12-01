@@ -1,5 +1,12 @@
-<?php include 'menu_inicial.php';?>
-<?php include '../../Controller/utils/listar_clientes.php'?>
+<?php
+include '../utils/autenticado_adm.php';
+if ($adm_nao_logado) {
+    include '../overlays/pop_up_login_adm.php';
+    exit;
+}
+include '../utils/listar_clientes.php';
+include 'menu_inicial.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -81,7 +88,7 @@
                 </table>
             </div>
         </div>
-    </div>
+  div>
 </section>
 
 </body>

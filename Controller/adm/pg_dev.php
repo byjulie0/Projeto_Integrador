@@ -1,4 +1,9 @@
 <?php
+include '../utils/autenticado_adm.php';
+if ($adm_nao_logado) {
+    include '../overlays/pop_up_login_adm.php';
+    exit;
+}
 include 'menu_inicial.php';
 ?>
 <!DOCTYPE html>
@@ -91,7 +96,7 @@ include 'menu_inicial.php';
                 <div class="foto_dev">
                     <img src="../../View/Public/Imagens/Imagem_dev/lara.jpeg" alt="Foto do Dev">
                 </div>
-                <h3>Lara Santiago</h3>
+                <h3>Lara Eridan</h3>
                 <p>Scrum Master</p>
                 <div class="social_dev">
                     <a href="https://github.com/eridangs" target="_blank"><i class="fa-brands fa-github"></i></a>

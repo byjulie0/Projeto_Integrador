@@ -1,4 +1,9 @@
 <?php
+include '../utils/autenticado_adm.php';
+if ($adm_nao_logado) {
+    include '../overlays/pop_up_login_adm.php';
+    exit;
+}
 include 'menu_inicial.php';
 
 $pedido_id = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
@@ -7,8 +12,6 @@ if ($pedido_id === 0) {
     echo "<script>alert('ID do pedido não especificado!'); window.location.href = 'verificar_administrar_pedido.php';</script>";
     exit;
 }
-
-include '../../model/DB/conexao.php';
 
 try {
     $sql = "SELECT

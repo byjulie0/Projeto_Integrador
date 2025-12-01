@@ -1,5 +1,10 @@
 <?php
-require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
+include '../utils/autenticado_adm.php';
+if ($adm_nao_logado) {
+    include '../overlays/pop_up_login_adm.php';
+    exit;
+}
+include '../utils/listar_pedidos_adm.php';
 ?>
 
 <?php include 'menu_inicial.php'; ?>
@@ -50,7 +55,6 @@ require_once(__DIR__ . "/../utils/listar_pedidos_adm.php");
                     </div>
                 </div>
             </div>
-            <!-- <hr class="verificar_administrar_pedidos_sessao_divisao"> -->
         </section>
 
         <div class="verificar_administrar_pedidos_sessao_visualizar">

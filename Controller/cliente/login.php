@@ -21,14 +21,15 @@ include '../utils/libras.php'
 
   if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
 
+    $titulo = $_SESSION['titulo'];
     $texto = $_SESSION['popup_message'];
 
     include '../overlays/pop_up_erro.php';
 
+    unset($_SESSION['titulo']);
     unset($_SESSION['popup_message']);
   }
   ?>
-
 
   <main class="container_geral_login">
 
@@ -89,31 +90,5 @@ include '../utils/libras.php'
       </div>
     </div>
   </div>
-</div>
 </body>
-
 </html>
-<script>
-  // Função para obter parâmetros da URL
-  function getQueryParam(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const erro = getQueryParam("error");
-
-    if (erro === "usuario_inativo") {
-      const popup = document.getElementById("popup-inativo");
-      popup.style.display = "flex";
-
-      const btnFechar = document.getElementById("btn-fechar-popup");
-      btnFechar.addEventListener("click", function () {
-        popup.style.display = "none";
-
-        const cleanUrl = window.location.pathname;
-        window.history.replaceState(null, "", cleanUrl);
-      });
-    }
-  });
-</script>

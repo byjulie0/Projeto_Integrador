@@ -1,5 +1,9 @@
 <?php
 include '../utils/autenticado_adm.php';
+if ($adm_nao_logado) {
+    include '../overlays/pop_up_login_adm.php';
+    exit;
+}
 include 'menu_inicial.php';
 
 $sqlCat = "SELECT id_categoria, cat_nome FROM categoria";

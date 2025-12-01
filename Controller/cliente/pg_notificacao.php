@@ -46,7 +46,7 @@ $result->close();
             <h1 class="notification_title">Notificações</h1>
         </div>
 
-        <div class="notification_area">
+        <a href="historico_pedidos.php" class="notification_area">
             <?php if (!empty($notificacoes)): ?>
                 <?php foreach ($notificacoes as $n): ?>
                     <div class="notification">
@@ -63,7 +63,7 @@ $result->close();
                     <p>Você não possui notificações no momento.</p>
                 </div>
             <?php endif; ?>
-        </div>
+        </a>
     </div>
 </body>
 

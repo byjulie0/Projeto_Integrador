@@ -1,8 +1,5 @@
 <?php
 include 'sessao_ativa_adm.php';
-if (!isset($_SESSION['id_adm']) || $_SESSION['funcao'] !== 'ADM') {
-    header("Location: ../adm/login.php?error=Acesso negado");
-    exit;
-}
-$id_adm = $_SESSION["id_adm"];
+$adm_nao_logado = !isset($_SESSION['id_adm']);
+$id_adm = isset($_SESSION["id_adm"]) ? $_SESSION["id_adm"] : null;
 ?>

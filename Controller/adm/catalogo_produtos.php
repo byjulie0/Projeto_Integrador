@@ -1,7 +1,12 @@
 <?php
+include '../utils/autenticado_adm.php';
+if ($adm_nao_logado) {
+    include '../overlays/pop_up_login_adm.php';
+    exit;
+}
 include '../utils/listar_produtos_adm.php';
+include '../utils/buscar_produtos.php';
 include 'menu_inicial.php';
-include '../../Controller/utils/buscar_produtos.php';
 $produtos = listar_produtos();
 ?>
 <!DOCTYPE html>

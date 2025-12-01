@@ -1,7 +1,11 @@
 
-<?php 
-include "menu_inicial.php"; 
-include '../../model/DB/conexao.php';  
+<?php
+include '../utils/autenticado_adm.php';
+if ($adm_nao_logado) {
+    include '../overlays/pop_up_login_adm.php';
+    exit;
+}
+include "menu_inicial.php";
 
 $data_inicio = isset($_GET['data_inicio']) ? $_GET['data_inicio'] : date('Y-m-01'); // primeiro dia do mês atual
 $data_fim = isset($_GET['data_fim']) ? $_GET['data_fim'] : date('Y-m-t'); // último dia do mês

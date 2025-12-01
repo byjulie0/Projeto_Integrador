@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PopUp Login</title>
+    <title>PopUp Login Adm</title>
     <link rel="stylesheet" href="../../View/Public/css/cliente/pop_up_login.css">
 </head>
 
@@ -21,7 +21,7 @@
                     include '../cliente/botao_vermelho_cliente.php';
                     ?>
                 </a>
-                <a href="../cliente/login.php">
+                <a href="../adm/login.php">
                     <?php
                     $texto = "Fazer Login";
                     include '../cliente/botao_verde_cliente.php';

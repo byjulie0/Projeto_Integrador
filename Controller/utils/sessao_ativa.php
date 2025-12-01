@@ -12,8 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Recaptcha
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        $_SESSION['popup_message'] = "Requisição inválida.";
-        header('Location: ../cliente/login.php?error=nao_fez_login');
+        $_SESSION['titulo'] = 'Requisição Inválida!';
+        $_SESSION['popup_message'] = "Você precisa fazer login para acessar essa funcionalidade!";
+        header('Location: ../cliente/login.php?error');
         exit;
     }
 
@@ -21,8 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
     if (empty($recaptcha_response)) {
+        $_SESSION['titulo'] = 'Erro ao entrar!';
         $_SESSION['popup_message'] = "Confirme o reCAPTCHA para continuar.";
-        header('Location: ../cliente/login.php?error=recaptcha_missing');
+        header('Location: ../cliente/login.php?error');
         exit;
     }
 
@@ -42,8 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $verification = json_decode($response, true);
 
     if (!(isset($verification['success']) && $verification['success'] === true)) {
+        $_SESSION['titulo'] = 'Erro ao entrar!';
         $_SESSION['popup_message'] = "Falha ao validar o reCAPTCHA.";
-        header('Location: ../cliente/login.php?error=recaptcha_failed');
+        header('Location: ../cliente/login.php?error');
         exit;
     }
 
@@ -55,15 +58,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = mysqli_query($con, $query);
 
     if (mysqli_num_rows($result) === 0) {
-        $_SESSION['popup_message'] = "Usuário ou Senha não encontrado.";
-        header("Location: ../cliente/login.php?error=usuario_nao_encontrado");
+        $_SESSION['titulo'] = 'Erro ao entrar!';
+        $_SESSION['popup_message'] = "Email ou Senha invalidos.";
+        header("Location: ../cliente/login.php?error");
         exit();
     }
 
     $retorno = mysqli_fetch_assoc($result);
 
     if ($retorno['user_ativo'] == 0) {
-        header("Location: ../cliente/login.php?error=usuario_inativo");
+        $_SESSION['titulo'] = 'Conta Inativa!';
+        $_SESSION['popup_message'] ="Por favor, entre em contato com o suporte para reativá-la.";
+        header("Location: ../cliente/login.php?error");
         exit();
     }
 
@@ -81,8 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: ../cliente/pg_inicial_cliente.php");
         exit();
     } else {
-        $_SESSION['popup_message'] = "Usuário ou Senha não encontrado.";
-        header("Location: ../cliente/login.php?error=login_errado");
+        $_SESSION['titulo'] = 'Erro ao entrar!';
+        $_SESSION['popup_message'] = "Email ou Senha invalidos.";
+        header("Location: ../cliente/login.php?error");
         exit();
     }
 }

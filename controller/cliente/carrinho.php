@@ -1,9 +1,16 @@
 <?php
+session_start();
 include '../utils/autenticado.php';
 if ($usuario_nao_logado) {
     include '../overlays/pop_up_login.php';
     exit;
 }
+
+// Adicionar headers para evitar cache
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 include '../utils/libras.php';
 include 'menu_pg_inicial.php';
 ?>
@@ -23,20 +30,21 @@ include 'menu_pg_inicial.php';
 
 <body>
     <?php
-    if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'erro' && isset($_SESSION['popup_message'])) {
+    // CORREÇÃO: Removida a duplicação
+    if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
+        $titulo = $_SESSION['titulo'];
         $texto = $_SESSION['popup_message'];
+
+        // Marcar como sucesso se vier o parâmetro
+        if (isset($_GET['sucess'])) {
+            $sucesso = true;
+        }
         include '../overlays/pop_up_erro.php';
-        unset($_SESSION['popup_type']);
+
+        // Limpar a sessão APENAS UMA VEZ
+        unset($_SESSION['titulo']);
         unset($_SESSION['popup_message']);
     }
-
-    // if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'sucesso' && isset($_SESSION['popup_message'])) {
-    //     $texto = $_SESSION['popup_message'];
-    //     include '../overlays/pop_up_sucesso.php';
-    //     unset($_SESSION['popup_type']);
-    //     unset($_SESSION['popup_message']);
-    // }
-
     ?>
 
     <div class="main_cart_area">
@@ -50,10 +58,11 @@ include 'menu_pg_inicial.php';
 
             <section class="product-cards-carrinho">
                 <?php
+                // CORREÇÃO: Adicionar verificação de produto_ativo
                 $sql = "SELECT c.id_carrinho, c.quantidade, p.prod_nome, p.path_img, p.descricao, p.valor
                         FROM carrinho c
                         JOIN produto p ON c.id_produto = p.id_produto
-                        WHERE c.id_cliente='$id_cliente'";
+                        WHERE c.id_cliente='$id_cliente' AND p.produto_ativo = 1";
                 $result = $con->query($sql);
                 $totalGeral = 0;
                 $totalItems = 0;
@@ -164,14 +173,46 @@ include 'menu_pg_inicial.php';
     </div>
 
     <script>
-        <?php if (isset($_GET['pedido_sucesso']) && $_GET['pedido_sucesso'] == 1): ?>
-            setTimeout(function () {
-                window.location.href = 'https://api.whatsapp.com/send?phone=556799492638';
-            }, 3000);
-        <?php endif; ?>
+        // Prevenir cache do navegador
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+
+        // Função global para fechar pop-up
+        function fecharPopup() {
+            // Remove o pop-up da tela
+            const popup = document.querySelector('.popup');
+            if (popup) {
+                popup.style.display = 'none';
+            }
+            // Recarrega a página para atualizar o carrinho
+            setTimeout(function() {
+                window.location.reload();
+            }, 100);
+        }
+
+        // Adicionar event listeners quando o DOM carregar
+        document.addEventListener('DOMContentLoaded', function () {
+            // Event listener para o botão de fechar
+            const fecharBtn = document.querySelector('.fechar_popup');
+            if (fecharBtn) {
+                fecharBtn.addEventListener('click', fecharPopup);
+            }
+
+            // Event listener para clicar fora do pop-up
+            const popup = document.querySelector('.popup');
+            if (popup) {
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        fecharPopup();
+                    }
+                });
+            }
+        });
     </script>
 
     <?php include 'footer_cliente.php'; ?>
 </body>
-
 </html>
