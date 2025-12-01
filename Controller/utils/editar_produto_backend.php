@@ -1,23 +1,22 @@
 <?php
-$popup_titulo = '';
-$popup_mensagem = '';
-$popup_tipo = '';
+include '../../model/DB/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../adm/catalogo_produtos.php');
     exit;
 }
 
-$id_produto   = (int)($_POST['id_produto'] ?? 0);
-$nome         = trim($_POST['nome'] ?? '');
-$valor        = floatval($_POST['valor'] ?? 0);
-$quantidade   = intval($_POST['quantidade'] ?? 0);
-$descricao    = trim($_POST['descricao'] ?? '');
-$sexo         = $_POST['sexo'] ?? '';
-$peso         = floatval($_POST['peso'] ?? 0);
-$idade        = $_POST['idade'] ?? null;
-$campeao      = (isset($_POST['campeao']) && strtolower($_POST['campeao']) === 'sim') ? 1 : 0;
-$categoria    = intval($_POST['categoria'] ?? 0);
+// Valores vindos pelo formulario
+$id_produto = (int) ($_POST['id_produto'] ?? 0);
+$nome = trim($_POST['nome'] ?? '');
+$valor = floatval($_POST['valor'] ?? 0);
+$quantidade = intval($_POST['quantidade'] ?? 0);
+$descricao = trim($_POST['descricao'] ?? '');
+$sexo = $_POST['sexo'] ?? null; // modificado p/ null
+$peso = floatval($_POST['peso'] ?? null); // modificado p/ null
+$idade = $_POST['idade'] ?? null; // modificado p/ null
+$campeao = (isset($_POST['campeao']) && strtolower($_POST['campeao']) === 'sim') ? 1 : 0;
+$categoria = intval($_POST['categoria'] ?? 0);
 $subcategoria = intval($_POST['subcategoria'] ?? 0);
 
 if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categoria <= 0 || $subcategoria <= 0) {
@@ -118,14 +117,14 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
             id_subcategoria = ?
             WHERE id_produto = ?";
 
-        $query2 = $con->prepare($sqlUp);
-        if (!$query2) {
-            $popup_titulo = "Erro no banco!";
-            $popup_mensagem = "Prepare falhou: " . $con->error;
-            $popup_tipo = "erro";
+        $query = $con->prepare($sqlUp);
+        if (!$query) {
+            $_SESSION['titulo'] = "Erro no banco!";
+            $_SESSION['popup_message'] = "Prepare falhou: ";
+
         } else {
             $idadeParam = $idade !== '' ? $idade : null;
-            $query2->bind_param(
+            $query->bind_param(
                 "sdisssdsiiii",
                 $nome,
                 $valor,
@@ -139,18 +138,23 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
                 $categoria,
                 $subcategoria,
                 $id_produto
-            );
+            );       
 
-            if ($query2->execute()) {
-                $popup_titulo = "Produto atualizado!";
-                $popup_mensagem = "As alterações foram salvas com sucesso.";
-                $popup_tipo = "sucesso";
+            $con->commit();
+            
+            $query->close(); // PRECISO VER ONDE COLOCAR ESSE FECHAMENTO
+            if ($query->execute()) {
+                $_SESSION['titulo'] = "Produto atualizado!";
+                $_SESSION['popup_message'] = "As alterações foram salvas com sucesso.";
+                // MANTER o parâmetro sucess para identificar que é um pop-up de sucesso
+                header("Location: ../adm/editar_produto.php?error&sucess&t=" . time());
+                exit;
             } else {
-                $popup_titulo = "Erro ao atualizar!";
-                $popup_mensagem = "Não foi possível salvar as alterações: " . $query2->error;
-                $popup_tipo = "erro";
+                $_SESSION['titulo'] = "Erro ao atualizar!";
+                $_SESSION['popup_message'] = "Não foi possível salvar as alterações";
+                header("Location: ../adm/editar_produto.php?error&t=" . time());
+                exit;
             }
-            $query2->close();
         }
     }
 }
@@ -167,7 +171,7 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
             </div>
         </div>
     </div>
-</div>
-<link rel="stylesheet" href="../../view/public/css/cliente/pop_up_resultado.css">
-<script src="../../view/public/js/pop_up_resultado.js"></script>
+    </div>
+    <link rel="stylesheet" href="../../view/public/css/cliente/pop_up_resultado.css">
+    <script src="../../view/public/js/pop_up_resultado.js"></script>
 <?php endif; ?>

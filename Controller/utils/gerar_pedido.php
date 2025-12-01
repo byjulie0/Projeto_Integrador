@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 include 'gerar_notificacao.php';
 include 'autenticado.php';
 
@@ -8,7 +10,6 @@ if ($usuario_nao_logado) {
     exit;
 }
 
-// CORREÇÃO: Query corrigida com placeholder
 $sql = "SELECT c.id_carrinho, c.quantidade, p.id_produto, p.prod_nome, p.valor, p.quant_estoque
         FROM carrinho c
         JOIN produto p ON c.id_produto = p.id_produto
@@ -63,7 +64,7 @@ if ($result->num_rows > 0) {
             $query->close();
 
             // Verifica se estoque zerou e remove de carrinhos/favoritos
-            $sql = "SELECT quant_estoque FROM produto WHERE id_produto = ?";
+            $sql = "SELECT quant_estoque, sexo, id_categoria FROM produto WHERE id_produto = ?";
             $query = $con->prepare($sql);
             $query->bind_param("i", $item['id_produto']);
             $query->execute();
@@ -106,22 +107,10 @@ if ($result->num_rows > 0) {
                 } else {
                     error_log("Falha ao criar notificação para o ADM");
                 }
-            }
+            } 
+            elseif($stock_data['quant_estoque'] > 0 && $stock_data['quant_estoque'] <= 5 && ($stock_data['id_categoria'] == 4 || $stock_data['sexo'] == null)){
 
-            $id_verif_prod = $item['id_produto'];
-            
-            // CORREÇÃO: Usar prepared statement aqui também
-            $sql_verif_estoq = "SELECT quant_estoque, sexo FROM produto WHERE id_produto = ?";
-            $query_verif = $con->prepare($sql_verif_estoq);
-            $query_verif->bind_param("i", $id_verif_prod);
-            $query_verif->execute();
-            $qtd_estoque = $query_verif->get_result();
-            $linhas = $qtd_estoque->fetch_assoc();
-            $query_verif->close();
-
-            // Notificação adm baixo estoque
-            if($stock_data['quant_estoque'] > 0 && $stock_data['quant_estoque'] <= 5 && ($linhas['sexo'] == "Não se aplica" || $linhas['sexo'] == null)){
-                $produto_id = $id_verif_prod;
+                $produto_id = $item['id_produto'];
                 $nome_produto = $item['prod_nome'];
                 $mensagem = "O estoque do produto: {$nome_produto} ,possui {$stock_data['quant_estoque']} unidades restantes, reposição necessaria!";
                 $categoria = "Estoque";
@@ -135,7 +124,6 @@ if ($result->num_rows > 0) {
             }
         }
 
-        // CORREÇÃO: Removida a duplicação - limpar carrinho apenas UMA vez
         $sql = "DELETE FROM carrinho WHERE id_cliente = ?";
         $query = $con->prepare($sql);
         $query->bind_param("i", $id_cliente);

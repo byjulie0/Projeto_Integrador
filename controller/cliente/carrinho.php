@@ -30,7 +30,7 @@ include 'menu_pg_inicial.php';
 
 <body>
     <?php
-    // CORREÇÃO: Removida a duplicação
+    // Verificar se há mensagens de pop-up na sessão
     if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
         $titulo = $_SESSION['titulo'];
         $texto = $_SESSION['popup_message'];

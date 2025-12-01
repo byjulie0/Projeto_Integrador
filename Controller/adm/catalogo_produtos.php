@@ -8,6 +8,22 @@ include '../utils/listar_produtos_adm.php';
 include '../utils/buscar_produtos.php';
 include 'menu_inicial.php';
 $produtos = listar_produtos();
+
+// Verificar se há mensagens de pop-up na sessão
+if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
+    $titulo = $_SESSION['titulo'];
+    $texto = $_SESSION['popup_message'];
+
+    // Verificar se é sucesso
+    if (isset($_GET['sucess'])) {
+        $sucesso = true;
+    }
+    include '../overlays/pop_up_erro.php';
+
+    // Limpar a sessão
+    unset($_SESSION['titulo']);
+    unset($_SESSION['popup_message']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -96,7 +112,7 @@ $produtos = listar_produtos();
                                         </td>
 
                                         <td class="update-atualizar-produtos cell-atualizar-produto">
-                                            <a href="editar_produto.php?id=<?= $p['id_produto'] ?>"><i
+                                            <a href="editar_produto.php?id_produto=<?= $p['id_produto'] ?>"><i
                                                     class="fa-solid fa-pen-to-square"></i>
                                             </a>
                                         </td>

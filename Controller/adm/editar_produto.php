@@ -1,20 +1,49 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 include '../utils/autenticado_adm.php';
+
 if ($adm_nao_logado) {
     include '../overlays/pop_up_login_adm.php';
     exit;
 }
 include 'menu_inicial.php';
 
-if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    die("ID de produto inválido.");
+if (!isset($_GET['id_produto']) || !is_numeric($_GET['id_produto'])) { // Aparece, porém, não fecha
+    $_SESSION['titulo'] = 'Não é possivel editar!';
+    $_SESSION['popup_message'] = 'O produto não foi existe ou o endereço está errado.';
+
+    header("Location: ../adm/catalogo_produtos.php?error&t=" . time());
+    exit;
 }
-$id_produto = (int) $_GET['id'];
+$id_produto = (int) $_GET['id_produto'];
+
+// Verificar se há mensagens de pop-up na sessão
+if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
+    $titulo = $_SESSION['titulo'];
+    $texto = $_SESSION['popup_message'];
+
+    // Verificar se é sucesso
+    if (isset($_GET['sucess'])) {
+        $sucesso = true;
+    }
+    include '../overlays/pop_up_erro.php';
+
+    // Limpar a sessão
+    unset($_SESSION['titulo']);
+    unset($_SESSION['popup_message']);
+}
 
 $sqlProd = "SELECT * FROM produto WHERE id_produto = $id_produto";
 $resProd = mysqli_query($con, $sqlProd);
+
 if (!$resProd || mysqli_num_rows($resProd) == 0) {
-    die("Produto não encontrado.");
+    $_SESSION['titulo'] = 'Atualização negada!';
+    $_SESSION['popup_message'] = 'O produto produto não existe ou o endereço está errado.';
+
+    header("Location: ../adm/catalogo_produtos.php?error&t=" . time());
+    exit;
 }
 $produto = mysqli_fetch_assoc($resProd);
 
@@ -33,17 +62,21 @@ while ($r = mysqli_fetch_assoc($resSub)) {
 }
 
 $imgs = json_decode($produto['path_img'], true);
-if (!is_array($imgs)) $imgs = [null, null, null, null];
-while (count($imgs) < 4) $imgs[] = null;
+if (!is_array($imgs))
+    $imgs = [null, null, null, null];
+while (count($imgs) < 4)
+    $imgs[] = null;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Editar Produto</title>
     <link rel="stylesheet" href="../../view/public/css/adm/editar_produto.css">
     <script defer src="../../view/js/adm/editar_produto.js"></script>
 </head>
+
 <body class="body_add_product">
     <div class="area_add_product">
         <div class="title_page_add_product">
@@ -53,15 +86,18 @@ while (count($imgs) < 4) $imgs[] = null;
             <h1 class="tile_add_product">Editar Produto</h1>
         </div>
 
-        <form action="../utils/editar_produto_backend.php" method="POST" enctype="multipart/form-data" id="formEditarProduto">
+        <form action="../utils/editar_produto_backend.php" method="POST" enctype="multipart/form-data"
+            id="formEditarProduto">
             <input type="hidden" name="id_produto" value="<?= $produto['id_produto'] ?>">
 
             <section class="add_product_area">
                 <article class="add_product_image">
                     <p class="product_title_info_img">Imagens do produto (máx.4)<span class="mandatory_space">*</p>
                     <div class="carousel-container">
-                        <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)"><i class="bi bi-chevron-left"></i></button>
-                        <button type="button" class="carousel-btn next" onclick="changeSlide(1)"><i class="bi bi-chevron-right"></i></button>
+                        <button type="button" class="carousel-btn prev" onclick="changeSlide(-1)"><i
+                                class="bi bi-chevron-left"></i></button>
+                        <button type="button" class="carousel-btn next" onclick="changeSlide(1)"><i
+                                class="bi bi-chevron-right"></i></button>
 
                         <div class="carousel-placeholder" id="carouselPlaceholder">Nenhuma imagem</div>
                         <img src="" alt="" class="carousel-img" id="mainPreview" style="display:none;">
@@ -69,19 +105,24 @@ while (count($imgs) < 4) $imgs[] = null;
                     <div class="mini-container" id="miniContainer">
                         <?php for ($i = 0; $i < 4; $i++):
                             $src = $imgs[$i] ? '../../view/public/' . $imgs[$i] : '';
-                        ?>
+                            ?>
                             <label class="custom-file-upload mini-label" data-index="<?= $i ?>">
                                 <div class="upload-box" id="box<?= $i ?>">
-                                    <img src="<?= $src ?>" alt="" class="mini-img" id="miniImg<?= $i ?>" style="<?= $src ? '' : 'display:none;' ?>">
-                                    <div class="upload-content" id="content<?= $i ?>" style="<?= $src ? 'display:none;' : '' ?>">
+                                    <img src="<?= $src ?>" alt="" class="mini-img" id="miniImg<?= $i ?>"
+                                        style="<?= $src ? '' : 'display:none;' ?>">
+                                    <div class="upload-content" id="content<?= $i ?>"
+                                        style="<?= $src ? 'display:none;' : '' ?>">
                                         <i class="bi bi-camera"></i>
                                         <span>Adicionar</span>
                                     </div>
-                                    <button type="button" class="remove-mini" id="remove<?= $i ?>" style="<?= $src ? '' : 'display:none;' ?>"> <i class="bi bi-x"></i> </button>
+                                    <button type="button" class="remove-mini" id="remove<?= $i ?>"
+                                        style="<?= $src ? '' : 'display:none;' ?>"> <i class="bi bi-x"></i> </button>
                                 </div>
-                                <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden" id="input<?= $i ?>">
+                                <input type="file" name="imagens[]" accept="image/*" class="file-input-hidden"
+                                    id="input<?= $i ?>">
                                 <input type="hidden" name="remove_img[<?= $i ?>]" id="remove_input_<?= $i ?>" value="0">
-                                <input type="hidden" name="old_img[<?= $i ?>]" value="<?= htmlspecialchars($imgs[$i] ?? '', ENT_QUOTES) ?>">
+                                <input type="hidden" name="old_img[<?= $i ?>]"
+                                    value="<?= htmlspecialchars($imgs[$i] ?? '', ENT_QUOTES) ?>">
                             </label>
                         <?php endfor; ?>
                     </div>
@@ -143,7 +184,8 @@ while (count($imgs) < 4) $imgs[] = null;
                         <article class="input_product_quantity">
                             <p class="product_title_info">Descrição<span class="mandatory_space">*</span></p>
                             <textarea id="descricao" name="descricao" wrap="soft" placeholder="Descrição..."
-                                class="input_product_info product_details" required><?= htmlspecialchars($produto['descricao']) ?></textarea>
+                                class="input_product_info product_details"
+                                required><?= htmlspecialchars($produto['descricao']) ?></textarea>
                         </article>
 
                         <article class="input_product_quantity">
@@ -181,9 +223,9 @@ while (count($imgs) < 4) $imgs[] = null;
                 </aside>
             </section>
 
-            <div class="add_product_submit_button">
+            <div class="add_product_submit_button"> 
                 <?php
-                $texto = "Salvar Alterações";
+                $texto = "Salvar Alterações"; // ESTÁ MANDANDO PRO LOGIN error=recaptcha%20falhou
                 include 'botao_verde_adm.php';
                 ?>
             </div>
@@ -191,10 +233,18 @@ while (count($imgs) < 4) $imgs[] = null;
     </div>
 
     <script>
+        // Prevenir cache do navegador
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+
         window.subMapData = <?= json_encode($subMap, JSON_UNESCAPED_UNICODE); ?>;
         window.produtoCategoria = <?= (int) $produto['id_categoria']; ?>;
         window.produtoSubcategoria = <?= (int) $produto['id_subcategoria']; ?>;
         window.produtoImgs = <?= json_encode($imgs, JSON_UNESCAPED_UNICODE); ?>;
     </script>
 </body>
+
 </html>
