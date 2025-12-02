@@ -6,8 +6,26 @@ if ($usuario_nao_logado) {
 }
 include 'menu_pg_inicial.php';
 
+// Verificar se há mensagens de pop-up na sessão
+if (isset($_SESSION['popup_message'])) {
+    $titulo = $_SESSION['titulo'];
+    $texto = $_SESSION['popup_message'];
+
+    // Verificar se é sucesso
+    if ($_SESSION['type'] == 'success') {
+        $sucesso = true;
+    }
+    include '../overlays/pop_up_erro.php';
+
+    // Limpar a sessão
+    unset($_SESSION['titulo']);
+    unset($_SESSION['popup_message']);
+    unset($_SESSION['type']);
+}
+
 $query = "SELECT
             produto.id_produto,
+            produto.id_categoria,
             produto.prod_nome,
             produto.path_img,
             produto.peso,
@@ -19,10 +37,10 @@ $query = "SELECT
           JOIN subcategoria ON produto.id_subcategoria = subcategoria.id_subcategoria
           WHERE favorito.id_cliente = ?";
 
-$stmt = $con->prepare($query);
-$stmt->bind_param("i", $id_cliente);
-$stmt->execute();
-$result = $stmt->get_result();
+$query = $con->prepare($query);
+$query->bind_param("i", $id_cliente);
+$query->execute();
+$result = $query->get_result();
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +52,7 @@ $result = $stmt->get_result();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../view/public/css/cliente/pg_favoritos.css">
 </head>
 
@@ -55,9 +74,10 @@ $result = $stmt->get_result();
                     $raca = $row['subcat_nome'];
                     $idade = $row['idade'];
                     $preco = $row['valor'];
+                    $id_categoria = $row['id_categoria'];
                     include 'card_favoritos.php';
                 }
-                $stmt->close();
+                $query->close();
                 ?>
             </div>
         </div>

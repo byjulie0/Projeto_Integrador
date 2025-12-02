@@ -1,9 +1,28 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 include '../utils/autenticado.php';
 if ($usuario_nao_logado) {
     include '../overlays/pop_up_login.php';
     exit;
+}
+
+// Verificar se há mensagens de pop-up na sessão
+if (isset($_SESSION['popup_message'])) {
+    $titulo = $_SESSION['titulo'];
+    $texto = $_SESSION['popup_message'];
+
+    // Verificar se é sucesso
+    if ($_SESSION['type'] == 'success') {
+        $sucesso = true;
+    }
+    include '../overlays/pop_up_pedido.php';
+
+    // Limpar a sessão
+    unset($_SESSION['titulo']);
+    unset($_SESSION['popup_message']);
+    unset($_SESSION['type']);
 }
 
 // Adicionar headers para evitar cache
@@ -29,24 +48,6 @@ include 'menu_pg_inicial.php';
 </head>
 
 <body>
-    <?php
-    // Verificar se há mensagens de pop-up na sessão
-    if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
-        $titulo = $_SESSION['titulo'];
-        $texto = $_SESSION['popup_message'];
-
-        // Marcar como sucesso se vier o parâmetro
-        if (isset($_GET['sucess'])) {
-            $sucesso = true;
-        }
-        include '../overlays/pop_up_erro.php';
-
-        // Limpar a sessão APENAS UMA VEZ
-        unset($_SESSION['titulo']);
-        unset($_SESSION['popup_message']);
-    }
-    ?>
-
     <div class="main_cart_area">
         <div class="product_area_cart">
             <div class="area_seta_titulo">
