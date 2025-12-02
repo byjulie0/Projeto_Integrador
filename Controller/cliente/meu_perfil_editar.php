@@ -76,7 +76,7 @@ include 'menu_pg_inicial.php';
                 </div>
 
                 <div class="client-edit-warning">
-                    <strong>Atenção:</strong> Sua idade só pode ser alterada 1 única vez...
+                    <strong>Atenção:</strong> Sua idade não pode ser alterada!
                 </div>
 
                 <div class="client-edit-actions">
