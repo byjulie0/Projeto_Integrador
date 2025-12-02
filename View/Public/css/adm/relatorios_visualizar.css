@@ -445,3 +445,103 @@
     max-width: 180px !important;
   }
 }
+/* Adicione esta media query ao final do seu arquivo CSS */
+
+@media (max-width: 360px) {
+  .relatorios_container {
+    padding: 10px;
+  }
+
+  .relatorios_cards_topo {
+    grid-template-columns: repeat(3, 1fr); /* 2 colunas lado a lado */
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .card_topo {
+    min-height: 80px;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .card_topo i:first-child {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .card_topo b {
+    font-size: 18px;
+    margin-top: 3px;
+  }
+
+  /* Ajuste dos gráficos para mobile pequeno */
+  .card_estatisticas,
+  .grafico-barra,
+  .grafico-linha {
+    grid-column: 1 / -1; /* Ocupa as 2 colunas */
+    height: 240px;
+    padding: 12px;
+  }
+
+  .card_estatisticas h3,
+  .grafico-barra h3,
+  .grafico-linha h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .grafico-container {
+    height: 160px;
+  }
+
+  #graficoEstatisticas,
+  #graficoBarraEstatisticas,
+  #graficoLinhaPedidos {
+    max-width: 160px !important;
+    width: 160px !important;
+    max-height: 160px !important;
+    height: 160px !important;
+  }
+
+  .grafico-barra .grafico-container,
+  .grafico-linha .grafico-container {
+    width: 160px !important;
+    max-width: 160px !important;
+  }
+
+  /* Ajustes do header */
+  .relatorios_header h1 {
+    font-size: 20px;
+  }
+
+  .verificar_administrar_pedidos_sessao_periodo_bloco {
+    padding: 8px 15px;
+  }
+
+  .verificar_administrar_pedidos_sessao_mini_titulos_1 {
+    font-size: 13px;
+  }
+
+  .verificar_administrar_pedidos_sessao_mini_titulos_2 {
+    font-size: 13px;
+  }
+
+  /* Ajustes da tabela */
+  .card_atividades {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .card_atividades h3 {
+    font-size: 16px;
+  }
+
+  .tabela-pedidos {
+    font-size: 11px;
+  }
+
+  .tabela-pedidos th,
+  .tabela-pedidos td {
+    padding: 6px 8px;
+  }
+}
