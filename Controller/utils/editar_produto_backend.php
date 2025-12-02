@@ -1,4 +1,8 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 include '../../model/DB/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -11,6 +15,7 @@ $id_produto = (int) ($_POST['id_produto'] ?? 0);
 $nome = trim($_POST['nome'] ?? '');
 $valor = floatval($_POST['valor'] ?? 0);
 $quantidade = intval($_POST['quantidade'] ?? 0);
+$quant_estoque = intval($_POST['quant_estoque']);
 $descricao = trim($_POST['descricao'] ?? '');
 $sexo = $_POST['sexo'] ?? null; // modificado p/ null
 $peso = floatval($_POST['peso'] ?? null); // modificado p/ null
@@ -20,9 +25,14 @@ $categoria = intval($_POST['categoria'] ?? 0);
 $subcategoria = intval($_POST['subcategoria'] ?? 0);
 
 if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categoria <= 0 || $subcategoria <= 0) {
-    $popup_titulo = "Erro!";
-    $popup_mensagem = "Preencha todos os campos obrigatórios corretamente.";
-    $popup_tipo = "erro";
+
+    $_SESSION['titulo'] = "Há campos não preenchidos!";
+    $_SESSION['popup_message'] = "Preencha todos os campos obrigatórios corretamente.";
+    $_SESSION['type'] = 'error';
+
+    header("Location: ../adm/editar_produto.php?id_produto=<?php echo $id_produto;?>");
+    exit;
+
 } else {
     $sql = "SELECT path_img FROM produto WHERE id_produto = ?";
     $query = $con->prepare($sql);
@@ -97,9 +107,13 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
         }
     }
     if (!$hasImage) {
-        $popup_titulo = "Imagem obrigatória!";
-        $popup_mensagem = "O produto deve possuir ao menos uma imagem.";
-        $popup_tipo = "erro";
+        $_SESSION['titulo'] = "Imagem obrigatória!";
+        $_SESSION['popup_message'] = "O produto deve possuir ao menos uma imagem.";
+        $_SESSION['type'] = 'error';
+
+        header("Location: ../adm/editar_produto.php?id_produto=<?php echo $id_produto;?>");
+        exit;
+
     } else {
         $path_json = json_encode($final_imgs, JSON_UNESCAPED_UNICODE);
 
@@ -120,7 +134,11 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
         $query = $con->prepare($sqlUp);
         if (!$query) {
             $_SESSION['titulo'] = "Erro no banco!";
-            $_SESSION['popup_message'] = "Prepare falhou: ";
+            $_SESSION['popup_message'] = "Prepare falhou.";
+            $_SESSION['type'] = 'error';
+
+            header("Location: ../adm/catalogo_produtos.php");
+            exit;
 
         } else {
             $idadeParam = $idade !== '' ? $idade : null;
@@ -138,40 +156,35 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
                 $categoria,
                 $subcategoria,
                 $id_produto
-            );       
+            );
 
-            $con->commit();
-            
-            $query->close(); // PRECISO VER ONDE COLOCAR ESSE FECHAMENTO
             if ($query->execute()) {
+                if ($quant_estoque == 0 && $quantidade >= 1) {
+                    $sql = "UPDATE produto SET produto_ativo = 1 WHERE id_produto = ?";
+                    $query2 = $con->prepare($sql);
+                    $query2->bind_param("i", $id_produto);
+                    $query2->execute();
+                    $query2->close();
+                }
+
+                $query->close();
                 $_SESSION['titulo'] = "Produto atualizado!";
                 $_SESSION['popup_message'] = "As alterações foram salvas com sucesso.";
-                // MANTER o parâmetro sucess para identificar que é um pop-up de sucesso
-                header("Location: ../adm/editar_produto.php?error&sucess&t=" . time());
+                $_SESSION['type'] = 'success';
+
+                header("Location: ../adm/catalogo_produtos.php");
                 exit;
+
             } else {
+
+                $query->close();
                 $_SESSION['titulo'] = "Erro ao atualizar!";
                 $_SESSION['popup_message'] = "Não foi possível salvar as alterações";
-                header("Location: ../adm/editar_produto.php?error&t=" . time());
+                $_SESSION['type'] = 'error';
+                
+                header("Location: ../adm/editar_produto.php?id_produto=<?php echo $id_produto;?>");
                 exit;
             }
         }
     }
 }
-?>
-<?php if (!empty($popup_titulo)): ?>
-    <div id="popup_resultado" class="popup_resultado" style="display:flex;">
-        <div class="area_popup_resultado <?= $popup_tipo ?>">
-            <span class="fechar_popup_resultado">&times;</span>
-            <h2><?= htmlspecialchars($popup_titulo, ENT_QUOTES, 'UTF-8') ?></h2>
-            <p><?= nl2br(htmlspecialchars($popup_mensagem, ENT_QUOTES, 'UTF-8')) ?></p>
-            <div class="botoes_popup_resultado">
-                <button onclick="location.href='../adm/catalogo_produtos.php'"
-                    class="botao_popup_cancelar fechar_popup_resultado">Fechar</button>
-            </div>
-        </div>
-    </div>
-    </div>
-    <link rel="stylesheet" href="../../view/public/css/cliente/pop_up_resultado.css">
-    <script src="../../view/public/js/pop_up_resultado.js"></script>
-<?php endif; ?>

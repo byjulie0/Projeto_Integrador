@@ -6,6 +6,23 @@ if ($adm_nao_logado) {
 }
 include 'menu_inicial.php';
 
+// Verificar se há mensagens de pop-up na sessão
+if (isset($_SESSION['popup_message'])) {
+    $titulo = $_SESSION['titulo'];
+    $texto = $_SESSION['popup_message'];
+
+    // Verificar se é sucesso
+    if ($_SESSION['type'] == 'success') {
+        $sucesso = true;
+    }
+    include '../overlays/pop_up_erro.php';
+
+    // Limpar a sessão
+    unset($_SESSION['titulo']);
+    unset($_SESSION['popup_message']);
+    unset($_SESSION['type']);
+}
+
 $sqlCat = "SELECT id_categoria, cat_nome FROM categoria";
 $resCat = mysqli_query($con, $sqlCat);
 $categorias = [];
@@ -134,7 +151,7 @@ while ($r = mysqli_fetch_assoc($resSub)) {
                         </article>
 
                         <article class="input_product_champion">
-                            <p class="product_title_info">Categoria é um campeão?<span class="mandatory_space">*</span></p>
+                            <p class="product_title_info">Esse animal é um campeão?<span class="mandatory_space">*</span></p>
                             <select class="product_info_select" name="campeao" required>
                                 <option value="" selected disabled>Selecione uma opção</option>
                                 <option value="sim">Sim</option>

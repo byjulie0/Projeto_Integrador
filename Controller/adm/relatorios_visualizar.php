@@ -94,7 +94,7 @@ mysqli_close($con);
         <div class="relatorios_main">
             <div class="relatorios_cards_topo">
                 <div class="card_topo">
-                    <i class="fa-solid fa-bag-shopping"></i> Produtos <br> cadastrados: 
+                    <i class="fa-solid fa-bag-shopping"></i> Produtos <br> ativos: 
                     <b><?php echo $numero_produtos; ?></b>
                 </div>
                 <div class="card_topo">
@@ -102,7 +102,7 @@ mysqli_close($con);
                     <b><?php echo $numero_pedidos; ?></b>
                 </div>
                 <div class="card_topo">
-                    <i class="fa-solid fa-users"></i> Usuários <br> cadastrados: 
+                    <i class="fa-solid fa-users"></i> Usuários <br> ativos: 
                     <b><?php echo $numero_usuarios; ?></b>
                 </div>
                 <div class="card_estatisticas">

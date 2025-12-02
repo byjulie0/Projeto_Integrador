@@ -1,31 +1,30 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 include '../utils/autenticado_adm.php';
-
 if ($adm_nao_logado) {
     include '../overlays/pop_up_login_adm.php';
     exit;
+}
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
 include 'menu_inicial.php';
 
 if (!isset($_GET['id_produto']) || !is_numeric($_GET['id_produto'])) { // Aparece, porém, não fecha
     $_SESSION['titulo'] = 'Não é possivel editar!';
     $_SESSION['popup_message'] = 'O produto não foi existe ou o endereço está errado.';
+    $_SESSION['type'] = 'error';
 
-    header("Location: ../adm/catalogo_produtos.php?error&t=" . time());
+    header("Location: ../adm/catalogo_produtos.php");
     exit;
 }
-$id_produto = (int) $_GET['id_produto'];
 
 // Verificar se há mensagens de pop-up na sessão
-if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
+if (isset($_SESSION['popup_message'])) {
     $titulo = $_SESSION['titulo'];
     $texto = $_SESSION['popup_message'];
 
     // Verificar se é sucesso
-    if (isset($_GET['sucess'])) {
+    if ($_SESSION['type'] == 'success') {
         $sucesso = true;
     }
     include '../overlays/pop_up_erro.php';
@@ -33,16 +32,19 @@ if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
     // Limpar a sessão
     unset($_SESSION['titulo']);
     unset($_SESSION['popup_message']);
+    unset($_SESSION['type']);
 }
 
+$id_produto = (int) $_GET['id_produto'];
 $sqlProd = "SELECT * FROM produto WHERE id_produto = $id_produto";
 $resProd = mysqli_query($con, $sqlProd);
 
 if (!$resProd || mysqli_num_rows($resProd) == 0) {
     $_SESSION['titulo'] = 'Atualização negada!';
     $_SESSION['popup_message'] = 'O produto produto não existe ou o endereço está errado.';
+    $_SESSION['type'] = 'error';
 
-    header("Location: ../adm/catalogo_produtos.php?error&t=" . time());
+    header("Location: ../adm/catalogo_produtos.php");
     exit;
 }
 $produto = mysqli_fetch_assoc($resProd);
@@ -67,6 +69,7 @@ if (!is_array($imgs))
 while (count($imgs) < 4)
     $imgs[] = null;
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -143,7 +146,9 @@ while (count($imgs) < 4)
                                 value="<?= htmlspecialchars($produto['valor']) ?>" required min="0.01" step="0.01">
                         </article>
 
-                        <article class="input_product_quantity">
+                        <input type="hidden" name="quant_estoque" value="<?= $produto['quant_estoque'] ?>">
+
+                        <article class=" input_product_quantity">
                             <p class="product_title_info">Quantidade<span class="mandatory_space">*</span></p>
                             <input type="number" placeholder="Quantidade" class="input_product_info" name="quantidade"
                                 value="<?= htmlspecialchars($produto['quant_estoque']) ?>" required min="0">
@@ -190,7 +195,7 @@ while (count($imgs) < 4)
 
                         <article class="input_product_quantity">
                             <p class="product_title_info">Peso do animal<span class="mandatory_space">*</span></p>
-                            <input type="number" placeholder="Peso em quilos" class="input_product_info" name="peso"
+                            <input type="decimal" placeholder="Peso em quilos" class="input_product_info" name="peso"
                                 value="<?= htmlspecialchars($produto['peso']) ?>" min="0" <?= $produto['id_categoria'] == 4 ? 'disabled' : '' ?>>
                         </article>
 
@@ -210,7 +215,7 @@ while (count($imgs) < 4)
                         </article>
 
                         <article class="input_product_champion">
-                            <p class="product_title_info">É campeão?<span class="mandatory_space">*</span></p>
+                            <p class="product_title_info">Esse animal é um campeão?<span class="mandatory_space">*</span></p>
                             <select id="is_champion" class="product_info_select" name="campeao"
                                 <?= $produto['id_categoria'] == 4 ? 'disabled' : '' ?>>
                                 <option value="" disabled>Selecione</option>
@@ -223,7 +228,7 @@ while (count($imgs) < 4)
                 </aside>
             </section>
 
-            <div class="add_product_submit_button"> 
+            <div class="add_product_submit_button">
                 <?php
                 $texto = "Salvar Alterações"; // ESTÁ MANDANDO PRO LOGIN error=recaptcha%20falhou
                 include 'botao_verde_adm.php';

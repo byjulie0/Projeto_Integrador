@@ -10,12 +10,12 @@ include 'menu_inicial.php';
 $produtos = listar_produtos();
 
 // Verificar se há mensagens de pop-up na sessão
-if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
+if (isset($_SESSION['popup_message'])) {
     $titulo = $_SESSION['titulo'];
     $texto = $_SESSION['popup_message'];
 
     // Verificar se é sucesso
-    if (isset($_GET['sucess'])) {
+    if ($_SESSION['type'] == 'success') {
         $sucesso = true;
     }
     include '../overlays/pop_up_erro.php';
@@ -23,6 +23,7 @@ if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
     // Limpar a sessão
     unset($_SESSION['titulo']);
     unset($_SESSION['popup_message']);
+    unset($_SESSION['type']);
 }
 ?>
 <!DOCTYPE html>
@@ -62,7 +63,7 @@ if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
                     <button type="submit" name="status" value="ativos"
                         class="catalogo_produtos_botao_ativos">Ativos</button>
                     <button type="submit" name="status" value="inativos"
-                        class="catalogo_produtos_botao_inativos">Inativados</button>
+                        class="catalogo_produtos_botao_inativos">Inativos</button>
                 </form>
 
             </div>
@@ -80,10 +81,8 @@ if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
                                 <th class="header-cell-atualizar-produto">Subcategoria</th>
                                 <th class="header-cell-atualizar-produto">Preço</th>
                                 <th class="header-cell-atualizar-produto">Editar</th>
-                                <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativar
+                                <th class="header-exclude-atualizar-produtos header-cell-atualizar-produto">Inativos
                                 </th>
-                                <th class="header-cell-atualizar-produto">Status</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -117,11 +116,11 @@ if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
                                             </a>
                                         </td>
 
-                                        <td class="exclude-atualizar-produtos cell-atualizar-produto">
-                                            <form method="POST" action="toggle_adm_inativar.php" style="display:inline;">
+                                        <td class="exclude-atualizar-produtos cell-atualizar-produto"> <!-- TOOGLE -->
+                                            <form method="POST" action="../utils/toggle_adm_inativar.php" style="display:inline;">
 
                                                 <input type="hidden" name="id_produto" value="<?= $p['id_produto'] ?>">
-                                                <input type="hidden" name="status_atual" value="<?= $p['produto_ativo'] ?>">
+                                                <input type="hidden" name="produto_ativo" value="<?= $p['produto_ativo'] ?>">
 
                                                 <?php
                                                 $icone = $p['produto_ativo'] ? 'fa-toggle-off' : 'fa-toggle-on';
@@ -130,13 +129,9 @@ if (isset($_GET['error']) && isset($_SESSION['popup_message'])) {
 
                                                 <button type="submit" name="toggle_produto" class="icon-toggle-btn"
                                                     aria-pressed="<?= $ariaPressed ?>">
-                                                    <i class="fa-solid <?= $icone ?>"></i>
+                                                    <i class="fa-solid <?php echo $icone;?>"></i>
                                                 </button>
                                             </form>
-                                        </td>
-
-                                        <td class="qt-atualizar-produtos">
-                                            <?= isset($p['produto_ativo']) ? ($p['produto_ativo'] ? 'Ativo' : 'Inativo') : 'Ops! Também está vazio' ?>
                                         </td>
 
                                     </tr>

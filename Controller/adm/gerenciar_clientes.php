@@ -47,8 +47,6 @@ include 'menu_inicial.php';
             </form>
         </div>
 
-        <!-- <div id="break-line"></div> -->
-
         <div id="table2-gerenciar-clientes">
             <div id="table-space-gerenciar-clientes">
                 <table class="tabela-clientes">
@@ -57,7 +55,7 @@ include 'menu_inicial.php';
                             <th>Nome do cliente</th>
                             <th>CPF</th>
                             <th>Data de Nascimento</th>
-                            <th>Inativar</th>
+                            <th>Inativos</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -88,7 +86,6 @@ include 'menu_inicial.php';
                 </table>
             </div>
         </div>
-  div>
 </section>
 
 </body>
