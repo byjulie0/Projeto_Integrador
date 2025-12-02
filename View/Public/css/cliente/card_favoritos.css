@@ -1,4 +1,5 @@
 @import url("../cliente.css");
+
 .lote-card {
     position: relative;
     background: white;
@@ -10,9 +11,11 @@
     width: 260px;
     max-width: 100%;
 }
+
 .lote-card:hover {
     transform: translateY(-5px);
 }
+
 .lote-card img {
     width: 100%;
     height: 160px;
@@ -20,38 +23,63 @@
     border-radius: 5px;
     margin-bottom: 10px;
 }
+
+/* Nome do produto - ocupa as 2 colunas */
+.info-grid .nome-produto {
+    grid-column: 1 / -1;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
 .info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px 10px;
-    text-align: right;
+    grid-template-columns: auto 1fr;
+    gap: 8px 15px;
+    align-items: center;
 }
+
 .info-grid p {
     margin: 0;
     font-size: 0.9em;
 }
-.info-grid p:nth-child(odd) {
+
+/* Labels (coluna da esquerda) */
+.info-grid p:nth-child(odd):not(.nome-produto):not(.preco) {
     font-weight: bold;
     text-align: left;
+    color: var(--color-primary-1);
 }
+
+/* Valores (coluna da direita) */
+.info-grid p:nth-child(even) {
+    text-align: left;
+    color: var( --color-primary-1);
+}
+
 .preco {
     grid-column: 1 / -1;
     text-align: center;
-    margin-top: 8px;
+    margin-top: 12px;
+    padding-top: 10px;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #2a7f40;
+    color: #2a7f40 !important; 
 }
-.botao-pag-fav{
+
+.botao-pag-fav {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
-.stars-pag-fav{
+
+.stars-pag-fav {
     text-align: center;
     margin-top: 8px;
     margin-bottom: 15px;
 }
+
 .stars-pag-fav form {
     display: inline;
 }
@@ -67,22 +95,25 @@
 .btn-remover-favorito i {
     color: red;
 }
+
 @media (max-width: 767px) {
     .lote-card {
-        width: 100%;     
-        max-width: 320px; 
-        margin: 0 auto;  
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     .lote-card img {
         height: 150px;
     }
 }
+
 @media (min-width: 1920px) {
     .lote-card img {
         height: 200px;
     }
 }
+
 @media (max-width: 360px) {
     .lote-card {
         width: 80%;

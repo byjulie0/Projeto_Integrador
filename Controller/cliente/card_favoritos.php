@@ -35,10 +35,15 @@
         <a href="detalhes_produto.php?id_produto=<?= $id_produto ?>">
             <img id="imagem-principal" src="../../View/Public/<?php echo htmlspecialchars($imagem) ?>"
                 alt="<?php echo $nome; ?>">
+            
             <div class="info-grid">
-                <p><?= $nome ?></p><br>
+                <!-- Nome do produto ocupa as 2 colunas -->
+                <p class="nome-produto"><?= $nome ?></p>
+                
                 <?php if ($id_categoria != 4): ?>
+                    <!-- Idade -->
                     <p>Idade:</p>
+                    <p>
                     <?php
                     if (!empty($idade)) {
                         try {
@@ -52,7 +57,7 @@
                             if ($anos >= 1) {
                                 echo $anos . " ano" . ($anos > 1 ? "s" : "");
                             } else {
-                                echo $meses . "" . ($meses == 1 ? " mês" : " meses");
+                                echo $meses . " " . ($meses == 1 ? "mês" : "meses");
                             }
                         } catch (Exception $e) {
                             echo "Data inválida";
@@ -62,22 +67,29 @@
                     }
                     ?>
                     </p>
+                    
+                    <!-- Peso -->
                     <p>Peso:</p>
-                    <p><?= $peso ?></p>
+                    <p><?= $peso ?> kg</p>
+                    
+                    <!-- Raça -->
                     <p>Raça:</p>
                     <p><?= $raca ?></p>
                     
-                <?php else:?>
+                <?php else: ?>
+                    <!-- Tipo -->
                     <p>Tipo:</p>
                     <p><?= $raca ?></p>
                 <?php endif; ?>
 
-                <p class="preco">R$ <?= $preco ?></p>
+                <!-- Preço -->
+                <p class="preco">R$ <?= number_format($preco, 2, ',', '.') ?></p>
             </div>
+            
             <div class="stars-pag-fav">
-                <form method="POST" action="../utils/remover_favorito.php" style="display: inline;">
+                <form method="POST" action="../utils/remover_favorito.php">
                     <input type="hidden" name="id_produto" value="<?= $id_produto ?>">
-                    <button type="submit" style="background: none; border: none; cursor: pointer;">
+                    <button type="submit" class="btn-remover-favorito">
                         <i class="fa-solid fa-heart red-heart"></i>
                     </button>
                 </form>
