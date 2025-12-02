@@ -278,7 +278,7 @@ h2 {
   }
 }
 
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
   .miniaturas-detalhes-produto img {
     width: 60px;
     height: 60px;
@@ -286,6 +286,7 @@ h2 {
 
   .titulo-produto-detalhes-produto {
     font-size: 1.4rem;
+    justify-content: left;
   }
   .informacao,
   .informacao + p {
@@ -294,7 +295,7 @@ h2 {
   .informacao2{
     display: block;
   }
-}
+} */
 
 @media (max-width: 360px) {
   .miniaturas-detalhes-produto img {
@@ -311,6 +312,10 @@ h2 {
   }
   .informacao2{
     display: block;
+  }
+  .titulo-produto-detalhes-produto{
+    justify-content: left;
+    padding-right: 10px;
   }
 }
 
