@@ -31,10 +31,12 @@ $produtos = listar_produtos();
         </div>
         <div id="page-content-atualizar-produtos">
             <div class="first-container-atualizar-produtos">
-                <div id="search-bar-atualizar-produtos">
-                    <input type="text" id="searchInput" placeholder="Pesquisar" />
-                    <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+                <form method="GET" id="form-pesquisa-gerenciar-produtos">
+                    <div id="search-bar-atualizar-produtos">
+                        <input type="text" id="searchInput" placeholder="Pesquisar" autocomplete="off"/>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </form>
                 <form method="get" action="catalogo_produtos.php" class="botoes_filtros_produtos">
                     <button type="submit" name="status" value="todos"
                         class="catalogo_produtos_botao_todos">Todos</button>
