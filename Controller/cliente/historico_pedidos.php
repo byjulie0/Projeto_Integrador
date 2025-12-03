@@ -1,10 +1,29 @@
 <?php
 include '../utils/autenticado.php';
 include '../utils/listar_pedidos_cliente.php';
+
 if ($usuario_nao_logado) {
     include '../overlays/pop_up_login.php';
     exit;
 }
+
+// Verificar se há mensagens de pop-up na sessão
+if (isset($_SESSION['popup_message'])) {
+    $titulo = $_SESSION['titulo'];
+    $texto = $_SESSION['popup_message'];
+
+    // Verificar se é sucesso
+    if (isset($_SESSION['type']) && $_SESSION['type'] == 'success') {
+        $sucesso = true;
+    }
+    include '../overlays/pop_up_erro.php';
+
+    // Limpar a sessão
+    unset($_SESSION['titulo']);
+    unset($_SESSION['popup_message']);
+    unset($_SESSION['type']);
+}
+
 include 'menu_pg_inicial.php';
 ?>
 <!DOCTYPE html>
@@ -17,7 +36,7 @@ include 'menu_pg_inicial.php';
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="../../view/public/css/cliente/historico_de_compras.css" />
-</head>
+    </head>
 
 <body class="body_historico_compras">
     <div class="container_historico_compras">
@@ -40,15 +59,18 @@ include 'menu_pg_inicial.php';
                                     <strong> <?= (new DateTime($pedido['data_pedido']))->format('d/m/y') ?></strong>
                                 </p>
                             </div>
+                            
                             <div class="botao_cancelar">
                                 <?php if ($pedido['status_pedido'] == 'Pendente'): ?>
-                                    <a href="../utils/cancelar_pedido_cliente.php?id_pedido=<?= $pedido['id_pedido'] ?>"
-                                        class="botao_vermelho">
+                                    <a href="javascript:void(0)" 
+                                       class="botao_vermelho"
+                                       onclick="abrirPopup(
+                                           'Cancelar Pedido!', 'Tem certeza que deseja cancelar o pedido #<?= $pedido['id_pedido'] ?>? Essa ação não pode ser desfeita.', '../utils/cancelar_pedido_cliente.php?id_pedido=<?= $pedido['id_pedido'] ?>')">
                                         Cancelar Pedido
                                     </a>
                                 <?php endif; ?>
                             </div>
-                        </div>
+                            </div>
 
                         <div class="atributos_pedido_mobile">
                             <div class="div_data_pedido_mobile">
@@ -70,6 +92,34 @@ include 'menu_pg_inicial.php';
     </div>
 
     <?php include 'footer_cliente.php'; ?>
+
+    <?php include '../overlays/pop_up_pergunta.php'; ?>
+
+    <script>
+        function abrirPopup(titulo, mensagem, linkDestino) {
+            // Atualiza os textos do pop-up
+            document.getElementById('popup_titulo').innerText = titulo;
+            document.getElementById('popup_mensagem').innerText = mensagem;
+            
+            // Atualiza o link do botão "Sim"
+            document.getElementById('link_confirmacao').href = linkDestino;
+
+            // Mostra o pop-up
+            document.getElementById('popup_login').style.display = 'flex';
+        }
+
+        function fecharPopup() {
+            document.getElementById('popup_login').style.display = 'none';
+        }
+
+        // Fecha ao clicar fora da caixa
+        window.onclick = function(event) {
+            var modal = document.getElementById('popup_login');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

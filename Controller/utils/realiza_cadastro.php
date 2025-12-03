@@ -80,8 +80,10 @@ $recaptcha_secret = getenv('RECAPTCHA_SECRET') ?: '6LdyqOUrAAAAAF1olqup_tnkbPYxE
 $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
 if (empty($recaptcha_response)){
-    $_SESSION['popup_type'] = 'erro';
+    $_SESSION['titulo'] = 'Erro';
     $_SESSION['popup_message'] = 'Por favor, marque o reCAPTCHA antes de enviar o formulário.';
+    $_SESSION['type'] = 'error';
+
     header('Location: ../cliente/pg_cadastro.php');
     exit;
 }
@@ -102,8 +104,10 @@ curl_close($ch);
 $verification = json_decode($response, true);
 
 if (!isset($verification['success']) || $verification['success'] !== true) {
-    $_SESSION['popup_type'] = 'erro';
+    $_SESSION['titulo'] = 'Erro!';
     $_SESSION['popup_message'] = 'Validação reCAPTCHA falhou! Por favor, tente novamente.';
+    $_SESSION['type'] = 'error';
+
     header('Location: ../cliente/pg_cadastro.php');
     exit;
 }
@@ -130,8 +134,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validação de email
     if (!validarEmail($email)) {
-        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['titulo'] = 'Erro!';
         $_SESSION['popup_message'] = 'Email inválido! Use o padrão: email@empresa.com.br';
+        $_SESSION['type'] = 'error';
+
         header('Location: ../cliente/pg_cadastro.php');
         exit;
     }
@@ -140,23 +146,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query_email = "SELECT email FROM cliente WHERE email = '$email'";
     $result_email = mysqli_query($con, $query_email);
     if (mysqli_num_rows($result_email) > 0) {
-        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['titulo'] = 'Erro!';
         $_SESSION['popup_message'] = 'Este email já está cadastrado! Por favor, use outro email.';
+        $_SESSION['type'] = 'error';
+
         header('Location: ../cliente/pg_cadastro.php');
         exit;
     }
 
     // Validação de senha
     if ($senha !== $senha_confirmar) {
-        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['titulo'] = 'Erro!';
         $_SESSION['popup_message'] = 'As senhas não coincidem. Por favor, verifique e tente novamente.';
+        $_SESSION['type'] = 'error';
+
         header('Location: ../cliente/pg_cadastro.php');
         exit;
     }
 
     if (strlen($senha) < 6) {
-        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['titulo'] = 'Erro!';
         $_SESSION['popup_message'] = 'A senha precisa ter no mínimo 6 caracteres.';
+        $_SESSION['type'] = 'error';
+        
         header('Location: ../cliente/pg_cadastro.php');
         exit;
     }
@@ -164,8 +176,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validação de data de nascimento
     $nascimento = DateTime::createFromFormat('Y-m-d', $data_nasc);
     if (!$nascimento) {
-        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['titulo'] = 'Erro!';
         $_SESSION['popup_message'] = 'Data de nascimento inválida.';
+        $_SESSION['type'] = 'error';
+
         header('Location: ../cliente/pg_cadastro.php');
         exit;
     }
@@ -173,8 +187,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hoje = new DateTime();
     $idade = $hoje->diff($nascimento)->y;
     if ($idade < 18) {
-        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['titulo'] = 'Erro!';
         $_SESSION['popup_message'] = 'Você precisa ter pelo menos 18 anos para se cadastrar.';
+        $_SESSION['type'] = 'error';
+
         header('Location: ../cliente/pg_cadastro.php');
         exit;
     }
@@ -186,21 +202,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (strlen($cpf_cnpj) === 11) {
         if (!validarCPF($cpf_cnpj)) {
-            $_SESSION['popup_type'] = 'erro';
+            $_SESSION['titulo'] = 'Erro';
             $_SESSION['popup_message'] = 'CPF inválido! Por favor, verifique o número digitado.';
+            $_SESSION['type'] = 'error';
+
             header('Location: ../cliente/pg_cadastro.php');
             exit;
         }
     } elseif (strlen($cpf_cnpj) === 14) {
         if (!validarCNPJ($cpf_cnpj)) {
-            $_SESSION['popup_type'] = 'erro';
+            $_SESSION['titulo'] = 'Erro';
             $_SESSION['popup_message'] = 'CNPJ inválido! Por favor, verifique o número digitado.';
+            $_SESSION['type'] = 'error';
+
             header('Location: ../cliente/pg_cadastro.php');
             exit;
         }
     } else {
-        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['titulo'] = 'Erro';
         $_SESSION['popup_message'] = 'CPF deve ter 11 dígitos ou CNPJ deve ter 14 dígitos.';
+        $_SESSION['type'] = 'error';
+
         header('Location: ../cliente/pg_cadastro.php');
         exit;
     }
@@ -209,8 +231,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query_cpf = "SELECT cpf_cnpj FROM cliente WHERE cpf_cnpj = '$cpf_cnpj'";
     $result_cpf = mysqli_query($con, $query_cpf);
     if (mysqli_num_rows($result_cpf) > 0) {
-        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['titulo'] = 'Erro';
         $_SESSION['popup_message'] = 'Este CPF/CNPJ já está cadastrado!';
+        $_SESSION['type'] = 'error';
+
         header('Location: ../cliente/pg_cadastro.php');
         exit;
     }
@@ -230,17 +254,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result_insert = mysqli_query($con, $query_insert);
 
     if (!$result_insert) {
-        $_SESSION['popup_type'] = 'erro';
+        $_SESSION['titulo'] = 'Erro';
         $_SESSION['popup_message'] = 'Falha ao realizar cadastro! Por favor, tente novamente.';
+        $_SESSION['type'] = 'error';
+
         header('Location: ../cliente/pg_cadastro.php');
         exit;
     }
 
     // Sucesso!
-    $_SESSION['popup_type'] = 'sucesso';
-    $_SESSION['popup_message'] = 'Cadastro realizado com sucesso! Você será redirecionado para o login.';
+    $_SESSION['titulo'] = 'Cadastro realizado com sucesso!';
+    $_SESSION['popup_message'] = 'Você será redirecionado para o login.';
+    $_SESSION['type'] = 'success';
+
     $con->close();
-    header("Location: ../cliente/pg_cadastro.php?success=1");
+
+    header("Location: ../cliente/pg_cadastro.php?");
     exit();
 }
 ?>

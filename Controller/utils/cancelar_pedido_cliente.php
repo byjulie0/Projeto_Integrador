@@ -1,10 +1,20 @@
 <?php
-include "autenticado.php";
+include "autenticado.php"; // Já deve conter a conexão $con e verificação de login
 
 $id_pedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
 
+// Garante que a sessão esteja iniciada para passar as mensagens
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// 1. Validação do ID
 if ($id_pedido === 0) {
-    echo "<script>alert('ID do pedido inválido!');  window.history.back();</script>";
+    $_SESSION['titulo'] = 'Erro no Pedido!';
+    $_SESSION['popup_message'] = 'ID do pedido inválido ou não encontrado.';
+    $_SESSION['type'] = 'error';
+
+    header("Location: ../cliente/historico_pedidos.php");
     exit;
 }
 
@@ -39,11 +49,24 @@ try {
     $query->execute();
 
     $con->commit();
-    header("Location: ../cliente/historico_pedidos.php?cancelado=1");
+
+    // 2. Sucesso - Mensagem para o Pop-up
+    $_SESSION['titulo'] = 'Pedido Cancelado!';
+    $_SESSION['popup_message'] = 'Seu pedido foi cancelado com sucesso e o estoque foi reposto.';
+    $_SESSION['type'] = 'success'; // Isso fará o ícone verde aparecer (se configurado no pop-up de erro)
+
+    header("Location: ../cliente/historico_pedidos.php");
     exit;
+
 } catch (Exception $e) {
     $con->rollback();
-    echo "<script>alert('Erro ao cancelar pedido: " . addslashes($e->getMessage()) . "'); window.history.back();</script>";
+
+    // 3. Erro - Mensagem para o Pop-up
+    $_SESSION['titulo'] = 'Erro ao cancelar!';
+    $_SESSION['popup_message'] = 'Não foi possível cancelar o pedido. Erro técnico: ' . $e->getMessage(); // Cuidado ao exibir erro técnico para cliente final, pode simplificar a mensagem se preferir
+    $_SESSION['type'] = 'error';
+
+    header("Location: ../cliente/historico_pedidos.php");
     exit;
 }
 ?>

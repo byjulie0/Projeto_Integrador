@@ -1,6 +1,31 @@
 <?php
 session_start();
 include 'menu_cadastro.php';
+
+if (isset($_SESSION['popup_message'])) {
+    $titulo = $_SESSION['titulo'];
+    $texto = $_SESSION['popup_message'];
+
+    $isSuccess = (isset($_SESSION['type']) && $_SESSION['type'] == 'success');
+
+    if ($isSuccess) {
+        $sucesso = true;
+    }
+
+    include '../overlays/pop_up_erro.php';
+
+    if ($isSuccess) {
+        echo "<script>
+            setTimeout(function () {
+                window.location.href = 'login.php';
+            }, 3000);
+        </script>";
+    }
+
+    unset($_SESSION['titulo']);
+    unset($_SESSION['popup_message']);
+    unset($_SESSION['type']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,25 +41,6 @@ include 'menu_cadastro.php';
 </head>
 
 <body class="body-cadastro">
-    <?php
-    // Exibir pop-up de erro se houver
-    if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'erro' && isset($_SESSION['popup_message'])) {
-
-        $texto = $_SESSION['popup_message'];
-        include '../overlays/pop_up_erro.php';
-        unset($_SESSION['popup_type']);
-        unset($_SESSION['popup_message']);
-    }
-    
-    // Exibir pop-up de sucesso se houver
-    if (isset($_SESSION['popup_type']) && $_SESSION['popup_type'] === 'sucesso' && isset($_SESSION['popup_message'])) {
-        $texto = $_SESSION['popup_message'];
-        include '../overlays/pop_up_sucesso.php';
-        unset($_SESSION['popup_type']);
-        unset($_SESSION['popup_message']);
-        unset($_SESSION['form_data']);
-    }
-    ?>
 
     <main class="main-cadastro">
         <div class="area-form-cadastro">
@@ -84,13 +90,15 @@ include 'menu_cadastro.php';
 
                     <div class="btn-submit-cadastro">
                         <?php
-                            $texto = "Cadastrar";
-                            include 'botao_verde_cliente.php';
+                        $texto = "Cadastrar";
+                        include 'botao_verde_cliente.php';
                         ?>
-                        <?php
+                        <a href="#" onclick="window.history.back(); return false;">
+                            <?php
                             $texto = "Cancelar";
                             include 'botao_vermelho_cliente.php';
-                        ?>
+                            ?>
+                        </a>
                     </div>
                 </form>
             </div>
@@ -108,17 +116,17 @@ include 'menu_cadastro.php';
     </main>
 
     <script>
-        <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+        <?php if ($_SESSION['type'] == 'success'): ?>
 
-            
-
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = 'login.php';
             }, 3000);
+
         <?php endif; ?>
     </script>
 
 </body>
+
 </html>
 
 <?php include 'footer_cliente.php'; ?>
