@@ -1,10 +1,18 @@
 <?php
 include '../../model/DB/conexao.php';
 
-$id_pedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
+$id_pedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : null;
 
-if ($id_pedido === 0) {
-    echo "<script>alert('ID do pedido inválido!');  window.history.back();</script>";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if ($id_pedido == null) {
+    $_SESSION['titulo'] = 'Pedido não encontrado!';
+    $_SESSION['popup_message'] = 'Não foi possível encontrar esse pedido no catalogo.';
+    $_SESSION['type'] = 'error';
+
+    header("Location: ../adm/verificar_administrar_pedido.php");
     exit;
 }
 
@@ -38,10 +46,22 @@ try {
     $query->execute();
 
     $con->commit();
-    // notifica adm:
-    echo "<script>alert('Pedido cancelado com sucesso!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
+
+    $_SESSION['titulo'] = 'Pedido cancelado com sucesso!';
+    $_SESSION['popup_message'] = 'Este pedido foi cancelado e o cliente foi avisado.';
+    $_SESSION['type'] = 'success';
+
+    header("Location: ../adm/verificar_pedido_infos.php?id_pedido=". $id_pedido);
+    exit;
+    
 } catch (Exception $e) {
     $con->rollback();
-    echo "<script>alert('Erro ao cancelar pedido: " . addslashes($e->getMessage()) . "'); window.history.back();</script>";
+
+    $_SESSION['titulo'] = 'Erro ao concluir o pedido!';
+    $_SESSION['popup_message'] = 'Não foi possivel concluir o pedido'. $e;
+    $_SESSION['type'] = 'error';
+
+    header("Location: ../adm/verificar_pedido_infos.php?id_pedido=". $id_pedido);
+    exit;
 }
 ?>

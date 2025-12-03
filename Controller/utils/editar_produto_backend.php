@@ -159,17 +159,24 @@ if ($id_produto <= 0 || empty($nome) || $valor <= 0 || $quantidade < 0 || $categ
             );
 
             if ($query->execute()) {
+                $reativado = false;
                 if ($quant_estoque == 0 && $quantidade >= 1) {
                     $sql = "UPDATE produto SET produto_ativo = 1 WHERE id_produto = ?";
                     $query2 = $con->prepare($sql);
                     $query2->bind_param("i", $id_produto);
                     $query2->execute();
                     $query2->close();
+                    $reativado = true;
                 }
 
                 $query->close();
                 $_SESSION['titulo'] = "Produto atualizado!";
-                $_SESSION['popup_message'] = "As alterações foram salvas com sucesso.";
+                if ($reativado) {
+                    $_SESSION['popup_message'] = "As alterações foram salvas com sucesso e o produto está de volta ao catalogo.";
+
+                } else {
+                    $_SESSION['popup_message'] = "As alterações foram salvas com sucesso";
+                }
                 $_SESSION['type'] = 'success';
 
                 header("Location: ../adm/catalogo_produtos.php");

@@ -3,21 +3,43 @@ include '../../model/DB/conexao.php';
 include 'gerar_notificacao.php';
 
 
-$pedido_id = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
+$id_pedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : null;
 
-if ($pedido_id === 0) {
-    echo "<script>alert('ID do pedido inválido!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if ($id_pedido == null) {
+    $_SESSION['titulo'] = 'Pedido não encontrado!';
+    $_SESSION['popup_message'] = 'Não foi possível encontrar esse pedido no catalogo.';
+    $_SESSION['type'] = 'error';
+
+    header("Location: ../adm/verificar_administrar_pedido.php");
     exit;
 }
 
 try {
     $sql = "UPDATE pedido SET status_pedido = 'Concluído' WHERE id_pedido = ?";
     $query = $con->prepare($sql);
-    $query->bind_param("i", $pedido_id);
+    $query->bind_param("i", $id_pedido);
     $query->execute();
+    $con->commit();
 
-    echo "<script>alert('Pedido concluído com sucesso!'); window.location.href='../adm/verificar_administrar_pedido.php';</script>";
+    $_SESSION['titulo'] = 'Pedido concluído com sucesso!';
+    $_SESSION['popup_message'] = 'Não se esqueça de garantir que o pedido chegue ao cliente.';
+    $_SESSION['type'] = 'success';
+
+    header("Location: ../adm/verificar_pedido_infos.php?id_pedido=". $id_pedido);
+    exit;
+    
 } catch (Exception $e) {
-    echo "<script>alert('Erro ao concluir pedido: " . addslashes($e->getMessage()) . "'); window.history.back();</script>";
+    $con->rollback();
+
+    $_SESSION['titulo'] = 'Erro ao concluir o pedido!';
+    $_SESSION['popup_message'] = 'Não foi possivel concluir o pedido'. $e;
+    $_SESSION['type'] = 'error';
+
+    header("Location: ../adm/verificar_pedido_infos.php?id_pedido=". $id_pedido);
+    exit;
 }
 ?>

@@ -230,7 +230,7 @@ while (count($imgs) < 4)
 
             <div class="add_product_submit_button">
                 <?php
-                $texto = "Salvar Alterações"; // ESTÁ MANDANDO PRO LOGIN error=recaptcha%20falhou
+                $texto = "Salvar Alterações";
                 include 'botao_verde_adm.php';
                 ?>
             </div>

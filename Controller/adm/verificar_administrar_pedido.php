@@ -5,6 +5,23 @@ if ($adm_nao_logado) {
     exit;
 }
 include '../utils/listar_pedidos_adm.php';
+
+// Verificar se há mensagens de pop-up na sessão
+if (isset($_SESSION['popup_message'])) {
+    $titulo = $_SESSION['titulo'];
+    $texto = $_SESSION['popup_message'];
+
+    // Verificar se é sucesso
+    if ($_SESSION['type'] == 'success') {
+        $sucesso = true;
+    }
+    include '../overlays/pop_up_erro.php';
+
+    // Limpar a sessão
+    unset($_SESSION['titulo']);
+    unset($_SESSION['popup_message']);
+    unset($_SESSION['type']);
+}
 ?>
 
 <?php include 'menu_inicial.php'; ?>

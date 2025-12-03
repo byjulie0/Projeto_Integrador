@@ -4,12 +4,37 @@ if ($adm_nao_logado) {
     include '../overlays/pop_up_login_adm.php';
     exit;
 }
+
+// Verificar se há mensagens de pop-up na sessão
+if (isset($_SESSION['popup_message'])) {
+    $titulo = $_SESSION['titulo'];
+    $texto = $_SESSION['popup_message'];
+
+    // Verificar se é sucesso
+    if ($_SESSION['type'] == 'success') {
+        $sucesso = true;
+    }
+    include '../overlays/pop_up_erro.php';
+
+    // Limpar a sessão
+    unset($_SESSION['titulo']);
+    unset($_SESSION['popup_message']);
+    unset($_SESSION['type']);
+}
 include 'menu_inicial.php';
 
-$pedido_id = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
+$id_pedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : null;
 
-if ($pedido_id === 0) {
-    echo "<script>alert('ID do pedido não especificado!'); window.location.href = 'verificar_administrar_pedido.php';</script>";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if ($id_pedido == null) {
+    $_SESSION['titulo'] = 'Pedido não encontrado!';
+    $_SESSION['popup_message'] = 'Não foi possível encontrar esse pedido no catalogo.';
+    $_SESSION['type'] = 'error';
+
+    header("Location: ../adm/verificar_administrar_pedido.php");
     exit;
 }
 
@@ -34,7 +59,7 @@ try {
             WHERE p.id_pedido = ?";
 
     $query = $con->prepare($sql);
-    $query->bind_param("i", $pedido_id);
+    $query->bind_param("i", $id_pedido);
     $query->execute();
     $resultado = $query->get_result();
 
@@ -48,7 +73,7 @@ try {
     if (count($itens_pedido) === 0) {
         echo "<div style='padding: 20px; text-align: center;'>
                 <h3>Pedido não encontrado</h3>
-                <p>ID buscado: <strong>{$pedido_id}</strong></p>
+                <p>ID buscado: <strong>{$id_pedido}</strong></p>
                 <p>O pedido não foi encontrado no banco de dados.</p>
                 <p><a href='verificar_administrar_pedido.php'>← Voltar para a lista de pedidos</a></p>
               </div>";
@@ -184,19 +209,21 @@ try {
 
                 <div class="buttons-area-informacoes-pedidos">
                     <?php if ($pedido_detalhes['status_pedido'] === 'Pendente'): ?>
+
                         <div class="left-buttons-informacoes-pedidos">
                             <button class="cancel-btn"
-                                onclick="cancelarPedido(<?php echo $pedido_detalhes['id_pedido']; ?>)">Cancelar
-                                pedido</button>
+                                onclick="abrirPopup('Cancelar pedido!', 'Tem certeza que deseja cancelar este pedido? A ação é irreversível.', '../utils/acao_cancelar_pedido.php?id_pedido=<?php echo $id_pedido; ?>')">
+                                Cancelar pedido
+                            </button>
                         </div>
-                    <?php endif; ?>
 
-                    <?php if ($pedido_detalhes['status_pedido'] === 'Pendente'): ?>
                         <div class="right-buttons-informacoes-pedidos">
                             <button class="concluir-btn"
-                                onclick="concluirPedido(<?php echo $pedido_detalhes['id_pedido']; ?>)">Concluir
-                                pedido</button>
+                                onclick="abrirPopup('Concluir pedido!', 'Tem certeza que deseja marcar este pedido como entregue/concluído?', '../utils/acao_concluir_pedido.php?id_pedido=<?php echo $id_pedido; ?>')">
+                                Concluir pedido
+                            </button>
                         </div>
+
                     <?php endif; ?>
                 </div>
             </div>
@@ -237,20 +264,33 @@ try {
         </div>
     </section>
 
+    <?php include '../overlays/pop_up_pergunta.php'; ?>
+
     <script>
-        function cancelarPedido(pedidoId) {
-            if (confirm('Tem certeza que deseja cancelar este pedido?')) {
-                window.location.href = '../utils/acao_cancelar_pedido.php?id_pedido=' + pedidoId;
-            }
+        // Função para abrir o Pop-up e preencher os dados
+        function abrirPopup(titulo, mensagem, linkDestino) {
+            // Seleciona os elementos do pop-up pelos IDs que criamos no Passo 1
+            document.getElementById('popup_titulo').innerText = titulo;
+            document.getElementById('popup_mensagem').innerText = mensagem;
+            document.getElementById('link_confirmacao').href = linkDestino;
+
+            // Mostra o pop-up (muda o display para flex ou block, dependendo do seu CSS original)
+            document.getElementById('popup_login').style.display = 'flex';
         }
 
-        function concluirPedido(pedidoId) {
-            if (confirm('Confirmar conclusão deste pedido?')) {
-                window.location.href = '../utils/acao_concluir_pedido.php?id_pedido=' + pedidoId;
+        // Função para fechar o Pop-up
+        function fecharPopup() {
+            document.getElementById('popup_login').style.display = 'none';
+        }
+
+        // Fecha o pop-up se clicar fora da caixa branca
+        window.onclick = function (event) {
+            var modal = document.getElementById('popup_login');
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
     </script>
-
 </body>
 
 </html>

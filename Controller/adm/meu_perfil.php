@@ -53,7 +53,7 @@ include 'menu_inicial.php';
                 <h3 class="visualizar-dados-geral-title">Meus Dados</h3>
                 <div class="visualizar-dados-grid">
                     <p><span>Nome: </span><?= htmlspecialchars($adm_atual['adm_nome']); ?></p>
-                    <p><span>Telefone: </span><?= htmlspecialchars($adm_atual['adm_nome']); ?></p>
+                    <p><span>Telefone: </span><?= htmlspecialchars($adm_atual['telefone']); ?></p>
                     <p><span>E-mail: </span><?= htmlspecialchars($adm_atual['email']); ?></p>
                     <p><span>CNPJ: </span><?= htmlspecialchars($adm_atual['cnpj']); ?></p>
                 </div>
