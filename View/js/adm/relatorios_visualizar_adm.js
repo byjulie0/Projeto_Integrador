@@ -52,7 +52,7 @@ $(function () {
             
             $('#dataEscolhida').text(inicio + ' - ' + fim);
             
-            window.location.href = `relatorio_visualizar.php?data_inicio=${inicioISO}&data_fim=${fimISO}`;
+            window.location.href = `relatorios_visualizar.php?data_inicio=${inicioISO}&data_fim=${fimISO}`;
         }
     }
 
@@ -115,3 +115,78 @@ function gerarPDF() {
     
     doc.save('relatorio_pedidos_com_graficos.pdf');
 }
+$(function () {
+    $.datepicker.regional['pt-BR'] = {
+        closeText: 'Fechar',
+        prevText: '&#x3C;Anterior',
+        nextText: 'Próximo&#x3E;',
+        currentText: 'Hoje',
+        monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+            'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+        monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+            'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        dayNames: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
+        dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+        dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+        weekHeader: 'Sem',
+        dateFormat: 'dd/mm/yy',
+        firstDay: 0,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+
+    // Configuração do campo de data de início
+    $('#dataInicio').datepicker({
+        onSelect: function (selectedDate) {
+            $('#dataFim').datepicker('option', 'minDate', selectedDate);
+            $('#dataFim').datepicker('show');
+        }
+    });
+
+    // Configuração do campo de data de fim
+    $('#dataFim').datepicker({
+        onSelect: function (selectedDate) {
+            $('#dataInicio').datepicker('option', 'maxDate', selectedDate);
+            atualizarPeriodo();
+        }
+    });
+
+    // Ação do botão "Mudar período"
+    $('#abrirCalendario').on('click', function (e) {
+        e.preventDefault();
+        $('#dataInicio').datepicker('show');
+    });
+
+    // Atualiza as datas e envia o formulário
+    function atualizarPeriodo() {
+        var inicio = $('#dataInicio').val();
+        var fim = $('#dataFim').val();
+
+        if (inicio && fim) {
+            var inicioParts = inicio.split('/');
+            var fimParts = fim.split('/');
+
+            var inicioISO = inicioParts[2] + '-' + inicioParts[1] + '-' + inicioParts[0];
+            var fimISO = fimParts[2] + '-' + fimParts[1] + '-' + fimParts[0];
+
+            $('#dataEscolhida').text(inicio + ' - ' + fim);  // Atualiza o texto exibido na tela
+
+            // Envia o formulário com as novas datas
+            window.location.href = `relatorios_visualizar.php?data_inicio=${inicioISO}&data_fim=${fimISO}`;
+        }
+    }
+
+    // Preencher automaticamente as datas ao carregar a página
+    var dataInicioISO = $('#dataInicio').val();
+    var dataFimISO = $('#dataFim').val();
+    
+    if (dataInicioISO && dataFimISO) {
+        var inicioParts = dataInicioISO.split('-');
+        var fimParts = dataFimISO.split('-');
+        
+        $('#dataInicio').val(inicioParts[2] + '/' + inicioParts[1] + '/' + inicioParts[0]);
+        $('#dataFim').val(fimParts[2] + '/' + fimParts[1] + '/' + fimParts[0]);
+    }
+});
