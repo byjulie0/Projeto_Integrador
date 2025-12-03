@@ -10,6 +10,8 @@ if ($usuario_nao_logado) {
 
 // Verificar se há mensagens de pop-up na sessão
 if (isset($_SESSION['popup_message'])) {
+
+    
     $titulo = $_SESSION['titulo'];
     $texto = $_SESSION['popup_message'];
 
@@ -17,7 +19,15 @@ if (isset($_SESSION['popup_message'])) {
     if ($_SESSION['type'] == 'success') {
         $sucesso = true;
     }
-    include '../overlays/pop_up_pedido.php';
+    
+    if($_SESSION['type'] == 'error_res' || $_SESSION['type'] == 'success_res') {
+        include '../overlays/pop_up_erro.php';
+    }
+    
+    else {
+        include '../overlays/pop_up_pedido.php';
+    }
+
 
     // Limpar a sessão
     unset($_SESSION['titulo']);
@@ -79,8 +89,10 @@ include 'menu_pg_inicial.php';
 
                             <div class="product-title-area-carrinho">
                                 <div class="delete-item-btn-area-carrinho">
-                                    <a
-                                        href="../utils/remove_carrinho.php?id_carrinho=<?php echo $itens['id_carrinho']; ?>">Excluir</a>
+                                    <a href="javascript:void(0)"
+                                        onclick="abrirPopup('Remover item!', 'Tem certeza que deseja remover este item do carrinho?', '../utils/remove_carrinho.php?id_carrinho=<?php echo $itens['id_carrinho']; ?>')">
+                                        Excluir
+                                    </a>
                                 </div>
                             </div>
 
@@ -172,7 +184,6 @@ include 'menu_pg_inicial.php';
             </div>
         </section>
     </div>
-
     <script>
         // Prevenir cache do navegador
         window.onpageshow = function (event) {
@@ -181,31 +192,25 @@ include 'menu_pg_inicial.php';
             }
         };
 
-        // Função global para fechar pop-up
+        // Função global para fechar pop-up (DOS ERROS/SUCESSOS)
         function fecharPopup() {
-            // Remove o pop-up da tela
             const popup = document.querySelector('.popup');
             if (popup) {
                 popup.style.display = 'none';
             }
-            // Recarrega a página para atualizar o carrinho
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.reload();
             }, 100);
         }
 
-        // Adicionar event listeners quando o DOM carregar
         document.addEventListener('DOMContentLoaded', function () {
-            // Event listener para o botão de fechar
             const fecharBtn = document.querySelector('.fechar_popup');
             if (fecharBtn) {
                 fecharBtn.addEventListener('click', fecharPopup);
             }
-
-            // Event listener para clicar fora do pop-up
             const popup = document.querySelector('.popup');
             if (popup) {
-                popup.addEventListener('click', function(e) {
+                popup.addEventListener('click', function (e) {
                     if (e.target === popup) {
                         fecharPopup();
                     }
@@ -214,6 +219,34 @@ include 'menu_pg_inicial.php';
         });
     </script>
 
+    <?php include '../overlays/pop_up_pergunta.php'; ?>
+
+    <script>
+        // Função específica para abrir o Pop-up de Pergunta
+        function abrirPopup(titulo, mensagem, linkDestino) {
+            document.getElementById('popup_titulo').innerText = titulo;
+            document.getElementById('popup_mensagem').innerText = mensagem;
+            document.getElementById('link_confirmacao').href = linkDestino;
+            
+            // Exibe o popup (usando o ID específico do pop_up_pergunta.php)
+            document.getElementById('popup_login').style.display = 'flex';
+        }
+
+        // Função específica para fechar SOMENTE o Pop-up de Pergunta (sem recarregar a página)
+        function fecharPopupPergunta() {
+            document.getElementById('popup_login').style.display = 'none';
+        }
+
+        // Fechar ao clicar fora (específico para o popup de pergunta)
+        window.addEventListener('click', function(event) {
+            var modal = document.getElementById('popup_login');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+
     <?php include 'footer_cliente.php'; ?>
 </body>
+
 </html>

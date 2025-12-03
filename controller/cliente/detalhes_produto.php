@@ -133,14 +133,16 @@ $query->close();
                 </div>
 
                 <section class="sub-descricao-detalhes-produto">
-                    <?php if ($produto['id_categoria'] != 5): ?>
+                    <?php if ($produto['id_categoria'] != 4): ?>
                         <p><strong>Peso: </strong><?php echo $peso_formatado; ?></p>
                         <p><strong>Data de nascimento: </strong><?php echo date('d/m/Y', strtotime($produto['idade'])); ?>
                         </p>
-                        <p><strong>Tipo: </strong><?php echo $produto['subcat_nome'] ?? 'Não categorizado'; ?></span></p>
+                        <p><strong>Raça: </strong><?php echo $produto['subcat_nome'] ?? 'Não categorizado'; ?></span></p>
                         <?php if ($produto['campeao']): ?>
                             <p><strong>Status:</strong> <span class="badge bg-success">Animal Campeão</span></p>
                         <?php endif; ?>
+                    <?php else: ?>
+                        <p><strong>Tipo: </strong><?php echo $produto['subcat_nome'] ?? 'Não categorizado'; ?></span></p>
                     <?php endif; ?>
                 </section>
 
