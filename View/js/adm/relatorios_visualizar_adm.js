@@ -190,3 +190,66 @@ $(function () {
         $('#dataFim').val(fimParts[2] + '/' + fimParts[1] + '/' + fimParts[0]);
     }
 });
+
+let dataInicioSelecionada = null;
+
+function mostrarToast(titulo, mensagem) {
+    document.getElementById("toastTitulo").innerHTML = titulo;
+    document.getElementById("toastMensagem").innerHTML = mensagem;
+    document.getElementById("toast").classList.add("mostrar");
+}
+
+function fecharToast() {
+    document.getElementById("toast").classList.remove("mostrar");
+}
+
+$(function() {
+    $("#btnMudarPeriodo").on("click", function() {
+        const $dialog = $("<div>").dialog({
+            modal: true,
+            title: "Selecionar Período",
+            width: 480,
+            close: function() {
+                $(this).dialog("destroy").remove();
+                dataInicioSelecionada = null;
+            }
+        });
+
+        $dialog.html(`
+            <p style="text-align:center; margin-bottom:20px; font-weight:600; color:#2c3e50;">
+                Clique na <span style="color:#3498db">data inicial</span> → depois na <span style="color:#e74c3c">data final</span>
+            </p>
+            <div id="datepicker"></div>
+        `);
+
+        $("#datepicker").datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            firstDay: 1,
+            onSelect: function(dateText) {
+                if (!dataInicioSelecionada) {
+                    dataInicioSelecionada = dateText;
+                    mostrarToast("Data inicial selecionada",
+                        "Você escolheu <strong>" + $.datepicker.formatDate('dd/mm/yy', new Date(dateText)) + 
+                        "</strong> como início.<br>Agora clique na data final.");
+                } else {
+                    const dataFim = dateText;
+                    if (new Date(dataInicioSelecionada) > new Date(dataFim)) {
+                        mostrarToast("Erro", "A data inicial deve ser anterior à data final.");
+                        dataInicioSelecionada = null;
+                        return;
+                    }
+
+                    $("#hiddenInicio").val(dataInicioSelecionada);
+                    $("#hiddenFim").val(dataFim);
+                    $("#periodoSelecionado").text(
+                        $.datepicker.formatDate('dd/mm/yy', new Date(dataInicioSelecionada)) + " - " + 
+                        $.datepicker.formatDate('dd/mm/yy', new Date(dataFim))
+                    );
+                    $("#formFiltroData").submit();
+                }
+            }
+        }).datepicker("setDate", new Date("<?php echo $data_inicio; ?>"));
+    });
+});
